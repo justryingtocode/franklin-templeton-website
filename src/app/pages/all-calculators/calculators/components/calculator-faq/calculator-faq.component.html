@@ -1,0 +1,24 @@
+<!-- start section calc faq-->
+<section class="FT-faq FT-calc-faq mb-6 pb-0">
+    <div class="container">
+        <div class="FT-title-small mb-sm-4 mb-3">Frequently Asked Questions</div>
+        <div class="faq-box">
+            <div class="accordion" id="accordionExample">
+                    <div  *ngFor="let item of faqs" class="accordion-item">
+                        <h2 class="accordion-header" [id]="'heading' + item.id">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                [attr.data-bs-target]="'#q' + item.id" aria-expanded="false" [attr.aria-controls]="'q' +item.id">
+                                {{item.que}}
+                            </button>
+                        </h2>
+                        <div [id]="'q' + item.id" class="accordion-collapse collapse" [attr.aria-labelledby]="'heading' +item.id"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                {{item.ans}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>

@@ -1,0 +1,301 @@
+{
+    "SCHEME": [
+      {
+        "id": 1,
+        "tableLeft": "Key Highlights",
+        "tableMiddle": "-",
+        "tableRight": "-"
+      },
+      {
+        "id": 2,
+        "tableLeft": "Inception Date",
+        "tableMiddle": "21-10-1998",
+        "tableRight": "11-05-2021"
+      },
+      {
+        "id": 3,
+        "tableLeft": "Riskometer",
+        "tableMiddle": { 
+        "tableMiddleimgSrc":"./assets/images/comparefund/very-high.svg.png",
+        "tableMiddletext":"Very High"
+            },
+        "tableRight": { 
+        "tableMiddleimgSrc":"./assets/images/comparefund/very-high.svg.png",
+        "tableMiddletext":"Very High"
+          }
+      },
+      {
+        "id": 4,
+        "tableLeft": "Since Inception Returns",
+        "tableMiddle": "15.44%",
+        "tableRight": "17.98%"
+      },
+      {
+        "id": 5,
+        "tableLeft": "Category, Sub-Category",
+        "tableMiddle": "Large Cap, Equity",
+        "tableRight": "Mid Cap, Equity"
+      },
+      {
+        "id": 6,
+        "tableLeft": "Fund Age",
+        "tableMiddle": "10 yrs 5 m",
+        "tableRight": "8 yrs 5 m"
+      },
+      {
+        "id": 7,
+        "tableLeft": "AUM",
+        "tableMiddle": "10 yrs 5 m",
+        "tableRight": "8 yrs 5 m"
+      },
+      {
+        "id": 8,
+        "tableLeft": "Scheme Manager",
+        "tableMiddle": "10 yrs 5 m",
+        "tableRight": "8 yrs 5 m"
+      },
+      {
+        "id": 9,
+        "tableLeft": "Product Label-Risk/Volatily",
+        "tableMiddle": "-",
+        "tableRight": "-"
+      }
+    ],
+    "RETURN": [
+      {
+        "id": 1,
+        "tableItem":"3 month",
+        "tableLeft": "12.85%",
+        "tableMiddle": "9.65%",
+        "tableRight": "9.61%"
+      },
+      {
+        "id": 2,
+        "tableItem":"6 month",
+        "tableLeft": "8.05%",
+        "tableMiddle": "4.35%",
+        "tableRight": "4.35%"
+      },
+      {
+        "id": 3,
+        "tableItem":"1 year",
+        "tableLeft": "26.88",
+        "tableMiddle": "21.7%",
+        "tableRight": "21.7%"
+      },
+      {
+        "id": 4,
+        "tableItem":"3 year",
+        "tableLeft": "25.66%",
+        "tableMiddle": "23.18%",
+        "tableRight": "23.18%"
+      },
+      {
+        "id": 5,
+        "tableItem":"5 year",
+        "tableLeft": "13.49%",
+        "tableMiddle": "13.29%",
+        "tableRight": "13.29%"
+      }
+    ],
+    "RISKMEASURE": [
+      {
+        "id": 1,
+        "tableItem":"Standard Deviation",
+        "tableLeft": "14.85%",
+        "tableMiddle": "15.07%",
+        "tableRight": "15.07%"
+      },
+      {
+        "id": 2,
+        "tableItem":"Sharpe",
+        "tableLeft": "1.05%",
+        "tableMiddle": "1.35%",
+        "tableRight": "1.35%"
+      },
+      {
+        "id": 3,
+        "tableItem":"Beta",
+        "tableLeft": "0.97%",
+        "tableMiddle": "1%",
+        "tableRight": "1%"
+      },
+      {
+        "id": 4,
+        "tableItem":"Sortino",
+        "tableLeft": "3.63%",
+        "tableMiddle": "3.3%",
+        "tableRight": "3.3%"
+      },
+      {
+        "id": 5,
+        "tableItem":"Alpha",
+        "tableLeft": "1.11%",
+        "tableMiddle": "-0.78%",
+        "tableRight": "-0.78%"
+      }
+    ],
+    "PORTFOLIO": [
+      {
+        "id": 1,
+        "tableItem":"Top 3 sectors",
+        "tableLeft": "Financial (30.21%)",
+        "tableMiddle": "Financial (30.21%)",
+        "tableRight": "Financial (30.21%)"
+      },
+      {
+        "id": 2,
+        "tableItem":"Top 5 holdings",
+        "tableLeft": "HDFC Bank Ltd. (8.52%)",
+        "tableMiddle": "HDFC Bank Ltd. (8.52%)",
+        "tableRight": "HDFC Bank Ltd. (8.52%)"
+      },
+      {
+        "id": 3,
+        "tableItem":"P/E Ratio",
+        "tableLeft": "26.88%",
+        "tableMiddle": "21.7%",
+        "tableRight": "21.7%"
+      },
+      {
+        "id": 4,
+        "tableItem":"P/B Ratio",
+        "tableLeft": "4.05%",
+        "tableMiddle": "23.18%",
+        "tableRight": "23.18%"
+      },
+      {
+        "id": 5,
+        "tableItem":"Equity %",
+        "tableLeft": "95.21%",
+        "tableMiddle": "99.76%",
+        "tableRight": "99.76%"
+      },
+      {
+        "id": 6,
+        "tableItem":"Debt %",
+        "tableLeft": "0.13%",
+        "tableMiddle": "0%",
+        "tableRight": "0%"
+      },
+      {
+        "id": 7,
+        "tableItem":"Turnover Ratio",
+        "tableLeft": "16",
+        "tableMiddle": "4.85%",
+        "tableRight": "4.85%"
+      },
+      {
+        "id": 8,
+        "tableItem":"Yield To Maturity",
+        "tableLeft": "NA",
+        "tableMiddle": "NA",
+        "tableRight": "NA"
+      },
+      {
+        "id": 9,
+        "tableItem":"Modified Duration",
+        "tableLeft": "NA",
+        "tableMiddle": "NA",
+        "tableRight": "NA"
+      },
+      {
+        "id": 10,
+        "tableItem":"Avg. Maturity",
+        "tableLeft": "NA",
+        "tableMiddle": "NA",
+        "tableRight": "NA"
+      },
+      {
+        "id": 11,
+        "tableItem":"Avg. Credit Quality",
+        "tableLeft": "NA",
+        "tableMiddle": "NA",
+        "tableRight": "NA"
+      }
+    ],
+    "FUNDDETAIL": [
+      {
+        "id": 1,
+        "tableItem":"Expense Ratio",
+        "tableLeft": "0.89%",
+        "tableMiddle": "0.2%",
+        "tableRight": "0.2%"
+      },
+      {
+        "id": 2,
+        "tableItem":"Exit Load",
+        "tableLeft": "1% know more",
+        "tableMiddle": "0.25% know more",
+        "tableRight": "0.25% know more"
+      },
+      {
+        "id": 3,
+        "tableItem":"Lock-in",
+        "tableLeft": "No lockin",
+        "tableMiddle": "No lockin",
+        "tableRight": "No lockin"
+      },
+      {
+        "id": 4,
+        "tableItem":"Benchmark Index",
+        "tableLeft": "S&P BSE 100 TRI",
+        "tableMiddle": "S&P BSE Sensex TRI",
+        "tableRight": "S&P BSE Sensex TRI"
+      },
+      {
+        "id": 5,
+        "tableItem":"Min. Investment",
+        "tableLeft": "SIP 500 & Lumpsum 5000",
+        "tableMiddle": "SIP 300 & Lumpsum 3000",
+        "tableRight": "SIP 300 & Lumpsum 3000"
+      },
+      {
+        "id": 6,
+        "tableItem":"Investment Horizon",
+        "tableLeft": "Good for medium term",
+        "tableMiddle": "Good for medium term",
+        "tableRight": "Good for medium term"
+      },
+      {
+        "id": 7,
+        "tableItem":"Managed By",
+        "tableLeft": "NA",
+        "tableMiddle": "Arun Agarwal",
+        "tableRight": "Arun Agarwal"
+      }
+    ],
+    "OTHERS": [
+      {
+        "id": 1,
+        "tableLeft": "Inception Date",
+        "tableMiddle": "21-10-1998",
+        "tableRight": "11-05-2021"
+      },
+      {
+        "id": 2,
+        "tableLeft": "Riskometer",
+        "tableMiddle": "<img src='./assets/images/comparefund/very-high.svg.png'>",
+        "tableRight": "Very High"
+      },
+      {
+        "id": 3,
+        "tableLeft": "Since Inception Returns",
+        "tableMiddle": "15.44%",
+        "tableRight": "17.98%"
+      },
+      {
+        "id": 4,
+        "tableLeft": "Category, Sub-Category",
+        "tableMiddle": "Large Cap, Equity",
+        "tableRight": "Mid Cap, Equity"
+      },
+      {
+        "id": 5,
+        "tableLeft": "Fund Age",
+        "tableMiddle": "10 yrs 5 m",
+        "tableRight": "8 yrs 5 m"
+      }
+    ]
+  }
+  

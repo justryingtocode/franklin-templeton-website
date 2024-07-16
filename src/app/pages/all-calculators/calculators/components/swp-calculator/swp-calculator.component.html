@@ -1,0 +1,367 @@
+<!-- start page breadcrumb block -->
+<div class="FT-breadcrumb mb-4 d-none d-md-block">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">All Calculators</a></li>
+                <li class="breadcrumb-item active" aria-current="page">SWP Calculator</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- start section calculator -->
+<section class="FT-calculator-box mb-6">
+    <div class="container">
+        <div class="FT-title-medium text-blue mb-2">SWP Calculator </div>
+        <div>
+            SWP is a facility available for investors to withdraw their investments systematically. The investor can
+            select the amount and the interval of withdrawal. SWP is a great option for earning a regular income.
+            Retirees and people with multiple dependents can use SWP as a source of regular income. SWP calculator helps
+            in determining the final value of an investment after withdrawing a fixed amount regularly while considering
+            the interest earned from the investment.
+        </div>
+        <div class="FT-financial">
+
+            <!-- Tab panes -->
+            <div class="tab-content calculator-box">
+                <div class="tab-pane active" id="Systematic" role="tabpanel" aria-labelledby="Systematic-tab"
+                    tabindex="0">
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="Investment" role="tabpanel" aria-labelledby="Investment-tab"
+                            tabindex="0">
+                            <div class="row align-items-center">
+
+                                <!-- Section: Form -->
+                                <div class="col-lg-6 col-12">
+                                    <form [formGroup]="calcForm" *ngIf="calcForm">
+
+                                        <!-- Amount Source Fund -->
+                                        <div class="form-group">
+                                            <label for="customRange4" class="form-label">
+                                                <span class="label-text">I want to Invest</span>
+                                                <div class="selected-range year-end" >
+                                                    <span class="calc-input-prefix">₹</span>
+                                                    <input 
+                                                        type="number" 
+                                                        [attr.min]="getInputLimit(sliderKeyName.amount, false)" 
+                                                        [attr.max]="getInputLimit(sliderKeyName.amount, true)"
+                                                        [(ngModel)]="calcForm.value.amount" 
+                                                        formControlName="amount" 
+                                                        (change)="onCalculatorChange($event, 'amount')" 
+                                                        class="calc-input amount text-start">
+                                                </div>
+                                            </label>
+                                            <div class="range-slider">
+                                                <input 
+                                                    type="range" 
+                                                    [attr.min]="getInputLimit(sliderKeyName.amount, false)" 
+                                                    [attr.max]="getInputLimit(sliderKeyName.amount, true)"
+                                                    [value]="calcForm.value.amount || getInputLimit(sliderKeyName.amount)" 
+                                                    formControlName="amount" 
+                                                    (change)="onCalculatorChange($event, 'amount')" 
+                                                    class="custom-range" 
+                                                    [style.background]="amountSliderStyle">
+                                            </div>
+                                            <div class="d-flex text-small justify-content-between">
+                                                <span>₹10k</span>
+                                                <span>₹10Cr</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Withdraw & time -->
+                                        <div class="form-group">
+                                            <label for="customRange2" class="form-label">
+                                                <span class="label-text">I want to withdraw</span>
+    
+                                                <div class="selected-range"  >
+                                                    <span class="calc-input-prefix">₹</span>
+                                                    <input
+                                                        type="number" 
+                                                        [attr.min]="getInputLimit(sliderKeyName.withdraw, false)" 
+                                                        [attr.max]="getInputLimit(sliderKeyName.withdraw, true)"
+                                                        [(ngModel)]="calcForm.value.withdraw" 
+                                                        formControlName="withdraw" 
+                                                        (change)="onCalculatorChange($event, 'withdraw')" 
+                                                        class="calc-input withdraw text-start transfer-stp">
+    
+                                                </div>
+                                            </label>
+                                            <div class="invest-options">
+                                                <div class="form-check">
+                                                    <input formControlName="time" value="MONTHLY" class="form-check-input" type="radio" name="time"
+                                                        id="Monthly"
+                                                        (change)="onCalculatorChange($event, 'time')">
+                                                    <label class="form-check-label" for="Monthly">
+                                                        Monthly
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input formControlName="time" value="QUARTERLY" class="form-check-input" type="radio" name="time"
+                                                            id="Quarterly"
+                                                            (change)="onCalculatorChange($event, 'time')">
+                                                    <label class="form-check-label" for="Quarterly">
+                                                        Quarterly
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input formControlName="time" value="HALFYEARLY" class="form-check-input" type="radio" name="time"
+                                                        id="Halfyearly"
+                                                        (change)="onCalculatorChange($event, 'time')">
+                                                    <label class="form-check-label" for="Halfyearly">
+                                                        Half Yearly
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input formControlName="time" value="ANNUAL" class="form-check-input"
+                                                        type="radio" name="time" id="Annual"
+                                                        (change)="onCalculatorChange($event, 'time')" for="Annual">
+                                                    <label class="form-check-label" for="Annual">
+                                                        Annual
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="range-slider">
+                                                <input 
+                                                    type="range" 
+                                                    [attr.min]="getInputLimit(sliderKeyName.withdraw, false)" 
+                                                    [attr.max]="getInputLimit(sliderKeyName.withdraw, true)"
+                                                    [value]="calcForm.value.withdraw || getInputLimit(sliderKeyName.withdraw)" 
+                                                    formControlName="withdraw" 
+                                                    (change)="onCalculatorChange($event, 'withdraw')" 
+                                                    class="custom-range" 
+                                                    [style.background]="withdrawSliderStyle">
+    
+                                            </div>
+                                            <div class="d-flex text-small justify-content-between">
+                                                <span>₹500</span>
+                                                <span>₹10L</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Period -->
+                                        <div class="form-group ">
+                                            <label for="customRange2" class="form-label">
+                                                <span class="label-text">Year</span>
+    
+                                                <div class="selected-range year-end"  
+                                                (click)="autoFocus($event, 'period')">
+                                                    <input 
+                                                        type="number" 
+                                                        [attr.min]="getInputLimit(sliderKeyName.period, false)" 
+                                                        [attr.max]="getInputLimit(sliderKeyName.period, true)"
+                                                        formControlName="period" 
+                                                        [(ngModel)]="calcForm.value.period" 
+                                                        (change)="onCalculatorChange($event, 'period')" 
+                                                        class="calc-input text-end forchangecustomcalculator"
+                                                        id="period">
+    
+                                                    <span class="calc-input-prefix ms-1 year-start" >Years</span>
+                                                </div>
+                                            </label>
+                                            <div class="range-slider">
+                                                <input 
+                                                    type="range" 
+                                                    formControlName="period" 
+                                                    [value]="calcForm.value.period || getInputLimit(sliderKeyName.period)" 
+                                                    (change)="onCalculatorChange($event, 'period')" 
+                                                    class="custom-range" 
+                                                    [attr.min]="getInputLimit(sliderKeyName.period, false)" 
+                                                    [attr.max]="getInputLimit(sliderKeyName.period, true)"
+                                                    [style.background]="periodSliderStyle">
+    
+                                            </div>
+                                            <div class="d-flex text-small justify-content-between">
+                                                <span>{{getInputLimit(sliderKeyName.period, false)}} years</span>
+                                                <span>{{getInputLimit(sliderKeyName.period, true)}} years</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Expected ROR -->
+                                        <div class="form-group ">
+                                            <label for="customRange2" class="form-label">
+                                                <span class="label-text">Expected rate of return</span>
+    
+                                                <div class="selected-range year-end"   
+                                                (click)="autoFocus($event, 'expectedROR')">
+                                                    <input 
+                                                        type="number" 
+                                                        [attr.min]="getInputLimit(sliderKeyName.expectedROR, false)" 
+                                                        [attr.max]="getInputLimit(sliderKeyName.expectedROR, true)"
+                                                        formControlName="expectedROR" 
+                                                        [(ngModel)]="calcForm.value.expectedROR" 
+                                                        (change)="onCalculatorChange($event, 'expectedROR')" 
+                                                        class="calc-input text-end forchangecustomcalculator"
+                                                        id="expectedROR">
+                                                    <span class="calc-input-prefix Expected-rate"> %</span>
+                                                </div>
+                                            </label>
+                                            <div class="range-slider">
+                                                <input 
+                                                    type="range" 
+                                                    formControlName="expectedROR" 
+                                                    [value]="calcForm.value.expectedROR || getInputLimit(sliderKeyName.expectedROR)" 
+                                                    (change)="onCalculatorChange($event, 'expectedROR')" 
+                                                    class="custom-range" 
+                                                    [attr.min]="getInputLimit(sliderKeyName.expectedROR, false)" 
+                                                    [attr.max]="getInputLimit(sliderKeyName.expectedROR, true)"
+                                                    [style.background]="expectedRORSliderStyle"
+                                                    >
+    
+                                            </div>
+                                            <div class="d-flex text-small justify-content-between">
+                                                <span>{{getInputLimit(sliderKeyName.expectedROR, false)}}%</span>
+                                                <span>{{getInputLimit(sliderKeyName.expectedROR, true)}}%</span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="mb-2">
+                                        <a href=""  data-bs-toggle="modal" data-bs-target="#exampleModal">View Disclaimer</a>
+                                    </div>
+                                </div>
+
+                                <!-- Section: graph & table -->
+                                <div class="col-lg-6 col-12 ps-lg-4">
+                                    <div class="calculate-statics">
+
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="Graph-tab-pane" role="tabpanel"
+                                                aria-labelledby="Graph-tab" tabindex="0">
+                                                <div class="table-responsive text-center">
+                                                    <table class="table table-success table-striped stiky-head">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Year</th>
+                                                                <th>Amount Invested</th>
+                                                                <th>Amount Withdrawn</th>
+                                                                <th>Returns from your investment</th>
+                                                                <th>Investment Value</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr *ngFor="let val of calculatedData.eachYearData">
+                                                                <td>{{val.year}}</td>
+                                                                <td>{{val.investedAmt | currency : "INR": 'symbol':'1.0-0'}}</td>
+                                                                <td>{{val.withdrawnAmt | currency : "INR": 'symbol':'1.0-0'}}</td>
+                                                                <td>{{val.returnsVal | currency : "INR": 'symbol':'1.0-0'}}</td>
+                                                                <td>{{val.balanceVal | currency : "INR": 'symbol':'1.0-0'}}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="p-3 bg-light-blue">
+                                            <div class="numbers row justify-content-center text-center g-4 mb-4">
+                                                <div class="col-6">
+                                                    <div>Invested Amount</div>
+                                                    <ng-container>
+                                                        <h3 class="sip-recommended-funds">
+                                                            {{calculatedData?.investedAmt | currency : "INR": 'symbol':'1.0-0'}}
+                                                        </h3>
+                                                    </ng-container>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div>Amount Withdrawn by you</div>
+                                                    <h3 class="sip-recommended-funds">
+                                                        {{calculatedData?.totalWithdrawnAmt | currency : "INR": 'symbol':'1.0-0'}}
+                                                    </h3>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div>Returns from your investment</div>
+                                                    <h3 class="sip-recommended-funds">
+                                                        {{calculatedData?.totalReturnsVal | currency : "INR": 'symbol':'1.0-0'}}
+                                                    </h3>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div>Balance Value</div>
+                                                    <h3 class="sip-recommended-funds">
+                                                        {{calculatedData?.totalBalanceVal | currency : "INR": 'symbol':'1.0-0'}}
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div class="equity-risk-boxs" *ngIf="showRiskOptions">
+                                                <span class="text-bold me-2">Select your equity risk</span>
+                                                <div class="form-check custom-check" >
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        id="equity1">
+                                                    <label class="form-check-label" for="equity1">
+                                                        10%
+                                                    </label>
+                                                </div>
+                                                <div class="form-check custom-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        id="equity2">
+                                                    <label class="form-check-label" for="equity2">
+                                                        20%
+                                                    </label>
+                                                </div>
+                                                <div class="form-check custom-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        id="equity3">
+                                                    <label class="form-check-label" for="equity3">
+                                                        30%
+                                                    </label>
+                                                </div>
+                                                <div class="form-check custom-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        id="equity4">
+                                                    <label class="form-check-label" for="equity4">
+                                                        40%
+                                                    </label>
+                                                </div>
+                                                <div class="form-check custom-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        id="equity5">
+                                                    <label class="form-check-label" for="equity5">
+                                                        50%
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <!-- <button class="btn btn-primary recommende-btn" [ngClass]="showRiskOptions ? 'd-none' : ''" (click)="toggleShowRiskOptions()">Recommended funds to invest</button> -->
+                                            <button 
+                                            class="btn btn-primary recommende-btn" 
+                                        >Invest Now</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div class="row d-flex justify-content-end">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div>
+                The Calculators are designed to assist you in determining the appropriate amount. These Calculators
+                 alone are not sufficient and shouldn't be used 
+                for development or implementation of an investment strategy.
+                 There is no warranty about the currency of 
+                 the calculators/ reckoners. The example do not purport to represent the performance of 
+                 any security or investments. The recipient is advised to consult his or her advisor/tax consultant prior
+                  to arriving at any investment decision. Past performance may or may not be sustained in future and is not a 
+                  guarantee of any future returns.
+            </div>
+        </div>
+      </div>
+    </div>
+ </div>

@@ -1,0 +1,86 @@
+.data-header {
+    padding: 10px 23px 10px 17px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+
+}
+
+.modalTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 31px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #3C425D;
+}
+
+@media (max-width: 767.98px) {
+    .FT-article-content .content .content-btns div .btn {
+        width: 100%;
+    }
+
+    .FT-article-content {
+        padding-top: 40px;
+    }
+
+}
+
+.img-with-tooltip .tooltip-block {
+    text-align: center;
+}
+
+@media (max-width: 375px) {
+    .artical-view-icon {
+        position: relative !important;
+        bottom: 0px !important;
+    }
+}
+
+@media (min-width: 350px) and (max-width:576px) {
+    .modal-dialog {
+        max-width: none !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .testLearning-modal {
+        width: 1024px !important;
+        max-width: none !important;
+    }
+}
+
+// @media (min-width: 390px) and (max-width : 844px) {
+//     .testLearning-modal{
+//         width:none !important;
+//     }
+// }    
+.modal-content-head {
+    min-height: 460px;
+    z-index: 1000000;
+    max-height: fit-content;
+}
+
+.vertical {
+    position: relative;
+    bottom: 2px;
+    left: 0px;
+}
+
+.share-menu-twitter {
+    width: 18px;
+}
+
+.share-menu-twitter-btn {
+    width: 21px;
+    top: 4px;
+    position: relative;
+    left: 0px;
+}
+.test-learning{
+    margin-top: 135px;
+}
+.Success-knowledge{
+    width: 15%
+}

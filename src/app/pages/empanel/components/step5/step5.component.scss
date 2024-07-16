@@ -1,0 +1,27 @@
+.btn-outline-primary {
+   height: 45px;
+
+   @media(min-width:768px) {
+      width: 192px;
+   }
+}
+
+a {
+   &:hover {
+      text-decoration: underline;
+   }
+}
+
+@media only screen and (max-width: 1024px) {
+   .distributor-step2 {
+      margin-left: 0px !important;
+   }
+}
+
+.resendOTP-box {
+   display: flex;
+   justify-content: end;
+}
+.one-time-password{
+   color: #697c91;
+}

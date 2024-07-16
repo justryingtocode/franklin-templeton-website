@@ -1,0 +1,156 @@
+<div id="page-content" class="bg-img">
+    <!-- start page breadcrumb block -->
+    <div class="FT-breadcrumb d-md-block d-none">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Investor Services</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Subscribe</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <section class="FT-investor-services ">
+        <div class="container">
+
+            <div class="box-shadow bg-white bg-md">
+                <div class="FT-title-medium text-bold text-blue mb-3"> Subscribe to Valuation/Account Statement </div>
+                <div class="bg-white-shadow">
+                    <div class="font-medium mb-4">
+                        Enter your Folio number or PAN number and get your mutual fund account statement mailed to your
+                        email id registered with us
+                    </div>
+
+                    <div class="p-md-3">
+                        <div class="info-box p-md-0">
+                            <ul>
+                                <li>PAN/Customer Folio: <span>GHJSB4568</span></li>
+                                <li>Email Address: <span>kumarsaurabh.spy@gmail.com</span></li>
+                            </ul>
+                        </div>
+                        <!-- <form class="account-form mb-5 pb-md-5">
+                            <div class="">
+                                <h3 class="mb-4">Valuation/Account Statement</h3>
+                                <div class="form-check form-check-inline">
+                                    <input (click)="dailyshowSub()" name="Daily" [(ngModel)]="isChecked" class="form-check-input" type="checkbox" value="" id="Daily">
+                                    <label class="form-check-label text-blue" for="Daily">
+                                        Daily
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" value="" id="Weekly">
+                                    <label class="form-check-label text-blue" for="Weekly">
+                                        Weekly
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" value="" id="Monthly">
+                                    <label class="form-check-label text-blue" for="Monthly">
+                                        Monthly
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" value="" id="Quarterly">
+                                    <label class="form-check-label text-blue" for="Quarterly">
+                                        Quarterly
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-btns" *ngIf="subBtnAccState">
+                                <button *ngIf=" subscribeBtn == showSubscribeData " class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createSubscribe">Subscribe</button>
+                                <div *ngIf="showSubscribeData == !subscribeBtn">
+                                    <button class="btn btn-outline-primary"(click)="onReset()" >Unsubscribe</button>
+                                    <button class="btn btn-outline-primary" (click)="toggleCheckbox()" >Reset</button>
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateSubscribe">Modify Subscription</button>
+                                </div>
+
+                            </div>
+                        </form> -->
+                        <form class="account-form mb-5 pb-md-5">
+                            <div class="">
+                                <h3 class="mb-4">Valuation/Account Statement</h3>
+                                <div class="form-check form-check-inline">
+                                    <input (click)="showSubBtn('Daily')" [checked]="subBtnAccState === 'Daily'" name="Daily" class="form-check-input" type="checkbox" value="" id="Daily">
+                                    <label class="form-check-label text-blue" for="Daily">
+                                        Daily
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input (click)="showSubBtn('Weekly')" [checked]="subBtnAccState === 'Weekly'" class="form-check-input" type="checkbox" value="" id="Weekly">
+                                    <label class="form-check-label text-blue" for="Weekly">
+                                        Weekly
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input (click)="showSubBtn('Monthly')" [checked]="subBtnAccState === 'Monthly'" class="form-check-input" type="checkbox" value="" id="Monthly">
+                                    <label class="form-check-label text-blue" for="Monthly">
+                                        Monthly
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input (click)="showSubBtn('Quarterly')" [checked]="subBtnAccState === 'Quarterly'" class="form-check-input" type="checkbox" value="" id="Quarterly">
+                                    <label class="form-check-label text-blue" for="Quarterly">
+                                        Quarterly
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-btns">
+                                <button class="btn btn-primary" [disabled]="!subBtnAccState" *ngIf="!toggleSubcribeButton" data-bs-toggle="modal" data-bs-target="#createSubscribe">Subscribe</button>
+                                <div *ngIf="toggleSubcribeButton">
+                                    <button class="btn btn-outline-primary">Unsubscribe</button>
+                                    <button class="btn btn-outline-primary">Reset</button>
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateSubscribe">Modify Subscription</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <app-standpage></app-standpage>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+<!-- update subscribe Modal -->
+<div class="modal fade" id="updateSubscribe" tabindex="-1" aria-labelledby="updateSubscribeLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div class="save-alert">
+                <div class="content">
+                    <span class="close-btn" data-bs-dismiss="modal" aria-label="Close"><img src="assets/images/general/close.svg"></span>
+                    <img src="assets/images/general/check_circle.svg" class="checked-img">
+                    <span >Account subscription updated successfully</span>
+                    
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- created subscribe Modal -->
+<div class="modal fade" id="createSubscribe" tabindex="-1" aria-labelledby="updateSubscribeLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div class="save-alert">
+                <div class="content">
+                    <span class="close-btn" data-bs-dismiss="modal" aria-label="Close"><img src="assets/images/general/close.svg"></span>
+                    <img src="assets/images/general/check_circle.svg" class="checked-img">
+                    <span >Account subscription created successfully</span>
+                    
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  

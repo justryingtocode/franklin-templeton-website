@@ -1,0 +1,166 @@
+[
+    {
+    "SchemeDetails": [
+        {
+            "data1": "Date of Allotment",
+            "data2": "13/12/1990"
+        },
+        {
+            "data1": "Benchmark",
+            "data2": "Nifty 500"
+        },
+        {
+            "data1": "Entry Load",
+            "data2": "Nil"
+        },
+        {
+            "data1": "Exit Load",
+            "data2": "(for each purchase of Units) In respect of each purchase of Units - 1% if the Units are redeemed/switched-out within one year of allotment"
+        },
+        {
+            "data1": "AUM(Month end)",
+            "data2": "6187.07 crores"
+        },
+        {
+            "data1": "AUM(Monthly average)",
+            "data2": "6149.11 crores"
+        },
+        {
+            "data1": "Minimum Investment/Multiples for new investment",
+            "data2": "5000/1"
+        },
+        {
+            "data1": "Minimum Investment for SIP",
+            "data2": "500/1"
+        },
+        {
+            "data1": "Additional Investment/Multiples for existing Investors",
+            "data2": "1000/1"
+        }
+    ],
+    "FinancialRatio": [
+        {
+            "data1": "Standard Deviation",
+            "data2": "7.04%"
+        },
+        {
+            "data1": "Beta",
+            "data2": "0.90"
+        },
+        {
+            "data1": "Sharpe ratio",
+            "data2": "0.46"
+        },
+        {
+            "data1": "RSquared Ratio",
+            "data2": "1.88%"
+        },
+        {
+            "data1": "Risk-free rate",
+            "data2": "0.46"
+        },
+        {
+            "data1": "Portfolio Turnover",
+            "data2": "1.88%"
+        }
+    ],
+    "DailyNAVs": [
+        {
+            "data1": "Growth",
+            "data2": "25.9112",
+            "data3": "Direct-Growth",
+            "data4": "27.7995"
+        },
+        {
+            "data1": "IDCW",
+            "data2": "12.5955",
+            "data3": "Direct-IDCW",
+            "data4": "13.4075"
+        },
+        {
+            "data1": "Growth",
+            "data2": "25.9112",
+            "data3": "Direct-Growth",
+            "data4": "27.7995"
+        },
+        {
+            "data1": "IDCW",
+            "data2": "12.5955",
+            "data3": "Direct-IDCW",
+            "data4": "13.4075"
+        },
+        {
+            "data1": "Growth",
+            "data2": "25.9112",
+            "data3": "Direct-Growth",
+            "data4": "27.7995"
+        }
+    ],
+    "IDCWHistory": [
+        {
+            "data1": "IDCW",
+            "data2": "23/12/2022",
+            "data3": "0.3500",
+            "data4": "12.4816",
+            "data5": "26/12/2022",
+            "data6": "12.1510"
+        },
+        {
+            "data1": "Direct-IDCW",
+            "data2": "23/12/2022",
+            "data3": "0.6500",
+            "data4": "13.5063",
+            "data5": "26/12/2022",
+            "data6": "12.8781"
+        },
+        {
+            "data1": "IDCW",
+            "data2": "23/12/2022",
+            "data3": "0.3500",
+            "data4": "12.4816",
+            "data5": "26/12/2022",
+            "data6": "12.1510"
+        },
+        {
+            "data1": "Direct-IDCW",
+            "data2": "23/12/2022",
+            "data3": "0.6500",
+            "data4": "13.5063",
+            "data5": "26/12/2022",
+            "data6": "12.8781"
+        },
+        {
+            "data1": "IDCW",
+            "data2": "23/12/2022",
+            "data3": "0.3500",
+            "data4": "12.4816",
+            "data5": "26/12/2022",
+            "data6": "12.1510"
+        },
+        {
+            "data1": "Direct-IDCW",
+            "data2": "23/12/2022",
+            "data3": "0.6500",
+            "data4": "13.5063",
+            "data5": "26/12/2022",
+            "data6": "12.8781"
+        },
+        {
+            "data1": "IDCW",
+            "data2": "23/12/2022",
+            "data3": "0.3500",
+            "data4": "12.4816",
+            "data5": "26/12/2022",
+            "data6": "12.1510"
+        },
+        {
+            "data1": "Direct-IDCW",
+            "data2": "23/12/2022",
+            "data3": "0.6500",
+            "data4": "13.5063",
+            "data5": "26/12/2022",
+            "data6": "12.8781"
+        }
+    ]
+}
+]

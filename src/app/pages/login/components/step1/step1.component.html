@@ -1,0 +1,35 @@
+<div>
+    <div class="distributor-step2 share-menu-twitter">
+        <h3>REGISTER <small class="login-dark">(Distributor)</small></h3>
+        <form [formGroup]="panForm" (ngSubmit)="onSubmit()">
+            <div class="row mb-lg-5 mb-4 gy-3 share-btn-fund">
+                <div class="col-md col-sm-8 col-12">
+                    <input type="text" class="form-control" placeholder="ARN/RIA*">
+                </div>
+                <div class="col-md col-sm-8 col-12">
+                    <input type="text" class="form-control" placeholder="Enter PAN*" id="panNumber"
+                    formControlName="panNumber">
+    
+                    <div *ngIf="panForm.get('panNumber')?.errors?.['invalidPan']">
+                        <span class="error-msg fontResize share-menu-twitter-fund">Invalid PAN Number</span>
+                    </div>
+                </div>
+                <div class="col-md-8 col-12">
+                    <button type="button" class="btn btn-primary" (click)="changeActiveStepper(1,true)"
+                        data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false"
+                        aria-controls="collapse2" [disabled]="panForm.invalid">Send OTP</button>
+                </div>
+
+    
+            </div>
+        </form>
+        <h3 class="mb-3">REGISTER <small class="login-dark">(Channel Partner)</small></h3>
+        <div>Kindly contact your admin for assistance in Registration</div>
+    </div>
+    
+
+    <div class="text-big text-bold text-center mt-5 login-dark">
+        Already have account ?
+        <a class="login-dark2 line" [routerLink]="['/login']" [queryParams]="{type:'distributor'}">Login</a>
+    </div>
+</div>

@@ -1,0 +1,99 @@
+<div class="d-flex justify-content-center distributor-step2 OTP-sent" >
+    <div class="container reset-password">
+        <div class="row">
+            <div class="text-bold text-big col-sm-8 col-12">
+                For security reasons, your password expired on regular intervals. Your password has now expired. Please
+                reset your password
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 col-12">
+                <div class="row my-3">
+                    <div class="col-sm-12 col-12 my-3">
+                        <div class="pan-container">
+                            <input type="password" class="form-control pan-input" placeholder="New Password*">
+                            <span class="img-with-tooltip pan-info">
+                                <img src="assets/images/home/info-icon2.svg" class="d-inline-block mobile-icons light-mode-icon reset-OTP"
+                                >
+                                <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon control-img"
+                                    >
+                                <span class="tooltip-block">Lorem ipsum dolor sit amet.</span>
+                    
+                            </span>
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-12 col-12 my-3"  ="display: flex;
+                    flex-flow: row;
+                    align-items: center;">
+                        <input type="password" class="form-control" placeholder="New Password*">
+                        <span class="img-with-tooltip"  ="margin-left: 4px;"><img
+                                src="assets/images/home/info-icon2.svg"
+                                class="d-inline-block mobile-icons light-mode-icon"  ="width: 18px;">
+                            <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon"
+                                 ="width: 14px;">
+                            <span class="tooltip-block">Lorem ipsum dolor sit amet.</span>
+
+                        </span>
+
+                    </div> -->
+
+                    <div class="col-sm-12 col-12">
+                        <input type="password" class="form-control" placeholder="Confirm Password*">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">Note: Kindly note that this code will be valid for the next 20 minutes</div>
+            <div class="col-sm-8 col-12 mb-3">
+            
+                <div class="btn-options d-flex">
+                    <button type="button" class="btn btn-outline-primary me-4" (click)="changeActiveStepper(1,false)"
+                        data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false"
+                        aria-controls="collapse1">Back</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#passwordChange"
+                        >Reset Password</button>
+                </div>
+            
+            </div>
+        </div>
+        
+        <!-- <div class="btn-options">
+            <button type="button" class="btn btn-outline-primary me-4" (click)="changeActiveStepper(1,false)"
+                data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false"
+                aria-controls="collapse1">Cancel</button>
+            <button type="button" class="btn btn-primary me-4" data-bs-toggle="modal" data-bs-target="#passwordChange"
+                aria-expanded="">Reset Password</button>
+        </div> -->
+    </div>
+</div>
+
+<!--  Modal -->
+<div class="modal fade" id="passwordChange" tabindex="-1" aria-labelledby="passwordChangeLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="">
+            <div class="">
+                <div class="save-alert">
+                    <div class="content">
+                        <span class="close-btn" data-bs-dismiss="modal" aria-label="Close"><img
+                                src="assets/images/general/close.svg"></span>
+                        <img src="assets/images/general/check_circle.svg" class="checked-img">
+                        <span>Password has been changed successfully.You may now login using your user id and
+                            password</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="pan-container">
+          <input type="text" class="form-control pan-input" placeholder="Enter PAN">
+          <i class="bi bi-info-circle pan-info"></i>
+        </div>
+      </div>
+    </div>
+  </div> -->

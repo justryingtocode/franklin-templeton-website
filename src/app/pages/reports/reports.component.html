@@ -1,0 +1,375 @@
+<div id="page-content" class="bg-img">
+    <!-- start page breadcrumb block -->
+    <div class="FT-breadcrumb d-md-block d-none">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Reports</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <section class="FT-footer-pages forms-download">
+        <div class="container">
+            <div class="d-md-none share-menu-twitter">
+                <i class="bi bi-arrow-left fs-5"></i>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="FT-title-medium text-bold text-blue mb-4">Reports</div>
+                    <div class="d-flex form-tabs">
+                        <div class="form-group ">
+                            <input type="text" class="form-control search-box report-search mobb" placeholder="Search"
+                                [(ngModel)]="searchTerm" (input)="filterFunds(searchTerm)">
+                            <div class="search-result fund-head">
+                                <div class="inner">
+                                    <ng-container *ngFor="let fund of fundsForSearch">
+                                        <div class="funds-seach-title title-text fund-AUM" (click)="getTableTitle(fund)"
+                                            ><span>
+                                                {{ fund.title }}
+                                            </span>
+                                            <span class="sub"><span class="text-gray">Fund Size</span> - {{ fund.aum
+                                                }}</span>
+                                            <span class="sub"><span class="text-gray">Unique Investors</span> - {{
+                                                fund.investors }}</span>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- Mobile view close button -->
+                            <div class="image-container d-md-none">
+                                <img src="./assets/images/comparefund/closebutton.svg"
+                                    class="make-tag-for-all-page make-tag-for-all-page2 share-icon2"
+                                    (click)="resetFundExplore()">
+                            </div>
+
+                            <!-- Web view close button -->
+                            <img src="./assets/images/comparefund/closebutton.svg"
+                                class="make-tag-for-all-page search-tab-close d-none d-md-block share-icon2 share"
+                                (click)="resetFundExplore()">
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-7 d-none d-lg-block">
+                    <div class="form-tabs share-menu-twitter-fund">
+                        <!-- <div class="dropdown-custom mb-2 d-md-none d-block">
+                            <div class="form-group d-flex justify-content-between">
+                                <select class="form-select report-categ" st yle="font-size: 0.875rem;
+                                padding: 10px;" aria-label="Default select example"
+                                    (change)="selectReportTabByDropDown($event)">
+                                    <option [selected]="item['menu-title'] === selecteReportTab['menu-title']"
+                                        value="{{item['menu-title']}}" *ngFor="let item of dataArray"
+                                        class="option-title">{{item['menu-title']}}</option>
+                                </select>
+                                <button class="btn btn-white toggle-filter" id="report-filter" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasBottomFilter" aria-controls="offcanvasBottomFilter">
+                                    <i class="bi bi-filter fs-6"> </i>Date Filters
+                                </button>
+                            </div>
+                        </div> -->
+                        <div class="d-lg-block d-none">
+                            <div class="d-flex filter-date fillter-date-box report-bg">
+                                <span class="text-small text-medium d-md-inline-block mt-2 mx-4 report-tital">Filter by
+                                    Date
+                                </span>
+                                <form class="d-flex report-date-fiilter">
+                                    <div class="date-group bg-white report-date-group">
+                                        <img src="assets/images/fund/calendar-outline.svg">
+                                        <input type="text" placeholder="From" class="form-control fillter-date"
+                                            onfocus="(this.type='date')">
+                                    </div>
+                                    <div class="date-group mx-2 bg-white report-date-group">
+                                        <img src="assets/images/fund/calendar-outline.svg">
+                                        <input type="text" placeholder="To" 
+                                            class="form-control fillter-date share-btn-fund" onfocus="(this.type='date')">
+                                    </div>
+
+                                    <button class="btn btn-outline-primary mx-2 showIconForWatchlist" >Reset</button>
+                                    <button class="btn btn-primary mx-2">Apply</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-lg-none audio-box">
+                    <div class="dropdown-custom mb-2">
+                        <div class="form-group d-flex justify-content-between">
+                            <select class="form-select report-categ reports-page podcast-block"
+ aria-label="Default select example" (change)="selectReportTabByDropDown($event)">
+                                <option [selected]="item['menu-title'] === selecteReportTab['menu-title']"
+                                    value="{{item['menu-title']}}" *ngFor="let item of dataArray" class="option-title ">
+                                    {{item['menu-title']}}</option>
+                            </select>
+                            <button class="btn btn-white toggle-filter" id="report-filter" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasBottomFilter" aria-controls="offcanvasBottomFilter">
+                                <i class="bi bi-filter fs-6"> </i>Date Filters
+                                <!-- <img  src="assets/images/fund/sort.svg" class="me-2">Date Filters  -->
+                            </button>
+                            <!-- <div class="card">
+                                <div class="card-body">
+                                    This is some text within a card body.
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="bg-md-white mt-lg-5 mt-4">
+                <div class="row" id="bg-form">
+                    <div class="col-lg-3 d-none d-lg-block bg-color">
+                        <!--                     
+                        <div id="scroll-bar-report" class="scrollable-container">
+                            <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                              <button *ngFor="let item of dataArray;" class="nav-link"
+                                [class.active]="item['menu-title'] === selecteReportTab['menu-title']"
+                                (click)="selectReportTab(item)">
+                                {{item['menu-title']}}
+                              </button>
+                            </div>
+                          </div>
+                          <div class="go-to-container" (click)="scrollToBottom()">
+                            Scroll To  Down
+                          </div>
+                          <div class="go-to-container1" (click)="scrollToUp()">
+                            Scroll To  Up
+                          </div>                   -->
+
+                        <div id="scroll-bar-report" class="scrollable-container">
+                            <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <ng-container *ngFor="let item of dataArray;">
+                                    <button  class="nav-link" [id]="item.name" [ngClass]="item.id==1 ? 'active' : '' " data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-focus" type="button" role="tab" aria-controls="v-pills-focus"
+                                    aria-selected="true"
+                                    [class.active]="item['menu-title'] === selecteReportTab['menu-title']"
+                                     (mouseover)="showContentOnHover($event, item)">
+                                    {{item['menu-title']}}
+                                  </button>
+                                </ng-container>
+                                <!-- <button *ngFor="let item of dataArray;" class="nav-link"
+                                    [class.active]="item['menu-title'] === selecteReportTab['menu-title']"
+                                    (click)="selectReportTab(item)">
+                                    {{item['menu-title']}}
+                                </button> -->
+                            </div>
+                        </div>
+
+
+                        <div class="button-container d-flex justify-content-center">
+                            <div (click)="scrollToBottom()"  class="audio-class-box">
+                                <img src="assets/images/fund/iconamoon_arrow-down-2.svg"> </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-9 col-12 bg-color" id="report-tabs">
+                        <div class="d-flex filter-box align-items-center">
+                            <div class="text-big text-bold me-lg-5 me-3 fs-5">{{selectedMenuName}}</div>
+                            <!-- <div class="filter-date">
+                                    <span class="text-small text-medium d-none d-md-inline-block">Filter by Date </span>
+                                    <form>
+                                        <div class="date-group">
+                                            <img src="assets/images/fund/calendar-outline.svg">
+                                            <input type="text" placeholder="From" class="form-control fillter-date"
+                                                onfocus="(this.type='date')">
+                                        </div>
+                                        <div class="date-group">
+                                            <img src="assets/images/fund/calendar-outline.svg">
+                                            <input type="text" placeholder="To" class="form-control fillter-date"
+                                                onfocus="(this.type='date')">
+                                        </div>
+                                        <button class="btn btn-primary">Apply</button>
+                                    </form>
+                                </div> -->
+                        </div>
+                        <!-- start selected category btn -->
+                        <div class="category-btns d-none d-md-block">
+                            <div class="scrollable-tabs podcast-img-box" id="scroll">
+                                <ul class="report-search-box">
+                                    <li *ngFor="let category of categories;"
+                                        [class.active]="selectedCategory === category"
+                                        (click)="selectCategory(category)">{{ category }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="d-md-none report-share">
+
+                            <div class="filter-selected-options fontResize report-bcakground">
+                                <span class="option d-md-none preData fontResize report-share-box"  *ngFor="let category of categories;"
+                                    [class.active]="selectedCategory === category" (click)="selectCategory(category)">
+                                    {{ category }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="accordion inner-accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <!-- <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Lorem ipsum dolor sit
+                                        </button>
+                                    </h2> -->
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body main-content" id="scroll-bar">
+                                        <!-- start categories block -->
+                                        <div class="category-block">
+                                            <div class="table-responsive reports-box">
+                                                <table class="table table-success table-striped">
+
+                                                    <tbody>
+                                                        <tr *ngFor="let categoryData of selectedCategoryData;">
+                                                            <td>{{ categoryData.title }}</td>
+                                                            <td class="text-end">
+                                                                <img src="assets/images/home/pdf.svg">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Lorem ipsum dolor sit
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                            Lorem ipsum dolor sit
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading4">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                            Lorem ipsum dolor sit
+                                        </button>
+                                    </h2>
+                                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading5">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                            Lorem ipsum dolor sit
+                                        </button>
+                                    </h2>
+                                    <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading6">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                            Lorem ipsum dolor sit
+                                        </button>
+                                    </h2>
+                                    <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+    
+                                        </div>
+                                    </div>
+                                </div> -->
+                        <div class="button-container d-flex justify-content-center">
+                            <div (click)="scrollToAccodianBottom()" class="report-detail"> <img
+                                    src="assets/images/fund/iconamoon_arrow-down-2.svg"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+<!-- filter mobile view popup -->
+
+<div class="offcanvas offcanvas-bottom sort-bottom offcanvas-head" tabindex="-1" id="offcanvasBottomFilter"
+    aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header">
+        <div class="line"></div>
+        <div class="d-flex justify-content-between mt-4 w-100">
+            <div>
+                <div class="modal-title custom-modal-title" id="callBackLabel">Filters</div>
+            </div>
+            <div class="text-end">
+                <div type="button" class="text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><img
+                        src="assets/images/general/Frame1000009207.svg"></div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas-body small">
+        <div class="d-flex filter-date report-bg">
+            <div class="mb-3">
+                <span class="text-small text-medium d-md-inline-block mt-2 report-tital fw-bold fs-6 mx-2">Select Date
+                </span>
+            </div>
+
+            <form class="d-flex report-date-fiilter filter-form report-date-details" >
+                <div class="date-group bg-white report-date-group">
+                    <img src="assets/images/fund/calendar-outline.svg">
+                    <input type="text" placeholder="From" class="form-control fillter-date"
+                        onfocus="(this.type='date')">
+                </div>
+                <div class="date-group mx-2 bg-white report-date-group">
+                    <img src="assets/images/fund/calendar-outline.svg">
+                    <input type="text" placeholder="To"  class="form-control fillter-date share-btn-fund"
+                        onfocus="(this.type='date')">
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="filter-footer d-flex d-lg-none">
+        <button class="btn btn-outline-primary">Clear All</button>
+        <button class="btn btn-primary">Apply</button>
+    </div>
+</div>

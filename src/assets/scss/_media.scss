@@ -1,0 +1,5455 @@
+/*** media query style *****/
+@media(max-width:1400px) {
+    .FT-hero .carousel .carousel-item.carousel-with-content .container {
+
+        // padding-top: 75px;
+        h2 {
+            font-size: 2.5rem;
+        }
+
+    }
+
+    .FT-hero .carousel .carousel-item ul {
+        font-size: 1rem;
+        line-height: 150%;
+
+        li {
+            margin-bottom: 10px;
+        }
+    }
+
+    html.large .plan-goal {
+        width: 243px;
+    }
+
+    html.large .navbar > .container-fluid {
+        flex-wrap: unset;
+    }
+
+    html.large .account-form-email {
+        position: relative !important;
+        left: 16rem !important;
+    }
+
+    html.large .FT-investor-services .mailback-box .form-group .form-check.checkbox-group .form-check-label {
+        width: max-content !important;
+    }  
+
+     
+    
+}
+
+@media(min-width:1402px) and (max-width:1920px) {
+    html.large .account-form-email {
+        position: relative !important;
+        left: 281px !important;
+    }
+    html.large .FT-investor-services .mailback-box .form-group .form-check.checkbox-group .form-check-label {
+        width: max-content !important;
+    }
+    
+}
+
+@media(max-width:1320px) {
+    header {
+        .navbar {
+            .navbar-brand img {
+                width: 150px;
+            }
+
+            &::after {
+                width: calc(100% - 160px);
+            }
+
+            .navbar-nav .fill-width .dropdown-menu {
+                .menu-tabs {
+                    max-width: 300px;
+                    padding: 28px 20px;
+
+                    .mb-5 {
+                        margin-bottom: 24px !important;
+                    }
+                }
+
+                .link-box a {
+                    font-size: 0.875rem;
+                }
+            }
+        }
+    }
+
+    .FT-updates-banners {
+
+        .accordion-item .accordion-body {
+            // padding: 22px !important;
+
+            .carousel .carousel-item img {
+                object-fit: inherit;
+            }
+
+        }
+
+        .accordion-button.close-btn {
+            // display: none;
+        }
+
+        .carousel .carousel-indicators {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media(max-width:1270px) {
+    header {
+        .navbar {
+            &::after {
+
+                background-size: cover;
+                background-position: left 0 center;
+            }
+
+            .navbar-nav {
+
+                .form-item .form-control:focus {
+                    width: 195px;
+                }
+
+                .nav-link {
+                    font-size: 0.875rem;
+                    line-height: 110%;
+                    padding: 0 6px;
+
+                    &.btn-outline {
+                        padding: 6px 15px;
+                    }
+
+                }
+
+                .checkout-btn {
+                    padding: 0 9px;
+                }
+            }
+        }
+    }
+
+    .FT-hero .carousel .carousel-item.carousel-with-content .container {
+
+        img {
+            max-width: 300px
+        }
+    }
+
+    .fund-block .tags {
+        // display: block;
+        margin-left: 0;
+    }
+
+    .FT-all-funds {}
+
+    .FT-performance .performance-head {
+        display: block;
+
+        ul {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            &.left-items {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    .FT-fund-statistics {
+        .fund-block .icons button {
+            margin-left: 5px;
+        }
+    }
+
+    .FT-knowledge .knowledge-box .category-btns ul {
+        justify-content: flex-start;
+        padding-bottom: 10px;
+    }
+}
+
+@media(max-width:991.98px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .FT-title {
+        font-size: 1.875rem;
+    }
+
+    .text-big {
+        font-weight: 400;
+        font-size: 1rem;
+    }
+
+    header {
+        .top-menu-block {
+            .links li {
+                padding: 8px 10px;
+            }
+
+            .user-type li a {
+                padding: 8px 25px;
+            }
+        }
+
+        .navbar {
+            padding-bottom: 0;
+            padding-top: 0;
+
+            .container-fluid {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .small-menu-icons {
+                .navbar-nav {
+                    display: flex;
+                    flex-direction: row;
+                    align-content: center;
+                    align-items: center;
+                    justify-content: center;
+
+                    li {
+                        display: inline-block;
+                        padding: 0 7px;
+
+                        .navbar-toggler {
+                            padding: 0;
+                            border: 0;
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .FT-updates-banners {
+        .accordion-button.close-btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            img {
+                display: none;
+            }
+        }
+
+        .accordion-button.notification-close-btn {
+            width: 0 !important;
+            height: 0 !important;
+        }
+
+        .accordion-item {
+            .accordion-button .container-fluid {
+                padding: 0 20px
+            }
+
+            .accordion-body {
+                .carousel {
+                    .carousel-item {
+                        height: 160px;
+                    }
+
+                    .carousel-control-next,
+                    .carousel-control-prev {
+                        width: 35px;
+                        height: 35px;
+
+                        i {
+                            font-size: 1.875rem;
+                        }
+                    }
+
+                    .carousel-control-next {
+                        right: 10px;
+                    }
+
+                    .carousel-control-prev {
+                        left: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .FT-hero {
+        .page-theme {
+            right: 20px;
+        }
+
+        .carousel {
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 25px;
+
+                i {
+                    font-size: 1.563rem;
+                }
+            }
+
+            .carousel-control-next {
+                right: 20px;
+            }
+
+            .carousel-control-prev {
+                left: 20px;
+            }
+
+            .carousel-item {
+                .container {
+                    height: 100%!important;
+                    padding-top: 100px;
+                    padding-left: 65px;
+                    max-width: 100%!important;
+
+
+                }
+
+                p {
+                    font-size: 1.25rem;
+                    font-weight: 400;
+                }
+
+                h2 {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+
+        &.inner-page {
+            .FT-title-medium {
+                //margin-bottom: 24px;
+                font-weight: 500;
+                font-size: 1.25rem;
+                letter-spacing: -0.42px;
+            }
+
+            .carousel {
+
+                .carousel-item {
+                    .container {
+                        padding-top: 59px;
+                        padding-bottom: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    .FT-invest-btns {
+        padding-top: 30px!important;
+        padding-bottom: 20px!important;
+    }
+
+    .FT-locations {
+        padding-top: 35px;
+        padding-bottom: 35px;
+        background-color: #FAFBFF;
+    }
+
+    .fund-block {
+        padding: 40px 20px 20px 20px;
+        //min-height: 530px;
+        // height: 370px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        // .tags {
+        //     margin-top: 12px;
+        // }
+
+        .info {
+            font-size: 0.813rem;
+            line-height: 16px;
+
+            .text-big {
+                font-size: 1rem;
+            }
+
+            ul li {
+                padding-right: 15px;
+                padding-left: 15px;
+            }
+        }
+
+        .icons {
+            .dropdown {
+                .dropdown-menu {
+                    padding: 12px;
+
+                    li {
+                        padding: 0;
+                        margin: 0;
+                        margin-bottom: 12px;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        .dropdown-item {
+                            padding: 0;
+                            font-size: 0.875rem;
+                            font-weight: 500;
+                            letter-spacing: -0.42px;
+
+                            img {
+                                width: 20px;
+                                margin-right: 6px;
+                                object-fit: none;
+                                // display: inline-block;
+                            }
+
+                            i {
+                                font-size: 1.25rem;
+                                margin-right: 6px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .recommend-tag {
+            top: 10px;
+        }
+    }
+
+    .FT-fund-types {
+
+
+        .nav-pills {
+            width: 100%;
+            background: transparent!important;
+            box-shadow: none!important;
+            flex-direction: row !important;
+            overflow-x: auto;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-bottom: 30px;
+
+            .nav-link {
+                margin: 0;
+                margin-bottom: 0!important;
+                padding: 8px 23px!important;
+                color: #DFDFDF!important;
+                text-align: center!important;
+                font-size: 0.896rem;
+                font-weight: 600;
+                line-height: 223.308%;
+                letter-spacing: -0.43px;
+                border-bottom: 1px solid #B9B9B9;
+                font-size: 14px !important;
+
+                &.active {
+                    color: #fff!important;
+                    border-bottom: 2px solid #FFF!important;
+                }
+            }
+        }
+    }
+
+    .FT-financial {
+        .tab-content {
+            padding: 38px 25px;
+
+            .col-auto {
+                width: 100%
+            }
+
+            .fund-info {
+                width: 100%!important;
+                font-size: 0.875rem!important;
+                gap: 13px!important;
+
+                .numbers {
+                    display: flex;
+                    justify-content: space-around;
+                    // gap: 16px;
+
+                    .mb-4 {
+                        margin-bottom: 8px !important;
+                    }
+                }
+
+                .btn {
+                    padding: 12px 8px;
+                }
+            }
+        }
+    }
+
+    .FT-guide {
+        .mobile-blog-wrapper {
+            display: flex !important;
+        }
+
+        .desktop-blog-wrapper {
+            display: none !important;
+        }
+
+        .guide-box {
+            padding: 20px 15px;
+
+            h3 {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .update-box {
+        padding: 16px;
+        border-radius: 9.951px;
+        background: rgba(255, 255, 255, 0.80);
+        box-shadow: 0px 4px 20px 0px rgba(23, 55, 163, 0.16);
+
+        img {
+            margin-right: 8px;
+        }
+
+        i {
+            font-size: 1rem;
+        }
+
+        .update-download-icon {
+            height: inherit;
+        }
+
+    }
+
+    .FT-latest-updates {
+        padding-top: 40px!important;
+        padding-bottom: 40px!important;
+    }
+
+    .FT-invest-form {
+        padding-top: 68px!important;
+        padding-bottom: 70px!important;
+    }
+
+    .FT-download-options {
+        .download-img {
+            margin-top: 0;
+            max-width: 300px;
+        }
+
+        h2 {
+            font-size: 1.875rem;
+        }
+    }
+
+    .scroll-top {
+        left: 35px;
+        bottom: 17px;
+
+        .btn {
+            padding: 8px 15px !important;
+
+            i {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .FT-digitalize .carousel {
+        margin-top: 30px!important;
+        margin-bottom: 5px!important;
+    }
+
+    .FT-all-funds {
+        background: #F2F3F6;
+        padding-top: 35px;
+
+        .position-stiky {
+            background: #F2F3F6;
+            padding-top: 25px;
+        }
+
+        .filter-title {
+            margin-bottom: 0;
+            padding-top: 0;
+        }
+
+        .filters {
+            //display: none;
+            visibility: hidden;
+            opacity: 1;
+            transition: all 0.3s ease-in-out;
+            height: 100%;
+            overflow-y: auto;
+            position: fixed;
+            top: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 99999;
+            left: 0;
+            width: 100%;
+            border-radius: 0;
+            padding-top: 55%;
+
+            .accordion {
+                height: 480px !important;
+                padding: 0;
+            }
+
+            .filter-container {
+                height: 100%;
+                width: 100%;
+
+                border-radius: 32px 32px 0px 0px;
+                background: #FFF;
+                box-shadow: 0px -4px 20px 0px rgba(0, 0, 0, 0.10);
+                padding-top: 40px;
+                position: relative;
+                transform: translateY(100%);
+                transition: all 0.3s ease-in-out;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 100px;
+                    height: 4px;
+                    border-radius: 20px;
+                    background: #a6a6a6;
+                    position: absolute;
+                    top: 15px;
+                    left: calc(50% - 50px);
+                }
+
+                &::-webkit-scrollbar-track,
+                &::-webkit-scrollbar-thumb {
+                    background: transparent;
+                }
+
+                .content-box {
+                    height: calc(100% - 80px);
+                    overflow-y: auto;
+                    padding: 0 24px 24px 24px;
+                }
+
+                .filter-footer {
+                    /*position:fixed;
+                bottom:0;
+                left: 0;
+                width:100%;*/
+                }
+            }
+
+            &.opened {
+                visibility: visible;
+                opacity: 1;
+
+                // display: block;
+                .filter-container {
+                    transform: translateY(0);
+                }
+            }
+
+            .inner-filters {
+                height: auto;
+            }
+
+            .filter-head {
+                padding: 0;
+                background: transparent;
+            }
+
+            .advanced-filter {
+                position: initial;
+                background: transparent;
+                width: 100%;
+
+                .filter-content {
+                    max-width: 100%;
+                    box-shadow: none;
+
+                    .inner-content {
+                        padding: 0;
+                        height: auto;
+                        overflow-y: initial;
+
+                        h3 {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .filter-options {
+            .form-group {
+                padding-right: 0;
+                display: flex;
+                justify-content: space-between;
+                margin-right: 40px;
+
+                .form-control {
+                    width: calc(100% - 100px);
+                }
+
+                .btn img {
+                    vertical-align: text-bottom;
+                }
+            }
+
+        }
+
+        .filter-selected-options {
+            .clear-filter {
+                margin-right: 8px;
+            }
+        }
+
+        .funds-container {
+            max-height: initial;
+        }
+    }
+
+    .top-part {
+        // display: none;
+    }
+
+    .table {
+        font-size: 0.875rem;
+
+        thead {
+            th {
+                font-size: 1rem;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .main-content .nav-tabs .nav-link {
+        font-size: 0.875rem;
+    }
+
+    .main-content {
+        background: #f8f8f8;
+
+        .statistic-container {
+            padding: 0;
+        }
+    }
+
+    .top-part {
+        background: #f8f8f8;
+
+        .FT-blocks-nav:not(.sticky-top1) {
+            //margin-left: 20px;
+        }
+    }
+
+    .FT-fund-statistics {
+        background: #F8F8F8;
+        padding-top: 0;
+
+        .fund-block {
+            .recommend-tag {
+                top: 0;
+                position: relative;
+            }
+
+            .btn-light-blue {
+                margin-top: 16px;
+                padding: 6px 8px;
+                border-radius: 4px;
+                background: #EEF2FF;
+                color: var(--blue);
+                font-size: 1rem;
+                font-weight: 600;
+                letter-spacing: -0.36px;
+                width: 100%;
+
+                i {
+                    font-size: 1rem;
+                    margin-right: 6px;
+                }
+
+                .new-tag {
+                    margin-right: 6px;
+                    padding: 2px 4px;
+                    border-radius: 2px;
+                    background: #E24100;
+                    display: inline-block;
+                    color: #fff;
+                    font-size: 0.75rem;
+                }
+            }
+
+            &.relative-block {
+                margin: 0 -20px;
+                overflow-x: clip;
+                border: 0;
+                border-radius: 0;
+
+                .col-md-auto {
+                    width: 50%;
+                }
+
+                ul.d-flex {
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+
+                    li {
+                        text-align: center;
+
+                        &:first-child {
+                            width: 100%;
+                            flex: 0 0 100%;
+                            // margin-bottom: 13px;
+                            text-align: left;
+                        }
+
+                        &:nth-child(2) {
+                            border: 0;
+                        }
+                    }
+                }
+
+                #statick-graph {
+                    opacity: 0;
+                    visibility: hidden;
+                    height: 0;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                .returns-block {
+                    width: 100%;
+                    margin-top: 24px;
+
+
+                }
+
+                .tags {
+                    margin-top: 0;
+                    //margin-right: 0;
+                    width: fit-content;
+                }
+
+                .note {
+                    display: block;
+                    margin-top: 12px;
+                }
+
+                &.show-calc-box {
+                    #statick-graph {
+                        opacity: 1;
+                        visibility: visible;
+                        height: auto;
+                    }
+                }
+            }
+
+            &.hidden-calc-box {
+                &.relative-block ul.d-flex li:first-child {
+                    width: auto;
+                    flex: 0 0 auto;
+                }
+            }
+        }
+
+    }
+
+    .FT-fund-overview {
+        .accordion-item {
+            .invest-feature {
+                font-size: 0.875rem;
+
+                .col-md-4 {
+                    padding: 8px 10px;
+                    text-align: left;
+
+                    img {
+                        margin-right: 6px;
+                        max-width: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    .FT-performance {
+        .performance-head {
+            /* background: transparent !important;
+            display: block;*/
+            padding: 16px 10px;
+        }
+
+        .graph-block {
+            .graph-info {
+                color: #8189A2;
+                font-size: 0.625rem;
+                font-weight: 500;
+                letter-spacing: -0.3px;
+            }
+
+            .position-absolute {
+                left: -60px;
+            }
+
+            .graph-head .vs {
+                font-size: 0.875rem;
+                font-weight: 500;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .FT-portfolio {
+        .portfolio-graphs {
+            h4 {
+                text-align: initial;
+                font-weight: 500;
+                padding-bottom: 0;
+            }
+
+            .progress-box {
+                padding: 18px;
+                border-radius: 7.379px;
+                border: 0.922px solid #D2D8EA;
+            }
+
+            .graph-box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 60px;
+
+                canvas {
+                    margin: 0 !important;
+                    display: inline-block !important;
+                    height: auto !important;
+                    max-height: 260px;
+                }
+
+                .graph-stat {
+                    align-items: flex-start;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    .FT-fund-more-details .fund-documents .nav-tabs {
+
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        .nav-link {
+            font-size: 0.875rem;
+            padding: 16px;
+        }
+    }
+
+    .FT-blocks-nav ul li a {
+        font-size: 1rem;
+        padding: 16px 30px;
+    }
+
+    .FT-fund-more-details {
+        .fund-documents {
+            .update-box {
+                padding: 10px 13px;
+                font-size: 0.875rem;
+
+                img {
+                    margin-right: 6px;
+                    width: 15px;
+                }
+
+                i {
+                    font-size: 0.875rem;
+                }
+            }
+        }
+    }
+
+    .modal .modal-body .modal-form .submit-btn {
+        width: 100%
+    }
+
+    .FT-ad-box {
+        ul {
+            li {
+                margin-right: 24px;
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .FT-knowledge {
+        .slick-slider {
+            .slick-list {
+                margin-left: -8px;
+            }
+
+            .slick-slide {
+                padding: 16px 8px!important;
+            }
+        }
+
+        .knowledge-box {
+            .category-btns ul li {
+                min-width: fit-content;
+                padding: 8px 20px;
+            }
+
+            .filter-block .search {
+                width: 222px;
+            }
+
+            &.academy .academy-box {
+                background: rgba(238, 247, 254, 0.89);
+            }
+
+        }
+    }
+
+    .FT-knowledge-tabs {
+        .nav-pills {
+            padding: 8px;
+            box-shadow: 0px 4px 20px 0px rgba(23, 55, 163, 0.06);
+            width: 175px;
+
+            .nav-link {
+                padding: 32px 25px;
+                font-size: 1.125rem;
+            }
+        }
+    }
+
+    .FT-general-filter {
+
+        .filter-box {
+            .filter-content {
+                padding: 24px 24px 0 24px;
+            }
+
+            .filter-options {
+                &:not(:last-child) {
+                    border-bottom: 1px solid #ECECEC;
+                    padding-bottom: 12px;
+                }
+            }
+        }
+    }
+
+    .FT-inner-banners {
+        height: auto;
+        min-height: 350px;
+
+        .container {
+            padding: 24px;
+
+        }
+    }
+
+    .category-dropdown {
+        .dropdown-menu {
+            .nav-tabs .nav-link {
+                font-size: 1rem;
+            }
+
+            .tab-content {
+                h3 {
+                    margin-bottom: 24px;
+                    font-size: 1.125rem;
+                    font-weight: 600;
+                }
+
+                .form-check {
+                    margin: 0 8px 8px 0;
+
+                    .form-check-label {
+                        font-size: 0.813rem;
+                        line-height: 120%;
+                        letter-spacing: -0.39px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .FT-article-content {
+        .article-language {
+            span {
+                margin-right: 24px;
+            }
+
+            .form-check {
+                margin-right: 8px;
+            }
+        }
+    }
+
+    .FT-calculator-box {
+        .FT-financial {
+            .tab-content.calculator-box {
+                padding: 24px 16px;
+
+                .form-group {
+                    margin-bottom: 24px;
+
+                    .form-label {
+                        flex-wrap: nowrap;
+                        font-weight: 600;
+                        line-height: normal;
+                        letter-spacing: -0.42px;
+                        font-size: 1rem;
+                    }
+                }
+
+                .calculate-statics {
+                    .numbers h3 {
+                        font-size: 1rem;
+                        font-weight: 600;
+                    }
+
+                    .graph-table-btns {
+                        width: fit-content;
+
+                        .btn {
+                            padding: 4px 12px;
+                            width: auto
+                        }
+                    }
+                }
+            }
+
+            .invest-options .form-check {
+                padding: 0;
+                width: auto;
+                margin-bottom: 16px;
+                min-width: fit-content;
+
+                .form-check-label {
+                    border: 1px solid #D2D8EA;
+                    padding: 7px 16px;
+
+                }
+            }
+
+        }
+    }
+
+    #page-content.bg-img {
+        background: #F8F8F8;
+        background-image: none
+    }
+
+    .FT-footer-pages {
+        .nav-pills {
+            max-width: 250px;
+
+            .nav-link {
+                font-size: 1rem;
+            }
+        }
+
+        .features-box {
+            padding: 24px;
+
+            .row {
+                align-items: initial;
+            }
+
+            .box-img {
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .content {
+                font-size: 0.938rem;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                h3 {
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    margin-bottom: 16px;
+
+                    .box-icon {
+                        width: 36px;
+                        height: 36px;
+                    }
+
+                    span:not(.box-icon) {
+                        width: calc(100% - 36px);
+                        padding-left: 8px;
+                    }
+                }
+            }
+        }
+
+        &.forms-download {
+            .form-tabs {
+                flex-direction: column-reverse;
+
+                .form-group {
+                    width: 100%;
+                    flex: 0 0 100%;
+                    padding-left: 0;
+                    margin-bottom: 16px;
+                }
+
+                .nav-tabs {
+                    width: 110%;
+                    overflow: auto;
+                    flex-wrap: nowrap;
+                    scrollbar-width: thin;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                        /* for Chrome, Safari and Opera */
+                    }
+
+                    li {
+                        min-width: fit-content;
+                    }
+
+                    .nav-link {
+                        min-width: fit-content;
+                        font-size: 0.875rem;
+                        padding: 13px 32px;
+                        border-radius: 32px;
+                        background: #fff;
+                        margin-right: 12px;
+                        color: var(--blue);
+                        border: 0;
+
+                        &.active {
+                            background: var(--blue) !important;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .filter-box .filter-date {
+                justify-content: center;
+                padding: 16px;
+                width: 100%;
+
+                form {
+                    width: 100%;
+
+                    .btn {
+                        margin-left: 12px;
+                        width: 90px;
+                        font-size: 0.875rem;
+                        height: 40px;
+                    }
+
+                    .date-group {
+
+                        flex: 1 0 0;
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+
+            .inner-accordion .accordion-item {
+                margin-bottom: 16px;
+
+                .accordion-header {
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    .FT-investor-services {
+        .font-medium {
+            font-size: 0.938rem;
+        }
+
+        .account-form {
+            .btn {
+                width: 124px;
+                height: 46px;
+                padding: 11px 14px;
+                font-size: 1rem;
+            }
+
+            .form-control {
+                height: 46px;
+            }
+        }
+
+        .subscribe-block {
+            margin-top: 50px;
+            padding: 24px;
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                padding: 12px 16px;
+                font-size: 0.875rem;
+                letter-spacing: -0.28px;
+            }
+        }
+
+        .info-box {
+            margin-bottom: 24px;
+
+            ul li {
+                display: block;
+                margin-bottom: 4px;
+                font-size: 0.875rem;
+
+                span {
+                    color: #8189A2;
+                    font-size: 0.875rem;
+                }
+            }
+        }
+
+        .mailback-box {
+            .form-group {
+                display: block;
+
+                .form-check {
+                    margin-right: 10px;
+                }
+
+                .form-check.checkbox-group .form-check-label {
+                    font-size: 1rem;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    letter-spacing: -0.48px;
+                    margin-bottom: 10px;
+
+                    img {
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            .more-options {
+                margin-bottom: 24px !important;
+                font-size: 1rem;
+            }
+
+            .btn {
+                width: 124px;
+                padding: 8px;
+            }
+        }
+    }
+
+    .FT-location {
+        .box-shadow {
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: -0.48px;
+        }
+
+        .location-map {
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+
+    .FT-touchPoints .locations-box .row {
+        margin-bottom: 0;
+    }
+
+    .FT-about-page {
+        .about-img-box {
+            border-radius: 8.15px;
+            background: #FFF;
+            box-shadow: 0px 2.037px 12.031px 0px rgba(0, 0, 0, 0.10);
+            padding: 24px 16px;
+            max-width: 700px;
+            margin: 0 auto;
+
+            img {
+                margin: 0 auto;
+                display: block;
+                border-radius: 5px;
+            }
+
+            .link-btn {
+                // background: var(--blue);
+                // color: #fff;
+                // padding: 8px 14px;
+                // box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+                // font-weight: 400;
+                // border-radius: 5px;
+
+                display: flex;
+                justify-content: center;
+
+                i {
+                    display: block;
+                }
+            }
+        }
+
+        .content {
+            max-width: 100% !important;
+
+            .FT-title {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    .FT-about-details {
+        padding: 32px 16px;
+
+        .container {
+            border-radius: 8px;
+            background: #fff;
+            padding: 16px
+        }
+    }
+
+    .FT-Franklin-info #History .carousel .slide {
+        padding: 0 12px;
+
+        &::before {
+            width: calc(100% - 24px);
+            left: 12px;
+        }
+    }
+
+    .FT-Franklin-info {
+        background: #fff;
+        padding-top: 32px;
+    }
+
+    .vintage-box {
+        img {
+            max-width: 21px;
+        }
+    }
+
+    .FT-invest {
+        .invest-head-box {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            min-height: 350px;
+            background-size: 100% auto;
+        }
+        .FT-login-form{
+            padding:0 !important
+        }
+
+       
+    }
+
+    .FT-proposition {
+        .content {
+            padding: 0;
+            background: transparent !important;
+
+            .nav-tabs {
+                margin-bottom: 16px;
+                justify-content: flex-start;
+
+                .nav-link {
+                    padding: 16px;
+                    font-size: 0.875rem;
+                    letter-spacing: -0.42px;
+                }
+            }
+
+            .tab-content {
+                padding: 20px;
+            }
+        }
+    }
+
+    .FT-people {
+        .member-box {
+            h2 {
+                font-size: 1.25rem;
+                letter-spacing: -0.6px;
+            }
+            h3{
+                
+                    font-size: 1rem;
+                    letter-spacing: -0.42px;
+                
+            }
+        }
+    }
+}
+
+@media(max-width:767.98px) {
+    .nav-tabs .nav-link {
+        padding: 12px;
+        font-size: 1.125rem;
+    }
+
+    .more-links {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    // #page-content {
+    //     margin-top: 108px;
+    // }
+
+    header {
+        .top-menu-block {
+            display: none;
+        }
+
+        .more-links-btns {
+            .accordion {
+                width: 100%;
+
+                .accordion-item {
+                    border-radius: 0;
+                    border: 0;
+
+                    .accordion-header {
+                        .accordion-button {
+                            background: #DDEAFF;
+                            border-radius: 0;
+                            border: 0;
+                            box-shadow: none;
+                            outline: none;
+                            padding: 9px 8px;
+                            justify-content: center;
+                            color: var(--black);
+                            font-size: 0.875rem;
+                            font-weight: 400;
+                            letter-spacing: -0.42px;
+
+                            &::after {
+                                margin-left: 6px;
+                                width: 12px;
+                                height: 12px;
+                                background-size: 100%;
+                                background-position: center center;
+                            }
+
+                            &:not(.collapsed) {
+                                background: #C1D9FF;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+
+                    .accordion-collapse {
+                        position: absolute;
+                        left: 0;
+                        background: #fff;
+                        padding: 0;
+                        width: 100%;
+                    }
+
+                    .accordion-body {
+
+                        padding: 0;
+                        width: 100%;
+                        box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.35);
+                        border-radius: 0px 0px 12px 12px;
+
+                        .block-head,
+                        .link-toggle,
+                        .dropdown-item {
+                            padding: 12px 16px;
+                            width: 100%;
+                            color: #3C425D;
+                            font-size: 0.875rem;
+                            font-weight: 500;
+                            letter-spacing: -0.42px;
+                            transition: all 0.3s ease-in-out;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: var(--blue)
+                            }
+                        }
+
+                        .link-toggle,
+                        .dropdown-item {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+
+                        .dropdown {
+                            .dropdown-toggle {
+                                background: transparent;
+                                border: 0;
+                                outline: none;
+
+                                &::after {
+                                    display: none;
+                                }
+                            }
+
+                            .dropdown-menu {
+                                transform: translate3d(0px, 0, 0px) !important;
+                                left: 0;
+                                width: 100%;
+                                padding: 0;
+                                box-shadow: none;
+
+                                .block-head {
+                                    border-bottom: 1px solid #DADADA;
+
+                                    i {
+                                        margin-right: 10px;
+                                    }
+                                }
+
+                                ul {
+                                    padding: 0;
+                                    margin: 0;
+
+                                    li {
+                                        padding: 0;
+                                        margin: 0;
+
+                                        .dropdown-item {}
+                                    }
+                                }
+                            }
+                        }
+
+                        .link-toggle.hide {
+                            opacity: 0;
+                            visibility: hidden;
+                        }
+                    }
+
+                    &:first-child {
+
+                        .accordion-header {
+                            .accordion-button {
+                                border-right: 1px solid #8189A2;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+
+    .scroll-down .more-links-btns {
+        display: none !important;
+    }
+
+    .FT-updates-banners {
+        .accordion-item {
+            .accordion-button {
+                font-size: 1rem;
+
+                &:not(.collapsed) {
+                    background: #EEF2FF;
+                }
+            }
+
+            .accordion-body .carousel {
+                .carousel-item {
+                    height: 130px;
+                }
+
+                .carousel-control-next,
+                .carousel-control-prev {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .FT-hero {
+        .page-theme {
+            display: none
+        }
+
+        .carousel {
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                display: none;
+            }
+
+            .carousel-item {
+                height: 350px;
+
+                .container {
+                    padding: 20px!important;
+                }
+
+                h2 {
+                    font-size: 1.875rem;
+                    line-height: 1!important;
+                    margin-bottom: 16px!important;
+                }
+
+                p {
+                    font-size: 1.25rem;
+                }
+
+                &.carousel-with-content {
+                    .container {
+                        padding: 6px 18px 17.84px 19px;
+
+                        img {
+                            max-width: auto;
+                        }
+
+                        h2 {
+                            text-align: center;
+                            font-size: 1.875rem;
+
+                            img {
+                                margin-right: 6px;
+                                width: 21px;
+                                vertical-align: 0px;
+                            }
+                        }
+
+                        ul {
+                            font-size: 0.875rem;
+                            line-height: 141%;
+                            font-weight: 500;
+                            width: fit-content;
+                            margin: 0 auto;
+
+                            li {
+                                margin-bottom: 4px;
+                            }
+                        }
+
+                        .btn-white {
+                            padding: 8px 27px;
+                            font-size: 1rem;
+                            font-weight: 600;
+                            line-height: 24px;
+                            display: block;
+                            width: max-content;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.inner-page {
+            .carousel .carousel-item {
+                min-height: 300px;
+
+                p {
+                    font-size: 0.875rem;
+                    font-weight: 400;
+                    line-height: normal;
+                    letter-spacing: -0.42px;
+                    margin-bottom: 24px;
+                }
+            }
+
+            .FT-title-medium {
+                margin-bottom: 24px;
+            }
+
+            .FT-title-small {
+                font-size: 0.875rem;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: -0.42px;
+            }
+
+            .row {
+                font-size: 0.75rem !important;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: -0.36px;
+
+                .col-auto {
+                    flex: 1 0 0%;
+                }
+            }
+        }
+    }
+
+    .fund-block {
+        .fund-head h3 {
+            img {
+                display: inline-block;
+                max-width: 21px;
+                margin-left: 5px;
+            }
+        }
+
+        .tags {
+            display: block;
+            padding: 6px 20px;
+            margin-left: 0;
+            margin-bottom: 10px;
+        }
+
+        .info {
+            &:not(.block-footer) {
+                ul {
+                    li {
+                        width: 50%;
+                        border: 0;
+
+                        &:not(:nth-child(3)) {
+                            border: 0;
+                        }
+
+                        &:not(.last-item) {
+                            div:first-child {
+                                display: none;
+                            }
+                        }
+
+                        &.last-item {
+                            width: 100%;
+                            border-top: 1px solid #D2D8EA;
+                            padding: 0;
+                            padding-top: 14px;
+                            margin-top: 16px;
+
+                            .text-big {
+                                font-size: 1.125rem;
+                                letter-spacing: 1px;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            .col-auto {
+                width: 100%
+            }
+
+            .block-btns {
+                width: 100%;
+                margin-top: 16px;
+                display: flex;
+
+                .btn {
+                    width: 100%;
+                }
+            }
+
+            .text-big {
+                img {
+                    display: inline-block;
+                }
+            }
+
+            .btn-light-blue {
+                margin-top: 16px;
+                padding: 6px 8px;
+                border-radius: 4px;
+                background: #EEF2FF;
+                color: var(--blue);
+                font-size: 1rem;
+                font-weight: 500;
+                letter-spacing: -0.36px;
+                width: 100%;
+
+                i {
+                    font-size: 1rem;
+                    margin-right: 6px;
+                }
+            }
+        }
+    }
+
+    .FT-financial {
+
+        padding-top: 34px!important;
+        padding-bottom: 34px!important;
+
+        .tab-content .text-big {
+            margin-bottom: 20px;
+        }
+
+        .graph-table-btns {
+            border-radius: 8px;
+            width: 100%;
+            display: flex;
+            background: #F0F0F0;
+
+            .nav-tabs {
+                width: 100%;
+
+                .nav-item {
+                    width: 50%;
+                }
+            }
+
+            .btn {
+                width: 100%;
+                border-radius: 8px;
+                padding: 4px 12px;
+                color: #595A6C;
+            }
+        }
+    }
+
+    .FT-guide {
+        .container {
+            padding: 0;
+        }
+
+        .section-head {
+            padding: 0 20px
+        }
+
+        .row {
+            margin: 0
+        }
+
+        .col-md-6 {
+            padding: 0;
+
+            &:first-child {
+                padding-bottom: 16px;
+                margin-bottom: 16px;
+                border-bottom: 1px solid #D2D8EA;
+
+            }
+        }
+
+        .guide-box {
+            box-shadow: none!important;
+            padding: 0!important;
+            border: 0;
+            border-radius: 0!important;
+            // box-shadow: none;
+
+            h3.text-center {
+                text-align: left !important;
+                padding: 0 20px
+            }
+
+
+        }
+
+        .nav-tabs {
+            padding-left: 30px;
+            padding-right: 30px;
+
+            li {
+                width: 50%;
+
+                button {
+                    width: 100%
+                }
+            }
+        }
+    }
+
+    .FT-download-options {
+        padding-top: 32px;
+        padding-bottom: 32px;
+        text-align: center;
+
+        h2 {
+            max-width: 100%;
+        }
+
+        a {
+            margin: 5px 7px
+        }
+    }
+
+    .invest-now-fixed {
+        bottom: -18px !important;
+    }
+
+    .FT-digitalize {
+        padding-bottom: 36px !important;
+
+        .container-fluid {
+            padding: 0 16px !important;
+        }
+
+        .carousel {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .slide {
+                width: 50%;
+                padding: 4.5px;
+
+                .creation-box {
+                    border-radius: 12px;
+                    border: 0.548px solid #D2D8EA;
+                    box-shadow: 0px 4px 20px 0px rgba(23, 55, 163, 0.16);
+                }
+            }
+        }
+
+        .more-links {
+            margin-top: 30px;
+            display: inline-block;
+        }
+    }
+
+    .FT-fund-types {
+
+        padding-top: 34px!important;
+        padding-bottom: 34px!important;
+
+        .container {
+            padding: 0
+        }
+
+        .text-big {
+            margin-bottom: 40px!important;
+        }
+
+        .section-head {
+            padding: 0 20px
+        }
+
+        .nav-pills {
+            padding: 0!important;
+            justify-content: flex-start;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            overflow-x: auto;
+            margin-bottom: 15px;
+
+            &::-webkit-scrollbar {
+                width: 1px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: transparent;
+                border-radius: 14px;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: transparent;
+            }
+
+            .nav-link {
+                line-height: 1.5!important;
+                min-width: max-content;
+            }
+        }
+    }
+
+    .FT-financial .tab-content .fund-info {
+
+        padding: 16px;
+
+        h3 {
+            font-size: 1.25rem;
+        }
+    }
+
+    .creation-box {
+        padding: 35px 30px;
+    }
+
+    .FT-guide .nav-tabs {
+        margin-top: 32px;
+        margin-bottom: 40px;
+    }
+
+    .modal {
+        .modal-header .modal-title {
+            font-size: 1rem;
+        }
+
+        .modal-body {
+            padding: 24px;
+        }
+    }
+
+    .FT-locations .location-img-block {
+        margin-top: 40px;
+        margin-bottom: 45px;
+    }
+
+    .FT-fund-statistics {
+        .fund-block {
+            h3 {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    .top-part {
+        .FT-fund-statistics {
+            .sticky-block {
+                .fund-head {
+                    h3 {
+                        font-size: 1.25rem;
+                    }
+
+                    .tags {
+                        display: inline-block;
+                        background: #edfdfc;
+                        border-radius: 72px;
+                        padding: 3px 12px 6px 12px;
+                        margin: 0 0 0 10px;
+
+                        ul li {
+                            font-weight: 500;
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+
+                .info {
+                    .col-auto:not(.block-btns) {
+                        flex: 1 0 0%;
+                    }
+
+                    .block-btns {
+                        width: auto;
+
+                        .btn {
+                            width: auto;
+                        }
+                    }
+
+                    &:not(.block-footer) ul li.last-item {
+                        padding-top: 9px;
+                        margin-top: 6px;
+                        display: flex;
+                        align-items: center;
+
+                        .mb-2 {
+                            margin-bottom: 0 !important;
+                        }
+
+                        .text-big {
+                            font-size: 0.875rem;
+                        }
+
+                        .dropdown-toggle {
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    .FT-all-funds {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        .fund-filter-block {
+            h3 {
+                font-size: 1.125rem;
+                margin-bottom: 16px;
+            }
+        }
+
+        .filter-options,
+        .funds-container {
+            padding-right: 0;
+        }
+
+        .search-result {
+            margin-top: 50px;
+        }
+
+        .filter-options {
+            .sort-by-text {
+                display: none;
+            }
+
+            .has-filter-red-dot {
+                display: inline-block !important;
+                background-color: red;
+                width: 8px;
+                height: 8px;
+                border-radius: 50px;
+                position: absolute;
+                top: -4px;
+                right: 4px;
+            }
+
+            .d-flex {
+                width: 100%;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        .filter-selected-options {
+            .clear-filter {
+                font-size: 0.875rem;
+            }
+        }
+
+        .position-stiky {
+            top: 98px;
+            transition: top 0.5s ease-in-out;
+        }
+    }
+
+    .radioModule {
+        font-size: 0.938rem !important;
+        line-height: normal !important;
+        font-weight: 400 !important;
+    }
+
+    .FT-blocks-nav {
+
+        // width: max-content;
+        ul {
+            border: 1px solid #D2D8EA;
+            border-radius: 4px 4px 0 0;
+
+            li {
+                a {
+                    font-size: 0.875rem;
+                    padding: 11px;
+                }
+            }
+        }
+    }
+
+    .FT-fund-statistics .fund-block.relative-block {
+
+        /* padding: 20px;
+        margin: 0;
+*/
+        .col-md-auto {
+            width: 100%;
+        }
+    }
+
+    .FT-fund-overview {
+        padding: 30px;
+
+        .accordion-item {
+            ul {
+                padding-left: 30px;
+                margin-bottom: 0;
+
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .invest-feature .col-md-4 {
+                border: 0 !important;
+                padding: 8px 15px;
+            }
+        }
+
+        .col-reverse {
+            // flex-direction: column-reverse;
+
+            .img-fluid {
+                width: 100%;
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    .FT-performance {
+        .performance-head {
+            background: transparent !important;
+            padding: 15px;
+            border-radius: 7.379px;
+            border: 0.922px solid #D2D8EA;
+            margin-top: 15px;
+        }
+
+        .right-items {
+            background: var(--gradient);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            li {
+                padding: 15px 9px;
+                margin-right: 0 !important;
+
+                .bg-white {
+                    background: transparent !important;
+                    padding: 0 !important;
+                    color: #fff !important;
+
+                    .text-teal {
+                        color: #fff !important
+                    }
+                }
+
+                strong {
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .left-items {
+            flex-wrap: wrap;
+            margin-bottom: 0 !important;
+
+            li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex: 0 0 100%;
+                color: var(--black);
+                margin-right: 0 !important;
+                margin-bottom: 15px;
+
+                .bg-white {
+                    margin-left: 6px;
+                    border-radius: 3.69px;
+                    border: 0.922px solid #D2D8EA;
+                    background: #FFF;
+                    padding: 5.534px 18.448px;
+                }
+
+                .date-group {
+                    margin-left: 6px;
+                    border-radius: 3.69px;
+                    border: 0.922px solid #D2D8EA;
+                    background: #FFF;
+                    padding: 7px 6px;
+                    // max-width: 80px;
+                    display: inline-flex;
+
+                    .form-control {
+                        font-size: 0.813rem;
+                    }
+
+                    img {
+                        width: 15px;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+
+        .graph-block {
+            .graph-head {
+                //align-items: flex-start;
+
+                font-size: 0.625rem;
+                font-weight: 500;
+
+                .vs {
+                    font-size: 0.625rem;
+                    font-weight: 400;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    color: #8189A2;
+                }
+
+                div {
+                    text-align: center;
+                }
+
+            }
+
+            .position-absolute {
+                top: calc(50% - 20px);
+            }
+        }
+
+        .performance-graph {
+            height: auto !important;
+        }
+
+        .table-responsive {
+            border-radius: 8px;
+        }
+
+        .table {
+
+            thead,
+            tbody {
+
+                th,
+                td,
+                th.text-bold {
+                    padding: 6px 8px;
+                    border-right: 1px solid #FFF;
+                    min-width: 90px;
+                    text-align: center;
+                    font-size: 0.75rem;
+                }
+
+                tr {
+
+                    td:first-child,
+                    th:first-child {
+                        position: sticky;
+                        left: 0;
+                    }
+                }
+            }
+
+            thead {
+                .bg-blue {
+                    background: var(--blue);
+                    color: #fff;
+                    font-size: 0.875rem;
+                }
+            }
+        }
+    }
+
+    .block-border {
+        .block-body {
+            padding: 0;
+        }
+
+        h4 {
+            /*border-bottom: 1px solid #ECECEC;
+            padding:14px 16px;*/
+            font-size: 1.125rem;
+        }
+
+        .small-title {
+            border-bottom: 0.922px solid #ECECEC;
+            padding: 14px 16px;
+        }
+    }
+
+    .FT-fund-more-details {
+        .managers {
+            .manager-block {
+                img {
+                    width: 56px;
+                    height: 56px;
+                    border-radius: 6px;
+                    margin-right: 14px;
+                }
+
+                a {
+                    margin-top: 8px;
+
+                    i {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .fund-documents {
+            h4 {
+                margin-bottom: 0;
+            }
+
+            .nav-tabs {
+                background: #ECF3FF;
+                margin-bottom: 0;
+                // flex-wrap: wrap;
+                // gap: 5px;
+            }
+
+            .tab-form {
+                .date-group {
+                    font-size: 0.813rem;
+
+                    img {
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+
+                .btn-date-selector {
+                    padding: 0 !important;
+                }
+
+                .btn {
+                    width: auto;
+                    padding-right: 20px;
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+
+    .padding-box {
+        padding: 20px 16px
+    }
+
+    .FT-portfolio .portfolio-graphs {
+        h4 {
+            font-size: 1.125rem;
+            margin-bottom: 16px;
+        }
+
+        .graph-box .graph-stat {
+            font-size: 0.875rem;
+
+            span .circle {
+                width: 6px !important;
+                height: 6px !important;
+            }
+        }
+    }
+
+    .FT-fund-more-details {
+        .block-body {
+            border-color: #ECECEC;
+        }
+
+        .riskometer ul {
+            font-size: 0.875rem;
+        }
+
+        .scheme-details {
+            margin: 0;
+            // margin-bottom: 20px;
+
+            .col-12 {
+                padding: 0 !important;
+                border: 0 !important
+            }
+        }
+
+        .daily-navs {
+            .row {
+                margin: 0;
+                // padding: 0 15px;
+            }
+
+            .col-12 {
+                &:first-child {
+                    border: 0;
+                }
+            }
+        }
+    }
+
+    .block-border {
+        .block-head {
+            display: block;
+            padding: 0;
+
+            h3 {
+                padding: 15px 16px;
+                margin-bottom: 0;
+                font-size: 1.25rem;
+
+                small {
+                    font-size: 0.75rem;
+                }
+            }
+
+            .nav-tabs {
+                background: #ECF3FF;
+
+                li {
+                    flex: 1 0 0%;
+
+                    .nav-link {
+                        width: 100%;
+                        padding: 16px 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .FT-calculators-links .head {
+        margin-bottom: 0;
+
+        .text-big {
+            font-weight: 400;
+            font-size: 1rem;
+        }
+    }
+
+    .FT-formula .formula-box {
+        font-size: 1rem;
+        font-weight: 400;
+
+        .formula-head {
+            font-weight: 600;
+        }
+    }
+
+    .bottom-modal {
+        .modal-dialog {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            border: 0;
+
+            .modal-content {
+                border-radius: 32px 32px 0 0;
+                box-shadow: none;
+                border: 0;
+                transform: translateY(100%);
+                transition: all 0.3s ease;
+
+                .modal-header.line {
+                    border: 0;
+                    padding: 16px 0 20px 0;
+
+                    button {
+                        width: 96px;
+                        height: 2px;
+                        background: #959595;
+                        padding: 0;
+                        display: block;
+                        margin: 2px auto;
+                    }
+                }
+
+                .share-modal-body {
+                    padding: 0 20px 24px 20px;
+
+                    h3 {
+                        font-size: 1.5rem;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+                        letter-spacing: -0.72px;
+                        margin-bottom: 24px;
+                    }
+
+                    .share-btn {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 6px auto;
+                        width: 53.25px;
+                        height: 53.25px;
+                        border: 0.7px solid #D2D8EA;
+                        border-radius: 50%;
+
+                    }
+
+                    span {
+                        color: #595A6C;
+                        font-size: 11.833px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        letter-spacing: -0.355px;
+                    }
+
+                    .link-block {
+                        display: flex;
+
+                        .btn {
+                            padding: 12px 15px;
+                            border-radius: 4px;
+                            border: 1px solid var(--blue);
+                            ;
+                            background: #FFF;
+                            font-size: 0.875rem;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: normal;
+                            letter-spacing: -0.42px;
+                            color: var(--blue);
+                            margin: 0;
+                            margin-left: 8px;
+                            flex: 0 0 auto;
+
+                            &:hover {
+                                background: var(--blue);
+                                color: #fff;
+                            }
+                        }
+
+                        .link {
+                            border-radius: 4px;
+                            border: 1px solid #D2D8EA;
+                            background: #FFF;
+                            padding: 12px;
+                            flex: 1 0 0;
+                            overflow: hidden;
+                            white-space: pre-wrap;
+                        }
+                    }
+                }
+
+                .Inception-modal-body {
+                    padding: 0;
+
+                    .modal-head {
+                        padding: 12px 16px;
+                        font-size: 1rem;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+                        letter-spacing: -0.48px;
+                        border-bottom: 0.922px solid #E0E0E0;
+                    }
+
+                    ul {
+                        padding: 8px 16px;
+                        margin: 0;
+                        list-style: none;
+                        list-style-type: none;
+
+                        li {
+                            padding: 12px;
+                            font-size: 0.875rem;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: normal;
+                            letter-spacing: -0.42px;
+                            border-bottom: 1px solid #E9E9E9;
+
+                            color: var(--blue);
+
+                            a {
+                                color: var(--blue)
+                            }
+
+                            &:last-child {
+                                border: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.show {
+            .modal-content {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    #callBack.modal {
+        .modal-dialog {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            align-items: flex-end;
+            border: 0;
+
+            .modal-content {
+                border-radius: 12px 12px 0 0;
+                box-shadow: none;
+                border: 0;
+                transform: translateY(0%);
+                transition: all 0.3s ease;
+            }
+        }
+
+        &.show {
+            .modal-content {
+                transform: translateY(0);
+
+                .modal-header {
+                    padding: 16px;
+                    border: 0;
+
+                    .btn-close {
+                        display: none;
+                    }
+                }
+
+                .modal-body {
+                    padding: 0 16px 16px 16px;
+
+                    form {
+                        .form-check .form-check-label a {
+                            color: #4f7bff !important;
+                        }
+
+                        .form-control,
+                        .form-select {
+                            height: 38px;
+                            padding: 9px 12px;
+                            font-size: 0.813rem;
+                            border-radius: 6px;
+                            border-radius: 6.214px;
+                            border: 0.777px solid #D2D8EA;
+                            // background: #FEFEFE;
+                            box-shadow: 0px 0.7767857313156128px 1.5535714626312256px 0px rgba(16, 24, 40, 0.05);
+                        }
+
+                        textarea.form-control {
+                            height: 76px;
+                        }
+                    }
+
+                }
+
+                .callBack-footer {
+                    .col-12 {
+                        display: flex;
+                        flex-direction: row-reverse;
+                        gap: 8px;
+                    }
+
+                    .btn {
+                        width: 50%;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .update-box {
+        a {
+            line-height: 1;
+
+            img {
+                margin: 0;
+            }
+        }
+    }
+
+    .FT-latest-updates .text-big {
+        margin-bottom: 24px!important;
+    }
+
+    .FT-faq:not(.FT-calc-faq) {
+        padding-top: 40px;
+
+        .faq-box {
+            background: transparent;
+            padding: 0;
+            box-shadow: none;
+            margin-top: 24px;
+            margin-bottom: 22px;
+
+            .accordion {
+                .accordion-item {
+                    border-radius: 8px;
+                    background: #FFF;
+                    box-shadow: 0px 4px 24px 0px rgba(23, 55, 163, 0.08);
+                    border-bottom: 0;
+                    padding-bottom: 24px;
+                    // margin-bottom: 12px;
+                    padding: 16px;
+
+                    .accordion-header .accordion-button {
+                        // font-size: 1rem;
+
+                        &::after {
+                            width: 17px;
+                            height: 17px;
+                            background-size: 17px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .more-links i {
+        font-size: 1rem;
+        vertical-align: initial;
+
+        &.ms-3 {
+            margin-left: 8px !important;
+        }
+    }
+
+    footer {
+        #footer-head {
+            flex-direction: column;
+            align-items: flex-start !important;
+            margin-bottom: 30px;
+
+            .social-links {
+                a {
+                    margin-left: 12px;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+
+        .info {
+            .text-big {
+                text-transform: uppercase;
+            }
+        }
+
+        .copyrights {
+            text-align: center;
+            padding-top: 0 !important;
+            border: 0 !important;
+
+            background: transparent !important;
+
+            .row {
+                flex-direction: column-reverse;
+
+                .col-auto {
+                    width: 100%;
+                    flex: 0 0 100%;
+
+                    &:last-child {
+                        margin-bottom: 28px;
+                    }
+                }
+            }
+        }
+    }
+
+    .FT-ad-box {
+        ul li {
+            margin-right: 0;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .btn {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    .FT-knowledge {
+        background: #f9f9f9;
+        padding-top: 32px;
+
+        .FT-blocks-nav {
+            margin-bottom: 32px;
+        }
+
+        .category-btns ul li {
+            border: 1px solid var(--blue);
+            margin-right: 8px;
+        }
+
+        .knowledge-box {
+            padding: 0;
+            border-radius: 8px;
+            background: transparent;
+            box-shadow: none;
+            margin-bottom: 32px;
+
+            .filter-block .btn img {
+                margin-right: 4px !important;
+            }
+
+            &.academy {
+                .btn {
+                    width: 100%;
+                    max-width: 100%;
+                }
+
+                .top-row {
+                    padding-top: 24px;
+                    margin-bottom: 38px;
+                }
+
+                .inner-box {
+                    padding: 80px 33px;
+                    background: url("../images/knowledge-center/academy-bg-sm.svg") no-repeat bottom;
+                    background-size: cover;
+                }
+
+                .academy-box {
+                    background: transparent;
+                    box-shadow: none;
+
+                    .col-md-6 {
+                        padding: 16px;
+                        border-radius: 4px;
+                        background: rgba(255, 255, 255, 0.35);
+                        margin-bottom: 16px;
+
+                        /* sd2 */
+                        box-shadow: 0px 2px 11.81px 0px rgba(0, 0, 0, 0.10);
+                    }
+
+                    h4 {
+                        font-weight: 600;
+                        line-height: normal;
+                        letter-spacing: -0.48px;
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+
+            &.inner-categories {
+                .boxes-row {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    .category-card {
+                        width: calc(50% - 14px);
+                        flex-direction: column;
+                        margin: 0px 7px 24px 7px !important;
+                        padding: 0;
+
+                        .card-img {
+                            width: 100%;
+                            height: auto;
+
+                            img {
+                                border-radius: 8px 8px 0 0;
+                            }
+                        }
+
+                        .card-body {
+                            margin: 0;
+                            width: 100%;
+                            padding: 16px;
+                        }
+                    }
+                }
+
+                .category-card.big-card {
+                    .card-body {
+                        .short-descriptiton {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .FT-knowledge-tabs {
+        padding: 30px 8px;
+
+        .nav-pills {
+            padding: 0;
+            box-shadow: none;
+            background: transparent;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 24px;
+
+            .nav-link {
+                width: auto;
+                display: inline-flex;
+                justify-content: space-between;
+                padding: 12px 16px;
+                margin-bottom: 0 !important;
+                border-radius: 0;
+                border: 0;
+                background: transparent;
+                font-size: 0.813rem;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: -0.39px;
+
+                &:not(:last-child) {
+                    margin-right: 12px;
+                }
+
+                img {
+                    max-width: 30px;
+                }
+            }
+        }
+
+        .tab-content {
+            padding: 16px;
+            border-radius: 0;
+            border: 0;
+            background: transparent;
+            height: 100%;
+        }
+
+        .container {
+            padding: 16px 8px;
+            border-radius: 8px;
+            background: #FFF;
+
+            .row {
+                margin: 0;
+
+
+                .col-12,
+                .col-md,
+                .col-md-auto {
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    .FT-calculator-accordion {
+        background: #f9f9f9;
+
+        .accordion .accordion-item .accordion-header button {
+            box-shadow: 0px 2px 11.81px 0px rgba(0, 0, 0, 0.10);
+        }
+    }
+
+    .category-dropdown {
+        .dropdown-toggle {
+            font-size: 1.125rem;
+            letter-spacing: -0.54px;
+        }
+
+        .dropdown-menu {
+            overflow-y: auto;
+            position: fixed !important;
+            bottom: 0 !important;
+            height: 90%;
+            max-height: 491px;
+            border-radius: 32px 32px 0px 0px;
+            box-shadow: 0px -4px 20px 0px rgba(0, 0, 0, 0.10);
+            transition: all 0.3s ease-in-out;
+            margin: auto 0 0 0 !important;
+            transform: translate3d(0, 0, 0) !important;
+
+            .nav-tabs {
+                display: flex;
+                flex-wrap: wrap;
+
+                .nav-item {
+                    flex: 1 0 0%;
+                }
+
+                .nav-link {
+                    font-size: 0.813rem;
+                    height: 100%;
+                }
+            }
+        }
+
+    }
+
+    .FT-article-content {
+        padding-top: 24px;
+        background: #f9f9f9;
+
+        .article-title {
+
+            .text-meduim,
+            .text-small {
+                font-size: 0.875rem;
+                font-weight: 400;
+            }
+
+            h3 {
+                color: var(--blue)
+            }
+
+            .icons {
+                font-size: 0.875rem;
+                letter-spacing: -0.42px;
+            }
+        }
+
+        .article-img-block {
+            margin-top: 16px;
+            margin-bottom: 16px;
+
+            &.audio-img-block {
+                margin-top: 40px !important;
+                margin-bottom: 40px;
+            }
+
+            .audio-block {
+                width: calc(100% - 30px);
+                left: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+                bottom: -6px;
+
+                .audio-progress {
+                    order: 1;
+                    width: 100%;
+                    margin-bottom: 16px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .btn {
+
+                    img {
+                        width: 24px;
+                    }
+
+                    &:not(:last-child) {
+                        margin-right: 24px !important;
+                    }
+                }
+
+                .prev-btn,
+                .next-btn {
+                    order: 2;
+                }
+
+                .play-btn {
+                    order: 3;
+                }
+
+                .speaker-btn,
+                .settings {
+                    order: 4
+                }
+            }
+        }
+
+        .video-img-block .play-video-btn img {
+            width: 40px;
+        }
+
+        .content {
+            font-size: 0.875rem;
+
+            .content-btns {
+                flex-direction: column;
+                margin-bottom: 32px !important;
+
+                div {
+                    margin-top: 16px;
+                    width: 100%;
+                    display: flex;
+
+                    .btn {
+                        width: 45%;
+
+                    }
+                }
+
+                .invest-btn {
+                    width: 95% !important;
+                    margin-top: 20px;
+                }
+            }
+
+            .btn.btn-transparent {
+                border-radius: 8px;
+                border: 1px solid #fff;
+                background: #fff;
+                box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+                width: 100%;
+            }
+
+            h3 {
+                font-size: 1.375rem;
+            }
+        }
+    }
+
+    .FT-related-tags {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        font-size: 1rem;
+
+        .tags-list {
+            margin-bottom: 16px;
+
+            li {
+                display: block;
+                margin: 0 0 16px 0;
+            }
+        }
+
+        .text-big {
+            font-weight: 600;
+        }
+
+        .col-md-auto {
+            &:not(:last-child) {
+                margin-bottom: 32px;
+            }
+        }
+    }
+
+    .FT-article-content {
+        .article-language {
+            flex-direction: column;
+
+            .languages-box {
+                width: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+            .btn-warning {
+                width: 100%;
+                margin-top: 35px;
+            }
+
+            .languages {
+                width: calc(100% - 125px)
+            }
+        }
+
+        .content {
+            .content-btns {
+                div {
+                    .btn {
+                        font-size: 1rem;
+                        padding: 13px 6px;
+
+                        &-outline-primary {
+                            background: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .calc-box {
+        border: 3px solid #FFF;
+        box-shadow: 0px 0px 10px 0px rgba(23, 55, 163, 0.16);
+
+        img {
+            margin-bottom: 8px;
+            width: 40px;
+        }
+
+        h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            letter-spacing: -0.48px;
+        }
+
+        .text-big {
+            font-size: 0.875rem;
+        }
+
+        .calc-box .btn {
+            font-weight: 500;
+            padding: 12px;
+        }
+    }
+
+    .FT-calculators-links {
+
+        .row {
+            --bs-gutter-x: 16px;
+        }
+    }
+
+    .FT-calc-faq h3 {
+        font-size: 1.5rem;
+    }
+
+    .FT-footer-pages {
+        .tab-content>.tab-pane {
+            display: block;
+            opacity: 2;
+        }
+
+        .accordion-item {
+            border: 0;
+            margin-bottom: 12px;
+            padding: 16px;
+            border-radius: 8px;
+            background: #FFF;
+            box-shadow: 0px 4px 24px 0px rgba(23, 55, 163, 0.08);
+
+            .accordion-header {
+                .accordion-button {
+                    background: transparent;
+                    padding: 0;
+                    font-size: 1rem;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    letter-spacing: -0.48px;
+                    color: var(--black);
+                    border: 0;
+                    box-shadow: none !important;
+                    outline: none !important;
+
+                    &::after {
+                        flex-shrink: 0;
+                        width: 28px;
+                        height: 18px;
+                        margin-left: auto;
+                        content: "";
+                        background-image: url("../images/home/plus-icon.svg");
+                        background-repeat: no-repeat;
+                        background-size: 18px;
+                        background-position: right center;
+                        transition: transform .2s ease-in-out;
+                    }
+
+                    &:not(.collapsed)::after {
+                        background-image: url("../images/home/minus-icon.svg");
+                    }
+                }
+            }
+
+            .accordion-body {
+                padding: 0;
+                padding-top: 8px;
+                color: #3C425D;
+            }
+        }
+
+        .media-contact {
+            margin-top: 0;
+            padding: 0;
+            border-radius: 8px;
+            background: transparent;
+            margin-bottom: 32px;
+        }
+
+        .FT-blocks-nav {
+            border: 0;
+
+            ul {
+                border: 0;
+
+                li {
+                    a {
+                        padding: 16px;
+                    }
+                }
+            }
+        }
+
+        &.FT-knowledge .knowledge-box .category-btns ul li {
+            font-size: 0.875rem;
+            min-width: 95px;
+            padding: 8px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 34px;
+        }
+
+        .features-box {
+            padding: 0;
+            background: transparent;
+            box-shadow: none;
+
+            .row {
+                border-radius: 8px;
+                background: #FFF;
+                margin: 0 0 16px 0;
+                padding: 16px;
+                /* sd2 */
+                box-shadow: 0px 2px 11.81px 0px rgba(0, 0, 0, 0.10);
+
+                .col-12 {
+                    padding: 0;
+
+                }
+            }
+
+            .content {
+                padding-top: 16px;
+            }
+
+            .box-img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .feedback-box {
+            margin-top: 32px;
+            font-size: 1rem;
+
+            .form-group {
+                margin-bottom: 24px;
+            }
+
+            .form-label {
+                color: #616161;
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+
+            .form-control {
+                height: 44px;
+                padding: 8px;
+            }
+
+            textarea.form-control {
+                height: 135px;
+            }
+        }
+    }
+
+    .FT-investor-services {
+        .bg-md {
+            background: transparent !important;
+            box-shadow: none !important;
+            padding: 0;
+        }
+
+        .FT-knowledge-tabs {
+            padding: 16px 8px;
+            background: #fff;
+        }
+
+        .bg-white-shadow {
+            padding: 16px 12px;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0px 2px 11.81px 0px rgba(0, 0, 0, 0.10);
+            margin-bottom: 21px;
+        }
+
+        .subscribe-block {
+            margin-top: 32px;
+            padding: 16px 24px;
+
+        }
+    }
+
+    .FT-location {
+        .box-shadow {
+            max-width: 100%;
+            border-radius: 7px;
+            box-shadow: 0px 2px 11.81px 0px rgba(0, 0, 0, 0.10);
+            padding: 16px;
+            font-weight: 400;
+        }
+
+        .location-map {
+            background: transparent;
+            padding-top: 0;
+            padding-bottom: 40px;
+
+            .box-shadow {
+                // max-width: 100%;
+                width: 23rem;
+                box-shadow: 0px 2px 11.81px 0px rgba(0, 0, 0, 0.10);
+                padding: 16px;
+                font-weight: 500;
+            }
+
+        }
+    }
+
+    .FT-touchPoints .locations-box {
+        .row {
+            padding: 24px;
+
+            .col-12 {
+                &:first-child {
+                    text-align: center;
+                    margin-bottom: 32px;
+                }
+            }
+        }
+
+        .btn {
+            margin-right: 16px;
+            padding: 10px 20px;
+            min-width: 100px;
+        }
+    }
+
+    .FT-footer-pages.forms-download .inner-accordion .accordion-item .accordion-header .accordion-button {
+        padding: 16px;
+    }
+
+    .FT-Franklin-info {
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        .info-box {
+            .total-funds {
+
+                .FT-title,
+                h3 {
+                    letter-spacing: -0.7px;
+                    font-size: 1.5rem;
+                }
+            }
+
+            .products-info {
+                border-radius: 8px;
+                box-shadow: 0px 4px 20px 0px rgba(23, 55, 163, 0.16);
+                padding: 16px;
+                margin-bottom: 16px;
+                text-align: center;
+                min-height: 142px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                .text-meduim {
+                    font-size: 1.125rem;
+                    letter-spacing: -0.54px;
+                    margin-bottom: 8px;
+                }
+
+                h3 {
+                    font-size: 1.25rem;
+                }
+
+                .d-flex {
+                    flex-direction: column;
+                    row-gap: 8px;
+                }
+            }
+
+            .history-box .content .text-small {
+                font-weight: 400;
+            }
+
+            .content-box {
+                padding: 32px 16px;
+            }
+        }
+    }
+
+    .about-box {
+        padding: 24px 16px;
+
+        img {
+            margin-bottom: 8px !important;
+
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.6px;
+        }
+    }
+
+    .vintage-box {
+        img {
+            max-width: 21px;
+            margin-right: 8px !important;
+        }
+
+        h3 {
+            font-size: 1rem !important;
+        }
+    }
+
+    .offer-box {
+        padding: 20px 16px;
+        flex-direction: column;
+
+        .card-img {
+            width: 100%;
+            margin-bottom: 16px;
+            height: 147px;
+        }
+
+        .card-body {
+            padding-left: 0;
+        }
+    }
+
+    .testimonial-box {
+        .box-img {
+            margin: 0 auto 24px auto
+        }
+    }
+
+    .FT-distributor-testimonials {
+        padding-top: 48px;
+        padding-bottom: 48px;
+
+        .container {
+            padding: 0;
+        }
+
+        .slide {
+            padding: 10px 12px;
+        }
+
+        .slick-slider {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+
+    .FT-login-form {
+        background: linear-gradient(180deg, rgba(240, 246, 255, 1) 27%, transparent 60%);
+        padding: 32px 16px;
+
+        .form-box {
+            min-height: auto;
+        }
+
+        .outer-container {
+            background: #fff !important;
+            padding: 24px 30px;
+            border-radius: 12px 12px 0px 0px;
+            background: #FFF;
+
+            /* sd2 */
+            box-shadow: 0px 2px 11.81px 0px rgba(0, 0, 0, 0.10);
+
+            .container {
+                padding: 0;
+            }
+
+            .form-box {
+                border-radius: 0;
+                box-shadow: none;
+                padding: 0;
+
+                form {
+                    width: 100%;
+                    max-width: 100%;
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    .register-steps .step {
+        .step-name {
+            display: none;
+        }
+
+        .step-num {
+            background: #E0E0E0;
+            color: #fff;
+            z-index: 1;
+            position: relative;
+        }
+
+        &::after {
+            left: calc(50% + 8px);
+
+        }
+    }
+
+    .FT-invest {
+        .FT-login-form {
+            background: transparent;
+            padding: 0;
+        }
+    }
+
+    .FT-concepts .faq-box .accordion .accordion-item .accordion-header .accordion-button .title img {
+        max-width: 21px;
+        margin-right: 8px;
+    }
+    .FT-empanel .otp-form .btn {
+        width: 10rem;
+    }
+    .FT-empanel {
+        
+        h2 {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            letter-spacing: -0.42px;
+        }
+        .empanel-box{
+            padding:24px 16px
+        }
+         .btn-options {
+            display: flex;
+            .btn{
+                flex:1 0 0;
+                &.me-4{
+                    margin-right: 16px !important;
+                }
+            }
+         }
+    }
+    .FT-invest{
+        .container{
+            padding:0;
+            .outer-box{
+                background: transparent !important;
+                border:0;
+                padding:0;
+            }
+        }
+        .row{
+            margin:0;
+            .col-lg-5{
+                padding:0;
+            }
+        }
+        .invest-head-box{
+            background: url("../images/login/invest-bg.png") no-repeat center;
+            background-size: cover;
+            padding:28px 18px 85px 18px;
+            color: #fff;
+            min-height: auto;
+        }
+        .FT-login-form{
+            margin-top: -55px;
+            .form-box{
+                padding:24px 31px;
+                h2{
+                    font-size: 1.25rem;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:575.98px) {
+    body {
+        font-size: 0.875rem;
+    }
+
+    .nav-tabs .nav-link {
+        font-family: 'HK Grotesl', sans-serif;
+        font-size: 0.813rem;
+        font-weight: 600;
+        line-height: 18px;
+    }
+
+    .checked-img {
+        margin-top: 0 !important;
+    }
+
+    .form-success-msg {
+        margin-left: 0;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .FT-title {
+        margin-bottom: 10px!important;
+    }
+
+    .table-responsive {
+        &::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+            border-radius: 6px;
+        }
+    }
+
+    header .navbar {
+        .navbar-brand img {
+            width: 86px;
+        }
+
+        &::after {
+            width: calc(100% - 100px);
+        }
+    }
+
+    header .progress-container {
+        height: 8px;
+    }
+
+    // #page-content {
+    //     margin-top: var(--mainContentMobileMargin)
+    // }
+
+    .FT-updates-banners {
+        .carousel .carousel-indicators {
+            margin-bottom: 10px;
+        }
+
+        .accordion-item {
+            .accordion-button {
+                padding: 8px 0
+            }
+
+            .accordion-body .carousel .carousel-item {
+                height: 143px;
+            }
+        }
+    }
+
+
+
+
+    .FT-hero {
+        .carousel {
+            .carousel-indicators {
+                margin-bottom: 10px;
+                z-index: index 9999;
+
+                button {
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background: #fff;
+
+                    &.active {
+                        background: var(--blue);
+                    }
+                }
+            }
+
+            .carousel-item {
+                height: 254px!important;
+
+                h2 {
+                    font-size: 1.25rem!important;
+                }
+
+                p {
+                    font-size: 0.875rem!important;
+                }
+
+                &.carousel-with-content {
+                    .container {
+
+                        h2 {
+                            font-size: 0.875rem;
+
+                            img {
+                                margin-right: 6px;
+                                width: 10.6px;
+                            }
+                        }
+
+                        ul {
+                            font-size: 0.625rem;
+
+                        }
+
+                        .btn-white {
+                            padding: 4px 27px;
+                            font-size: 5.475px;
+                            font-weight: 600;
+                            line-height: 150.023%;
+                            border-radius: 2.053px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .FT-invest-btns .btn {
+        min-width: auto!important;
+        padding: 10px 20px!important;
+        font-size: 0.875rem!important;
+    }
+
+    .FT-title,
+    .FT-download-options h2 {
+        font-size: 1.25rem!important;
+    }
+
+    .text-big,
+    .more-links {
+        font-size: 0.875rem!important;
+    }
+
+    .services-desc {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .FT-financial .tab-content {
+        padding: 20px!important;
+        margin-bottom: 10px!important;
+
+        .fund-info {
+            h3 {
+                font-size: 1rem!important;
+            }
+        }
+    }
+
+    .FT-solutions {
+        .desktop-services-wrapper {
+            display: none;
+        }
+
+        .mobile-services-wrapper {
+            display: flex !important;
+        }
+    }
+
+    .FT-guide {
+        padding-top: 40px!important;
+        padding-bottom: 37px!important;
+
+        .desktop-blog-wrapper {
+            display: none !important;
+        }
+
+        // .mobile-blog-wrapper {
+        //     display: flex !important;
+        // }
+
+        .guide-box .blog-box {
+            width: 100%
+        }
+
+        .nav-tabs {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
+
+    .creation-box {
+        padding: 24px 16px;
+    }
+
+    .FT-faq .faq-box {
+        padding: 30px 16px!important;
+    }
+
+    .FT-faq .faq-box .accordion .accordion-item .accordion-header .accordion-button {
+        font-size: 0.875rem!important;
+
+        &::after {
+            // width: 1.75rem;
+            background-position: right 0 center;
+        }
+    }
+
+    .FT-invest-form .form-box {
+        padding: 24px 16px!important;
+
+        .col-6 {
+            width: 100%;
+        }
+    }
+
+    .FT-download-options a {
+        max-width: 49%;
+        display: inline-block;
+        margin: 0;
+        padding: 5px 7px;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .FT-financial .tab-content .fund-info .numbers {
+        // gap: 0;
+        flex-direction: column;
+        // row-gap: 25px;
+        // margin-bottom: 12px;
+
+        h3 {
+            margin-bottom: 0!important;
+            margin-top: 2px!important;
+        }
+    }
+
+    .FT-financial .invest-options {
+        overflow-x: auto;
+
+        &::-webkit-scrollbar {
+            width: 1px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: transparent;
+            border-radius: 14px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: transparent;
+        }
+    }
+
+    .FT-financial {
+
+
+        .selected-range {
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        .tab-content .form-group {
+            margin-bottom: 24px !important;
+
+            .form-label {
+                font-size: 0.875rem;
+            }
+        }
+
+        .invest-options {
+            gap: 6px;
+
+            .form-check {
+                .form-check-label {
+                    padding: 5px 2px;
+                    font-size: 0.75rem;
+
+                }
+
+                .form-check-input:checked[type=radio]+.form-check-label::before {
+
+                    width: 8px;
+                    height: 12px;
+                    margin-top: 0;
+                    margin-right: 0px;
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+
+    .solution-box h3 {
+        padding: 16px;
+        font-size: 1.125rem;
+        font-family: "Inter";
+    }
+
+    .creation-box {
+        padding: 9px 8px!important;
+
+        .img-block {
+            width: 37.258px!important;
+            height: 37.258px!important;
+
+            img {
+                width: 21px !important;
+            }
+        }
+
+        h3 {
+            color: var(--blue);
+            font-size: 0.813rem;
+            font-weight: 600;
+            letter-spacing: -0.42px;
+        }
+    }
+
+    .update-box {
+        padding: 13px 17px;
+        font-family: "Inter";
+        font-size: 0.813rem;
+        font-weight: 500;
+        line-height: 12.439px;
+
+        img {
+            width: 20px
+        }
+
+        div {
+            overflow: hidden;
+            white-space: nowrap;
+            margin-right: 10px;
+        }
+    }
+
+    .scroll-top .btn {
+        padding: 7px 22px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+    }
+
+    #contact-block {
+        max-width: 348px;
+
+
+        #toggleBox.btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+        }
+
+        .contact-box {
+            padding: 14px 12px;
+
+            .d-flex {
+                border-radius: 0;
+                padding: 10px 0;
+
+                .box-icon {
+                    width: 21px;
+                    height: 21px;
+                    padding: 6px;
+                    margin-left: 8px;
+
+                    img {
+                        width: 12px
+                    }
+                }
+
+                .text-blue {
+                    font-size: 0.75rem;
+                }
+            }
+        }
+
+        form {
+
+            .form-control,
+            .form-select {
+                height: 30px;
+                padding: 6px 8px;
+                font-size: 0.625rem;
+                font-family: "Inter";
+                border-radius: 4px;
+            }
+
+            textarea.form-control {
+                height: 50px;
+            }
+
+            .form-check {
+                font-size: 0.625rem;
+                font-family: "Inter";
+            }
+
+            .btn-primary {
+                height: 33px;
+                font-size: 0.75rem;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .fund-block {
+        .tags {
+            padding: 4px 12px;
+
+            ul {
+                li {
+                    font-size: 0.813rem;
+                }
+            }
+        }
+    }
+
+    .modal {
+
+        .modal-body {
+            padding: 24px;
+
+            form {
+                .col-6 {
+                    width: 100%
+                }
+            }
+
+            .btn {
+                padding: 8px 18px;
+                font-family: "Inter";
+                font-size: 0.875rem;
+            }
+        }
+    }
+
+    .FT-fund-types {
+        .mb-5 {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .main-content {
+        .container {
+            padding: 0 16px
+        }
+    }
+
+    .block-border {
+        margin-bottom: 20px;
+        border: 0;
+        border-radius: 7.379px;
+        box-shadow: 0px 0px 4.61206px 0px rgba(0, 0, 0, 0.15);
+
+        .block-head {
+            h3 {
+                small {
+                    margin-top: 7px;
+                    letter-spacing: 0;
+                    line-height: 1;
+                }
+            }
+
+            .nav-tabs {
+                li {
+                    .nav-link {
+                        letter-spacing: 0;
+                    }
+                }
+            }
+        }
+
+        .block-footer {
+            .text-meduim {
+                margin-bottom: 10px;
+            }
+
+            .download-plan {
+                a {
+                    padding: 6px 0;
+                    font-size: 0.875rem;
+                    letter-spacing: -0.36px;
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        vertical-align: middle;
+                        margin-right: 8px;
+                        max-width: 16px;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .top-part {
+        &.test:not(.scroll-down) {
+            padding-top: 97px !important;
+        }
+
+        .FT-fund-statistics {
+            .sticky-block .info {
+                .block-btns {
+                    width: 100%;
+
+                    .btn-primary {
+                        width: calc(100% - 58px);
+                    }
+                }
+            }
+        }
+    }
+
+    .FT-fund-statistics {
+        .fund-block {
+            &.relative-block {
+                padding: 20px 8px;
+
+                .info {
+                    padding-top: 20px;
+                    font-size: 0.75rem;
+                }
+            }
+
+            .returns-block {
+                .tab-content {
+                    padding: 22.138px 11.069px 14.759px 11.069px;
+                }
+
+                .text-semi-big,
+                .dropdown-toggle {
+                    font-size: 0.813rem;
+                    letter-spacing: 0;
+                }
+
+                .block-btns .btn {
+
+                    padding: 12px;
+                    font-size: 0.875rem;
+                }
+            }
+
+            .returns-block .return-graph span {
+                font-size: 0.688rem;
+                margin-top: 6px;
+                display: block;
+            }
+        }
+    }
+
+    .FT-blocks-nav {
+        ul {
+            overflow-x: auto;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+                /* for Chrome, Safari and Opera */
+            }
+
+            li {
+                min-width: max-content;
+            }
+        }
+    }
+
+    .FT-performance {
+        .tab-content {
+            padding: 0 15px 20px 15px;
+        }
+
+        .left-items {
+            li {
+                font-weight: 600;
+                font-size: 0.813rem;
+
+                .form-control {
+                    color: #595A6C;
+                    font-weight: 600;
+                    font-size: 0.813rem;
+                }
+            }
+        }
+
+        .right-items {
+            justify-content: space-between;
+
+            li {
+                margin: 0 !important;
+                width: 50%;
+                flex: 0 0 50%;
+
+                strong {
+                    font-weight: 700 !important;
+                }
+
+                br {
+                    display: none;
+                }
+
+                &:last-child {
+                    width: 100%;
+                    flex: 0 0 100%;
+                }
+            }
+        }
+
+        .graph-block {
+            .graph-head {
+                align-items: flex-start;
+                justify-content: space-around;
+
+                .graph-stat {
+                    display: block;
+                    margin-top: 8px;
+                }
+
+                .graph-name .circle {
+                    width: 8px;
+                    height: 8px;
+                    vertical-align: middle;
+                }
+            }
+
+        }
+
+        .performance-graph {
+            padding-left: 19px;
+        }
+    }
+
+    .FT-fund-overview {
+        padding: 14px;
+
+        .FT-customized-accordion {
+            .accordion-item {
+                .accordion-header {
+                    .accordion-button {
+                        font-size: 0.813rem;
+                    }
+                }
+
+                .accordion-body {
+                    padding: 0;
+                    padding-top: 12px;
+                    font-size: 0.813rem;
+                }
+            }
+        }
+    }
+
+    .progress-block {
+        .progress {
+            height: 6px;
+        }
+    }
+
+    .FT-portfolio .portfolio-graphs {
+        padding-top: 0;
+
+        .progress-block {
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .graph-box {
+            gap: 10px;
+            justify-content: flex-start;
+
+            canvas {
+
+                max-height: 140px;
+                max-width: 140px !important;
+            }
+
+            .graph-stat {
+                margin-top: 0;
+            }
+        }
+
+        .col-12 {
+            position: relative;
+            padding: 0 15px;
+        }
+    }
+
+    .table-responsive.table-bordered {
+        border-color: #fff;
+    }
+
+    .FT-fund-more-details {
+        .table-responsive {
+            border: 1px solid #fff;
+            border-radius: 8px;
+        }
+
+        .managers {
+            padding: 15px;
+
+            .manager-slider {
+                .slick-list {
+                    position: relative;
+                    overflow: visible;
+                }
+
+                .slick-slider {
+
+                    .slick-track,
+                    .slick-list {
+                        width: 100% !important;
+                        transform: translate3d(0px, 0px, 0px) !important;
+                    }
+
+                    .slick-slide {
+                        width: 100% !important;
+                        padding: 0;
+
+                        &:not(:last-child) {
+                            margin-bottom: 18px;
+                        }
+                    }
+                }
+            }
+
+            .manager-block {
+                font-size: 0.692rem;
+                line-height: normal;
+                letter-spacing: 0;
+
+                .text-big {
+                    font-size: 0.813rem;
+                }
+
+                a {
+                    font-size: 0.692rem;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+
+                    i {
+                        display: inline-block;
+                        margin-left: 4px;
+                    }
+                }
+            }
+        }
+
+        .block-body.idcw-history {
+
+            table {
+                th {
+                    min-width: 113px;
+                }
+            }
+        }
+
+        .fund-documents {
+            .nav-tabs .nav-link {
+                font-size: 0.813rem;
+                // padding: 14px 4px;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: -0.3px;
+                padding: 13px 10px;
+            }
+
+            .update-box {
+                font-size: 0.75rem;
+            }
+        }
+    }
+
+    .modal .table-box .table-part .table-pagination {
+        flex-direction: column;
+
+        .form-select {
+            margin-top: 10px;
+        }
+    }
+
+    .category-card .card-img .video-btn img {
+        width: 27px;
+    }
+
+    .FT-knowledge {
+        .FT-blocks-nav ul {
+            border-radius: 8px 8px 0 0;
+            border: 0;
+        }
+
+        .knowledge-box {
+            h3 {
+                font-size: 1.125rem;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                letter-spacing: -0.54px;
+                margin-bottom: 16px;
+
+                a {
+                    margin-bottom: 16px;
+                }
+            }
+
+            .d-flex {
+
+
+                a {
+                    font-size: 0.875rem;
+                    font-weight: 400;
+                    letter-spacing: -0.42px;
+
+                    i {
+                        font-size: 0.813rem;
+                    }
+                }
+            }
+
+            .category-btns ul li {
+                font-size: 0.813rem;
+            }
+
+            &.categories {
+                h3 {
+                    margin-bottom: 16px;
+                }
+
+                .category-block {
+                    margin-bottom: 16px;
+                }
+            }
+
+            &.academy {
+                .inner-box {
+                    .FT-title-medium {
+                        font-size: 1.25rem;
+                        font-weight: 600;
+                        letter-spacing: -0.6px;
+                    }
+
+                    .btn {
+                        font-size: 1rem;
+                        font-weight: 400;
+                        line-height: 142.5%;
+                        letter-spacing: -0.48px;
+                        padding: 8px 28px;
+                    }
+                }
+            }
+        }
+    }
+
+    .FT-ad-box {
+        .btn {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 142.5%;
+            letter-spacing: -0.48px;
+        }
+    }
+
+    .blog-CTA {
+        padding: 30px 0px 0px 0px !important;
+    }
+
+    .calculators-CTA {
+        padding: 15px 0px 0px 0px;
+    }
+
+    .FT-general-filter {
+        display: flex;
+        align-items: flex-end;
+
+        .filter-box {
+            max-width: 100%;
+            height: 90%;
+            max-height: 561px;
+            border-radius: 32px 32px 0px 0px;
+            box-shadow: 0px -4px 20px 0px rgba(0, 0, 0, 0.10);
+            transform: translateX(0);
+            transform: translateY(100%);
+            position: relative;
+
+            .filter-content {
+
+                padding-top: 0;
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                width: 96px;
+                height: 2px;
+                margin: 14px auto 26px auto;
+                background: #959595;
+            }
+        }
+        .filter-box-full {
+            max-height: 950px !important;
+        }
+
+        &.show {
+            .filter-box {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    .FT-inner-banners {
+        min-height: 270px;
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: -0.6px;
+        }
+    }
+
+    .FT-knowledge-tabs .tab-content .tab-form .btn {
+        padding: 10px 16px;
+        font-size: 0.75rem;
+        font-weight: 500;
+    }
+
+    .FT-calculator-accordion {
+        .accordion {
+            .accordion-item {
+                .accordion-header {
+                    button {
+                        font-size: 0.75rem;
+                        font-style: normal;
+                        font-weight: 400 !important;
+                        line-height: normal !important;
+                        letter-spacing: -0.48px;
+                        font-family: "Hanken Grotesk", sans-serif !important;
+                        align-items: flex-start;
+                        border-radius: 8px !important;
+                        box-shadow: 0px 2px 11.81px 0px rgba(201, 201, 201, 0.1) !important;
+
+                        img {
+                            width: 20px;
+                        }
+
+                        &::after {
+                            width: 15px;
+                            height: 15px;
+                            background-size: 15px;
+                        }
+                    }
+                }
+
+                &.no-img {
+                    .accordion-header button {
+                        font-size: 1rem;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        letter-spacing: -0.48px;
+                        font-family: "Hanken Grotesk", sans-serif;
+                        align-items: flex-start;
+                        border-radius: 8px;
+                        box-shadow: 0px 2px 11.81px 0px rgba(201, 201, 201, 0.10);
+
+                        &::after {
+                            width: 28px;
+                            height: 24px;
+                            padding-left: 4px;
+                            margin-top: 4px;
+                        }
+
+                        img {
+                            width: 20px;
+                        }
+
+                        &::after {
+                            width: 15px;
+                            height: 15px;
+                            background-size: 15px;
+                        }
+                    }
+                }
+
+                .accordion-collapse .accordion-body {
+                    font-size: 0.875rem;
+                    letter-spacing: -0.42px;
+                    font-family: "Hanken Grotesk", sans-serif;
+
+                    ul.list-with-img li {
+                        font-family: "Hanken Grotesk", sans-serif;
+                        font-size: 0.875rem;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .FT-article-content {
+        .article-title {
+            h3 {
+                font-size: 1.125rem;
+                letter-spacing: -0.54px;
+            }
+
+            .d-flex:not(.icons) {
+                flex-direction: column;
+            }
+
+            .icons {
+                margin-top: 24px;
+            }
+        }
+    }
+
+    .category-card {
+        .card-body {
+            .card-title {
+                font-size: 0.75rem;
+            }
+        }
+
+        &.big-card {
+            .card-img {
+                width: 82px;
+                height: 67px;
+
+                .time-tag {
+                    font-size: 0.656rem;
+                }
+            }
+
+            .card-body {
+                .card-title {
+                    // font-size: 1rem;
+                    // white-space: nowrap;
+                    font-size: 0.938rem;
+                    white-space: normal;
+                    max-width: 95%;
+                }
+            }
+        }
+    }
+
+    .FT-article-content {
+        padding-top: 0;
+
+        .back-btn {
+            padding: 14px 0 24px 0
+        }
+    }
+
+    .FT-title-small {
+        font-size: 1.25rem;
+    }
+
+    .mb-6 {
+        margin-bottom: 24px;
+    }
+
+    .FT-calculator-box {
+        .FT-title-medium {
+            font-size: 1.125rem;
+        }
+
+        .FT-financial {
+            .tab-content.calculator-box {
+
+
+                .calculate-statics {
+                    font-size: 0.75rem;
+                    padding: 16px;
+                    box-shadow: 0px 4px 20px 0px rgba(23, 55, 163, 0.16);
+
+                    .calculator-graph-box {
+                        .graph-container {
+                            height: 160px;
+                        }
+
+                        .text-small {
+                            font-size: 0.625rem;
+                            font-weight: 400;
+                            letter-spacing: -0.3px;
+                        }
+
+                        .rotated {
+                            left: -45px;
+                            top: 65px;
+                        }
+                    }
+
+                    .text-small {
+                        font-size: 0.75rem;
+                    }
+
+                    .p-3 {
+                        padding: 8px !important
+                    }
+
+                    .numbers {
+                        font-size: 0.75rem;
+
+                        h3 {
+                            font-size: 0.75rem;
+                        }
+
+                        .px-3:not(.column-number) {
+                            display: flex;
+                            flex-direction: column-reverse;
+                            justify-content: flex-end;
+                            padding-right: 8px !important;
+                            padding-left: 8px !important;
+                        }
+                    }
+
+                }
+            }
+
+
+        }
+
+    }
+
+    .FT-calculators-slider {
+        .slick-slider {
+            margin-right: -20px;
+        }
+    }
+
+    .FT-footer-pages {
+        .FT-title-medium {
+            font-size: 1.25rem;
+        }
+
+        .media-contact {
+            .contact-box {
+                padding: 16px;
+
+                h3 {
+                    color: var(--black);
+                    font-weight: 500;
+                }
+
+                .d-flex {
+                    font-size: 1rem;
+                    font-weight: 500;
+
+                    div {
+                        word-break: break-all;
+                    }
+                }
+            }
+        }
+
+        .release-container {
+            background: #DDEAFF;
+            padding-top: 31px;
+            padding-bottom: 132px;
+        }
+
+        .reports-box {
+            padding: 0;
+
+            table {
+
+                th,
+                td {
+                    font-size: 0.875rem;
+                    padding: 8px;
+                    letter-spacing: -0.42px;
+                }
+
+                tbody {
+
+                    tr {
+                        td {
+                            font-size: 0.875rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .knowledge-box {
+            .filter-block {
+                .dropdown {
+
+                    margin-right: 0 !important;
+                }
+
+                .btn,
+                .dropdown-toggle {
+                    width: auto !important;
+                    min-width: 81px;
+                    background: rgba(255, 255, 255, 0.63);
+
+                }
+
+                .form-control {
+                    background-color: rgba(255, 255, 255, 0.63);
+                    border: 1px solid #D2D8EA;
+                }
+            }
+        }
+
+        .general-box {
+            .text-big {
+                font-size: 1rem;
+            }
+        }
+
+        .features-box {
+
+            .content {
+                font-size: 0.875rem;
+
+                h3 {
+                    font-size: 1rem;
+                }
+            }
+
+        }
+
+        .feedback-box {
+            font-size: 0.813rem;
+            padding: 16px;
+
+            .form-label {
+                font-size: 0.875rem;
+            }
+
+            .form-control {
+                height: 36px;
+            }
+
+            .upload-box {
+                padding: 16px;
+
+                .d-flex {
+                    flex-direction: column;
+
+                    .d-flex {
+                        flex-direction: row;
+                        width: 100%;
+                    }
+                }
+
+                .img-icon {
+                    margin-right: 16px;
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 3px;
+                    padding: 8px;
+                }
+
+                .img-name {
+                    font-size: 0.75rem;
+                    width: calc(100% - 28px);
+                    max-width: initial;
+                    letter-spacing: -0.36px;
+                }
+
+                .btn-outline-primary {
+                    margin-top: 24px;
+                    padding: 10px 30px;
+                    font-size: 0.875rem;
+                }
+            }
+        }
+    }
+
+    .FT-investor-services {
+        .FT-title-medium {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: -0.6px;
+        }
+
+        .font-medium {
+            font-size: 0.938rem;
+        }
+
+        .account-form {
+            font-size: 0.813rem;
+
+            .col {
+                flex: 0 0 100%;
+                width: 100%;
+                margin-bottom: 16px;
+
+            }
+
+            .form-control,
+            .btn {
+                font-size: 0.813rem;
+            }
+
+            .btn {
+                margin-top: 10px;
+                margin-left: 3px;
+            }
+        }
+
+        .subscribe-block {
+            margin-bottom: 32px !important;
+
+            h3 {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .FT-location .box-shadow {
+        font-size: 0.875rem;
+    }
+    .FT-people {
+        .member-box {
+            font-size: 0.75rem;
+            padding:16px 8px;
+            margin-bottom: 16px;
+            h2 {
+                font-size: 1rem;
+            }
+            h3{
+                
+                    font-size: 0.813rem;
+                
+            }
+        }
+    }
+}
+
+@media(max-width:400px) {
+    .navbar-brand {
+        margin-right: 0;
+    }
+
+    .graph-table-btns .btn {
+        font-size: 0.75rem;
+    }
+
+    header .navbar .small-menu-icons .navbar-nav li {
+        display: inline-block;
+        padding: 0 4px;
+    }
+
+    .FT-fund-statistics {
+        .fund-block {
+            h3 {
+                font-size: 1.125rem;
+                letter-spacing: -0.54px;
+            }
+
+            .returns-block {
+                .return-graph {
+                    .graph {
+                        width: 50px;
+                        height: 50px;
+                        margin: 0 auto;
+                    }
+                }
+            }
+
+            &.relative-block ul.d-flex {
+                li {
+                    width: 100%;
+                    flex: 0 0 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border: 0;
+                    padding: 0;
+
+                    .dropdown {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .FT-knowledge-tabs {
+        .nav-pills .nav-link {
+            margin-right: 0 !important;
+            padding: 12px
+        }
+
+        .tab-content {
+            h3 {
+                font-size: 0.875rem;
+                font-weight: 600;
+                margin-bottom: 16px !important;
+            }
+
+            .tab-form {
+                .form-group {
+                    margin-bottom: 16px;
+                }
+
+                .btn {
+                    font-size: 0.777rem;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 150%;
+                    padding: 10px 16px;
+                }
+            }
+
+            form .form-control,
+            form .form-select,
+            form .date-group {
+                height: 38px;
+                padding: 10px 12px;
+            }
+        }
+    }
+}
+
+@media(max-width:370px) {
+    .FT-knowledge .knowledge-box .filter-block .search {
+        width: 180px;
+    }
+}
+
+//    about page
+@media(max-width: 991px) {
+    .about-img-direct {
+        flex-direction: column-reverse;
+    }
+
+    .about-our-people {
+        // flex-direction: column-reverse;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .FT-empanel .otp-form .form-control {
+        margin-bottom: 24px !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .empanel-back-icon {
+        position: relative;
+        bottom: 18px;
+    }
+    .FT-empanel {
+        padding-top: 35px;
+    }
+}
+
+// distribute media
+
+@media(max-width: 575.98px){
+    .FT-short-links .btn {
+        padding: 10px 20px;
+        min-width: auto;
+        font-size: 0.875rem;
+    }
+
+.FT-navs-funds .tabs-block .btn-primary {
+    width: 155px !important;
+    height: 50px !important;
+}
+
+}
+
+// font A+ media 
+@media only screen and (min-width: 375px) and (max-width: 430px) {
+    /* Adjust styles for .header-notice when font size is large */
+    html.large .FT-small-menu .block-footer ul {
+        padding: 12px 0px !important;
+        /* Add any other styles as needed */
+    }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 410px) {
+  
+
+
+    html.large .FT-location .location-map .box-shadow {
+        width: 350px !important;
+     
+    }
+
+    html.large .location-branch-btn {
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+    html.large .FT-location select {
+        width: 159px;
+    }
+    html.large .loca-serch-btn {
+        margin-left: 161px !important;
+    }
+}
+
+@media (min-width:428px) and (max-width:430px){
+    html.large .FT-location select {
+      width: 197px !important;
+    }
+    html.large   .loca-serch-btn {
+      margin-left: 11rem !important;
+    }
+  }
+  @media (min-width:359px) and (max-width:360px){
+    html.large .location-branch-btn {
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+  
+    // html.large  .FT-location select {
+    //   width: 144px !important;
+    // }
+  
+    html.large .loca-serch-btn {
+        margin-left: 7rem !important
+    }
+  
+
+    html.large .FT-location .location-map .box-shadow {
+        width: 19rem !important;
+      }
+  }
+
+  @media (min-width:411px) and (max-width: 412px) {
+    html.large  .loca-serch-btn {
+        margin-left: 196px !important;
+    }
+
+    html.large  .FT-location .location-map .box-shadow {
+        width: 21rem !important;
+    }
+  }
+  
+  // tab view
+  @media (min-width:768px) and (max-width:1024px){
+    html.large  .FT-location .location-map .box-shadow {
+          width: 0% !important;
+          margin: 0px !important;
+          padding: 0px !important;
+          width: 0px !important;
+          padding: 32px !important;
+
+      }
+  }
+
+   // tab view
+   @media (min-width:767px) and (max-width:768px){
+    html.large  .FT-location .location-map .box-shadow {
+          padding: 28px !important;
+
+      }
+  }
+
+//   lumsum
+@media (min-width:375px) and (max-width:430px){
+    .nav-tabs .nav-link.active {
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .carousel .carousel-indicators {
+        margin-right: 42% !important;
+        margin-left: 42% !important;
+    }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .FT-updates-banners {
+        padding-top: 45px;
+    }
+
+} 
+
+
+
+
+
+
+
+
+
+//------------------------------>  Page top margin handle 
+
+
+
+// Laptop view
+@media (min-width: 992px) {}
+
+// Tab view
+@media (max-width: 991px) {}
+
+// Mobile portrate & landscapt
+@media (max-width: 768px) {}
+
+// mobile portrate
+@media(max-width: 576px) {}
+
+//------------------------------>  Page top margin handle 

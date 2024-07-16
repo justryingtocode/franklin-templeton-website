@@ -1,0 +1,657 @@
+<div id="page-content">
+	<!-- start page breadcrumb block -->
+	<div class="FT-breadcrumb">
+		<div class="container">
+
+			<nav aria-label="breadcrumb" class="breadcrumbtitle">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#">Home</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Compare Mutual Fund</li>
+				</ol>
+			</nav>
+
+			<!-- <nav aria-label="breadcrumb" class="breadcrumbfile">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#"><img src="./assets/images/comparefund/arrow.png"></a></li>
+				</ol>
+			</nav> -->
+		</div>
+	</div>
+
+	<!-- start comaprefund section -->
+	<div *ngIf="addComparedCardToggle">
+		<section class="FT-comparefund-heading">
+			<div class="container">
+				<div class="row gx-3">
+					<div class="comapre-fund col-lg-auto makeLeft">
+						<div class="d-md-none">
+							<i class="bi bi-arrow-left fs-5"></i>
+						</div>
+		
+						<h3 class="filter-title" (click)="forToggleApply()">Compare Mutual Funds</h3>
+						<p *ngIf="toggleCpmaredCard">Uncover the Best Mutual Fund Options. Make Informed investment decisions and discover the ideal investment solutions.</p>
+
+						<!-- <button   ="font-weight: 500; color: #3769FF;"
+							class="" 
+							(click)="makeCartToggleWeb()">
+							Add Funds
+						</button> -->
+						
+					</div>
+					<div *ngIf="toggleCpmaredCard" class="add-fund-btn my-3 compare-card-icon">
+						<button class="d-none d-md-block btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+							aria-controls="offcanvasExample" (click)="makeCartToggleWeb()">Add Funds</button>
+					
+						<button class="d-md-none btn btn-primary add-funds" (click)="makeCartToggleMob()">Add Funds</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="makeCompareMutualColor" *ngIf="toggleCpmaredCard">
+			<div class="container">
+				<div class="makeLeft">
+				<div class="FT-comparefund-wrapper">
+					<table >
+						<tr>
+							<th class="compare-card">
+								<h2 *ngIf="compareFunds.length > 1">Comparing 1 out of {{compareFunds.length}} mutual funds</h2>
+								<h2 *ngIf="compareFunds.length == 1">Add more funds to compare</h2>
+							</th>
+
+		
+							<!-- <th>
+								<div class="fund-card-wrap">
+									<button class="fund-cancel" > &#10005; </button>
+									<div class="fund-card-top">
+										<div class="fund-card-title">
+											<div>Franklin Build India Fund</div>
+											<img _ngcontent-serverapp-c8="" src="assets/images/general/very-high.svg">
+										</div>
+										<div class="three-dot">
+											<i class="bi bi-three-dots-vertical"></i>
+										</div>
+		
+									</div>
+									<div class="fund-card-title-action">
+										<button class="cart-btn">
+											<img _ngcontent-serverapp-c8="" src="assets/images/general/cart-icon.svg">
+										</button>
+										<button class="invest-now-btn">
+											Invest Now
+										</button>
+									</div>
+								</div>
+							</th>
+							<th>
+								<div class="fund-card-wrap">
+									<button class="fund-cancel"> &#10005; </button>
+									<div class="fund-card-top">
+										<div class="fund-card-title">
+											<div>Franklin Build India Fund</div>
+											<img _ngcontent-serverapp-c8="" src="assets/images/general/very-high.svg">
+										</div>
+										<div class="three-dot">
+											<i class="bi bi-three-dots-vertical"></i>
+										</div>
+		
+									</div>
+									<div class="fund-card-title-action">
+										<button class="cart-btn">
+											<img _ngcontent-serverapp-c8="" src="assets/images/general/cart-icon.svg">
+										</button>
+										<button class="invest-now-btn">
+											Invest Now
+										</button>
+									</div>
+								</div>
+							</th> -->
+							
+
+
+							<ng-container *ngFor="let fund of compareFunds; let i = index">
+								<th>
+								  <div class="fund-card-wrap">
+									<button (click)="cancellFunds(i)" class="fund-cancel"> &#10005; </button>
+									<div class="fund-card-top">
+									  <div class="fund-card-title">
+										<div>{{ fund?.fundDetails?.name }}</div>
+										<!-- <img [src]="'assets/images/general/' + fund?.fundDetails?.riskLevel + '.svg'"> -->
+										<img [src]="'assets/images/general/very-high.svg'">
+									  </div>
+									  <div class="three-dot">
+										<i class="bi bi-three-dots-vertical"></i>
+									  </div>
+									</div>
+									<div class="fund-card-title-action">
+									  <button class="cart-btn">
+										<img src="assets/images/general/cart-icon.svg">
+									  </button>
+									  <button class="invest-now-btn">
+										Invest Now
+									  </button>
+									</div>
+								  </div>
+							  
+								  <!-- <div class="fund-card-wrap add-fund-btn" *ngIf="fund?.showAddFundsCard">
+									<button 
+									  class="d-none d-md-block" 
+									  data-bs-toggle="offcanvas"
+									  data-bs-target="#offcanvasExample" 
+									  aria-controls="offcanvasExample" 
+									  (click)="makeCartToggleWeb()">Add Funds</button>
+							  
+									<button   ="font-weight: 500; color: #3769FF;"
+									  class="d-md-none" 
+									  (click)="makeCartToggleMob()">Add Funds</button>
+								  </div> -->
+								</th>
+							</ng-container>
+						
+
+
+
+
+							<!-- <th *ngIf="showAddFundsCard">
+								<div class="fund-card-wrap add-fund-btn">
+									<button 
+										class="d-none d-md-block" 
+										data-bs-toggle="offcanvas"
+										data-bs-target="#offcanvasExample" 
+										aria-controls="offcanvasExample" 
+										(click)="makeCartToggleWeb()">Add Funds</button>
+		
+									<button 
+										class="d-md-none" 
+										(click)="makeCartToggleMob()">Add Funds2</button>
+								</div>
+							</th> -->
+
+
+						</tr>
+						<tr>
+							<td colspan="4"></td> <!-- extra specing -->
+						</tr>
+		
+						<!-- Fund Details -->
+						<tr>
+							<td>Key Highlights</td>
+							<td *ngFor="let item of compareFunds" >{{item.Highlights}}</td>
+						</tr>
+						<tr>
+							<td>Fund Size</td>
+							<td *ngFor="let item of compareFunds" >{{item.FundSize}}</td>
+							
+						</tr>
+						<tr>
+							<td>Inception Date</td>
+							<td *ngFor="let item of compareFunds" >{{item.FundSize}}</td>
+						</tr>
+						<!-- Annualised returns select option -->
+						<tr>
+							<td>Annualised Returns</td>
+							<td *ngFor="let item of compareFunds">
+							
+								<div>As of 30/09/2023</div>
+								<div class="lr-justify-details">
+									<div>{{item.AnnualisedReturns?.y1}}</div>
+									<div>3.42%</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>{{item.AnnualisedReturns?.y2}}</div>
+									<div>7.6%</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>{{item.AnnualisedReturns?.y3}}</div>
+									<div>10.42%</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>10 Years</div>
+									<div>14.3%</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>Since Inception</div>
+									<div>59.6%</div>
+								</div>
+						
+							
+							</td>
+						</tr>
+						
+				    
+							<!-- <td>
+								<div>As of 30/09/2023</div>
+								<div class="annualised-returns">
+									
+									<select class="form-select" aria-label="Default select example">
+										<option selected value="IDCW">1 Years</option>
+										<option selected value="IDCW">3 Years</option>
+										<option selected value="IDCW">5 Years</option>
+										<option selected value="IDCW">10 Years</option>
+										<option selected value="IDCW">Since Inception</option>
+									</select>
+									<div>7.42%</div>
+								</div>
+							</td> -->
+							
+						<tr>
+							<td>Product Label - Risk/ Volatility</td>
+							<td *ngFor="let item of compareFunds">	<img [src]="'assets/images/general/very-high.svg'" class="level-card">{{item.level}}</td>
+						
+						</tr>
+						<tr>
+							<td>Tax Implication</td>
+							<td *ngFor="let item of compareFunds">
+								<ul>
+									<li>{{item.data}}</li>
+									<li>{{item.data2}}</li>
+								</ul>
+								
+							</td>
+						</tr>
+
+						<tr>
+							<td >Type of scheme and % equity exposure</td>
+							<td *ngFor="let item of compareFunds">
+							
+								<div>An Open-end Income Fund</div>
+								<div class="lr-justify-details">
+									<div>{{item.openEndIncome?.e1}}</div>
+									<div>10.42%</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>{{item.openEndIncome?.e2}}</div>
+									<div>10.6%</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>{{item.openEndIncome?.e3}}</div>
+									<div>3.42%</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>10 Years</div>
+									<div>14.3%</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>Since Inception</div>
+									<div>59.6%</div>
+								</div>
+						
+							
+							</td>
+						</tr>
+						<!-- <tr>
+							<td>
+								Type of scheme and % equity exposure
+							</td>
+							<td>
+									<div>An Open-end Income Fund</div>
+									<div>Exposure</div>
+									<div class="lr-justify-details">
+										<div>Call, Cash and Other Current</div>
+										<div>10.6%</div>
+									</div>
+									<div class="lr-justify-details">
+										<div>Call, Cash and Other Current</div>
+										<div>10.6%</div>
+									</div>
+									<div class="lr-justify-details">
+										<div>Asset</div>
+										<div></div>
+									</div>
+									<div class="lr-justify-details">
+										<div>Gilts</div>
+										<div>14.3%</div>
+									</div>
+									<div class="lr-justify-details">
+										<div>PSU/PFI Bonds</div>
+										<div>59.6%</div>
+									</div>
+									<div class="lr-justify-details">
+										<div>Money market instruments</div>
+										<div>3.7%</div>
+									</div>
+							</td>
+							<td>
+								<div>An Open-end Growth Fund</div>
+								<div>Exposure</div>
+								<div class="lr-justify-details">
+									<div>Equity</div>
+									<div>96.6%</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>Cash & Cash Equivalents</div>
+									<div>3.6%</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>Fixed Income</div>
+									<div>0.00%</div>
+								</div>
+							</td>
+							<td></td>
+						</tr> -->
+						<tr>
+							<td>Category, Sub-Category</td>
+							<td *ngFor="let item of compareFunds">
+								<div>{{item.equity}}</div>
+							</td>
+						
+						</tr>
+						<tr>
+							<td>Fund Age</td>
+							<td *ngFor="let item of compareFunds">
+								<div>{{item.age}}</div>
+							</td>
+							
+						</tr>
+						
+				
+						<tr>
+							<td>Investors</td>
+							<td *ngFor="let item of compareFunds">
+								<div>{{item.investor}}</div>
+							</td>
+							<!-- <td>1.68 Lakhs</td>
+							<td>1.68 Lakhs</td>
+							<td></td> -->
+						</tr>
+						
+						<tr>
+							<td>Top 3 sectors</td>
+							<td *ngFor="let item of compareFunds">
+								<div>{{item.sectors}}</div>
+							</td>
+							<!-- <td>
+								Financial (30.21%)    <br>
+								Automobile (12.18%)   <br>
+								Consumer Staples (9.08%)
+							</td>
+							<td>
+								Financial (30.21%)    <br>
+								Automobile (12.18%)   <br>
+								Consumer Staples (9.08%)
+							</td>
+							<td></td> -->
+						</tr>
+						<tr>
+							<td>Top 5 holdings</td>
+							<td *ngFor="let item of compareFunds">
+								<div>{{item.holding}}</div>
+							</td>
+							<!-- <td>
+								HDFC Bank Ltd. (8.52%) <br>
+								ICICI Bank Ltd (8.51%) <br>
+								ITC Ltd. (5.92%)  <br>
+								Infosys Ltd. (4.77%)  <br>
+								Larsen & Toubro Ltd. (4.77%)
+							</td>
+							<td></td>
+							<td></td> -->
+						</tr>
+						<tr>
+							<td>Load Structure</td>
+							<td *ngFor="let item of compareFunds">
+								<div>{{item.holding}}</div>
+							</td>
+							<!-- <td>
+								Entry Load Exit Load
+							</td>
+							<td>
+								Entry Load
+							</td>
+							<td></td> -->
+						</tr>
+						<tr>
+							<td>Minimum Investment</td>
+							<td *ngFor="let item of compareFunds">
+								<div>{{item.investment}}</div>
+							</td>
+							<!-- <td>
+								Minimum Investment/Multiples for
+								Fresh Purchase (INR)<br>
+								Retail - 5000/1
+							</td> -->
+							<!-- <td>
+								Minimum Investment/Multiples for <br>
+								5000/1<br>
+								SFresh Purchase (INR)
+							</td>
+							<td></td> -->
+						</tr>
+						
+						<tr>
+							<td>Additional Investment</td>
+							<td *ngFor="let item of compareFunds">
+								<div>{{item.investment2}}</div>
+							</td>
+							<!-- <td>
+								Additional Investment/Multiples thereof <br>
+								(INR)<br>
+								Sup.Inst.: 1000/1
+							</td>
+							<td>
+								Additional Investment/Multiples thereof <br>
+								(INR)<br>
+								Sup.Inst.: 1000/1
+							</td>
+							<td></td> -->
+						</tr>
+						<tr>
+							<td>Relevant Ratios</td>
+							<td *ngFor="let item of compareFunds">
+								<div>{{item.ratio?.r1}}</div>
+								<div>{{item.ratio?.r2}}</div>
+								<div>{{item.ratio?.r3}}</div>
+							</td>
+							<!-- <td>
+								Expense ratio - 0.21% <br>
+								Expense ratio - 0.21% <br>
+								Portfolio turnover ratio -  <br>
+								Includes service tax on investment 
+								management fee. 
+							</td>
+							<td>
+								Expense ratio - 0.21% <br>
+								Expense ratio - 0.21% <br>
+								Portfolio turnover ratio -  <br>
+								Includes service tax on investment 
+								management fee. 
+							</td>
+							<td></td> -->
+						</tr>
+						<tr>
+							<td>Suitable For</td>
+							<td *ngFor="let item of compareFunds">
+								<div>{{item.Suitable}}</div>
+							</td>
+							<!-- <td>Regular Income, Parking of short term funds</td>
+							<td>Retirement Corpus, Long Term Wealth Creation, Education Corpus</td>
+							<td></td> -->
+						</tr>
+						<tr>
+							<td>Recent dividends</td>
+							<td *ngFor="let item of compareFunds">
+							
+								<div>{{item.planName}}</div>
+								<div *ngIf="item?.recentDividends">
+									<select class="form-select" aria-label="Default select example">
+										<option value="IDCW">IDCW</option>
+										<option value="Direct-IDCW">Direct-IDCW</option>
+									</select>
+									<div class="lr-justify-details">
+										<div>{{item.date}}</div>
+										<div>{{item.recentDividends?.recordDate}}</div>
+									
+									</div>
+									<div class="lr-justify-details">
+										<div>{{item.unit}}</div>
+										<div>{{item.recentDividends?.divUnit}}</div>
+										
+									</div>
+									<div class="lr-justify-details">
+										<div>{{item.nav}}</div>
+										<div>{{item.recentDividends?.recordNave}}</div>
+										
+									</div>				
+								</div>
+							</td>
+							<!-- <td>
+								<div>Plan</div>
+								<select class="form-select" aria-label="Default select example" value="IDCW">
+									<option value="IDCW">IDCW</option>
+									<option value="Direct-IDCW">Direct-IDCW</option>
+								</select>
+								<div class="lr-justify-details">
+									<div>Record Date</div>
+									<div>27/03/2023</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>Div/Unit</div>
+									<div>0.1200</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>Record NAV</div>
+									<div>10.3586</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>Ex. Div Date</div>
+									<div>28/03/2023</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>Ex. Div NAV</div>
+									<div>10.2364</div>
+								</div>
+		
+							</td>
+							<td>
+								<div>Plan</div>
+								<select class="form-select" aria-label="Default select example">
+									<option selected value="IDCW">IDCW</option>
+									<option value="Direct-IDCW">Direct-IDCW</option>
+								</select>
+								<div class="lr-justify-details">
+									<div>Record Date</div>
+									<div>27/03/2023</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>Div/Unit</div>
+									<div>0.1200</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>Record NAV</div>
+									<div>10.3586</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>Ex. Div Date</div>
+									<div>28/03/2023</div>
+								</div>
+								<div class="lr-justify-details">
+									<div>Ex. Div NAV</div>
+									<div>10.2364</div>
+								</div>
+		
+							</td>
+							<td></td> -->
+							
+						</tr>
+					</table>
+				</div>
+				</div>
+			</div>
+
+			<!-- Stand page -->
+			<div id="page-content" class="stand-page">
+				<app-standpage></app-standpage>
+			</div>
+
+			<div class="container">
+				<!-- <section class="conatiner checkGoToCheckout mt-5 mb-4">
+					<div class="FT-Watchlist-Content-Color-Checkout">
+						<div class="d-flex forCheckoutView">
+							<div class="checkAdded">
+								Check the progress of the funds added in the Cart
+							</div>
+							<div  ="margin: auto;">
+								<button type="button" [routerLink]="['/investment-cart']"
+									class="btn btn-outline-primary bg-white checkOutTitle"><span class="addNow">Go to
+										Cart</span></button>
+							</div>
+						</div>
+					</div>
+				</section> -->
+				<section class="conatiner checkGoToCheckout mt-5 mb-4 d-none d-md-block">
+					<div class="addColorCard">
+						<!-- <div class="d-flex"  ="justify-content: space-around; padding: 19px 5px;">
+							<div class="checkAdded">
+								Check the progress of the funds added in the cart
+							</div>
+							<div>
+								<button type="button"  ="width: 160px; height: 50px;" [routerLink]="['/investment-cart']"  
+									class="btn btn-outline-primary bg-white"><span class="addNow">Go to
+										Cart</span></button>
+							</div>
+						</div> -->
+					</div>
+				</section>
+			</div>
+		</section>
+	</div>
+
+	<div *ngIf="!addComparedCardToggle">
+		<section class="FT-comparefund-heading">
+			<div class="container">
+				<div class="row gx-3">
+					<div class="comapre-fund col-lg-auto makeLeft">
+						<div class="d-md-none mb-2"><a><img (click)="moveToDataCompareCard()" src="./assets/images/comparefund/arrow.png"></a></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<app-add-fund-data 
+		[hasComparCardButton]="true"
+		[forNewSelectClick]="forNewSelectClick"
+		(dataForCompareCrad)="makeDataCompareCrad($event)"
+		></app-add-fund-data>
+	</div>
+
+	<section *ngIf="!toggleCpmaredCard">
+		<section class="FT-all-funds watchlist-funds empty-watchlist">
+				<app-empty-page 
+					(fund)="onFundAdded($event)" 
+					(emitComparedDataToggle)="forToComparedCrad($event)"
+					[hasComparCardButton]="true"
+					[cardTypeData]="'EMPTY_WATCHLIST'"
+					[comaredCardImg]="true"
+					pageSubHeading="A list of selected securities monitored for potential investment opportunities. It's important as it
+					helps investors track market movements and make informed decisions."
+					>
+				</app-empty-page>
+		</section>
+	</section>
+
+
+
+	
+</div>
+
+	<!---will used for side bar-->
+	<!-- <div>
+		<div class="offcanvas offcanvas-end custom-offcanvas" tabindex="-1" id="offcanvasExample"
+			aria-labelledby="offcanvasExampleLabel"  ="z-index: 100000000;">
+			<div class="offcanvas-body">
+				<app-add-fund (compareToggleChangedCard)="onCompareToggleChangedCard($event)"></app-add-fund>
+			</div>
+		</div>
+	</div> -->
+	<div>
+		<div class="offcanvas offcanvas-end custom-offcanvas add-data-fund" tabindex="-1" id="offcanvasExample"
+			aria-labelledby="offcanvasExampleLabel" >
+			<div class="offcanvas-body darkOffcanvasAddbody">
+				<!-- <app-all-funds [isAddFund]="true" [changeName]="true" (compareToggleChangedDataValueCard)="onCompareToggleChangedDataValueCard($event)"></app-all-funds> -->
+				<app-add-fund-data 
+				[comaredFundInputFund]="true"
+				[hasComparCardButton]=" true"
+				(fund)="goToCart($event)"
+				></app-add-fund-data>
+			</div>
+		</div>
+	  </div>

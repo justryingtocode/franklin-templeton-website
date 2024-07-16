@@ -1,0 +1,87 @@
+<div class="form-container distributor-step2 share-menu-twitter-fund">
+    <form [formGroup]="otpForm" (ngSubmit)="submitOtp()">
+        <div class="row">
+            <div class="col-sm-8 col-12 form-group mb-3">
+
+                <p class="error-msg fontResize login-dark2 share-btn-fund"> An OTP (One Time password) has been
+                    sent
+                    your registered e-mail ID a****j@franklinetemplton.com and mobile *****5002.</p>
+
+                <div>
+                    <input type="text" class="form-control" placeholder="Enter OTP*" id="otp" formControlName="otp">
+                    <div *ngIf="otpForm.get('otp')?.invalid && (otpForm.get('otp')?.dirty || otpForm.get('otp')?.touched)"
+                        class="">
+                        <span class="share-menu-twitter" *ngIf="otpForm.get('otp')?.errors?.['required']">OTP is required
+                        </span>
+
+
+                        <span class="share-menu-twitter"
+                            *ngIf="otpForm.get('otp')?.errors?.['minlength'] || otpForm.get('otp')?.errors?.['maxlength']">
+                            <span  class="error-msg fontResize share-menu-twitter"> OTP must be 6 digits</span>
+
+                        </span>
+                    </div>
+                    <span class="fund-AUM">
+                        <span class="justify-content-center mr showIconForWatchlist" *ngIf="resendOtpRequest">
+                            OTP has been resent.
+                        </span><a class="login-dark2 mt-1" (click)="resendOTPline()">Resend OTP</a>
+                    </span>
+                </div>
+
+
+                <!-- <span st yle="color: #697c91;" class="error-msg fontResize login-dark2"> An OTP (One Time password) has been sent
+                    your registered e-mail ID a****j@franklinetemplton.com and mobile *****5002.</span> <br>
+                <span><a href=""class="login-dark2">Resend OTP</a></span> -->
+
+            </div>
+
+            <!-- <div class="col-sm-8 col-12 mb-3"> -->
+            <!-- <button type="button" class="btn btn-primary me-4" (click)="changeActiveStepper(2,true)"
+                    data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false"
+                    aria-controls="collapse3">Next</button>
+
+                    <button type="button" class="btn btn-primary" (click)="changeActiveStepper(2,true)"
+                    data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false"
+                    aria-controls="collapse3" >Next</button> -->
+
+            <!-- [disabled]="!otpForm.valid" -->
+            <!-- </div> -->
+
+            <div class="col-sm-8 col-12 mb-3">
+
+                <div class="btn-options d-flex">
+                    <button type="button" class="btn btn-outline-primary me-4" (click)="changeActiveStepper(1,false)"
+                        data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false"
+                        aria-controls="collapse1">Back</button>
+                    <button type="button" class="btn btn-primary" (click)="changeActiveStepper(2,true)"
+                        data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false"
+                        aria-controls="collapse3">Next</button>
+
+                </div>
+
+            </div>
+            <!-- <div class="btn-options">
+                <button type="button" class="btn btn-outline-primary me-4" (click)="changeActiveStepper(1,false)"
+                    data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false"
+                    aria-controls="collapse1">Back</button>
+                <button type="button" class="btn btn-primary" (click)="changeActiveStepper(2,true)"
+                    data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false"
+                    aria-controls="collapse3">Next</button>
+              
+            </div> -->
+        </div>
+    </form>
+</div>
+<!-- [disabled]="!otpForm.valid" -->
+<!-- <div class="row">
+    <div class="col-sm-8 col-12 form-group mb-3">
+        <p styl e="color: #697c91;" class="error-msg fontResize login-dark2"> An OTP (One Time password) has been sent
+            your registered e-mail ID a****j@franklinetemplton.com and mobile *****5002.</p>
+
+        <div>
+            <input type="text" class="form-control" placeholder="Enter OTP*" id="otp" formControlName="otp">
+            <span sty le="display: flex;
+            justify-content: end;"><a href="" class="login-dark2 mt-2">Resend OTP</a></span>
+        </div>
+    </div>
+</div> -->

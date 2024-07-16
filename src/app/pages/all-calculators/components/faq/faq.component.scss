@@ -1,0 +1,30 @@
+.FT-calc-faq {
+    padding-top: 0;
+    padding-bottom: 64px;
+
+    .container {
+        max-width: 1285px;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        letter-spacing: -0.84px;
+        margin-bottom: 24px;
+
+    }
+
+    .faq-box {
+        margin: 0;
+        padding: 42px 52px;
+        box-shadow: none;
+
+        .accordion .accordion-item {
+            .accordion-header .accordion-button {
+                font-size: 1.125rem;
+            }
+
+            .accordion-body {}
+        }
+    }
+}

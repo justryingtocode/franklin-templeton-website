@@ -1,0 +1,960 @@
+<div id="page-content" class="bg-img">
+    <!-- start page breadcrumb block -->
+    <div class="FT-breadcrumb">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Knowledge Centre</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Podcast</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- start podcast hero -->
+    <div class="FT-podcast-hero">
+        <img src="assets/images/knowledge-center/podcast-hero-img.svg" class="w-100">
+    </div>
+
+    <!-- start podcast details -->
+    <div class="FT-podcast">
+        <div class="container">
+            <!-----start prodcast web category-->
+            <div class="podcast-details d-none d-md-block">
+                <div class="category-card big-card">
+
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="subtitle text-blue">An audio podcast series</div>
+                                <h2>Meri Pyaari Saheliyan <small>(6 Podcast)</small></h2>
+                            </div>
+                            <div>
+                                <div class="card-icons">
+                                    <!-- <span class="me-3 text-gray"><i class="bi bi-eye-fill me-1"></i>1K </span> -->
+                                    <!-- <span class="img-with-tooltip me-3" (click)="toggleForAudio1()"> -->
+                                        <!-- <i [ngStyle]="{'display': forAllAudio1 ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                                        <i *ngIf="!forAllAudio1" class="bi bi-heart-fill me-1"></i>
+                                        <span [ngStyle]="{'display': forAllAudio1 ? 'inline' : 'none'}" class="tooltip-block">Like</span>
+                                        <span *ngIf="!forAllAudio1" class="tooltip-block">Unlike</span> -->
+                                        <!-- <img *ngIf="!forAllAudio1" src="assets/images/knowledge-center/HeartStraight.svg" class="me-1" sty le="margin-bottom: 2px; height: 20px; width: 20px;"> -->
+                                        <!-- <i class="bi bi-heart "></i> -->
+                                    <!-- </span> -->
+                                    <span class="img-with-tooltip me-3" (click)="toggleForAudio2()">
+                                        <i [ngStyle]="{'display': forAllAudio2 ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                                        <i *ngIf="!forAllAudio2" class="bi bi-bookmark-fill"></i>
+                                        <span [ngStyle]="{'display': forAllAudio2 ? 'inline' : 'none'}" class="tooltip-block">Save</span>
+                                        <span *ngIf="!forAllAudio2" class="tooltip-block">Saved Course</span>
+                                        <!-- <img *ngIf="!forAllAudio2" src="assets/images/knowledge-center/Variant3.svg" class="me-1" s tyle="margin-bottom: 1px; height: 17px; width: 17px;"> -->
+                                        <!-- <i class="bi bi-bookmark"></i> -->
+                                    </span>
+                                    <span class="dropdown">
+                                        <!-- <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <img src="assets/images/knowledge-center/share.svg" sty le="height: 17px;">
+                                        </span> -->
+
+                                           <!-- <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                           <img src="assets/images/knowledge-center/share.svg" class="d-inline-block mobile-icons light-mode-icon" sty le="width: 18px;">
+                                           <img src="../../../../../../assets/images/dark/share-dark-icon.png" class="mobile-icons dark-mode-icon" st yle="width: 21px; top: 6px; position: relative; left: 0px;">
+                                           </span> -->
+                                           <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-menu-twitter" >
+                                                <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-btn-fund" >    
+                                                <span *ngIf="showTooltip" class="tooltip-block">share</span>
+                                            </span>
+ 
+                                        <ul class="dropdown-menu">
+                                            <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                                        </ul>
+                                    </span>
+                                    <!-- <span><i class="bi bi-reply"></i></span> -->
+                                </div>
+                                <button class="btn btn-primary">
+                                    <img src="assets/images/knowledge-center/play-white.svg" class="me-3">Play Now
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="short-descriptiton">
+                            Meri Pyaari Saheliyan is an audio podcast series that presents candid conversations with six
+                            powerful, inspiring and independent women who have come out into the open and shared their
+                            real-life experiences, challenges and aspirations as well as the role of money in their
+                            journeys. Meri Pyaari Saheliyan is also available on popular audio podcast platforms such as
+                            Soundcloud, Spotify, Saavn, Audioboom, Pocket Casts and many more.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!----start prodcast mobile category-->
+            <div class="podcast-details d-md-none">
+                <div class="category-card">
+                    <div class="big-card">  
+                        <div class="card-body">
+                            <div>
+                                <div class="subtitle text-blue">An audio podcast series</div>
+                                <h2>
+                                    <span class="subtitle-first-heading">Meri Pyaari Saheliyan
+                                    </span>&nbsp; 
+                                    <span class="subtitle-second-heading">(6 Podcast)
+                                    </span>
+                                </h2>
+                            </div>
+                            <div class="short-descriptiton for-short-descriptiton mb-2">
+                                Meri Pyaari Saheliyan is an audio podcast series that presents candid conversations with six
+                                powerful, inspiring and independent women who have come out into the open and shared their
+                                real-life experiences, challenges and aspirations as well as the role of money in their
+                                journeys. Meri Pyaari Saheliyan is also available on popular audio podcast platforms such as
+                                Soundcloud, Spotify, Saavn, Audioboom, Pocket Casts and many more.
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center"> 
+                                    <div class="d-flex">
+                                        <!-- <div class="me-3 text-gray" styl e="margin-top: 3px;"><i class="bi bi-eye-fill me-1 mt-1"></i>1K </div>                           -->
+                                        <div class="card-icons">
+                                            <!-- <span class="img-with-tooltip me-3" (click)="toggleForAudio1()">
+                                                <i [ngStyle]="{'display': forAllAudio1 ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                                                <i *ngIf="!forAllAudio1" class="bi bi-heart-fill me-1"></i>
+                                                <span [ngStyle]="{'display': forAllAudio1 ? 'inline' : 'none'}" class="tooltip-block">Like</span>
+                                                <span *ngIf="!forAllAudio1" class="tooltip-block">Unlike</span>
+                                                <img *ngIf="!forAllAudio1" src="assets/images/knowledge-center/HeartStraight.svg" class="me-1" sty le="margin-bottom: 2px; height: 20px; width: 20px;">
+                                                <i class="bi bi-heart "></i>
+                                            </span> -->
+                                            <span class="img-with-tooltip me-3" (click)="toggleForAudio2()">
+                                                <i [ngStyle]="{'display': forAllAudio2 ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                                                <i *ngIf="!forAllAudio2" class="bi bi-bookmark-fill"></i>
+                                                <span [ngStyle]="{'display': forAllAudio2 ? 'inline' : 'none'}" class="tooltip-block">Save</span>
+                                                <span *ngIf="!forAllAudio2" class="tooltip-block">Saved Course</span>
+                                                <!-- <img *ngIf="!forAllAudio2" src="assets/images/knowledge-center/Variant3.svg" class="me-1" st yle="margin-bottom: 1px; height: 17px; width: 17px;"> -->
+                                                <!-- <i class="bi bi-bookmark"></i> -->
+                                            </span>
+                                            <span class="dropdown">
+                                                <!-- <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <img src="assets/images/knowledge-center/share.svg" class="d-inline-block mobile-icons light-mode-icon" sty le="width: 18px;">
+                                                        <img src="../../../../../../assets/images/dark/share-dark-icon.png" class="mobile-icons dark-mode-icon" st yle="width: 21px; top: 6px; position: relative; left: 0px;">
+                                                    </span>
+                                                </span> -->
+                                                <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-menu-twitter" >
+                                                    <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-btn-fund" >    
+                                                    <span *ngIf="showTooltip" class="tooltip-block">share</span>
+                                                </span>
+                                                <ul class="dropdown-menu">
+                                                    <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                                                    <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                                                    <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                                    <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                                    <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                                                </ul>
+                                            </span>
+                                            <!-- <span><img src="assets/images/knowledge-center/Frame1000008308.svg"></span> -->
+                                        </div>
+                                    </div> 
+                                    <div>
+                                        <button class="btn btn-primary">
+                                            <img src="assets/images/knowledge-center/play-white.svg" class="me-3">Play Now
+                                        </button>
+                                    </div>         
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--start  mob-view podcast item -->
+            <div class="podcast-list mb-5 d-md-none">
+                <div class="category-card" *ngFor="let podcast of getData; let i = index">
+                  <div class="big-card">
+                    <div class="row">
+                      <div class="col-3">
+                        <img src="assets/images/knowledge-center/podcast-img.png" class="img-fluid podcast-block" alt="Podcast Image">
+                      </div>
+                      <div class="col-9">
+                        <div class="d-flex justify-content-between">
+                          <div class="tag fund-AUM" >
+                            {{ podcast.tag }}
+                          </div>
+                          <div class="d-flex align-items-center mb-3 mt-1">
+                            <!-- <div class="me-3"><i class="bi bi-eye-fill me-1"></i>{{ podcast.views }}</div> -->
+                            <div class="card-icons">
+                              <!-- <span class="img-with-tooltip me-3" (click)="toggleIconForWishlist(i)"> -->
+                                <!-- <i [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                                <i *ngIf="!showIconForWishlist[i]" class="bi bi-heart-fill me-1"></i>
+                                <span [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="tooltip-block">Like</span>
+                                <span *ngIf="!showIconForWishlist[i]" class="tooltip-block">Unlike</span> -->
+                                <!-- <img *ngIf="!showIconForWishlist[i]" src="assets/images/knowledge-center/HeartStraight.svg" class="me-1" st yle="margin-bottom: 2px; height: 20px; width: 20px;"> -->
+                                <!-- <i class="bi bi-heart "></i> -->
+                            <!-- </span> -->
+                              <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist(i)">
+                                <i [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                                <i *ngIf="!showIconForWatchlist[i]" class="bi bi-bookmark-fill"></i>
+                                <span [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="tooltip-block">Save</span>
+                                <span *ngIf="!showIconForWatchlist[i]" class="tooltip-block">Saved Course</span>
+                                <!-- <img *ngIf="!showIconForWatchlist[i]" src="assets/images/knowledge-center/Variant3.svg" class="me-1" sty le="margin-bottom: 1px; height: 17px; width: 17px;"> -->
+                                <!-- <i class="bi bi-bookmark"></i> -->
+                            </span>
+                            <span class="dropdown">
+                                <!-- <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/images/knowledge-center/share.svg" sty le="height: 17px;">
+                                </span> -->
+                                <!-- <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/images/knowledge-center/share.svg" class="d-inline-block mobile-icons light-mode-icon" sty le="width: 18px;">
+                                    <img src="../../../../../../assets/images/dark/share-dark-icon.png" class="mobile-icons dark-mode-icon" sty le="width: 21px; top: 6px; position: relative; left: 0px;">
+                                </span> -->
+                                <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-menu-twitter" >
+                                    <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-btn-fund" >    
+                                    <span *ngIf="showTooltip" class="tooltip-block">share</span>
+                                </span>
+                                <ul class="dropdown-menu">
+                                    <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                                    <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                                </ul>
+                            </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <h3 class="mb-1 podcast-tital share-menu-twitter-fund" >{{ podcast.title }}</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="short-description mb-3 showIconForWatchlist">
+                      {{ podcast.shortDescription }}
+                    </div>
+                    <div class="d-flex flex-column justify-content-between audio audio-class-box">
+                      <div class="audio-play-option d-flex align-items-center">
+                        <button class="btn btn-transparent me-2 podcast-img-box">
+                          <img src="assets/images/knowledge-center/play-audio-btn.svg" alt="Play Audio">
+                        </button>
+                        <span class="time me-2">{{ podcast.audioDetails.time }}</span>
+                        <div class="progress flex-grow-1 audio-box">
+                          <div class="progress-bar" role="progressbar" aria-label="Basic example" [style.width]="podcast.progress" [attr.aria-valuenow]="podcast.progressValue" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <button class="btn btn-transparent me-2">
+                          <img src="assets/images/knowledge-center/Vector_data.svg" alt="Speaker">
+                        </button>
+                        <div class="dropdown">
+                          <img src="assets/images/knowledge-center/dots.svg" data-bs-toggle="dropdown" aria-expanded="false" alt="Options">
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+            <!-- <div class="podcast-list mb-5 d-md-none">
+                <div class="category-card">
+                    <div class="big-card">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="assets/images/knowledge-center/podcast-img.png" class="img-fluid" alt="Podcast Image" sty le=" height: 61px;">
+                            </div> 
+                            <div class="col-9">
+                                <div class="d-flex justify-content-between">
+                                    <div class="tag" st yle="
+                                    border-radius: 80px;
+                                    background: #F0F6FF;
+                                    padding: 6px 12px 3px 12px; 
+                                    height: 27px;
+                                    font-size: 0.75rem;
+                                    font-weight: 500;
+                                    line-height: 13px;
+                                    letter-spacing: -0.03em;
+                                    color: #3C425D;
+                                    ">Podcast 1</div>
+                                    <div class="d-flex align-items-center mb-3 mt-1">
+                                        <div class="me-3"><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                        <div class="card-icons">
+                                            <span class="me-3"><i class="bi bi-heart "></i></span>
+                                            <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                            <span><img src="assets/images/knowledge-center/Frame1000008308.svg" alt="Podcast Image"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <h3 class="mb-1" st yle="
+                                    font-size: 0.875rem;
+                                    font-weight: 500;
+                                    line-height: 17px;
+                                    letter-spacing: -0.03em;
+                                    color: #3C425D;
+                                    ">Flying High</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="short-description mb-3" st yle="
+                        font-size: 0.75rem;
+                        font-weight: 400;
+                        line-height: 16px;
+                        letter-spacing: -0.03em;
+                        text-align: left;
+                        color: #595A6C;
+                        ">
+                            Sangeeta’s dream was to fly high
+                        </div>
+                        <div class="d-flex flex-column justify-content-between" sty le="
+                            border-radius: 4px;
+                            background: #F0F6FF;
+                            padding: 0px 10px 0px 5px;">
+                            <div class="audio-play-option d-flex align-items-center">
+                                <button class="btn btn-transparent me-2" sty le="margin-left: -9px;">
+                                    <img src="assets/images/knowledge-center/play-audio-btn.svg" alt="Play Audio">
+                                </button>
+                                <span class="time me-2">0:00 / 1:58</span>
+                                <div class="progress flex-grow-1" st yle="height: 6px;">
+                                    <div class="progress-bar" role="progressbar" aria-label="Basic example" sty le="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <button class="btn btn-transparent me-2">
+                                    <img src="assets/images/knowledge-center/Vector_data.svg" alt="Speaker">
+                                </button>
+                                <div class="dropdown">
+                                    <img src="assets/images/knowledge-center/dots.svg" data-bs-toggle="dropdown" aria-expanded="false" alt="Options">
+                                    <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </div>
+                            </div> 
+                        </div>                    
+                    </div> 
+                                
+                </div>
+                <div class="category-card">
+                    <div class="big-card">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="assets/images/knowledge-center/podcast-img.png" class="img-fluid" alt="Podcast Image" sty le=" height: 61px;">
+                            </div> 
+                            <div class="col-9">
+                                <div class="d-flex justify-content-between">
+                                    <div class="tag" st yle="
+                                    border-radius: 80px;
+                                    background: #F0F6FF;
+                                    padding: 6px 12px 3px 12px; 
+                                    height: 27px;
+                                    font-size: 0.75rem;
+                                    font-weight: 500;
+                                    line-height: 13px;
+                                    letter-spacing: -0.03em;
+                                    color: #3C425D;
+                                    ">Podcast 1</div>
+                                    <div class="d-flex align-items-center mb-3 mt-1">
+                                        <div class="me-3"><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                        <div class="card-icons">
+                                            <span class="me-3"><i class="bi bi-heart "></i></span>
+                                            <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                            <span><img src="assets/images/knowledge-center/Frame1000008308.svg" alt="Podcast Image"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <h3 class="mb-1" s tyle="
+                                    font-size: 0.875rem;
+                                    font-weight: 500;
+                                    line-height: 17px;
+                                    letter-spacing: -0.03em;
+                                    color: #3C425D;
+                                    ">Flying High</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="short-description mb-3" st yle="
+                        font-size: 0.75rem;
+                        font-weight: 400;
+                        line-height: 16px;
+                        letter-spacing: -0.03em;
+                        text-align: left;
+                        color: #595A6C;
+                        ">
+                            Sangeeta’s dream was to fly high
+                        </div>
+                        <div class="d-flex flex-column justify-content-between" st yle="
+                            border-radius: 4px;
+                            background: #F0F6FF;
+                            padding: 0px 10px 0px 5px;">
+                            <div class="audio-play-option d-flex align-items-center">
+                                <button class="btn btn-transparent me-2" st yle="margin-left: -9px;">
+                                    <img src="assets/images/knowledge-center/play-audio-btn.svg" alt="Play Audio">
+                                </button>
+                                <span class="time me-2">0:00 / 1:58</span>
+                                <div class="progress flex-grow-1" st yle="height: 6px;">
+                                    <div class="progress-bar" role="progressbar" aria-label="Basic example" sty le="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <button class="btn btn-transparent me-2">
+                                    <img src="assets/images/knowledge-center/Vector_data.svg" alt="Speaker">
+                                </button>
+                                <div class="dropdown">
+                                    <img src="assets/images/knowledge-center/dots.svg" data-bs-toggle="dropdown" aria-expanded="false" alt="Options">
+                                    <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </div>
+                            </div> 
+                        </div>                    
+                    </div>                            
+                </div>
+            </div> -->
+
+            <!----start  web-view podcast item----->
+            <div class="podcast-list mb-5 d-none d-md-block">
+                <div class="category-card big-card" *ngFor="let podcast of getData; let i = index">
+                  <div class="card-img">
+                    <img src="assets/images/knowledge-center/podcast-img.png">
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div>
+                        <h3>{{ podcast.title }}</h3>
+                        <span class="tag">{{ podcast.tag }}</span>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <!-- <div class="me-3"><i class="bi bi-eye-fill me-1"></i>{{ podcast.views }} </div> -->
+                        <div class="card-icons">
+                          <span class="img-with-tooltip me-3" (click)="toggleIconForWishlist(i)">
+                            <!-- <i [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                            <i *ngIf="!showIconForWishlist[i]" class="bi bi-heart-fill me-1"></i>
+                            <span [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="tooltip-block">Like</span>
+                            <span *ngIf="!showIconForWishlist[i]" class="tooltip-block">Unlike</span> -->
+                            <!-- <img *ngIf="!showIconForWishlist[i]" src="assets/images/knowledge-center/HeartStraight.svg" class="me-1" st yle="margin-bottom: 2px; height: 20px; width: 20px;"> -->
+                            <!-- <i class="bi bi-heart "></i> -->
+                        </span>
+                          <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist(i)">
+                            <i [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                            <i *ngIf="!showIconForWatchlist[i]" class="bi bi-bookmark-fill"></i>
+                            <span [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="tooltip-block">Save</span>
+                            <span *ngIf="!showIconForWatchlist[i]" class="tooltip-block">Saved Course</span>
+                            <!-- <img *ngIf="!showIconForWatchlist[i]" src="assets/images/knowledge-center/Variant3.svg" class="me-1" st yle="margin-bottom: 1px; height: 17px; width: 17px;"> -->
+                            <!-- <i class="bi bi-bookmark"></i> -->
+                        </span>
+                          <!-- <span><i class="bi bi-reply"></i></span> -->
+                          <span class="dropdown">
+                            <!-- <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets/images/knowledge-center/share.svg" st yle="height: 17px;">
+                            </span> -->
+
+                            <!-- <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets/images/knowledge-center/share.svg" class="d-inline-block mobile-icons light-mode-icon" sty le="width: 18px;">
+                                <img src="../../../../../../assets/images/dark/share-dark-icon.png" class="mobile-icons dark-mode-icon" st yle="width: 21px; top: 6px; position: relative; left: 0px;">
+                            </span> -->
+                            <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-menu-twitter" >
+                                <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-btn-fund">    
+                                <span *ngIf="showTooltip" class="tooltip-block">share</span>
+                            </span>
+
+                            <ul class="dropdown-menu">
+                                <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                                <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                                <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                            </ul>
+                        </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="short-descriptiton">
+                      {{ podcast.description }}
+                    </div>
+                    <div class="audio-play-option">
+                      <button class="btn btn-transparent">
+                        <img src="assets/images/knowledge-center/play-audio-btn.svg">
+                      </button>
+                      <span class="time">{{ podcast.audioDetails.time }}</span>
+                      <div class="progress">
+                        <div class="progress-bar"
+                        role="progressbar"
+                        [attr.aria-label]="podcast.audioDetails.progress.label"
+                        [style.width]="podcast.audioDetails.progress.value + '%'"
+                        [attr.aria-valuenow]="podcast.audioDetails.progress.value"
+                        aria-valuemin="0"
+                        aria-valuemax="100"></div>
+                        <!-- <div class="progress-bar" role="progressbar" aria-label="{{ podcast.audioDetails.progress.label }}"
+                             st yle="width: {{ podcast.audioDetails.progress.value }}%" aria-valuenow="{{ podcast.audioDetails.progress.value }}"
+                             aria-valuemin="0" aria-valuemax="100"></div> -->
+                      </div>
+                      <button class="btn btn-transparent">
+                        <img src="assets/images/knowledge-center/speaker-btn.svg">
+                      </button>
+                      <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="assets/images/knowledge-center/dots.svg">
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+
+            <!-- <div class="podcast-list mb-5 d-none d-md-block">
+                <div class="category-card big-card">
+                    <div class="card-img">
+                        <img src="assets/images/knowledge-center/podcast-img.png">
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <h3>Meri Pyaari Saheliyan</h3>
+                                <span class="tag">Introduction</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="me-3"><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                <div class="card-icons">
+                                    <span class="me-3"><i class="bi bi-heart "></i></span>
+                                    <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                    <span><i class="bi bi-reply"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="short-descriptiton">
+                            Not all women come together to gossip and talk about shopping sprees. Some are capable of
+                            way more than what meets the eye. Meri Pyaari Saheliyan is a weekly podcast designed for
+                            women and by women who take their financial freedom seriously.
+                        </div>
+                        <div class="audio-play-option">
+                            <button class="btn btn-transparent">
+                                <img src="assets/images/knowledge-center/play-audio-btn.svg">
+                            </button>
+                            <span class="time">0:00 / 1:58</span>
+
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-label="Basic example"
+                                    sty le="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <button class="btn btn-transparent">
+                                <img src="assets/images/knowledge-center/speaker-btn.svg">
+                            </button>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/images/knowledge-center/dots.svg">
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card big-card">
+                    <div class="card-img">
+                        <img src="assets/images/knowledge-center/podcast-img.png">
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <h3>Flying High</h3>
+                                <span class="tag">Podcast 1</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="me-3"><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                <div class="card-icons">
+                                    <span class="me-3"><i class="bi bi-heart "></i></span>
+                                    <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                    <span><i class="bi bi-reply"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="short-descriptiton">
+                            Sangeeta’s dream was to fly high. She pursued a career in a fiercely competitive industry to
+                            make a name for herself. With the support of her parents she overcame everything that got in
+                            her way. How does she apply her career insights in life? Tune in to hear her story.
+                        </div>
+                        <div class="audio-play-option">
+                            <button class="btn btn-transparent">
+                                <img src="assets/images/knowledge-center/play-audio-btn.svg">
+                            </button>
+                            <span class="time">0:00 / 1:58</span>
+
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-label="Basic example"
+                                    sty le="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <button class="btn btn-transparent">
+                                <img src="assets/images/knowledge-center/speaker-btn.svg">
+                            </button>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/images/knowledge-center/dots.svg">
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="category-card big-card">
+                    <div class="card-img">
+                        <img src="assets/images/knowledge-center/podcast-img.png">
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <h3>Confessions of a Single Mom</h3>
+                                <span class="tag">Podcast 2</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="me-3"><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                <div class="card-icons">
+                                    <span class="me-3"><i class="bi bi-heart "></i></span>
+                                    <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                    <span><i class="bi bi-reply"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="short-descriptiton">
+                            Prarthna, a single mother who came to Mumbai a few years ago to start a new life, talks
+                            about her roller-coaster journey in the city of dreams, the important lessons she learned
+                            and the financial goals she has set for herself in the future.
+                        </div>
+                        <div class="audio-play-option">
+                            <button class="btn btn-transparent">
+                                <img src="assets/images/knowledge-center/play-audio-btn.svg">
+                            </button>
+                            <span class="time">0:00 / 1:58</span>
+
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-label="Basic example"
+                                    sty le="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <button class="btn btn-transparent">
+                                <img src="assets/images/knowledge-center/speaker-btn.svg">
+                            </button>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/images/knowledge-center/dots.svg">
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="category-card big-card">
+                    <div class="card-img">
+                        <img src="assets/images/knowledge-center/podcast-img.png">
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <h3>The Wo-man of the House</h3>
+                                <span class="tag">Podcast 3</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="me-3"><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                <div class="card-icons">
+                                    <span class="me-3"><i class="bi bi-heart "></i></span>
+                                    <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                    <span><i class="bi bi-reply"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="short-descriptiton">
+                            Alpana had a different kind of plan in life, one that didn’t involve climbing up a corporate
+                            ladder but rather, one that would help her family become financially stable in the future.
+                            Tune in to hear her story.
+                        </div>
+                        <div class="audio-play-option">
+                            <button class="btn btn-transparent">
+                                <img src="assets/images/knowledge-center/play-audio-btn.svg">
+                            </button>
+                            <span class="time">0:00 / 1:58</span>
+
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-label="Basic example"
+                                    st yle="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <button class="btn btn-transparent">
+                                <img src="assets/images/knowledge-center/speaker-btn.svg">
+                            </button>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/images/knowledge-center/dots.svg">
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card big-card">
+                    <div class="card-img">
+                        <img src="assets/images/knowledge-center/podcast-img.png">
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <h3>Finding Meaning</h3>
+                                <span class="tag">Podcast 4</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="me-3"><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                <div class="card-icons">
+                                    <span class="me-3"><i class="bi bi-heart "></i></span>
+                                    <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                    <span><i class="bi bi-reply"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="short-descriptiton">
+                            Pushpa has managed to strike the perfect balance between her own personal goals and her
+                            duties as a housewife. Does she have any regrets as she looks back at her journey? Click to
+                            find out.
+                        </div>
+                        <div class="audio-play-option">
+                            <button class="btn btn-transparent">
+                                <img src="assets/images/knowledge-center/play-audio-btn.svg">
+                            </button>
+                            <span class="time">0:00 / 1:58</span>
+
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-label="Basic example"
+                                    st yle="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <button class="btn btn-transparent">
+                                <img src="assets/images/knowledge-center/speaker-btn.svg">
+                            </button>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/images/knowledge-center/dots.svg">
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="category-card big-card">
+                    <div class="card-img">
+                        <img src="assets/images/knowledge-center/podcast-img.png">
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <h3>You Always Remember Your First</h3>
+                                <span class="tag">Podcast 5</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="me-3"><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                <div class="card-icons">
+                                    <span class="me-3"><i class="bi bi-heart "></i></span>
+                                    <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                    <span><i class="bi bi-reply"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="short-descriptiton">
+                            Nikita wanted to get out of her comfort zone and build a financially secure life. She is the
+                            first woman in her family to have studied away from home and worked in a big city. She chose
+                            an unconventional industry despite facing questions about ‘settling down’. Click to hear her
+                            story.
+                        </div>
+                        <div class="audio-play-option">
+                            <button class="btn btn-transparent">
+                                <img src="assets/images/knowledge-center/play-audio-btn.svg">
+                            </button>
+                            <span class="time">0:00 / 1:58</span>
+
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-label="Basic example"
+                                    st yle="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <button class="btn btn-transparent">
+                                <img src="assets/images/knowledge-center/speaker-btn.svg">
+                            </button>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/images/knowledge-center/dots.svg">
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="category-card big-card">
+                    <div class="card-img">
+                        <img src="assets/images/knowledge-center/podcast-img.png">
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <h3>Rock Climbing To The Top</h3>
+                                <span class="tag">Podcast 6</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="me-3"><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                <div class="card-icons">
+                                    <span class="me-3"><i class="bi bi-heart "></i></span>
+                                    <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                    <span><i class="bi bi-reply"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="short-descriptiton">
+                            The work she has done in the Pharma sector precedes her reputation as the most sought after
+                            and influential woman in her industry. This is Kanchana’s story, a woman who made it to the
+                            list of The 50 Most Influential Women in Pharma.
+                        </div>
+                        <div class="audio-play-option">
+                            <button class="btn btn-transparent">
+                                <img src="assets/images/knowledge-center/play-audio-btn.svg">
+                            </button>
+                            <span class="time">0:00 / 1:58</span>
+
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-label="Basic example"
+                                    sty le="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <button class="btn btn-transparent">
+                                <img src="assets/images/knowledge-center/speaker-btn.svg">
+                            </button>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/images/knowledge-center/dots.svg">
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> -->
+
+            <app-category-ad></app-category-ad>
+            <!-- start section fund accordion -->
+            <div class="FT-calculator-accordion">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" disabled>
+                                An investor education and awareness initiative by Franklin Templeton Mutual Fund
+
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>
+                                        <strong>One-time KYC (Know Your Customer)</strong> : One-time KYC registration
+                                        is mandatory to invest in
+                                        mutual funds. You can complete the same by submitting the following at any of
+                                        our
+                                        branches or collection centres: a) Duly filled and signed Central-KYC
+                                        application form.
+                                        b) Proof of Identity: Any document notified by the central government. c) Proof
+                                        of
+                                        Address: Same as identity proof (except PAN). d) Recent Passport Size
+                                        Photograph. Copies
+                                        of all documents submitted must be self-attested by the applicant and
+                                        accompanied by
+                                        originals for verification. You may also avail our Online KYC Registration
+                                        facility
+                                        while opening an online account with us, for more details please visit our
+                                        website
+                                        <a href="#">www.franklintempletonindia.com.</a> In case you are KYC verified and
+                                        want to update any
+                                        information, please submit a completed KYC details change form with the required
+                                        self-attested documents as proof to our nearest branch or collection centre
+
+                                    </li>
+                                    <li>
+                                        <strong>Details of SEBI registered Mutual Funds</strong>: Investors must deal/
+                                        invest only with SEBI
+                                        registered Mutual Funds. Details available on the SEBI website <a
+                                            href="#">www.sebi.gov.in.</a>
+
+                                    </li>
+                                    <li>
+                                        <strong>Complaint Redressal</strong>: Investors can reach us on our toll-free
+                                        helpline 1800 425 4255 OR
+                                        write to us at grievanceredressal@franklintempleton.com. For escalation, write
+                                        to us at
+                                        headofcustomerservice@franklintempleton.com; president@franklintempleton.com or
+                                        lodge
+                                        your grievance with SEBI through their SCORES (SEBI Complaint Redress System)
+                                        Portal at
+                                        <a href="#">https://scores.gov.in</a>
+
+                                    </li>
+                                </ul>
+                                <div>
+                                    Mutual Fund investments are subject to market risks, read all scheme related
+                                    documents
+                                    carefully.
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

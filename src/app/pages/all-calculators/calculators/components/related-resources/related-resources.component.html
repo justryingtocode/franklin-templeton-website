@@ -1,0 +1,58 @@
+<!-- start section resources -->
+<section class="FT-resources mb-6">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <div class="FT-title-small">Related Resources</div>
+            <a href="#" class="line login-dark2">View All <i class="bi bi-chevron-right"></i></a>
+        </div>
+        
+        
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem class="slide" *ngFor="let slide of relatedData; let i = index">
+              <div class="category-card" >
+                <div class="card-img" type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']">
+                  <img src="{{ slide.imgSrc }}">
+                  <!-- <span class="time-tag">{{ slide.timeTag }}</span> -->
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <!-- <div><i class="bi bi-eye-fill me-1"></i>{{ slide.views }} </div> -->
+                         <span class="time-tag">{{ slide.timeTag }}</span>
+                    <div class="card-icons d-flex Related-resources">
+                      <!-- <span class="img-with-tooltip me-3 d-flex"  color: var(--blue);" (click)="toggleIconForWishlist(i)">
+                        <i [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                        <i *ngIf="!showIconForWishlist[i]" class="bi bi-heart-fill me-1"></i>
+                        <span [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="tooltip-block">add to wishlist</span>
+                        <span *ngIf="!showIconForWishlist[i]" class="tooltip-block">remove from wishlist</span>
+                        <span  margin-top: 2px;">{{ slide.wishlistCount }}</span>
+                      </span> -->
+                      <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist(i)">
+                        <i [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                        <i *ngIf="!showIconForWatchlist[i]" class="bi bi-bookmark-fill"></i>
+                        <span [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="tooltip-block">add to watchlist</span>
+                        <span *ngIf="!showIconForWatchlist[i]" class="tooltip-block">remove from watchlist</span>
+                      </span>
+                      <span class="dropup">
+                            <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon light-mode-icon-size">
+                                <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon dark-mode-icon-size">    
+                                <span *ngIf="showTooltip" class="tooltip-block">share</span>
+                            </span>
+                            
+                        <ul class="dropdown-menu relet-resour">
+                            <li><span class="dropdown-item"><img class="share-icon" src="assets/images/general/Link.svg">Copy link</span></li>
+                            <li><a class="dropdown-item" href="#"><img class="share-icon" src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                            <li><a class="dropdown-item" href="#"><img class="share-icon" src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                            <li><a class="dropdown-item" href="#"><img class="share-icon" src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                            <li><a class="dropdown-item" href="#"><img class="share-icon" src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                        </ul>
+                      </span>
+                    </div>
+                  </div>
+                  <div type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']" class="text-bold card-title">{{ slide.title }}</div>
+                </div>
+              </div>
+            </div>
+        </ngx-slick-carousel>
+    </div>
+</section>

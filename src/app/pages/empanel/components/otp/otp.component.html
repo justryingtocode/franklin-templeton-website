@@ -1,0 +1,59 @@
+<div class="empanel-box">
+    <div *ngIf="hideOtpBox">
+        <div class="text-big text-meduim mb-1">Online Empanelment or Registration</div>
+        <div class="login-dark">I’m an Individual</div>
+        <form class="otp-form">
+            <div class="row">
+                <div class="col-lg col-md-6 col-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="ARN/RIA*">
+                    </div>
+                </div>
+                <div class="col-lg col-md-6 col-12">
+                    <button class="btn btn-primary" (click)="toggleEmpanelSteps()">Send OTP</button>
+                </div>
+            </div>
+        </form>
+        <div class="text-big text-meduim mb-1">Offline Empanelment or Registration</div>
+        <div class="login-dark">Corporate Distributor</div>
+
+        <div class="row gy-3 mt-4">
+            <div class="col-lg col-md-6 col-12">
+                <div class="pdf-files">
+                    <div class="file-box">
+                        <div>Distributor Empanelment Form</div>
+                        <img src="assets/images/home/pdf.svg">
+                    </div>
+                    <div class="file-box">
+                        <div>Distributor Empanelment Form - New Cadre</div>
+                        <img src="assets/images/home/pdf.svg">
+                    </div>
+                    <div class="file-box">
+                        <div>RIA Registration Form</div>
+                        <img src="assets/images/home/pdf.svg">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-auto col-md-6 col-12">
+                <div class="distributor-box">
+                    <div class="mb-3 text-meduim">
+                        <div class="text-small">Send to:</div>
+                        <div>Franklin Templeton Investor Service Center:</div>
+                    </div>
+                    <div class="mb-3 login-dark">
+                        Address: Century Center,75, T.T.K Road,Alwarpet,Chennai 600018,
+                    </div>
+                    <div class="mb-3 login-dark">
+                        Phone Number: (044)-24987790
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="showEmpanelSteps">
+        <app-steps></app-steps>
+    </div>
+</div>
+<div class="text-big text-meduim" *ngIf="hideOtpBox">
+    Please Note : This Online Distributor Empanelment or Registration is only for Individuals/Sole Proprietorship.
+</div>

@@ -1,0 +1,248 @@
+<form [formGroup]="investNowForm" *ngIf="!otpRequired">
+    <div class="text-center">
+        <div class="form-check form-check-inline mb-4">
+            <input class="form-check-input" (click)="newInvestorInput()" type="radio" id="inlineRadio1" [value]="0"
+                [(ngModel)]="otpChecked" name="otpChecked" [checked]="otpChecked === 0">
+            <label class="form-check-label fontResize" for="inlineRadio1">New Investor</label>
+        </div>
+
+        <div class="form-check form-check-inline mb-4">
+            <input class="form-check-input" (click)="existingInvestorInput()" type="radio" id="inlineRadio2" [value]="1"
+                [(ngModel)]="otpChecked" name="otpChecked" [checked]="otpChecked === 1">
+            <label class="form-check-label fontResize" for="inlineRadio2">Existing Investor</label>
+        </div>
+    </div>
+    <div *ngIf="newInvestor">
+        <div class="row g-3">
+            <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+                <input type="text" class="form-control" formControlName="name" placeholder="Your name">
+                <div
+                    *ngIf="investNowForm?.get('name')?.hasError('required') && !investNowForm?.get('name')?.value && investNowForm?.get('name')?.touched">
+                    <span class="error-msg fontResize fund-AUM">Name is required.</span>
+                </div>
+            </div>
+            <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+                <input type="text" (keydown)="blockAlphabetsAndSpecialChars($event)" class="form-control"
+                    formControlName="phone" placeholder="Mobile Number" maxlength="10">
+                <div
+                    *ngIf="investNowForm?.get('phone')?.hasError('required') && !investNowForm?.get('phone')?.value && investNowForm?.get('phone')?.touched">
+                    <span  class="error-msg fontResize fund-AUM">Mobile Number is required.</span>
+                </div>
+                <!-- <div *ngIf="investNowForm?.get('phone')?.hasError('invalidPhone') && !investNowForm?.get('phone')?.hasError('required') && investNowForm?.get('phone')?.touched">
+                     <span sty le="color: #F04438;" class="error-msg">Invalid phone number (10 digits only).</span>
+                      </div> -->
+            </div>
+            <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+                <input type="text" class="form-control" formControlName="email" placeholder="Email">
+                <div
+                    *ngIf="investNowForm?.get('email')?.hasError('required') && !investNowForm?.get('email')?.value && investNowForm?.get('email')?.touched">
+                    <span class="error-msg fontResize fund-AUM">Email is required.</span>
+                </div>
+                <div
+                    *ngIf="investNowForm?.get('email')?.hasError('pattern') && !investNowForm?.get('email')?.hasError('required') && investNowForm?.get('email')?.touched">
+                    <span class="error-msg fontResize fund-AUM">Invalid email format.</span>
+                </div>
+            </div>
+            <!-- </div>
+                 <div class="row gx-3"> -->
+            <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+                <select class="form-select call-back-form fontResize select-all" aria-label="City" formControlName="city"
+                >
+                    <option value="" disabled>Select City</option>
+                    <option value="Kanchi">Kochi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Bengloare">Bengaluru</option>
+                </select>
+                <div
+                    *ngIf="investNowForm?.get('city')?.hasError('required') && !investNowForm?.get('city')?.value && investNowForm?.get('city')?.touched">
+                    <span class="error-msg fontResize fund-AUM">City is required.</span>
+                </div>
+            </div>
+
+            <!-- </div>
+                <div class="row gx-3"> -->
+            <!-- <div class="form-group col-12 mb-3" *ngIf="investNowForm?.value?.query">
+               <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="remarks"
+                placeholder="Type your query here"></textarea>
+                <div *ngIf="investNowForm?.get('remarks')?.hasError('required') && investNowForm?.get('remarks')?.touched">
+                    <span st yle="color: #F04438;" class="error-msg">Remarks is required.</span>
+                </div>
+             </div> -->
+        </div>
+        <div class="form-check my-3 audio-box">
+            <input class="form-check-input" type="checkbox" value="" (change)="checkboxCondition($event)"
+                id="flexCheckDefault">
+            <label class="form-check-label fontResize" for="flexCheckDefault">
+                You agree to our <a href="#" class="forCallBackLable fontResize">Privacy
+                    Policy</a>&nbsp;<span>and&nbsp;<a class="forCallBackLable fontResize" href="#">Terms
+                        of Use</a></span>
+            </label>
+        </div>
+        <div class="row gx-3">
+            <div class="col-12">
+                <!-- <button class="btn btn-primary w-100" [disabled]="!investNowForm.valid || !filedDefaullt" (click)="moveTo()">Submit</button> -->
+                <button class="btn btn-primary w-100 fontResize" [disabled]="!investNowForm.valid || !filedDefaullt"
+                    (click)="moveTo()">Submit</button>
+            </div>
+        </div>
+        <div class="row gx-2 d-md-none audio-class-box">
+            <!-- <div class="col-6">
+            <button type="button" class="btn btn-outline-primary">Call back</button>
+           </div> -->
+            <div class="col-12">
+                <!-- <button class="btn btn-primary w-100" (click)="otpRequired=!otpRequired">Submit</button> -->
+                <!-- <a href="#" class="btn btn-primary">Invest now</a> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------------- -->
+    <form [formGroup]="investNowForm1" *ngIf="!otpRequired">
+        <div *ngIf="existingInvestor">
+            <div class="row">
+                <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+                    <input type="text" class="form-control" formControlName="existingInvestorname"
+                        placeholder="Your name">
+                    <div
+                        *ngIf="investNowForm1?.get('existingInvestorname')?.hasError('required') && !investNowForm1?.get('existingInvestorname')?.value && investNowForm1?.get('existingInvestorname')?.touched">
+                        <span  class="error-msg fontResize fund-AUM">Name is required.</span>
+                    </div>
+                </div>
+                <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+                    <input type="text" (keydown)="blockAlphabetsAndSpecialChars($event)" class="form-control"
+                        formControlName="existingInvestorphone" placeholder="Mobile Number" maxlength="10">
+                    <div
+                        *ngIf="investNowForm1?.get('existingInvestorphone')?.hasError('required') && !investNowForm1?.get('existingInvestorphone')?.value && investNowForm1?.get('existingInvestorphone')?.touched">
+                        <span class="error-msg fontResize fund-AUM">Mobile Number is required.</span>
+                    </div>
+                </div>
+                <div class="form-check my-3 report-share">
+                    <input class="form-check-input" type="checkbox" value="" (change)="checkboxCondition($event)"
+                        id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        You agree to our <a href="#" class="forCallBackLable fontResize">Privacy
+                            Policy</a>&nbsp;<span>and&nbsp;<a class="forCallBackLable fontResize" href="#">Terms
+                                of Use</a></span>
+                    </label>
+                </div>
+                <div class="row gx-3">
+                    <div class="col-12">
+                        <button class="btn btn-primary w-100 fontResize"
+                            [disabled]="!investNowForm1.valid || !filedDefaullt" (click)="moveTo1()">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+
+</form>
+
+<div class="container row gx-3 text-center" *ngIf="otpRequired && !otpSubmitted">
+    <span class="mb-2">
+        <h5><strong>Please enter OTP</strong></h5>
+    </span>
+    <span class="mb-4 titleForCallback">Your one Time Password(OTP) has been sent via SMS to your registered mobile
+        number</span>
+    <div class="container inputfield">
+        <input type="text" pattern="[0-9]+" maxlength="1" [(ngModel)]="otpNumber[0]"
+            (keydown)="blockAlphabetsAndSpecialChars($event)" class="input" />
+        <input type="text" pattern="[0-9]+" maxlength="1" [(ngModel)]="otpNumber[1]"
+            (keydown)="blockAlphabetsAndSpecialChars($event)" class="input" />
+        <input type="text" pattern="[0-9]+" maxlength="1" [(ngModel)]="otpNumber[2]"
+            (keydown)="blockAlphabetsAndSpecialChars($event)" class="input" />
+        <input type="text" pattern="[0-9]+" maxlength="1" [(ngModel)]="otpNumber[3]"
+            (keydown)="blockAlphabetsAndSpecialChars($event)" class="input" />
+        <input type="text" pattern="[0-9]+" maxlength="1" [(ngModel)]="otpNumber[4]"
+            (keydown)="blockAlphabetsAndSpecialChars($event)" class="input" />
+        <input type="text" pattern="[0-9]+" maxlength="1" [(ngModel)]="otpNumber[5]"
+            (keydown)="blockAlphabetsAndSpecialChars($event)" class="input" />
+    </div>
+    <div class="row container m-auto mt-1 justify-content-center otp-resent"  *ngIf="resendOtpRequest && remainingTime>0">
+        OTP has been resent.
+    </div>
+    <div class="d-flex flex-row justify-content-center mt-2">
+
+        <ng-container *ngIf="remainingTime > 0; else resendOTP">
+            Did not receive OTP?<div class="share-menu-twitter">Active in 0:{{ remainingTime }}</div>
+        </ng-container>
+        <ng-template #resendOTP>
+            Did not receive OTP?<div class="share-menu-twitter" (click)="resetCountdown()">Resend OTP</div>
+        </ng-template>
+    </div>
+    <div class="row gx-3 callBack-footer mt-4">
+        <div class="col-12">
+            <button class="btn btn-primary fund-AUM-SIP" 
+                (click)="otpSubmitted=!otpSubmitted;back()">Submit</button>
+            <!-- <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button> -->
+        </div>
+    </div>
+
+
+</div>
+<div class="container row gx-3 text-center form-success-msg" *ngIf="otpSubmitted">
+    <div class="row justify-content-end m-0 share-menu-twitter-fund"  (click)="clear()">
+        <img src="assets/images/home/close-form.svg" class="share-btn-fund">
+
+    </div>
+    <img src="assets/images/general/check_circle.svg showIconForWatchlist" class="checked-img mt-4 mb-2">
+    <span  class="fontResize podcast-block"><strong>Thankyou! your request has been registered. A
+            distributor will contact you
+            within 24 business hours.</strong></span>
+</div>
+
+
+
+
+
+<!-- ---------------------------- -->
+
+<!-- <form>
+                            
+    <div>
+        <div class="text-center">
+
+            <div class="form-check form-check-inline mb-4">
+                <input class="form-check-input" type="radio" id="inlineRadio1" [value]="0"
+                    [(ngModel)]="otpChecked" name="otpChecked" [checked]="otpChecked === 0">
+                <label class="form-check-label" for="inlineRadio1">Login with password</label>
+            </div>
+
+            <div class="form-check form-check-inline mb-4">
+                <input class="form-check-input" type="radio" id="inlineRadio2" [value]="1"
+                    [(ngModel)]="otpChecked" name="otpChecked" [checked]="otpChecked === 1">
+                <label class="form-check-label" for="inlineRadio2">Login with OTP</label>
+            </div>
+        </div>
+        <div *ngIf="!otpChecked">
+            <div class="form-group mb-4">
+                <input type="text" class="form-control" placeholder="User ID*">
+                <div class="text-end mt-2">
+                    <a class="text-small text-blue" [routerLink]="['/forgot-user-id']">Forgot
+                        User
+                        ID?</a>
+                </div>
+            </div>
+            <div class="form-group mb-4">
+                <input type="password" class="form-control" placeholder="Password*">
+                <div class="text-end mt-2">
+                    <a class="text-small text-blue" [routerLink]="['/forgot-password']">Forgot
+                        password?</a>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="otpChecked">
+            <div class="form-group mb-4">
+                <input type="text" class="form-control" placeholder="OTP*">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mb-4">
+        <button class="btn btn-primary w-100">Submit</button>
+    </div>
+</form> -->

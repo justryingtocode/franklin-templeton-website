@@ -1,0 +1,119 @@
+.container {
+    max-width: 1240px;
+
+}
+.small-container{
+    max-width:1080px
+}
+.FT {
+    &-inner-banners {
+        .content-box {
+            max-width: 528px;
+        }
+    }
+
+    &-about-page {
+        padding-top: 48px;
+        padding-bottom: 48px;
+
+        .FT-title {
+            color: var(--black);
+            background: linear-gradient(90.29deg, var(--black) 26.99%, var(--black) 50.09%, var(--black) 74.69%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            vertical-align: middle;
+        }
+
+        p {
+            color: #5C5C5C;
+
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: -0.54px;
+        }
+
+        .statistics {
+            
+            color: #495B6E;
+
+            .FT-title {
+                text-align: left;
+                color: #29333D;
+                background: linear-gradient(90.29deg, #29333D 26.99%, #29333D 50.09%, #29333D 74.69%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+            }
+            .col-6{
+                margin-bottom: 38px;
+            }
+        }
+
+        a {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: -0.6px;
+        }
+
+        // a {
+        //     position: relative;
+        //     text-decoration: none;
+        // }
+        
+        // a:after {
+        //     content: "";
+        //     position: absolute;
+        //     background-color: #3769ff;
+        //     height: 3px;
+        //     width: 0;
+        //     left: 0;
+        //     right: 0;
+        //     bottom: 0px;
+        // }
+        
+        // a:hover:after {
+        //     width: 75%;
+        // }
+
+        .content {
+            max-width: 489px;
+        }
+
+        .feature-box {
+            text-align: center;
+            border-radius: 16px;
+            padding: 24px 16px;
+            line-height: 142.5%;
+            letter-spacing: -0.48px;
+            box-shadow: 0px 2px 11.81px 0px rgba(155, 155, 155, 0.10);
+            margin-bottom: 32px;
+            background: #fff;
+            .text-big {
+                font-weight: 600;
+                line-height: normal;
+                letter-spacing: -0.6px;
+            }
+        }
+    }
+}
+
+@media(max-width: 991px) {
+    .FT-about-page .feature-box {
+        text-align: left;
+    }
+    .text-bold {
+        font-size: 1.25rem;
+        text-align: center;
+}
+}
+@media(max-width:899.98px){
+    .unique{
+        font-weight: 600 !important; 
+        font-size: 1.125rem !important;
+        text-align: center !important;
+    }
+}

@@ -1,0 +1,145 @@
+<form [formGroup]="calcForm" *ngIf="calcForm">
+
+    <!-- Earn Amount -->
+    <div class="form-group" *ngIf="handleFieldVisibility('earn')">
+        <label for="customRange2" class="form-label">I need
+
+            <div class="selected-range">
+                <span class="calc-input-prefix">₹</span>
+
+                <input 
+                    type="number" 
+                    [attr.min]="getInputLimit(sliderKeyName.earn, false)" 
+                    [attr.max]="getInputLimit(sliderKeyName.earn, true)"
+                    [(ngModel)]="calcForm.value.earn" 
+                    formControlName="earn" 
+                    (change)="onCalculatorChange($event, 'earn')" 
+                    class="calc-input amount text-start">
+
+            </div>
+        </label>
+        <div class="range-slider">
+                <input 
+                    type="range" 
+                    [attr.min]="getInputLimit(sliderKeyName.earn, false)" 
+                    [attr.max]="getInputLimit(sliderKeyName.earn, true)"
+                    [value]="calcForm.value.earn || getInputLimit(sliderKeyName.earn)" 
+                    formControlName="earn" 
+                    (change)="onCalculatorChange($event, 'earn')" 
+                    class="custom-range" 
+                    [style.background]="earnSliderStyle">
+
+        </div>
+        <div class="d-flex text-small justify-content-between">
+            <span>₹5L</span>
+            <span>₹10Cr</span>
+        </div>
+    </div>
+    
+    <!-- Investment Amount -->
+    <div class="form-group" *ngIf="handleFieldVisibility('amount')">
+        <label for="customRange2" class="form-label" >I want to invest
+
+            <div class="selected-range">
+                <span class="calc-input-prefix">₹</span>
+                <input 
+                    type="number" 
+                    [attr.min]="getInputLimit(sliderKeyName.amount, false)" 
+                    [attr.max]="getInputLimit(sliderKeyName.amount, true)"
+                    [(ngModel)]="calcForm.value.amount" 
+                    formControlName="amount" 
+                    (change)="onCalculatorChange($event, 'amount')" 
+                    class="calc-input amount text-start">
+
+            </div>
+        </label>
+        <div class="range-slider">
+                <input 
+                    type="range" 
+                    [attr.min]="getInputLimit(sliderKeyName.amount, false)" 
+                    [attr.max]="getInputLimit(sliderKeyName.amount, true)"
+                    [value]="calcForm.value.amount || getInputLimit(sliderKeyName.amount)" 
+                    formControlName="amount" 
+                    (change)="onCalculatorChange($event, 'amount')" 
+                    class="custom-range" 
+                    [style.background]="amountSliderStyle">
+
+        </div>
+        <div class="d-flex text-small justify-content-between">
+            <span>₹10k</span>
+            <span>₹10Cr</span>
+        </div>
+    </div>
+    
+    <!-- Period Year -->
+    <div class="form-group" *ngIf="handleFieldVisibility('period')">
+        <label for="customRange2" class="form-label">
+            <!-- {{selectedSipType === 'normal' ? 'Over a' : 'For a'}} period of -->
+            {{periodLable}}
+            <div class="selected-range" (click)="autoFocus($event, 'period')">
+                <input 
+                    type="number" 
+                    [attr.min]="getInputLimit(sliderKeyName.period, false)" 
+                    [attr.max]="getInputLimit(sliderKeyName.period, true)"
+                    formControlName="period" 
+                    [(ngModel)]="calcForm.value.period" 
+                    (change)="onCalculatorChange($event, 'period')" 
+                    class="calc-input text-end forchangecustomcalculator"
+                    id="period">
+
+                <span class="calc-input-prefix">Years</span>
+            </div>
+        </label>
+        <div class="range-slider">
+            <input 
+                type="range" 
+                formControlName="period" 
+                [value]="calcForm.value.period || getInputLimit(sliderKeyName.period)" 
+                (change)="onCalculatorChange($event, 'period')" 
+                class="custom-range" 
+                [attr.min]="getInputLimit(sliderKeyName.period, false)" 
+                [attr.max]="getInputLimit(sliderKeyName.period, true)"
+                [style.background]="periodSliderStyle">
+
+        </div>
+        <div class="d-flex text-small justify-content-between">
+            <span>1 year</span>
+            <span>30 year</span>
+        </div>
+    </div>
+
+    <!-- Expected ROI -->
+    <div class="form-group" *ngIf="handleFieldVisibility('expectedReturn')">
+        <label for="customRange2" class="form-label">Expected rate of return
+            <div class="selected-range" (click)="autoFocus($event, 'expectedReturn')">
+
+                <input 
+                    type="number" 
+                    [attr.min]="getInputLimit(sliderKeyName.expectedReturn, false)" 
+                    [attr.max]="getInputLimit(sliderKeyName.expectedReturn, true)"
+                    formControlName="expectedReturn" 
+                    [(ngModel)]="calcForm.value.expectedReturn" 
+                    (change)="onCalculatorChange($event, 'expectedReturn')" 
+                    class="calc-input text-end forchangecustomcalculator"
+                    id="expectedReturn">
+                <span class="calc-input-prefix"> %</span>
+            </div>
+        </label>
+        <div class="range-slider">
+            <input 
+                type="range" 
+                formControlName="expectedReturn" 
+                [value]="calcForm.value.expectedReturn || getInputLimit(sliderKeyName.expectedReturn)" 
+                (change)="onCalculatorChange($event, 'expectedReturn')" 
+                class="custom-range" 
+                [attr.min]="getInputLimit(sliderKeyName.expectedReturn, false)" 
+                [attr.max]="getInputLimit(sliderKeyName.expectedReturn, true)"
+                [style.background]="expectedReturnSliderStyle">
+
+        </div>
+        <div class="d-flex text-small justify-content-between">
+            <span>{{getInputLimit(sliderKeyName.expectedReturn, false)}}%</span>
+            <span>{{getInputLimit(sliderKeyName.expectedReturn, true)}}%</span>
+        </div>
+    </div>
+</form>

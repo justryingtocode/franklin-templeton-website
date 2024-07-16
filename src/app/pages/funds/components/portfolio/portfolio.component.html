@@ -1,0 +1,754 @@
+<!-- start Portfolio-->
+<div class="fd-tab-sections FT-portfolio block-border" id="portfolio">
+    <div class="block-head">
+        <h3 class="fontResize">Portfolio <small class="fontResize">Present Portfolio Allocations as of October 31, 2022</small></h3>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active fontResize" id="Equity-tab"
+                    [ngStyle]="{'min-width': isMobileView ? '2rem' : '8rem'}" data-bs-toggle="tab"
+                    data-bs-target="#All-tab-pane" type="button" role="tab" aria-controls="All-tab-pane"
+                    aria-selected="false">All</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fontResize" id="Equity-tab" data-bs-toggle="tab" data-bs-target="#Equity-tab-pane"
+                    type="button" role="tab" aria-controls="Equity-tab-pane" aria-selected="true">Equity(60%)</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fontResize" id="Debt-tab" data-bs-toggle="tab" data-bs-target="#Debt-tab-pane"
+                    type="button" role="tab" aria-controls="Debt-tab-pane" aria-selected="false">Debt(40%)</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button  class="nav-link disabled fontResize Equity-tab-other" id="Equity-tab" data-bs-toggle="tab"
+                    data-bs-target="#Equity-tab-pane" type="button" role="tab" aria-controls="Equity-tab-pane"
+                    aria-selected="false">Other(0%)</button>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="All-tab-pane" role="tabpanel" aria-labelledby="Equity-tab"
+            tabindex="0">
+            <div class="row portfolio-graphs">
+                <div class="col-lg-6 col-12">
+                    <h4 class="fontResize">Top Holdings (As of 24th July, 2023)</h4>
+                    <div class="progress-box">
+                        <div class="progress-block">
+                            <div class="fontResize">Bharat Electronics Limited </div>
+                            <div class="d-flex custom-tooltip">
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary success-ex" role="progressbar" aria-label="Success example"
+                                     aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                    <span class="tooltiptext fontResize col-md-6 fontResize">Bharat Electronics Limited
+                                        <span>19.66%</span>
+                                    </span>
+                                </div>
+                                <span>19.66%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">Apollo Tires Limited</span>
+                            <div class="d-flex custom-tooltip">
+                                <div class="progress">
+                                    <div class="progress-bar bg-purple success-examp" role="progressbar" aria-label="Success example"
+                                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                    <span class="tooltiptext fontResize fontResize">Apollo Tires Limited
+                                        <span>12.21%</span>
+                                    </span>
+                                </div>
+                                <span>12.21%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">ICICI Bank Limited</span>
+                            <div class="d-flex custom-tooltip">
+                                <div class="progress">
+                                    <div class="progress-bar bg-light-green valuenow" role="progressbar"
+                                        aria-label="Success example" aria-valuenow="55"
+                                        aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                    <span class="tooltiptext fontResize fontResize">ICICI Bank Limited
+                                        <span>9.66%</span>
+                                    </span>
+                                </div>
+                                <span>9.66%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">United Breweries Limited </span>
+                            <div class="d-flex custom-tooltip">
+                                <div class="progress">
+                                    <div class="progress-bar bg-light-blue United-brew" role="progressbar"
+                                        aria-label="Success example" aria-valuenow="40"
+                                        aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                    <span class="tooltiptext fontResize fontResize">United Breweries Limited
+                                        <span>6.23%</span>
+                                    </span>
+                                </div>
+                                <span>6.23%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">State Bank of India</span>
+                            <div class="d-flex custom-tooltip">
+                                <div class="progress">
+                                    <div class="progress-bar bg-light state-bank" role="progressbar" aria-label="Success example"
+                                     aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                    <span class="tooltiptext fontResize">State Bank of India
+                                        <span>4.87%</span>
+                                    </span>
+                                </div>
+                                <span>4.87%</span>
+                            </div>
+
+                        </div>
+                        <div class="text-center d-md-none">
+                            <a href="#" (click)="false" ><span data-bs-toggle="modal" class="mt-0 holding-all"
+                                data-bs-target="#holdingsModal">View
+                                    all holdings</span><i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center d-none d-lg-block">
+                        <a href="#" (click)="false" class="viewAll" ><span class="link-test" data-bs-toggle="modal" data-bs-target="#holdingsModal">View all holdings</span><i
+                            class="bi bi-chevron-right"></i></a>
+                        <!-- <a href="#" (click)="false"><span data-bs-toggle="modal" data-bs-target="#holdingsModal">View all holdings1</span><i
+                                class="bi bi-chevron-right"></i></a> -->
+                    </div>
+                </div> 
+                <!-- <div class="col-lg-4 col-12">
+                    <h4>Allocation by Market Cap</h4>
+                    <div class="graph-box">
+                        <canvas baseChart class="chart" [data]="doughnutChartDataMarket" [type]="doughnutChartType"
+                            [options]="pieChartOptionsMarket" [legend]="false">
+                        </canvas>
+                        <div class="graph-stat">
+                            <span><span class="circle" st    yle="background:#165DFF"></span>Large Cap (40%)</span>
+                            <span><span class="circle" st yle="background:#14C9C9"></span>Mid Cap (40%)</span>
+                            <span><span class="circle" st yle="background:#0EA0E6"></span>Small Cap (20%)</span>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-lg-6 col-12">
+                    <h4 class="fontResize">Top Sectors (As of 24th July, 2023)</h4>
+
+                    <div class="progress-box">
+                        <div class="progress-block">
+                            <div class="fontResize">Financial</div>
+                            <div class="d-flex custom-tooltip">
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary success-ex" role="progressbar" aria-label="Success example"
+                                     aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                    <span class="tooltiptext fontResize">Financial
+                                        <span>19.66%</span>
+                                    </span>
+                                </div>
+                                <span>19.66%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">Healthcare</span>
+                            <div class="d-flex custom-tooltip">
+                                <div class="progress">
+                                    <div class="progress-bar bg-purple success-examp" role="progressbar" aria-label="Success example"
+                                         aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                    <span class="tooltiptext fontResize">Healthcare
+                                        <span>12.21%</span>
+                                    </span>
+                                </div>
+                                <span>12.21%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">Construction</span>
+                            <div class="d-flex custom-tooltip">
+                                <div class="progress">
+                                    <div class="progress-bar bg-light-green valuenow" role="progressbar"
+                                        aria-label="Success example"  aria-valuenow="55"
+                                        aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                    <span class="tooltiptext fontResize">Construction
+                                        <span>9.66%</span>
+                                    </span>
+                                </div>
+                                <span>9.66%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">Energy</span>
+                            <div class="d-flex custom-tooltip">
+                                <div class="progress">
+                                    <div class="progress-bar bg-light-blue United-brew" role="progressbar"
+                                        aria-label="Success example" aria-valuenow="40"
+                                        aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                    <span class="tooltiptext fontResize">Energy
+                                        <span>6.23%</span>
+                                    </span>
+                                </div>
+                                <span>6.23%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">Construction</span>
+                            <div class="d-flex custom-tooltip">
+                                <div class="progress">
+                                    <div class="progress-bar bg-light state-bank" role="progressbar" aria-label="Success example"
+                                         aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                    <span class="tooltiptext fontResize">Construction
+                                        <span>4.87%</span>
+                                    </span>
+                                </div>
+                                <span>4.87%</span>
+                            </div>
+                        </div>
+                        <div class="text-center d-md-none">
+                            <a href="#" (click)="false"><span class="link-test"  data-bs-toggle="modal" class="mt-0 holding-all"
+                                data-bs-target="#sectorsModal">View all sectors</span><i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center d-none d-lg-block">
+                        <a href="#" (click)="false" class="viewAll"  ><span class="link-test"  data-bs-toggle="modal" data-bs-target="#sectorsModal">View all sectors</span><i
+                                class="bi bi-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="Equity-tab-pane" role="tabpanel" aria-labelledby="Equity-tab" tabindex="0">
+            <div class="row portfolio-graphs">
+                <div class="col-lg-4 col-12">
+                    <h4 class="fontResize">Top Holdings(%of equity)</h4>
+                    <div class="progress-box">
+                        <div class="progress-block">
+                            <div class="fontResize">Bharat Electronics Limited </div>
+                            <div class="d-flex">
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary success-ex" role="progressbar" aria-label="Success example"
+                                         aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                                <span>19.66%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">Apollo Tires Limited</span>
+                            <div class="d-flex">
+                                <div class="progress">
+                                    <div class="progress-bar bg-purple success-examp" role="progressbar" aria-label="Success example"
+                                         aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                                <span>12.21%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">ICICI Bank Limited</span>
+                            <div class="d-flex">
+                                <div class="progress">
+                                    <div class="progress-bar bg-light-green valuenow" role="progressbar"
+                                        aria-label="Success example" aria-valuenow="55"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span>9.66%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">United Breweries Limited </span>
+                            <div class="d-flex">
+                                <div class="progress">
+                                    <div class="progress-bar bg-light-blue United-brew" role="progressbar"
+                                        aria-label="Success example" aria-valuenow="40"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span>6.23%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">State Bank of India</span>
+                            <div class="d-flex">
+                                <div class="progress">
+                                    <div class="progress-bar bg-light state-bank" role="progressbar" aria-label="Success example"
+                                         aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                                <span>4.87%</span>
+                            </div>
+
+                        </div>
+                        <div class="text-center d-md-none">
+                            <a href="#" (click)="false" ><span class="link-test mt-0 holding-all" data-bs-toggle="modal"
+                                data-bs-target="#holdingsModal">View all holdings</span><i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center d-none d-lg-block">
+                        <a href="#" (click)="false" ><span class="link-test fontResize"  data-bs-toggle="modal" data-bs-target="#holdingsModal">View all holdings</span><i
+                                class="bi bi-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <h4>Portfolio Composition (As of 24th July, 2023)</h4>
+                    <div class="graph-box">
+                        <canvas baseChart class="chart" [data]="doughnutChartDataMarket" [type]="doughnutChartType"
+                            [options]="pieChartOptionsMarket" [legend]="false">
+                        </canvas>
+                        <div class="graph-stat">
+                            <span><span class="circle fontResize Large-cap"></span>Large Cap (40%)</span>
+                            <span><span class="circle fontResize mid-cap"></span>Mid Cap (40%)</span>
+                            <span><span class="circle fontResize small-cap"></span>Small Cap (20%)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <h4 class="fontResize">Top Sectors (As of 24th July, 2023)</h4>
+                    <div class="progress-box">
+                        <div class="progress-block">
+                            <div class="fontResize">Financial</div>
+                            <div class="d-flex">
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary success-ex" role="progressbar" aria-label="Success example"
+                                         aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                                <span>19.66%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize" >Healthcare</span>
+                            <div class="d-flex">
+                                <div class="progress">
+                                    <div class="progress-bar bg-purple success-examp" role="progressbar" aria-label="Success example"
+                                         aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                                <span>12.21%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">Construction</span>
+                            <div class="d-flex">
+                                <div class="progress">
+                                    <div class="progress-bar bg-light-green valuenow" role="progressbar"
+                                        aria-label="Success example"  aria-valuenow="55"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span>9.66%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">Energy</span>
+                            <div class="d-flex">
+                                <div class="progress">
+                                    <div class="progress-bar bg-light-blue United-brew" role="progressbar"
+                                        aria-label="Success example" aria-valuenow="40"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span>6.23%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">Construction</span>
+                            <div class="d-flex">
+                                <div class="progress">
+                                    <div class="progress-bar bg-light state-bank" role="progressbar" aria-label="Success example"
+                                     aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                                <span>4.87%</span>
+                            </div>
+
+                        </div>
+                        <div class="text-center d-md-none">
+                            <!-- <a href="#" class="mt-0" st yle="font-size: 0.875rem;" data-bs-toggle="modal"
+                                data-bs-target="#sectorsModal">View all sectors<i class="bi bi-chevron-right"></i></a> -->
+                                <a href="#" (click)="false"><span class="link-test fontResize"  data-bs-toggle="modal"
+                                    data-bs-target="#sectorsModal" class="mt-0 holding-all">View all sectors</span><i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center d-none d-lg-block">
+                        <a href="#" (click)="false" ><span class="link-test fontResize"  data-bs-toggle="modal" data-bs-target="#sectorsModal">View all sectors</span><i
+                                class="bi bi-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="Debt-tab-pane" role="tabpanel" aria-labelledby="Debt-tab" tabindex="0">
+            <div class="row portfolio-graphs">
+
+                <div class="col-lg-6 col-12">
+                    <h4 class="fontResize">Portfolio Composition(%of debt)</h4>
+                    <div class="graph-box portfolio-composite">
+                        <canvas baseChart class="chart" [data]="doughnutChartDataPortfolio"
+                            [options]="pieChartOptionsPortfolio" [type]="doughnutChartType" [legend]="false">
+                        </canvas>
+                        <div class="graph-stat">
+                            <span><span class="circle fontResize Large-cap" ></span>Equity (40%)</span>
+                            <span><span class="circle fontResize mid-cap"></span>Fixed Income (40%)</span>
+                            <span><span class="circle fontResize small-cap" ></span>Cash & Cash Equivalents
+                                (20%)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <h4 class="fontResize">Top 10 holdings (% of total)</h4>
+
+                    <div class="progress-box">
+                        <div class="progress-block">
+                            <div class="fontResize">Treasury Bills</div>
+                            <div class="d-flex">
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary success-ex" role="progressbar" aria-label="Success example"
+                                         aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                                <span>19.66%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">Net Current Assets</span>
+                            <div class="d-flex">
+                                <div class="progress">
+                                    <div class="progress-bar bg-purple success-examp" role="progressbar" aria-label="Success example"
+                                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                                <span>12.21%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">Repo</span>
+                            <div class="d-flex">
+                                <div class="progress">
+                                    <div class="progress-bar bg-light-green valuenow" role="progressbar"
+                                        aria-label="Success example"  aria-valuenow="55"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span>9.66%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">Index Derivatives</span>
+                            <div class="d-flex">
+                                <div class="progress">
+                                    <div class="progress-bar bg-light-blue United-brew" role="progressbar"
+                                        aria-label="Success example"  aria-valuenow="40"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span>6.23%</span>
+                            </div>
+
+                        </div>
+                        <div class="progress-block">
+                            <span class="fontResize">Index Derivatives</span>
+                            <div class="d-flex">
+                                <div class="progress">
+                                    <div class="progress-bar bg-light state-bank" role="progressbar" aria-label="Success example"
+                                         aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                                <span>4.87%</span>
+                            </div>
+
+                        </div>
+                        <div class="text-center text-small d-md-none">
+                            <a href="#" (click)="false" ><span class="link-test mt-0 fontResize holding-all"  data-bs-toggle="modal"
+                                data-bs-target="#sectorsModal">View all holdings</span><i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center d-none d-md-block">
+                        <a href="#" (click)="false" ><span class="link-test fontResize" data-bs-toggle="modal" data-bs-target="#sectorsModal">View all holdings</span><i
+                                class="bi bi-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-footer">
+        <div class="download-plan fontResize">
+            <a href="#" class="me-lg-5 me-3">
+                <img src="assets/images/home/pdf.svg">View portfolio
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--- holdings modal -->
+
+<!-- Modal -->
+<div class="modal fade small-modal" id="holdingsModal" tabindex="-1" aria-labelledby="holdingsModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 fontResize" id="holdingsModalLabel">All Holdings</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body pe-2">
+                <div class="holding-block">
+                    <div class="progress-block">
+                        <div class="fontResize">Bharat Electronics Limited </div>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-primary success-ex" role="progressbar" aria-label="Success example"
+                                     aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>19.66%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <span class="fontResize">Apollo Tires Limited</span>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-purple success-ex" role="progressbar" aria-label="Success example"
+                                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>12.21%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <span class="fontResize">ICICI Bank Limited</span>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-light-green valuenow" role="progressbar" aria-label="Success example"
+                                     aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>9.66%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <span class="fontResize">United Breweries Limited </span>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-light-blue United-brew" role="progressbar" aria-label="Success example"
+                                     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>6.23%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <span class="fontResize">State Bank of India</span>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-light state-bank" role="progressbar" aria-label="Success example"
+                                 aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>4.87%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <div class="fontResize">Bharat Electronics Limited </div>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-primary success-ex" role="progressbar" aria-label="Success example"
+                                    aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>19.66%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <span class="fontResize">Apollo Tires Limited</span>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-purple success-examp" role="progressbar" aria-label="Success example"
+                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>12.21%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <span class="fontResize">ICICI Bank Limited</span>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-light-green valuenow" role="progressbar" aria-label="Success example"
+                                     aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>9.66%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <span class="fontResize">United Breweries Limited </span>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-light-blue United-brew" role="progressbar" aria-label="Success example"
+                                    aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>6.23%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <span class="fontResize">State Bank of India</span>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-light state-bank" role="progressbar" aria-label="Success example"
+                                 aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>4.87%</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--- sectors modal -->
+<div class="modal fade small-modal" id="sectorsModal" tabindex="-1" aria-labelledby="sectorsModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 fontResize" id="sectorsModalLabel">Top Sectors</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body pe-2">
+                <div class="holding-block">
+
+                    <div class="progress-block">
+                        <div class="fontResize">Financial</div>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-primary success-ex" role="progressbar" aria-label="Success example"
+                                     aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>19.66%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <span class="fontResize">Healthcare</span>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-purple success-examp" role="progressbar" aria-label="Success example"
+                                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>12.21%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <span class="fontResize">Construction</span>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-light-green  valuenow" role="progressbar" aria-label="Success example"
+                             aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>9.66%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <span class="fontResize">Energy</span>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-light-blue United-brew" role="progressbar" aria-label="Success example"
+                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>6.23%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <span class="fontResize">Construction</span>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-light state-bank" role="progressbar" aria-label="Success example"
+                                     aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>4.87%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <div class="fontResize">Financial</div>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-primary success-ex" role="progressbar" aria-label="Success example"
+                                 aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>19.66%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <span class="fontResize">Healthcare</span>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-purple success-examp" role="progressbar" aria-label="Success example"
+                                 aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>12.21%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <span class="fontResize">Construction</span>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-light-green valuenow" role="progressbar" aria-label="Success example"
+                                     aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>9.66%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <span class="fontResize">Energy</span>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-light-blue United-brew" role="progressbar" aria-label="Success example"
+                             aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>6.23%</span>
+                        </div>
+
+                    </div>
+                    <div class="progress-block">
+                        <span class="fontResize">Construction</span>
+                        <div class="d-flex">
+                            <div class="progress">
+                                <div class="progress-bar bg-light state-bank" role="progressbar" aria-label="Success example"
+                                 aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>4.87%</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

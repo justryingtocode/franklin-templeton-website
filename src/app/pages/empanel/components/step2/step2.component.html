@@ -1,0 +1,47 @@
+<div>
+    <div class="row">
+        <div class="form-group col-md-6 col-12 mb-4">
+            <input type="text" class="form-control" placeholder="Bank Account Number*">
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="form-group col-sm-6 col-6 mb-4">
+            <select class="form-select">
+                <option selected>Select Bank*</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+        </div>
+        <div class="form-group col-sm-6 col-6 mb-4">
+            <select class="form-select step2-ac-type">
+                <option selected>Select Account Type*</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+        </div>
+        <div class="form-group col-sm-6 col-12 mb-4">
+            <input type="text" class="form-control" placeholder="IFSC Code*">
+        </div>
+        <div class="form-group col-sm-6 col-12 mb-4">
+            <div class="sarch-code-box">
+                <span>Search IFSC Code</span>
+                <button class="btn btn-primary">GO</button>
+            </div>
+        </div>
+        <div class="form-group col-sm-6 col-12 mb-4">
+            <input type="text" class="form-control" placeholder="Bank Branch*">
+        </div>
+        <div class="form-group  col-sm-6 col-12 mb-4">
+            <input type="text" class="form-control" placeholder="Bank Address*">
+        </div>
+    </div>
+    
+    <div class="btn-options">
+        <button type="button" class="btn btn-outline-primary me-4" (click)="changeActiveStepper(1,false)" data-bs-toggle="collapse" data-bs-target="#collapse1"
+        aria-expanded="false" aria-controls="collapse1">Back</button>
+        <button type="button" class="btn btn-primary" (click)="changeActiveStepper(2,true)" data-bs-toggle="collapse" data-bs-target="#collapse3"
+        aria-expanded="false" aria-controls="collapse3">Next</button>
+    </div>
+</div>

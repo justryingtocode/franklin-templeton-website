@@ -1,0 +1,33 @@
+.FT {
+    &-inner-banners {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        max-height: auto;
+        background: url("../../../../../assets/images/distributor/hero-bg.svg");
+
+        .container {
+            max-width: 100%;
+            padding-left: 80px;
+            padding-right: 20px;
+
+            @media(max-width:991.98px) {
+                max-width: 100%;
+                padding-left: 23px;
+                padding-right: 23px;
+
+            }
+        }
+
+        .content-box {
+            max-width: 726px;
+        }
+
+        .info {
+            margin-top: 40px;
+
+            .text-meduim {
+                max-width: 160px;
+            }
+        }
+    }
+}

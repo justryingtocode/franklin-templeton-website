@@ -1,0 +1,581 @@
+/* Custom style for the offcanvas with 80% width and opening from the right side */
+.custom-offcanvas {
+	width: 70%;
+	transform: translateX(100%);
+}
+
+.cardAdd {
+	font-size: 32px;
+	font-weight: 600;
+	color: #3769FF;
+}
+
+#page-content {
+	background-image: url("../../../assets/images/general/bg.png");
+}
+
+.FT-comparefund-heading {
+
+	// background-image: url("../../../assets/images/general/bg.png");
+	.comapre-fund {
+		margin-bottom: 10px;
+		margin-top: 30px;
+
+		&>h3 {
+			margin-bottom: 12px;
+		}
+	}
+
+	.filter-title {
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		letter-spacing: -0.96px;
+		color: #3769FF;
+	}
+}
+
+.FT-comparefund-wrapper {
+	max-width: 100%;
+	overflow: auto;
+	scrollbar-width: none;
+
+	table {
+		margin-bottom: 50px;
+		width: 100%;
+		border: 0px;
+		border-collapse: separate;
+		border-spacing: 0px;
+
+		&>tr>th:first-child,
+		&>tr>td:first-child {
+			position: sticky;
+			left: 0px;
+			z-index: 1;
+		}
+
+		// Main Fund Head row.
+		&>tr:first-child {
+			background-image: var(--gradient);
+			overflow: hidden;
+
+			&>th:first-child {
+				// border-radius: 10px 0 0 10px;
+				background-color: #583ee8;
+				color: #fff;
+				padding: 15px;
+				width: 25%;
+				min-width: 280px;
+				line-height: 1.3;
+
+				&>h2 {
+					font-size: 1.6rem;
+					margin-left: 20px;
+				}
+			}
+
+			&>th:last-child {
+				padding-right: 18px;
+				// border-radius: 0 10px 10px 0;
+			}
+
+			&>th {
+				width: 25%;
+				padding: 22px 11px;
+
+				// Fund card
+				.fund-card-wrap {
+					position: relative;
+					min-height: 130px;
+					min-width: 330px;
+					max-width: 330px;
+					background-color: #fff;
+					border-radius: 8PX;
+					padding: 13px 13px;
+
+					.fund-cancel {
+						border: none;
+						border-radius: 50px;
+						position: absolute;
+						top: -10px;
+						left: -10px;
+						font-size: 10.6px;
+						width: 20px;
+						height: 20px;
+						background-color: #D2D8EA;
+						padding: 3px;
+
+						&:hover {
+							background-color: #bec6db;
+						}
+					}
+
+					.fund-card-top {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						margin-bottom: 16px;
+
+						.fund-card-title {
+							display: flex;
+							max-width: calc(100% - 10px);
+
+							&>div {
+								// flex: 1;
+								// white-space: nowrap;
+								// text-overflow: ellipsis;
+								// overflow: hidden;
+								font-weight: 400;
+								display: -webkit-box;
+								-webkit-box-orient: vertical;
+								overflow: hidden;
+								-webkit-line-clamp: 2;
+								font-weight: 400;
+								min-height: 43px;
+							}
+
+							&>img {
+								margin-bottom: 26px;
+								margin-left: 3px;
+							}
+						}
+
+						.three-dot {
+							cursor: pointer;
+							width: 10px;
+							margin-bottom: 20px;
+						}
+					}
+
+					.fund-card-title-action {
+						display: flex;
+						gap: 9px;
+
+						.cart-btn {
+							flex: 1;
+							border: 1px solid #3769FF;
+							border-radius: 6.5px;
+							background-color: transparent;
+							padding: 7px 5px;
+						}
+
+						.invest-now-btn {
+							flex: 2;
+							background-color: #3769FF;
+							border: none;
+							color: #fff;
+							border-radius: 6.5px;
+							padding: 7px 7px;
+							font-weight: 200;
+						}
+					}
+				}
+
+				// Add fund card
+				.add-fund-btn {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					&>button {
+						color: #3769FF;
+						border: 1px solid #3769FF;
+						border-radius: 6.5px;
+						background-color: transparent;
+						padding: 5px 19px;
+						font-weight: 100;
+					}
+				}
+			}
+		}
+
+		// Fund Details row
+		&>tr:nth-last-child(even):not(:first-child):not(:nth-child(2)) {
+			background-color: #DDEAFF;
+		}
+
+		&>tr:nth-last-child(even):not(:first-child):not(:nth-child(2)) td {
+			background-color: #DDEAFF;
+		}
+
+		&>tr:nth-last-child(odd):not(:first-child):not(:nth-child(2)) td {
+			background-color: #FFF;
+		}
+
+		&>tr>td {
+			.annualised-returns {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 21px;
+
+				div {
+					font-size: 13px;
+					// color: #616161;
+				}
+			}
+
+			select {
+				border: 1px solid #cfcfcf !important;
+				box-shadow: none !important;
+				padding: 4px 10px;
+				margin-top: 4px;
+				font-size: 14px;
+			}
+
+			.lr-justify-details {
+				display: flex;
+				width: 100%;
+				gap: 15px;
+				justify-content: space-between;
+			}
+
+		}
+
+		&>tr:not(:first-child) {
+			border-width: 0px 10px 0px 10px;
+			border-color: #fff;
+
+			&>td {
+				padding: 10px 15px;
+			}
+		}
+
+	}
+}
+
+
+
+@media(max-width:991px) {
+	.FT-comparefund-wrapper {
+		table {
+
+			// Main Fund Head row.
+			&>tr:first-child {
+				&>th:first-child {
+
+					min-width: 144px;
+
+					&>h2 {
+						font-size: 1rem;
+						margin-left: 0px;
+					}
+
+				}
+
+				& th .fund-card-wrap {
+					min-width: 240px;
+					max-width: 240px;
+				}
+			}
+
+		}
+	}
+
+	.makeLeft {
+		margin-left: 0px !important;
+	}
+
+	.FT-comparefund-heading {
+		padding-top: 40px;
+	}
+}
+
+@media(min-width:1360px) {
+	.FT-comparefund-wrapper {
+		table>tr:first-child>th:first-child {
+			border-radius: 10px 0 0 10px;
+		}
+
+		table>tr:first-child>th:last-child {
+			border-radius: 0 10px 10px 0;
+		}
+
+	}
+
+
+}
+
+
+/* Custom style for the offcanvas with 80% width and opening from the right side */
+.custom-offcanvas {
+	width: 70%;
+	transform: translateX(100%);
+}
+
+.open {
+	right: 0;
+	/* Slide in from the right */
+}
+
+.card-content {
+	padding: 20px;
+}
+
+.breadcrumbfile {
+	display: none;
+}
+
+.breadcrumbtitle {
+	display: block;
+}
+
+/* Style the button inside the card as needed */
+.card-content button {
+	display: block;
+	margin-top: 20px;
+}
+
+/* Style the open button as needed */
+
+.makeSticky {
+	position: sticky;
+	z-index: 10000;
+	top: 10px;
+}
+
+@media (max-width: 800.98px) {
+	.makeSticky {
+		position: static;
+		/* Change 'inherit' to 'static' to remove sticky positioning */
+		z-index: 1;
+		top: 1px;
+		overflow-x: auto;
+		/* Use 'auto' to enable scroll only when needed */
+		width: 100%;
+		/* Make the container full width */
+		max-width: 380px;
+		/* Set a maximum width if necessary */
+	}
+
+	.makeSticky::-webkit-scrollbar {
+		display: none;
+		/* Hide the scrollbar */
+	}
+
+	.breadcrumbfile {
+		display: block;
+	}
+
+	.breadcrumbtitle {
+		display: none;
+	}
+
+}
+
+
+.addCustomFlexLine {
+	display: flex;
+	gap: 10px;
+	flex-wrap: nowrap
+}
+
+.investmenttData {
+	border: none;
+	background: linear-gradient(90.29deg, #583EE7 26.99%, #0EA0E6 50.09%, #00B6AE 74.69%);
+	// box-shadow: 0px 4px 60px rgb(86 87 94 / 24%);
+	padding: 10px;
+	// rgba(202, 206, 223, 0.24);
+	border-radius: 4px;
+	// gap: 10px;
+
+	.addMore {
+		//styleName: 32-bold;
+		font-size: 32px;
+		font-weight: 700;
+		line-height: 42px;
+		letter-spacing: -0.03em;
+		text-align: left;
+		color: #FFFFFF;
+	}
+
+	.addNow {
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 28px;
+		letter-spacing: 0em;
+		text-align: left;
+		color: #3769FF;
+	}
+
+	button {
+		position: relative;
+		top: 8px;
+		right: 1px;
+	}
+
+}
+
+.investmenttData2 {
+	border: none;
+	background: linear-gradient(90.29deg, #583EE7 26.99%, #0EA0E6 50.09%, #00B6AE 74.69%);
+	// box-shadow: 0px 4px 60px rgb(86 87 94 / 24%);
+	padding: 10px;
+	// rgba(202, 206, 223, 0.24);
+	border-radius: 11px;
+	// gap: 10px;
+
+	.addMore {
+		//styleName: 32-bold;
+		font-size: 18px;
+		font-weight: 700;
+		margin-bottom: 6px;
+		// line-height: 42px;
+		// letter-spacing: -0.03em;
+		text-align: left;
+		color: #FFFFFF;
+	}
+
+	.addNow {
+		font-size: 18px;
+		font-weight: 500;
+		// line-height: 28px;
+		letter-spacing: 0em;
+		text-align: left;
+		color: #3769FF;
+	}
+
+	button {
+		position: relative;
+		top: 2px;
+		right: 1px;
+	}
+
+}
+
+
+.makeLeft {
+	margin-left: 10px;
+}
+
+
+// Check progress funds section
+.checkGoToCheckout {
+	.checkOutTitle {
+		width: 160px;
+		height: 50px;
+	}
+
+	.forCheckoutView {
+		background: #F0F6FF;
+		justify-content: space-around;
+		padding: 19px 23px;
+	}
+
+	.checkAdded {
+		font-family: 'Hanken Grotesk';
+		font-size: 32px;
+		font-weight: 600;
+		line-height: 42px;
+		letter-spacing: -0.03em;
+		text-align: left;
+		color: #3C425D;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.FT-Watchlist-Content-Color-Checkout {
+		padding: 10px 10px !important;
+		background: #F0F6FF;
+	}
+
+	.checkGoToCheckout {
+		.checkOutTitle {
+			width: 140px;
+			height: 40px;
+		}
+
+		.forCheckoutView {
+			background: none !important;
+			justify-content: space-around;
+			padding: 19px 9px !important;
+		}
+
+		.checkAdded {
+			font-family: 'Hanken Grotesk';
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 21px;
+			letter-spacing: -0.02em;
+			text-align: left;
+			color: #595A6C;
+		}
+	}
+
+	.FT-watchlist-content-sticky-tab {
+		// position: -webkit-sticky;
+		// position: sticky;
+		top: 4% !important;
+		background: url("/../../../../assets/images/general/bg.png") !important;
+		/* Add a background color if needed */
+		z-index: 1000;
+		/* Set a high z-index to ensure it stays above other elements */
+	}
+
+	// #page-content {
+	//     margin-top: 20px;
+	// }
+
+
+	// .FT-comparefund-wrapper table > tr:first-child > th {
+	// 	border-left: 1px solid #D9D9D9;
+	// }
+
+
+	.FT-comparefund-heading {
+
+		// background-image: url("../../../assets/images/general/bg.png");
+		.comapre-fund {
+			margin-top: 0px;
+		}
+	}
+
+	.FT-comparefund-wrapper table>tr:first-child>th {
+		padding: 22px 10px;
+	}
+
+	.FT-comparefund-heading .filter-title {
+		font-size: 1.25rem;
+	}
+
+	.filter-title {
+		padding-top: 10px;
+	}
+
+
+
+
+
+}
+
+.FT-Watchlist-Content-Color-Checkout {
+	padding: 10px 24px;
+	// background: #F0F6FF;
+}
+
+@media screen and (max-width: 1920px) {
+	.FT-comparefund-wrapper table>tr:first-child>th:first-child {
+		width: 12%;
+	}
+}
+
+.compare-card-icon {
+	display: flex;
+	justify-content: end;
+}
+
+.add-funds {
+	font-weight: 500;
+	color: #fff;
+	font-size: 0.875rem;
+}
+.level-card{
+	margin-bottom: 3px
+}
+.stand-page{
+	margin-top: 20px !important;
+}
+.add-data-fund{
+	z-index: 100000000;
+}

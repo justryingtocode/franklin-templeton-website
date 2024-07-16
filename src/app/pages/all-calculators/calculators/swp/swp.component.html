@@ -1,0 +1,25 @@
+<div id="page-content">
+    
+    <div *ngIf="!showAddFund">
+        <app-sip-breadcrumb></app-sip-breadcrumb>
+        <app-swp-calculator></app-swp-calculator>
+        <app-fund-return (addFundStatusChanged)="handleAddFundStatus($event)"></app-fund-return>
+        <app-calculator-faq [faqs]="faqs"></app-calculator-faq>
+        <app-other-calculators [calculators]="otherCalculators"></app-other-calculators>
+        <app-more-calculators [solutions]="otherSolutions"></app-more-calculators>
+        <app-related-resources [resources]="resources"></app-related-resources>
+        
+        <app-fund-accordion></app-fund-accordion>
+    </div>
+
+    <div *ngIf="showAddFund">
+        <div>
+            <div class="arrow-img">
+                <a id="forAdd"><img src="./assets/images/comparefund/arrow.png" (click)="makeToggle()"></a>
+            </div>
+            <app-add-fund-data [getAllowedFilter]="true" cardTypeData="CALCULATOR" [searchOption]=true ></app-add-fund-data>
+        </div>
+      
+    </div>
+ 
+</div>

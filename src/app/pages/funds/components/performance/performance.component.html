@@ -1,0 +1,297 @@
+<!-- start  Performance-->
+<div class="fd-tab-sections FT-performance block-border" id="performance">
+    <div class="block-head" id="top_id">
+        <h3 class="fontResize">Performance <small class="fontResize">Cumulative Performance – Basis custom selection</small></h3>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button (click)="toggleIsSIP(true)" class="nav-link active fontResize" id="SIP-tab" data-bs-toggle="tab"
+                    data-bs-target="#SIP-tab-pane" type="button" role="tab" aria-controls="SIP-tab-pane"
+                    aria-selected="true">SIP</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button (click)="toggleIsSIP(false)" class="nav-link fontResize" id="SIP-tab" data-bs-toggle="tab"
+                    data-bs-target="#SIP-tab-pane" type="button" role="tab" aria-controls="SIP-tab-pane"
+                    aria-selected="false">Lumpsum
+                </button>
+            </li>
+        </ul>
+
+    </div>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="SIP-tab-pane" role="tabpanel" aria-labelledby="SIP-tab" tabindex="0">
+            <div class="bg-gradient performance-head">
+                <ul class="left-items">
+                    <li class="fontResize">If you had invested
+
+                        <div class="bg-white input-box invested-value" >
+                            <span class="fontResize">₹ </span>
+                            <div class="form-group d-inline-flex">
+                                <input type="text" class="form-control fontResize" value="54,64,748">
+                            </div>
+
+                        </div>
+                    </li>
+                    <li *ngIf="isSip" class="d-none d-md-inline-block fontResize">monthly, starting from
+                        <div class="date d-inline-block">
+                            <div class="date-group bg-white d-inline-flex invested-value">
+                                <app-date-picker (dateSelected)="dateSelected($event)"
+                                    [selectedDate]="defaultDateFrom"></app-date-picker>
+                            </div>
+                        </div>
+                    </li>
+                    <li *ngIf="!isSip" class="d-none d-md-inline-block">,
+                        <div class="date d-inline-block fontResize">
+                            On
+                            <div class="date-group bg-white d-inline-flex">
+                                <app-date-picker (dateSelected)="dateSelectedFrom($event)"
+                                    [selectedDate]="defaultDateFrom"></app-date-picker>
+                                <!-- <img src="assets/images/fund/calendar-outline.svg">
+                                <input type="text" class="form-control" placeholder="Jan 2022"
+                                    onfocus="(this.type='date')"> -->
+                            </div>
+                        </div>
+                    </li>
+                    <li *ngIf="isSip" class="d-none d-md-inline-block fontResize">to
+                        <div class="date-group bg-white d-inline-flex invested-value">
+                            <app-date-picker (dateSelected)="dateSelectedTo($event)"
+                                [selectedDate]="defaultDateTo"(Showingperformance)="handleShowingPerformance($event)"></app-date-picker>
+                            <!-- <img src="assets/images/fund/calendar-outline.svg">
+                            <input type="text" class="form-control" placeholder="May 2023" onfocus="(this.type='date')"> -->
+                        </div>
+                    </li>
+                    <li class="d-flex d-md-none">
+                        <div class="col-3 fontResize">
+                            every month
+                        </div>
+                        <div class="col-9 d-flex justify-content-between">
+                            <div class="date-group">
+                                <!-- <img src="assets/images/fund/calendar-outline.svg"> -->
+                                <app-date-picker (dateSelected)="dateSelected($event)"
+                                    [selectedDate]="defaultDateFrom"></app-date-picker>
+                                <!-- <input type="text" placeholder="From" class="form-control" onfocus="(this.type='date')"> -->
+                            </div>
+                            <div class="date-group">
+                                <!-- <img src="assets/images/fund/calendar-outline.svg"> -->
+                                <app-date-picker (dateSelected)="dateSelected($event)" [fixStyling]="true"
+                                    [selectedDate]="defaultDateTo"></app-date-picker>
+                                <!-- <input type="text" placeholder="To" class="form-control" onfocus="(this.type='date')"> -->
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="text-center right-items">
+                    <li class="fontResize"><strong class="fontResize">₹ 1,850,000</strong> Amount <br />
+                        Invested by You</li>
+                    <li class="fontResize"><strong class="fontResize">₹ 2,64,748</strong>Returns <br />
+                        from your Investment</li>
+                    <li class="ms-4 fontResize"><strong class="fontResize">₹ 3,115,850</strong>Value of Your<br />
+                        Investment</li>
+                </ul>
+            </div>
+
+            <div class="graph-block mb-5">
+                <div class="text-center position-absolute">
+                    <span class="graph-info fontResize">Value of investment (₹)</span>
+                </div>
+                <div class="graph-head my-4">
+                    <div>
+                        <span class="graph-name fontResize"><span class="circle color-background"></span>This fund</span>
+                        <span class="graph-stat fontResize">19.17% p.a</span>
+                    </div>
+                    <span class="vs fontResize">VS</span>
+                    <div>
+                        <span class="graph-name fontResize"><span class="circle nifty-mid" 
+                            ></span>Nifty Midcap</span>
+                        <span class="graph-stat">10.12% p.a</span>
+                    </div>
+                    <span class="vs fontResize">VS</span>
+                    <div>
+                        <span class="graph-name fontResize"><span class="circle nifty-midcap"
+                            ></span>Nifty Midcap</span>
+                        <span class="graph-stat fontResize">10.12% p.a</span>
+                    </div>
+                </div>
+                <div *ngIf="showShowingperformance" class="mb-2 show-perfomance-data inception-year" >
+                    Showing performance data from fund inception year: JAN 2008
+                </div>
+                <div class="performance-graph mb-0 mt-0 performance-graph-canvas">
+                    <canvas baseChart #myCanvas [data]="salesData" [type]="'line'" [options]="chartOptions"
+                        style="width: 100%; height: 100%;">
+                    </canvas>
+                </div>
+                <div class="text-center mt-lg-4 mt-3">
+                    <span class="graph-info fontResize">Investment period</span>
+                </div>
+                <div class="text-center mt-lg-4 mt-3 specific-amount" >
+                    <span class="graph-info fontResize"> The above graph shows the movement of a specific amount vis-a-vis
+                        benchmark and additional
+                        benchmark in the specific time period(last businessday of the selected month) chosen by the
+                        investor.</span>
+                </div>
+            </div>
+            <div class="fund-value-table">
+                <div class="mb-3 fontResize">Cumulative Performance for Growth Plan (As of 24th July, 2023)</div>
+                <div class="table-responsive mb-5 d-none d-md-block">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th rowspan="2" class="text-bold fontResize fundname">Fund Name</th>
+                                <th colspan="6" class="text-center fontResize">CAGR</th>
+                                <th colspan="6" class="text-center fontResize">Current Value</th>
+                            </tr>
+                            <tr>
+                                <th>1Y</th>
+                                <th>3Y</th>
+                                <th>5Y</th>
+                                <th>10Y</th>
+                                <th>15Y</th>
+                                <th>Since Inception</th>
+                                <th>1Y</th>
+                                <th>3Y</th>
+                                <th>5Y</th>
+                                <th>10Y</th>
+                                <th>15Y</th>
+                                <th>Since Inception</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>This Fund</td>
+                                <td>0.89%</td>
+                                <td>0.89%</td>
+                                <td>0.89%</td>
+                                <td>29.74%</td>
+                                <td>24.56%</td>
+                                <td>24.56%</td>
+                                <td>₹10,049</td>
+                                <td>₹21,049</td>
+                                <td>₹24,049</td>
+                                <td>₹24,049</td>
+                                <td>₹24,049</td>
+                                <td>₹24,049</td>
+                            </tr>
+                            <tr>
+                                <td>Nifty Midcap 150</td>
+                                <td>0.89%</td>
+                                <td>0.89%</td>
+                                <td>0.89%</td>
+                                <td>29.74%</td>
+                                <td>24.56%</td>
+                                <td>24.56%</td>
+                                <td>₹10,049</td>
+                                <td>₹21,049</td>
+                                <td>₹24,049</td>
+                                <td>₹24,049</td>
+                                <td>₹24,049</td>
+                                <td>₹24,049</td>
+                            </tr>
+                            <tr>
+                                <td>Nifty 50 TRI</td>
+                                <td>0.89%</td>
+                                <td>0.89%</td>
+                                <td>0.89%</td>
+                                <td>29.74%</td>
+                                <td>24.56%</td>
+                                <td>24.56%</td>
+                                <td>₹10,049</td>
+                                <td>₹21,049</td>
+                                <td>₹24,049</td>
+                                <td>₹24,049</td>
+                                <td>₹24,049</td>
+                                <td>₹24,049</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-responsive mb-4 d-md-none">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th colspan="1" class="text-bold bg-blue"></th>
+                                <th colspan="2" class="text-bold bg-blue fontResize">This Fund</th>
+                                <th colspan="2" class="text-center bg-blue fontResize">Nifty Midcap 150</th>
+                                <th colspan="2" class="text-center bg-blue fontResize">Nifty 50 TRI</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th>CAGR</th>
+                                <th>Current Value</th>
+                                <th>CAGR</th>
+                                <th>Current Value</th>
+                                <th>CAGR</th>
+                                <th>Current Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1Y</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                            </tr>
+                            <tr>
+                                <td>3Y</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                            </tr>
+                            <tr>
+                                <td>5Y</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                            </tr>
+                            <tr>
+                                <td>10Y</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                            </tr>
+                            <tr>
+                                <td>15Y</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                            </tr>
+                            <tr>
+                                <td>Since Inception</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                                <td>0.89%</td>
+                                <td>₹10,049</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="block-footer">
+                <div class="text-meduim fontResize">* Different plans have a different expense structure</div>
+                <div class="download-plan">
+                    <a href="#" class="me-lg-5 me-3 fontResize"><img src="assets/images/home/pdf.svg">Performance of
+                        direct plans</a>
+                    <a href="#" class="fontResize"><img src="assets/images/home/pdf.svg">Performance of other funds managed by
+                        the Fund Manager</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

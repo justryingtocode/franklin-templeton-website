@@ -1,0 +1,50 @@
+<div class="distributor-step2">
+    <div class="row">
+        <div class="col-lg-6 col-12">
+            <div class="form-group mb-4">
+                <input type="text" class="form-control" placeholder="User Name*">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <div class="form-group mb-4">
+                <input type="password" class="form-control" placeholder="Enter New Password*">
+                <!-- <span class="info-icon">
+                    <i class="bi bi-info-circle-fill"></i>
+                </span> -->
+            </div>
+        </div>
+        <!-- <div class="col-md-6 col-6">
+            <div class="form-group mb-4">
+                <input type="text" class="form-control" placeholder="Confirm New Password*">
+            </div>
+        </div> -->
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <div class="form-group group-info mb-4 password-input pan-container">
+                <input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" #passwordField
+                    class="form-control" placeholder="Confirm New Password*">
+                <span class="toggle-password" (click)="togglePasswordVisibility()">
+                    <i class="bi fs-5" [ngClass]="showPassword ? 'bi-eye' : 'bi-eye-slash'"></i>
+                </span>
+                <span class="img-with-tooltip pan-info">
+                    <img src="assets/images/home/info-icon2.svg" class="d-inline-block mobile-icons light-mode-icon info-icon-img"
+                    >
+                    <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon information"
+                    >
+                    <span class="tooltip-block">Lorem ipsum dolor sit amet.</span>
+        
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="btn-options">
+        <button type="button" class="btn btn-outline-primary me-4" (click)="changeActiveStepper(5,false)" data-bs-toggle="collapse" data-bs-target="#collapse5"
+        aria-expanded="false" aria-controls="collapse5">Back</button>
+
+        <button type="button" class="btn btn-primary me-4" (click)="changeActiveStepper(6,true)" data-bs-toggle="collapse" data-bs-target="#collapse7"
+        aria-expanded="false" aria-controls="collapse7" >Submit</button>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+.feature-box {
+    border-radius: 16px;
+    background: #fff;
+    padding: 24px;
+    text-align: center;
+}
+.FT-distributor-features {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .FT-title {
+        margin-bottom: 50px;
+    }
+
+    .feature-box {
+        height: 100%;
+    }
+}

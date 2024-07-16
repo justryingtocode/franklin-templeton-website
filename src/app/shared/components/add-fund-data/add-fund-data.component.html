@@ -1,0 +1,1247 @@
+<div class="d-none d-md-block">
+    <div class="d-flex justify-content-between mt-2 add-fund" *ngIf="!showfundperformance">
+        <div class="cardAdd" >Add Funds</div>
+        <div type="button" data-bs-dismiss="offcanvas" aria-label="Close"><img src="./assets/images/comparefund/Frame 1000007569.png"></div>
+    </div>
+    <div class="d-flex justify-content-between mt-2 fund-performance" *ngIf="showfundperformance" >
+        <div class="cardAdd" >Fund Performance</div>
+        <div type="button" data-bs-dismiss="offcanvas" aria-label="Close"><img src="./assets/images/comparefund/Frame 1000007569.png"></div>
+    </div>
+</div>
+
+<div *ngIf="getAllowedFilter" class="FT-all-funds d-md-none AUM-size">
+    <div class="filter-options mt-0 mb-4 filterFundsColorView">
+        <div class="form-group">
+            <input type="text" class="form-control search" 
+                placeholder="Search"
+                [(ngModel)]="searchTerm" 
+                (input)="filterFunds(searchTerm)">
+                <div class="search-result" *ngIf="showFundSearchDropdown">
+                    <div class="inner">
+                        <ng-container *ngFor="let fund of fundsForSearch">
+                            <div class="funds-seach-title fundsForSearch" (click)="getTableTitle(fund)" >
+                               {{ fund.title }}
+                                <span class="sub"><span class="text-gray">Fund Size</span> - {{ fund.aum }}</span>
+                                <span class="sub"><span class="text-gray">Unique Investors</span> - {{ fund.investors }}</span>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div>
+                    <img class="share-icon2 closebutton" src="./assets/images/comparefund/closebutton.svg"  (click)="resetFundExplore()">
+                </div>
+            <div>         
+                <button class="btn btn-white toggle-filter d-inline-block d-lg-none sorted" (click)="getToggle()">
+                    <span class="forFilterColorBy">Sort by</span>    <img src="assets/images/fund/sort.svg"><span class="items-num"></span>
+                </button>
+            </div>
+        </div>
+    </div>  
+</div>
+    <div class="tab-bar-container" *ngIf="getAllowedFilter">
+        <div class="All-tabBar d-md-none tab-head mb-4 forwatclistnavtab side-filter-options add-fund-data" >
+
+            <div class="scrollable-tabs tab-border-line">
+                <ul class="nav nav-tabs Reset-tab " id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation" *ngFor="let element of sideFilterOptions; let i = index">
+                    <button class="nav-link" [ngClass]="{'active': activeTab === i}" [id]="element.id + '-tab'"
+                            data-bs-toggle="tab" [attr.data-bs-target]="'#' + element.id + '-tab-pane'"
+                            type="button" role="tab" [attr.aria-controls]="element.id + '-tab-pane'"
+                            [attr.aria-selected]="activeTab === i" 
+                            (mouseenter)="changeActiveTab(i)" (mouseleave)="resetActiveTab()">{{element.name}}
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              
+            <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">All Funds</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Focus
+                Funds</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Equity
+                Funds</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Debt
+                Funds</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Hybrid
+                Funds</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                    type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Liquid
+                    Funds</button>
+            </li>
+        </ul>    -->
+    </div>
+</div>
+
+
+
+
+
+
+<section class="FT-all-funds watchlist-funds empty-watchlist mt-4">
+    <div class="row align-items-center watchlist-box">
+        
+        <div class="col-lg-12">
+            
+            <div *ngIf="getAllowedFilter" class="d-none d-md-block">
+
+                <div *ngIf="!getData || searchOption" class="filter-options mt-0 mb-4">
+                    <div class="d-flex">
+                <div class="form-group"  [ngClass]="{ 'custom-class': comaredFundInputFund }">
+                    <input type="text" class="form-control search" placeholder="Search Mutual Fund" [(ngModel)]="searchTerm"
+                    (input)="filterFunds(searchTerm)">
+
+                    <div class="search-result1" *ngIf="showFundSearchDropdown1">
+                        <div class="inner1">
+                            <ng-container *ngFor="let fund of fundsForSearch">
+                                <div class="funds-seach-title1 fundsForSearch" (click)="getTableTitle(fund)" >
+                                   {{ fund.title }}
+                                    <span class="sub1"><span class="text-gray">Fund Size2</span> - {{ fund.aum }}</span>
+                                    <span class="sub1"><span class="text-gray">Unique Investors</span> - {{ fund.investors }}</span>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="./assets/images/comparefund/closebutton.svg" class="make-tag-for-all-page share-icon2" (click)="resetFundExplore()">
+                </div>
+                </div>
+                <div class="dataFilter">
+                    <div class="d-flex align-items-center">
+                        <span class="me-2">Sort by </span>
+
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Returns High to Low
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Popularity</a></li>
+                                <li class="selected-option"><a class="dropdown-item" href="#">Returns - High to Low</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">Fund Size - High to Low</a></li>
+                                <li><a class="dropdown-item" href="#">Unique Investors - High to Low</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            
+                <div *ngIf="!getData || searchOption" class="tab-head mb-4 forwatclistnavtab">
+                    
+                <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation" *ngFor="let element of sideFilterOptions; let i = index">
+                        <button class="nav-link" [ngClass]="{'active': activeTab === i}" [id]="element.id + '-tab'"
+                            data-bs-toggle="tab" [attr.data-bs-target]="'#' + element.id + '-tab-pane'" type="button"
+                            role="tab" [attr.aria-controls]="element.id + '-tab-pane'"
+                            [attr.aria-selected]="activeTab === i" (mouseenter)="changeActiveTab(i)"
+                            (mouseleave)="resetActiveTab()">{{element.name}}</button>
+                    </li>
+                </ul> -->
+                <div class="scrollable-tabs">
+                    <ul class="nav nav-tabs Reset-tab"  id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation" *ngFor="let element of sideFilterOptions; let i = index">
+                        <button class="nav-link" [ngClass]="{'active': activeTab === i}" [id]="element.id + '-tab'"
+                                data-bs-toggle="tab" [attr.data-bs-target]="'#' + element.id + '-tab-pane'"
+                                type="button" role="tab" [attr.aria-controls]="element.id + '-tab-pane'"
+                                [attr.aria-selected]="activeTab === i" 
+                                (mouseenter)="changeActiveTab(i)" (mouseleave)="resetActiveTab()">{{element.name}}
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+
+            <div *ngIf="!getAllowedFilter" class="fund-size">
+
+                <div *ngIf="!getData" class="filter-options mt-0 mb-4">
+                    <div class="form-group ">
+                        <input type="text" class="form-control search Unique-investor" placeholder="Search" [(ngModel)]="searchTerm"
+                        (input)="filterFunds(searchTerm)">
+
+                        <div class="search-result" *ngIf="showFundSearchDropdown">
+                            <div class="inner">
+                                <ng-container *ngFor="let fund of fundsForSearch">
+                                    <div class="funds-seach-title fundsForSearch" (click)="getTableTitle(fund)" >
+                                       {{ fund.title }}
+                                        <span class="sub"><span class="text-gray">Fund Size</span> - {{ fund.aum }}</span>
+                                        <span class="sub"><span class="text-gray">Unique Investors</span> - {{ fund.investors }}</span>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+
+                        <!-- <div class="search-result">
+                            <div class="inner">
+                                <div class="mb-3" *ngFor="let fund of funds" (click)="getTableTitle(fund.title)">
+                                    {{ fund.title }}
+                                    <span class="sub"><span class="text-gray">Fund Size</span> - {{ fund.aum }}</span>
+                                    <span class="sub"><span class="text-gray">Unique Investors</span> -
+                                        {{ fund.investors }}</span>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <div class="dataFilter">
+                        <div class="d-flex align-items-center">
+                            <span class="me-5" data-bs-toggle="modal"
+                            data-bs-target="#sortByModal">Sort by </span>
+
+                            <!-- <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Returns High to Low
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Popularity</a></li>
+                                    <li class="selected-option"><a class="dropdown-item" href="#">Returns - High to Low</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Fund Size - High to Low</a></li>
+                                    <li><a class="dropdown-item" href="#">Unique Investors - High to Low</a></li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+             
+                <div *ngIf="!getData" class="tab-head mb-4 forwatclistnavtab">
+                <div class="scrollable-tabs">
+                    <ul class="nav nav-tabs Reset-tab" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation" *ngFor="let element of sideFilterOptions; let i = index">
+                        <button class="nav-link" [ngClass]="{'active': activeTab === i}" [id]="element.id + '-tab'"
+                                data-bs-toggle="tab" [attr.data-bs-target]="'#' + element.id + '-tab-pane'"
+                                type="button" role="tab" [attr.aria-controls]="element.id + '-tab-pane'"
+                                [attr.aria-selected]="activeTab === i" 
+                                (mouseenter)="changeActiveTab(i)" (mouseleave)="resetActiveTab()">{{element.name}}
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+            </div>
+
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-all" role="tabpanel"
+                    aria-labelledby="v-pills-all-tab" tabindex="0">
+                    <div class="funds-container fundsCard">
+                        <ng-container *ngFor='let fund of fundsCard; let i = index'>
+                            <app-fund-card1 
+                            (fundOutput)="goToCart($event)"
+                            (makeDataToggleCode)="forDataCompareCard($event)"
+                            [fund]="fund"
+                            [hasComparCardButton]="hasComparCardButton"
+                            [hasThreeDotOptions]="false"
+                            [hasAddThreeDot]="true"
+                            [makeCartToggle]="makeCartToggle"
+                            [hasAddNowBtn]="true" 
+                            [cardType]="cardTypeData"
+                            (makeOffCanvasOutput)="handleMakeOffCanvasOutput($event)" >
+                            </app-fund-card1>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+</section>
+
+<!-- save to watchlist alert -->
+<div class="save-alert alert-index"  *ngIf="showNewDialoge">
+
+    <div class="content">
+        <span class="close-btn" (click)="toggleShowSavDialoge1()">
+            <img src="assets/images/general/close.svg">
+        </span>
+        <img src="assets/images/general/check_circle.svg" class="checked-img">
+        <span>Successfully added to Watchlist.</span>
+    </div>
+</div>
+
+<section class="FT-all-funds">
+
+    <div class="container">
+
+
+        <div class="row gx-3">
+            <div class="col-lg-auto">
+                <!-- <h3 class="filter-title title position-stiky" id="header-top2" st yle="z-index: 1000;" *ngIf="!isAddFund">All Mutual Funds ({{getMutualCard}})</h3> -->
+                <div class="fund-filter-block d-md-none" [ngClass]="showAdvanceFilter ? 'position-relative' : ''">
+                    <div class="filters" [ngClass]="showFilterBox ? 'opened' : ''" id="filterHead">
+                        <div class="filter-container">
+                            <div class="content-box" id="header-top3">
+                                <div class="web-view-filter">
+                                    <div class="filter-head">Sort By</div>
+                                    <div class="mb-4">
+                                        <div class="mt-4">
+                                            <div class="d-flex gap-3">
+                                                <div class="form-check radioModule">
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" value="Popularity"
+                                                        name="Popularity" id="Popularity">
+                                                    </div>
+                                                    <div>
+                                                        <label class="form-check-label Popularity"
+                                                        for="Popularity">
+                                                        Popularity
+                                                    </label>
+                                                    </div>
+                                                   
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4  class="low-return">Returns</h4>
+                                            <div class="d-flex gap-3">
+                                                <div class="form-check radioModule">
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" value="Popularity"
+                                                        name="flexRadioDefault" id="Popularity">
+                                                    </div>
+                                                    <div>
+                                                        <label class="form-check-label Popularity"  
+                                                        for="flexRadioDefault1">
+                                                        High to Low
+                                                    </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4  class="low-return">AUI</h4>
+                                            <div class="d-flex gap-3">
+                                                <div class="form-check radioModule">
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" value="Popularity"
+                                                        name="flexRadioDefault" id="Popularity">
+                                                    </div>
+                                                    <div>
+                                                        <label class="form-check-label Popularity" 
+                                                        for="flexRadioDefault1">
+                                                        High to Low
+                                                    </label>
+                                                    </div>
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="low-return">Investors</h5>
+                                            <div class="d-flex gap-3">
+                                                <div class="form-check radioModule">
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" value="Popularity"
+                                                            name="flexRadioDefault" id="Popularity">
+                                                    </div>
+                                                    <div>
+                                                        <label class="form-check-label Popularity" 
+                                                        for="flexRadioDefault1">
+                                                        High to Low
+                                                        </label>
+                                                    </div>
+
+
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="inner-filters" id="innerfilter">
+                                        <div class="accordion Asset-category" id="filterAccordion"
+                                            >
+                                            <div class="accordion-item d-none d-md-block">
+                                                <h2 class="accordion-header" id="heading1">
+                                                    <button class="accordion-button" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapse1"
+                                                        aria-expanded="true" aria-controls="collapse1">
+                                                        Asset Category
+                                                    </button>
+                                                </h2>
+                                                <div id="collapse1" class="accordion-collapse collapse show"
+                                                    aria-labelledby="heading1" data-bs-parent="#filterAccordion">
+                                                    <div class="accordion-body">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="ELSS Fund" id="ELSS Fund"
+                                                                (click)="getCheckboxValue($event)">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                ELSS Fund
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Equity Funds" id="Equity Funds"
+                                                                (click)="getCheckboxValue($event)">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Equity Funds
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Fixed Income Funds" id="Fixed Income Funds"
+                                                                (click)="getCheckboxValue($event)">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Fixed Income Funds
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="FOF Domestic" id="FOF Domesti"
+                                                                (click)="getCheckboxValue($event)">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                FOF Domestic
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Hybrid Funds" id="Hybrid Funds"
+                                                                (click)="getCheckboxValue($event)">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Hybrid Funds
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="International Funds" id="International Funds"
+                                                                (click)="getCheckboxValue($event)">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                International Funds
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Liquid Funds" id="Liquid Funds"
+                                                                (click)="getCheckboxValue($event)">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Liquid Funds
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="heading6">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapse6"
+                                                        aria-expanded="false" aria-controls="collapse6">
+                                                        Alternative to
+                                                    </button>
+                                                </h2>
+                                                <div id="collapse6" class="accordion-collapse collapse"
+                                                    aria-labelledby="heading6" data-bs-parent="#filterAccordion">
+                                                    <div class="accordion-body">
+                                                        <div class="form-group mb-3">
+                                                            <input type="text" class="form-control search"
+                                                                placeholder="Search">
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="All"
+                                                                id="All" (click)="getCheckboxValue($event)">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                All
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Focused Investments in Companies with High Growth Potential"
+                                                                id="Focused Investments in Companies with High Growth Potential"
+                                                                (click)="getCheckboxValue($event)">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Focused Investments in Companies with High Growth
+                                                                Potential
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Government Bonds" id="Government Bonds"
+                                                                (click)="getCheckboxValue($event)">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Government Bonds
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Investments in Asian (excluding Japan) Companies"
+                                                                id="Investments in Asian (excluding Japan) Companies"
+                                                                (click)="getCheckboxValue($event)">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Investments in Asian (excluding Japan) Companies
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="more-options" *ngIf="showMoreOptions">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Investments in companies that fit into a Value Investment strategy"
+                                                                    id="Investments in companies that fit into a Value Investment strategy"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Investments in companies that fit into a Value
+                                                                    Investment strategy
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Investments in companies undergoing Special Situations"
+                                                                    id="Investments in companies undergoing Special Situations"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Investments in companies undergoing Special
+                                                                    Situations
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Investments in Dividend Paying Companies"
+                                                                    id="Investments in Dividend Paying Companies"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Investments in Dividend Paying Companies
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Investments in European companies"
+                                                                    id="Investments in European companies"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Investments in European companies
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Investments in Infrastructure and Infrastructure related companies"
+                                                                    id="Investments in Infrastructure and Infrastructure related companies"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Investments in Infrastructure and Infrastructure
+                                                                    related companies
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Investments in Large, Mid and Small Cap Companies"
+                                                                    id="Investments in Large, Mid and Small Cap Companies"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Investments in Large, Mid and Small Cap Companies
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Investments in Nifty Index Companies"
+                                                                    id="Investments in Nifty Index Companies"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Investments in Nifty Index Companies
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Investments in Predominantly Large and Mid-Cap Companies"
+                                                                    id="Investments in Predominantly Large and Mid-Cap Companies"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Investments in Predominantly Large and Mid-Cap
+                                                                    Companies
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Investments in predominantly Large Cap Companies"
+                                                                    id="Investments in predominantly Large Cap Companies"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Investments in predominantly Large Cap Companies
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Investments in predominantly Mid-Cap Companies"
+                                                                    id="Investments in predominantly Mid-Cap Companies"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Investments in predominantly Mid-Cap Companies
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Investments in predominantly Small Cap Companies"
+                                                                    id="Investments in predominantly Small Cap Companies"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Investments in predominantly Small Cap Companies
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Investments in Technology and technology related Companies"
+                                                                    id="Investments in Technology and technology related Companies"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Investments in Technology and technology related
+                                                                    Companies
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Investments in U.S. companies"
+                                                                    id="Investments in U.S. companies"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Investments in U.S. companies
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Medium Term Deposit" id="Medium Term Deposit"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Medium Term Deposit
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Medium Term Savings Instruments"
+                                                                    id="Medium Term Savings Instruments"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Medium Term Savings Instruments
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Medium Duration Fund"
+                                                                    id="Medium Duration Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Medium Duration Fund
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Multi Asset Investments"
+                                                                    id="Multi Asset Investments"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Multi Asset Investments
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Retirement Plans" id="Retirement Plans"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Retirement Plans
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Savings Account / Current Account"
+                                                                    id="Savings Account / Current Account"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Savings Account / Current Account
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Short Term Savings Instruments"
+                                                                    id="Short Term Savings Instruments"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Short Term Savings Instruments
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Tax Saving Instruments"
+                                                                    id="Tax Saving Instruments"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Tax Saving Instruments
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <button class="more-option-btn toggle-btn"
+                                                            [ngClass]="showMoreOptions ? '' : 'more'"
+                                                            (click)="toggleMoreOptions()"><i
+                                                                class="bi bi-chevron-right"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="heading2">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapse2"
+                                                        aria-expanded="false" aria-controls="collapse2">
+                                                        Fund Category
+                                                    </button>
+                                                </h2>
+                                                <div id="collapse2" class="accordion-collapse collapse"
+                                                    aria-labelledby="heading2" data-bs-parent="#filterAccordion">
+                                                    <div class="accordion-body">
+                                                        <div class="form-group mb-3">
+                                                            <input type="text" class="form-control search"
+                                                                placeholder="Search">
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Aggressive Hybrid Fund"
+                                                                id="Aggressive Hybrid Fund"
+                                                                (click)="getCheckboxValue($event)">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Aggressive Hybrid Fund
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Banking & PSU Fund" id="Banking & PSU Fund"
+                                                                (click)="getCheckboxValue($event)">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Banking & PSU Fund
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Close-Ended Debt Fund" id="Close-Ended Debt Fund"
+                                                                (click)="getCheckboxValue($event)">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Close-Ended Debt Fund
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Conservative Hybrid Fund"
+                                                                (click)="getCheckboxValue($event)"
+                                                                id="Conservative Hybrid Fund">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Conservative Hybrid Fund
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Corporate Bond Fund"
+                                                                (click)="getCheckboxValue($event)"
+                                                                id="Corporate Bond Fund">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Corporate Bond Fund
+                                                            </label>
+                                                        </div>
+                                                        <div class="more-options" *ngIf="showMoreOptions">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Dividend Yield Fund" id="Dividend Yield Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Dividend Yield Fund
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Dynamic Bond" id="Dynamic Bond"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Dynamic Bond
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="ELSS" id="ELSS"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    ELSS
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Equity Saving Fund" id="Equity Saving Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Equity Saving Fund
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Flexi Cap Fund" id="Flexi Cap Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Flexi Cap Fund
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Floater Fund" id="Floater Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Floater Fund
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Focused Fund " id="Focused Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Focused Fund
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="FoF - Domestic" id="FoF - Domestic"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    FoF - Domestic
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Gilt Fund" id="Gilt Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Gilt Fund
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Index Fund" id="Index Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Index Fund
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Large & Mid Cap Fund"
+                                                                    id="Large & Mid Cap Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Large & Mid Cap Fund
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Large Cap Fund" id="Large Cap Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Large Cap Fund
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Liquid Fund" id="Liquid Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Liquid Fund
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Low Duration Fund" id="Low Duration Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Low Duration Fund
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Medium Duration Fund"
+                                                                    id="Medium Duration Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Medium Duration Fund
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Mid Cap Fund" id="Mid Cap Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Mid Cap Fund
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Money Market Fund" id="Money Market Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Money Market Fund
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Open-Ended Hybrid" id="Open-Ended Hybrid"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Open-Ended Hybrid
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Retirement Fund" id="Retirement Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Retirement Fund
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="Short Duration Fund" id="Short Duration Fund"
+                                                                    (click)="getCheckboxValue($event)">
+                                                                <label class="form-check-label"
+                                                                    for="flexCheckIndeterminate">
+                                                                    Short Duration Fund
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <button class="more-option-btn toggle-btn"
+                                                            [ngClass]="showMoreOptions ? '' : 'more'"
+                                                            (click)="toggleMoreOptions()"><i
+                                                                class="bi bi-chevron-right"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="heading3">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapse3"
+                                                        aria-expanded="false" aria-controls="collapse3">
+                                                        Annualised Returns
+                                                    </button>
+                                                </h2>
+                                                <div id="collapse3" class="accordion-collapse collapse"
+                                                    aria-labelledby="heading3" data-bs-parent="#filterAccordion">
+                                                    <div class="accordion-body">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                value="Since inception"
+                                                                (click)="getCheckboxValue($event)"
+                                                                name="flexRadioDefault" id="Since inception">
+                                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                                Since inception
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="1 Year"
+                                                                (click)="getCheckboxValue($event)"
+                                                                name="flexRadioDefault" id="1 Year">
+                                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                                1 Year
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="3 Year"
+                                                                (click)="getCheckboxValue($event)"
+                                                                name="flexRadioDefault" id="3 Year">
+                                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                                3 Year
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="5 Year"
+                                                                (click)="getCheckboxValue($event)"
+                                                                name="flexRadioDefault" id="5 Year">
+                                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                                5 Year
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="10 Year"
+                                                                (click)="getCheckboxValue($event)"
+                                                                name="flexRadioDefault" id="10 Year">
+                                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                                10 Year
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="15 Year"
+                                                                (click)="getCheckboxValue($event)"
+                                                                name="flexRadioDefault" id="15 Year">
+                                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                                15 Year
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="d-block mb-2">Custom returns</label>
+                                                            <div class="rang-slider-block">
+                                                                <ngx-slider [(value)]="minReturn"
+                                                                    [(highValue)]="highReturn"
+                                                                    [options]="options"></ngx-slider>
+                                                            </div>
+                                                            <div
+                                                                class="d-flex align-items-center justify-content-between">
+                                                                <span>{{minReturn}}</span>
+                                                                <span>{{highReturn}}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="heading4">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapse4"
+                                                        aria-expanded="false" aria-controls="collapse4">
+                                                        Investment Horizons
+                                                    </button>
+                                                </h2>
+                                                <div id="collapse4" class="accordion-collapse collapse"
+                                                    aria-labelledby="heading4" data-bs-parent="#filterAccordion">
+                                                    <div class="accordion-body">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Long Term" (click)="getCheckboxValue($event)"
+                                                                id="Long Term">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Long Term
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Medium Term" (click)="getCheckboxValue($event)"
+                                                                id="Medium Term">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Medium Term
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Short Term" (click)="getCheckboxValue($event)"
+                                                                id="Short Term">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Short Term
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="heading5">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapse5"
+                                                        aria-expanded="false" aria-controls="collapse5">
+                                                        Suitable for
+                                                    </button>
+                                                </h2>
+                                                <div id="collapse5" class="accordion-collapse collapse"
+                                                    aria-labelledby="heading5" data-bs-parent="#filterAccordion">
+                                                    <div class="accordion-body">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Child’s Education"
+                                                                (click)="getCheckboxValue($event)"
+                                                                id="Child’s Education">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Child’s Education
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Retirement Plan"
+                                                                (click)="getCheckboxValue($event)" id="Retirement Plan">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Retirement Plan
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Holiday Plan" (click)="getCheckboxValue($event)"
+                                                                id="Holiday Plan">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Holiday Plan
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="Tax Saving" (click)="getCheckboxValue($event)"
+                                                                id="Tax Saving">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">
+                                                                Tax Saving
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- <div class="filter-footer d-none d-lg-block bg-transparent">
+                                        <button class="more-option-btn" (click)="toggleAdvanceFilter()">Advance
+                                            filters<i class="bi bi-chevron-right"></i></button>
+                                    </div> -->
+                                </div>
+
+                                <!-- advance filter block -->
+
+                            </div>
+                            <div class="filter-footer d-flex d-lg-none">
+                                <button class="btn btn-outline-primary" (click)="toggleShowFilterBox()">Cancel</button>
+                                <button class="btn btn-primary" (click)="toggleShowFilterBox()">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- Modal: sort-by Modal Mob -->
+<div class="modal fade bottom-modal" id="sortByModal" tabindex="-1" aria-labelledby="sortByModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="modal-header line pt-4">
+                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body Inception-modal-body">
+                <div  class="modalData">
+                   <div class="mb-4">
+                    <h4 class="mb-2 sorted-fund"  >Sort By</h4>
+                   </div>
+                   <div>
+                       <h4 class="low-return">Returns</h4>
+                       <div class="d-flex gap-3">
+                           <div class="form-check radioModule">
+                               <input class="form-check-input" type="radio" value="Popularity"
+                                   name="flexRadioDefault" id="Popularity">
+                               <label class="form-check-label high-font" for="flexRadioDefault1">
+                                   High to Low
+                               </label>
+                           </div>
+                       </div>
+                   </div>
+                   <div>
+                       <h4  class="low-return">Fund Size</h4>
+                       <div class="d-flex gap-3">
+                           <div class="form-check radioModule">
+                               <input class="form-check-input" type="radio" value="Popularity"
+                                   name="flexRadioDefault" id="Popularity">
+                               <label class="form-check-label high-font"  for="flexRadioDefault1">
+                                   High to Low
+                               </label>
+                           </div>
+                       </div>
+                   </div>
+                   <div>
+                       <h5 class="low-return">Unique Investors</h5>
+                       <div class="d-flex gap-3">
+                           <div class="form-check radioModule">
+                               <input class="form-check-input" type="radio" value="Popularity"
+                                   name="flexRadioDefault" id="Popularity">
+                               <label class="form-check-label high-font"  for="flexRadioDefault1">
+                                   High to Low
+                               </label>
+                           </div>
+                       </div>
+                   </div>
+                </div>
+                <!-- <div class="modal-head">Share with others</div>
+                <ul>
+                    <li><a class="dropdown-item" href="#">1 Year</a></li>
+                    <li><a class="dropdown-item" href="#">3 Years</a></li>
+                    <li><a class="dropdown-item" href="#">5 Years</a></li>
+                    <li><a class="dropdown-item" href="#">10 Years</a></li>
+                    <li><a class="dropdown-item" href="#">15 Years</a></li>
+                    <li><a class="dropdown-item" href="#">Since Inception</a>
+                    </li>
+                </ul> -->
+            </div>
+            <div class="modal-footer">
+                <div class="modal-heads">
+                    <div class="d-flex justify-content-center align-items-center gap-3 modal-body-head">
+                      <button class="btn btn-outline-primary Cancel-data"  data-bs-dismiss="modal">Cancel</button>
+                      <button class="btn btn-primary Apply-button">Apply</button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>

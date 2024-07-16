@@ -1,0 +1,28 @@
+.container{
+    max-width:1255px
+}
+.slide:hover{
+scale:1.01;
+cursor: pointer;
+}
+.desktop{
+    display: block;
+}
+.mobile{
+    display: none;
+}
+@media (max-width: 575.98px){
+    .FT-investor-links .link-box{
+        padding: 20px;
+        min-height: 180px;
+    }
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+    .FT-title-medium {
+        font-size: 1.25rem;
+    }
+}

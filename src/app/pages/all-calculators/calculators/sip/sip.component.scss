@@ -1,0 +1,84 @@
+#page-content{
+  background: #F8F8F8;
+  
+}
+.container{
+  max-width:1295px
+}
+.more-option-btn.toggle-btn{
+    &::before{
+      content:"View Less";
+    display: inline-block;
+    }
+    &.more{
+      &::before{
+        content:"View More";
+      display: inline-block;
+      }
+    }
+  }
+  .selected-range {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .selected-range:focus-within {
+      background: #fff;
+      
+      color: #3C425D;
+  }
+  
+  .calc-input:focus-within {
+      background: #fff;
+      color: #3C425D;
+  }
+  // now for the good stuff 🎉
+  .custom-range {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius:8px;
+      background: rgba(234, 236, 240, 0.48);
+      outline: none;
+      padding: 0;
+      margin: 0;
+    
+      // Range Handle
+      &::-webkit-slider-thumb {
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background:#fff;
+        border:1px solid #3769FF;
+        cursor: pointer;
+        transition: background .15s ease-in-out;
+    
+      }
+    
+      &:active::-webkit-slider-thumb {
+        background: #fff;
+      }
+    
+      &::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border: 0;
+        border-radius: 50%;
+        background: #fff;
+        cursor: pointer;
+        transition: background .15s ease-in-out;
+        box-shadow: 0 0 2px 7px rgba(0, 0, 0, 0.02);
+        
+      }
+    }
+    .cross-close-btn{
+      font-size: 30px;
+      position: absolute;
+      top: 5px;
+      right: 23px;
+    }
+    .FT-general-filter.cart-aside .filter-box .filter-content{
+      padding: 0px;
+    }

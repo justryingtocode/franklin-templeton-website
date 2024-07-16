@@ -1,0 +1,956 @@
+<div class="d-flex flex-row justify-content-center nav-header">
+    <ul class="nav nav-tabs plan-tablist" id="myTab" role="tablist">
+        <li class="nav-item fontResize share-menu-twitter" role="presentation" >
+            <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                role="tab" aria-controls="home" aria-selected="true">Recommended plans
+            </a>
+        </li>
+        <li class="nav-item fontResize share-menu-twitter" role="presentation" >
+            <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab"
+                aria-controls="profile" aria-selected="false" (click)="getCardData()">Build my plan
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="row goal-pl">
+            <ng-container *ngIf="!editPaymentOptionsIsEnabled && !isTenureEditsubmitted">
+                <div class="my-card">
+                    <div class="d-flex text-center fund-AUM" >
+                        <div class="text-white col-6">
+                            <span class="fontResize">Goal Amount:</span>
+                            <span class="my-card-highlights fontResize share-btn-fund">₹50,00,000</span>
+                        </div>
+                        <div class="col-6 text-white">
+                            <span class="fontResize">Tenure: </span>
+                            <span class="my-card-highlights fontResize share-btn-fund" >10 Years</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="choose-plan-text fontResize">Please choose one of the following investment options</div>
+                <span class="plan-form-wrap d-flex flex-row form-group">
+                    <div class="radio-cards col-4">
+                        <div>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="option1" checked>
+                            <label class="form-check-label fontResize" for="exampleRadios1">Monthly</label>
+                        </div>
+                        <div>
+                            <span class="fontResize">₹999</span>
+                        </div>
+                    </div>
+
+                    <div class="radio-cards col-4">
+                        <div>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                value="option2">
+                            <label class="form-check-label fontResize" for="exampleRadios2">Annually</label>
+                        </div>
+                        <div>
+                            <span class="fontResize">₹10,000</span>
+                        </div>
+                    </div>
+
+                    <div class="radio-cards col-4 plan-goal">
+                        <div>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
+                                value="option3">
+                            <label class="form-check-label fontResize" for="exampleRadios3">
+                                One Time
+                                <span class="img-with-tooltip">
+                                    <img src="assets/images/home/info-icon2.svg">
+                                    <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                    <span class="tooltip-block fontResize">
+                                        Maximum amount allowed for a one-time investment is ₹ 10,00,000
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div>
+                            <span class="fontResize">₹1,00,000</span>
+                        </div>
+                    </div>
+
+                    <div class="plan-include-btn col-auto">
+                        <div>
+                            <input class="form-check-input" id="exampleRadios4" type="checkbox">
+                            <label class="form-check-label fontResize"
+                                for="exampleRadios4">Include a
+                                step-up</label>
+                        </div>
+                        <div class="selection-example-wrap">
+                            <select class="form-select fontResize showIconForWatchlist" aria-label="Default select example"
+                                >
+                                <option>Select</option>
+                                <option selected value="1">6</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                            <span class="img-with-tooltip">
+                                <img src="assets/images/home/info-icon2.svg">
+                                <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                <span class="tooltip-block fontResize">
+                                    In a step-up, the amount increases automatically at a pre-defined rate and period. Please note that step-up % will be applied on both Monthly and Annual investments at a yearly frequency.
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="plan-edit-button col-auto audio-box" >
+                        <div class="col-auto block-btns">
+                            <button class="btn btn-outline-primary me-2">
+                                <span class="d-none d-md-block fontResize podcast-block"
+                                    (click)="editPaymentOptionsIsEnabled=!editPaymentOptionsIsEnabled">Edit</span>
+                                <span class="d-md-none fontResize audio-class-box"
+                                    (click)="editPaymentOptionsIsEnabled=!editPaymentOptionsIsEnabled">Edit</span>
+                            </button>
+                        </div>
+                    </div>
+                </span>
+            </ng-container>
+            <ng-container *ngIf="editPaymentOptionsIsEnabled">
+                <div class="choose-plan-text2 fontResize">Customize Your Payment Option</div>
+                <div class="choose-plan-desc fontResize">
+                    Let's say you can make a one time payment today and maintain monthly and annual payments for the next 20 years, we will help you plan your goal accordingly.
+                </div>
+                <div class="my-card2 d-flex text-center flex-row d-none d-md-flex">
+                    <div class=" fontResize">
+                        Tenure
+                    </div>
+                    <div class=" fontResize">
+                        : 10 years
+                        <img src="assets/images/solutions/edit2.png" class="ms-2">
+                    </div>
+
+                    <!-- <div class="text-white col-6">
+                        <span>Goal</span>
+                        <span styl e="margin-left: 10px;">₹50,00,000</span>
+                    </div>
+                    <div class="col-6 text-white">
+                        <span>Tenure</span>
+                        <span st yle="margin-left: 10px;">10 Years</span>
+                    </div> -->
+                </div>
+                <div class="radio-cards-wrapper d-flex flex-row form-group p-0">
+                    <ng-container *ngFor="let item of checkdata; let last = last">
+                        <div class="radio-cards tenure-edit-cards"
+                            [ngStyle]="{'border': item.isshow? '2px solid #3769ff' : ''}" *ngIf="item.isshow">
+                            <div class="d-flex justify-content-between d-none d-md-flex fontResize">
+                                {{item.title}}
+                                <a type="button" data-bs-dismiss="offcanvas" aria-label="Close"
+                                    (click)="changeit(item)">
+                                    <img src="assets/images/solutions/clarity_remove-line.png" class="ms-2">
+                                </a>
+
+                            </div>
+                            <div class="edit-card-percentage audio-box" >
+                                <div>
+                                    <!-- <img src="assets/images/solutions/minuss.svg" class="ms-2" sty le="padding: 12px 5px" > -->
+                                </div>
+                                <div class="card fontResize podcast-img-box">
+                                    100%
+                                </div>
+                                <div>
+                                    <!-- <img src="assets/images/solutions/pluss.svg" class="ms-2" sty le="padding: 12px 5px"> -->
+                                </div>
+                            </div>
+                            <div class="title-card-percentage d-flex d-md-none report-search-box">
+                                <div class="fontResize">
+                                    {{item.title}}
+                                </div>
+                                <div class="title-amount-wrap d-flex flex-row report-share">
+                                    <div class="card fontResize report-share-box" >
+                                        ₹10,00,000
+                                    </div>
+                                    <a type="button" data-bs-dismiss="offcanvas" aria-label="Close"
+                                        (click)="changeit(item)">
+                                        <img src="assets/images/solutions/clarity_remove-line.png" class="ms-2">
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- <div class="card" st yle="padding: 12px 16px; border:1px solid #d2d8ea">
+                                ₹10,00,000
+                            </div> -->
+                        </div>
+                        <div class="radio-cards tenure-edit-cards" *ngIf="!item.isshow">
+                            <button class="btn btn-outline-primary report-detail" >
+                                <span class="d-none d-md-block fontResize button-item"
+                                    (click)="changeit(item)">{{'Add ' +
+                                    item.buttonText}}</span>
+                                <span class="d-md-none fontResize button-item"  (click)="changeit(item)">{{'Add
+                                    ' +
+                                    item.buttonText}}</span>
+                            </button>
+                        </div>
+                        <div class="edit-option-plus-icon" *ngIf="!last">
+                            <i class="bi bi-plus-circle-fill"></i>
+                        </div>
+                    </ng-container>
+                    <div class="d-flex flex-column d-none d-md-flex report-date-details" >
+                        <button type="button" class="btn btn-primary tenure-plan-button fontResize"
+                            (click)="tenureSelection($event)">Submit
+                        </button>
+                        <button type="button" class="btn btn-outline-primary tenure-plan-button fontResize"
+                            (click)="editPaymentOptionsIsEnabled=!editPaymentOptionsIsEnabled">Cancel
+                        </button>
+                    </div>
+                    <div class="tenure-plan-mob d-flex d-md-none">
+                        <div class="fontResize">Tenure</div>
+                        <div class="tenure-years fontResize">
+                            10 years
+                            <img src="assets/images/solutions/edit2.png" class="ms-2">
+                        </div>
+                    </div>
+                    <div class="edit-plan-action d-flex flex-row d-md-none stepper-S2">
+                        <button type="button" class="btn btn-primary tenure-plan-button fontResize"
+                            (click)="tenureSelection($event)">Submit
+                        </button>
+                        <button type="button" class="btn btn-outline-primary tenure-plan-button fontResize"
+                            (click)="editPaymentOptionsIsEnabled=!editPaymentOptionsIsEnabled">Cancel
+                        </button>
+                    </div>
+                </div>
+                <!-- <div class="fontResize">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, libero.</div> -->
+            </ng-container>
+
+            <ng-container *ngIf="isTenureEditsubmitted">
+                <div class="plan-edit-sumitted d-flex text-center edit-tenure" >
+                    <div class="my-card2 d-flex">
+                        <div class="fontResize">
+                            Tenure
+                        </div>
+                        <div class="fontResize">
+                            : 10 years
+                            <img src="assets/images/solutions/edit2.png" class="ms-2">
+                        </div>
+                    </div>
+                    <div class="edit-my-card d-flex Projected-amount" >
+                        <div class="col-12 col-sm-6 text-white">
+                            <span class="fontResize">Projected goal amount</span>
+                            <span class="fontResize Polygon3-pmg" >₹4,576,807</span>
+                        </div>
+                        <div class="col-12 col-sm-6 text-white">
+                            <span><img src="assets/images/solutions/Polygon3.png"></span>
+                            <span class="fontResize Polygon3-pmg">569.07% from original goal</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <span class="plan-editted-form d-flex flex-row form-group">
+                    <div class="radio-cards col-4">
+                        <div>
+                            <label class="form-check-label fontResize" for="exampleRadios1">Monthly</label>
+                        </div>
+                        <div>
+                            <span class="fontResize">₹999</span>
+                        </div>
+                    </div>
+                    <div class="plan-plus-icon">
+                        <i class="bi bi-plus-circle-fill"></i>
+                    </div>
+
+                    <div class="radio-cards col-4">
+                        <div>
+                            <label class="form-check-label fontResize" for="exampleRadios2">Annually</label>
+                        </div>
+                        <div>
+                            <span class="fontResize">₹10,000</span>
+                        </div>
+                    </div>
+                    <div class="plan-plus-icon">
+                        <i class="bi bi-plus-circle-fill"></i>
+                    </div>
+
+                    <div class="radio-cards col-4">
+                        <div>
+                            <label class="form-check-label fontResize" for="exampleRadios3">One Time</label>
+                        </div>
+                        <div>
+                            <span class="fontResize">₹1,00,000</span>
+                        </div>
+                    </div>
+
+                    <div class="col-auto edit-plan-include Include-label">
+                        <div>
+                            <input class="form-check-input" id="exampleRadios4" type="checkbox">
+                            <label class="form-check-label fontResize share-menu-twitter-fund" 
+                                for="exampleRadios4">Include a
+                                step-up</label>
+                        </div>
+                        <div>
+                            <select class="form-select fontResize two-three" aria-label="Default select example">
+                                <option>Selec</option>
+                                <option selected value="1">6</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="tenure-plan-mob d-flex d-md-none">
+                        <div class="fontResize">Tenure</div>
+                        <div class="tenure-years fontResize">
+                            10 years
+                            <img src="assets/images/solutions/edit2.png" class="ms-2">
+                        </div>
+                    </div>
+                    <div class="col-auto plan-edit-btn Tenure-class-edit">
+                        <div class="col-auto block-btns">
+                            <button class="btn btn-outline-primary me-2">
+                                <span class="d-none d-md-block fontResize edit-years"
+                                    (click)="changeboolean()">Edit</span>
+                                <span class="d-md-none fontResize">Edit</span>
+                            </button>
+                        </div>
+                    </div>
+                </span>
+            </ng-container>
+            <div class="pl-0 funds-content">
+                <div class="row">
+                    <div class="funds-container col-sm-7">
+                        <span class="title fontResize">
+                            Recommended Funds
+                        </span>
+                        <!-- <div *ngFor='let fund of funds'>
+                            <app-fund-card1 [fund]="fund" cardType="SOLUTION" [hasInvestNowBtn]="false"></app-fund-card1>
+                        </div> -->
+
+
+                        <!-- <div class="fund-block position-relative mb-3" *ngFor='let item of allFunds; let i = index'>
+                            <div class="d-flex justify-content-between fund-head">
+                                <div>
+                                    <h3 class="mb-0">
+                                        <a href="#">
+                                            <span class="fund-head-title">Franklin Build India Fund</span> <img
+                                                src="assets/images/general/very-high.svg" class="ms-2">
+                                        </a>
+                                    </h3>
+                                    <div class="tags">
+                                        <ul>
+                                            <li>Equity</li>
+                                            <li>Large cap</li>
+                                            <li>8 year old fund</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="icons">
+                                    <div class="d-none d-lg-inline-block">
+                                        <button (click)="toggleShowSavDialoge()">
+                                            <img src="assets/images/general/mark-icon.svg">
+                                            <span class="tooltip-box">Save to watchlist</span>
+                                        </button>
+                                        <button>
+                                            <img src="assets/images/general/cart-icon.svg"><span
+                                                class="new-badge">new</span>
+                                            <span class="tooltip-box">Add to cart</span>
+                                        </button>
+                                        <button>
+                                            <div class="dropdown share-menu">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <img src="assets/images/general/share-icon.svg"><span
+                                                        class="tooltip-box">Share</span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><span class="dropdown-item"
+                                                            (click)="toggleShowCopyDialoge()"><img
+                                                                src="assets/images/general/Link.svg">Copy
+                                                            link</span></li>
+                                                    <li><a class="dropdown-item" href="#"><img
+                                                                src="assets/images/general/TwitterLogo.svg">Share
+                                                            on Twitter</a></li>
+                                                    <li><a class="dropdown-item" href="#"><img
+                                                                src="assets/images/general/FacebookLogo.svg">Share
+                                                            on Facebook</a></li>
+                                                    <li><a class="dropdown-item" href="#"><img
+                                                                src="assets/images/general/LinkedinLogo.svg">Share
+                                                            on LinkedIn</a></li>
+                                                </ul>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="dropdown d-inline-block d-lg-none">
+                                        <button class=" dropdown-toggle me-0" type="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <img src="assets/images/general/dots.svg">
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li class="d-none d-md-block">
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="bi bi-cart2"></i>Add to cart
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <img src="assets/images/general/compare-icon.svg">Compare
+                                                    fund
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <img src="assets/images/general/watchlist-icon.svg">Add to
+                                                    watchlist
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <img src="assets/images/general/share-icon-sm.svg">Share
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row info justify-content-between">
+                                <ul class="col-auto">
+                                    <li>
+                                        <div class="mb-2">Investors</div>
+                                        <div class="text-big">
+                                            <span class="d-inline-block d-md-none"><img
+                                                    src="assets/images/fund/investor-icon.svg"></span>
+                                            1.35 lakh
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="mb-2">AUM </div>
+                                        <div class="text-big">
+                                            <span class="d-inline-block d-md-none"><img
+                                                    src="assets/images/fund/money-sign.svg"></span>
+                                            3242.26 Cr
+                                        </div>
+                                    </li>
+                                    <li class="last-item">
+                                        <div class="mb-2">Annualised returns <img
+                                                src="assets/images/home/info-icon2.svg">
+                                        </div>
+                                        <div>
+                                            <span class="text-big">16.09%</span>
+                                            <div class="dropdown">
+                                                <button class="btn btn-white dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                    Since Inception
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                    <li><a class="dropdown-item" href="#">1 Year</a></li>
+                                                    <li><a class="dropdown-item" href="#">3 Years</a></li>
+                                                    <li><a class="dropdown-item" href="#">5 Years</a></li>
+                                                    <li><a class="dropdown-item" href="#">10 Years</a></li>
+                                                    <li><a class="dropdown-item" href="#">Since Inception</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                                <div class="d-block d-md-none">
+                                    <button class="btn btn-light-blue"><i class="bi bi-cart3"></i> add to
+                                        cart</button>
+                                </div>
+                                <div class="col-auto block-btns">
+
+                                    <a class="btn btn-outline-primary me-2">Know more</a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <div class="col-sm-5 col-lg-12">
+                        <div class="graph-block">
+                            <div class="text-center position-absolute solution-graph fontResize"><span
+                                    class="graph-info"> Amount (₹)</span>
+
+                            </div>
+                            <div class="graph-head mb-4">
+                                <div>
+                                    <span class="graph-name fontResize goal-amount"><span class="circle"
+                                            ></span>Goal Amount</span>
+                                </div>
+                                <div>
+                                    <span class="graph-name fontResize"><span class="circle Projected-investment"></span>Projected Investment
+                                        Value</span>
+                                </div>
+                            </div>
+                            <div class="performance-graph">
+                                <canvas baseChart [data]="salesData" [type]="'line'" [options]="chartOptions">
+                                </canvas>
+                            </div>
+                            <div class="text-center">
+                                <span class="graph-info fontResize">Year</span>
+                            </div>
+                            <div class="graph-bottom-text fontResize">
+                                <span class="fontResize benchmark-block">*</span>
+                                Simulation is based on past returns of the benchmark of the scheme for the proposed
+                                period of investment.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="funds-container col-sm-6 mt-4">
+                        <span class="title fontResize">
+                            Recommended Funds
+                        </span>
+                        <div class="my-4 Hybrid-fund" >
+
+                            <div class="card-body recom-fund">
+                                <div class="solution-debt fontResize debt-hybrid-fund">
+                                    <a href="" routerLink="/funds/16"> Debt Hybrid Fund.</a>
+                                </div>
+
+                                <div class="mt-4 recom-fund fontResize">
+                                    A fund that predominantly in debt instruments with marginal equity exposure
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container d-flex button-wrapper p-0">
+                    <button type="button" class="btn btn-outline-primary plan-button fontResize"
+                        data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne" (click)="changeActiveStepper(1,false)">Back
+                    </button>
+                    <button type="button" class="btn btn-primary plan-button fontResize"
+                        *ngIf="addedFundsData?.length>0" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                        aria-expanded="false" aria-controls="collapseThree"
+                        (click)="changeActiveStepper(1,true)">Proceed
+                    </button>
+                    <button type="button" class="btn btn-primary plan-button fontResize"
+                        *ngIf="addedFundsData?.length==0"
+                        (click)="areFundsAdded?areFundsAdded=areFundsAdded:areFundsAdded=!areFundsAdded">Proceed
+                    </button>
+
+                </div>
+                <div class="container mt-4">
+                    <span class="alert-danger fontResize" *ngIf="areFundsAdded && addedFundsData?.length==0"> Please add
+                        funds
+                        first
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="build-plan-tab tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="row">
+            <div class="my-card1 d-flex text-center mb-3">
+                <div class="text-white col-6">
+                    <span class="fontResize">Goal Amount:</span>
+                    <span class="my-card-highlights fontResize share-btn-fund">₹50,00,000</span>
+                </div>
+                <div class="col-6 text-white">
+                    <span class="fontResize">Tenure:</span>
+                    <span class="my-card-highlights fontResize share-btn-fund">10 Years</span>
+                </div>
+            </div>
+            <div class="build-pan-wrap row">
+                <div class="col-sm-8 build-plan-list tenure-period">
+                    <section class="FT-all-funds custom-section pb-0">
+                        <div>
+                            <div class="lg-12">
+                                <div class="filter-options mb-4">
+                                    <div class="form-group build-plan-search">
+                                        <input type="text" class="form-control search result-tenure"
+                                             placeholder="Lookup and add up to 5 Funds"
+                                            [(ngModel)]="searchTerm" (input)="filterFunds(searchTerm)">
+                                        <!-- <div class="search-result">
+
+                                            <div class="inner">
+                                                <div class="mb-3">
+                                                    Franklin Build India Fund <span class="sub"><span
+                                                            class="text-gray">AUM</span> -
+                                                        134 Cr</span><span class="sub"><span
+                                                            class="text-gray">Investors</span>
+                                                        -
+                                                        1.34 lakh</span>
+                                                </div>
+                                                <div class="mb-3">
+                                                    Franklin India Balanced Advantage Fund <span class="sub"><span
+                                                            class="text-gray">AUM</span> - 134 Cr</span><span
+                                                        class="sub"><span class="text-gray">Investors</span> - 1.34
+                                                        lakh</span>
+                                                </div>
+                                                <div class="mb-3">
+                                                    Franklin India Banking & PSU Debt Fund <span class="sub"><span
+                                                            class="text-gray">AUM</span> - 134 Cr</span><span
+                                                        class="sub"><span class="text-gray">Investors</span> - 1.34
+                                                        lakh</span>
+                                                </div>
+                                                <div class="mb-3">
+                                                    Franklin India Bluechip Fund <span class="sub"><span
+                                                            class="text-gray">AUM</span> - 134 Cr</span><span
+                                                        class="sub"><span class="text-gray">Investors</span> - 1.34
+                                                        lakh</span>
+                                                </div>
+                                                <div class="mb-3">
+                                                    Franklin India Corporate Debt Fund <span class="sub"><span
+                                                            class="text-gray">AUM</span> - 134 Cr</span><span
+                                                        class="sub"><span class="text-gray">Investors</span> - 1.34
+                                                        lakh</span>
+                                                </div>
+                                                <div class="mb-3">
+                                                    Franklin India Corporate Debt Fund <span class="sub"><span
+                                                            class="text-gray">AUM</span> - 134 Cr</span><span
+                                                        class="sub"><span class="text-gray">Investors</span> - 1.34
+                                                        lakh</span>
+                                                </div>
+                                                <div class="mb-3">
+                                                    Franklin India Debt Hybrid Fund <span class="sub"><span
+                                                            class="text-gray">AUM</span> - 134 Cr</span><span
+                                                        class="sub"><span class="text-gray">Investors</span> - 1.34
+                                                        lakh</span>
+                                                </div>
+                                                <div class="mb-3">
+                                                    Franklin India Equity Advantage Fund <span class="sub"><span
+                                                            class="text-gray">AUM</span> - 134 Cr</span><span
+                                                        class="sub"><span class="text-gray">Investors</span> - 1.34
+                                                        lakh</span>
+                                                </div>
+                                                <div class="mb-3">
+                                                    Franklin India Equity Hybrid Fund <span class="sub"><span
+                                                            class="text-gray">AUM</span> - 134 Cr</span><span
+                                                        class="sub"><span class="text-gray">Investors</span> - 1.34
+                                                        lakh</span>
+                                                </div>
+                                            </div>
+                                        </div> -->
+
+                                        <div class="search-result">
+                                            <div class="inner offcanvas-head">
+                                                <ng-container *ngFor="let fund of fundsForSearch">
+                                                    <div class="funds-seach-title fontResize fund-AUM-SIP"
+                                                        (click)="getTableTitle(fund)"
+                                                    >
+                                                        {{ fund.title }}
+                                                        <span class="sub fontResize"><span
+                                                                class="text-gray fontResize">Fund Size</span> - {{
+                                                            fund.aum
+                                                            }}</span>
+                                                        <span class="sub fontResize"><span
+                                                                class="text-gray fontResize">Unique Investors</span> -
+                                                            {{
+                                                            fund.investors }}</span>
+                                                    </div>
+                                                </ng-container>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <img src="./assets/images/comparefund/closebutton.svg"
+                                                class="make-tag-for-all-page d-md-block d-none mob-view close-btn-section" id="x-icon"
+                                                (click)="resetFundExplore()">
+                                            <img src="./assets/images/comparefund/closebutton.svg"
+                                                class="make-tag-for-all-page search-tab-close d-none d-md-block filter-edit"
+                                                (click)="resetFundExplore()" >
+                                        </div>
+
+                                        <button
+                                            class="btn btn-white toggle-filter d-inline-block d-lg-none d-none fontResize"><img
+                                                src="assets/images/fund/sort.svg">Filters</button>
+                                    </div>
+                                    <div class="build-plan-sort d-flex align-items-center ">
+                                        <span class="me-2 fontResize">Sort by</span>
+
+                                        <div class="dropdown">
+                                            <button class="m-0 btn dropdown-toggle" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <span class="bp-sort-text fontResize">Returns High to Low</span>
+                                                <span class="bp-sort-dot"></span>
+
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li class="selected-option"><a class="dropdown-item fontResize">Returns
+                                                        -
+                                                        High to
+                                                        Low</a></li>
+                                                <li><a class="dropdown-item fontResize" href="#">Returns - Low to High</a></li>
+                                                <li><a class="dropdown-item fontResize" href="#">AUM - Low to High</a></li>
+                                                <li><a class="dropdown-item fontResize" href="#">AUM - High to Low</a></li>
+                                                <li><a class="dropdown-item fontResize" href="#">Investors - High to Low</a></li>
+                                                <li><a class="dropdown-item fontResize" href="#">Investors - Low to High</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="tab-head mb-4 forwatclistnavtab side-filter-options">
+                        <div class="all-funds-card">
+
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active fontResize all-funds-card-id" id="home-tab" data-bs-toggle="tab"
+                                        data-bs-target="#home-tab-pane" type="button" role="tab"
+                                        aria-controls="home-tab-pane" aria-selected="true"
+                                    >All Funds</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fontResize all-funds-card-id" id="profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                        aria-controls="profile-tab-pane" aria-selected="false"
+                                        >Focus
+                                        Funds</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fontResize all-funds-card-id" id="profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                        aria-controls="profile-tab-pane" aria-selected="false"
+                                        >Equity
+                                        Funds</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fontResize all-funds-card-id" id="profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                        aria-controls="profile-tab-pane" aria-selected="false"
+                                        >Debt
+                                        Funds</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fontResize all-funds-card-id" id="profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                        aria-controls="profile-tab-pane" aria-selected="false"
+                                        >Hybrid
+                                        Funds</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fontResize all-funds-card-id" id="profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                        aria-controls="profile-tab-pane" aria-selected="false"
+                                        >Liquid
+                                        Funds</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Add fund cards -->
+                    <div *ngFor='let item of solutionsCardContent'>
+                        <app-fund-card1 [fund]="item" cardType="SOLUTION" [hasAddRemoveButton]="true"
+                            (addFunds)="addFunds($event)" (removeFunds)="removeFunds($event)">
+                        </app-fund-card1>
+                    </div>
+
+
+                    <!-- <div class="funds-wrapper">
+                        <div class="fund-block position-relative mb-3"
+                            *ngFor='let item of solutionsCardContent; let i = index'>
+                            <div class="d-flex justify-content-between fund-head">
+                                <div>
+                                    <h3 class="mb-0">
+                                        <a href="#">
+                                            <span class="fund-head-title">{{item.cardTitle}}</span> <img
+                                                src="assets/images/general/very-high.svg" class="ms-2">
+                                        </a>
+                                    </h3>
+                                    <div class="tags">
+                                        <ul>
+                                            <li>Equity</li>
+                                            <li>Large cap</li>
+                                            <li>8 year old fund</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="icons">
+                                    <div class="d-none d-lg-inline-block">
+                                        <button (click)="toggleShowSavDialoge()">
+                                            <img src="assets/images/general/mark-icon.svg">
+                                            <span class="tooltip-box">Save to watchlist</span>
+                                        </button>
+                                        <button>
+                                            <img src="assets/images/general/cart-icon.svg"><span
+                                                class="new-badge">new</span>
+                                            <span class="tooltip-box">Add to cart</span>
+                                        </button>
+                                        <button>
+                                            <div class="dropdown share-menu">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <img src="assets/images/general/share-icon.svg"><span
+                                                        class="tooltip-box">Share</span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><span class="dropdown-item"
+                                                            (click)="toggleShowCopyDialoge()"><img
+                                                                src="assets/images/general/Link.svg">Copy
+                                                            link</span></li>
+                                                    <li><a class="dropdown-item" href="#"><img
+                                                                src="assets/images/general/TwitterLogo.svg">Share
+                                                            on Twitter</a></li>
+                                                    <li><a class="dropdown-item" href="#"><img
+                                                                src="assets/images/general/FacebookLogo.svg">Share
+                                                            on Facebook</a></li>
+                                                    <li><a class="dropdown-item" href="#"><img
+                                                                src="assets/images/general/LinkedinLogo.svg">Share
+                                                            on LinkedIn</a></li>
+                                                </ul>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="dropdown d-inline-block d-lg-none">
+                                        <button class=" dropdown-toggle me-0" type="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <img src="assets/images/general/dots.svg">
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li class="d-none d-md-block">
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="bi bi-cart2"></i>Add to cart
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <img src="assets/images/general/compare-icon.svg">Compare
+                                                    fund
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <img src="assets/images/general/watchlist-icon.svg">Add to
+                                                    watchlist
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <img src="assets/images/general/share-icon-sm.svg">Share
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row info justify-content-between">
+                                <ul class="col-auto">
+                                    <li>
+                                        <div class="mb-2">Investors</div>
+                                        <div class="text-big">
+                                            <span class="d-inline-block d-md-none"><img
+                                                    src="assets/images/fund/investor-icon.svg"></span>
+                                            {{item.investors}}
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="mb-2">AUM </div>
+                                        <div class="text-big">
+                                            <span class="d-inline-block d-md-none"><img
+                                                    src="assets/images/fund/money-sign.svg"></span>
+                                            {{item.aum}}
+                                        </div>
+                                    </li>
+                                    <li class="last-item">
+                                        <div class="mb-2">Annualised returns <img
+                                                src="assets/images/home/info-icon2.svg">
+                                        </div>
+                                        <div>
+                                            <span class="text-big">{{item.annualisedReturns}}</span>
+                                            <div class="dropdown">
+                                                <button class="btn btn-white dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                    Since Inception
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                    <li><a class="dropdown-item" href="#">1 Year</a></li>
+                                                    <li><a class="dropdown-item" href="#">3 Years</a></li>
+                                                    <li><a class="dropdown-item" href="#">5 Years</a></li>
+                                                    <li><a class="dropdown-item" href="#">10 Years</a></li>
+                                                    <li><a class="dropdown-item" href="#">Since Inception</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="d-block d-md-none">
+                                    <button class="btn btn-light-blue"><i class="bi bi-cart3"></i> add to
+                                        cart</button>
+                                </div>
+                                <div class="col-auto block-btns">
+                                    <button type="button" *ngIf="item.isAdded" class="btn btn-outline-primary"
+                                        (click)="removeFunds(item)">Remove
+                                    </button>
+                                    <button *ngIf="!item.isAdded" type="button" class="btn btn-primary"
+                                        (click)="addFunds(item)">Add Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="col-sm-4 build-plan-added added-plan">
+                    <section class="FT-all-funds custom-section pb-0">
+                        <div class="container">
+                            <span class="added-funds-title fontResize">
+                                Selected Funds{{' (' + addedFundsData?.length + ')'}}
+                            </span>
+                            <div class="d-flex flex-row justify-content-between added-funds-subheader">
+                                <div class="fontResize">
+                                    Fund name
+                                </div>
+                                <div class="fontResize">
+                                    Fund Allocation(%)
+                                </div>
+                            </div>
+                            <div class="add-funds-content row" *ngIf="addedFundsData && addedFundsData?.length>0">
+                                <ng-container *ngFor="let funds of addedFundsData;let i=index;">
+                                    <div class="d-flex flex-row justify-content-between add-funds-title">
+                                        <div class="col-8 fontResize">
+                                            {{funds?.title}}
+                                        </div>
+                                        <div class="d-flex flex-row col-4 justify-content-between">
+                                            <div class="added-funds-percentage form-control percentage-title">
+                                                <input type="text" class="input-add-fund percentage-title-fund"
+                                                    
+                                                    max="100" [(ngModel)]="allFundsnew[i]"
+                                                    (ngModelChange)="addFundsPercentageChange($event)" twoDecimalOnly>
+                                                <span>%</span>
+                                            </div>
+                                            <div>
+                                                <img src="assets/images/general/Trash.png" class="ms-2">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </ng-container>
+                                <span class="alert-danger fontResize" *ngIf="addedFundsData.length>0 && selectedFundsSum<100">Fund
+                                    allocation of {{100-selectedFundsSum + '%'}} is remaining</span>
+                                <span class="alert-danger fontResize" *ngIf="addedFundsData.length>0 && selectedFundsSum>100">Fund
+                                    allocation of {{100-selectedFundsSum + '%'}} is over</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="fixed-action-button container d-flex button-wrapper wrapper-fund" >
+                <button type="button" class="btn btn-outline-primary plan-button fontResize" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
+                    (click)="changeActiveStepper(1,false)">Back
+                </button>
+                <button type="button" class="btn btn-primary plan-button fontResize"
+                    *ngIf="(!buildMyPlanApplied && (addedFundsData?.length>0 || addedFundsData?.length==0)) || (buildMyPlanApplied && addedFundsData?.length==0)"
+                    (click)="buildMyPlanApplied?buildMyPlanApplied=buildMyPlanApplied:buildMyPlanApplied=!buildMyPlanApplied">Apply</button>
+                <button type="button" class="btn btn-primary plan-button fontResize"
+                    *ngIf="buildMyPlanApplied && (addedFundsData?.length>0 )" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
+                    (click)="changeActiveStepper(2,true)"
+                    [ngStyle]="{'pointer-events': selectedFundsSum <100? 'none' : ''}">Proceed
+                </button>
+            </div>
+        </div>
+    </div>
+    <span class="row footer-text col-sm-12 fontResize"><span class="star-icon fontResize">*</span> &nbsp;&nbsp;The goal amount provided
+        herein is purely derived out of mathematical calculations for illustrative purposes. The monthly, annual and one
+        time investment amounts are based on the past returns of the benchmark of the scheme/s for the proposed period
+        of investment. It is a simplifiedillustration provided on a best effort basis. Past performance may or may not
+        be sustained in future. There is no warranty about the accuracy of the goal sheet. This should not be construed
+        as an investment/tax advice or as a solicitation to invest in the schemes of Franklin Templeton Mutual Fund.
+        There is no assurance or guarantee that the investment objectives of the schemes in the underlying goals will be
+        attained. Kindly note that same scheme can be recommended to an investor for different goals. The tax
+        consequences should be carefully considered. The investor’s own circumstances may dictate a substantially
+        different result. The recipient is advised to consult his or her advisor/ tax consultant prior to arriving at
+        any investment decision. Franklin Templeton Mutual Fund, AMC, Trustees, it’s employees, agents, associates and
+        representatives shall not be liable for any loss, direct or indirect, consequential or inconsequential, that may
+        arise to an investor as a result of subscribing to Family Solutions.
+        Note: IDCW - Income Distribution cum Capital Withdrawal</span>
+</div>

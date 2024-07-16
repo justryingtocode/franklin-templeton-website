@@ -1,0 +1,138 @@
+<section class="ft-search">
+    <div class="container">
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-10">
+                <div class="d-flex search-results">
+                    <div class="search-inpt share-menu-twitter" >
+                        <input type="text" id="search-bar" class="form-control ft-search-place fund-AUM" placeholder="Search"
+                        [(ngModel)]="searchTerm" (input)="filterFunds(searchTerm)">
+                    </div>
+
+                    <div class="search-result" *ngIf="showSuggestions && searchTerm && fundsForSearch.length">
+                        <div class="inner share-menu-twitter-fund">
+                            <ng-container *ngFor="let fund of fundsForSearch">
+                                <div class="funds-seach-title" (click)="getTableTitle(fund)"
+                                    >
+                                    {{ fund.title }}
+                                    <span class="sub"><span class="text-gray">Fund Size</span> - {{ fund.aum
+                                        }}</span>
+                                    <span class="sub"><span class="text-gray">Unique Investors</span> - {{
+                                        fund.investors }}</span>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div>
+                        <img src="./assets/images/comparefund/closebutton.svg"
+                            class="make-tag-for-all-page d-md-none mob-view showIconForWatchlist" id="x-icon" (click)="resetFundExplore()" >
+                        <img src="./assets/images/comparefund/closebutton.svg"
+                            class="make-tag-for-all-page search-tab-close d-none d-md-block audio-box" (click)="resetFundExplore()" >
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary ft-search-btn"(click)="redirectToNextPage()" >Search</button>
+                    </div>
+                </div>
+
+                <div class="card podcast-block" >
+                    <div class="card-body" id="search-bar">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="search-results" id="search-bar">
+                                    <div class="box-body">
+                                        <div class="d-flex text-bold mb-2">
+                                            <span>Are You Looking For?</span>
+                                        </div>
+                                        <ul class="audio-class-box">
+                                            <li>
+                                                <a href="#" class="d-flex justify-content-between">
+                                                    <span>
+                                                        Retirement
+                                                    </span>
+                                                    <span><i class="bi bi-arrow-up-right"></i></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="d-flex justify-content-between">
+                                                    <span>
+                                                        Forms and application
+                                                    </span>
+                                                    <span><i class="bi bi-arrow-up-right"></i></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="d-flex justify-content-between">
+                                                    <span>
+                                                        Charging an account
+                                                    </span>
+                                                    <span><i class="bi bi-arrow-up-right"></i></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="d-flex justify-content-between">
+                                                    <span>
+                                                        Tax center
+                                                    </span>
+                                                    <span><i class="bi bi-arrow-up-right"></i></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="search-results" id="search-bar">
+                                    <div class="box-body">
+                                        <div class="d-flex text-bold mb-2">
+                                            <span>Recent Searches</span>
+                                        </div>
+                                        <ul class="audio-class-box">
+                                            <li>
+                                                <a href="#" class="d-flex justify-content-between">
+                                                    <span>
+                                                        Franklin Build India Fund
+                                                    </span>
+                                                    <span><i class="bi bi-arrow-up-right"></i></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="d-flex justify-content-between">
+                                                    <span>
+                                                        Franklin Build India Fund
+                                                    </span>
+                                                    <span><i class="bi bi-arrow-up-right"></i></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="d-flex justify-content-between">
+                                                    <span>
+                                                        Franklin Build India Fund
+                                                    </span>
+                                                    <span><i class="bi bi-arrow-up-right"></i></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="d-flex justify-content-between">
+                                                    <span>
+                                                        Franklin Build India Fund
+                                                    </span>
+                                                    <span><i class="bi bi-arrow-up-right"></i></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <a href=""  class="podcast-img-box">Clear</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

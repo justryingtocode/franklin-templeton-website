@@ -1,0 +1,777 @@
+<div id="page-content" class="bg-img">
+    <!-- start page breadcrumb block -->
+    <div class="FT-breadcrumb d-md-block d-none">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Servicing Forms</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <section class="FT-footer-pages forms-download">
+        <div class="container">
+            <div class="d-md-none forms-download-section">
+                <i class="bi bi-arrow-left fs-5"></i>
+            </div>
+            <div class="FT-title-medium text-bold text-blue mb-4">Forms Download</div>
+            <div class="d-flex form-tabs">
+                <div class="form-group ">
+                    <input type="text" class="form-control search" placeholder="Search Mutual Fund"
+                        [(ngModel)]="searchTerm" (input)="filterFunds(searchTerm)">
+                    <div class="search-result">
+                        <div class="inner">
+                            <ng-container *ngFor="let fund of fundsForSearch">
+                                <div class="funds-seach-title getTableTitle-AUM" (click)="getTableTitle(fund)"
+                                    >
+                                    {{ fund.title }}
+                                    <span class="sub"><span class="text-gray">Fund Size</span> - {{ fund.aum }}</span>
+                                    <span class="sub"><span class="text-gray">Unique Investors</span> - {{
+                                        fund.investors }}</span>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-container">
+                    <img src="./assets/images/comparefund/closebutton.svg"
+                        class="make-tag-for-all-page d-md-none share-icon2 close-icon compare-dark-icon" (click)="resetFundExplore()"
+                        >
+                    <img src="./assets/images/comparefund/closebutton.svg"
+                        class="make-tag-for-all-page search-tab-close d-none d-md-block share-icon2 close-icon share-button"
+                        (click)="resetFundExplore()" >
+                </div>
+
+                <div class="bg-color d-none d-md-block">
+                    <div class="d-flex filter-box align-items-center filter-medium" >
+                        <div class="filter-date">
+                            <span class="text-small text-medium d-none d-md-inline-block">Filter by Date </span>
+                            <form>
+                                <div class="date-group">
+                                    <img src="assets/images/fund/calendar-outline.svg">
+                                    <input type="text" placeholder="From" class="form-control fillter-date"
+                                        onfocus="(this.type='date')">
+                                </div>
+                                <div class="date-group">
+                                    <img src="assets/images/fund/calendar-outline.svg">
+                                    <input type="text" placeholder="To" class="form-control fillter-date"
+                                        onfocus="(this.type='date')">
+                                </div>
+                                <button class="btn btn-outline-primary mx-2 Reset-apply" >Reset</button>
+                                <button class="btn btn-primary mx-2 Reset-apply">Apply</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <section class="mt-3 d-none d-md-block">
+                <div class="container">
+                    <div class="d-flex form-tabs">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="forms-tab" data-bs-toggle="tab"
+                                    data-bs-target="#forms-tab-pane" type="button" role="tab"
+                                    aria-controls="forms-tab-pane" aria-selected="true">Forms & Instructions</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="documents-tab" data-bs-toggle="tab"
+                                    data-bs-target="#documents-tab-pane" type="button" role="tab"
+                                    aria-controls="documents-tab-pane" aria-selected="false">Fund Documents</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="literature-tab" data-bs-toggle="tab"
+                                    data-bs-target="#literature-tab-pane" type="button" role="tab"
+                                    aria-controls="literature-tab-pane" aria-selected="false">Fund Literature</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="updates-tab" data-bs-toggle="tab"
+                                    data-bs-target="#updates-tab-pane" type="button" role="tab"
+                                    aria-controls="updates-tab-pane" aria-selected="false">Updates</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="dropdown-custom mt-2 d-lg-none d-block">
+                <div class="form-group d-flex justify-content-between">
+                    <select class="form-select download-drop-down" aria-label="Default select example"
+                        (change)="selectReportTabByDropDown($event)">
+                        <option value="volvo">Forms & Instructions</option>
+                        <option value="Fund Documents">Fund Documents</option>
+                        <option value="Fund Literature">Fund Literature</option>
+                        <option value="Updates">Updates</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="dropdown-custom mt-4 d-lg-none d-block">
+                <div class="form-group d-flex justify-content-between">
+                    <select class="form-select download-drop-down2" aria-label="Default select example"
+                        (change)="selectReportTabByDropDown($event)">
+                        <option [selected]="item['menu-title'] === selecteReportTab['menu-title']"
+                            value="{{item['menu-title']}}" *ngFor="let item of dataArray" class="option-title">
+                            {{item['menu-title']}}</option>
+                    </select>
+                    <button class="btn btn-white toggle-filter filter-medium-block"
+                        id="report-filter" data-bs-toggle="offcanvas" data-bs-target="#downloadBottomFilter"
+                        aria-controls="offcanvasBottomFilter">
+                        <i class="bi bi-filter fs-6 date-filter" > </i>Date Filters
+                        <!-- <img  src="assets/images/fund/sort.svg" class="me-2">Date Filters  -->
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-md-white mt-lg-5 mt-4 bg-form">
+                <div class="row" id="bg-form">
+                    <div class="col-lg-3 d-none d-lg-block bg-color">
+                        <div id="scroll-bar2" class="scrollable-container">
+                            <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <!-- <button class="nav-link active" id="v-pills-tab1-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-tab1" type="button" role="tab" aria-controls="v-pills-tab1"
+                                    aria-selected="true">Forms for investors</button> -->
+                                <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <ng-container *ngFor="let item of dataArray;">
+                                        <button  class="nav-link" [id]="item.name" [ngClass]="item.id==1 ? 'active' : '' " data-bs-toggle="pill"
+                                        data-bs-target="#v-pills-focus" type="button" role="tab" aria-controls="v-pills-focus"
+                                        aria-selected="true"
+                                        [class.active]="item['menu-title'] === selecteReportTab['menu-title']"
+                                         (mouseover)="showContentOnHover($event, item)">
+                                        {{item['menu-title']}}
+                                      </button>
+                                    </ng-container>
+                                    <!-- <button *ngFor="let item of dataArray;" class="nav-link"
+                                        [class.active]="item['menu-title'] === selecteReportTab['menu-title']"
+                                        (click)="selectReportTab(item)">
+                                        {{item['menu-title']}}</button> -->
+                                </div>
+                                <!-- <button class="nav-link" id="v-pills-tab2-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-tab2" type="button" role="tab" aria-controls="v-pills-tab2"
+                                    aria-selected="false">Forms for distributors</button>
+                                <button class="nav-link" id="v-pills-tab3-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-tab3" type="button" role="tab" aria-controls="v-pills-tab3"
+                                    aria-selected="false">KIM and Application forms</button>
+                                <button class="nav-link" id="v-pills-tab4-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-tab4" type="button" role="tab" aria-controls="v-pills-tab4"
+                                    aria-selected="false">Change of Address</button>
+                                <button class="nav-link" id="v-pills-tab5-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-tab5" type="button" role="tab" aria-controls="v-pills-tab5"
+                                    aria-selected="false">Change of Bank/ Change in
+                                    mode of Payment </button>
+                                <button class="nav-link" id="v-pills-tab6-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-tab6" type="button" role="tab" aria-controls="v-pills-tab6"
+                                    aria-selected="false">Consolidation of Folios</button>
+                                <button class="nav-link" id="v-pills-tab7-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-tab7" type="button" role="tab" aria-controls="v-pills-tab7"
+                                    aria-selected="false">Change of Status from Minor
+                                    to Major and change of
+                                    guardian</button>
+                                <button class="nav-link" id="v-pills-tab8-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-tab8" type="button" role="tab" aria-controls="v-pills-tab8"
+                                    aria-selected="false">Appointment of Nominee</button>
+                                <button class="nav-link" id="v-pills-tab9-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-tab9" type="button" role="tab" aria-controls="v-pills-tab9"
+                                    aria-selected="false">Change of Name</button>
+                                <button class="nav-link" id="v-pills-tab10-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-tab10" type="button" role="tab" aria-controls="v-pills-tab10"
+                                    aria-selected="false">Auto Debit Registration</button> -->
+                            </div>
+                        </div>
+                        <div class="button-container d-flex justify-content-center">
+                            <div (click)="scrollToBottom()" class="arrow-left">
+                                <img src="assets/images/fund/iconamoon_arrow-down-2.svg"> </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-9 col-12 bg-color">
+                        <div class="d-flex filter-box align-items-center filter-medium">
+                            <div class="text-bold me-lg-5 me-3 fs-5" id="menu-name">{{selectedMenuName}}</div>
+                            <!-- <div class="filter-date">
+                                <span class="text-small text-medium d-none d-md-inline-block">Filter by Date </span>
+                                <form>
+                                    <div class="date-group">
+                                        <img src="assets/images/fund/calendar-outline.svg">
+                                        <input type="text" placeholder="From" class="form-control fillter-date"
+                                            onfocus="(this.type='date')">
+                                    </div>
+                                    <div class="date-group">
+                                        <img src="assets/images/fund/calendar-outline.svg">
+                                        <input type="text" placeholder="To" class="form-control fillter-date"
+                                            onfocus="(this.type='date')">
+                                    </div>
+                                    <button class="btn btn-primary">Apply</button>
+                                </form>
+                            </div> -->
+                        </div>
+                        <!-- start selected category btn -->
+                        <div class="category-btns d-none d-md-block">
+                            <div class="scrollable-tabs" id="scroll">
+                                <ul class="forms-dowld-scroll">
+                                    <li *ngFor="let category of categories;"
+                                        [class.active]="selectedCategory === category"
+                                        (click)="selectCategory(category)">{{ category }}
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="d-md-none category-box"
+                        >
+
+                            <div class="filter-selected-options fontResize preData-content" >
+                                <span class="option d-md-none preData fontResize selectCategory-block"  *ngFor="let category of categories;"
+                                    [class.active]="selectedCategory === category" (click)="selectCategory(category)">
+                                    {{ category }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div id="scroll-bar" class="main-content">
+                            <div class="accordion inner-accordion" id="accordionExample">
+                                <!-- Accordion Item 1 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            Lorem ipsum dolor sit amet.1
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="category-block">
+                                                <div class="table-responsive reports-box">
+                                                    <table class="table table-success table-striped">
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Value & Flex Systematic Transfer
+                                                                    Plan form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Nomination form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Standalone contact details update
+                                                                    form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>For Non-individual investors - Legal
+                                                                    Entity Identifier (LEI)</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>NISM - Signature Attestation Form
+                                                                </td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Accordion Item 2 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            Lorem ipsum dolor sit amet.2
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="category-block">
+                                                <div class="table-responsive reports-box">
+                                                    <table class="table table-success table-striped">
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Value & Flex Systematic Transfer
+                                                                    Plan form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Nomination form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Standalone contact details update
+                                                                    form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>For Non-individual investors - Legal
+                                                                    Entity Identifier (LEI)</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>NISM - Signature Attestation Form
+                                                                </td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Accordion Item 3 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            Lorem ipsum dolor sit amet.3
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="category-block">
+                                                <div class="table-responsive reports-box">
+                                                    <table class="table table-success table-striped">
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Value & Flex Systematic Transfer
+                                                                    Plan form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Nomination form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Standalone contact details update
+                                                                    form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>For Non-individual investors - Legal
+                                                                    Entity Identifier (LEI)</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>NISM - Signature Attestation Form
+                                                                </td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Accordion Item 4 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                            aria-expanded="false" aria-controls="collapseFour">
+                                            Lorem ipsum dolor sit amet.4
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="category-block">
+                                                <div class="table-responsive reports-box">
+                                                    <table class="table table-success table-striped">
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Value & Flex Systematic Transfer
+                                                                    Plan form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Nomination form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Standalone contact details update
+                                                                    form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>For Non-individual investors - Legal
+                                                                    Entity Identifier (LEI)</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>NISM - Signature Attestation Form
+                                                                </td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Accordion Item 5 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFive">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                            aria-expanded="false" aria-controls="collapseFive">
+                                            Lorem ipsum dolor sit amet.5
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFive" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="category-block">
+                                                <div class="table-responsive reports-box">
+                                                    <table class="table table-success table-striped">
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Value & Flex Systematic Transfer
+                                                                    Plan form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Nomination form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Standalone contact details update
+                                                                    form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>For Non-individual investors - Legal
+                                                                    Entity Identifier (LEI)</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>NISM - Signature Attestation Form
+                                                                </td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Accordion Item 6 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingSix">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseSix"
+                                            aria-expanded="false" aria-controls="collapseSix">
+                                            Lorem ipsum dolor sit amet.6
+                                        </button>
+                                    </h2>
+                                    <div id="collapseSix" class="accordion-collapse collapse"
+                                        aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="category-block">
+                                                <div class="table-responsive reports-box">
+                                                    <table class="table table-success table-striped">
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Value & Flex Systematic Transfer
+                                                                    Plan form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Nomination form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Standalone contact details update
+                                                                    form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>For Non-individual investors - Legal
+                                                                    Entity Identifier (LEI)</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>NISM - Signature Attestation Form
+                                                                </td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Accordion Item 7 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingSeven">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseSeven"
+                                            aria-expanded="false" aria-controls="collapseSeven">
+                                            Lorem ipsum dolor sit amet.7
+                                        </button>
+                                    </h2>
+                                    <div id="collapseSeven" class="accordion-collapse collapse"
+                                        aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="category-block">
+                                                <div class="table-responsive reports-box">
+                                                    <table class="table table-success table-striped">
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Value & Flex Systematic Transfer
+                                                                    Plan form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Nomination form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Standalone contact details update
+                                                                    form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>For Non-individual investors - Legal
+                                                                    Entity Identifier (LEI)</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>NISM - Signature Attestation Form
+                                                                </td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Accordion Item 8 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingEight">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseEight"
+                                            aria-expanded="false" aria-controls="collapseEight">
+                                            Lorem ipsum dolor sit amet.8
+                                        </button>
+                                    </h2>
+                                    <div id="collapseEight" class="accordion-collapse collapse"
+                                        aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="category-block">
+                                                <div class="table-responsive reports-box">
+                                                    <table class="table table-success table-striped">
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Value & Flex Systematic Transfer
+                                                                    Plan form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Nomination form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Standalone contact details update
+                                                                    form</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>For Non-individual investors - Legal
+                                                                    Entity Identifier (LEI)</td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>NISM - Signature Attestation Form
+                                                                </td>
+                                                                <td class="text-end">
+                                                                    <img src="assets/images/home/pdf.svg">
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="button-container d-flex justify-content-center">
+                            <div (click)="scrollToAccodianBottom()" class="arrowleft-img"> <img src="assets/images/fund/iconamoon_arrow-down-2.svg"> </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+
+
+<!-- filter mobile view popup -->
+
+<div class="offcanvas offcanvas-bottom sort-bottom offcanvas-footer" tabindex="-1" id="downloadBottomFilter"
+    aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header">
+        <div class="line"></div>
+        <div class="d-flex justify-content-between mt-4 w-100">
+            <div>
+                <div class="modal-title custom-modal-title" id="callBackLabel">Filters</div>
+            </div>
+            <div class="text-end">
+                <div type="button" class="text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><img
+                        src="assets/images/general/Frame1000009207.svg"></div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas-body small">
+        <div class="d-flex filter-date report-bg">
+            <div class="mb-3">
+                <span class="text-small text-medium d-md-inline-block mt-2 report-tital fw-bold fs-6 mx-2">Select Date
+                </span>
+            </div>
+
+            <form class="d-flex report-date-fiilter filter-form Calculate-medium">
+                <div class="date-group bg-white report-date-group">
+                    <img src="assets/images/fund/calendar-outline.svg">
+                    <input type="text" placeholder="From" class="form-control fillter-date"
+                        onfocus="(this.type='date')">
+                </div>
+                <div class="date-group mx-2 bg-white report-date-group">
+                    <img src="assets/images/fund/calendar-outline.svg">
+                    <input type="text" placeholder="To" class="form-control fillter-date date-filter-group"
+                        onfocus="(this.type='date')">
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="filter-footer d-flex d-lg-none">
+        <button class="btn btn-outline-primary">Clear All</button>
+        <button class="btn btn-primary">Apply</button>
+    </div>
+</div>

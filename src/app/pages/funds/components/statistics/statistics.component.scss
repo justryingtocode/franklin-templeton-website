@@ -1,0 +1,430 @@
+ .fund-block {
+     scale: initial;
+     //  z-index: 2;
+     padding: 16px 32px;
+
+     @media(max-width:991.98px) {
+         padding: 18px 22px
+     }
+
+     @media(min-width:992px) {
+         .col-xl-auto {
+             max-width: 770px;
+         }
+     }
+
+     h3 {
+         cursor: pointer;
+     }
+ }
+
+ .graph {
+     background: transparent;
+     width: 100%;
+
+ }
+
+ .FT-blocks-nav {
+     //  position: sticky;
+     //  top: 0;
+     //  z-index: 9;
+ }
+
+ .top-part {
+     transition: top 0.5s ease-in-out;
+
+     .test {
+         transition: top 0.5s ease-in-out;
+     }
+
+
+     .relative-block {
+         .recommend-tag {
+             position: relative;
+             top: initial;
+         }
+
+     }
+
+ }
+
+ .selected-range {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .selected-range:focus-within {
+     background: #fff;
+
+     color: #3C425D;
+ }
+
+ .calc-input:focus-within {
+     background: #fff;
+     color: #3C425D;
+ }
+
+ // now for the good stuff 🎉
+ .custom-range {
+     -webkit-appearance: none;
+     width: 100%;
+     height: 8px;
+     border-radius: 8px;
+     background: rgba(234, 236, 240, 0.48);
+     outline: none;
+     padding: 0;
+     margin: 0;
+
+     // Range Handle
+     &::-webkit-slider-thumb {
+         appearance: none;
+         width: 24px;
+         height: 24px;
+         border-radius: 50%;
+         background: #fff;
+         border: 1px solid #3769FF;
+         cursor: pointer;
+         transition: background .15s ease-in-out;
+
+     }
+
+     &:active::-webkit-slider-thumb {
+         background: #fff;
+     }
+
+     &::-moz-range-thumb {
+         width: 20px;
+         height: 20px;
+         border: 0;
+         border-radius: 50%;
+         background: #fff;
+         cursor: pointer;
+         transition: background .15s ease-in-out;
+         box-shadow: 0 0 2px 7px rgba(0, 0, 0, 0.02);
+
+     }
+
+
+
+
+ }
+
+ .sticky-top1 {
+     // transition: 0.5 ease-in-out;
+     transition: top 0.8s ease-in-out;
+     // transition: all 0.8s ease-in;
+     position: fixed !important;
+     top: 0;
+     width: 100%;
+
+     @media(min-width:992px) {
+         width: 85rem;
+     }
+ }
+
+ .fund-header {
+     position: relative;
+     top: -154px;
+     margin: auto;
+     transition: position 0.8s ease-in-out;
+ }
+
+ .FT-fund-statistics .fund-block .returns-block .nav-tabs .nav-item .nav-link {
+     opacity: 0.7;
+
+     &:hover {
+         opacity: 1;
+         border-bottom: 1px solid #8189A2;
+     }
+ }
+
+ .FT-fund-statistics .fund-block .returns-block .nav-tabs .nav-item .nav-link.active {
+     opacity: 1;
+     border-bottom: 2px solid #3769ff;
+
+ }
+
+ .position-abs {
+     position: absolute;
+ }
+
+ .mobile-header-sticky {
+     right: 0;
+ }
+
+ .top-1 {
+     top: 99px;
+     transition: top 0.7s ease-in-out;
+ }
+
+ .annualised-return:hover {
+     // border-bottom: 1px solid #3769FF;
+     // color:#3769FF;
+ }
+
+ .sticky-top {
+     transition: top 0.5s ease-in-out;
+ }
+
+ #monthly-tab-pane .btn-primary {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .selected-range {
+     width: 140px;
+     text-align: left;
+     padding: 6px 8px !important;
+     flex-direction: row;
+     flex-wrap: nowrap;
+     justify-content: start;
+ }
+
+ @media(max-width:600px) {
+
+     .top-part {
+         .FT-fund-statistics {
+             .fund-block {
+                 .tooltip-block {
+
+                     margin-left: 33px;
+                 }
+             }
+         }
+     }
+
+     .mob-stat {
+         color: #8189A2;
+     }
+
+ }
+
+ @media(min-width:390px) {
+
+     .addTooltiModeBlock {
+         min-width: 149px;
+         left: -172px;
+     }
+
+ }
+
+ @media(max-width:410px) {
+
+     .addTooltiModeBlock {
+         min-width: 149px !important;
+         left: -48px;
+     }
+
+ }
+
+
+
+ #invest-now {
+     a {
+         margin-bottom: 10px;
+     }
+ }
+
+ /* Media query for screens with a maximum width of 991.98 pixels */
+ @media (max-width: 991.98px) {
+     .fund-block .info ul li {
+         padding-left: 0px !important;
+         padding-right: 0px !important;
+         display: flex;
+         width: 100%;
+         justify-content: space-between;
+     }
+
+     .fund-block .block-footer ul li {
+         border: 0;
+         border-left: none;
+     }
+
+     .fund-block .dropdown {
+         margin-left: 0px;
+     }
+ }
+
+ .table-box {
+     .color {
+         color: #3769FF;
+     }
+ }
+
+ .calculate-details {
+     min-height: 500;
+ }
+
+ @media(max-width:991px) {
+     .calculate-details {
+         min-height: unset !important;
+     }
+
+     .mob-uniq-second-wrap {
+         font-weight: 600;
+     }
+
+     .info-icon-mob {
+         width: 16px;
+     }
+ }
+
+ .FT-fund-statistics .fund-block .block-footer ul li {
+     border-left: 0px;
+ }
+
+ //  ----------------------
+
+
+
+ .statistics-i-icon {
+     width: 12px;
+ }
+
+ .fundtitle {
+     min-width: 500px;
+     max-width: 505px;
+ }
+
+ .fundName-title {
+     float: right;
+ }
+
+ .high-risk {
+     min-width: 127px;
+     left: -148px;
+ }
+
+ .mark-icons {
+     width: 18px;
+ }
+
+ .compare-new-icons {
+     width: 23px;
+ }
+
+ .compare-new-icon-dark {
+     width: 20px;
+ }
+
+ .cart-icons {
+     width: 22px;
+ }
+
+ .share-icon-dark {
+     position: relative;
+     bottom: 7px;
+ }
+
+ .aum-fund {
+     min-width: 250px;
+ }
+
+ .Unique-investors {
+     max-width: 300px;
+ }
+
+ .Unique-investors-img {
+     margin-left: 3px;
+ }
+
+ .return {
+     cursor: pointer;
+ }
+
+ .info-icons2 {
+     margin-left: 4px;
+ }
+
+ .fundSize {
+     min-width: 175px;
+ }
+
+ .showCalcBox {
+     border: 1px solid #D2D8EA;
+     padding: 5px 0px;
+ }
+
+ .Direct-Growth-one {
+     position: relative;
+     bottom: 12px;
+ }
+
+ .fundSize-Expense {
+     min-width: 144px;
+     left: -110px;
+ }
+
+ .one-percent {
+     height: 0px;
+ }
+
+ .return-inception {
+     padding-left: 0px;
+ }
+
+ .uniqueInvestors-fund {
+     font-weight: 600;
+ }
+
+ .Direct-Growth-position {
+     border: 1px solid #D2D8EA;
+     padding: 10px;
+ }
+
+ .Expense-ratio {
+     text-align: center;
+     border-right: 1px solid #D2D8EA;
+ }
+
+ .Direct-Growth-second {
+     position: relative;
+     bottom: 4px;
+     left: 37px;
+     font-size: 13px;
+ }
+
+ .Expense-ratio-one {
+     height: 0px;
+     margin: 0px;
+     font-weight: 600;
+ }
+
+ .NAV-tab {
+     text-align: center;
+ }
+
+ .totalInvestAmt-rupee {
+     justify-content: center;
+ }
+
+ .shareWithOther {
+     position: fixed;
+     top: calc(43% - 75px);
+     width: -webkit-fill-available;
+     display: none;
+     z-index: 1201;
+ }
+
+ .fundtitle-share {
+     padding: 0px;
+     margin: 0;
+ }
+
+ .franklintempletonindia-sharefund {
+     border-top-right-radius: 15%;
+     border-top-left-radius: 15%;
+ }
+
+ .copy-link {
+     border: 1px solid #D2D8EA;
+     padding: 12px;
+ }
+ .dark-info{
+    display:inherit!important
+ }
+ .return-inception-since{
+    display: flex !important;
+ }

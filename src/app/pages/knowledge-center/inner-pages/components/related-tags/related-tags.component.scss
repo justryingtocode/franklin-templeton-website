@@ -1,0 +1,51 @@
+.img-with-tooltip .tooltip-block {
+  text-align: center;
+}
+
+.forlikecardtitle {
+  min-height: 49px;
+  // border-bottom: 1px solid #D2D8EA;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
+
+@media (max-width: 991.98px) {
+  .text-big {
+    font-size: 1rem;
+  }
+
+  .FT-related-tags .tags-list {
+    font-size: 1rem;
+  }
+}
+
+//
+
+.share-menu-twitter {
+  width: 18px;
+}
+
+.share-menu-twitter-fund {
+  width: 21px;
+}
+
+.share-btn-fund {
+  width: 21px;
+  top: -1px;
+  position: relative;
+  left: 0px;
+}
+
+.fund-AUM {
+  width: 21px;
+  top: 6px;
+  position: relative;
+  left: 0px;
+}
+
+.showIconForWatchlist {
+  color: var(--blue);
+}

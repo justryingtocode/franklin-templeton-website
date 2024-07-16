@@ -1,0 +1,636 @@
+<div id="page-content">
+    <!-- start page breadcrumb block -->
+    <div class="FT-breadcrumb">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Knowledge Centre</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Most Viewed Articles</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- start section pages inners -->
+    <section class="FT-inner-banners" style="background: linear-gradient(90deg, #007DC0 1.33%, #00AEEA 98.51%);">
+        <div class="container">
+            <div class="content-box text-white">
+                <img src="assets/images/knowledge-center/frankly-speaking.png">
+                <h2 class="mb-lg-2 mb-4">Frankly Speaking</h2>
+                <div>
+                    A page dedicated to posting articles serves as a valuable resource for sharing knowledge, insights, and information on a wide range of topics.
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="FT-knowledge">
+        <div class="container">
+            <!-- start categories box -->
+            <div class="knowledge-box categories" id="Learning">
+
+                <!-- start categories dropdown -->
+                <div class="category-dropdown  mb-4">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" (click)="toggleDropdown()">
+                            Frankly speaking <img src="assets/images/knowledge-center/arrowdown.svg">
+                        </button>
+                        <div *ngIf="isDropdownOpen">
+                            <app-knowledge-center-modal></app-knowledge-center-modal>
+                            <!-- <div class="dropdown-menu show" >
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                            data-bs-target="#home-tab-pane" type="button" role="tab"
+                                            aria-controls="home-tab-pane" aria-selected="true">Open Learning</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                            data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                            aria-controls="profile-tab-pane" aria-selected="false">Franklin Templeton
+                                            Academy</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                            data-bs-target="#contact-tab-pane" type="button" role="tab"
+                                            aria-controls="contact-tab-pane" aria-selected="false">Market Insights</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
+                                        aria-labelledby="home-tab" tabindex="0">
+                                        <div class="mb-4">
+                                            <h3>Categories</h3>
+                                          
+                                    <div>
+                                        <div class="form-check custom-check" *ngFor="let checkbox of checkboxes" >
+                                        <input class="form-check-input" type="checkbox" [id]="checkbox.id" (click)="toggleCheckbox(checkbox)" [checked]="checkbox.isChecked">
+                                        <label class="form-check-label" [for]="checkbox.id">{{ checkbox.label }}</label>
+                                        </div>
+                                    </div>
+    
+                                        </div>
+    
+                                        <div>
+                                            <h3>Sub Categories</h3>
+    
+                                            <div>
+                                                <div class="form-check custom-check" *ngFor="let checkbox of subcheckboxe">
+                                                    <input class="form-check-input" type="checkbox" [id]="checkbox.id" (click)="toggleSubCheckbox(checkbox)" [checked]="checkbox.isChecked">
+                                                    <label class="form-check-label" [for]="checkbox.id">{{ checkbox.label }}</label>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+    
+                                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel"
+                                    aria-labelledby="home-tab" tabindex="0">
+                                        <div class="mb-4">
+                                            <h3>Categories</h3>
+    
+                                            <div>
+                                                <div class="form-check custom-check" *ngFor="let checkbox of checkboxeFranklin">
+                                                    <input class="form-check-input" type="checkbox" [id]="checkbox.id" (click)="toggleFranklinCheckbox(checkbox)" [checked]="checkbox.isChecked">
+                                                    <label class="form-check-label" [for]="checkbox.id">{{ checkbox.label }}</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel"
+                                    aria-labelledby="home-tab" tabindex="0">
+                                        <div class="mb-4">
+                                            <h3>Categories</h3>
+    
+                                            <div>
+                                                <div class="form-check custom-check" *ngFor="let checkbox of checkboxeMarket">
+                                                    <input class="form-check-input" type="checkbox" [id]="checkbox.id" (click)="toggleMarketCheckbox(checkbox)" [checked]="checkbox.isChecked">
+                                                    <label class="form-check-label" [for]="checkbox.id">{{ checkbox.label }}</label>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </div> -->
+                        </div>         
+                    </div>
+                </div>
+
+                <!-- start categories filter block -->
+                <div class="filter-block pt-md-3">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <div class="filter-options mt-0 mb-4">
+                                <div class="form-group ">
+                                    <input type="text" class="form-control search" placeholder="Search Mutual Fund" [(ngModel)]="searchTerm"
+                                    (input)="filterFunds(searchTerm)">
+                                    <div class="search-result">
+                                      <div class="inner">
+                                          <ng-container *ngFor="let fund of fundsForSearch">
+                                              <div class="funds-seach-title fund-AUM" (click)="getTableTitle(fund)" >
+                                                 {{ fund.title }}
+                                                  <span class="sub"><span class="text-gray">Fund Size</span> - {{ fund.aum }}</span>
+                                                  <span class="sub"><span class="text-gray">Unique Investors</span> - {{ fund.investors }}</span>
+                                              </div>
+                                          </ng-container>
+                                      </div>
+                                  </div>
+                                </div>
+                                <div>
+                                  <img src="./assets/images/comparefund/closebutton.svg" class="make-tag-for-all-page showIconForWatchlist" (click)="resetFundExplore()" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle " type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Sort
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Likes</a></li>
+                                    <li><a class="dropdown-item" href="#">Date</a></li>
+                                    <li><a class="dropdown-item" href="#">Views</a></li>
+                                    <li><a class="dropdown-item" href="#">Read Time</a></li>
+                                </ul>
+                            </div>
+                            <!-- <div class="togglefilter">
+                                <button class="btn btn-white toggle-filter" (click)="toggleFilterBox()">
+                                    <img src="assets/images/fund/sort.svg" class="me-2">Filters
+                                </button>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="row d-none mt-2">
+                            <div class="dropdown me-3">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Sort
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Likes</a></li>
+                                    <li><a class="dropdown-item" href="#">Date</a></li>
+                                    <li><a class="dropdown-item" href="#">Views</a></li>
+                                    <li><a class="dropdown-item" href="#">Read Time</a></li>
+                                </ul>
+                            </div>          
+                    </div> 
+                    <!-- <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="form-group">
+                                <input type="text" placeholder="Search" class="form-control search">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="dropdown me-3 d-none d-sm-inline-block">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Sort
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Likes</a></li>
+                                    <li><a class="dropdown-item" href="#">Date</a></li>
+                                    <li><a class="dropdown-item" href="#">Views</a></li>
+                                    <li><a class="dropdown-item" href="#">Read Time</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-white toggle-filter">
+                                <img src="assets/images/fund/sort.svg" class="me-2">Filters
+                            </button>
+                        </div>
+                    </div> -->
+                </div>
+                <!-- <div class="filter-block pt-md-3">  
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Search" class="form-control search">
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="dropdownfilter d-md-none">
+                            <button class="btn dropdown-toggle " type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Sort
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Likes</a></li>
+                                <li><a class="dropdown-item" href="#">Date</a></li>
+                                <li><a class="dropdown-item" href="#">Views</a></li>
+                                <li><a class="dropdown-item" href="#">Read Time</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown me-3 d-none d-sm-inline-block">
+                            <button class="btn dropdown-toggle " type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Sort
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Likes</a></li>
+                                <li><a class="dropdown-item" href="#">Date</a></li>
+                                <li><a class="dropdown-item" href="#">Views</a></li>
+                                <li><a class="dropdown-item" href="#">Read Time</a></li>
+                            </ul>
+                        </div>
+                        <div class="togglefilter">
+                            <button class="btn btn-white toggle-filter" (click)="toggleFilterBox()">
+                                <img src="assets/images/fund/sort.svg" class="me-2">Filters
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-none mt-2">
+                        <div class="dropdown me-3">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Sort
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Likes</a></li>
+                                <li><a class="dropdown-item" href="#">Date</a></li>
+                                <li><a class="dropdown-item" href="#">Views</a></li>
+                                <li><a class="dropdown-item" href="#">Read Time</a></li>
+                            </ul>
+                        </div>          
+                </div> 
+
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="form-group">
+                                <input type="text" placeholder="Search" class="form-control search">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="dropdown me-3 d-none d-sm-inline-block">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Sort
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Likes</a></li>
+                                    <li><a class="dropdown-item" href="#">Date</a></li>
+                                    <li><a class="dropdown-item" href="#">Views</a></li>
+                                    <li><a class="dropdown-item" href="#">Read Time</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-white toggle-filter d-lg-none">
+                                <img src="assets/images/fund/sort.svg" class="me-2">Filters
+                            </button>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- start selected category btn -->
+                <div class="category-btns">
+                    <ul>
+                        <li [class.active]="selectedCategory === 'All'" (click)="selectCategory('All')" class="me-3" >All</li>
+                        <li [class.active]="selectedCategory === 'term_Busters'" (click)="selectCategory('term_Busters')" class="me-3">Term Busters</li>
+                        <li [class.active]="selectedCategory === 'Videos'" (click)="selectCategory('Videos')" class="me-3">Videos</li>
+                        <li [class.active]="selectedCategory === 'Articles'" (click)="selectCategory('Articles')" class="me-3">Articles</li>
+                    </ul>
+                </div>
+
+                <div class="row gx-md-4 gx-3">
+                    <div *ngFor="let card of getData; let i = index" class="col-lg-3 col-md-4 col-12 mt-2">
+                      <div class="category-card">
+                        <div class="card-img">
+                          <img [src]="card.imgSrc" alt="Category Image">
+                          <span class="time-tag">{{ card.timeTag }}</span>
+                        </div>
+                        <div class="card-body">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div><i class="bi bi-eye-fill me-1"></i>{{ card.views }} </div>
+                            <div class="card-icons">
+                              <span class="img-with-tooltip me-3" (click)="toggleIconForWishlist(i)">
+                                <i [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                                <i *ngIf="!showIconForWishlist[i]" class="bi bi-heart-fill me-1"></i>
+                                <span [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="tooltip-block">Like</span>
+                                <span *ngIf="!showIconForWishlist[i]" class="tooltip-block">Unlike</span>
+                                <!-- <img *ngIf="!showIconForWishlist[i]" src="assets/images/knowledge-center/HeartStraight.svg" class="me-1" sty le="margin-bottom: 2px; height: 20px; width: 20px;"> -->
+                                <!-- <i class="bi bi-heart me-1"></i> -->
+                                {{ card.likes }}
+                              </span>
+                              <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist(i)">
+                                <i [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                                <i *ngIf="!showIconForWatchlist[i]" class="bi bi-bookmark-fill"></i>
+                                <span [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="tooltip-block">Save</span>
+                                <span *ngIf="!showIconForWatchlist[i]" class="tooltip-block">Saved Course</span>
+                                <!-- <img *ngIf="!showIconForWatchlist[i]" src="assets/images/knowledge-center/Variant3.svg" class="me-1" st yle="margin-bottom: 1px; height: 17px; width: 17px;"> -->
+                                <!-- <i class="bi bi-bookmark"></i> -->
+                              </span>
+                              <span class="dropdown">
+                                <!-- <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/images/knowledge-center/share.svg" st yle="height: 17px;">
+                                </span> -->
+                                <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-menu-twitter" >
+                                    <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-btn-fund" >    
+                                    <span *ngIf="showTooltip" class="tooltip-block">share</span>
+                                </span>
+                                <ul class="dropdown-menu">
+                                    <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                                    <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                                </ul>
+                            </span>
+                              <!-- <span><i class="bi bi-reply"></i></span> -->
+                            </div>
+                          </div>
+                          <div class="text-bold card-title mt-3 forlikecardtitle">{{ card.title }}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center">
+                      <button class="btn btn-white">Load more</button>
+                    </div>
+                  </div>
+                  
+
+                <!-- <div class="row gx-md-4 gx-3">
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center" >
+                        <button class="btn btn-white" >Load more</button>
+                    </div>
+                </div> -->
+                <app-category-ad></app-category-ad>
+            </div>
+        </div>
+    </section>
+
+    <!-- start category filter-->
+  <div class="FT-general-filter" [ngClass]="toggleFilter ? 'show' : ''">
+    <div class="filter-box">
+        <div class="filter-content">
+            <h3>Filters</h3>
+            <div class="filter-options">
+                <div class="text-bold mb-3">Common Filters<img
+                        src="assets/images/knowledge-center/info-icon.svg" class="d-lg-none ms-2"></div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Most viewed
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        5 min read
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Trending
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Content of the week
+                    </label>
+                </div>
+            </div>
+            <div class="filter-options">
+                <div class="text-bold mb-3">Content <img src="assets/images/knowledge-center/info-icon.svg"
+                        class="d-lg-none ms-2"></div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Video
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Article
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Presentation
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Blog
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Podcast
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        E-Booklet
+                    </label>
+                </div>
+            </div>
+            <div class="filter-options">
+                <div class="text-bold mb-3">Categories <img src="assets/images/knowledge-center/info-icon.svg"
+                        class="d-lg-none ms-2"></div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        New to Mutual Fund
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        New to Investing
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Women & Investing
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Blog
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Podcast
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        E-Booklet
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="filter-footer">
+            <button class="btn btn-outline-primary" (click)="toggleFilterBox()">Cancel</button>
+            <button class="btn btn-primary">Apply</button>
+        </div>
+    </div>
+   </div>
+    <app-standpage></app-standpage>
+    <app-faq></app-faq>
+</div>

@@ -1,0 +1,64 @@
+.FT-knowledge{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.dropdown .dropdown-menu {
+    padding-top: 6px;
+    transform: translate3d(-41px, -20%, 0px) !important;
+
+    & li{
+    padding: 0px 4px 4px 7px;
+    font-size: 0.813rem;
+}
+}
+
+@media(max-width:798.98px)
+{
+    .dropdown .dropdown-menu {
+        padding-top: 6px;
+        transform: translate3d(-21px, -72%, 0px) !important;
+        
+        & li{
+            padding: 0px 4px 4px 7px;
+            font-size: 0.813rem;
+        }
+    }
+}
+
+.img-with-tooltip .tooltip-block{
+    text-align: center;
+  }
+
+  .forlikecardtitle{
+    min-height: 49px;
+    // border-bottom: 1px solid #D2D8EA;
+  
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+  }
+  //
+
+.share-menu-twitter {
+    width: 18px;
+  }
+  
+  .share-menu-twitter-fund {
+    width: 21px;
+  }
+  
+  .share-btn-fund {
+    width: 21px;
+    top: -1px;
+    position: relative;
+    left: 0px;
+  }
+  
+  .fund-AUM {
+    margin-top: 2px;
+  }
+  .showIconForWatchlist{
+    color: var(--blue);
+  }

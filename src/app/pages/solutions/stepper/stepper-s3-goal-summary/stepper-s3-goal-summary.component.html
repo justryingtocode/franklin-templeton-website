@@ -1,0 +1,289 @@
+<div class="goal-summary">
+    <span class="title fontResize">
+        Goal Summary
+    </span>
+    <div class="card goal-summary-bg share-menu-twitter" >
+        <div class="d-flex flex-row added-funds-subheader justify-content-center">
+            <div>
+                <span class="fontResize">Your age</span>  <strong class="fontResize"> {{yourDetails.age}} Years</strong>
+            </div>
+            <div>
+                <span class="fontResize">Goal Completing in (Year)</span> <strong class="fontResize"> {{completionYear}}</strong>
+
+            </div>
+            <div>
+                <span class="fontResize">Inflation rate </span> <strong class="fontResize"> {{yourDetails.inflationRate + '%'}}</strong>
+            </div>
+            <div>
+                <span class="fontResize">Equity risk</span> <strong class="fontResize"> {{yourDetails.equityRiskPercentage + '%'}}</strong>
+            </div>
+        </div>
+        <div class="my-card d-flex flex-row text-center justify-content-around">
+            <div class="text-white d-flex flex-column share-menu-twitter-fund" >
+                <span class="fontResize">GOAL AMOUNT</span>
+                <span class="fontResize share-btn-fund" >₹50,00,000</span>
+            </div>
+            <div class="text-white d-flex flex-column share-menu-twitter-fund" >
+                <span class="fontResize">GOAL AMOUNT</span>
+                <span class="share-btn-fund">-</span>
+            </div>
+            <div class="text-white d-flex flex-column share-menu-twitter-fund" >
+                <span class="fontResize">MONTHLY</span>
+                <span class="fontResize share-btn-fund" >₹20,000</span>
+            </div>
+            <div class="text-white d-flex flex-column share-menu-twitter-fund" >
+                <span class="fontResize">ANNUALLY</span>
+                <span class="fontResize share-btn-fund" >-</span>
+            </div>
+            <div class="text-white d-flex flex-column share-menu-twitter-fund" >
+                <span class="fontResize">STEP-UP</span>
+                <span class="fontResize share-btn-fund" >5%</span>
+            </div>
+        </div>
+    </div>
+    <div class="selected-funds-wrap">
+        <span class="card-title fontResize">Selected Funds</span>
+        <div class="row selected-funds-main">
+            <div class="col-sm-7">
+                <ng-container>
+                     <!-- Add fund cards -->
+                     <div *ngFor='let item of allFunds; let i = index'>
+                        <app-fund-card1 
+                            [fund]="item" 
+                            cardType="SOLUTION" 
+                            [hasInvestNowBtn]="false"
+                            >
+                        </app-fund-card1>
+                    </div>
+                </ng-container>
+
+                <!-- <div class="position-relative mb-3" *ngFor='let item of allFunds; let i = index'>
+                    <div class="d-flex justify-content-between fund-head">
+                        <div>
+                            <h3 class="mb-0">
+                                <a href="#">
+                                    <span class="fund-head-title">{{item.title}}</span> <img
+                                        src="assets/images/general/very-high.svg" class="ms-2">
+                                </a>
+                            </h3>
+                            <div class="tags">
+                                <ul>
+                                    <li>Equity</li>
+                                    <li>Large cap</li>
+                                    <li>8 year old fund</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="icons">
+                            <div class="d-none d-lg-inline-block">
+                                <button (click)="toggleShowSavDialoge()">
+                                    <img src="assets/images/general/mark-icon.svg">
+                                    <span class="tooltip-box">Save to watchlist</span>
+                                </button>
+                                <button>
+                                    <img src="assets/images/general/cart-icon.svg"><span class="new-badge">new</span>
+                                    <span class="tooltip-box">Add to cart</span>
+                                </button>
+                                <button>
+                                    <div class="dropdown share-menu">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <img src="assets/images/general/share-icon.svg"><span
+                                                class="tooltip-box">Share</span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><span class="dropdown-item" (click)="toggleShowCopyDialoge()"><img
+                                                        src="assets/images/general/Link.svg">Copy
+                                                    link</span></li>
+                                            <li><a class="dropdown-item" href="#"><img
+                                                        src="assets/images/general/TwitterLogo.svg">Share
+                                                    on Twitter</a></li>
+                                            <li><a class="dropdown-item" href="#"><img
+                                                        src="assets/images/general/FacebookLogo.svg">Share
+                                                    on Facebook</a></li>
+                                            <li><a class="dropdown-item" href="#"><img
+                                                        src="assets/images/general/LinkedinLogo.svg">Share
+                                                    on LinkedIn</a></li>
+                                        </ul>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="dropdown d-inline-block d-lg-none">
+                                <button class=" dropdown-toggle me-0" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img src="assets/images/general/dots.svg">
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li class="d-none d-md-block">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="bi bi-cart2"></i>Add to cart
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <img src="assets/images/general/compare-icon.svg">Compare
+                                            fund
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <img src="assets/images/general/watchlist-icon.svg">Add to
+                                            watchlist
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <img src="assets/images/general/share-icon-sm.svg">Share
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row info justify-content-between">
+                        <ul class="col-auto">
+                            <li>
+                                <div class="mb-2">Investors</div>
+                                <div class="text-big">
+                                    <span class="d-inline-block d-md-none"><img
+                                            src="assets/images/fund/investor-icon.svg"></span>
+                                    {{item.investors}}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="mb-2">AUM </div>
+                                <div class="text-big">
+                                    <span class="d-inline-block d-md-none"><img
+                                            src="assets/images/fund/money-sign.svg"></span>
+                                    {{item.aum}}
+                                </div>
+                            </li>
+                            <li class="last-item">
+                                <div class="mb-2">Annualised returns <img src="assets/images/home/info-icon2.svg">
+                                </div>
+                                <div>
+                                    <span class="text-big">{{item.annualisedReturns}}</span>
+                                    <div class="dropdown">
+                                        <button class="btn btn-white dropdown-toggle" type="button"
+                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Since Inception
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item" href="#">1 Year</a></li>
+                                            <li><a class="dropdown-item" href="#">3 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">5 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">10 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">Since Inception</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="d-block d-md-none">
+                            <button class="btn btn-light-blue"><i class="bi bi-cart3"></i> add to
+                                cart</button>
+                        </div>
+                        <div class="col-auto block-btns">
+
+                            <a href="#" class="btn btn-outline-primary me-2">Know more</a>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+            <div class="col-sm-5">
+                <div class="graph-block mb-5">
+                    <div class="graph-head mb-4">
+                        <div>
+                            <span class="graph-name fontResize"><span class="circle audio-box"
+                                    ></span>Goal Amount</span>
+                        </div>
+                        <div>
+                            <span class="graph-name fontResize"><span class="circle podcast-block"
+                                    ></span>Projected Investment
+                                Value</span>
+                        </div>
+                    </div>
+                    <div class="performance-graph">
+                        <canvas baseChart [data]="salesData" [type]="'line'" [options]="chartOptions">
+                        </canvas>
+                    </div>
+                    <div class="text-center">
+                        <span class="graph-info fontResize">Year</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container d-flex mb-3 proceed-button-wrap showIconForWatchlist">
+            <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true"
+                aria-controls="collapseTwo" class="btn btn-outline-primary plan-button fontResize" (click)="previousStep(2)">Back
+            </button>
+            <button type="button" class="btn btn-primary plan-button fontResize" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Proceed to Buy
+
+            </button>
+            <!-- <div type="button" class="addFund" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample"><img src="assets/images/comparefund/_Button base.png"></div> -->
+        </div>
+        <span class="font-weight-bold mt-4 container fontResize">Disclaimer</span>
+        <span class="row footer-text col-sm-12 fontResize">It may be noted that this
+            is a simplified solution based on inputs from users and is purely for illustration purpose and is not an
+            investment advice. We have not considered the financial status of the users and the Goals mentioned herein
+            are only for reference. Users are requested to consult their tax/ investment advisors before investing based
+            on the outcome of this exercise Simulation is based on past returns of the benchmark of the scheme for the
+            proposed period of investment. The goal amount provided herein is purely derived out of mathematical
+            calculations for illustrative purposes. The monthly, annual and one time investment amounts are based on the
+            past returns of the benchmark of the scheme/s for the proposed period of investment. It is a simplified
+            illustration provided on a best effort basis Past performance may or may not be sustained in future. There
+            is no warranty about the accuracy of the goal sheet. This should not be construed as an investment/tax
+            advice or as a solicitation to invest in the schemes of Franklin Templeton Mutual Fund. There is no
+            assurance or guarantee that the investment objectives of the schemes in the underlying goals will be
+            attained. Kindly note that same scheme can be recommended to an investor for different goals. The tax
+            consequences should be carefully considered. The investor's own circumstances may dictate a substantially
+            different result. The recipient is advised to consult his or her advisor/ tax consultant prior to arriving
+            at any investment decision Franklin Templeton Mutual Fund, AMC, Trustees, its employees, agents, associates
+            and representatives shall not be liable for any loss, direct or indirect, consequential or inconsequential,
+            that may arise to an investor as a result of subscribing to Family Solutions.
+            BACKPROCEED TO BUY
+        </span>
+    </div>
+</div>
+
+
+<!-- confirm dialog -->
+<div class="solution-confirm-dialog offcanvas offcanvas-en" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="card-header d-flex justify-content-between goal-sum-invest-popup audio-class-box" >
+        <h3 class="modal-heading fontResize">Select investor type</h3>
+        <a type="button" data-bs-dismiss="offcanvas" aria-label="Close"> 
+            <!-- <img src="assets/images/general/system-uicons_close.png" class="ms-2"> -->
+        </a>
+    </div>
+    <div class="offcanvas-body container">
+        <div class="d-flex flex-row form-group container podcast-img-box">
+            <div class="radio-cards">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                    checked>
+                <label class="form-check-label fontResize" for="exampleRadios1">New investor</label>
+            </div>
+            <div class="radio-cards">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label fontResize" for="exampleRadios2">Existing investor</label>
+            </div>
+        </div>
+        <div class="d-flex flex-column container mt-3 report-bcakground" >
+            <div class="goal-name fontResize">Goal name: &nbsp;<strong class="fontResize">{{planDetails.title}}</strong></div>
+            <!-- <div> -->
+            <textarea placeholder="Goal description" class="goal-description form-control report-share-box"></textarea>
+            <div class="font-weight-light fontResize report-detail" >Eg: my {{planDetails.title}}</div>
+            <!-- </div> -->
+        </div>
+        <div class="container solution-submit d-flex mt-3 showIconForWatchlist" >
+            <button type="button" class="btn btn-primary sum-btn-goal fontResize report-search-box" type="button"
+                data-bs-dismiss="offcanvas" aria-label="Close">Cancel
+            </button>
+            <button type="button" class="btn btn-primary fontResize report-share" >Submit
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,378 @@
+<!-- start category filter-->
+<form [formGroup]="cartDetailsForm">
+    <div class="FT-general-filter cart-aside show">
+        <div class="filter-box">
+            <div class="filter-content">
+                <div class="d-flex justify-content-between mb-3 align-items-start">
+                    <h3 class="mb-0"><span class="forTitle">You are investing in</span> <span
+                            class="text-blue">{{getTitile}}</span></h3>
+                    <button class="btn btn-transparent" (click)="toggleCart()"><i class="bi bi-x-circle"></i></button>
+                </div>
+                <div>
+                    <span class="text-bold">Plan Option:</span>
+                    <div class="form-check form-check-inline ms-4">
+                        <input class="form-check-input" type="radio" id="flexRadioDefault1" value="growth"
+                            formControlName="planOption" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Growth
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline ms-4">
+                        <input class="form-check-input" type="radio" id="flexRadioDefault2" value="Direct"
+                            formControlName="planOption">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Direct
+                        </label>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <ul class="nav nav-tabs graph-table-btns mb-3" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                data-bs-target="#home-tab-pane2" type="button" role="tab" aria-controls="home-tab-pane"
+                                aria-selected="true">SIP
+                                Investment</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                aria-controls="profile-tab-pane" aria-selected="false">Lumpsum
+                                Investment</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home-tab-pane2" role="tabpanel"
+                        aria-labelledby="home-tab" tabindex="0">
+                        <div class="cart-box mb-3">
+                            <div class="text-big mb-3"> Amount</div>
+                            <div class="form-group price-input mb-1">
+                                <i class="bi bi-currency-rupee fs-5"></i> <input type="text" class="form-control"
+                                    formControlName="amount">
+                            </div>
+                            <div class="text-small mb-3">
+                                <!-- Will this investment meet your financial goal? -->
+                            </div>
+                            <div class="custom-check-box">
+                                <div class="form-check custom-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="price1">
+                                    <label class="form-check-label" for="price1">
+                                        20,000
+                                    </label>
+                                </div>
+                                <div class="form-check custom-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="price2">
+                                    <label class="form-check-label" for="price2">
+                                        80,000
+                                    </label>
+                                </div>
+                                <div class="form-check custom-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="price3">
+                                    <label class="form-check-label" for="price3">
+                                        1,20,000
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-box mb-3">
+                            <div class="text-big mb-3 installment">
+                                First Installment Date <span class="img-with-tooltip tooltip-box" >
+                                    <!-- <img src="assets/images/home/info-icon2.svg"   ="padding-bottom: 3px;">
+                                    <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                    <img src="assets/images/home/info-icon2.svg"
+                                        class="d-inline-block mobile-icons light-mode-icon info-icon2-img"><img
+                                        src="assets/images/fund/dark-information-icon.png"
+                                        class="mobile-icons dark-mode-icon dark-info-icon" >
+                                    <span class="tooltip-block">
+                                        Lorem ipsum dolor <br> sit amet, consectetur.
+                                    </span>
+                                </span>
+
+                            </div>
+                            <div class="row">
+                                <!-- <div class="col-sm-6">
+                                    <div class="form-group date-input mb-3">
+                                        <input type="date" class="form-control cart-date" value="28/06/2023">
+                                        <img src="assets/images/fund/calendar-outline.svg">
+                                    </div>
+                                </div> -->
+                                <div class="col-sm-6">
+                                    <div class="date-group date-input mb-3">
+                                        <img src="assets/images/fund/calendar-outline.svg">
+                                        <input type="date" class="form-control date-cart" placeholder="From">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="custom-check-box mb-3">
+
+                                <div class="text-bold mb-2">Frequency</div>
+                                <div class="form-check custom-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Monthly"
+                                        formControlName="sipfrequency" value="monthly">
+                                    <label class="form-check-label frequency-label" for="Monthly">
+                                        Monthly
+                                    </label>
+                                </div>
+                                <!-- <div class="form-check custom-check">
+                                    <input class="form-check-input" type="radio" id="Monthly" formControlName="sipfrequency" value="monthly">
+                                    <label class="form-check-label" for="Monthly">
+                                        Monthly
+                                    </label>
+                                </div> -->
+                                <!-- <div class="form-check custom-check">
+                                    <input class="form-check-input" type="radio" id="Daily" formControlName="sipfrequency" value="daily">
+                                    <label class="form-check-label" for="Daily">
+                                        Daily
+                                    </label>
+                                </div>
+                                <div class="form-check custom-check">
+                                    <input class="form-check-input" type="radio" id="Weekly" formControlName="sipfrequency" value="weekly">
+                                    <label class="form-check-label" for="Weekly">
+                                        Weekly
+                                    </label>
+                                    
+                                </div>
+                                <div class="form-check custom-check">
+                                    <input class="form-check-input" type="radio" id="Quarterly" formControlName="sipfrequency" value="quarterly">
+                                    <label class="form-check-label" for="Quarterly">
+                                        Quarterly
+                                    </label>
+                                </div> -->
+                            </div>
+                            <div class="text-small">
+                                <!-- Being a hassle free sip with emandate option in 7 day -->
+                            </div>
+                        </div>
+                        <div class="cart-box mb-4">
+                            <div class="text-big mb-3 tenure-data">
+
+                                Tenure <span class="img-with-tooltip tooltip-box" >
+
+                                    <img src="assets/images/home/info-icon2.svg"
+                                        class="d-inline-block mobile-icons light-mode-icon info-icon2-img" ><img
+                                        src="assets/images/fund/dark-information-icon.png"
+                                        class="mobile-icons dark-mode-icon dark-mobile">
+                                    <span class="tooltip-block">
+                                        Lorem ipsum dolor <br> sit amet, consectetur.
+                                    </span>
+                                </span>
+
+                            </div>
+
+                            <div class="mb-3 flex-row justify-content-between flex-wrap">
+                                <div class="form-check custom-check">
+                                    <input class="form-check-input" type="radio" formControlName="sipUntil"
+                                        value="untilCancelled" (click)="timeState='none'">
+                                    <label class="form-check-label frequency-label" id="cancelled">
+                                        Until cancelled
+                                    </label>
+                                </div>
+                                <!-- <div class="form-check form-check-inline mr-0">
+                                    <input class="form-check custom-check" type="radio" formControlName="sipUntil" id="cancelled"
+                                        value="untilCancelled" (click)="timeState='none'">
+                                    <label class="form-check-label" for="cancelled">
+                                        Until cancelled
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline mr-0">
+                                    <input class="form-check-input" type="radio" formControlName="sipUntil"
+                                        value="Installment" id="Installment" (click)="timeState='installment'">
+                                    <label class="form-check-label" for="Installment">
+                                        Installment
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline mr-0">
+                                    <input class="form-check-input" type="radio" id="Years" formControlName="sipUntil"
+                                        value="Years" (click)="timeState='years'">
+                                    <label class="form-check-label" for="Years">
+                                        Years
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline mr-0">
+                                    <input class="form-check-input" type="radio" id="date" formControlName="sipUntil"
+                                        value="date" (click)="timeState='date'">
+                                    <label class="form-check-label" for="date">
+                                        End date
+                                    </label>
+                                </div> -->
+                                <input *ngIf="timeState =='years' || timeState =='installment'" type="text"
+                                    pattern="[0-9]+" formControlName="sipTimeFrame" class="form-control"
+                                    placeholder="{{'Enter no of ' +  timeState}}">
+                                <input *ngIf="timeState =='date'" [type]="defaultText" (focus)="onInputFocus()"
+                                    placeholder="Enter Date" class="form-control">
+                            </div>
+                            <div class="text-small">
+                                <!-- Installments will continue until you cancel this SIP. -->
+                            </div>
+                        </div>
+                        <div class="form-check d-flex">
+                            <div>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                    (click)="getCheckBoxValue($event)">
+                                    <div class="text-big mb-3 tenure-data" >
+
+                                        Step Up SIP Annually<span class="img-with-tooltip tooltip-box" >
+        
+                                            <img src="assets/images/home/info-icon2.svg"
+                                                class="d-inline-block mobile-icons light-mode-icon info-icon2-img"><img
+                                                src="assets/images/fund/dark-information-icon.png"
+                                                class="mobile-icons dark-mode-icon dark-mobile">
+                                            <span class="tooltip-block">
+                                                Lorem ipsum dolor <br> sit amet, consectetur.
+                                            </span>
+                                        </span>
+        
+                                    </div>
+                                <!-- <label class="form-check-label" for="flexCheckDefault">
+                                    Step Up SIP Annually(Increase SIP value annually to meet goals faster) 
+                                    <span class="img-with-tooltip" st yle="margin-left: 5px;">
+                                        <img src="assets/images/home/info-icon2.svg"
+                                            class="d-inline-block mobile-icons light-mode-icon"
+                                            sty le="width: 18px;">
+                                        <img src="assets/images/fund/dark-information-icon.png"
+                                            class="mobile-icons dark-mode-icon" st yle="width: 14px;">
+                                     
+                                        <span class="tooltip-block">
+                                            Lorem ipsum dolor <br> sit amet, consectetur.
+                                        </span>
+                                    </span>
+                                </label> -->
+                            </div>
+                            <div *ngIf="getPercentageByCheckox">
+                                <!-- <div class="custom-toggle">
+                                    <label class="toggle-label" [ngClass]="toggleState ? 'active' : 'inactive'">
+                                      <input type="checkbox" id="toggleSwitch" (change)="changeState()" [(ngModel)]="toggleState" name="toggleSwitch">
+                                      <span class="slider"></span>
+                                      <span class="toggle-text">{{ toggleState ? 'A' : 'I' }}</span>
+                                    </label>
+                                  </div>                                   -->
+                                <div class="text-center ms-1 me-1">
+                                    <ul class="nav nav-tabs graph-table-btns mb-3 percentage-record" id="myTab" role="tablist"
+                                        >
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active percentage-recorddate" (click)="inputState = 'percentage'"
+                                                id="home-tab1" data-bs-toggle="tab" data-bs-target="#home-tab-pane2"
+                                                type="button" role="tab" aria-controls="home-tab-pane"
+                                                 aria-selected="true">%</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link percentage-recorddate" (click)="inputState = 'Rupay'" id="profile-tab1"
+                                                data-bs-toggle="tab" data-bs-target="#profile-tab-pane1" type="button"
+                                                role="tab" aria-controls="profile-tab-pane"  
+                                                aria-selected="false">
+                                                <img src="assets/images/fund/price-icon.svg"></button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div *ngIf="getPercentageByCheckox" class="cart-box mb-3 inputState"
+                                >
+                                <div class="form-group price-input" *ngIf="inputState == 'percentage'">
+                                    <input type="text" class="form-control" value="15" max="100">
+                                    %
+                                </div>
+                                <div class="form-group price-input" *ngIf="inputState == 'Rupay'">
+                                    <img src="assets/images/fund/price-icon.svg">
+                                    <input type="text" class="form-control" value="20,000">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                        tabindex="0">
+
+                        <!-- <div class="cart-box mb-3">
+                            <div class="text-big mb-3">Investment Amount</div>
+                            <div class="form-group price-input">
+                                <input type="text" class="form-control" value="20,000">
+                                <img src="assets/images/fund/price-icon.svg">
+                            </div>
+                            <div class="text-small mb-3">
+                                Will this investment meet your financial goal?
+                            </div>
+                            <div class="custom-check-box">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="price1">
+                                    <label class="form-check-label" for="price1">
+                                        20,000
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="price2">
+                                    <label class="form-check-label" for="price2">
+                                        80,000
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="price3">
+                                    <label class="form-check-label" for="price3">
+                                        1,20,000
+                                    </label>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div class="cart-box mb-3">
+                            <div class="text-big mb-3"> Amount</div>
+                            <div class="form-group price-input mb-1">
+                                <i class="bi bi-currency-rupee fs-5"></i> <input type="text" class="form-control"
+                                    formControlName="amount">
+                            </div>
+                            <div class="text-small mb-3">
+                                <!-- Will this investment meet your financial goal? -->
+                            </div>
+                            <div class="custom-check-box">
+                                <div class="form-check custom-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="price1">
+                                    <label class="form-check-label" for="price1">
+                                        20,000
+                                    </label>
+                                </div>
+                                <div class="form-check custom-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="price2">
+                                    <label class="form-check-label" for="price2">
+                                        80,000
+                                    </label>
+                                </div>
+                                <div class="form-check custom-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="price3">
+                                    <label class="form-check-label" for="price3">
+                                        1,20,000
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="filter-footer">
+                <button class="btn btn-outline-primary" *ngIf="!hasCancelSaveBtn">Invest Now</button>
+                <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateSubscribe">Modify Subscription</button> -->
+
+                <!-- <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addCart">Add to Cart</button> -->
+
+
+                <button class="btn btn-outline-primary cancelForm" *ngIf="hasCancelSaveBtn"
+                    (click)="cancelInvestForm()">Cancel</button>
+                <ng-template
+                    *ngIf="hasInvestmentBtn == false; then FUND_CARD1_BTN else INVESTMENT_CARD_BTN"></ng-template>
+                <ng-template #FUND_CARD1_BTN>
+                    <a class="btn btn-primary" (click)="addCartDetails($event)">Add to Cart</a>
+                    <!-- <a class="btn btn-primary"  (click)="addToCart()">Add to Cart</a> -->
+
+                </ng-template>
+                <ng-template #INVESTMENT_CARD_BTN>
+                    <a class="btn btn-primary makeDataCartToggle" *ngIf="!hasCancelSaveBtn && !investmentCartAddForm"
+                        (click)="addInvestmentDetails($event)">Add to Cart</a>
+                    <a class="btn btn-primary makeDataCartToggle" *ngIf="!hasCancelSaveBtn && investmentCartAddForm"
+                        [routerLink]="['/investment-cart']" (click)="addInvestmentDetails2($event)">Add to Cart</a>
+                    <!-- <a class="btn btn-primary makeDataCartToggle" (click)="addToCart()" >Add to Cart</a> -->
+                    <a class="btn btn-primary" *ngIf="hasCancelSaveBtn" (click)="addInvestmentDetails($event)">Save</a>
+                </ng-template>
+                <!-- <button class="btn btn-primary" (click)="addCartDetails($event)">Add to Cart</button> -->
+            </div>
+        </div>
+    </div>
+</form>

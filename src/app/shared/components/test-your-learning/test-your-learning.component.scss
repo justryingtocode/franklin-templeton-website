@@ -1,0 +1,219 @@
+.for-to-current-question-tab {
+    font-size: 0.563rem;
+    width: 25px;
+    height: 25px;
+    padding: 6px;
+    border-radius: 32px;
+    background: linear-gradient(90.29deg, #583EE7 26.99%, #0EA0E6 50.09%, #00B6AE 74.69%);
+    color: #fff;
+    text-align: center;
+}
+
+.checked-img {
+    position: relative;
+    margin-left: 24px;
+    bottom: 11px;
+}
+
+.for-to-next-question-tab {
+    font-size: 0.563rem;
+    width: 25px;
+    height: 25px;
+    padding: 6px;
+    border-radius: 32px;
+    border: 1px solid #DEDEDE;
+    background: #fff;
+    color: #DEDEDE;
+    text-align: center;
+}
+
+.for-question-get-title {
+    font-size: 0.813rem;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #373737;
+}
+
+.for-to-option-seleted {
+    border-radius: 26px;
+    padding: 6px 16px 6px 16px;
+    gap: 8px;
+    background: #FFFFFF;
+    border: 1px solid #D2D8EA;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #595A6C;
+}
+
+/* :hover styles for the correct class name */
+.for-to-option-seleted:hover {
+    background-color: #3769FF;
+    color: #fff;
+}
+
+.for-answer-question-input {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #212225;
+}
+
+.for-answer-question-input-title {
+    font-size: 0.688rem;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #8189A2;
+}
+
+.for-question-option-seleted {
+    padding: 2px 20px 2px 20px;
+    border-radius: 8px;
+    border: 1px solid #DEDEDE;
+    background: #F4F4F4;
+    font-size: 0.688rem;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #3C425D;
+}
+
+.modal .modal-header {
+    padding: 11px;
+}
+
+.modal .modal-header .modal-title {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: normal;
+}
+
+.forSubmitButton {
+    min-width: 78px !important;
+    height: 35px !important;
+    padding: 3px 15px !important;
+    font-size: 0.75rem !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    border-radius: 8px !important;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important;
+    margin-right: 4px !important;
+}
+
+.data-header {
+    padding: 10px 23px 10px 17px;
+}
+
+.modalTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 31px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #3C425D;
+}
+
+.modal .modal-body {
+    padding: 12px 32px;
+}
+
+.save-alert {
+    position: fixed;
+    z-index: 9999;
+    top: 33%;
+    left: calc(50% - 175px);
+    width: 100%;
+    max-width: 312px;
+}
+
+.save-alert .content img.checked-img {
+    width: 48px;
+}
+
+.for-congratulation {
+    font-size: 1.188rem;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #00847D;
+}
+
+.for-card-about1 {
+    font-size: 0.813rem;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: -0.03em;
+    text-align: center;
+}
+
+.for-card-about2 {
+    font-size: 0.813rem;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: -0.03em;
+    text-align: center;
+}
+
+.tag-for-go {
+    font-size: 0.813rem;
+    font-weight: 800;
+    line-height: 26px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #3769FF;
+}
+
+// @media (max-width: 768px) {
+//     .knowledge-center {
+//         overflow-x: scroll;
+//         gap: 22px;
+//         overflow-y: hidden;
+
+//         &::-webkit-scrollbar {
+//             width: 1px!important; 
+//             height: 4px!important;
+//         }
+//     }
+// }
+
+@media (max-width: 768px) {
+    .knowledge-center {
+        overflow-x: auto;
+        /* Change overflow-x to auto */
+        gap: 22px;
+        overflow-y: hidden;
+
+        &::-webkit-scrollbar {
+            width: 1px !important;
+            height: 4px !important;
+        }
+    }
+}
+
+.share-pan-num {
+    gap: 23px;
+}
+
+.alert-index {
+    z-index: 1000000
+}
+
+.alert-index-box {
+    color: #595A6C;
+}
+
+.continue-AUM {
+    color: #00847D;
+    font-size: 1.188rem;
+    margin-left: 10px;
+}

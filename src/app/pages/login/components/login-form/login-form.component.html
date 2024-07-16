@@ -1,0 +1,256 @@
+<section class="FT-login-form" [ngClass]="investorLogin ? 'investor-login-form' : ''">
+    <div class="bg-light-blue outer-container py-5">
+        <div class="container">
+
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-5 col-md-4 d-none d-md-block">
+                    <img src="assets/images/login/login-img.png" *ngIf="distributorLogin">
+                    <img src="assets/images/login/login-img2.png" *ngIf="investorLogin">
+                </div>
+                <div class="col-lg-6 col-md-8 col-12">
+                    <div class="d-flex form-head align-items-center">
+                        <h2 *ngIf="investorLogin">Log In <span class="ms-2 d-inline-block">(Distributor)</span></h2>
+                        <!-- <h2 *ngIf="distributorLogin">Investor - Log In<span>Access your online account</span></h2>
+                        <h2 *ngIf="investorLogin">Distributor - Log In<span>Access your online account</span></h2> -->
+                        <h2 *ngIf="distributorLogin">Log In <span class="ms-2 d-inline-block">(Investor)</span></h2>
+                        <div class="text-blue text-meduim cursor-pointer" (click)="toggleDistributorLogin()">
+                            <span class="text-small login text-selection" *ngIf="investorLogin">Investor Login</span>
+                            <span class="text-small login text-selection" *ngIf="distributorLogin">Distributor Login</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="ms-2 d-inline-block my-3">Access your online account</span>
+                    </div>
+
+                    <div class="form-box">
+                        <form>
+                            <!-- Check box select for UserID vs PAN -->
+
+                            <div *ngIf="distributorLogin" class="text-center">
+                                <div class="form-check form-check-inline mb-4">
+                                    <input class="form-check-input" type="radio" id="inlineRadio1"
+                                        (change)="handleTypeChange($event)" [value]="0"
+                                        [(ngModel)]="usePan" name="usePan" [checked]="usePan === 0">
+                                    <label class="form-check-label" for="inlineRadio1">Use User ID</label>
+                                </div>
+
+                                <div class="form-check form-check-inline mb-4">
+                                    <input class="form-check-input" type="radio" id="inlineRadio2" [value]="1"
+                                        (change)="handleTypeChange($event)"
+                                        [(ngModel)]="usePan" name="usePan" [checked]="usePan === 1">
+                                    <label class="form-check-label" for="inlineRadio2">Use PAN</label>
+                                </div>
+                            </div>
+
+                            <!-- Form inputs -->
+                            <div *ngIf="!otpScreen">
+                                <!-- Distributor -->
+                                <div *ngIf="distributorLogin">
+                                    <div *ngIf="!usePan">
+                                        <div class="form-group mb-4">
+                                            <input type="text" class="form-control" placeholder="User ID*">
+                                            <div class="text-end mt-2">
+                                                <a class="text-small text-blue" [routerLink]="['/forgot-user-id']">Forgot
+                                                    User
+                                                    ID?</a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <!-- <input type="password" class="form-control" placeholder="Password*"> -->
+                                            <div class="row">
+                                                <div class="col-sm col-12 form-group password-input">
+                                                    <input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" #passwordField class="form-control" placeholder="Password*">
+                                                    <span class="toggle-password2" (click)="togglePasswordVisibility()">
+                                                        <i class="bi fs-5" [ngClass]="showPassword ? 'bi-eye' : 'bi-eye-slash'"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="text-end mt-2">
+                                                <a class="text-small text-blue" [routerLink]="['/forgot-password']">Forgot
+                                                    password?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="usePan">
+                                        <div class="form-group mb-4">
+                                            <input type="text" class="form-control" placeholder="PAN*">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <!-- Investor -->
+                                <div *ngIf="investorLogin">
+                                    <div class="form-group mb-4">
+                                        <input type="text" class="form-control" placeholder="User ID*">
+                                        <div class="text-end mt-2">
+                                            <a class="text-small text-blue" [routerLink]="['/forgot-user-id']" [queryParams]="{type: !distributorLogin ?'distributor' : ''}">Forgot User
+                                                ID?</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <!-- <input type="password" class="form-control" placeholder="Password*"> -->
+                                        <div class="row">
+                                            <div class="col-sm col-12 form-group password-input">
+                                                <input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" #passwordField class="form-control" placeholder="Password*">
+                                                <span class="toggle-password2" (click)="togglePasswordVisibility()">
+                                                    <i class="bi fs-5" [ngClass]="showPassword ? 'bi-eye' : 'bi-eye-slash'"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-end mt-2">
+                                            <a class="text-small text-blue" [routerLink]="['/forgot-password']" [queryParams]="{type: !distributorLogin ?'distributor' : ''}">Forgot
+                                                password?</a>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="mb-4">
+                                    <button class="btn btn-primary w-100" (click)="handleFormSubmit()">Next</button>
+                                </div>
+                            </div>
+
+                            <!-- OTP Screen: User -->
+                            <div class="otp-wraper" *ngIf="otpScreen && !usePan">
+                                <!-- <div  class="backFromOtp login-dark">&#8592;</div> -->
+                                <p class="login-dark">One Time Password (OTP) has been sent to your registered e-mail ID s****i@franklintempleton.com and mobile 7709674400.</p>
+                                <input type="text" class="form-control" placeholder="OTP*">
+                                <div class="row justify-content-center mr d-block d-sm-none text-center otp-resent" *ngIf="resendOtpRequest">
+                                    OTP has been resent.
+                                </div>
+                                <div class="otp-resend">
+                                    <div class="remember-check" [ngStyle]="{'visibility': usePan ? 'hidden' : 'visible'}">
+                                        <input type="checkbox" class="form-check-input" placeholder=""> Remember me  
+                                        <span class="img-with-tooltip" ><img src="assets/images/home/info-icon2.svg"
+                                            class="share-icon2 check-input" >
+                                        <img src="" class="" >
+                                           <span class="tooltip-block">Lorem ipsum dolor sit amet.</span>
+                                        
+                                        </span>
+                                        <!-- <img src="assets/images/home/info-icon2.svg"
+                                        class="share-icon2" sty le="width: 18px;"> -->
+                                    </div>
+                                    <div class="row justify-content-center mr d-none d-md-block otp-resent" *ngIf="resendOtpRequest">
+                                        OTP has been resent.
+                                    </div>
+                                    <span><a class="login-dark" (click)="resendOTPline()">Resend OTP</a></span>
+                                </div>
+
+                                <div class="d-flex mb-4">
+                                    <button *ngIf="!usePan" (click)="backFromOtp()" class="btn btn-outline-primary w-100 me-4">Back</button>
+                                    <button class="btn btn-primary w-100">Login</button>
+                                </div>
+                                <!-- <button class="btn btn-primary w-100 mb-4">Login</button>/ -->
+                            </div>
+
+                            <!-- OTP Screen: PAN -->
+                            <div class="otp-wraper otp-pan-wraper" *ngIf="otpScreen && usePan">
+                                <!-- Pan validation -->
+                                <div *ngIf="!bankAccDetails">
+                                    <div class="pan-edit">
+                                        <span class="pan-number login-dark">BSB78900</span>
+                                        <span (click)="backFromOtp()" class="edit-pan-btn login-dark">Edit</span>
+                                    </div>
+                                    <p class="otp-user-details login-dark">One Time Password (OTP) has been sent to your registered e-mail ID s****i@franklintempleton.com and mobile 7709674400.</p>
+                                    <input type="text" class="form-control mb-2" placeholder="OTP*">
+                                  
+                                    <div class="otp-resend">
+                                        <span>   <span class=" justify-content-center mrr otp-sent" *ngIf="resendOtpRequest">
+                                            OTP has been resent.
+                                        </span  ><a class="login-dark" (click)="resendOTPline()">Resend OTP</a></span>
+                                    </div>
+                                    <button class="btn btn-primary w-100 mb-4" (click)="goToBankAccNo(true)">Next</button>
+                                </div>
+                            
+                                <!-- bank account -->
+                                <div *ngIf="bankAccDetails">
+                                    <div class="bank-details">
+                                        <!-- <div class="backFromOtp login-dark">&#8592;</div> -->
+                                        <!-- <p>Please enter any of the bank account number(s) registered with us</p> -->
+                                        <form action="" [formGroup]="bankAccountForm" (ngSubmit)="onSubmit()">
+                                            <div class="col-sm-12 col-12 form-group mb-3">
+
+                                                <p class="error-msg fontResize login-dark2 please-enter-bank">Please enter any of the bank account number(s) registerd with us.</p>
+                                                
+                                                <div class="password-input">
+                                                    <input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" #passwordField
+                                                        class="form-control" placeholder="Bank Account Numbers*" id="accountNumber"
+                                                        formControlName="accountNumber">
+                                
+                                
+                                                    <span class="toggle-password" (click)="togglePasswordVisibility()">
+                                                        <i class="bi fs-5" [ngClass]="showPassword ? 'bi-eye' : 'bi-eye-slash'"></i>
+                                                    </span>
+                                                </div>
+                                
+                                                <div *ngIf="formControls?.['accountNumber']?.errors && formControls?.['accountNumber']?.touched">
+                                                    <!-- <span *ngIf="formControls?.['accountNumber']?.errors?.['required']">Please enter any of the bank account number(s) registerd with us.</span> -->
+                                                    <span class="enter-valid-number" *ngIf="formControls?.['accountNumber']?.errors?.['pattern']">Please enter a valid 9-digit
+                                                        account number.
+                                                    </span>
+                                                </div>
+                                
+                                        
+                                    
+                                            </div>
+                                            <!-- <div class="row">
+                                                <div class="col-sm col-12 form-group mb-3 password-input">
+                                                    <input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" #passwordField class="form-control" placeholder="Bank Account Numbers*">
+                                                    <span class="toggle-password" (click)="togglePasswordVisibility()">
+                                                        <i class="bi fs-5" [ngClass]="showPassword ? 'bi-eye' : 'bi-eye-slash'"></i>
+                                                    </span>
+                                                </div>
+                                            </div> -->
+                                        </form>
+                                       
+
+                                        <!-- <input type="text" class="form-control mb-3" placeholder="Bank Account Number*"> -->
+                                        <div class="otp-resend mb-4">
+                                            <div class="remember-check">
+                                                <input type="checkbox" class="form-check-input" placeholder=""> Remember me 
+                                                <span class="img-with-tooltip" ><img src="assets/images/home/info-icon2.svg"
+                                                    class="share-icon2 check-input"  >
+                                                <img src="" class="">
+                                                   <span class="tooltip-block">Lorem ipsum dolor sit amet.</span>
+                                                
+                                                </span>
+                                                 <!-- <img src="assets/images/home/info-icon2.svg"
+                                                class="share-icon2" st yle="width: 18px;"> -->
+                                              
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-4">
+                                            <button (click)="goToBankAccNo(false)" class="btn btn-outline-primary w-100 me-4">Back</button>
+                                            <button class="btn btn-primary w-100">Login</button>
+                                        </div>
+                                        <!-- <button class="btn btn-primary w-100 mb-4">Login</button> -->
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                            
+                        </form>
+
+                        <div *ngIf="distributorLogin">
+                            <div class="login-dark text-big mb-3 text-center">Existing investor, but not have
+                                an
+                                account? <a class="line login-dark2" [routerLink]="['/register']">Register Now</a></div>
+                            <div class="login-dark text-big text-center">New to Franklin? <a class="line login-dark2"
+                                    [routerLink]="['/create-account']">Create
+                                    Account</a>
+                            </div>
+                        </div>
+                        <div *ngIf="investorLogin">
+                            <div class="login-dark text-big text-center">Doesn’t have an account? <a
+                                    class="line login-dark2" [routerLink]="['/user-register']">Register Now</a></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

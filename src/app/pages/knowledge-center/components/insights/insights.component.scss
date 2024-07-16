@@ -1,0 +1,82 @@
+.line {
+    position: relative;
+    text-decoration: none;
+}
+
+.line:after {
+    content: "";
+    position: absolute;
+    background-color: #3769ff;
+    height: 0.5px;
+    width: 0;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+}
+
+.line:hover:after {
+    width: 100%;
+}
+
+@media (max-width:778.21px) {
+    .FT-title-medium {
+        font-size: 1.25rem;
+    }
+}
+
+.FT-ad-box {
+    background: url("/src/images/knowledge-center/ad-bg.svg") no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    padding: 28px 36px;
+    border-radius: 12px;
+
+    //border: 2px solid #D2D8EA;
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        list-style-type: none;
+
+        li {
+            display: inline-block;
+            margin-right: 40px;
+            font-size: 1.125rem;
+            letter-spacing: -0.54px;
+
+            strong {
+                margin-right: 4px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .btn {
+        padding: 16px 28px;
+        width: 100%;
+        max-width: 207px;
+        box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+        font-family: "Inter";
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 28px;
+    }
+}
+
+.center-CTA {
+    text-align: center;
+}
+
+.share-btn-collapse {
+    width: 21px;
+    top: 5px;
+    position: relative;
+    left: 0px;
+}
+.share-menu-twitter{
+    width: 20px;
+}
+.expanded-icon{
+    width: 18px;
+}

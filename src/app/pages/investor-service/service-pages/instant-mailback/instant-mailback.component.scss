@@ -1,0 +1,75 @@
+#page-content {
+    background: #FAFBFF;
+}
+
+.container {
+    max-width: 1300px
+}
+
+.validation-form {
+    margin-left: 90px;
+}
+
+.validation-form-2 {
+    margin-left: 90px;
+
+}
+
+.validation-form-3 {
+    margin-left: 118px;
+
+}
+
+.capital-state {
+    margin-left: 53px !important;
+}
+
+.lable {
+    margin-left: -4px;
+}
+.form-select{
+    max-width: 30%;
+}
+
+.pull-right {
+    float:right;
+}
+
+.pull-left {
+    float:left;
+}
+.desktop{
+    display: inline-block;
+}
+.mobile{
+    display: none;
+}
+
+@media (max-width: 575.98px) {
+
+    .validation-form,
+    .validation-form-2,
+    .validation-form-3 {
+        margin-left: 0;
+    }
+
+    .capital-state {
+        display: flex;
+    }
+
+    .capital-state {
+        margin-left: 0 !important;
+    }
+    .form-select{
+        max-width: 50%;
+    }
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: inline-block;
+    }
+}
+.Statements-bold{
+    color: #7d7d84;font-size: 27px;
+}

@@ -1,0 +1,23 @@
+<div id="page-content">
+    <div class="FT-breadcrumb" id="breadcrumb">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item">Solutions</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{solutionData.title}}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="back-arrow">
+        <a type="button" (click)="back()">
+            <img src="assets/images/general/arrowleft.svg">
+        </a>
+    </div>
+    <section class="FT-stepper-content">
+        <!-- <div class="container"> -->
+        <app-stepper [contentData]="solutionData"></app-stepper>
+        <!-- </div> -->
+    </section>
+</div>

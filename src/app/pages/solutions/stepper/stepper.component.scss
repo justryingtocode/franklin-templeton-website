@@ -1,0 +1,504 @@
+::ng-deep .steps {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2rem;
+	position: relative;
+	border-bottom: 1px solid #d2d8ea;
+	// &::after {
+	// 	position: absolute;
+	// 	content: "";
+	// 	border-bottom: 1px solid #d2d8ea;
+	// 	width: 100%;
+	// 	// transform: translateX(-50%);
+	// 	bottom: -9px;
+	// 	// left: 50%;
+	// }
+
+	.step-item {
+		width: -webkit-fill-available;
+		justify-content: center;
+		gap: 10px;
+		z-index: 10;
+		text-align: center;
+		align-items: center;
+		pointer-events: none;
+
+		&[aria-expanded="true"] {
+			border-bottom: 4px solid #3769ff;
+			background: #f0f6ff;
+
+			.step-title {
+				color: #3769ff;
+			}
+		}
+	}
+
+	.step-button {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		border: none;
+		background-color: var(--prm-gray);
+		transition: .4s;
+	}
+
+	.step-button[aria-expanded="true"] {
+		width: 60px;
+		height: 60px;
+		background-color: var(--prm-color);
+		border-bottom: 1px solid;
+		color: #fff;
+
+		&::after {
+			position: absolute;
+			content: "";
+			border-bottom: 1px solid #d2d8ea;
+			width: 100%;
+			// transform: translateX(-50%);
+			bottom: -9px;
+			// left: 50%;
+		}
+	}
+}
+
+
+
+.done {
+	background-color: var(--prm-color);
+	color: #fff;
+}
+
+.scroll-down {
+	background-color: white;
+	position: fixed;
+	top: 38px;
+	left: 0;
+	padding: 5px;
+	width: 100%;
+	z-index: 100;
+}
+
+// .steps ::after {
+// 	content: "";
+// 	width: 100%;
+// }
+// background-color: white;
+//     position: fixed;
+//     top: initial;
+//     width: 100%;
+//     z-index: 100;
+// }
+.step-title {
+	font-size: 1.125rem;
+	color: #8189a2;
+	line-height: 23.45px
+}
+
+.show-active {
+	border-bottom: 1px solid;
+}
+
+
+.goal-cards {
+	// background: #DDEAFF;
+	padding: 10px 0px;
+	;
+	// width: Fixed (1, 440px);
+	// height: Hug (250px);
+	// gap: 20px;
+	border-radius: 16px;
+	box-shadow: 0px 0px 20px 0px #0000000F;
+
+	.card-body {
+		padding: 24px 32px;
+
+		.alert-danger {
+			padding: 5px 10px;
+			background-color: #f8d7da;
+			// padding: 0.75rem 1.25rem;
+			margin-bottom: 1rem;
+		}
+	}
+
+	.planner {
+		padding: 0px 0px 24px 0px !important;
+	}
+
+	.goal-cards-heading {
+		// width: Fixed (1, 240px);
+		// height: Hug (94px);
+		padding: 8px 18px 8px 20px;
+		border: 1px 1px 0px 1px;
+		gap: 16px;
+		background: transparent;
+		// color: #595A6C;
+		// font-size: 1.5rem;
+		// padding: 0px, 100px, 0px, 100px;
+		// font-weight: 600;
+		// line-height: 31px;
+		// letter-spacing: -0.03em;
+	}
+
+	.heading {
+		font-family: Hanken Grotesk;
+		font-size: 1.5rem;
+		font-weight: 700;
+		line-height: 31px;
+		letter-spacing: -0.03em;
+		text-align: left;
+	}
+
+	img {
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+
+	.range-slider span {
+		//styleName: 13-reg;
+		font-family: Hanken Grotesk;
+		font-size: 0.813rem;
+		font-weight: 400;
+		line-height: 17px;
+		letter-spacing: -0.03em;
+		text-align: left;
+		color: #595a6c;
+	}
+
+	.custom-range {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 100%;
+		height: 8px;
+		border-radius: 8px;
+		background: rgba(234, 236, 240, 0.48);
+		outline: none;
+		padding: 0;
+		margin: 0;
+
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 25px;
+			height: 25px;
+			background-color: #007bff;
+			border-radius: 50%;
+			// transition: background .15s ease-in-out;
+			cursor: pointer;
+		}
+
+		&:active::-webkit-slider-thumb {
+			opacity: 0.7;
+		}
+
+		&::-moz-range-thumb {
+			width: 20px;
+			height: 20px;
+			border: 0;
+			border-radius: 50%;
+			background: #fff;
+			cursor: pointer;
+			transition: background .15s ease-in-out;
+			box-shadow: 0 0 2px 7px rgba(0, 0, 0, 0.02);
+		}
+	}
+
+	.row-gap {
+		row-gap: 40px;
+	}
+
+	.row-title {
+		//styleName: 16-semibold;
+		font-family: Hanken Grotesk;
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 21px;
+		letter-spacing: -0.03em;
+		text-align: left;
+		color: #344054;
+	}
+
+	.image-text {
+		font-family: Hanken Grotesk;
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 22px;
+		letter-spacing: -0.03em;
+		text-align: left;
+		color: #676e76
+	}
+
+	.footer-text {
+		font-family: HK Grotesk;
+		font-size: 0.813rem;
+		font-weight: 500;
+		line-height: 20px;
+		letter-spacing: -0.5px;
+		text-align: left;
+
+		font-family: Inter;
+		font-size: 0.813rem;
+		font-weight: 500;
+		line-height: 20px;
+		letter-spacing: -0.5px;
+		text-align: left;
+		color: #676e76;
+		padding: 20px;
+
+		.star-icon {
+			position: absolute;
+			left: 25px;
+			color: #f00c0c;
+		}
+	}
+
+	.calculated-goal-amt {
+		padding: 15px;
+		background: rgba(240, 246, 255, 1);
+		// margin-top: 20px;
+		font-weight: 600;
+		color: #344054;
+	}
+}
+
+.collapsing {
+	transition: none !important;
+}
+
+// title in mobile view
+.mobile-card-header {
+	margin-bottom: 30px;
+
+	.you-details {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 13px;
+		margin-bottom: 8px;
+
+		& img {
+			width: 40px;
+		}
+	}
+}
+
+// Steper two
+.collapseTwo {
+	.card-user-name {
+		display: flex;
+		gap: 16px;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+// Steper three
+.collapseThree {
+	.card-user-name {
+		display: flex;
+		gap: 16px;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+@media(max-width:768px) {
+	.steps {
+		width: 100%;
+		border-bottom: none;
+	}
+
+	.steps .step-item {
+		flex-wrap: wrap;
+		flex-direction: column !important;
+	}
+
+	.step-title {
+		font-size: 0.813rem;
+	}
+
+	.stip-line {
+		max-width: 50px;
+	}
+
+}
+
+.stepper-card-wrap {
+	padding: 20px;
+	background: #f0f6ff
+}
+
+// mobile responsive 
+@media (max-width: 768px) {
+
+	// steper one
+	.collapseOne {
+		.goal-cards {
+			box-shadow: none;
+			border: none;
+			background-color: transparent;
+
+			.card-body {
+				padding: 0px;
+
+				.form-sec-wrap {
+					padding: 20px;
+					border: 1px solid #98989826;
+					box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.0588235294);
+					border-radius: 7px;
+				}
+
+				.stepper-card-wrap {
+					margin-top: 0px;
+					transform: scale(0.9);
+				}
+			}
+		}
+	}
+
+	// steper two
+	.collapseTwo {
+		.goal-cards {
+			padding: 0px;
+			margin-bottom: 40px;
+			border: none;
+
+			.card-header {
+				gap: 2px;
+				flex-flow: column;
+				border: none;
+				margin-bottom: 15px;
+
+				.card-user-name {
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+					gap: 13px;
+				}
+			}
+		}
+	}
+
+	// steper three
+	.collapseThree {
+		.card-header {
+			border-bottom: none;
+		}
+
+		.goal-cards {
+			padding: 0px;
+			margin-bottom: 40px;
+			border: none;
+
+			.card-header {
+				gap: 2px;
+				flex-flow: column;
+				border: none;
+				margin-bottom: 15px;
+
+				.card-user-name {
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+					gap: 13px;
+				}
+			}
+		}
+
+		.card-body {
+			padding: 20px 20px;
+		}
+	}
+
+
+
+}
+
+
+
+// mo
+
+//
+
+.share-menu-twitter {
+	height: 135px;
+}
+
+.fund-AUM {
+	margin-top: -30px;
+}
+
+.share-menu-twitter-fund {
+	margin-top: -31px;
+}
+
+.share-btn-fund {
+	color: green;
+}
+
+
+.showIconForWatchlist {
+	color: grey;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+// .audio-box {
+//     margin-top: 7%;
+// }
+
+// .podcast-block {
+//     font-size: 0.875rem;
+
+// }
+
+// .audio-class-box {
+//     position: relative;
+//     cursor: pointer;
+//     top: -9px;
+// }
+
+// .podcast-img-box {
+//     overflow-x: auto;
+//     white-space: nowrap;
+// }
+
+// .report-search-box {
+//     width: fit-content;
+//     margin-bottom: 4px;
+// }
+
+// .report-share {
+//     text-align: center;
+//     margin-bottom: 13px;
+//     width: 374px;
+//     position: relative;
+//     left: 50%;
+//     right: 50%;
+//     transform: translateX(-50%);
+// }
+
+// .report-bcakground {
+//     display: contents;
+// }
+
+// .report-share-box {
+//     padding: 8px 20px;
+//     font-size: 0.831rem;
+// }
+
+// .report-detail {
+//     position: relative;
+//     cursor: pointer;
+//     top: -27px;
+// }
+
+// .offcanvas-head {
+//     height: 75%;
+//     border-top-left-radius: 39px;
+//     border-top-right-radius: 39px;
+// }
+
+// .report-date-details {
+//     margin-left: 8px;
+// }

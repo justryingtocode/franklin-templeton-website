@@ -1,0 +1,647 @@
+#page-content {
+    background-image: url("../../../../assets/images/general/bg.png");
+}
+
+.FT-investmentcart-heading {
+    // background-image: url("../../../assets/images/general/bg.png");
+    padding-top: 20px;
+    padding-bottom: 3px;
+    margin-left: 16px;
+
+    .filter-title {
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: -0.96px;
+        color: #3769FF;
+    }
+
+    .filter-title2 {
+        // font-family: 'Hanken Grotesk';
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: -.96px;
+        text-align: left;
+        color: #3769FF;
+    }
+}
+
+.cartSipInvestment {
+    background: #F0F6FF;
+}
+
+// .nav-tabs .nav-link {
+//     font-size: 1.25rem;
+//     padding: 7px 50px;
+// }
+
+.line {
+    width: 116px;
+    height: 1px;
+    position: absolute;
+    transform: rotate(90deg);
+    top: 83px;
+    left: 44%;
+    // border: 1px solid #D2D8EA;
+    background: #D2D8EA;
+}
+
+.line2 {
+    width: 10px;
+    height: 1px;
+    transform: rotate(90deg);
+    position: absolute;
+    border: 1px solid #959595;
+    background: #959595;
+}
+
+.custom-offcanvas[_ngcontent-serverApp-c92] {
+    width: 70%;
+    transform: translateX(100%);
+}
+
+.investmenttData {
+    border: none;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 60px rgb(86 87 94 / 24%);
+    padding: 16px;
+    // rgba(202, 206, 223, 0.24);
+    border-radius: 4px;
+    gap: 10px;
+
+    .addMore {
+        //styleName: 32-bold;
+        font-family: Hanken Grotesk;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 42px;
+        letter-spacing: -0.03em;
+        text-align: left;
+        color: #FFFFFF;
+    }
+
+    .addNow {
+        font-family: 'Inter';
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #3769FF;
+    }
+
+    .titleAdd {
+        font-family: 'Hanken Grotesk';
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: -0.03em;
+        text-align: left;
+        color: #3C425D;
+        min-height: 98px;
+    }
+
+    .titlecolor {
+        font-family: 'Inter';
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: -0.03em;
+        text-align: center;
+        color: #3C425D;
+        margin-bottom: 15px;
+        min-height: 72px;
+    }
+
+}
+
+.checkGoToCheckout {
+
+    .addColorCard {
+        padding: 10px;
+        background: #F0F6FF;
+
+        .checkAdded {
+            font-family: 'Hanken Grotesk';
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 42px;
+            letter-spacing: -0.03em;
+            text-align: left;
+            color: #3C425D;
+        }
+    }
+}
+
+.addCheck {
+    font-family: 'Hanken Grotesk';
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #595A6C;
+}
+
+.cartTitle {
+    font-family: 'Hanken Grotesk';
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #3C425D;
+}
+
+.forCartDataLinearGradient {
+    .addMore1 {
+        font-family: 'Hanken Grotesk';
+        font-size: 0.875rem;
+        font-weight: 700;
+        line-height: 18px;
+        letter-spacing: -0.03em;
+        text-align: left;
+        color: #FFFFFF;
+    }
+
+    .addNow1 {
+        //styleName: 14-med;
+        font-family: 'Hanken Grotesk';
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        color: #3769FF;
+    }
+
+    .checkAdded1 {
+        //styleName: 14-bold;
+        font-family: 'Hanken Grotesk';
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 18px;
+        letter-spacing: -0.03em;
+        text-align: left;
+        color: #595A6C;
+    }
+}
+
+.forOtherCardColor {
+    .addTitleCart {
+        font-family: 'Hanken Grotesk';
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: -0.03em;
+        text-align: left;
+        color: #8189A2;
+    }
+
+    .addValueData {
+        font-family: 'Hanken Grotesk';
+        font-size: 0.875rem;
+        font-weight: 700;
+        line-height: 18px;
+        letter-spacing: -0.03em;
+        text-align: left;
+        color: #3C425D;
+    }
+
+    .addColorView {
+        font-family: 'Hanken Grotesk';
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: -0.03em;
+        text-align: left;
+        color: #3769FF;
+    }
+}
+
+.cardAdd {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #3769FF;
+}
+
+
+// Card fund card
+.fund-card-wrapper {
+    // position: relative;
+    z-index: 1;
+
+    &>.fund-block:hover {
+        box-shadow: 0px 0px 5px silver;
+        scale: 1.01;
+    }
+
+    &>.fund-block {
+        transition: all 0.2s ease-in-out;
+    }
+
+    .img-with-tooltip {
+        margin-bottom: 3px;
+        display: inline-block;
+    }
+
+    .fund-card-head {
+        display: flex;
+        flex-flow: column nowrap;
+        min-width: 100%;
+
+        .fund-card-rist-title {
+            .fund-card-title {
+                display: flex;
+                align-items: center;
+            }
+
+            display: flex;
+            font-weight: 300;
+            margin-bottom: 10px;
+            flex: 1;
+
+        }
+
+        >.tags {
+            padding: 5px 17px;
+            margin-left: 10px !important;
+        }
+    }
+
+    &>.fund-block .info .btn {
+        padding: 6px 16px;
+    }
+
+}
+
+// .watchlist-funds {
+//     padding-bottom: 135px;
+
+//     .nav-tabs {
+//         border: 0;
+//         border-bottom: 1px solid #D2D8EA;
+//         flex-wrap: nowrap;
+//         overflow: auto;
+//         scrollbar-width: none;
+//         /* For Firefox */
+
+//         &::-webkit-scrollbar {
+//             display: none;
+//             /* Safari and Chrome */
+//         }
+
+//         li {
+//             min-width: fit-content;
+//         }
+
+//         .nav-link {
+//             padding: 8px 16px;
+//             border-color: transparent;
+//             font-size: 1rem;
+//             font-style: normal;
+//             font-weight: 500;
+//             line-height: normal;
+//             letter-spacing: -0.48px;
+//             &.active{
+//                 border-bottom: 3px solid var(--blue);
+//             }
+
+//         }
+//     }
+
+//     .watchlist-box {
+//         margin-top: 0;
+//         border-radius: 8px;
+//         box-shadow: 0px 2px 11.81px 0px rgba(0, 0, 0, 0.10);
+//         background: #fff;
+//         margin: 0;
+
+//         .col-lg-8 {
+//             border-right: 1px solid #D2D8EA;
+//             padding: 32px 24px 32px 32px;
+//         }
+
+//         .col-lg-4 {
+//             padding: 32px 24px
+//         }
+
+//         .funds-container {
+//             max-height: 565px;
+//             overflow: auto;
+//             padding: 0 16px 0 0
+//         }
+//     }
+// }
+/* Custom style for the offcanvas with 80% width and opening from the right side */
+.custom-offcanvas {
+    width: 70%;
+    transform: translateX(100%);
+}
+
+.FT-all-funds {
+    background: #fff;
+
+    .container {
+        max-width: 1362px !important;
+    }
+}
+
+.FT-all-funds .container {
+    max-width: 1362px !important;
+}
+
+.cartSipInvestment {
+    .alignSIPandLUMPSUMboth {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.forInvestmentCartColor {
+    color: #3C425D;
+}
+
+.addForDivColor {
+    background: #F0F6FF;
+    height: 81px;
+
+    .cartInteger {
+        font-family: 'Hanken Grotesk';
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: -0.03em;
+        text-align: left;
+        color: #3C425D;
+    }
+
+    .cartText {
+        font-family: 'Hanken Grotesk';
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: -0.03em;
+        text-align: left;
+        color: #8189A2;
+    }
+
+    .cartInvestor {
+        //styleName: 14-reg;
+        font-family: 'Hanken Grotesk';
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: -0.03em;
+        text-align: left;
+        color: #3C425D;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .nav-tabs .nav-link.active {
+        font-size: 1.25rem;
+        line-height: normal;
+        white-space: nowrap
+    }
+
+    .nav-tabs .nav-link {
+        font-size: 1.25rem;
+        line-height: normal;
+        white-space: nowrap
+    }
+
+    .cartSipInvestment {
+        .alignSIPandLUMPSUMboth {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .addCheck {
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    .forInvestmentCartColor {
+        color: #3C425D;
+    }
+
+    .sticky-buttons {
+        position: -webkit-sticky;
+        position: fixed;
+        top: 40px;
+        left: 10%;
+        z-index: auto;
+    }
+
+    // for scroll content to right
+
+    .scrollnextgo {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        margin-bottom: -15px;
+    }
+
+    .scrollnextgo::-webkit-scrollbar {
+        display: none;
+        /* Webkit (Safari, Chrome) */
+    }
+
+    #page-content {
+        padding-top: 50px;
+    }
+
+    .FT-investmentcart-heading .filter-title2 {
+        font-size: 1.25rem;
+        padding-top: 10px;
+    }
+
+
+
+
+
+
+
+
+
+}
+
+//   .sticky-buttons {
+//     position: -webkit-sticky;
+//     position: fixed;
+//     top: 40px; /* Adjust this value based on your design needs */
+//     z-index: 1000000000000000001010; /* Adjust z-index as needed, ensure it's higher than other elements */
+//   }
+
+//
+.add-fund-section {
+    font-size: 1.188rem;
+    color: #3769FF;
+    font-weight: bold;
+}
+
+.investment-cart-build {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.empty-cart-box {
+    text-align: center;
+}
+
+.total-fund-amount {
+    width: auto;
+    height: 45px;
+    border: 1px solid #F2F4F7;
+    background: #fff;
+}
+
+.showInvestment-cart {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.Amount-cart {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.showInvestment-fund-cart {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+}
+
+.sip-style {
+    min-width: 8rem;
+}
+
+.proceed-fund {
+    width: 101px;
+    height: 48px;
+    background: #FFFFFF;
+}
+
+.cart-SIP {
+    width: 218px;
+    height: 48px;
+}
+
+.Lumpsum-icon {
+    padding-top: 19px;
+}
+
+.totalCartAmount-icon {
+    text-align: right;
+    padding: 10px;
+}
+
+.toggleCart-fund {
+    margin-right: 10%;
+}
+
+.Investment-show {
+    font-size: 1.313rem;
+    font-weight: 500;
+}
+
+.Continue-fund {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.Continue-fund-risk {
+    width: 227px;
+    height: 45px;
+    margin-left: 5px;
+}
+
+.check-focus {
+    width: 227px;
+    height: 45px;
+    background: #FFFFFF;
+    margin-right: 5px;
+}
+
+.fund-franklin {
+    padding: 15px;
+}
+
+.fund-franklin-continue {
+    font-weight: 500;
+    font-size: 1rem;
+    padding-top: 10px;
+}
+
+.trendingFunds-cart {
+    justify-content: center;
+}
+
+.AUM-SIP {
+    border: 1px solid #959595;
+    height: 15px;
+    margin: 0px 10px 0px 10px;
+    position: relative;
+    top: 10px;
+}
+
+.annualised-return {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.cart-AUM-SIP {
+    margin-left: 4px;
+}
+
+.investors-data {
+    gap: 10px;
+}
+
+.watchlist-fund-data {
+    justify-content: space-around;
+    padding: 19px 5px;
+}
+
+.go-to-watch {
+    width: 160px;
+    height: 50px;
+}
+
+.watchlist-progress {
+    justify-content: space-around;
+    padding: 20px 19px;
+}
+
+.watchlist-fund-add {
+    margin: auto;
+}
+
+.progress-watchlist {
+    width: 120px;
+    height: 40px;
+    border: 1px solid #3769FF;
+}
+.watchlist-funds-data{
+    z-index: 100000000;
+}
+.Returns-SIP{
+    width: 18px;
+}
+.dark-info-cart{
+    width: 14px;
+}
+.invest-now{
+    width: 15%;
+}
+.invest-now-section{
+    width: 100%;
+}

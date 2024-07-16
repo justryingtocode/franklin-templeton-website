@@ -1,0 +1,81 @@
+.FT-breadcrumb{
+    background: #F3F4F6;
+}
+.container{
+    max-width: 1230px;
+}
+.card-title{
+    font-weight: 600;
+    font-size: 1rem;
+}
+.custom-body{
+    min-height: 270px;
+    text-align: center;
+}
+.card{
+    background-color: #F0F6FF;
+    border: none;
+    border-radius: 10px;
+}
+// .card-body{
+//     padding: 20px 5px;
+// }
+.card-text{
+    font-size: 0.875rem;
+}
+.btn-collapse-custom{
+    width: auto;
+    // position: relative;
+    // left: 45%;
+    background-color: #ffffff;
+    border: none;
+}
+.FT-blocks-nav ul li{
+    cursor: pointer;
+}
+.appstore,.playstore{
+    height: 40px;
+}
+@media (max-width: 575.98px){
+    .custom-body{
+        min-height: auto;
+        text-align: left;
+    }
+    .custom-body img,h5{
+        display: inline;
+    }
+    .custom-body h5{
+        padding-left: 2px;
+    }
+    .card-row{
+        padding: 0px !important;
+    }
+    .card-text{
+        font-size: 0.813rem;
+    }
+    .card-title{        
+        font-size: 0.938rem;
+    }
+    .viewless{
+        font-size: 0.875rem;
+    }
+    .appstore,.playstore{
+        height: 30px;
+    }
+    .FT-touchPoints .locations-box .btn{
+        padding: 5px 15px;
+    }
+    .FT-touchPoints {
+        padding-top: 63px;
+    }
+}
+.FT-title-small {
+    font-size: 1.625rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.84px;
+}
+.Home-appstore{
+    margin-left: 10px;
+}

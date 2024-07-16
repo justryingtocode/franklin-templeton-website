@@ -1,0 +1,72 @@
+<div id="page-content" class="bg-img">
+    <!-- start page breadcrumb block -->
+    <div class="FT-breadcrumb d-md-block d-none">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Investor Services</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Subscribe</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <section class="FT-investor-services ">
+        <div class="container">
+
+            <div class="box-shadow bg-white bg-md">
+                <div class="FT-title-medium text-bold text-blue mb-3">Subscribe to Valuation/Account Statement </div>
+                <div class="bg-white-shadow">
+                    <div class="font-medium mb-4 mb-md-5">
+                        Enter your Folio number or PAN number and get your mutual fund account statement mailed to your email id registered with us.
+                    </div>
+                    
+
+                    <form class="account-form mb-5 pb-md-5" *ngIf="accountForm">
+                        <div class="row gx-lg-5">
+                            <div class="form-group col">
+                                <input type="text" class="form-control" placeholder="PAN/Customer Folio*">
+                            </div>
+                            <div class="form-group col">
+                                <input type="email" class="form-control" placeholder="Email Address*">
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" (click)="validateForm()" class="btn btn-primary">Validate</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div *ngIf="otpForm">
+                        <!-- <div class="text-big text-meduim mb-4 pb-2">Online Empanelment or Registration for  <span class="text-blue">ARN-02327</span></div> -->        
+                        <div class="text-bold text-teal mb-4 text-big">
+                            One Time Password (OTP) has been sent to registered email ID
+                        </div>
+                        <div class="text-bold text-teal mb-1 text-big">
+                            Enter OTP
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5 col-12">
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <input type="password" class="form-control" placeholder="Enter One Time Password (OTP)*">
+                                    </div>
+                                    <div class="col-auto mt-2 text-start fw-bold">
+                                            <a href="">Resend OTP</a>
+                                        <!-- <button class="btn btn-outline-primary">Resend OTP</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">Note: Kindly note that this code will be valid for the next 20 minutes</div>
+                        <div class="btn-options mb-4 d-flex">
+                            <button type="button" (click)="onBack()" class="btn btn-outline-primary me-4">Back</button>
+                            <button type="button" routerLink="/investor-services/acc-statment" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <app-standpage></app-standpage>
+            </div>
+        </div>
+    </section>
+</div>

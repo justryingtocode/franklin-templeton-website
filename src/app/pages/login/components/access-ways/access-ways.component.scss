@@ -1,0 +1,19 @@
+.quick-links-box:hover {
+    transform: scale(1.1);
+    transition: all ease .5s;
+    transform-origin:center;
+    cursor: pointer;   
+}
+
+.FT-quick-links {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    .FT-title {
+        margin-bottom: 40px;
+    }
+
+    .quick-links-box {
+        margin: 8px 0;
+    }
+}

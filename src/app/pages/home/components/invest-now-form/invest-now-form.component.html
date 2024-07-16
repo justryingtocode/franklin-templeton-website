@@ -1,0 +1,16 @@
+<section class="FT-invest-form">
+    <div class="container">
+        <div class="form-box">
+            <h3 class="text-center fontResize" *ngIf="showHeading">Share your details and we will guide you in your investment journey.</h3>
+            <app-call-back-form (backToInvest)="backTosteps($event)"></app-call-back-form>
+        </div>
+        <!-- <div id="dummy-row" class="row show-dummy d-none">
+
+        </div> -->
+        <!-- <div class="row"> -->
+        <div id="invest-now" class="" *ngIf="investNowButton">
+            <a class="btn btn-primary btn-sm fontResize">Invest Now</a>
+        </div>
+    <!-- </div> -->
+    </div>
+</section>

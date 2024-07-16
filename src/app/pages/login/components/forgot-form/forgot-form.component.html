@@ -1,0 +1,83 @@
+<section class="FT-login-form" [ngClass]="investorLogin ? 'investor-login-form' : ''">
+    <div class="bg-light-blue outer-container py-5">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-5 col-md-4 d-none d-md-block">
+                    <img src="assets/images/login/login-img.png" *ngIf="distributorLogin">
+                    <img src="assets/images/login/login-img2.png" *ngIf="investorLogin">
+                </div>
+                <div class="col-xl-5 col-lg-6 col-md-8 col-12">
+                    <div class="d-flex form-head align-items-center mb-4">
+                        <!-- <h2>Forgot Password</h2> -->
+                        <h2 *ngIf="distributorLogin">Forgot Password<span class="ms-2 d-inline-block">(Investor)</span></h2>
+                        <h2 *ngIf="investorLogin">Forgot Password<span class="ms-2 d-inline-block">(Distributor)</span></h2>
+                        <div class="text-blue text-meduim cursor-pointer" (click)="toggleDistributorLogin()">
+                            <span *ngIf="distributorLogin">Distributor Login</span>
+                            <span *ngIf="investorLogin">Investor Login</span>
+                        </div>
+                    </div>
+                    <!-- <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link {{distributorLogin ? 'active':''}}"  id="Investor-tab" data-bs-toggle="tab" aria-selected="true" (click)="toggleDistributorLogin()">I’m an Investor</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link {{investorLogin ? 'active':''}}"    id="Distributor-tab" data-bs-toggle="tab" aria-selected="false" (click)="toggleDistributorLogin()">I’m a Distributor</button>
+                        </li>
+                      </ul> -->
+                    <div class="form-box">
+                        <form>
+                           
+                            <div *ngIf="distributorLogin">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="User ID*">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email ID*">
+                                </div>
+                            </div>
+                            <div  *ngIf="investorLogin">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="User ID*">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email ID*">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#resetLink">Submit</button>
+                            </div>
+                        </form>
+                        <div>
+                            <div class="text-gray text-big text-bold text-center login-dark2">Already have account?
+                                <a [routerLink]="['/login']" [queryParams]="{type: !distributorLogin ?'distributor' : ''}"><span class="aboutlinks login-dark2">Login</span></a>
+                            </div>
+                        </div>
+                       
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- registered Modal -->
+<div class="modal fade" id="resetLink" tabindex="-1" aria-labelledby="resetLinkLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="">
+            <div class="">
+                <div class="save-alert">
+                    <div class="content">
+                        <span class="close-btn" data-bs-dismiss="modal" aria-label="Close"><img
+                                src="assets/images/general/close.svg"></span>
+                        <img src="assets/images/general/check_circle.svg" class="checked-img">
+                        <span>Password reset link has been sent to your registered Email ID. Please check your email and proceed to reset your password.</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

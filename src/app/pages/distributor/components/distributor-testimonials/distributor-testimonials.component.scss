@@ -1,0 +1,32 @@
+.testimonial-box {
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0px 2px 11.81px 0px rgba(0, 0, 0, 0.10);
+    padding: 24px;
+    color: #090914;
+
+    .row {
+        align-items: center;
+    }
+
+    .user-ino {
+        margin-top: 20px;
+        font-weight: 600;
+
+        .text-gray {
+            color: #64748B;
+            margin-left: 8px;
+        }
+    }
+}
+.FT-distributor-testimonials{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    .slick-slider{
+        padding-left: 55px;
+        padding-right: 55px;
+    }
+    .slide{
+        padding:10px 20px
+    }
+}

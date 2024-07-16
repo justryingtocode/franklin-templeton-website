@@ -1,0 +1,130 @@
+<!-- start section related tags -->
+<section class="FT-related-tags" id="related_tag">
+    <div class="container">
+        <ul class="tags-list">
+            <li>
+                Related tags
+                <span class="tag"><span class="knowledge-related-heading-cta">Money</span></span>
+                <span class="tag"><span class="knowledge-related-heading-cta">Success</span></span>
+            </li>
+        </ul>
+
+        <div class="row justify-content-between">
+            <div class="col-md-auto col-12">
+                <div class="text-big mb-md-4 mb-3 text-bold">Previous Article</div>
+                <div class="category-card big-card mb-3">
+                    <div class="card-img">
+                        <img src="assets/images/knowledge-center/category1.png">
+                        <span class="time-tag">4 mins read</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                            <div class="card-icons">
+                                <span class="img-with-tooltip me-3" (click)="toggleIconForWishlist1()">
+                                    <!-- <i class="bi bi-heart me-1"></i> -->
+                                    <i [ngStyle]="{'display': showIconForWishlist1 ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                                    <i *ngIf="!showIconForWishlist1" class="bi bi-heart-fill me-1"></i>
+                                    <span [ngStyle]="{'display': showIconForWishlist1 ? 'inline' : 'none'}" class="tooltip-block">Like</span>
+                                    <span *ngIf="!showIconForWishlist1" class="tooltip-block">Unlike</span>
+                                    <!-- <img *ngIf="!showIconForWishlist1" src="assets/images/knowledge-center/HeartStraight.svg" class="me-1" st yle="margin-bottom: 3px; height: 20px; width: 20px;"> -->
+                                    300
+                                </span>
+                                <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist1()">
+                                    <!-- <i class="bi bi-bookmark"></i> -->
+                                    <i [ngStyle]="{'display': showIconForWatchlist1 ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                                    <i *ngIf="!showIconForWatchlist1" class="bi bi-bookmark-fill"></i>
+                                    <span [ngStyle]="{'display': showIconForWatchlist1 ? 'inline' : 'none'}" class="tooltip-block">Save</span>
+                                    <span *ngIf="!showIconForWatchlist1" class="tooltip-block">Saved Course</span>
+                                    <!-- <img *ngIf="!showIconForWatchlist1" src="assets/images/knowledge-center/Variant3.svg" class="me-1" st yle="margin-bottom: 1px; height: 17px; width: 17px;"> -->
+                                </span>
+                                <!-- <span><i class="bi bi-reply"></i></span> -->
+                                <span class="dropdown">
+                                    <!-- <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img  src="assets/images/knowledge-center/share.svg" class="d-inline-block mobile-icons light-mode-icon" st le="width: 18px;">
+                                        <img  src="../../../../../../assets/images/dark/share-dark-icon.png" class="mobile-icons dark-mode-icon" 
+                                        st yle="width: 21px;
+                                        top: 6px;
+                                        position: relative;
+                                        left: 0px;">
+                                    </span> -->
+                                    <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-menu-twitter" >
+                                        <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon fund-AUM" >    
+                                        <span *ngIf="showTooltip" class="tooltip-block">share</span>
+                                    </span>
+                                 
+                                    <ul class="dropdown-menu">
+                                        <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="text-bold card-title mt-md-4 mt-3 forlikecardtitle">How to save tax with ELSS</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-auto col-12">
+                <div class="text-big mb-md-4 mb-3 text-bold">Next Article</div>
+                <div class="category-card big-card mb-3">
+                    <div class="card-img">
+                        <img src="assets/images/knowledge-center/category1.png">
+                        <span class="time-tag">4 mins read</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                            <div class="card-icons">
+                                <span class="img-with-tooltip me-3" (click)="toggleIconForWishlist2()">
+                                    <!-- <i class="bi bi-heart me-1"></i> -->
+                                    <i [ngStyle]="{'display': showIconForWishlist2 ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                                    <i *ngIf="!showIconForWishlist2" class="bi bi-heart-fill me-1"></i>
+                                    <span [ngStyle]="{'display': showIconForWishlist2 ? 'inline' : 'none'}" class="tooltip-block">Like</span>
+                                    <span *ngIf="!showIconForWishlist2" class="tooltip-block">Unlike</span>
+                                    <!-- <img *ngIf="!showIconForWishlist2" src="assets/images/knowledge-center/HeartStraight.svg" class="me-1" st yle="margin-bottom: 3px; height: 20px; width: 20px;"> -->
+                                    300
+                                </span>
+                                <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist2()">
+                                    <!-- <i class="bi bi-bookmark"></i> -->
+                                    <i [ngStyle]="{'display': showIconForWatchlist2 ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                                    <i *ngIf="!showIconForWatchlist2" class="bi bi-bookmark-fill"></i>
+                                    <span [ngStyle]="{'display': showIconForWatchlist2 ? 'inline' : 'none'}" class="tooltip-block">Save</span>
+                                    <span *ngIf="!showIconForWatchlist2" class="tooltip-block">Saved Course</span>
+                                    <!-- <img *ngIf="!showIconForWatchlist2" src="assets/images/knowledge-center/Variant3.svg" class="me-1" st yle="margin-bottom: 1px; height: 17px; width: 17px;"> -->
+                                </span>
+                                <!-- <span><i class="bi bi-reply"></i></span> -->
+                                <span class="dropdown">
+                                    <!-- <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img  src="assets/images/knowledge-center/share.svg" class="d-inline-block mobile-icons light-mode-icon" st yle="width: 18px;">
+                                        <img  src="../../../../../../assets/images/dark/share-dark-icon.png" class="mobile-icons dark-mode-icon" 
+                                        sty le="width: 21px;
+                                        top: 6px;
+                                        position: relative;
+                                        left: 0px;">
+                                    </span> -->
+                                    <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-menu-twitter" >
+                                        <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-btn-fund" >    
+                                        <span *ngIf="showTooltip" class="tooltip-block">share</span>
+                                    </span>
+                                    <ul class="dropdown-menu">
+                                        <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="text-bold card-title mt-md-4 mt-3 forlikecardtitle">How to save tax with ELSS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

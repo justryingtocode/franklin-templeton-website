@@ -1,0 +1,33 @@
+<div class="distributor-step2 share-menu-twitter" >
+
+    
+    <div class="text-bold text-teal text-big">
+        One Time Password (OTP) has been sent to 7788651234
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-12 form-group mb-3">
+            <p class="error-msg fontResize login-dark2 fund-AUM"> An OTP (One Time password) has been sent
+                your registered mobile *****1234.</p>
+            
+            <div>
+                <input type="text" class="form-control" placeholder="Enter OTP*" id="otp" formControlName="otp">
+                <span class="share-btn-fund"><a href="" class="login-dark2 mt-2">Resend OTP</a></span>
+            </div>
+        </div>
+        <div class="mb-4">Note: Kindly note that this code will be valid for the next 20 minutes</div>
+
+        <div class="col-sm-6 col-12 mb-3">
+                
+            <div class="btn-options d-flex">
+                <button type="button" class="btn btn-outline-primary me-4" (click)="changeActiveStepper(1,false)" data-bs-toggle="collapse" data-bs-target="#collapse1"
+                aria-expanded="false" aria-controls="collapse1">Back</button>
+                <button type="button" class="btn btn-primary" (click)="changeActiveStepper(2,true)" data-bs-toggle="collapse" data-bs-target="#collapse3"
+                aria-expanded="false" aria-controls="collapse3">Next</button>
+        
+            </div>
+        
+        </div>
+    </div>
+ 
+</div>
+

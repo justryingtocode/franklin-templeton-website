@@ -1,0 +1,157 @@
+<div class="container FT-all-funds-Card">
+    <div class="mb-4 d-flex share-menu-twitter">
+      {{pageSubHeading}}
+      <div class="d-none d-md-block">
+        <button class="btn btn-white"><img src="../../../../assets/images/general/compare-new-icon.png" class="share-icon2 fund-AUM">Compare</button>
+    </div>
+    </div>
+  
+    <div class="row align-items-center watchlist-box">
+      <div class="col-lg-4 empty-cart-wraper">
+        <div *ngIf="!comaredCardImg">
+          <div class="empty-cart text-center" *ngIf="!CartSectionImg">
+                <div class="share-menu-twitter-fund">
+                    <img src="assets/images/watchlist/Save.svg" class="mb-4">
+                </div>
+              <h3 class="mb-md-4 mb-3">Your watchlist is empty</h3>
+              <div>
+                Start exploring our funds and curate your personalized collection to track and manage your preferred investments.
+              </div>
+          </div>
+          <div class="empty-cart text-center" *ngIf="CartSectionImg">
+            <div class="share-btn-fund">
+                <img src="assets/images/cart/ShoppingCart.png" class="mb-4">
+            </div>
+            <h3 class="mb-md-4 mb-3">Your Cart is empty</h3>
+            <div>
+              It seems you haven't added anything yet. Feel free to discover our range of funds and add them to your cart!
+            </div>
+          </div>
+        </div>
+          <div class="empty-cart text-center" *ngIf="comaredCardImg">
+            <div class="share-btn-fund">
+                <img src="assets/images/cart/Component533.svg" class="mb-4">
+            </div>
+            <h3 class="mb-md-4 mb-3">Add funds to compare</h3>  
+            <div>
+              Start exploring our funds and curate your personalized collection to track and manage your preferred investments. 
+            </div>
+          </div>
+      </div>
+
+      <div class="col-lg-8">
+          <div class="filter-options mt-0 mb-4">
+              <div class="form-group ">
+                  <input type="text" class="form-control search" placeholder="Search and add funds" [(ngModel)]="searchTerm"
+                  (input)="filterFunds(searchTerm)">
+                  <div class="search-result" *ngIf="showFundSearchDropdown">
+                    <div class="inner">
+                        <ng-container *ngFor="let fund of fundsForSearch">
+                            <div class="funds-seach-title showIconForWatchlist" (click)="getTableTitle(fund)">
+                               {{ fund.title }}
+                                <span class="sub"><span class="text-gray">Fund Size</span> - {{ fund.aum }}</span>
+                                <span class="sub"><span class="text-gray">Unique Investors</span> - {{ fund.investors }}</span>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+              </div>
+              <div>
+                <!-- <img src="./assets/images/comparefund/closebutton.svg" 
+                class="d-inline-block mobile-icons light-mode-icon make-tag-for-all-pag" 
+                sty le="width: 14px;
+                position: relative;
+                right: 145px;">
+
+                <img src="../../../../assets/images/dark/dark-close-icon.png" 
+                class="mobile-icons dark-mode-icon make-tag-for-all-pag" 
+                st yle="width: 36px;
+                top: -2px;
+                position: relative;
+                left: -143px;"> -->
+                  
+
+                <img src="./assets/images/comparefund/closebutton.svg" class="make-tag-for-all-page share-icon2" (click)="resetFundExplore()">
+              </div>
+              <div class="dataFilter">
+                  <div class="d-flex align-items-center">
+                    <span class="me-2">Sort by </span>
+                        <div class="dropdown">
+                          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">                               
+                                <div class="has-filter-red-dot d-none"></div>
+                                <span class="sort-by-text">Returns High to Low</span>
+                              <!-- Returns High to Low -->
+                          </button>
+                          <ul class="dropdown-menu">
+                              <li class="selected-option"><a class="dropdown-item" href="#">Returns - High to Low</a></li>
+                              <li><a class="dropdown-item" href="#">AUM - High to Low</a></li>
+                              <li><a class="dropdown-item" href="#">Unique Investors - High to Low</a></li>
+                          </ul>
+                        </div>
+  
+                  </div>
+              </div>
+          </div>
+          
+          <div class="tab-head mb-4 forwatclistnavtab side-filter-options">
+           
+
+
+            <div class="scrollable-tabs">
+                <ul class="nav nav-tabs audio-box"  id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation" *ngFor="let element of sideFilterOptions; let i = index">
+                    <button class="nav-link" [ngClass]="{'active': activeTab === i}" [id]="element.id + '-tab'"
+                            data-bs-toggle="tab" [attr.data-bs-target]="'#' + element.id + '-tab-pane'"
+                            type="button" role="tab" [attr.aria-controls]="element.id + '-tab-pane'"
+                            [attr.aria-selected]="activeTab === i" 
+                            (click)="changeActiveTab(i)" (mouseleave)="resetActiveTab()">{{element.name}}
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              
+              
+
+
+              
+              <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation" *ngFor="let element of sideFilterOptions; let i = index">
+                      <button class="nav-link" [ngClass]="{'active': activeTab === i}" [id]="element.id + '-tab'"
+                            data-bs-toggle="tab" [attr.data-bs-target]="'#' + element.id + '-tab-pane'"
+                            type="button" role="tab" [attr.aria-controls]="element.id + '-tab-pane'"
+                            [attr.aria-selected]="activeTab === i" 
+                            (mouseenter)="changeActiveTab(i)" (mouseleave)="resetActiveTab()">{{element.name}}
+                      </button>
+                  </li>
+              </ul> -->
+
+          </div>
+  
+          <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab"
+                  tabindex="0">
+                  <div class="funds-container podcast-block" >
+                      <ng-container *ngFor='let fund of funds; let i = index'>
+                          <app-fund-card1
+                              (fundOutput)="goToCart($event)" 
+                              (emitComapreCardtoggle)="forGoComparedCard($event)"
+                              [fund]="fund" 
+                              [hasComparCardButton] =hasComparCardButton
+                              [hasThreeDotOptions]="false" 
+                              [hasAddThreeDot]="true"
+                              [hasAddNowBtn]="true"
+                              [cardType]="cardTypeData"
+                              [makeCartToggle]="makeCartToggle"
+                              (addToCartOutput)="handleAddToCart($event)"
+                              >
+                          </app-fund-card1>
+                      </ng-container>
+                  </div>
+              </div>
+          </div>
+  
+      </div>
+   
+    </div>
+  </div>

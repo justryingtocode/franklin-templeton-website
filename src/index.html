@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FtFronend</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    #loader {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    #loader img {
+      width: 100px;
+      height: 100px;
+    }
+
+    #loader.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="show-loader">
+  <div id="loader">
+    <img src="assets/images/home/FranklinGIFV3-ezgif.com-gif-maker.gif" alt="Loading...">
+  </div>
+  <app-root></app-root>
+  <script>
+    window.addEventListener('load', function () {
+      var loader = document.getElementById('loader');
+      if (loader) {
+        loader.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>

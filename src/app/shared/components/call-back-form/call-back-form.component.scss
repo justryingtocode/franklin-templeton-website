@@ -1,0 +1,294 @@
+.inputfield {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input {
+  height: 2em;
+  width: 2em;
+  border: 2px solid #dad9df;
+  outline: none;
+  text-align: center;
+  font-size: 1.5em;
+  border-radius: 0.3em;
+  background-color: #ffffff;
+  outline: none;
+  /*Hide number field arrows*/
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input:disabled {
+  color: #89888b;
+}
+
+.input:focus {
+  border: 3px solid #ffb800;
+}
+
+.check1 {
+  font-size: 1.125rem;
+}
+
+.check2 {
+  font-size: 0.813rem;
+  font-weight: 100;
+}
+
+.page1 {
+  height: 2rem;
+  position: relative;
+  top: 89px;
+}
+
+.page2 {
+  height: 3rem;
+}
+
+.titleForCallback {
+  color: #8189a2;
+}
+
+.forCallBackLable {}
+
+#contact-block {
+  text-align: left !important;
+}
+
+
+@media only screen and (max-width: 771.21px) {
+  .form-control {
+
+
+    // Increase font size for the placeholder
+    &::placeholder {
+      font-size: 13px; // Adjust the font size as needed
+    }
+  }
+
+
+}
+
+@media only screen and (max-width: 771.21px) {
+  .call-back-form {
+
+
+    // Increase font size for the placeholder
+    &::placeholder {
+      font-size: 13px !important; // Adjust the font size as needed
+    }
+  }
+
+
+}
+
+
+
+//
+
+.share-menu-twitter {
+  color: #3769ff
+}
+
+.otp-resent {
+  color: green;
+}
+
+.fund-AUM {
+  color: #F04438;
+}
+
+
+
+
+
+.fund-AUM-SIP {
+  width: 90%;
+  margin-left: 32px;
+}
+
+.share-menu-twitter-fund {
+  cursor:pointer;
+}
+
+.share-btn-fund {
+	height:3rem;width:3rem;
+}
+
+
+.showIconForWatchlist {
+  height:3rem;
+}
+
+.select-all{
+  color:#6d7072
+}
+.audio-box {
+  text-align: left;
+}
+
+.podcast-block {
+  font-size: 1.125rem;
+}
+
+.audio-class-box {
+  gap:10px;
+}
+
+// .podcast-img-box {
+// 	border: 1px solid #d2d8ea;
+// 	padding: 12px 5px;
+// 	min-width: 51px;
+// 	text-align: center;
+// }
+
+// .report-search-box {
+// 	padding: 15px;
+// 	gap: 90px;
+// }
+
+.report-share {
+	text-align: left;
+}
+
+// .report-bcakground {
+// 	display: contents;
+// }
+
+// .report-share-box {
+// 	border: 1px solid #d2d8ea;
+// 	width: 106px;
+// 	text-align: center;
+// }
+
+// .report-detail {
+// 	margin: auto;
+// }
+
+// .offcanvas-head {
+// 	width: 42% !important;
+// 	cursor: pointer;
+// }
+
+// .report-date-details {
+// 	gap: 12px;
+// }
+
+// .stepper-S2 {
+// 	gap: 30px;
+// 	width: inherit;
+// }
+
+// .edit-tenure {
+// 	gap: 60px;
+// }
+
+// .Projected-amount {
+// 	width: 553px;
+// 	margin: unset;
+// }
+
+// .Polygon3-pmg {
+// 	margin-left: 10px;
+// }
+
+// .Include-label {
+// 	display: flex;
+// 	gap: 20px;
+// 	padding-right: 20px;
+// 	align-items: center;
+// }
+
+// .two-three {
+// 	padding-right: 10px;
+// }
+
+// .Tenure-class-edit {
+// 	display: flex;
+// 	align-items: center;
+// }
+
+// .edit-years {
+// 	padding: 8px 15px
+// }
+
+// .goal-amount {
+// 	background: rgba(216, 175, 231, 1)
+// }
+
+// .Projected-investment {
+// 	background: rgba(32, 188, 201, 1)
+// }
+
+// .benchmark-block {
+// 	color: red;
+// }
+
+// .Hybrid-fund {
+// 	border: 1px solid #D2D8EA;
+// 	border-radius: 12px;
+// }
+
+// .debt-hybrid-fund {
+// 	background-color: #F0F6FF;
+// 	padding: 10px;
+// 	border-radius: 8px;
+// }
+
+// .tenure-period {
+// 	border-right: 1px solid rgba(210, 216, 234, 1);
+// }
+
+// .result-tenure {
+// 	margin-top: 20px;
+// 	width: 90%;
+// }
+
+// .close-btn-section {
+// 	position: relative;
+// 	left: 523px;
+// 	top: -26px;
+// }
+
+// .filter-edit {
+// 	position: relative;
+// 	left: 1657%;
+// 	top: 11px;
+// }
+
+// .all-funds-card {
+// 	border-bottom: 2px solid rgb(201, 204, 201);
+// }
+
+// .all-funds-card-id {
+// 	padding: 12px 15px;
+// }
+
+// .button-item {
+// 	padding: 5px
+// }
+
+// .added-plan {
+// 	padding: 5px 25px;
+// }
+
+// .percentage-title {
+// 	min-width: 75px;
+// }
+
+// .percentage-title-fund {
+// 	outline: none;
+// 	border: none;
+// 	text-align: center;
+// 	max-width: 35px;
+// }
+// .wrapper-fund{
+// 	gap:12px; margin-top:36px;
+// }

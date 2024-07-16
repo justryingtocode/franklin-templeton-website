@@ -1,0 +1,367 @@
+<div id="page-content" class="bg-img">
+    <!-- start page breadcrumb block -->
+    <div class="FT-breadcrumb d-md-block d-none">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Locations</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="FT-location pt-5">
+        <div class="container">
+            <div class="FT-title-medium mb-md-5 mb-3 text-blue text-bold">Locate / Contact Us</div>
+            <div class="mb-3">
+                We are now on WhatsApp! If you wish to make transactions, request account statements, get your service
+                queries answered & for information on all our products, message 'Hi' on the below shared numbers and get
+                started.
+            </div>
+        </div>
+        <div class="location-map" id="location-dark-color">
+            <div class="container">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                            data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                            aria-selected="true">Investors</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                            data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane"
+                            aria-selected="false">Distributors</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                        tabindex="0">
+                          <div class="">
+                            <div class="bg-white box-shadow" id="location-dark-color"> 
+                                <h3 class="mb-2" id="location-tital">Investors</h3>
+                                <div class="text-small">8 am to 9 pm (Except Sundays)</div>
+                                <div class="d-flex">
+                                    <img src="assets/images/footer-pages/Phone-sm.svg">
+                                    <div>
+                                        1800 258 4255/ 1800 424 4255
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <img src="assets/images/footer-pages/whatsapp-sm.svg">
+                                    <div>
+                                        9876543209
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <img src="assets/images/footer-pages/Envelope.svg">
+                                    <div>
+                                        service@franklintempleton.com
+                                    </div>
+                                </div>
+                                <section class="text-start mt-4">
+                                    <div>
+                                        <button type="button" class="btn btn-outline-primary d-none d-md-block location-btn" data-bs-toggle="modal" data-bs-target="#callBack">Request a call back</button>
+                                        <button type="button" class="btn btn-outline-primary d-md-none location-btn" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Request a call back</button>
+                                        <!-- <a href="#" class="btn btn-primary">Invest Now</a> -->
+                                    </div>
+                                </section>
+                            </div>
+                          </div>
+                     
+                    </div>
+                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                        tabindex="0">
+                        <div class="row">
+                            <div class="bg-white box-shadow" id="location-dark-color">
+                                <h3 id="location-tital">Distributors</h3>
+                                <div class="text-small">9 am to 6 pm (Weekdays) and 9 am to 12 pm (Saturdays)</div>
+                                <div class="d-flex">
+                                    <img src="assets/images/footer-pages/Phone-sm.svg">
+                                    <div>
+                                        1800 258 4255/ 1800 424 4255
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <img src="assets/images/footer-pages/whatsapp-sm.svg">
+                                    <div>
+                                        9876543209
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <img src="assets/images/footer-pages/Envelope.svg">
+                                    <div>
+                                        service@franklintempleton.com
+                                    </div>
+                                </div>
+                                <section class="text-start mt-4">
+                                    <div>
+                                        <button type="button" class="btn btn-outline-primary location-btn d-none d-md-block" data-bs-toggle="modal" data-bs-target="#exampleModal"> I'm Interested</button>
+                                        <button type="button" class="btn btn-outline-primary location-btn d-md-none" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasBottomLocate" aria-controls="offcanvasBottomLocate">I'm Interested</button>
+                                        <!-- <a href="#" class="btn btn-primary">Invest Now</a> -->
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="container">
+            <div class="FT-title-small">Find a branch</div>
+            <div class="category-btns my-4" id="btn-dark">
+                <ul class="location-branch-btn">
+                    <li [class.active]="selectedCategory === 'All'" (click)="selectCategory('All')" class="">All</li>
+                    <li [class.active]="selectedCategory === 'FT Branches'" (click)="selectCategory('FT Branches')"
+                        class="">FT Branches</li>
+                    <li [class.active]="selectedCategory === 'CAMS'" (click)="selectCategory('CAMS')" class="">CAMS</li>
+                </ul>
+            </div>
+            <div class="mb-4">
+                <select class="form-select" aria-label="Default select example" (change)="stateChange($event)">
+                    <option [selected] = "selectedState === 'All'" value="All">All States</option>
+                    <option *ngFor="let item of stateArray" value="{{item}}" [selected] = "selectedState === '{{item}}'">{{item}}</option>
+                </select>
+                <select class="form-select" aria-label="Default select example" (change)="cityChange($event)">
+                    <option [selected] = "selectedCity === 'All'" value="All">All Cities</option>
+                    <option *ngFor="let item of cityArray" value="{{item}}" [selected] = "selectedCity === '{{item}}'">{{item}}</option>
+                </select>
+                <button type="button" class="btn btn-primary mx-3 loca-serch-btn" (click)="btnSearchClick()">Search</button>
+                <button type="button" class="btn btn-outline-primary" (click)="loadLocation()">Reset</button>      
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6 col-md-6 col-12" *ngFor="let item of locationArray">
+                    <div class="bg-white box-shadow" id="location-dark-color">
+                        <h3 id="location-tital">{{item.title}}</h3>
+                        <div class="text-big mb-3">{{item.subtitle}}</div>
+                        <div class="d-flex mb-3">
+                            <img src="assets/images/footer-pages/whatsapp-sm.svg">
+                            <div>
+                                {{item.phone}}
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <img src="assets/images/footer-pages/MapPin.svg">
+                            <div>
+                                {{item.address}}
+                            </div>
+                        </div>
+                        <div class="mt-4 text-start fw-bold">
+                            <a href="">Open With Map <i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-6 col-md-6 col-12">
+
+                    <div class="bg-white box-shadow" id="location-dark-color">
+                        <h3 id="location-tital"> Mumbai</h3>
+                        <div class="text-big mb-3">Franklin Templeton</div>
+                        <div class="d-flex mb-3">
+                            <img src="assets/images/footer-pages/whatsapp-sm.svg">
+                            <div>
+                                1800 258 4255/ 1800 424 4255
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <img src="assets/images/footer-pages/MapPin.svg">
+                            <div>
+                                Shop No. 3 and 4, Ground Floor, Maharshi Shivpad Complex, Plot No. 262, West High Court
+                                Road, Bajaj Nagar - 440 010
+                            </div>
+                        </div>
+                        <div class="mt-4 text-start fw-bold">
+                            <a href="">Open With Map <i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+
+                    <div class="bg-white box-shadow" id="location-dark-color">
+                        <h3 id="location-tital">Pune</h3>
+                        <div class="text-big mb-3">Franklin Templeton</div>
+                        <div class="d-flex mb-3">
+                            <img src="assets/images/footer-pages/whatsapp-sm.svg">
+                            <div>
+                                1800 258 4255/ 1800 424 4255
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <img src="assets/images/footer-pages/MapPin.svg">
+                            <div>
+                                Shop No. 3 and 4, Ground Floor, Maharshi Shivpad Complex, Plot No. 262, West High Court
+                                Road, Bajaj Nagar - 440 010
+                            </div>
+                        </div>
+                        <div class="mt-4 text-start fw-bold">
+                            <a href="">Open With Map <i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+
+                    <div class="bg-white box-shadow" id="location-dark-color">
+                        <h3 id="location-tital">Chandigarh</h3>
+                        <div class="text-big mb-3">Franklin Templeton</div>
+                        <div class="d-flex mb-3">
+                            <img src="assets/images/footer-pages/whatsapp-sm.svg">
+                            <div>
+                                1800 258 4255/ 1800 424 4255
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <img src="assets/images/footer-pages/MapPin.svg">
+                            <div>
+                                Shop No. 3 and 4, Ground Floor, Maharshi Shivpad Complex, Plot No. 262, West High Court
+                                Road, Bajaj Nagar - 440 010
+                            </div>
+                        </div>
+                        <div class="mt-4 text-start fw-bold">
+                            <a href="">Open With Map <i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+
+                    <div class="bg-white box-shadow" id="location-dark-color">
+                        <h3 id="location-tital">Jaipur</h3>
+                        <div class="text-big mb-3">Franklin Templeton</div>
+                        <div class="d-flex mb-3">
+                            <img src="assets/images/footer-pages/whatsapp-sm.svg">
+                            <div>
+                                1800 258 4255/ 1800 424 4255
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <img src="assets/images/footer-pages/MapPin.svg">
+                            <div>
+                                Shop No. 3 and 4, Ground Floor, Maharshi Shivpad Complex, Plot No. 262, West High Court
+                                Road, Bajaj Nagar - 440 010
+                            </div>
+                        </div>
+                        <div class="mt-4 text-start fw-bold">
+                            <a href="">Open With Map <i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+
+                    <div class="bg-white box-shadow" id="location-dark-color">
+                        <h3 id="location-tital">Chennai</h3>
+                        <div class="text-big mb-3">Franklin Templeton</div>
+                        <div class="d-flex mb-3">
+                            <img src="assets/images/footer-pages/whatsapp-sm.svg">
+                            <div>
+                                1800 258 4255/ 1800 424 4255
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <img src="assets/images/footer-pages/MapPin.svg">
+                            <div>
+                                Shop No. 3 and 4, Ground Floor, Maharshi Shivpad Complex, Plot No. 262, West High Court
+                                Road, Bajaj Nagar - 440 010
+                            </div>
+                        </div>
+                        <div class="mt-4 text-start fw-bold">
+                            <a href="">Open With Map <i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="text-center pt-5">
+                    <button class="btn btn-outline-primary">Load more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!----request a call back-->
+
+<div class="modal fade modal-body-head" id="callBack" tabindex="-1" aria-labelledby="callBackLabel" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="callBackLabel">Share your details and we will guide you in your investment
+                    journey.</div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <app-call-back-form></app-call-back-form>         
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-bottom sort-bottom offcanvas-head" tabindex="-1" id="offcanvasBottom"
+    aria-labelledby="offcanvasBottomLabel"
+    >
+    <div class="offcanvas-header">
+        <div class="line"></div>
+        <div class="d-flex justify-content-between mt-4 w-100">
+            <div>
+                <div class="modal-title custom-modal-title" id="callBackLabel">Request a call back</div>
+            </div>
+            <div class="text-end">
+                <div type="button" class="text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><img src="assets/images/general/Frame1000009207.svg"></div>
+            </div>
+        </div>        
+    </div>
+    <div class="offcanvas-body small">
+        <div class="modal-body">
+            <app-call-back-form [isSmall]="true"></app-call-back-form>
+        </div>
+    </div>
+</div>
+
+<!-----i'm interested-->
+
+  <div class="modal fade modal-body-head" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+            <div class="text-center w-100">
+                <h5 class="modal-title" id="exampleModalLabel">I'm Interested</h5>
+            </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <app-imintrestedform></app-imintrestedform>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-bottom sort-bottom offcanvas-head"  tabindex="-1" id="offcanvasBottomLocate"
+    aria-labelledby="offcanvasBottomLabel"
+    >
+    <div class="offcanvas-header">
+        <div class="line"></div>
+        <div class="d-flex justify-content-between mt-4 w-100" *ngIf="!getAlert">
+            <div>
+                <div class="modal-title custom-modal-title" id="callBackLabel" >I’m Interested</div>
+                <div class="mt-1 modal-subtitile">Please enter your details</div>
+            </div>
+            <div class="text-end">
+                <div type="button" class="text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><img src="assets/images/general/Frame1000009207.svg"></div>
+            </div>
+        </div>        
+    </div>
+    <div class="offcanvas-body small">
+        <app-imintrestedform [isSmall]="true"></app-imintrestedform>
+        <div class="container row gx-3 text-center imintrestedform"  *ngIf="getAlert">
+            <img src="assets/images/general/check_circle.svg"
+                class="checked-img mt-4 mb-2 check_circle-img">
+            <span  class="fontResize Thankyou-request"><strong>Thankyou! your request has been registered. A distributor will
+                    contact you within 24 business hours.</strong></span>
+        </div>
+    </div>
+  </div>
+
+

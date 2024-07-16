@@ -1,0 +1,163 @@
+.mr-0 {
+  margin-right: 0 !important;
+}
+
+.custom-toggle {
+  display: inline-block;
+  cursor: pointer;
+
+  label {
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin-bottom: 0rem !important;
+  }
+
+
+  .toggle-label {
+    height: 34.01px;
+    width: 91.56px;
+    position: relative;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 19.45px;
+    color: #FFFFFF;
+    border-radius: 20px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+
+    input {
+      display: none;
+    }
+  }
+
+  .slider {
+    position: absolute;
+    top: 3.88px;
+    height: 23px;
+    width: 23px;
+    content: "";
+    z-index: 3;
+    border-radius: 50%;
+    transition: left 0.3s, background-color 0.3s;
+  }
+
+  .toggle-label.inactive .slider {
+    left: calc(100% - 26px);
+    background-color: white;
+  }
+
+  .toggle-label.active .slider {
+    left: 3px;
+    background-color: white;
+  }
+
+  /* Text style */
+  .toggle-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: inherit;
+    text-align: center;
+    // font-weight: bold;
+    color: white;
+    transition: color 0.3s, left 0.3s;
+  }
+
+  .toggle-label.active .toggle-text {
+    color: white;
+    left: 8px;
+  }
+
+  .toggle-label.inactive .toggle-text {
+    color: white;
+    left: -11px;
+  }
+
+  /* Background color of the outer div */
+  .toggle-label.active {
+    background-color: #28A745;
+  }
+
+  .toggle-label.inactive {
+    background-color: #DC3545;
+  }
+}
+
+.frequency-label {
+  background: #F0F6FF !important;
+  color: var(--blue) !important;
+}
+
+.cart {
+  font-size: 1rem;
+}
+
+.graph-table-btns {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #DDEAFF;
+  display: inline-block;
+  margin-bottom: 32px;
+
+  .btn {
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: -0.42px;
+    box-shadow: none;
+
+    &.active {
+      background: var(--blue);
+      color: #fff;
+    }
+  }
+}
+
+.installment {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.tooltip-box {
+  margin-left: 5px;
+}
+
+.info-icon2-img {
+  width: 18px;
+}
+
+.dark-info-icon {
+  width: 14px;
+  position: relative;
+}
+
+.tenure-data {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.dark-mobile {
+  width: 14px;
+}
+
+.percentage-record {
+  margin-top: 11px;
+  border-radius: 20px;
+  width: 92px;
+}
+
+.percentage-recorddate {
+  border-radius: 20px;
+}
+
+.inputState {
+  background: none !important;
+  box-shadow: none;
+  padding: 1px;
+}

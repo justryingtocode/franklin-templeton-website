@@ -1,0 +1,64 @@
+{
+    "userTypes": [
+        {
+            "label": "Investor",
+            "isActive": true,
+            "link":"/"
+        },
+        {
+            "label": "Distributor",
+            "isActive": false,
+            "link":"/distributor"
+        }
+    ],
+    "menuItems": [
+        {
+            "label": "About us",
+            "id": "about-us",
+            "subItems": [
+                "Franklin Templeton Investments",
+                "Franklin Templeton India",
+                "Reach for Better",
+                "Global Offices",
+                "CSR Initiatives India",
+                "Business Continuity Efforts in Response to Coronavirus",
+                "Franklin Resources"
+            ]
+        },
+        {
+            "label": "Downloads",
+            "id": "downloads",
+            "subItems": [
+                "Fund Documents",
+                "Fund Literature",
+                "Forms and Instructions",
+                "Updates",
+                "Disclosure Documents"
+            ]
+        }
+    ],
+    "otherLinks": [
+        {
+            "label": "Reports",
+            "id": "reports",
+            "route":"/reports"
+        },
+        {
+            "label": "Feedback",
+            "id": "headerOtherlink"
+        }
+    ],
+    "countrySelector": {
+        "label": "Country Selector",
+        "flagImage": "assets/images/general/india-flag.svg",
+        "subItems": [
+            {
+                "label": "India",
+                "flagImage": "assets/images/general/india-flag.svg"
+            },
+            {
+                "buttonLabel": "Choose Country"
+            }
+        ]
+    }
+}

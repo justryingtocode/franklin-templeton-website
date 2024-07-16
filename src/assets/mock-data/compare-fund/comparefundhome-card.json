@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "cardTitle": "Franklin Build India Fund1",
+        "investors": "1.35 lakh",
+        "aum": "3242 Cr",
+        "annualisedReturns": "16.09%"
+    },
+    {
+        "id": 2,
+        "cardTitle": "Franklin Build India Fund2",
+        "investors": "1.35 lakh",
+        "aum": "3242 Cr",
+        "annualisedReturns": "16.09%"
+      },
+      {
+        "id": 3,
+        "cardTitle": "Franklin Build India Fund3",
+        "investors": "1.35 lakh",
+        "aum": "3242 Cr",
+        "annualisedReturns": "16.09%"
+      },
+      {
+        "id": 4,
+        "cardTitle": "Franklin Build India Fund4",
+        "investors": "1.35 lakh",
+        "aum": "3242 Cr",
+        "annualisedReturns": "16.09%"
+      }
+]

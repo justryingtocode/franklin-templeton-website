@@ -1,0 +1,138 @@
+.FT-performance .graph-block .position-absolute {
+    left: -75px;
+    transform: rotate(271deg);
+    top: calc(50% - 29px);
+    @media(max-width:575.98px){
+        left: -39px;
+        top: calc(50% - 0px);
+    }
+}
+
+
+#SIP-tab-pane{
+  .performance-head{
+     padding: 16px 10px; 
+     display: flex;
+      justify-content: space-around;
+      ul{
+        li{
+            app-date-picker{
+                padding: 6px 7px;
+            }
+        }
+      }
+
+    .left-items{
+        // width:100%;
+        // margin: 0 auto;
+        // display: flex;
+        // justify-content: space-around;
+        // // background-color: red;
+        // li{
+        //     list-style: none;
+        // }
+    }
+  }
+}
+
+@media (max-width:600px) {    
+    #SIP-tab-pane{
+        .performance-head{
+           padding: 16px 10px; 
+           display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            ul{
+                li{
+                    app-date-picker{
+                        padding: 6px 5px;
+                    }
+                }
+              }
+        }  
+              
+    }
+}
+
+@media (max-width:450px) {
+    #SIP-tab-pane{
+        .performance-head{
+            ul{
+                li{
+                    app-date-picker{
+                        padding: 6px 0px;
+                    }
+                }
+              }
+        }
+    }
+}
+
+// Meadia Queary: 
+
+@media(min-width:805px) and (max-width:1055px) {
+
+    .tab-content{
+        .tab-pane{
+            .performance-head{
+                .left-items{
+                    li{
+                        min-width: 135px;
+                        .input-box{
+                            margin-left: 0px;
+                            width: 140px;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #SIP-tab-pane{
+        .performance-head{
+
+        }
+    }
+}
+
+.FT-performance .tab-content {
+ padding: 0px;
+}
+
+.FT-empanel .btn-options .btn {
+    width: 210px;
+    padding: 10px;
+    height: auto
+}
+.FT-performance .table thead th {
+    min-width: 141px;
+}
+
+@media (max-width:767.98px){
+    .FT-performance .table thead th, .FT-performance .table thead td, .FT-performance .table thead th.text-bold, .FT-performance .table tbody th, .FT-performance .table tbody td, .FT-performance .table tbody th.text-bold {
+      min-width: 96px;
+    }
+
+    .FT-empanel h2 {
+        padding-top: 14px;
+    }
+    .invest-register {
+        font-size: 0.875rem;
+    }
+}
+
+
+//
+
+.share-menu-twitter {
+	padding-top: 28px;
+  }
+  
+  .fund-AUM {
+	font-weight: 600;
+  }
+  
+  .share-menu-twitter-fund {
+	white-space: nowrap;
+  }
+   

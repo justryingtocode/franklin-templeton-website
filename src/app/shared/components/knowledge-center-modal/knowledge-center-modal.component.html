@@ -1,0 +1,215 @@
+<div class="dropdown-menu show" >
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active fontResize" id="home-tab" data-bs-toggle="tab"
+                data-bs-target="#home-tab-pane" type="button" role="tab"
+                aria-controls="home-tab-pane" aria-selected="true">Open Learning</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link fontResize" id="profile-tab" data-bs-toggle="tab"
+                data-bs-target="#profile-tab-pane" type="button" role="tab"
+                aria-controls="profile-tab-pane" aria-selected="false">Franklin Templeton
+                Academy</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link fontResize" id="contact-tab" data-bs-toggle="tab"
+                data-bs-target="#contact-tab-pane" type="button" role="tab"
+                aria-controls="contact-tab-pane" aria-selected="false">Market Insights</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <!---for open learniing-->
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
+            aria-labelledby="home-tab" tabindex="0">
+            <div class="mb-4">
+                <h3 class="fontResize">Categories</h3>
+              
+        <!-- frankly.component.html -->
+        <div>
+            <div class="form-check custom-check" *ngFor="let checkbox of checkboxes" >
+            <input class="form-check-input" type="checkbox" [routerLink]="checkbox.link" [id]="checkbox.id" (click)="toggleCheckbox(checkbox)" [checked]="checkbox.isChecked">
+            <label class="form-check-label fontResize" [for]="checkbox.id">{{ checkbox.label }}</label>
+            </div>
+        </div>
+
+
+
+                  
+                <!-- <div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check1"
+                            checked>
+                        <label class="form-check-label" for="check1">
+                            Mutual Funds
+                        </label>
+                    </div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check2">
+                        <label class="form-check-label" for="check2">
+                            Women & Investing
+                        </label>
+                    </div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check3">
+                        <label class="form-check-label" for="check3">
+                            Child’s future
+                        </label>
+                    </div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check4">
+                        <label class="form-check-label" for="check4">
+                            Retirement planning
+                        </label>
+                    </div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check5">
+                        <label class="form-check-label" for="check5">
+                            Category 1
+                        </label>
+                    </div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="E-Booklest">
+                        <label class="form-check-label" for="E-Booklest">
+                            E-Booklest
+                        </label>
+                    </div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check6">
+                        <label class="form-check-label" for="check6">
+                            Blog
+                        </label>
+                    </div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check7">
+                        <label class="form-check-label" for="check7">
+                            Podcast
+                        </label>
+                    </div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check8">
+                        <label class="form-check-label" for="check8">
+                            Frankly Speaking
+                        </label>
+                    </div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="Investment-Glossary">
+                        <label class="form-check-label" for="Investment-Glossary">
+                            Investment Glossary
+                        </label>
+                    </div>
+                </div> -->
+
+            </div>
+
+            <!-- <div>
+                <h3>Sub Categories</h3>
+
+                <div>
+                    <div class="form-check custom-check" *ngFor="let checkbox of subcheckboxe">
+                        <input class="form-check-input" type="checkbox" [id]="checkbox.id" (click)="toggleSubCheckbox(checkbox)" [checked]="checkbox.isChecked">
+                        <label class="form-check-label" [for]="checkbox.id">{{ checkbox.label }}</label>
+                    </div>
+                </div>
+                
+
+                <div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check9">
+                        <label class="form-check-label" for="check9">
+                            Most Viewed
+                        </label>
+                    </div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check10">
+                        <label class="form-check-label" for="check10">
+                            Top Rated
+                        </label>
+                    </div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check11">
+                        <label class="form-check-label" for="check11">
+                            Trending
+                        </label>
+                    </div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="check12">
+                        <label class="form-check-label" for="check12">
+                            Content of the week
+                        </label>
+                    </div>
+                </div>
+            </div> -->
+            
+        </div>
+
+        <!----for franklin templton academy-->
+        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel"
+        aria-labelledby="home-tab" tabindex="0">
+            <div class="mb-4">
+                <h3 class="fontResize">Categories</h3>
+
+                <div>
+                    <div class="form-check custom-check" *ngFor="let checkbox of checkboxeFranklin">
+                        <input class="form-check-input" type="checkbox" [id]="checkbox.id" (click)="toggleFranklinCheckbox(checkbox)" [checked]="checkbox.isChecked">
+                        <label class="form-check-label fontResize" [for]="checkbox.id">{{ checkbox.label }}</label>
+                    </div>
+                </div>
+
+                <!-- <div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="about_Us"
+                            checked>
+                        <label class="form-check-label" for="about_Us">
+                            About us
+                        </label>
+                    </div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="explore_Courses">
+                        <label class="form-check-label" for="explore_Courses">
+                            Explore Courses
+                        </label>
+                    </div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="join_For_Free">
+                        <label class="form-check-label" for="join_For_Free">
+                            Join For Free
+                        </label>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <!---for market insight-->
+        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel"
+        aria-labelledby="home-tab" tabindex="0">
+            <div class="mb-4">
+                <h3 class="fontResize">Categories</h3>
+
+                <div>
+                    <div class="form-check custom-check" *ngFor="let checkbox of checkboxeMarket">
+                        <input class="form-check-input" type="checkbox" [routerLink]="checkbox.link" [id]="checkbox.id" (click)="toggleMarketCheckbox(checkbox)" [checked]="checkbox.isChecked">
+                        <label class="form-check-label fontResize" [for]="checkbox.id">{{ checkbox.label }}</label>
+                    </div>
+                </div>
+
+
+                <!-- <div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="blogs"
+                            checked>
+                        <label class="form-check-label" for="blogs">
+                            Blogs
+                        </label>
+                    </div>
+                    <div class="form-check custom-check">
+                        <input class="form-check-input" type="checkbox" value="" id="latest_Commentaries">
+                        <label class="form-check-label" for="latest_Commentaries">
+                            Latest Commentaries 
+                        </label>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,49 @@
+.data-header {
+    padding: 10px 23px 10px 17px;
+}
+
+.modalTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 31px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #3C425D;
+}
+
+.img-with-tooltip .tooltip-block {
+    text-align: center;
+}
+
+@media (max-width: 767.98px) {
+    .FT-article-content {
+        padding-top: 40px;
+    }
+
+}
+
+
+#callBack {
+    margin-top: 12px;
+}
+
+.share-img {
+    width: 18px;
+}
+
+.share-img-dark {
+    width: 21px;
+    top: 4px;
+    position: relative;
+    left: 0px;
+}
+
+.modal-body-header {
+    margin-top: 135px;
+}
+
+.modal-content-head {
+    min-height: 460px;
+    z-index: 1000000;
+    max-height: fit-content;
+}

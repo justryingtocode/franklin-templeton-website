@@ -1,0 +1,16 @@
+<svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ion:cart-outline">
+<path id="Vector 265" d="M20 6.5H5L6.60714 7.5H18.9286L20 6.5Z" fill="url(#paint0_linear_2407_25772)"/>
+<path id="Vector" d="M7.25 20.75C7.66421 20.75 8 20.4142 8 20C8 19.5858 7.66421 19.25 7.25 19.25C6.83579 19.25 6.5 19.5858 6.5 20C6.5 20.4142 6.83579 20.75 7.25 20.75Z" stroke="#3769FF" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M17.75 20.75C18.1642 20.75 18.5 20.4142 18.5 20C18.5 19.5858 18.1642 19.25 17.75 19.25C17.3358 19.25 17 19.5858 17 20C17 20.4142 17.3358 20.75 17.75 20.75Z" stroke="#3769FF" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M1.25 4.25H4.25L6.5 17H18.5" stroke="#3769FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M6.5 14H18.1925C18.2792 14.0001 18.3633 13.9701 18.4304 13.9151C18.4975 13.8601 18.5434 13.7836 18.5605 13.6986L19.9105 6.94859C19.9214 6.89417 19.92 6.838 19.9066 6.78414C19.8931 6.73029 19.8679 6.68009 19.8327 6.63717C19.7975 6.59426 19.7532 6.55969 19.703 6.53597C19.6528 6.51225 19.598 6.49996 19.5425 6.5H5" stroke="#3769FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_2407_25772" x1="9.03125" y1="7" x2="16.1815" y2="7.53472" gradientUnits="userSpaceOnUse">
+<stop stop-color="#583EE7"/>
+<stop offset="0.484375" stop-color="#0EA0E6"/>
+<stop offset="1" stop-color="#00B6AE"/>
+</linearGradient>
+</defs>
+</svg>

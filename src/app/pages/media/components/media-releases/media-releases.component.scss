@@ -1,0 +1,96 @@
+/// for add scroll horizontal
+.category-btns {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 20px;
+}
+
+.category-container {
+  display: inline-block;
+}
+
+/* WebKit-based browsers (Chrome, Safari) */
+.category-btns::-webkit-scrollbar {
+  height: 10px;
+}
+
+
+.category-btns::-webkit-scrollbar-track {
+  background-color: transparent;
+  /* Adjust as needed */
+}
+
+
+.search-result {
+  // padding: 8px;
+  border-radius: 8px;
+  // border: 1px solid #F2F4F7;
+  // background: #fff;
+  // box-shadow: 0px 0px 5px gray;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.48px;
+  position: absolute;
+  z-index: 999;
+  margin-top: 10px;
+  // opacity: 0;
+  // visibility: visible;
+
+  .inner {
+    width: 89%;
+    border-radius: 8px;
+    background: #fff;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-top: 5px;
+    // padding: 8px 16px;
+    box-shadow: 0px 0px 5px gray;
+
+    .funds-seach-title {
+      padding: 8px 10px;
+    }
+
+  }
+
+  .sub {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: -0.42px;
+    color: #595A6C;
+    position: relative;
+    margin-left: 8px;
+
+    .text-gray {
+      color: #8189A2
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--black);
+      margin-right: 8px;
+    }
+  }
+}
+
+.search:focus+.search-result {
+  opacity: 1;
+  visibility: visible;
+}
+
+//
+
+.share-menu-twitter {
+  position: relative;
+  z-index: 999999;
+}
+
+  .fund-AUM {
+    position: relative;
+    left: 93%;
+    top: -31px;
+  }

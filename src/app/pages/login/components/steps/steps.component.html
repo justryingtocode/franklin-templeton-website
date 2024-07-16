@@ -1,0 +1,69 @@
+<div class="">
+    <div class="accordion" id="accordionExample">
+        <div class="steps" id="stepHeader">
+            <!-- <progress id="progress" value=0 max=100></progress> -->
+            <div class="step-item d-flex flex-column active" data-bs-toggle="collapse" data-bs-target="#collapse1"
+                aria-expanded="true" aria-controls="collapse1" disabled>
+                <button class="step-button text-center" type="button">
+                    <span *ngIf="!stepperArray[0].hasTraversed" class="step-num">1</span>
+                    <img *ngIf="stepperArray[0].hasTraversed" src="assets/images/general/check_circle.svg">
+                </button>
+                <div class="step-title"
+                    [ngStyle]="{'color': stepperArray[0].hasTraversed ? 'rgb(0 132 125)' : ''}">Personal 
+                    Details
+                </div>
+            </div>
+            <div class="stip-line col-1 text-center">
+                <img *ngIf="!stepperArray[0].hasTraversed" src="assets/images/solutions/Line 976.png">
+                <img *ngIf="stepperArray[0].hasTraversed" src="assets/images/solutions/Line 9761.png">
+            </div>
+
+            <div class="step-item d-flex flex-column" data-bs-toggle="collapse" data-bs-target="#collapse2"
+                aria-expanded="false" aria-controls="collapse2">
+                <button class="step-button text-center collapsed" type="button" disabled>
+                    <span *ngIf="!stepperArray[1].hasTraversed" class="step-num">2</span>
+                    <img *ngIf="stepperArray[1].hasTraversed" src="assets/images/general/check_circle.svg">
+                </button>
+                <div class="step-title"
+                    [ngStyle]="{'color': stepperArray[1].hasTraversed ? 'rgb(0 132 125)' : ''}">Bank
+                    Details
+                </div>
+            </div>
+            <div class="stip-line col-1 text-center">
+                <img *ngIf="stepperArray[1].hasTraversed" src="assets/images/solutions/Line 9761.png">
+                <img *ngIf="!stepperArray[1].hasTraversed" src="assets/images/solutions/Line 976.png">
+            </div>
+            <div class="step-item d-flex flex-column" data-bs-toggle="collapse" data-bs-target="#collapse3"
+                aria-expanded="false" aria-controls="collapse3">
+                <button class="step-button text-center collapsed" type="button" disabled>
+                    <span *ngIf="!stepperArray[2].hasTraversed" class="step-num">3</span>
+                    <img *ngIf="stepperArray[2].hasTraversed" src="assets/images/general/check_circle.svg">
+                </button>
+                <div class="step-title" [ngStyle]="{'color': stepperArray[1].hasTraversed ? 'rgb(0 132 125)' : ''}"> Nomination
+                    Details</div>
+            </div>
+            
+        </div>
+        
+        <form class="empanel-steps-form">
+            <!-- stepper step one -->
+            <div id="collapse1" class="collapse1 collapse show" aria-labelledby="heading1"
+                data-bs-parent="#accordionExample">
+               <app-step1 (backToStepper)="backTosteps($event)"></app-step1>
+            </div>
+
+            <!-- stepper step two -->
+            <div id="collapse2" class="collapse2 collapse" aria-labelledby="heading2"
+                data-bs-parent="#accordionExample">
+                <app-step2 (backToStepper)="backTosteps($event)"></app-step2>  
+            </div>
+
+            <!-- stepper step three -->
+            <div id="collapse3" class="collapse3 collapse" aria-labelledby="heading3"
+                data-bs-parent="#accordionExample">
+                <app-step3 (backToStepper)="backTosteps($event)"></app-step3>  
+            </div>
+            
+        </form>
+    </div>
+</div>

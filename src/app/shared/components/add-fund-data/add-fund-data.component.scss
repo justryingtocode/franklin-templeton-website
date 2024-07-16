@@ -1,0 +1,369 @@
+.watchlist-funds.empty-watchlist .watchlist-box {
+    box-shadow: none;
+    padding: 10px;
+}
+
+.fund-block {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 14px 27px;
+}
+
+.modalData {
+    padding: 20px;
+}
+
+.filterFundsColorView {
+    background: #F8F8F8;
+}
+
+.forFilterColorBy {
+    color: black;
+    margin-right: 4px;
+    font-size: 1rem;
+}
+
+
+@media (max-width: 991.98px) {
+    .FT-all-funds {
+        background: #FFFFFF;
+        padding-top: 0px;
+
+        .filter-options {
+
+            // background: #FFFFFF;
+            .form-group {
+                margin-bottom: 0px;
+                padding-left: 15px;
+                margin-right: 23px
+            }
+
+            .make-tag-for-all-page {
+                display: none;
+            }
+
+            .form-group {
+                padding-right: 40px;
+            }
+        }
+    }
+
+    .tab-bar-container {
+        padding: 0px 20px;
+
+        .All-tabBar {
+            #myTab::-webkit-scrollbar {
+                display: none;
+            }
+
+            #myTab {
+                -ms-overflow-style: none;
+                /* IE and Edge */
+                scrollbar-width: none;
+                /* Firefox */
+                flex-wrap: nowrap;
+                overflow: auto;
+
+                .nav-item {
+                    .nav-link {
+                        font-size: 0.875rem;
+                        padding-bottom: 4px;
+                        min-width: 114px;
+                        font-weight: 100;
+                    }
+                }
+            }
+        }
+    }
+
+    .FT-all-funds .search-result .inner {
+        width: 99%;
+    }
+
+
+}
+
+
+.FT-all-funds {
+    .filter-options {
+        .make-tag-for-all-page {
+            position: relative;
+            top: 20%;
+            left: -20px;
+        }
+
+        .form-group {
+            padding-right: 0px;
+        }
+    }
+
+}
+
+
+.scrollable-tabs {
+    // width: 100%; /* Set a fixed width or a percentage */
+    overflow-x: auto;
+    white-space: nowrap;
+    /* Prevent button wrapping to the next line */
+
+}
+
+.tab-border-line {
+    li button.active {
+        background-color: unset !important;
+        color: unset !important;
+        border-bottom: 1px solid blue !important;
+        border-radius: 0px !important;
+    }
+}
+
+.nav-tabs {
+    display: inline-flex;
+    /* Make sure the tabs stay in one line */
+}
+
+
+/* Style scrollbar for WebKit-based browsers */
+.scrollable-tabs::-webkit-scrollbar {
+    width: 1px !important;
+    /* Width of the scrollbar */
+    height: 7px !important;
+}
+
+.scrollable-tabs::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    /* Color of the scrollbar thumb */
+}
+
+.search-result1 {
+    // padding: 8px;
+    width: 88%;
+    border-radius: 8px;
+    border: 1px solid #F2F4F7;
+    background: #fff;
+    // box-shadow: 0px 0px 5px gray;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.48px;
+    position: absolute;
+    z-index: 999;
+    margin-top: 10px;
+    opacity: 0;
+    visibility: hidden;
+
+    .inner1 {
+        // width: 89%;
+        border-radius: 8px;
+        max-height: 400px;
+        overflow-y: auto;
+        padding-top: 5px;
+        // padding: 8px 16px;
+        box-shadow: 0px 0px 5px gray;
+
+        .funds-seach-title1 {
+            padding: 8px 10px;
+        }
+
+    }
+
+    .sub1 {
+        display: inline-block;
+        font-size: 0.875rem;
+        font-weight: 400;
+        letter-spacing: -0.42px;
+        color: #595A6C;
+        position: relative;
+        margin-left: 8px;
+
+        .text-gray {
+            color: #8189A2
+        }
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--black);
+            margin-right: 8px;
+        }
+    }
+}
+
+.search:focus+.search-result1 {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cardAdd {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #3769FF;
+}
+
+::ng-deep app-fund-return {
+    .FT-all-funds {
+        padding-bottom: 0px;
+    }
+
+}
+
+.form-group.custom-class {
+    max-width: 800px;
+    width: 450px;
+}
+
+.rang-slider-block {
+    .ngx-slider {
+        margin: 11px 0 11px;
+
+        .ngx-slider-bar {
+            height: 5px;
+            border-radius: 5px;
+
+        }
+
+        .ngx-slider-pointer {
+            height: 20px;
+            width: 20px;
+            background: #fff;
+            border: 1px solid var(--blue);
+            ;
+            top: -9px;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        .ngx-slider-selection {
+            background: var(--blue);
+        }
+
+        .ngx-slider-bubble {
+            display: none;
+        }
+    }
+
+    &.one-side {
+        .ngx-slider {
+            width: calc(100% - 16px)
+        }
+
+        .ngx-slider-pointer-min {
+
+            display: none !important;
+
+        }
+
+        .ngx-slider .ngx-slider-pointer {
+            margin-left: -2px;
+        }
+    }
+}
+
+.add-fund {
+    padding: 4px 31px;
+}
+
+.AUM-size {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.fundsForSearch {
+    position: relative;
+    z-index: 999999;
+}
+
+.closebutton {
+    position: relative;
+    top: 16%;
+    right: 162%;
+    width: 15px;
+}
+
+.sorted {
+    padding-left: 10px;
+    min-width: 96px
+}
+
+.add-fund-data {
+    overflow: hidden;
+}
+
+.Reset-tab {
+    margin-bottom: 3px;
+}
+
+.fund-size {
+    padding: 10px;
+}
+
+.Unique-investor {
+    width: 88% !important;
+}
+
+.fundsCard {
+    padding-top: 4px;
+    padding: 10px;
+}
+
+.alert-index {
+    z-index: 10000;
+}
+
+.Popularity {
+    font-size: 15px;
+    margin-top: 3px;
+}
+
+.low-return {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.Asset-category {
+    height: 330px;
+    overflow-y: auto;
+}
+
+.sorted-fund {
+    font-weight: 600;
+}
+
+.high-font {
+    font-size: 15px;
+}
+
+.modal-heads {
+    background: #F0F6FF;
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+}
+
+.modal-body-head {
+    height: 100%;
+    padding: 0px 14px;
+}
+
+.Cancel-data {
+    width: 233px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #FFFFFF;
+}
+
+.Apply-button {
+    width: 233px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.fund-performance{
+    padding: 4px 23px;
+}

@@ -1,0 +1,184 @@
+.main-val-tbl {
+    text-align: center;
+
+    thead th {
+        font-size: 1rem !important;
+    }
+}
+
+.calculator-graph-box {
+    height: 320px;
+}
+
+.sip-top-year {
+    position: relative;
+    top: 25px;
+}
+
+
+.topup-data-tbl {
+    gap: 20px;
+}
+
+@media(max-width: 575px) {
+    .calculator-graph-box {
+        height: 220px;
+    }
+}
+
+@media(max-width: 650px) {
+    .topup-data-tbl {
+        flex-direction: column;
+    }
+
+    .for-sip-recommended-fund {
+        font-size: 0.75rem;
+    }
+
+    .sip-top-year {
+        top: 48px;
+    }
+
+    .mb-6 {
+        padding-top: 60px;
+    }
+}
+
+.for-sip-recommended-fund {
+    font-size: 1.188rem;
+}
+
+.graph-table-btns {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: #DDEAFF;
+    display: inline-block;
+    margin-bottom: 32px;
+
+    .btn {
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        letter-spacing: -0.42px;
+        box-shadow: none;
+
+        &.active {
+            background: var(--blue);
+            color: #fff;
+        }
+    }
+}
+
+.graph-color {
+    background: #A669CA
+}
+
+.value-investment {
+    background: #00847D
+}
+
+.table-color {
+    border-right: 1px solid #cacaca;
+}
+
+.Normal-sip {
+    border-left: 1px solid #cacaca;
+    border-right: 1px solid #cacaca;
+    border-bottom: 1px solid #cacaca;
+}
+
+.top-up-sip {
+    border-left: 1px solid #cacaca;
+    border-bottom: 1px solid #cacaca;
+
+}
+
+.without-top-up {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: -0.03em;
+    text-align: left;
+}
+
+.Recommended-build {
+    margin-top: 5px;
+}
+
+.Hybrid {
+    max-width: 322px;
+    width: 315px;
+}
+
+.hybrid-tags {
+    margin-bottom: auto;
+    margin-left: 19px;
+}
+
+.equity-risk {
+    white-space: nowrap;
+}
+
+.large-cap {
+    margin-bottom: auto;
+    margin-left: 0px !important;
+}
+
+.dropdown-img {
+    z-index: 1026;
+}
+
+.info-icon2-img {
+    left: -100px;
+}
+
+.Annualised-return {
+    vertical-align: super;
+}
+
+.Inception-font {
+    font-size: 0.813rem !important;
+}
+
+.investors-img {
+    vertical-align: sub;
+    padding-right: 0;
+}
+
+.Inception-since {
+    gap: 3px;
+    align-items: start;
+}
+
+.investors-wealth {
+    position: relative;
+    bottom: 3px;
+}
+
+.Yearly-return {
+    height: 320px;
+}
+
+.consectetur {
+    padding-left: 25px;
+    width: auto;
+}
+
+.AUM-risk {
+    gap: 3px;
+}
+
+.img-syle {
+    top: 0;
+}
+
+.Normal-swp {
+    border-spacing: 0px;
+    border-collapse: separate;
+}
+
+.fund-risk {
+    position: relative;
+    top: 2px;
+}

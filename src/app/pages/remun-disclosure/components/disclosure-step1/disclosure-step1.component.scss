@@ -1,0 +1,34 @@
+.form-container{
+    max-width:785px;
+    margin:0 auto;
+    }
+    .btn{
+        padding:10px 20px;
+        width:100% !important;
+        @media(min-width:576px){
+            width:507px
+        }
+    }
+    
+    @media only screen and (max-width: 1024px) {
+        .distributor-step2 {
+           margin-left: 0px !important;
+        }
+     }
+     //
+
+.share-menu-twitter {
+    color: #F04438;
+  }
+  
+  .fund-AUM {
+    margin-left: 91px
+  }
+  
+//   .share-menu-twitter-fund {
+//     margin-right: 10px;
+//   }
+  
+  .share-btn-fund {
+    flex-direction: column;
+  }

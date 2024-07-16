@@ -1,0 +1,15 @@
+<svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="teenyicons:tick-circle-solid" clip-path="url(#clip0_12006_7779)">
+<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 8.95001 1.2116 6.02494 3.36827 3.86827C5.52494 1.7116 8.45001 0.5 11.5 0.5C14.55 0.5 17.4751 1.7116 19.6317 3.86827C21.7884 6.02494 23 8.95001 23 12C23 15.05 21.7884 17.9751 19.6317 20.1317C17.4751 22.2884 14.55 23.5 11.5 23.5C8.45001 23.5 5.52494 22.2884 3.36827 20.1317C1.2116 17.9751 0 15.05 0 12ZM10.8437 16.922L17.4647 8.64507L16.2687 7.68827L10.6229 14.7431L6.624 11.4112L5.64267 12.5888L10.8437 16.9235V16.922Z" fill="url(#paint0_linear_12006_7779)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_12006_7779" x1="6.18125" y1="12" x2="17.206" y2="12.055" gradientUnits="userSpaceOnUse">
+<stop stop-color="#583EE7"/>
+<stop offset="0.484375" stop-color="#0EA0E6"/>
+<stop offset="1" stop-color="#00B6AE"/>
+</linearGradient>
+<clipPath id="clip0_12006_7779">
+<rect width="23" height="23" fill="white" transform="translate(0 0.5)"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,1868 @@
+<!-- start fund-more-details-->
+<div class="fd-tab-sections FT-fund-more-details block-border" id="more-details">
+    <div class="block-head">
+        <h3 class="fontResize">Other Fund Details</h3>
+    </div>
+    <h4 class="mb-0 px-36 fontResize">Fund Managers</h4>
+
+    <div class="bg-gradient managers">
+
+        <div class="manager-slider">
+            <ngx-slick-carousel [ngStyle]="{'padding-left': isMobileView ? '0px' : '10px'}" style="padding-right: 10px;"
+                class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                <div ngxSlickItem class="slide fontResize" *ngFor="let data of fundsManager">
+                    <div class="manager-block">
+                        <img src="assets/images/fund/manager1.png">
+                        <div>
+                            <div class="text-big addFontSize1 fontResize">{{data.name}}</div>
+                            <div class="removeFontSize1 fontResize">Managing this fund since {{data.effective}}</div>
+                            <a (click)="viewManagerFunds(data)"
+                                class="d-none d-md-block fundManagerFontSize1 fontResize" data-bs-toggle="modal"
+                                data-bs-target="#managed-fund-modal" href="#">View all funds managed by
+                                him/her <i class="bi bi-arrow-right"></i></a>
+                            <a (click)="viewManagerFunds(data)" class="d-md-none fontResize" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasBottom1" aria-controls="offcanvasBottom" href="#">View all
+                                funds managed by him/her <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+            </ngx-slick-carousel>
+        </div>
+    </div>
+
+    <div class="block-body">
+        <div class="row scheme-details">
+            <div class="col-md-6 col-12">
+                <h4 class="small-title fontResize">Scheme Details</h4>
+                <div class="padding-box">
+                    <div class="table-responsive table-bordered">
+                        <table class="table  table-striped">
+                            <tbody>
+                                <tr *ngFor="let data of scheme">
+                                    <td class="fontResize">{{data.data1}}</td>
+                                    <td class="small-cell fontResize">{{data.data2}}</td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <h4 class="small-title fontResize">Financial Ratio</h4>
+
+                <div class="padding-box">
+                    <div class="table-responsive table-bordered">
+                        <table class="table  table-striped">
+                            <tbody>
+                                <tr *ngFor="let data of Financial">
+                                    <td class="fontResize">{{data.data1}}</td>
+                                    <td class="fontResize">{{data.data2}}</td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block-body daily-navs">
+        <h4 class="small-title fontResize">Daily NAVs</h4>
+        <div class="padding-box">
+            <div class="row gx-0 daily-nav-table">
+                <div class="col-md-6 col-12">
+                    <div class="table-responsive">
+                        <table class="table table-success table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Plan</th>
+                                    <th scope="col">NAV</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of DailyNAVs">
+                                    <td class="fontResize">{{data.data1 ? data.data1 : data.label}}</td>
+                                    <td class="fontResize">{{data.data2 ? data.data2 : data.value}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12" *ngIf="!isMobileView">
+                    <div class="table-responsive">
+                        <table class="table table-success table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Plan</th>
+                                    <th scope="col">NAV</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of DailyNAVs">
+                                    <td class="fontResize">{{data.data3}}</td>
+                                    <td class="fontResize">{{data.data4}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="py-4">NAV (₹) as on - 12/06/2023</div>
+            <div class="text-center d-none d-md-block">
+                <a href="#" class="me-4" data-bs-toggle="modal" data-bs-target="#NAVModal"> <span
+                        class="link-test fontResize">Check historical NAV </span><i class="bi bi-chevron-right"></i></a>
+
+                <a href="#"> <span class="link-test">Set NAV alerts</span><i class="bi bi-chevron-right"></i></a>
+            </div>
+            <div class="text-center d-md-none">
+                <a href="#" class="me-4 fontResize" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom2"
+                    aria-controls="offcanvasBottom"> <span class="login-dark2">Check historical NAV</span> <i
+                        class="bi bi-chevron-right"></i></a>
+                <a href="#"><span class="login-dark2">Set NAV alerts</span> <i class="bi bi-chevron-right"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="block-body idcw-history">
+        <h4 class="small-title">IDCW History</h4>
+
+        <div class="padding-box">
+            <div class="table-responsive text-center">
+                <table class="table table-success table-striped stiky-head">
+                    <thead>
+                        <tr>
+                            <th scope="col">Plan</th>
+                            <th scope="col">Record Date</th>
+                            <th scope="col">Div Per Unit (₹)</th>
+                            <th scope="col">Record NAV (₹)</th>
+                            <th scope="col">Ex.Div Date</th>
+                            <th scope="col">Ex.Div NAV ()</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of IDCWHistory">
+                            <td>{{data.data1}}</td>
+                            <td>{{data.data2}}</td>
+                            <td>{{data.data3}}</td>
+                            <td>{{data.data4}}</td>
+                            <td>{{data.data5}}</td>
+                            <td>{{data.data6}}</td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-center mt-4  link-box">
+                <a href="#" class="me-4 d-none d-md-block more-details more-details-idcw" data-bs-toggle="modal"
+                    data-bs-target="#IDCWModal" (click)="closeModal()">
+                    <span class="link-text fontResize"> Check IDCW history</span> <i
+                        class="bi bi-chevron-right"></i></a>
+                <a href="#" class="me-4 d-md-none fontResize" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasBottom3" aria-controls="offcanvasBottom"> <span class="login-dark2">Check
+                        IDCW history</span><i class="bi bi-chevron-right"></i></a>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="block-body fund-documents">
+        <h4 class="small-title fontResize">Fund Documents</h4>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link fontResize active" id="nav-documents-tab" data-bs-toggle="tab"
+                data-bs-target="#nav-documents" type="button" role="tab" aria-controls="nav-documents"
+                aria-selected="true">Fund Documents</button>
+            <button class="nav-link fontResize" id="monthly-documents-tab" data-bs-toggle="tab"
+                data-bs-target="#monthly-documents" type="button" role="tab" aria-controls="monthly-documents"
+                aria-selected="false">Monthly Portfolio
+                Disclosure</button>
+            <button class="nav-link fontResize" id="yearly-documents-tab" data-bs-toggle="tab"
+                data-bs-target="#yearly-documents" type="button" role="tab" aria-controls="yearly-documents"
+                aria-selected="false">Half-Yearly Portfolio
+                Disclosure</button>
+            <button class="nav-link fontResize" id="fortnightly-documents-tab" data-bs-toggle="tab"
+                data-bs-target="#fortnightly-documents" type="button" role="tab" aria-controls="fortnightly-documents"
+                aria-selected="false">Fortnightly Portfolio Disclosure</button>
+        </div>
+        <div class="inner-container padding-box">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-documents" role="tabpanel"
+                    aria-labelledby="nav-documents-tab" tabindex="0">
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div class="fontResize">
+                                    <img src="assets/images/home/pdf.svg">
+                                    Disclosure of Portfolios-Monthly
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box">
+                                <div class="fontResize">
+                                    <img src="assets/images/home/pdf.svg">
+                                    Disclosure of Portfolios-Half Yearly
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box">
+                                <div class="fontResize">
+                                    <img src="assets/images/home/pdf.svg">
+                                    Fact Sheet
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box">
+                                <div class="fontResize">
+                                    <img src="assets/images/home/pdf.svg">
+                                    Scheme Information Document
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box">
+                                <div class="fontResize">
+                                    <img src="assets/images/home/pdf.svg">
+                                    Fact Sheet
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/pdf.svg">
+                                    Scheme Information Document
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/pdf.svg">
+                                    KIM form
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/pdf.svg">
+                                    Application Form
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center pt-3">
+                        <!-- <a href="#" data-bs-toggle="modal" data-bs-target="#documentModal">View all <i
+                                class="bi bi-chevron-right"></i></a> -->
+                        <a href="#"> <span class="link-text view-dark">View all documents</span> <i
+                                class="bi bi-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="monthly-documents" role="tabpanel"
+                    aria-labelledby="monthly-documents-tab" tabindex="0">
+
+                    <div class="tab-form mb-4 documents-monthly">
+                        <form>
+                            <div class="row gx-3">
+                                <div class="col">
+                                    <div class="date-group">
+                                        <app-date-picker (dateSelected)="dateSelectedFrom($event)"
+                                            [selectedDate]="defaultDateFrom"></app-date-picker>
+                                        <!-- <img src="assets/images/fund/calendar-outline.svg">
+                                        <input type="text" class="form-control" placeholder="From"
+                                            onfocus="(this.type='date')"> -->
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="date-group">
+                                        <app-date-picker (dateSelected)="dateSelectedTo($event)"
+                                            [selectedDate]="defaultDateTo"></app-date-picker>
+                                        <!-- <img src="assets/images/fund/calendar-outline.svg">
+                                        <input type="text" class="form-control" placeholder="To"
+                                            onfocus="(this.type='date')"> -->
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center pt-3">
+                        <!-- <a href="#" data-bs-toggle="modal" data-bs-target="#monthlyDocModal">View all <i
+                                class="bi bi-chevron-right"></i></a> -->
+                        <a href="#"> <span class="link-text view-dark">View all</span><i
+                                class="bi bi-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="yearly-documents" role="tabpanel" aria-labelledby="yearly-documents-tab"
+                    tabindex="0">
+                    <div class="tab-form mb-4 documents-monthly">
+                        <form>
+                            <div class="row gx-3">
+                                <div class="col">
+                                    <div class="date-group">
+                                        <app-date-picker (dateSelected)="dateSelectedFrom($event)"
+                                            [selectedDate]="defaultDateFrom"></app-date-picker>
+                                        <!-- <img src="assets/images/fund/calendar-outline.svg">
+                                        <input type="text" class="form-control" placeholder="From"
+                                            onfocus="(this.type='date')"> -->
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="date-group">
+                                        <app-date-picker (dateSelected)="defaultDateTo($event)"
+                                            [selectedDate]="defaultDateTo"></app-date-picker>
+                                        <!-- <img src="assets/images/fund/calendar-outline.svg">
+                                        <input type="text" class="form-control" placeholder="To"
+                                            onfocus="(this.type='date')"> -->
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center pt-3">
+                        <!-- <a href="#" data-bs-toggle="modal" data-bs-target="#monthlyDocModal">View all <i
+                                class="bi bi-chevron-right"></i></a> -->
+                        <a href="#"><span class="link-text view-dark">View all</span><i
+                                class="bi bi-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="fortnightly-documents" role="tabpanel"
+                    aria-labelledby="fortnightly-documents-tab" tabindex="0">
+                    <div class="tab-form mb-4 documents-monthly">
+                        <form>
+                            <div class="row gx-3">
+                                <div class="col">
+                                    <div class="date-group">
+                                        <app-date-picker (dateSelected)="dateSelectedFrom($event)"
+                                            [selectedDate]="defaultDateFrom"></app-date-picker>
+                                        <!-- <img src="assets/images/fund/calendar-outline.svg">
+                                        <input type="text" class="form-control" placeholder="From"
+                                            onfocus="(this.type='date')"> -->
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="date-group">
+                                        <app-date-picker (dateSelected)="dateSelectedTo($event)"
+                                            [selectedDate]="defaultDateTo"></app-date-picker>
+                                        <!-- <img src="assets/images/fund/calendar-outline.svg">
+                                        <input type="text" class="form-control" placeholder="To"
+                                            onfocus="(this.type='date')"> -->
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center pt-3">
+                        <a href="#"><span class="link-text view-dark">View all</span><i
+                                class="bi bi-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="block-body riskometer" id="fund-riskometer">
+        <h4 class="small-title">Riskometer</h4>
+
+        <div class="padding-box">
+            <div class="mb-5">
+                <div class="text-big mb-4">This product is suitable for Investors who are seeking*:</div>
+                <ul class="text-gray">
+
+                    <li>Medium term capital appreciation with current income</li>
+                    <li>A bond fund – focuses on AA+ and above rated Corporate/PSU Bonds.</li>
+                </ul>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4 col-12">
+                    <img src="assets/images/fund/graph1.png">
+                    <h4 class="mb-3">Riskometer as on May 31, 2023</h4>
+                    <div class="text-meduim">
+                        *Investors should consult their financial distributors if in doubt about whether the
+                        product is suitable for them.
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <img src="assets/images/fund/graph1.png">
+                    <h4>Riskometer of Benchmark:<br /> NIFTY Corporate Bond Index</h4>
+                </div>
+                <div class="col-md-4 col-12">
+                    <img src="assets/images/fund/graph2.png">
+                    <h4></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-body disclaimers">
+        <h4 class="small-title">Disclaimers</h4>
+
+        <div class="padding-box">
+            <div class="mb-4">
+                <div class="text-meduim mb-4">IDCW - Income Distribution cum Capital Withdrawal</div>
+                <div class="text-small">
+                    [#] The rates specified are the actual expenses charged as at the end of the month. The
+                    above ratio includes the GST on Investment management fees. The above expense also includes
+                    proportionate charge in respect sales of beyond T-30 cities subject to maximum of 30 bps on
+                    daily net assets wherever applicable.
+                </div>
+                <div class="text-small">
+                    * All portfolio holdings are subject to change. The information stated above does not
+                    constitute an investment advice or recommendation to subscribe or
+                    transact in these securities.
+                </div>
+                <div class="text-small">
+                    ** The information given here is neither a complete disclosure of every material fact of
+                    Income-tax Act 1961 nor does it constitute tax or legal advice. Investors are requested to
+                    review the scheme documents carefully and obtain expert professional advice with regard to
+                    specific legal, tax and financial implications of
+                    the investment/participation in the scheme.
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="text-meduim mb-4">IDCW - Income Distribution cum Capital Withdrawal</div>
+                <div class="text-meduim">Past performance may or may not be sustained in the future.</div>
+                <div class="text-small">
+                    SIP returns are assuming investment made on first business day of every month and not
+                    disclosed for closed-end funds. Returns greater than 1 year period are compounded
+                    annualized. For liquid funds, the less than 1 year returns are simple annualized. Load has
+                    not been taken into consideration. Performance of dividend plan / option would be at the
+                    gross rates. Dividends are assumed to be reinvested and Bonus is adjusted. For equity
+                    oriented funds, additional benchmark chosen is Nifty 50. Given the asset allocation, hybrid
+                    fund performance are not comparable with pure equity/debt fund performance and that of
+                    Additional Benchmarks.
+                </div>
+            </div>
+            <!-- <div class="mb-4">
+                <div class="text-meduim">Disclaimer :</div>
+                <div class="text-small">
+                    Benchmark returns calculated based on Total Return Index Values
+                </div>
+            </div> -->
+            <div>
+                <div class="text-meduim">IDCW - Income Distribution cum Capital Withdrawal</div>
+                <div class="text-small">
+                    *All portfolio holdings are subject to change. The information stated above does not
+                    constitute an investment advice or recommendation to subscribe or transact in these
+                    securities.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--- NAV modal -->
+<!-- Modal -->
+<div class="modal fade large-modal" id="NAVModal" tabindex="-1" aria-labelledby="NAVModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="NAVModalLabel">Historical NAVs</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form mb-1">
+                    <div class="row gx-3">
+                        <div class="col-lg col-sm-6 col-12 mb-3">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Growth</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="col-lg col-sm-6 col-12 history-date mb-3">
+                            <select class="form-select" aria-label="Query list">
+                                <option selected>Last 30 days</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                            <div class="row date gx-3" *ngIf="historyDateForm?.value?.historyDate">
+                                <div class="col-4">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option value="0">Date Range </option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <div class="col-4">
+                                    <div class="date-group">
+                                        <img src="assets/images/fund/calendar-outline.svg">
+                                        <input type="date" class="form-control" placeholder="From">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="date-group">
+                                        <img src="assets/images/fund/calendar-outline.svg">
+                                        <input type="date" class="form-control" placeholder="To">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-auto col-12 mb-3">
+                            <button type="button" class="btn btn-primary submit-btn"
+                                (click)="toggleNAVTable()">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="table-box" *ngIf="showNAVTable">
+                    <div class="title py-3">
+                        <h4>Selected Fund Details</h4>
+                    </div>
+                    <div class="Franklin-growth">
+
+                        <h4><span  class="Franklin-build">Franklin Build India Fund</span><span class="Franklin-growth-style"
+                            >Growth</span></h4>
+                        <ul>
+                            <li>Inception Date: 16/01/2008</li>
+                            <li>Fund Base Currency: INR (₹)</li>
+                        </ul>
+                        <div class="row pt-4 pb-3 text-center">
+                            <div class="col-md-3 col-6 mb-3">
+                                <div class="nav-date">NAV as of 12/06/2023:</div>
+                                <div class="text-meduim">₹25.9112</div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-3">
+                                <div class=" nav-date">Historical Prices Result:</div>
+                                <div class="text-meduim">14/05/2023 to 13/06/2023</div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-3">
+                                <div class="nav-date" >Highest NAV Within Selected
+                                    Range:
+                                </div>
+                                <div class="text-meduim">₹25.9112 on 12/06/2023</div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-3">
+                                <div class="nav-date">Lowest NAV Within Selected Range:
+                                </div>
+                                <div class="text-meduim">₹24.6829 on 01/06/2023</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-part mb-4">
+
+                        <div class="d-flex justify-content-between align-items-center py-4">
+                            <div class="text-bold">Viewing Data from 14/05/2023 to 13/06/2023</div>
+                            <div>
+                                <!-- <button class="btn btn-transparent me-3"><img
+                                        src="assets/images/fund/print.svg"></button> -->
+                                <button class="btn btn-transparent me-3 Franklin-icon"><i class="bi bi-printer fs-5"
+                                        ></i></button>
+                                <!-- <a href="#"><img src="assets/images/fund/download.svg"></a> -->
+                                <a href="#"><i class="bi bi-download fs-5"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="table-responsive text-center">
+                            <table class="table table-success table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">NAV (₹)</th>
+                                        <th scope="col">NAV Change (₹)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let navObj of historicalNavPaginatedData">
+                                        <td>{{navObj.date}}</td>
+                                        <td>{{navObj.Nav}}</td>
+                                        <td>{{navObj.NavChange}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-pagination">
+                            <nav aria-label="...">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link"><i class="bi bi-arrow-left me-sm-1"></i><span
+                                                class="d-none d-sm-inline-block">Previous</span></a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link">1</a></li>
+                                    <li class="page-item"><a class="page-link">2</a></li>
+                                    <li class="page-item active" aria-current="page"><a class="page-link">3</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">20</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#"><span class="d-none d-sm-inline-block">Next</span>
+                                            <i class="bi bi-arrow-right ms-sm-1"></i></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <!-- <select class="form-select" aria-label="Default select example" (change)="onPageSizeChange($event)">
+                                <option *ngFor="let item of paginationNumbers" [value]="item" >
+                                    {{item}} per page
+                                </option>
+                            </select> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="text-small">IDCW - Income Distribution cum Capital Withdrawal</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- IDCW history Modal -->
+<div class="modal fade large-modal modal-body-IDCW" id="IDCWModal" tabindex="-1" aria-labelledby="IDCWModalLabel" aria-hidden="true"
+    >
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-header-IDCW">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="IDCWModalLabel">Check IDCW history </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="closeModal()"></button>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form">
+                    <div class="row gx-3">
+                        <div class="col-md col-sm-4 col-12 mb-3">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>IDCW</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="col-md col-sm-4 col-6 mb-3">
+                            <div class="date-group date-Asterisk-date">
+                                <label class="date-Asterisk">*</label>
+                                <app-date-picker *ngIf="defaulshowDateFrom"
+                                    (dateSelected)="IDCWmodaldateSelected($event,'from')"
+                                    [selectedDate]="IDCWdefaultDateFrom"></app-date-picker>
+                                <!-- <img src="assets/images/fund/calendar-outline.svg">
+                                <input type="date" class="form-control" placeholder="From"> -->
+                            </div>
+                        </div>
+                        <div class="col-md col-sm-4 col-6 mb-3">
+                            <div class="date-group date-Asterisk-date">
+                                <label class="date-Asterisk">*</label>
+                                <app-date-picker *ngIf="defaulshowDateTo"
+                                    (dateSelected)="IDCWmodaldateSelected($event,'to')"
+                                    [selectedDate]="IDCWdefaultDateTo"></app-date-picker>
+                                <!-- <img src="assets/images/fund/calendar-outline.svg">
+                                <input type="date" class="form-control" placeholder="To"> -->
+                                <!-- <span class="date-Asterisk">*</span> -->
+                            </div>
+                        </div>
+                        <div class="col-md-auto col-12 mb-3">
+                            <button type="button" class="btn btn-primary submit-btn"
+                                (click)="toggleIDCWTable()">Submit</button>
+                        </div>
+                    </div>
+                    <div class="alert alert-danger p-1 text-center" *ngIf="errorMsg!=''">
+                        {{errorMsg}}
+                    </div>
+                </form>
+                <div class="table-box" *ngIf="showIDCWTable">
+                    <div class="title py-3">Selected Fund Details</div>
+                    <h4>Franklin Build India Fund<span>Growth</span></h4>
+                    <ul class="mb-4">
+                        <li>Inception Date: 16/01/2008</li>
+                        <li>Fund Base Currency: INR (₹)</li>
+                        <li>Dividend History: 22/06/2022 to 22/06/2023</li>
+                    </ul>
+
+                    <div class="table-part mb-4">
+
+                        <div class="d-flex justify-content-between align-items-center py-4">
+                            <div class="text-bold">Viewing Data from 14/05/2023 to 13/06/2023</div>
+                            <!-- <div>
+                                <button class="btn btn-transparent me-3"><img
+                                        src="assets/images/fund/print.svg"></button>
+                                <a href="#"><img src="assets/images/fund/download.svg"></a>
+                            </div> -->
+
+                            <div>
+                                <!-- <button class="btn btn-transparent me-3"><img
+                                        src="assets/images/fund/print.svg"></button> -->
+                                <button class="btn btn-transparent me-3"><i class="bi bi-printer fs-5 Franklin-icon"
+                                        ></i></button>
+                                <!-- <a href="#"><img src="assets/images/fund/download.svg"></a> -->
+                                <a href="#"><i class="bi bi-download fs-5"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="table-responsive text-center">
+                            <table class="table table-success table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Plan</th>
+                                        <th scope="col">Record Date</th>
+                                        <th scope="col">Div Per Unit (₹)</th>
+                                        <th scope="col">Record NAV (₹)</th>
+                                        <th scope="col">Ex.Div Date</th>
+                                        <th scope="col">Ex.Div NAV ()</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let idcw of IDCWPaginatedData">
+                                        <td>{{idcw.key}}</td>
+                                        <td>{{idcw.date1}}</td>
+                                        <td>{{idcw.value1}}</td>
+                                        <td>{{idcw.value2}}</td>
+                                        <td>{{idcw.date2}}</td>
+                                        <td>{{idcw.value3}}</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-pagination">
+                            <nav aria-label="...">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link"><i class="bi bi-arrow-left me-sm-1"></i><span
+                                                class="d-none d-sm-inline-block">Previous</span></a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">20</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#"><span class="d-none d-sm-inline-block">Next</span>
+                                            <i class="bi bi-arrow-right ms-sm-1"></i></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <!-- <select class="form-select" aria-label="Default select example" (change)="onPageSizeChange($event)">
+                                <option *ngFor="let item of paginationNumbers" [value]="item" >
+                                    {{item}} per page
+                                </option>
+                            </select> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="text-small">IDCW - Income Distribution cum Capital Withdrawal</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- documents modal -->
+<div class="modal fade xlarge-modal" id="documentModal" tabindex="-1" aria-labelledby="documentModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="IDCWModalLabel">Fund Documents</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="mb-4 pb-2">
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search documents">
+                    </div>
+                </form>
+                <div class="mb-4">08 documents</div>
+                <div class="documents-block mb-5">
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/pdf.svg">
+                                    Disclosure of Portfolios-Monthly
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/pdf.svg">
+                                    Disclosure of Portfolios-Half Yearly
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/pdf.svg">
+                                    Fact Sheet
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/pdf.svg">
+                                    Scheme Information Document
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/pdf.svg">
+                                    Fact Sheet
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/pdf.svg">
+                                    Scheme Information Document
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/pdf.svg">
+                                    KIM form
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/pdf.svg">
+                                    Application Form
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- monthly documents modal -->
+<div class="modal fade xlarge-modal" id="monthlyDocModal" tabindex="-1" aria-labelledby="monthlyDocModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="IDCWModalLabel">Fund Documents</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="mb-4 pb-2">
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search documents">
+                    </div>
+                </form>
+                <div class="mb-4">08 documents</div>
+                <div class="documents-block mb-5">
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <div class="update-box fontResize">
+                                <div>
+                                    <img src="assets/images/home/xls.svg">
+                                    As on July 14, 2023 (Uploaded on July 19, 2023)
+                                </div>
+                                <a href="#"><i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade modal-header-franklin" id="managed-fund-modal"  tabindex="-1" aria-labelledby="callBackLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-fund" >
+        <div class="modal-content modal-content-fund">
+            <div class="modal-header modal-header-fund">
+                <div class="modal-title Franklin-icon" id="callBackLabel">Managed funds by <span
+                        >{{fundManagerName}}
+                    </span></div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-body-card">
+                <div class="fund-block position-relative mt-1 mb-4 card-title-fund" *ngFor="let data of funds"
+                >
+                    <!-- <span  ="margin-top: 5px;" class="recommend-tag">Recommended</span> -->
+                    <div class="d-flex justify-content-between fund-head fund-card-head">
+                        <div class="d-flex justify-content-between d-none d-md-flex">
+                            <div class="card-data">
+                                <h5 class="mb-0">
+                                    <a>
+                                        <span>{{data.cardTitle}}</span>
+                                    </a>
+                                </h5>
+                            </div>
+                            <div>
+                                <span class="img-with-tooltip">
+                                    <img src="assets/images/general/very-high.svg">
+                                    <span class="tooltip-block">
+                                        <img src="assets/images/general/very-high.svg">
+                                        This fund has moderately high risk
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="tags tags-fund">
+                                <ul>
+                                    <li *ngFor="let tag of data?.tag" class="wraps">{{ tag }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between d-md-none high-risk">
+                            <div>
+                                <h3 class="mb-0">
+                                    <a>
+                                        <span>ab</span>
+                                    </a>
+                                    <span class="img-with-tooltip">
+                                        <img src="assets/images/general/very-high.svg" class="ms-2">
+                                        <span class="tooltip-block">
+                                            <img src="assets/images/general/very-high.svg">
+                                            This fund has moderately high risk
+                                        </span>
+                                    </span>
+                                    <!-- <img src="assets/images/general/very-high.svg" alt="Very High" class="ms-2"> -->
+                                </h3>
+                            </div>
+                            <div>
+                                <div class="tags ab-tag" >
+                                    <ul>
+                                        <li class="wraps">ab</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                    <div class="row info justify-content-between">
+                        <ul class="col-auto  d-none d-md-block">
+                            <li>
+                                <div class="mb-2">Investors
+                                    <!-- <img src="assets/images/home/info-icon2.svg" class="d-inline-block"> -->
+                                    <span class="img-with-tooltip">
+                                        <img src="assets/images/home/info-icon2.svg">
+                                        <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                        <span class="tooltip-block fontResize tooltip">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="text-big">
+                                    <span class="d-inline-block d-md-none"><img
+                                            src="assets/images/fund/investor-icon.svg"></span>
+                                    {{data.existingInvestors}}
+                                    <span class="d-inline-block d-md-none fontResize">Investors</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="mb-2">AUM </div>
+                                <div class="text-big">
+                                    <span class="d-inline-block d-md-none fontResize"><img
+                                            src="assets/images/fund/money-sign.svg"></span>
+                                    {{data.aum}}
+                                    <span class="d-inline-block d-md-none fontResize">AUM</span>
+                                </div>
+                            </li>
+                            <li class="last-item">
+                                <div class="mb-2 fontResize annualized-returns">Annualised returns
+                                    <span class="img-with-tooltip">
+                                        <img src="assets/images/home/info-icon2.svg">
+                                        <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                        <span class="tooltip-block fontResize">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                    </span>
+                                    <!-- <img src="assets/images/home/info-icon2.svg" class="d-inline-block"> -->
+                                </div>
+                                <div>
+                                    <span class="text-big">16.05%</span>
+                                    <div class="dropdown d-none d-md-inline-block">
+                                        <button class="btn btn-white dropdown-toggle fontResize" type="button"
+                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Since Inception
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item" href="#">1 Year</a></li>
+                                            <li><a class="dropdown-item" href="#">3 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">5 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">10 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">15 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">Since Inception</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown Inception-dropdown d-md-none d-inline-block Inception-block">
+                                        <button
+                                            class="btn btn-white dropdown-toggle fontResize" type="button"
+                                            data-bs-toggle="modal" data-bs-target="#InceptionModal">
+                                            Since Inception
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </li>
+                        </ul>
+                        <ul class="col-auto d-md-none">
+                            <li class="investor investors-fund">
+                                <div class="mb-2 fontResize">Investors
+                                    <img src="assets/images/home/info-icon2.svg" class="d-inline-block">
+                                </div>
+                                <div class="text-small d-flex investor-funds">
+                                    <span class="d-md-none investor-img investor-icon-image"><img
+                                            src="assets/images/fund/investor-icon.svg"></span>
+                                    ab
+                                    <span class="d-inline-block d-md-none fontResize">Investors
+
+                                    </span>
+                                    <!-- <img src="assets/images/home/info-icon2.svg" class="mobile-icons"> -->
+                                    <span class="img-with-tooltip">
+                                        <img src="assets/images/home/info-icon2.svg"
+                                            class="mobile-icons light-mode-icon">
+                                        <img src="assets/images/fund/dark-information-icon.png"
+                                            class="mobile-icons dark-mode-icon">
+                                        <span class="tooltip-block fontResize">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="AUM-sip-image">
+                                <div class="mb-2 fontResize">AUM </div>
+                                <div class="text-small d-flex money-sign-AUM">
+                                    <span class="d-md-none fontResize AUM-fund">
+                                        <img src="assets/images/fund/money-sign.svg"></span>
+                                    ab
+                                    <span class="d-inline-block d-md-none">AUM</span>
+                                </div>
+                            </li>
+                            <li class="last-item">
+                                <div class="mb-2 d-flex money-sign-AUM">Annualised returns
+                                    <span class="img-with-tooltip">
+                                        <img src="assets/images/home/info-icon2.svg"
+                                            class="d-inline-block mobile-icons light-mode-icon light-info ">
+                                        <img src="assets/images/fund/dark-information-icon.png"
+                                            class="d-inline-block mobile-icons dark-mode-icon">
+                                        <span class="tooltip-block fontResize">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="text-small">ab</span>
+                                    <div class="dropdown d-none d-md-inline-block">
+                                        <button class="btn btn-white dropdown-toggle" type="button"
+                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            ab
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item" href="#">1 Year</a></li>
+                                            <li><a class="dropdown-item" href="#">3 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">5 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">10 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">15 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">Since Inception</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown Inception-dropdown d-md-none d-inline-block">
+                                        <button class="btn btn-white dropdown-toggle fontResize Inception-block" type="button"
+                                            data-bs-toggle="modal" data-bs-target="#InceptionModal"
+                                            >
+                                            Since Inception
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="d-block d-md-none">
+                            <button class="btn btn-light-blue">
+                                <span class="new-badge fontResize">New</span>&nbsp;
+                                <i class="bi bi-cart3 fontResize"></i> Add to
+                                cart</button>
+                        </div>
+                        <!-- <div class="col-auto block-btns">
+                
+                            <a class="btn btn-outline-primary me-2">
+                                <span class="d-none d-md-block">Know more</span>
+                                <span class="d-md-none">View Details</span>
+                            </a>
+                            <a class="btn btn-primary">Invest Now</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- offcanvas -->
+<div class="offcanvas offcanvas-bottom for-add-offcanvas-bottom offcanvas-header-top" tabindex="-1" id="offcanvasBottom1"
+    aria-labelledby="offcanvasBottomLabel"
+    >
+    <div class="offcanvas-header">
+        <span class="line"></span>
+
+    </div>
+
+    <div class="container d-flex flex-row fundManagerName " >
+        <h5 class="offcanvas-title offcanvas-header-funds" >Managed funds by</h5> <span class="managed-fund"
+            >{{fundManagerName}}</span>
+    </div>
+    <!-- <button type="button" class="btn-close text-reset" (click)="closeModal()" aria-label="Close"></button> -->
+    <div class="offcanvas-body small Recommended-card">
+        <div class="fund-block position-relative mt-2 mb-3 Recommended-card-block" *ngFor="let data of funds">
+            <span class="recommend-tag fontResize recommend-fund">Recommended</span>
+            <div class="d-flex justify-content-between fund-head recommend-block">
+                <div class="d-flex d-md-none recommende-btn-tag">
+                    <div class="card-title-data">
+                        <h3 class="mb-0">
+                            <a>
+                                <span class="fontResize">{{data.cardTitle}}</span>
+                            </a>
+                        </h3>
+                    </div>
+                    <div>
+                        <span class="img-with-tooltip">
+                            <img src="assets/images/general/very-high.svg">
+                            <span class="tooltip-block fontResize">
+                                <img src="assets/images/general/very-high.svg">
+                                This fund has moderately high risk
+                            </span>
+                        </span>
+                    </div>
+                    <div class="tags mt-0 fontResize investor-funds-tag">
+                        <ul>
+                            <li *ngFor="let tag of data?.tag" class="wraps">{{ tag }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row info justify-content-between">
+                <ul class="col-auto d-md-none">
+                    <li class="d-flex w-100 justify-content-between">
+                        <div class="mb-2 fontResize">Investors
+                            <span class="img-with-tooltip">
+                                <img src="assets/images/home/info-icon2.svg">
+                                <span class="tooltip-block fontResize">
+                                    Lorem ipsum dolor sit amet, consectetur.
+                                </span>
+                            </span>
+                        </div>
+                        <div class="text-small">
+                            <span class="d-inline-block d-md-none fontResize"><img
+                                    src="assets/images/fund/investor-icon.svg"></span>
+                            {{data.existingInvestors}}
+                            Investors
+                        </div>
+                        <!-- <div class="mb-2">AUM </div> -->
+                        <div class="text-small">
+                            <span class="d-inline-block d-md-none fontResize"><img
+                                    src="assets/images/fund/money-sign.svg"></span>
+                            {{data.aum}}
+                            <span class="d-inline-block d-md-none fontResize">AUM</span>
+                        </div>
+                    </li>
+                    <!-- <li>
+
+                    </li> -->
+                    <li class="last-item d-flex justify-content-between annualized-returns-fund">
+                        <div class="d-flex fontResize Annualised-tag" >Annualised returns
+
+                            <span class="img-with-tooltip">
+                                <img src="assets/images/home/info-icon2.svg"
+                                    class="d-inline-block mobile-icons light-mode-icon light-info">
+                                <img src="assets/images/fund/dark-information-icon.png"
+                                    class="d-inline-block mobile-icons dark-mode-icon dark-info">
+                                <!-- <img src="assets/images/home/info-icon2.svg">
+                                <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                <span class="tooltip-block fontResize">
+                                    Lorem ipsum dolor sit amet, consectetur.
+                                </span>
+                            </span>
+                            <span class="text-small mt-0 fontResize">16.05%</span>
+                            <!-- <img src="assets/images/home/info-icon2.svg" class="d-inline-block"> -->
+                        </div>
+
+                        <div>
+
+                            <div class="dropdown d-none d-md-inline-block">
+                                <button class="btn btn-white dropdown-toggle fontResize" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Since Inception
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="#">1 Year</a></li>
+                                    <li><a class="dropdown-item" href="#">3 Years</a></li>
+                                    <li><a class="dropdown-item" href="#">5 Years</a></li>
+                                    <li><a class="dropdown-item" href="#">10 Years</a></li>
+                                    <li><a class="dropdown-item" href="#">15 Years</a></li>
+                                    <li><a class="dropdown-item" href="#">Since Inception</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dropdown Inception-dropdown d-md-none d-inline-block">
+                                <button  class="btn btn-white dropdown-toggle Inception-block"
+                                    type="button" data-bs-toggle="dropdown" id="dropdownMenuButton2">
+                                    Since Inception
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <li><a class="dropdown-item" href="#">1 Year</a></li>
+                                    <li><a class="dropdown-item" href="#">3 Years</a></li>
+                                    <li><a class="dropdown-item" href="#">5 Years</a></li>
+                                    <li><a class="dropdown-item" href="#">10 Years</a></li>
+                                    <li><a class="dropdown-item" href="#">15 Years</a></li>
+                                    <li><a class="dropdown-item" href="#">Since Inception</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-----offcanvas---->
+<div class="offcanvas offcanvas-bottom offcanvas-body-fund" tabindex="-1" id="offcanvasBottom2" aria-labelledby="offcanvasBottomLabel"
+    >
+    <div class="offcanvas-header">
+        <span class="line"></span>
+
+    </div>
+
+    <div class="container d-flex flex-row historical-nav">
+        <h5 class="offcanvas-title fontResize offcanvas-header-funds">Historical NAV's</h5>
+        <hr>
+    </div>
+    <!-- <button type="button" class="btn-close text-reset" (click)="closeModal()" aria-label="Close"></button> -->
+    <div class="offcanvas-body small">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item accordion-body-fund">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button id="historic-nav-canvas"
+                        class="accordion-button collapsed fontResize historical-nav-accordion" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        {{storedEvent1Value}}
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body fontResize historic-nav-drop  historical-navs" 
+                margin-bottom: 1px;
+             (click)="getAccodian1SelectValue('Growth')">Growth</div>
+                    <div class="accordion-body fontResize historic-nav-drop historical-navs" 
+                margin-bottom: 1px;
+             (click)="getAccodian1SelectValue('IDCW')">IDCW</div>
+                    <div class="accordion-body fontResize historic-nav-drop historical-navs" 
+                margin-bottom: 1px;
+             (click)="getAccodian1SelectValue('Direct-Growth')">Direct-Growth</div>
+                    <div class="accordion-body fontResize historic-nav-drop historical-navs-accordion" (click)="getAccodian1SelectValue('Direct-IDCW')">Direct-IDCW</div>
+                </div>
+            </div>
+            <div class="accordion-item accordion-body-fund">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button id="historic-nav-canvas historical-acc"
+                        class="accordion-button collapsed fontResize" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        {{storedEvent2Value}}
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body fontResize historic-nav-drop historical-navs"  (click)="getAccodian2SelectValue('Last 30 Days')">Last 30 Days</div>
+                    <div class="accordion-body fontResize historic-nav-drop historical-navs"  (click)="getAccodian2SelectValue('Last 60 Days')">Last 60 Days</div>
+                    <div class="accordion-body fontResize historic-nav-drop historical-navs"  (click)="getAccodian2SelectValue('Last 90 Days')">Last 90 Days</div>
+                    <div class="accordion-body fontResize historic-nav-drop historical-navs"  (click)="getAccodian2SelectValue('Last 120 Days')">Last 120 Days</div>
+                    <div type="button historical-navs"class="accordion-body fontResize historic-nav-drop" (click)="showCalender()">Date range</div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 ml-4" *ngIf="showcalender">
+            <div class="mt-4 d-flex">
+                <div class="date-group ml-2 mr-2 showCal"
+                    >
+                    <img src="assets/images/fund/calendar-outline.svg">
+                    <input type="date" class="form-control" placeholder="From">
+                </div>
+                <div class="date-group ml-2 mr-2 calendar-outlines">
+                    <img src="assets/images/fund/calendar-outline.svg">
+                    <input type="date" class="form-control" placeholder="To">
+                </div>
+            </div>
+        </div>
+        <div *ngIf="navDataExpanded">
+            <div class="fund-details-footer footer-nav">
+                <div class="d-flex justify-content-center align-items-center gap-3 apply">
+                    <button class="btn btn-primary fontResize historical-head-apply"
+                        (click)="historicalNavDataToggle()">Apply</button>
+                </div>
+            </div>
+        </div>
+        <ng-container *ngIf="navDataExpanded">
+            <div class="title py-3">
+                <h6 class="fontResize">Selected Fund Details</h6>
+            </div>
+            <div class="historic-popup historic-nav">
+                <h6 class="d-flex justify-content-between fontResize historic-nav-head"><span
+                    >Franklin Build
+                        India Fund</span><span class="fontResize">Growth</span></h6>
+                <ul>
+                    <li>Inception Date: 16/01/2008</li>
+                    <li>Fund Base Currency: INR (₹)</li>
+                </ul>
+                <div class="row pt-4 pb-3 text-center">
+                    <div class="col-md-3 col-6 mb-3">
+                        <div class="fontResize  historic-head" >NAV as of 12/06/2023:</div>
+                        <div class="text-meduim fontResize">₹25.9112</div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-3">
+                        <div class="fontResize historic-head" >Historical Prices Result:</div>
+                        <div class="text-meduim fontResize">14/05/2023 to 13/06/2023</div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-3">
+                        <div class="fontResize historic-head" >Highest NAV Within Selected
+                            Range:</div>
+                        <div class="text-meduim fontResize">₹25.9112 on 12/06/2023</div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-3">
+                        <div class="fontResize historic-head" >Lowest NAV Within Selected
+                            Range:</div>
+                        <div class="text-meduim fontResize">₹24.6829 on 01/06/2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center py-4">
+                <div class="text-bold fontResize">Viewing Data from 14/05/2023 to 13/06/2023</div>
+                <!-- <div>
+                    <button class="btn btn-transparent me-3"><img src="assets/images/fund/print.svg"></button>
+                    <a href="#"><img src="assets/images/fund/download.svg"></a>
+                </div> -->
+                <div>
+                    <!-- <button class="btn btn-transparent me-3"><img
+                                        src="assets/images/fund/print.svg"></button> -->
+                    <button class="btn btn-transparent Franklin-icon"><i
+                            class="bi bi-printer fs-5"></i></button>
+                    <!-- <a href="#"><img src="assets/images/fund/download.svg"></a> -->
+                    <a href="#"><i class="bi bi-download fs-5"></i></a>
+
+                </div>
+            </div>
+            <div class="table-responsive text-center">
+                <table class="table table-success table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">NAV (₹)</th>
+                            <th scope="col">NAV Change (₹)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let navObj of historicalNavPaginatedData">
+                            <td>{{navObj.date}}</td>
+                            <td>{{navObj.Nav}}</td>
+                            <td>{{navObj.NavChange}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-small fontResize">IDCW - Income Distribution cum Capital Withdrawal</div>
+        </ng-container>
+    </div>
+    <div *ngIf="!navDataExpanded">
+        <div  class="fund-details-footer footer-nav">
+            <div class="d-flex justify-content-center align-items-center gap-3 apply">
+                <button class="btn btn-primary fontResize historical-head-apply"
+                    
+                    (click)="historicalNavDataToggle()">Apply</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-----offcanvas---->
+<div class="offcanvas offcanvas-bottom offcanvas-head" tabindex="-1" id="offcanvasBottom3" aria-labelledby="offcanvasBottomLabel"
+    >
+    <div class="offcanvas-header">
+        <span class="line"></span>
+
+    </div>
+
+    <div class="container d-flex flex-row idcw-history-head" >
+        <h5 class="offcanvas-title fontResize offcanvas-header-funds">IDCW History</h5>
+        <hr>
+    </div>
+    <!-- <button type="button" class="btn-close text-reset" (click)="closeModal()" aria-label="Close"></button> -->
+    <div class="offcanvas-body small">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item accordion-body-fund" >
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button id="historic-nav-canvas historical-acc"
+                        class="accordion-button collapsed fontResize" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        {{storedEventData}}
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body fontResize historic-nav-drop historical-navs"  (click)="getAccodianSelectdata('IDCW')">IDCW</div>
+                    <div class="accordion-body fontResize historic-nav-drop historical-navs-accordion" (click)="getAccodianSelectdata('Direct-IDCW')">Direct-IDCW</div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 ml-4">
+            <div class="mt-4 d-flex">
+                <div class="date-group ml-2 mr-2 fund-expo-date showCal"
+                >
+                    <img src="assets/images/fund/calendar-outline.svg">
+                    <input type="date" class="form-control" placeholder="From">
+                </div>
+                <div class="date-group ml-2 mr-2 fund-expo-date calendar-outlines">
+                    <img src="assets/images/fund/calendar-outline.svg">
+                    <input type="date" class="form-control" placeholder="To">
+                </div>
+            </div>
+        </div>
+        <div *ngIf="IDCWHistoryDataExpanded">
+            <div class="footer-nav">
+                <div class="d-flex justify-content-center align-items-center gap-3 apply">
+                    <button class="btn btn-primary fontResize historical-head-apply"
+                    
+                        (click)="IDCWHistoricalNavDataToggle()">Apply</button>
+                </div>
+            </div>
+        </div>
+        <ng-container *ngIf="IDCWHistoryDataExpanded">
+            <div class="table-box">
+                <div class="title py-3">
+                    <h6 class="fontResize">Selected Fund Details</h6>
+                </div>
+                <h6 class="d-flex justify-content-between fontResize">Franklin Build India Fund<span
+                        class="fontResize">Growth</span></h6>
+                <ul class="mb-4">
+                    <li class="fontResize">Inception Date: 16/01/2008</li>
+                    <li class="fontResize">Fund Base Currency: INR (₹)</li>
+                    <li class="fontResize">Dividend History: 22/06/2022 to 22/06/2023</li>
+                </ul>
+
+                <div class="table-part mb-4">
+
+                    <div class="d-flex justify-content-between align-items-center py-4">
+                        <div class="text-bold fontResize">Viewing Data from 14/05/2023 to 13/06/2023</div>
+                        <div>
+                            <button class="btn btn-transparent"><img src="assets/images/fund/print.svg"></button>
+                            <a href="#"><img src="assets/images/fund/download.svg"></a>
+                        </div>
+                    </div>
+                    <div class="table-responsive text-center">
+                        <table class="table table-success table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">NAV (₹)</th>
+                                    <th scope="col">NAV Change(₹)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let idcw of IDCWPaginatedData">
+                                    <td>{{idcw.date1}}</td>
+                                    <td>{{idcw.value2}}</td>
+                                    <td>{{idcw.value3}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="text-small fontResize">IDCW - Income Distribution cum Capital Withdrawal</div>
+        </ng-container>
+    </div>
+    <div *ngIf="!IDCWHistoryDataExpanded">
+        <div  class="fund-details-footer footer-nav">
+            <div class="d-flex justify-content-center align-items-center gap-3 apply">
+                <button class="btn btn-primary fontResize historical-head-apply"
+                    (click)="IDCWHistoricalNavDataToggle()">Apply</button>
+            </div>
+        </div>
+    </div>
+</div>

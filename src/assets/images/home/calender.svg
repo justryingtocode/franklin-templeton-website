@@ -1,0 +1,20 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon/calender">
+<g id="Group 67507">
+<path id="Vector" d="M22.875 33.3327L12.7083 22.7493V20.8327H17.5C19.25 20.8327 20.8403 20.2841 22.2708 19.1868C23.7014 18.0896 24.4305 16.4577 24.4583 14.291H10.8333V12.9993H24.4166C24.1111 11.5549 23.3194 10.3535 22.0416 9.39518C20.7639 8.43685 19.25 7.95768 17.5 7.95768H10.8333V6.66602H29.1666V7.95768H22.125C23.0416 8.4299 23.8194 9.14518 24.4583 10.1035C25.0972 11.0618 25.5 12.0271 25.6666 12.9993H29.1666V14.291H25.7083C25.7083 16.7355 24.8819 18.6521 23.2291 20.041C21.5764 21.4299 19.6666 22.1243 17.5 22.1243H13.875L24.6666 33.3327H22.875Z" fill="url(#paint0_linear_3663_4298)"/>
+</g>
+<rect id="Rectangle 413" x="10.765" y="12.9531" width="18.4017" height="1.30371" fill="url(#paint1_linear_3663_4298)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_3663_4298" x1="15.7604" y1="19.9993" x2="24.5483" y2="20.0295" gradientUnits="userSpaceOnUse">
+<stop stop-color="#583EE7"/>
+<stop offset="0.484375" stop-color="#0EA0E6"/>
+<stop offset="1" stop-color="#00B6AE"/>
+</linearGradient>
+<linearGradient id="paint1_linear_3663_4298" x1="15.7104" y1="13.605" x2="24.4878" y2="14.2227" gradientUnits="userSpaceOnUse">
+<stop stop-color="#583EE7"/>
+<stop offset="0.484375" stop-color="#0EA0E6"/>
+<stop offset="1" stop-color="#00B6AE"/>
+</linearGradient>
+</defs>
+</svg>

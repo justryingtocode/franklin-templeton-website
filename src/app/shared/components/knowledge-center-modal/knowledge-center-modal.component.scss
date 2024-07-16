@@ -1,0 +1,38 @@
+.FT-knowledge{
+    .knowledge-box{
+        box-shadow: none !important;
+        padding: 0;
+        background: transparent;
+        .col-lg-3{
+            margin-bottom:24px;
+            @media(min-width:992px){
+                margin-bottom: 40px;
+            }
+        }
+        .category-btns ul li:not(.active){
+            background: #F0F6FF;
+        }
+    }
+    .container{
+        max-width: 1310px;
+    }
+    .category-dropdown{
+        @media(min-width:768px){
+            margin-bottom: 38px !important;
+        }
+    }
+    .FT-category-ad{
+        margin-top: 60px !important;
+    }
+     
+}
+.FT-inner-banners{
+    img{
+        margin-bottom: 34px;
+    }
+}
+
+// .custom-check.form-check .form-check-input:checked[type=checkbox] + .form-check-label {
+//     background: var(--blue);
+//     color: #fff;
+// }

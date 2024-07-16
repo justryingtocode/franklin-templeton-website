@@ -1,0 +1,117 @@
+<div class="row">
+    <div class="col-lg-5 col-md-5 col-sm-10">
+    <div class="d-flex gap-4 mb-2">
+        <div class=" d-flex knowledge-center share-pan-num" >
+
+        <div *ngFor="let question of questions; let i = index" 
+            [ngClass]="{ 'for-to-current-question-tab': isCurrentQuestion(i), 'for-to-next-question-tab': !isCurrentQuestion(i) }"
+            (click)="isCurrentQuestion(i) ? goToQuestion(i) : null">
+        Q{{ i + 1 }} 
+        <ng-container *ngIf="i < 10">
+            <img src="assets/images/knowledge-center/Line299.svg" class="checked-img">
+          </ng-container>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="for-question-get-title mt-2 mb-2">
+        {{ getCurrentQuestion()?.question }}
+    </div>
+
+    <div>
+        <div *ngFor="let option of getCurrentQuestion()?.options" 
+            class="for-to-option-seleted mb-2 mt-2"
+            (click)="selectOption(option,getCurrentQuestion())">
+        {{ option }}
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between mt-4">
+        <button type="button" class="btn btn-outline-primary forSubmitButton" *ngIf="selectedOptions.length > 0 " [disabled]="!makeButtonPrevious" (click)="goToPreviousQuestion()">Previous</button>
+        <button type="button" class="btn btn-primary forSubmitButton" *ngIf="selectedOptions.length === this.questions.length" (click)="toggleShowSavDialoge()">Submit</button>
+    </div>
+    </div>
+
+    <div class="col-1"></div>
+
+    <div class="col-lg-5 col-md-5 col-sm-10" *ngIf="selectedOptions.length > 0">
+    <div class="for-answer-question-input">
+        My Input
+    </div>
+    <div class="mt-2">
+        <ng-container *ngFor="let selected of selectedOptions">
+            <div class="mt-2">
+              <div class="for-answer-question-input-title">
+                {{ selected?.question?.question }}
+              </div>
+              <div class="for-question-option-seleted mt-1">
+                {{ selected.option }}
+              </div>
+            </div>
+          </ng-container>
+      </div>
+</div>
+
+<!-- <div class="row">
+<div class="col-lg-5 col-md-5 col-sm-10">
+    <div class="d-flex gap-4">
+        <div class="for-to-current-question-tab">Q1</div> 
+        <div class="for-to-next-question-tab">Q2</div> 
+        <div class="for-to-next-question-tab">Q3</div> 
+        <div class="for-to-next-question-tab">Q4</div> 
+        <div class="for-to-next-question-tab">Q5</div> 
+        <div class="for-to-next-question-tab">Q6</div>                     
+    </div>
+    <div class="for-question-get-title mt-2 mb-2">
+        A mutual fund is a _________ investor vehicle
+    </div>
+    <div>
+        <div class="for-to-option-seleted mb-2 mt-2">Customised</div>
+        <div class="for-to-option-seleted mb-2">Customised</div>
+        <div class="for-to-option-seleted mb-2">Customised</div>
+        <div class="for-to-option-seleted mb-2">Customised</div>
+    </div>
+    <div  class="d-flex justify-content-between">
+        <button type="button"
+        class="btn btn-outline-primary">Previous</button>
+        <button type="button"
+        class="btn btn-primary">Submit</button>
+     </div>   
+</div>
+<div class="col-1">
+
+</div>
+<div class="col-lg-5 col-md-5 col-sm-10">
+  <div class="for-answer-question-input">
+    My Input
+  </div>
+  <div class="mt-2">
+    <div>
+        <div class="for-answer-question-input-title">
+            A mutual fund is a _________ investor vehicle
+        </div>
+        <div class="for-question-option-seleted mt-1">
+            Customised
+        </div>
+    </div>                
+  </div>
+</div>
+</div>   -->
+
+</div>
+
+<div class="save-alert alert-index"  *ngIf="showSaveDialoge">
+
+    <div class="content">
+        <span class="close-btn" (click)="toggleShowSavDialoge()">
+            <img src="assets/images/general/close.svg">
+        </span>
+        <img src="assets/images/knowledge-center/Vector-trophy.svg" class="checked-img">
+        <div class="mb-2 for-congratulation">Congratulations!</div>
+        <div class="mt-2 for-card-about1"><span class="alert-index-box">You have cleared the quiz and</span></div>
+        <div class="mt-2 for-card-about2"><span class="alert-index-box">secured</span><span  class="continue-AUM">80%</span></div>
+        <a class="mt-3 tag-for-go" (click)="toggleShowSavDialoge()">Click here to continue on website</a>
+    </div>
+
+</div>

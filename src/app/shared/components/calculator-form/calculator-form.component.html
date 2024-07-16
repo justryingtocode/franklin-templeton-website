@@ -1,0 +1,186 @@
+<form [formGroup]="calcForm" *ngIf="calcForm">
+
+    <!-- Form-1: Earn | Target amount -->
+    <div class="form-group" *ngIf="isTargeted">
+        <label for="customRange4" class="form-label fontResize">I need to earn
+            <div class="selected-range" (click)="autoFocus($event, 'ref-earn')">
+                <span class="calc-input-prefix">₹</span>
+                <input 
+                    name="earn"
+                    type="number" 
+                    (change)="onCalculatorChange($event, 'earn')"
+                    [(ngModel)]="calcForm.value.earn" 
+                    formControlName="earn" 
+                    [attr.min]="getInputLimit(sliderKeyName.earn, false)" 
+                    [attr.max]="getInputLimit(sliderKeyName.earn, true)"
+                    class="calc-input amount text-start fontResize"
+                    id="ref-earn">
+            </div>
+        </label>
+        <div class="range-slider">
+            <input 
+                    type="range" 
+                    (change)="onCalculatorChange($event, 'earn')" 
+                    [value]="calcForm.value.earn || getInputLimit(sliderKeyName.earn)" 
+                    formControlName="earn" 
+                    class="custom-range fontResize" 
+                    [attr.min]="getInputLimit(sliderKeyName.earn, false)" 
+                    [attr.max]="getInputLimit(sliderKeyName.earn, true)" 
+                    [style.background]="earnSliderStyle">
+        </div>
+        <div class="d-flex text-small justify-content-between fontResize mt-2">
+            <span>₹5Lac</span>
+            <span>₹10Cr</span>
+        </div>
+    </div>
+
+    
+    <div class="form-group" *ngIf="!(!isSIP && isTargeted)">
+        
+        <!-- Form-2: Input Invest Amount -->
+        <label for="customRange2" class="form-label fontResize" *ngIf="!isTargeted">
+            {{isTargeted ? 'I can' : 'I want to'}} {{isSIP ? 'invest' : 'invest'}}
+            <div class="selected-range"  (click)="autoFocus($event, 'ref-amount')">
+                <span class="calc-input-prefix fontResize">₹</span>
+                    <input 
+                        type="number" 
+                        [attr.min]="getInputLimit(sliderKeyName.amount, false)" 
+                        [attr.max]="getInputLimit(sliderKeyName.amount, true)"
+                        [(ngModel)]="calcForm.value.amount" 
+                        formControlName="amount" 
+                        (change)="onCalculatorChange($event, 'amount')" 
+                        class="calc-input amount text-start fontResize"
+                        id="ref-amount">
+            </div>
+        </label>
+
+        <!-- Form-3: Duration | Frequency -->
+        <div class="invest-options" *ngIf="isSIP">
+            <div class="form-check">
+                <input 
+                    formControlName="time" 
+                    (change)="onCalculatorChange($event, 'time')" value="DAILY" class="form-check-input" type="radio" name="time"
+                    id="Daily">
+                <label class="form-check-label fontResize" for="Daily">
+                    Daily
+                </label>
+            </div>
+            <div class="form-check">
+                <input formControlName="time" 
+                    (change)="onCalculatorChange($event, 'time')"
+                    value="WEEKLY" class="form-check-input" type="radio" name="time"
+                    id="Weekly" checked>
+                <label class="form-check-label fontResize" for="Weekly">
+                    Weekly
+                </label>
+            </div>
+            <div class="form-check">
+                <input formControlName="time" 
+                    (change)="onCalculatorChange($event, 'time')"
+                    value="MONTHLY" class="form-check-input" type="radio" name="time"
+                    id="Monthly">
+                <label class="form-check-label fontResize" for="Monthly">
+                    Monthly
+                </label>
+            </div>
+            <div class="form-check">
+                <input formControlName="time" 
+                    (change)="onCalculatorChange($event, 'time')"
+                    value="QUARTERLY" class="form-check-input" type="radio" name="time"
+                    id="Quarterly">
+                <label class="form-check-label fontResize" for="Quarterly">
+                    Quarterly
+                </label>
+            </div>
+        </div>
+
+        <!-- Form-2: Range Invest Amount -->
+        <div class="range-slider" *ngIf="!isTargeted">
+            <input 
+                type="range" 
+                [attr.min]="getInputLimit(sliderKeyName.amount, false)" 
+                [attr.max]="getInputLimit(sliderKeyName.amount, true)"
+                [value]="calcForm.value.amount || getInputLimit(sliderKeyName.amount)" 
+                formControlName="amount" 
+                (change)="onCalculatorChange($event, 'amount')" 
+                class="custom-range" 
+                [style.background]="amountSliderStyle">
+        </div>
+        <div class="d-flex text-small justify-content-between fontResize mt-2">
+            <span>₹{{isSIP ? '500' : '10k'}}</span>
+            <span>₹{{isSIP ? '10L' : '10Cr'}}</span>
+        </div>
+    </div>
+
+
+    <!-- Form-4: Period Year -->
+    <div class="form-group ">
+        <label for="customRange2" class="form-label fontResize">{{isTargeted ? 'Year' : 'Year'}}
+
+            <div class="selected-range" (click)="autoFocus($event, 'ref-period')">
+                <input 
+                    type="number" 
+                    [attr.min]="getInputLimit(sliderKeyName.period, false)" 
+                    [attr.max]="getInputLimit(sliderKeyName.period, true)"
+                    formControlName="period" 
+                    [(ngModel)]="calcForm.value.period" 
+                    (change)="onCalculatorChange($event, 'period')" 
+                    class="calc-input text-end"
+                    id="ref-period"
+                    >
+                <span class="calc-input-prefix ms-1 fontResize">Years</span>
+            </div>
+        </label>
+        <div class="range-slider">
+                <input 
+                    type="range" 
+                    formControlName="period" 
+                    [value]="calcForm.value.period || getInputLimit(sliderKeyName.period)" 
+                    (change)="onCalculatorChange($event, 'period')" 
+                    class="custom-range" 
+                    [attr.min]="getInputLimit(sliderKeyName.period, false)" 
+                    [attr.max]="getInputLimit(sliderKeyName.period, true)"
+                    [style.background]="periodSliderStyle">
+        </div>
+        <div class="d-flex text-small justify-content-between fontResize mt-2">
+            <span>1 year</span>
+            <span>30 year</span>
+        </div>
+    </div>
+
+    <!-- Form-5: Expected ROI -->
+    <div class="form-group  fund-AUM">
+        <label for="customRange2" class="form-label fontResize" >Expected ROI
+            <div class="selected-range" (click)="autoFocus($event, 'ref-expectedReturn')">
+                <input 
+                    type="number" 
+                    [attr.min]="getInputLimit(sliderKeyName.expectedReturn, false)" 
+                    [attr.max]="getInputLimit(sliderKeyName.expectedReturn, true)"
+                    formControlName="expectedReturn" 
+                    [(ngModel)]="calcForm.value.expectedReturn" 
+                    (change)="onCalculatorChange($event, 'expectedReturn')" 
+                    class="calc-input text-end"
+                    id="ref-expectedReturn">
+                <span class="calc-input-prefix fontResize"> %</span>
+            </div>
+        </label>
+        <div class="range-slider">
+            <input 
+                #expectedReturnSlider 
+                type="range" 
+                formControlName="expectedReturn" 
+                [value]="calcForm.value.expectedReturn || getInputLimit(sliderKeyName.expectedReturn)" 
+                (change)="onCalculatorChange($event, 'expectedReturn')" 
+                class="custom-range" 
+                [attr.min]="getInputLimit(sliderKeyName.expectedReturn, false)" 
+                [attr.max]="getInputLimit(sliderKeyName.expectedReturn, true)"
+                [style.background]="expectedReturnSliderStyle"
+                >
+        </div>
+        <div class="d-flex text-small justify-content-between fontResize mt-2">
+            <span>2%</span>
+            <span>13%</span>
+        </div>
+    </div>
+</form>
+

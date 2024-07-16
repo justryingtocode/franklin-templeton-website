@@ -1,0 +1,69 @@
+@media (max-width: 991.98px) {
+    .step1-details {
+        margin-bottom: 10px !important;
+    }
+}
+
+.date-group {
+    width: -webkit-fill-available !important;
+}
+
+//
+
+.IDN {
+    width: auto;
+    font-size: smaller;
+}
+
+.info-icon2-one {
+    margin-left: 4px;
+}
+
+.info-light {
+    width: 18px;
+}
+
+.light-info {
+    width: 14px;
+}
+
+.residence-enter {
+    font-weight: 600;
+    border: 1px solid #D2D8EA;
+}
+
+.explanation-row {
+    display: block;
+}
+
+.Domicile-dec {
+    color: blue;
+    cursor: pointer;
+}
+
+.financial-declaration {
+    --bs-modal-width: 470px;
+    z-index: 100000;
+}
+.modal-head{
+    margin-top: 11rem;
+}
+
+.modal-head-fund{
+    padding: 15px;
+}
+.modal-fund-head{
+    font-size: smaller;
+}
+.modal-content-fund{
+    z-index: 100000;
+}
+.Domicile-declaration{
+    --bs-modal-width: 570px;
+}
+.modal-body-fund{
+    background-color: rgb(255 255 255);
+}
+.dec-domicile{
+    font-size: large;
+}

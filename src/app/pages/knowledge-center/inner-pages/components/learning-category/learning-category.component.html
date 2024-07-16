@@ -1,0 +1,763 @@
+<section class="FT-knowledge">
+    <div class="container">
+        <!-- start categories box -->
+        <div class="knowledge-box categories" id="Learning">
+ 
+
+            <!-- start categories filter block -->
+            <div class="filter-block">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <div class="filter-options mt-0 mb-4">
+                            <div class="form-group ">
+                                <input type="text" class="form-control search" [placeholder]="searchPlaceholderText" [(ngModel)]="searchTerm"
+                                (input)="filterFunds(searchTerm)">
+                                <div class="search-result">
+                                  <div class="inner">
+                                      <ng-container *ngFor="let fund of fundsForSearch">
+                                          <div class="funds-seach-title fontResize fund-AUM" (click)="getTableTitle(fund)" >
+                                             {{ fund.title }}
+                                              <span class="sub fontResize"><span class="text-gray fontResize">Fund Size</span> - {{ fund.aum }}</span>
+                                              <span class="sub fontResize"><span class="text-gray fontResize">Unique Investors</span> - {{ fund.investors }}</span>
+                                          </div>
+                                      </ng-container>
+                                  </div>
+                              </div>
+                            </div>
+                            <div>
+                              <img src="./assets/images/comparefund/closebutton.svg" class="make-tag-for-all-page share-icon closebutton-fund" (click)="resetFundExplore()">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- <div class="dropdown me-3">
+                            <button class="btn dropdown-toggle fontResize" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Sort
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item fontResize" href="#">Likes</a></li>
+                                <li><a class="dropdown-item fontResize" href="#">Date</a></li>
+                                <li><a class="dropdown-item fontResize" href="#">Views</a></li>
+                                <li><a class="dropdown-item fontResize" href="#">Read Time</a></li>
+                            </ul>
+                        </div> -->
+                        <!-- <button class="btn btn-white toggle-filter">
+                            <img src="assets/images/fund/sort.svg" class="me-2">Filters
+                        </button> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- start selected category btn -->
+            <div class="category-btns">
+                <ul class="btn-container">
+                    <li class="active fontResize">New-to-investing</li>
+                    <li class="fontResize">New-to-mutual-funds</li>
+                    <li class="fontResize">More-about-mutual-funds</li>
+                    <li class="fontResize">Frankly Speaking</li>
+                    <li class="fontResize">Women-and-investing</li>
+                    <li class="fontResize">Planning-for-retirement</li>
+                    <li class="fontResize">Your-childs-future</li>
+                    <li class="fontResize">Smart-tax-planning</li>
+                </ul>
+            </div>
+
+            <div class="category-block" id="Category_1" >
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="fontResize">New-to-mutual-funds</h3>
+                    <a class="knowledge-center-CTA fontResize" [routerLink]="['/knowledge-center/category']">
+                        <span>View all</span><i class="bi bi-chevron-right"></i></a>
+                </div>
+        
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                    <div ngxSlickItem class="slide" *ngFor="let slide of relatedData; let i = index">
+                      <div class="category-card">
+                        <div class="card-img" type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']">
+                          <img src="{{ slide.imgSrc }}">
+                          <!-- <span class="time-tag fontResize">{{ slide.timeTag }}</span> -->
+                        </div>
+                        <div class="card-body">
+                          <div class="d-flex align-items-center justify-content-between">
+                          <span class="time-tag fontResize">{{ slide.timeTag }}</span>
+
+                            <!-- <div class="fontResize"><i class="bi bi-eye-fill me-1"></i>{{ slide.views }} </div> -->
+                            <div class="card-icons d-flex">
+                              <span class="img-with-tooltip me-3 d-flex showIconForWatchlist" (click)="toggleIconForWishlist(i)">
+                                <!-- <i [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                                <i *ngIf="!showIconForWishlist[i]" class="bi bi-heart-fill me-1"></i>
+                                <span [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Like</span>
+                                <span *ngIf="!showIconForWishlist[i]" class="tooltip-block fontResize">Unlike</span>
+                                <span styl e="margin-top: 2px;" class="fontResize">{{ slide.wishlistCount }}</span> -->
+                              </span>
+                              <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist(i)">
+                                <i [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                                <i *ngIf="!showIconForWatchlist[i]" class="bi bi-bookmark-fill"></i>
+                                <span [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Save</span>
+                                <span *ngIf="!showIconForWatchlist[i]" class="tooltip-block fontResize">Remove from Saved</span>
+                              </span>
+                              <span class="dropdown">
+                                    <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-menu-twitter">
+                                        <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-btn-fund">    
+                                        <span *ngIf="showTooltip" class="tooltip-block fontResize">share</span>
+                                    </span>
+                                    
+                                <ul class="dropdown-menu for-custom-dropdown">
+                                    <li><span class="dropdown-item fontResize"><img class="share-icon" src="assets/images/general/Link.svg">Copy link</span></li>
+                                    <li><a class="dropdown-item fontResize" href="#"><img class="share-icon3 share-menu-twitter-fund" src="../../../../../assets/images/general/twitter-new-logo-removebg-preview.png" >Share on Twitter</a></li>
+                                    <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                    <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                    <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                                </ul>
+                              </span>
+                            </div>
+                          </div>
+                          <div type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']" class="text-bold card-title mt-3 forlikecardtitle fontResize">{{ slide.title }}</div>
+                        </div>
+                      </div>
+                    </div>
+                </ngx-slick-carousel>
+        
+            </div>
+
+            <div class="category-block" id="Category_1" >
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="fontResize">More-about-mutual-funds</h3>
+                    <a class="knowledge-center-CTA fontResize" [routerLink]="['/knowledge-center/category']">
+                        <span>View all</span><i class="bi bi-chevron-right"></i></a>
+                </div>
+        
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                    <div ngxSlickItem class="slide" *ngFor="let slide of relatedData; let i = index">
+                      <div class="category-card">
+                        <div class="card-img" type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']">
+                          <img src="{{ slide.imgSrc }}">
+                          <!-- <span class="time-tag fontResize">{{ slide.timeTag }}</span> -->
+                        </div>
+                        <div class="card-body">
+                          <div class="d-flex align-items-center justify-content-between">
+                          <span class="time-tag fontResize">{{ slide.timeTag }}</span>
+
+                            <!-- <div class="fontResize"><i class="bi bi-eye-fill me-1"></i>{{ slide.views }} </div> -->
+                            <div class="card-icons d-flex">
+                              <span class="img-with-tooltip me-3 d-flex showIconForWatchlist" (click)="toggleIconForWishlist(i)">
+                                <!-- <i [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                                <i *ngIf="!showIconForWishlist[i]" class="bi bi-heart-fill me-1"></i>
+                                <span [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Like</span>
+                                <span *ngIf="!showIconForWishlist[i]" class="tooltip-block fontResize">Unlike</span>
+                                <span sty le="margin-top: 2px;" class="fontResize">{{ slide.wishlistCount }}</span> -->
+                              </span>
+                              <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist(i)">
+                                <i [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                                <i *ngIf="!showIconForWatchlist[i]" class="bi bi-bookmark-fill"></i>
+                                <span [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Save</span>
+                                <span *ngIf="!showIconForWatchlist[i]" class="tooltip-block fontResize">Remove from Saved</span>
+                              </span>
+                              <span class="dropdown">
+                                    <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-menu-twitter" >
+                                        <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-btn-fund" >    
+                                        <span *ngIf="showTooltip" class="tooltip-block fontResize">share</span>
+                                    </span>
+                                    
+                                <ul class="dropdown-menu for-custom-dropdown">
+                                    <li><span class="dropdown-item fontResize"><img class="share-icon" src="assets/images/general/Link.svg">Copy link</span></li>
+                                    <li><a class="dropdown-item fontResize" href="#"><img class="share-icon3 share-menu-twitter-fund" src="../../../../../assets/images/general/twitter-new-logo-removebg-preview.png" >Share on Twitter</a></li>
+                                    <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                    <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                    <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                                </ul>
+                              </span>
+                            </div>
+                          </div>
+                          <div type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']" class="text-bold card-title mt-3 forlikecardtitle fontResize">{{ slide.title }}</div>
+                        </div>
+                      </div>
+                    </div>
+                </ngx-slick-carousel>
+        
+            </div>
+
+            <div class="category-block" id="Category_1" >
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="fontResize">Frankly Speaking</h3>
+                    <a class="knowledge-center-CTA fontResize" [routerLink]="['/knowledge-center/category']">
+                        <span>View all</span><i class="bi bi-chevron-right"></i></a>
+                </div>
+        
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                    <div ngxSlickItem class="slide" *ngFor="let slide of relatedData; let i = index">
+                      <div class="category-card">
+                        <div class="card-img" type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']">
+                          <img src="{{ slide.imgSrc }}">
+                          <!-- <span class="time-tag fontResize">{{ slide.timeTag }}</span> -->
+                        </div>
+                        <div class="card-body">
+                          <div class="d-flex align-items-center justify-content-between">
+                          <span class="time-tag fontResize">{{ slide.timeTag }}</span>
+
+                            <!-- <div class="fontResize"><i class="bi bi-eye-fill me-1"></i>{{ slide.views }} </div> -->
+                            <div class="card-icons d-flex">
+                              <span class="img-with-tooltip me-3 d-flex showIconForWatchlist"  (click)="toggleIconForWishlist(i)">
+                                <!-- <i [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                                <i *ngIf="!showIconForWishlist[i]" class="bi bi-heart-fill me-1"></i>
+                                <span [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Like</span>
+                                <span *ngIf="!showIconForWishlist[i]" class="tooltip-block fontResize">Unlike</span>
+                                <span sty le="margin-top: 2px;" class="fontResize">{{ slide.wishlistCount }}</span> -->
+                              </span>
+                              <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist(i)">
+                                <i [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                                <i *ngIf="!showIconForWatchlist[i]" class="bi bi-bookmark-fill"></i>
+                                <span [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Save</span>
+                                <span *ngIf="!showIconForWatchlist[i]" class="tooltip-block fontResize">Remove from Saved</span>
+                              </span>
+                              <span class="dropdown">
+                                    <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon  share-menu-twitter" >
+                                        <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-btn-fund" >    
+                                        <span *ngIf="showTooltip" class="tooltip-block fontResize">share</span>
+                                    </span>
+                                    
+                                <ul class="dropdown-menu for-custom-dropdown">
+                                    <li><span class="dropdown-item fontResize"><img class="share-icon" src="assets/images/general/Link.svg">Copy link</span></li>
+                                    <li><a class="dropdown-item fontResize" href="#"><img class="share-icon3 share-menu-twitter-fund" src="../../../../../assets/images/general/twitter-new-logo-removebg-preview.png" >Share on Twitter</a></li>
+                                    <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                    <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                    <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                                </ul>
+                              </span>
+                            </div>
+                          </div>
+                          <div type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']" class="text-bold card-title mt-3 forlikecardtitle fontResize">{{ slide.title }}</div>
+                        </div>
+                      </div>
+                    </div>
+                </ngx-slick-carousel>
+        
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-white fontResize">Load more</button>
+            </div>
+
+          
+            <!-- <div class="category-block">
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3>Category 1</h3>
+                    <a class="knowledge-center-CTA" href="#">
+                        <span>View all</span><i class="bi bi-chevron-right"></i></a>
+                </div>
+
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category2.png">
+                                <a href="#" class="video-btn"><img
+                                        src="assets/images/knowledge-center/video-icon.svg"></a>
+                                <span class="time-tag">11.21</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category2.png">
+                                <a href="#" class="video-btn"><img
+                                        src="assets/images/knowledge-center/video-icon.svg"></a>
+                                <span class="time-tag">11.21</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category2.png">
+                                <a href="#" class="video-btn"><img
+                                        src="assets/images/knowledge-center/video-icon.svg"></a>
+                                <span class="time-tag">11.21</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-slick-carousel>
+            </div>
+         
+            <div class="category-block">
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3>Category 2</h3>
+                    <a class="knowledge-center-CTA" href="#">
+                        <span>View all</span><i class="bi bi-chevron-right"></i></a>
+                </div>
+
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category2.png">
+                                <a href="#" class="video-btn"><img
+                                        src="assets/images/knowledge-center/video-icon.svg"></a>
+                                <span class="time-tag">11.21</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category2.png">
+                                <a href="#" class="video-btn"><img
+                                        src="assets/images/knowledge-center/video-icon.svg"></a>
+                                <span class="time-tag">11.21</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category2.png">
+                                <a href="#" class="video-btn"><img
+                                        src="assets/images/knowledge-center/video-icon.svg"></a>
+                                <span class="time-tag">11.21</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-slick-carousel>
+            </div>
+        
+            <div class="category-block">
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3>Category 3</h3>
+                    <a class="knowledge-center-CTA" href="#">
+                        <span>View all</span><i class="bi bi-chevron-right"></i></a>
+                </div>
+
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category2.png">
+                                <a href="#" class="video-btn"><img
+                                        src="assets/images/knowledge-center/video-icon.svg"></a>
+                                <span class="time-tag">11.21</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category2.png">
+                                <a href="#" class="video-btn"><img
+                                        src="assets/images/knowledge-center/video-icon.svg"></a>
+                                <span class="time-tag">11.21</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category1.png">
+                                <span class="time-tag">4 mins read</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide">
+                        <div class="category-card">
+                            <div class="card-img">
+                                <img src="assets/images/knowledge-center/category2.png">
+                                <a href="#" class="video-btn"><img
+                                        src="assets/images/knowledge-center/video-icon.svg"></a>
+                                <span class="time-tag">11.21</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                                    <div class="card-icons">
+                                        <span class="me-3"><i class="bi bi-heart me-1"></i>300</span>
+                                        <span class="me-3"><i class="bi bi-bookmark"></i></span>
+                                        <span><i class="bi bi-reply"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-slick-carousel>
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-white">Load more</button>
+            </div> -->
+
+
+        </div>
+
+        <!-- start category filter-->
+        <div class="FT-general-filter d-none">
+            <div class="filter-box">
+                <div class="filter-content">
+                    <h3 class="fontResize">Filters</h3>
+                    <div class="filter-options">
+                        <div class="text-bold mb-3 fontResize">Common Filters</div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fontResize" for="flexCheckDefault">
+                                Most viewed
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fontResize" for="flexCheckDefault">
+                                5 min read
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fontResize" for="flexCheckDefault">
+                                Trending
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fontResize" for="flexCheckDefault">
+                                Content of the week
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter-options">
+                        <div class="text-bold mb-3 fontResize">Content</div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fontResize" for="flexCheckDefault">
+                                Video
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fontResize" for="flexCheckDefault">
+                                Article
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fontResize" for="flexCheckDefault">
+                                Presentation
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fontResize" for="flexCheckDefault">
+                                Blog
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fontResize" for="flexCheckDefault">
+                                Podcast
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fontResize" for="flexCheckDefault">
+                                E-Booklet
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter-options">
+                        <div class="text-bold mb-3 fontResize">Categories</div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fontResize" for="flexCheckDefault">
+                                New to Mutual Fund
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fontResize" for="flexCheckDefault">
+                                New to Investing
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fontResize" for="flexCheckDefault">
+                                Women & Investing
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fontResize" for="flexCheckDefault">
+                                Blog
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fontResize" for="flexCheckDefault">
+                                Podcast
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label fontResize" for="flexCheckDefault">
+                                E-Booklet
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-footer">
+                    <button class="btn btn-outline-primary fontResize">Cancel</button>
+                    <button class="btn btn-primary fontResize">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

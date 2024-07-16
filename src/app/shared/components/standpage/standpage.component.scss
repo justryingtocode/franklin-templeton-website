@@ -1,0 +1,502 @@
+.goal-cards {
+	background: #DDEAFF;
+	padding: 28px 0px;
+	width: Fixed (1, 440px);
+	height: Hug (250px);
+	gap: 20px;
+
+	.goal-cards-heading {
+		color: #595A6C;
+		font-size: 1.5rem;
+		// padding: 0px 100px;
+		font-weight: 600;
+		line-height: 31px;
+		letter-spacing: -0.03em;
+	}
+}
+
+.checkBoxText {
+	//styleName: 14-med;
+	font-family: 'Hanken Grotesk';
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 18px;
+	letter-spacing: -0.03em;
+	text-align: left;
+
+}
+
+
+.FT-knowledge-tabs {
+	.nav-pills {
+		min-height: 630px;
+	}
+
+	.tab-content {
+		min-height: 630px;
+
+		h3 {
+			//styleName: 24-med;
+			font-family: 'Hanken Grotesk';
+			font-size: 1.5rem;
+			font-weight: 500;
+			line-height: 31px;
+			letter-spacing: -0.03em;
+			text-align: left;
+		}
+	}
+}
+
+.scrollnextgo {
+	margin-top: 0px;
+	margin-bottom: 58px;
+}
+
+// remove scrollbar
+.choose-plan-wraper {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.choose-plan-wraper::-webkit-scrollbar {
+	display: none;
+}
+
+.choose-plan-wraper {
+	flex-wrap: wrap;
+	display: flex;
+	gap: 20px;
+	overflow-x: auto;
+	padding-bottom: 20px;
+
+	.choose-plan-card {
+		&:hover .img-wrap img {
+			transform: scale(1.1);
+			background: linear-gradient(90.29deg, rgba(88, 62, 231, 0.04) 42.99%, rgba(0, 182, 174, 0.07) 49.69%);
+		}
+
+		&:hover .img-wrap {
+			border-color: #9eb5fd;
+		}
+
+		&:hover .choose-plan-title {
+			border-color: #9eb5fd;
+			box-shadow: 0px 0px 10px 0px rgb(72 124 246 / 35%);
+		}
+
+		min-width: 175px;
+		width: 175px;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		transition: all 0.5s ease-in-out;
+
+		.img-wrap {
+			border: 1px solid #D2D8EA;
+			border-radius: 100%;
+			overflow: hidden;
+			height: 130px;
+			width: 130px;
+			margin-bottom: -26px;
+
+			&>img {
+				transition: all 0.5s ease-in-out;
+			}
+		}
+	}
+
+	.choose-plan-title {
+		padding: 6px 10px;
+		border: 1px solid #D2D8EA;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		border-radius: 9px;
+		font-size: 0.813rem;
+		width: 100%;
+		text-align: center;
+		z-index: 1;
+		background-color: #fff;
+		min-height: 47px;
+		text-align: center;
+		align-items: center;
+		transition: all 0.5s ease-in-out;
+		box-shadow: 0px 0px 16px 0px #00000017;
+	}
+}
+
+
+.form-group input::placeholder {
+	color: #212529;
+}
+
+.form-group input {
+	background-color: #fff;
+}
+
+
+.form-group select {
+	background-color: #fff;
+	color: #212529;
+}
+
+.form-group select::placeholder {
+	color: #212529;
+}
+
+.form-group select option {
+	background-color: #fff;
+	color: #212529;
+}
+
+.form-group select option:disabled {
+	color: #212529;
+}
+
+
+@media (max-width: 767px) {
+	.FT-knowledge-tabs {
+		.nav-pills {
+			min-height: auto;
+
+			&::after {
+				content: "";
+				display: block;
+				border-bottom: 1px solid #3769ff;
+				width: 100%;
+				margin-top: 0px;
+			}
+
+			&>button {
+				flex: 1;
+			}
+		}
+
+		.tab-content {
+			min-height: auto;
+
+			h3 {
+				font-family: 'Hanken Grotesk';
+				font-size: 1rem;
+				font-weight: 600;
+				line-height: 18px;
+				letter-spacing: -0.03em;
+				text-align: left;
+				margin-left: 11px;
+				color: #3C425D;
+			}
+		}
+
+		.dropdown .dropdown-menu {
+			right: auto !important;
+		}
+
+	}
+
+	.scrollnextgo {
+		display: flex;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		margin-bottom: 50px !important;
+	}
+
+	// .col-md-4 {
+	//     flex: 0 0 auto;
+	//     width: 100%;
+	//     max-width: 100%;
+	// }
+
+	.scrollnextgo::-webkit-scrollbar {
+		display: none;
+		/* Webkit (Safari, Chrome) */
+	}
+
+	.calc-box {
+		background: #fff;
+		/* Adjust the background color as needed */
+		margin-right: 15px;
+		/* Adjust margin as needed */
+		margin-top: 5px;
+	}
+
+	.col-md-4:last-child .calc-box {
+		margin-right: 0;
+		/* Remove margin from the last column */
+	}
+
+	.choose-plan-wraper {
+		justify-content: center;
+	}
+
+	.dropdown .dropdown-menu {
+		padding-top: 6px;
+		transform: translate3d(-190px, 7px, 0px) !important;
+
+		& li {
+			padding: 0 16px 8px 16px;
+		}
+	}
+
+
+}
+
+
+
+@media (min-width:320px) and (max-width:440px) {
+	.choose-plan-wraper {
+		.choose-plan-card {
+			min-width: 118px;
+			width: 123px;
+
+			.img-wrap {
+				height: 96px;
+				width: 96px;
+			}
+		}
+
+		.choose-plan-title {
+			font-size: 0.75rem;
+			min-height: 47px;
+		}
+	}
+}
+
+.calc-box .btn {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	font-size: 0.875rem;
+	font-style: normal;
+	min-height: 41px;
+	font-weight: 700;
+	line-height: 20px;
+	padding: 10px;
+	text-align: center;
+	/* Optional: Center the text horizontally */
+}
+
+.dark-mode-icon {
+	display: none;
+}
+
+.light-mode-icon {
+	display: block;
+}
+
+.img-with-tooltip {
+	top: -4px;
+}
+
+.for_add_data_card {
+	top: -1px;
+}
+
+.icon {
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+#stand-page-mob {
+	flex: none;
+}
+
+.total-investor {
+	color: #3C425D;
+}
+
+.fund-dark-mode-icon {
+	display: none !important;
+}
+
+.fund-light-mode-icon {
+	display: block !important;
+}
+
+.compareCardBox {
+	position: relative;
+	padding: 16px;
+	border-radius: 8px;
+	background: #F3F8FF;
+	display: flex;
+
+
+	/* Style for the cancel.png image */
+	.cancel-icon {
+		width: 24px;
+		height: 24px;
+		position: absolute;
+		top: -6px;
+		left: -6px;
+		z-index: 2;
+		/* Higher z-index to appear above other content */
+	}
+
+	.forLabelCard {
+		font-family: 'Hanken Grotesk';
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 21px;
+		letter-spacing: -0.03em;
+		text-align: left;
+	}
+
+	.meterImage {}
+
+	.midCard {
+		padding: 8px 8px 8px 12px;
+		border-radius: 8px;
+		background: #DDEAFF;
+
+		.midCardValue {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 10px;
+
+			.lineImage {}
+
+			.totalInvesterUserImage {}
+
+		}
+
+	}
+
+	.buttonCard {
+
+		.makeGap {
+			display: flex;
+			justify-content: space-between;
+			gap: 13.7px;
+		}
+
+		.customButtonFirst {
+			border-radius: 7px;
+			width: 100px;
+			height: 49px;
+			border: 2px solid#3769FF;
+			background: #FFFFFF;
+		}
+
+		.customButtonSecond {
+			border-radius: 8px;
+			width: calc(100% - 100px); //width: 170.67px;
+			height: 49px;
+			border: 2px solid#3769FF;
+			background: #3769FF;
+			font-size: 1rem;
+			font-weight: 400px;
+			color: #FFFFFF;
+
+			// .forInvestNow{
+			// 	font-size: 1rem;
+			// 	font-weight: 400px;
+			// 	color: #FFFFFF;
+			// }
+
+		}
+
+	}
+
+	.fund-heading {
+		margin-bottom: 1.5rem;
+	}
+
+	.makeCursor {
+		cursor: pointer;
+	}
+
+	.valueMidCard {
+		font-family: 'Hanken Grotesk';
+		font-size: 0.875rem;
+		font-weight: 500;
+		line-height: 18px;
+		letter-spacing: -0.03em;
+		text-align: center;
+		color: #3C425D;
+	}
+
+	.valuMidCardData {
+		font-family: 'Hanken Grotesk';
+		font-size: 0.875rem;
+		font-weight: 500;
+		line-height: 18px;
+		letter-spacing: -0.03em;
+		text-align: center;
+		color: #8189A2;
+	}
+
+	.totalExsitingInvestors {
+		// font-family: 'Hanken Grotesk';
+		// font-size: 0.813rem;
+		// font-weight: 400;
+		// line-height: 17px;
+		// letter-spacing: -0.03em;
+		// text-align: left;
+		// color: #3C425D;
+		font-family: 'Hanken Grotesk';
+		font-size: 0.875rem;
+		font-weight: 500;
+		line-height: 18px;
+		letter-spacing: -0.03em;
+		text-align: left;
+		color: #8189A2;
+	}
+
+	.addDataToCart {
+		padding: 9.800000190734863px;
+		border-radius: 6.5333333015441895px;
+		border: 1.6333333253860474px;
+		gap: 13.066666603088379px;
+		background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
+			linear-gradient(0deg, #FFFFFF, #FFFFFF);
+
+	}
+
+}
+
+.required-name {
+	color: #F04438;
+}
+
+.moderately {
+	width: 33px;
+	margin-left: 5px;
+}
+
+.general-vertical {
+	max-width: 92%;
+}
+
+.watchlist-save {
+	cursor: pointer;
+}
+
+.share-twitter {
+	width: 20px;
+}
+
+.info-icon2-mobile {
+	width: 18px;
+}
+
+.dark-mobile {
+	width: 14px;
+	top: 4px;
+}
+
+.mobile-icons-img {
+	width: 19px;
+}
+
+.returns-as {
+	width: 18px;
+	top: 8px;
+}
+
+.tooltip-section {
+	width: 19px;
+	top: 8px;
+}

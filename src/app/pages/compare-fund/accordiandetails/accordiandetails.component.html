@@ -1,0 +1,291 @@
+<!-- start comaprefund accodiandetail section -->
+<section class="FT-comparefund-accordiandetails">
+	<div class="row">
+		<div class="col-md-12 col-md-6 col-md-4 col-md-3">
+			<div class="accordianData card">
+				<div class="accordion-button" type="button" (click)="toggleSchemeSummaryAccordion()"
+					data-bs-toggle="collapse" data-bs-target="#collapseSchemeSummary" aria-expanded="true"
+					aria-controls="collapseSchemeSummary">
+					<div class="iconImage">
+						<img class="accordion-icon"
+							[src]="isSchemeSummaryAccordionExpanded ?  './assets/images/comparefund/plus.png' : './assets/images/comparefund/minus.png'"
+							alt="Toggle Icon">
+						<span class="iconHeading">SCHEME SUMMARY</span>
+					</div>
+				</div>
+				<div id="collapseSchemeSummary" class="accordion-collapse collapse show"
+					aria-labelledby="headingSchemeSummary" data-bs-parent="#filterAccordion">
+					<div class="accordion-body">
+						<div class="table-responsive sm">
+							<div class="table-responsive sm">
+								<table class="table table-striped sm styled-table">
+									<tbody>
+										<tr *ngFor="let schemeSummry of forSchemeSummry">
+											<th scope="row" class="makeBolder">{{schemeSummry.tableLeft}}</th>
+											<td class="makeGray"><span><img src="{{ schemeSummry.tableMiddle?.tableMiddleimgSrc }}" *ngIf="schemeSummry.tableMiddle?.tableMiddleimgSrc" alt="Riskometer Image"></span>{{schemeSummry?.tableMiddle?.tableMiddletext ? schemeSummry?.tableMiddle?.tableMiddletext : schemeSummry?.tableMiddle }}</td>
+											<td class="makeGray"><span><img src="{{ schemeSummry.tableRight?.tableMiddleimgSrc }}" *ngIf="schemeSummry.tableRight?.tableMiddleimgSrc" alt="Riskometer Image"></span>{{schemeSummry?.tableRight?.tableMiddletext ? schemeSummry?.tableRight?.tableMiddletext : schemeSummry?.tableRight }}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="accordianData card mt-2">
+				<div class="accordion-button collapsed" type="button" (click)="togglePerformanceAccordion()"
+					data-bs-toggle="collapse" data-bs-target="#collapsePerformance" aria-expanded="false"
+					aria-controls="collapsePerformance">
+					<div class="iconImage">
+						<img class="accordion-icon"
+							[src]="isPerformanceAccordionExpanded ? './assets/images/comparefund/minus.png' : './assets/images/comparefund/plus.png'"
+							alt="Toggle Icon">
+						<span class="iconHeading">PERFORMANCE</span>
+					</div>
+				</div>
+				<div id="collapsePerformance" class="accordion-collapse collapse"
+					aria-labelledby="headingcollapsePerformance" data-bs-parent="#filterAccordion">
+					<div class="accordion-body">
+
+						<div class="fd-tab-sections FT-performance" id="performance">
+							<div class="tab-content" id="myTabContent">
+								<div class="tab-pane fade show active" id="SIP-tab-pane" role="tabpanel"
+									aria-labelledby="SIP-tab" tabindex="0">
+									<div class="graph-block">
+										<div class="text-center position-absolute">
+											<span class="graph-info">Value of investmentd</span>
+										</div>
+										<div class="graph-head my-4">
+											<div>
+												<span class="graph-name"><span class="circle Franklin-build-india"
+														></span>Franklin Build India
+													Fund</span>
+												<span class="graph-stat">19.17% p.a</span>
+											</div>
+											<span class="vs">VS</span>
+											<div>
+												<span class="graph-name"><span class="circle Franklin-asian"
+														></span>Franklin Asian
+													Equity Fund</span>
+												<span class="graph-stat">10.12% p.a</span>
+											</div>
+											<span class="vs">VS</span>
+											<div>
+												<span class="graph-name"><span class="circle Franklin-india"
+														></span>Franklin India
+													Corporate Debt Fund</span>
+												<span class="graph-stat">10.12% p.a</span>
+											</div>
+										</div>
+										<div class="performance-graph mb-0 mt-0 investment-period" >
+											<canvas baseChart [data]="salesData" [type]="'line'"
+												[options]="chartOptions">
+											</canvas>
+										</div>
+										<div class="text-center mt-lg-4">
+											<span class="graph-info">Investment period</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="accordianData card mt-2">
+				<div class="accordion-button collapsed" type="button" (click)="toggleReturnAccodian()"
+					data-bs-toggle="collapse" data-bs-target="#collapseReturn" aria-expanded="false"
+					aria-controls="collapseReturn">
+					<div class="iconImage">
+						<img class="accordion-icon"
+							[src]="isReturnAccodionExpanded ? './assets/images/comparefund/minus.png' : './assets/images/comparefund/plus.png'"
+							alt="Toggle Icon">
+						<span class="iconHeading">RETURN</span>
+					</div>
+				</div>
+				<div id="collapseReturn" class="accordion-collapse collapse" aria-labelledby="headingcollapseReturn"
+					data-bs-parent="#filterAccordion">
+					<div class="accordion-body">
+						<div class="table-responsive sm">
+							<div class="table-responsive sm">
+								<table class="table table-striped sm styled-table">
+									<tbody>
+										<tr *ngFor="let return of forReturn">
+											<th scope="row" class="makeBolderAdd">{{return.tableItem}}</th>
+											<td class="makeGray">{{return.tableLeft}}</td>
+											<td class="makeGray">{{return.tableMiddle}}</td>
+											<td class="makeGray">{{return.tableRight}}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="accordianData card mt-2">
+				<div class="accordion-button collapsed" type="button" (click)="toggleisRiskmeasuresAccodion()"
+					data-bs-toggle="collapse" data-bs-target="#collapseRiskmeasures" aria-expanded="false"
+					aria-controls="collapseRiskmeasures">
+					<div class="iconImage">
+						<img class="accordion-icon"
+							[src]="isRiskmeasuresAccodionExpanded ? './assets/images/comparefund/minus.png' : './assets/images/comparefund/plus.png'"
+							alt="Toggle Icon">
+						<span class="iconHeading">RISK MEASURES</span>
+					</div>
+				</div>
+				<div id="collapseRiskmeasures" class="accordion-collapse collapse"
+					aria-labelledby="headingcollapseRiskmeasures" data-bs-parent="#filterAccordion">
+					<div class="accordion-body">
+						<div class="table-responsive sm">
+							<div class="table-responsive sm">
+								<table class="table table-striped sm styled-table">
+									<tbody>
+										<tr *ngFor="let riskmeasure of forRiskMeasure">
+											<th scope="row" class="makeBolderAdd">{{riskmeasure.tableItem}}</th>
+											<td class="makeGray">{{riskmeasure.tableLeft}}</td>
+											<td class="makeGray">{{riskmeasure.tableMiddle}}</td>
+											<td class="makeGray">{{riskmeasure.tableRight}}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="accordianData card mt-2">
+				<div class="accordion-button collapsed" type="button" (click)="togglePortfolioAccodion()"
+					data-bs-toggle="collapse" data-bs-target="#collapsePortfolio" aria-expanded="false"
+					aria-controls="collapsePortfolio">
+					<div class="iconImage">
+						<img class="accordion-icon"
+							[src]="isPortfolioAccodionExpanded ? './assets/images/comparefund/minus.png' : './assets/images/comparefund/plus.png'"
+							alt="Toggle Icon">
+						<span class="iconHeading">PORTFOLIO</span>
+					</div>
+				</div>
+				<div id="collapsePortfolio" class="accordion-collapse collapse"
+					aria-labelledby="headingcollapsePortfolio" data-bs-parent="#filterAccordion">
+					<div class="accordion-body">
+						<div class="table-responsive sm">
+							<div class="table-responsive sm">
+								<table class="table table-striped sm styled-table">
+									<tbody>
+										<tr *ngFor="let portfolio of forPortfolio">
+											<th scope="row" class="makeBolderAdd">{{portfolio.tableItem}}</th>
+											<td class="makeGray">{{portfolio.tableLeft}}</td>
+											<td class="makeGray">{{portfolio.tableMiddle}}</td>
+											<td class="makeGray">{{portfolio.tableRight}}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="accordianData card mt-2">
+				<div class="accordion-button collapsed" type="button" (click)="toggleFunddetailsAccodion()"
+					data-bs-toggle="collapse" data-bs-target="#collapseFunddetails" aria-expanded="false"
+					aria-controls="collapseFunddetails">
+					<div class="iconImage">
+						<img class="accordion-icon"
+							[src]="isFunddetailsAccodionExpanded ? './assets/images/comparefund/minus.png' : './assets/images/comparefund/plus.png'"
+							alt="Toggle Icon">
+						<span class="iconHeading">FUND DETAILS</span>
+					</div>
+				</div>
+				<div id="collapseFunddetails" class="accordion-collapse collapse"
+					aria-labelledby="headingcollapseFunddetails" data-bs-parent="#filterAccordion">
+					<div class="accordion-body">
+						<div class="table-responsive sm">
+							<div class="table-responsive sm">
+								<table class="table table-striped sm styled-table">
+									<tbody>
+										<tr *ngFor="let fundetails of forFunddetail">
+											<th scope="row" class="makeBolderAdd">{{fundetails.tableItem}}</th>
+											<td class="makeGray">{{fundetails.tableLeft}}</td>
+											<td class="makeGray">{{fundetails.tableMiddle}}</td>
+											<td class="makeGray">{{fundetails.tableRight}}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="accordianData card mt-2">
+				<div class="accordion-button collapsed" type="button" (click)="toggleOthersAccodion()"
+					data-bs-toggle="collapse" data-bs-target="#collapseOthers" aria-expanded="false"
+					aria-controls="collapseOthers">
+					<div class="iconImage">
+						<img class="accordion-icon"
+							[src]="isOthersAccodionExpanded ? './assets/images/comparefund/minus.png' : './assets/images/comparefund/plus.png'"
+							alt="Toggle Icon">
+						<span class="iconHeading">OTHERS</span>
+					</div>
+				</div>
+				<div id="collapseOthers" class="accordion-collapse collapse" aria-labelledby="headingcollapseOthers"
+					data-bs-parent="#filterAccordion">
+					<div class="accordion-body">
+						<div class="table-responsive makeHorizontaltableTableOtherScroll sm">
+							<div class="table-responsive sm">
+								<table class="table table-striped sm styled-table">
+									<tbody>
+										<tr>
+											<th scope="row" class="makeBolderAdd">Type of scheme and % equity
+												exposure</th>
+											<td class="titleForOther">
+												An Open-end Income Fund		
+											</td>
+											<td class="titleForOther">
+												An Open-end Income Fund
+											</td>
+											<td class="titleForOther">
+												An Open-end Income Fund
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="makeBolderAdd">Recent Dividends</th>
+											<td class="titleForOther">
+											   Plan
+												<select class="form-select optionOthers" aria-label="Default select example">
+													<option selected value="IDCW">IDCW</option>
+													<option value="Direct-IDCW">Direct-IDCW</option>
+												</select>
+											</td>
+											<td class="titleForOther">
+												Plan
+												<select class="form-select optionOthers" aria-label="Default select example">
+													<option selected value="Direct-IDCW">Direct-IDCW</option>
+													<option value="IDCW">IDCW</option>
+												</select>
+											</td>
+											<td class="titleForOther">
+												Plan
+												<select class="form-select optionOthers" aria-label="Default select example">
+													<option selected value="Direct-IDCW">Direct-IDCW</option>
+													<option value="IDCW">IDCW</option>
+												</select>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>

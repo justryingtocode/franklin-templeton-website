@@ -1,0 +1,80 @@
+<!-- start lead gen form -->
+<div class="lead-gen-block mb-5">
+    <div class="container" id="accordionExample">
+        <div class="row mt-3">
+            <div class="lead-first-section col-12 col-md-4 d-flex">
+                <img src="../../../../../assets/images/fund/lead-icon.png" class="img-fluid" alt="">
+                <h3 class="fontResize">Let Our Vertual RM help you decide where to begen your Mutual Fund Investment</h3>
+            </div>
+            <div class="col-8">
+                        <div class="" *ngIf="accountform">
+                                <form class="account-form yourname">
+                                    <div class="row">
+                                        <div class="form-group col-md-3">
+                                            <input type="text" class="form-control" placeholder="Your Name*">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <input type="text" class="form-control" placeholder="Mobile No*">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <input type="text" class="form-control" placeholder="Email*">
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="submit"
+                                                class="btn btn-primary led-submit lead-button fontResize submit-data" (click)="getcallDataForm()">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                        </div>
+                                   
+                        <div class="" *ngIf="collapseTwo">
+                                <form class="account-form-email Enter-OTP">
+                                    <div class="row">
+                                        <div class="form-group lead-name col-auto mt-1 d-none d-md-block">
+                                            <span>Enter OTP</span>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <input type="text" class="form-control form-otp" placeholder="OTP*">
+                                        </div>
+                                        <div class="col-auto">
+                                            <button class="btn btn-primary lead-otp-button fontResize submit-data" (click)="getforDataForm()"
+                                        >Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                        </div>            
+              
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Thank you Modal -->
+<!-- <div class="modal fade" id="enquiry" tabindex="-1" aria-labelledby="enquiryLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="">
+        <div class="">
+            <div class="save-alert">
+                <div class="content">
+                    <span class="close-btn" aria-label="Close" (click)="closeModalAndGetDataToForm()"><img src="assets/images/general/close.svg"></span>
+                    <img src="assets/images/general/check_circle.svg" class="checked-img">
+                    <span >Thank you for making an enquiry</span>
+                    
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="save-alert" *ngIf="Dialoge">
+
+    <div class="content">
+        <span class="close-btn" (click)="getDataToForm()">
+            <img src="assets/images/general/close.svg">
+        </span>
+        <img src="assets/images/general/check_circle.svg" class="checked-img">
+        <span class="fontResize">Thank you for making an enquiry.</span>
+    </div>
+
+</div>

@@ -1,0 +1,248 @@
+<div id="page-content" class="bg-img">
+    <!-- start page breadcrumb block -->
+    <div class="FT-breadcrumb d-md-block d-none">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Touch points</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="FT-touchPoints">
+        <div class="container">
+            <div class="FT-title-small text-blue mb-3">Digital Touchpoints</div>
+            <div class="text-big text-dark-gray mb-4">
+                At Franklin Templeton, it is our endeavor to make your experience of investing with us simple and
+                convenient. You can now invest, switch, redeem or know your account value with great ease using any of
+                these easy transaction methods.
+            </div>
+            <!-- start section nav block -->
+            <div class="FT-blocks-nav sticky-top">
+                <ul>
+                    <li><a class="Website active-item" (click)="scrollTo('Website')">Website</a></li>
+                    <li><a class="Whatsapp" (click)="scrollTo('Whatsapp')">Whatsapp</a></li>
+                    <li><a class="Mobile" (click)="scrollTo('Mobile')">Mobile App</a></li>
+                    <!-- <li><a class="Bot" (click)="scrollTo('Bot')">Chat</a></li> -->
+                    <li><a class="InvCenter" (click)="scrollTo('InvCenter')">Investor service centre</a></li>
+                    <li><a class="SMS" (click)="scrollTo('SMS')">SMS</a></li>
+                </ul>
+            </div>
+            <div class="locations-box">
+                <div id="Website" class="row align-items-center gx-lg-5 fd-tab-sections">
+                    <div class="col-md-6 col-12">
+                        <img src="assets/images/footer-pages/touch-img1.png">
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="px-xxl-4">
+
+                            <div class="text-big mb-3">
+                                <img src="assets/images/footer-pages/Laptop.svg" class="me-2">Website
+                            </div>
+                            <div class="text-gray mb-4">
+                                You can use our website/app to transact with us 24X7. It is simple and easy to use
+                                enabling you to complete a host of transactions online
+                            </div>
+                            <ul class="mb-4">
+                                <li>Buy/Redeem</li>
+                                <li>Switch</li>
+                                <li>Start an SIP</li>
+                                <li>Renew or Modify an SIP</li>
+                                <li>Start/Cancel an STP / SWP</li>
+                            </ul>
+                            <a class="btn btn-outline-primary" (click)="showCards()">Know more</a>
+                            <a href="" class="btn btn-primary">Login</a>
+                        </div>
+                    </div>
+                    <div class="row pb-1 card-row" [hidden]="!IsCardVisible">
+                        <div class="col-md-3 mt-4">
+                            <div class="container h-100 card">
+                                <div class="card-body custom-body">
+                                    <img src="assets/images/touchpoints/carbon_account.png" class="mb-2">
+                                    <h5 class="card-title">Account Lookup</h5>
+                                    <p class="card-text text-muted">View your account statement for any period. Email or
+                                        take a print of your account statement.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mt-4">
+                            <div class="container h-100 card">
+                                <div class="card-body custom-body">
+                                    <img src="assets/images/touchpoints/Group.png" class="mb-2">
+                                    <h5 class="card-title">Buy/Redeem/Switch units</h5>
+                                    <p class="card-text text-muted">View your account statement for any period. Email or
+                                        take a print of your account statement.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mt-4">
+                            <div class="container h-100 card">
+                                <div class="card-body custom-body">
+                                    <img src="assets/images/touchpoints/clarity_coin-bag-line.png" class="mb-2">
+                                    <h5 class="card-title">Portfolio Valuation</h5>
+                                    <p class="card-text text-muted">Get a Valuation of your portfolio with us. You can
+                                        also get a combined view of your family's investment portfolio along with your
+                                        own.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mt-4">
+                            <div class="container h-100 card">
+                                <div class="card-body custom-body">
+                                    <img src="assets/images/touchpoints/register_sip.png" class="mb-2">
+                                    <h5 class="card-title">Register for SIP/SWP/STP/DTP</h5>
+                                    <p class="card-text text-muted">Register for our systematic investment plans or
+                                        systematic withdrawal plans or systematic transfer plans or dividend transfer of
+                                        units depending on your requirement.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mt-4">
+                            <div class="container h-100 card">
+                                <div class="card-body custom-body">
+                                    <img src="assets/images/touchpoints/request_change.png" class="mb-2">
+                                    <h5 class="card-title">Request a change/Post your Request</h5>
+                                    <p class="card-text text-muted">Change your contact details, secret Q&A and dividend
+                                        details. You can also post your queries online.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mt-4">
+                            <div class="container h-100 card">
+                                <div class="card-body custom-body">
+                                    <img src="assets/images/touchpoints/dividend_detail.png" class="mb-2">
+                                    <h5 class="card-title">Dividend Details</h5>
+                                    <p class="card-text text-muted">Get your dividend and redemption details for any of
+                                        your accounts.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2 pb-0">
+                            <!-- <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <button type="button" class="btn-collapse-custom" (click)="showCards()">
+                                    <img src="assets/images/home/collape-btn.svg" />
+                                </button>
+                            </div>
+                            <div class="col-md-4"></div> -->
+                            <div class="text-center">
+                                <button class="btn btn-white viewless" (click)="hideCards()">View Less</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div id="Whatsapp" class="row align-items-center gx-lg-5 fd-tab-sections">
+                    <div class="col-md-6 col-12">
+                        <img src="assets/images/footer-pages/touch-img2.png">
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="px-xxl-4">
+
+                            <div class="text-big mb-3">
+                                <img src="assets/images/footer-pages/Whatsapp-logo.svg" class="me-2">Whatsapp
+                            </div>
+                            <div class="text-gray mb-4">
+                                You can use our smart conversational whatsApp offering to transact with us. Simply
+                                message 'Hi' on 9063444255 to start chatting.
+                            </div>
+                            <ul class="mb-4">
+                                <li>Buy</li>
+                                <li>Start an SIP</li>
+                                <li>Redeem</li>
+                            </ul>
+                            <div class="text-gray mb-4">
+                                Alternatively, you can also choose to chat with “Franklin” on our website and app.
+                            </div>
+                            <a href="" class="btn btn-primary">Chat Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="Mobile" class="row align-items-center gx-lg-5 fd-tab-sections">
+                    <div class="col-md-6 col-12">
+                        <img src="assets/images/footer-pages/touch-img3.png">
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="px-xxl-4">
+
+                            <div class="text-big mb-3">
+                                <img src="assets/images/footer-pages/DeviceMobile.svg" class="me-2">Mobile App
+                            </div>
+                            <div class="text-gray mb-4">
+                                Download now to invest and track your portfolio effortlessly at your fingertips – Download. Invest. Track.!
+                            </div>
+
+                            <div>
+                                <a href="#">
+                                    <img class="playstore" src="assets/images/home/google-play.svg">
+                                </a>
+                                <a href="#" class="Home-appstore">
+                                    <img class="appstore" src="assets/images/home/app-store.svg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div id="Bot" class="row align-items-center gx-lg-5 fd-tab-sections">
+                    <div class="col-md-6 col-12">
+                        <img src="assets/images/footer-pages/touch-img2.png">
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="px-xxl-4">
+
+                            <div class="text-big mb-3">
+                                <img src="assets/images/footer-pages/Chats.svg" class="me-2">Chat
+                            </div>
+                            <div class="text-gray mb-4">
+                                Chat live with experts for personalized mutual fund guidance.
+                            </div>
+
+                            <a href="" class="btn btn-primary">Chat Now</a>
+                        </div>
+                    </div>
+                </div> -->
+                <div id="InvCenter" class="row align-items-center gx-lg-5 fd-tab-sections">
+                    <div class="col-md-6 col-12">
+                        <img src="assets/images/footer-pages/touch-img4.png">
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="px-xxl-4">
+
+                            <div class="text-big mb-3">
+                                <img src="assets/images/footer-pages/UserCircle.svg" class="me-2">Investor service
+                                centre
+                            </div>
+                            <div class="text-gray mb-4">
+                                If you would rather buy and sell through a paper-based application form, we would be
+                                happy to serve you at any of our investor service centres.
+                                Click here for information about our service centres. If you would like to download an
+                                application form, please click here.
+                            </div>
+
+                            <a href="" class="btn btn-primary">Locate us</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="SMS" class="row align-items-center gx-lg-5 fd-tab-sections">
+                    <div class="col-md-6 col-12">
+                        <img src="assets/images/footer-pages/touch-img5.png">
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="px-xxl-4">
+
+                            <div class="text-big mb-3">
+                                <img src="assets/images/footer-pages/Chat.svg" class="me-2">SMS
+                            </div>
+                            <div class="text-gray mb-4">
+                                Stay informed on-the-go with our SMS alerts for your mutual funds.
+                            </div>
+                            <a href="" class="btn btn-primary">Know more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,162 @@
+.btn-date-selector {
+    min-width: 110px;
+    padding-left: 0px;
+    outline: 0;
+    border: 0;
+    text-align: left;
+
+    // width: 100%;
+    // border-radius: 0.75rem;
+    // background-color: transparent;
+    // border: 1px solid #ccc;
+    // padding: 0.407rem 0.75rem;
+    // font-size: inherit;
+    // font-family: inherit;
+    &:hover {
+        box-shadow: none;
+        scale: 1;
+    }
+
+}
+
+select option {
+    color: var(--dark-gray);
+}
+
+@media(max-width:600px) {
+    ::-webkit-scrollbar {
+        display: block;
+        width: 2px;
+        height: 2px;
+    }
+
+    .date-select {
+        height: 40px;
+        overflow-y: auto;
+    }
+
+    select option {
+        font-size: 0.875rem;
+        // height:100px!important;
+        // max-height:100px!important;
+    }
+
+    .btn-date-selector {
+        padding: 0;
+        min-width: 0px;
+        font-size: 0.75rem;
+    }
+
+    .date-select {
+        font-size: small;
+    }
+
+    .date-submit {
+        font-size: small;
+    }
+
+    .date-range-container {
+        width: 200px !important;
+        padding: 0;
+    }
+
+    .transform-popup {
+        transform: translate(-80px, 28px) !important;
+    }
+}
+
+::ng-deep .popover {
+    max-width: 320px;
+    transform: translate(4px, 42px) !important;
+}
+
+.date-range-container {
+    width: 284px;
+}
+
+
+@media(max-width:450px) {
+    .btn-date-selector {
+        font-size: 8px;
+    }
+}
+
+//
+
+.share-menu-twitter {
+    max-width: 315px;
+}
+
+.fund-AUM {
+    margin-bottom: 8px;
+    font-size: 1.125rem;
+}
+
+.share-menu-twitter-fund {
+    border-radius: 5px
+}
+
+.share-btn-fund {
+    border: 1px solid #dee2e6;
+    padding: 6px 0px;
+    box-shadow: none;
+    background-color: white;
+    font-size: 0.75rem;
+}
+
+
+.showIconForWatchlist {
+    font-size: 0.75rem;
+}
+
+.audio-box {
+    max-height: 190px;
+    overflow-y: auto;
+}
+
+.podcast-block {
+    border: 1px solid #dee2e6;
+    padding: 3px;
+}
+
+.audio-class-box {
+    min-width: 130px;
+}
+
+.podcast-img-box {
+    border-radius: 5px
+}
+
+// .report-search-box {
+// 	padding: 12px 20px;
+// 	border: 1px solid blue !important;
+// 	background-color: white;
+// 	color: blue;
+// }
+
+.report-share {
+    max-height: 190px;
+    overflow-y: auto;
+}
+
+// .report-bcakground {
+//     gap:16px;
+// }
+
+// .report-share-box {
+// 	padding:20px;
+// }
+
+// .report-detail {
+// 	font-size: 1rem;
+// }
+
+// .offcanvas-head {
+//     height: 75%;
+//     border-top-left-radius: 39px;
+//     border-top-right-radius: 39px;
+// }
+
+// .report-date-details {
+//     margin-left: 8px;
+// }

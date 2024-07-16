@@ -1,0 +1,154 @@
+<section class="FT-investor-links bg-berry">
+    <div class="container">
+        <div class="FT-title-medium mb-3">Account Statements</div>
+        <div class="text-dark-gray mb-4">At our Investor Services, we ensure that your account statements are not just a
+            compilation of numbers but a source of clarity and confidence.</div>
+        <!-- <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"> -->
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-4 col-6 mb-4 slide" *ngFor="let item of linksForAccountStatements">
+                        <a class="link-box" href="{{item.link}}">
+                            <div class="img-box">
+                                <img src="assets/images/footer-pages/{{item.icon}}">
+                            </div>
+                            <div class="text-big">{{item.label}}</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <!-- </ngx-slick-carousel> -->
+    </div>
+</section>
+<section class="FT-investor-links">
+    <div class="container">
+        <div class="FT-title-medium mb-3">Update Personal Details</div>
+        <div class="text-dark-gray mb-4">At our Investor Services, we make it simple for you to update your personal
+            details.</div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-4 col-6 mb-4 slide" *ngFor="let item of linksForPersonalDetails">
+                        <a class="link-box" href="{{item.link}}">
+                            <div class="img-box">
+                                <img src="assets/images/footer-pages/{{item.icon}}">
+                            </div>
+                            <div class="text-big">{{item.label}}</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</section>
+<section class="FT-investor-links bg-berry">
+    <div class="container">
+        <div class="FT-title-medium mb-3">Forms & Downloads</div>
+        <div class="text-dark-gray mb-4">Accessing forms and downloads is an integral part of a financial institution's
+            services, as it provides customers with a convenient way to access essential documents and resources.</div>
+            <div class="row mobile">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-4 col-6 mb-4 slide" *ngFor="let item of linksForFormAndDownloads">
+                            <a class="link-box" href="{{item.link}}">
+                                <div class="img-box">
+                                    <img src="assets/images/footer-pages/{{item.icon}}">
+                                </div>
+                                <div class="text-big">{{item.label}}</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        <ngx-slick-carousel class="carousel desktop" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem class="slide" *ngFor="let item of linksForFormAndDownloads">
+                <a class="link-box" href="{{item.link}}">
+                    <div class="img-box">
+                        <img src="assets/images/footer-pages/{{item.icon}}">
+                    </div>
+                    <div class="text-big">{{item.label}}</div>
+                </a>
+            </div>
+        </ngx-slick-carousel>
+    </div>
+</section>
+<section class="FT-investor-links">
+    <div class="container">
+        
+        <div class="FT-title-medium mb-3">Ways to transact with us</div>
+        <div class="text-dark-gray mb-4">Our online platform offers a user-friendly repository of forms, documents, and
+            informational resources that you can easily access and download.</div>
+            <!-- mob view -->
+            <div class="row mobile">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-4 col-6 mb-4 slide" *ngFor="let item of linksForWaysToTract">
+                            <div [attr.data-bs-toggle]="'offcanvas'" [attr.data-bs-target]="item.targeMob">
+                                <a class="link-box" [routerLink]="item.link">
+                                    <div class="img-box">
+                                        <img src="assets/images/footer-pages/{{item.icon}}">
+                                    </div>
+                                    <div class="text-big">{{item.label}}</div>
+                                </a>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>        
+            <!-- web view    -->
+        <ngx-slick-carousel class="carousel desktop" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem class="slide" *ngFor="let item of linksForWaysToTract">
+                <div [attr.data-bs-toggle]="'modal'" [attr.data-bs-target]="item.target">
+                    <a class="link-box" [routerLink]="item.link">
+                        <div class="img-box">
+                            <img [src]="'assets/images/footer-pages/' + item.icon">
+                        </div>
+                        <div class="text-big">{{item.label}}</div>
+                    </a>
+                </div>
+                
+            </div>            
+        </ngx-slick-carousel>
+        <!-- <div data-bs-toggle="modal" data-bs-target="{{item.target}}">
+            <a class="link-box" href="{{item.link}}">
+                <div class="img-box">
+                    <img src="assets/images/footer-pages/{{item.icon}}">
+                </div>
+                <div class="text-big">{{item.label}}</div>
+            </a>
+        </div> -->
+    </div>
+</section>
+<section class="FT-investor-links bg-berry">
+    <div class="container">
+        <div class="FT-title-medium mb-3">NAV and Others</div>
+        <div class="text-dark-gray mb-4">Our online platform offers a user-friendly repository of forms, documents, and
+            informational resources that you can easily access and download.</div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-4 col-6 mb-4 slide" *ngFor="let item of linksForNavAndOthers">
+                            <a class="link-box" href="{{item.link}}">
+                                <div class="img-box">
+                                    <img src="assets/images/footer-pages/{{item.icon}}">
+                                </div>
+                                <div class="text-big">{{item.label}}</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+    </div>
+</section>

@@ -1,0 +1,12 @@
+<svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="lucide:rocking-chair">
+<path id="Vector" d="M6.66699 3.33325L11.667 20.8333H30.8337M16.667 20.8333L10.0003 33.3333M25.8337 20.8333L31.667 33.3333M5.41699 29.9999C7.43235 32.0408 9.83286 33.6612 12.4793 34.7671C15.1257 35.8731 17.9654 36.4426 20.8337 36.4426C23.7019 36.4426 26.5416 35.8731 29.188 34.7671C31.8345 33.6612 34.235 32.0408 36.2503 29.9999" stroke="url(#paint0_linear_2439_20127)" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_2439_20127" x1="13.7034" y1="19.8879" x2="28.483" y2="19.9565" gradientUnits="userSpaceOnUse">
+<stop stop-color="#583EE7"/>
+<stop offset="0.484375" stop-color="#0EA0E6"/>
+<stop offset="1" stop-color="#00B6AE"/>
+</linearGradient>
+</defs>
+</svg>

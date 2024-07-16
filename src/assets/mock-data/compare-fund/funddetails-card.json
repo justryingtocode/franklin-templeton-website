@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "cardTitle": "Franklin Build India Fund1",
+        "existingInvestors": "1.35 lakh",
+        "aum": "3242 Cr",
+        "returns": "11.05%",
+        "tag": [
+          "Equity",
+          "Mid Cap",
+          "7 years old fund"
+        ]
+    },
+    {
+        "id": 2,
+        "cardTitle": "Franklin Build India Fund2",
+        "existingInvestors": "1.35 lakh",
+        "aum": "3242 Cr",
+        "returns": "11.05%",
+        "tag": [
+          "Equity",
+          "Mid Cap",
+          "7 years old fund"
+        ]
+      },
+      {
+        "id": 3,
+        "cardTitle": "Franklin Build India Fund3",
+        "existingInvestors": "1.35 lakh",
+        "aum": "3242 Cr",
+        "returns": "11.05%",
+        "tag": [
+          "Equity",
+          "Mid Cap",
+          "7 years old fund"
+        ]
+      }
+]

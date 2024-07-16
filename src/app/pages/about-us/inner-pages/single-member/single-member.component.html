@@ -1,0 +1,88 @@
+<div id="page-content" class="bg-img">
+    <!-- start page breadcrumb block -->
+    <div class="FT-breadcrumb d-md-block d-none">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">About us</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Our people</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <section class="FT-people single-member">
+        <div class="container">
+            <div class="report-back-icon d-md-none d-block">
+                <i class="bi bi-arrow-left fs-3" routerLink="/about-us/our-people"></i>
+            </div>
+            <div class="member-box ">
+                <div class="row gx-lg-5">
+                    <div class="breadcrumb-block">
+                        <div class="col-lg-auto col-md-4 col-12 text-center text-md-start mb-4 mb-md-0">
+                            <img [src]="'assets/images/about/'+memberDetails?.image" class="img-fluid">
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg col-md-12 col-12">
+                        <div class="content people-content">
+                            <div class="text-center text-md-center">
+                                <div class="FT-title text-center text-md-center">{{memberDetails?.name}}</div>
+                                <h2>{{memberDetails?.designation}}</h2>
+                                <!-- <div class="social-icon">
+                                    <button type="button" class="btn btn-outline-primary d-md-none d-block">Follow on Linkedin <i class="bi bi-linkedin"></i> </button>
+                                </div> -->
+                            </div>
+
+                            <div *ngFor="let text of memberDetails?.content" class="mb-4">
+                                {{text}}
+                            </div>
+
+                            <!-- <div class="mb-4">
+                                Mr. Satwalekar is on the board of Franklin Templeton Asset Management Malaysia and
+                                Vietcombank Fund Management (VCBF).
+                            </div>
+                            <div class="mb-4">
+                                Previous Assignments:
+
+                                <ul>
+                                    <li>
+                                        - Country head and CEO of Franklin Templeton Asset Management Malaysia
+                                        (2017 to 2022).
+                                    </li>
+                                    <li>
+                                        - CEO and CIO for Franklin Templeton joint venture in Vietnam, overseeing the
+                                        business & investment activities of the group and instrumental in launching one
+                                        of the first open-ended retail fund in Vietnam (2012 to 2017).
+                                    </li>
+
+                                    <li>
+                                        - Vice President, portfolio manager and research analyst for Franklin Small Cap
+                                        Growth portfolio management team and was the lead manager for the private
+                                        small cap accounts (1998 to 2012).
+                                    </li>
+                                    <li>
+                                        - Vice President and research analyst for Franklin Equity Group. He specialized
+                                        in the analysis of the computer software industry and IT service companies (1996
+                                        to 1998).
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="mb-4">
+                                Mr. Satwalekar received a Bachelor of Commerce from the University of Bombay, India
+                                and an M.B.A. in finance from The Wharton School at the University of Pennsylvania.
+                                He is a Chartered Financial Analyst (CFA) charter holder and a member of the CFA
+                                Institute and the CFA Society of San Francisco (CFASF).
+                            </div> -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>

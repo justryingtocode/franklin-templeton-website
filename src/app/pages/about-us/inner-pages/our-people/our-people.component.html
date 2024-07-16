@@ -1,0 +1,149 @@
+<div id="page-content">
+    <!-- start page breadcrumb block -->
+    <div class="FT-breadcrumb">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">About us</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Our people</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- start section pages inners -->
+    <section class="FT-inner-banners" style="background: url('assets/images/about/hero-bg.png');">
+        <div class="container">
+            <div class="content-box text-white">
+                <h2 class="mb-4">Our People</h2>
+                <div class="content-box">
+                    Explore the stories of our team members, highlighting their professional achievements, personal
+                    interests, and the meaningful contributions they make within and beyond our organization.
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="FT-people">
+        <div class="container">
+            <div *ngFor="let member of membersList" class="member-box">
+                <div class="row gx-lg-5">
+                    <div class="col-md-auto col-4">
+                        <img [src]="'assets/images/about/'+member.image">
+                    </div>
+                    <div class="col-md col-8">
+                        <div class="content">
+                            <h2 class="mb-2">{{member.name}}</h2>
+                            <h3 class="mb-md-4 mb-3">{{member.designation}}</h3>
+                            <div>
+                                {{member.rol}}
+                                <span class="d-none d-md-inline-block">
+                                {{member.description}}
+                                </span>...<a [routerLink]="['/about-us/single-member', member.memberId]"> <span class="aboutlinks login-dark2 our-people" >Read
+                                    More.</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <div class="member-box">
+                <div class="row">
+                    <div class="col-md-auto col-4">
+                        <img src="assets/images/about/member2.png">
+                    </div>
+                    <div class="col-md col-8">
+                        <div class="content">
+                            <h2 class="mb-2">Avinash (Avi) Satwalekar, CFA</h2>
+                            <h3 class="mb-md-4 mb-3">President, Franklin Templeton Asset Management (India)</h3>
+                            <div>
+                                Avi Satwalekar is President of Franklin Templeton Asset Management (India) Private 
+                                Limited.
+                                <span class="d-none d-md-inline-block">
+                                    In this capacity, he is responsible for leading Franklin Templeton's retail
+                                and  institutional business in IndiaMr. Satwalekar is on the board of Franklin Templeton
+                                Asset Management Malaysia and Vietcombank Fund Management (VCBF)
+                                </span>
+                                 ...<a href="#">Read
+                                    More</a>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="member-box">
+                <div class="row">
+                    <div class="col-md-auto col-4">
+                        <img src="assets/images/about/member3.png">
+                    </div>
+                    <div class="col-md col-8">
+                        <div class="content">
+                            <h2 class="mb-2">Mr Anand Radhakrishnan</h2>
+                            <h3 class="mb-4">Chief Investment Officer, Franklin Equity India</h3>
+                            <div>
+                                Anand Radhakrishnan is Chief Investment Officer for Franklin Equity - India
+                                <span class="d-none d-md-inline-block">
+                                   , Franklin
+                                Templeton
+                                Asset Management (India) Pvt Ltd. Mr. Radhakrishnan is responsible for overseeing all
+                                the local
+                                equity funds. His responsibility includes mentoring all the portfolio managers and also
+                                acting as
+                                portfolio manager for 
+                                </span>
+                                ...<a href="#">Read More</a>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="member-box">
+                <div class="row">
+                    <div class="col-md-auto col-4">
+                        <img src="assets/images/about/member4.png">
+                    </div>
+                    <div class="col-md col-8">
+                        <div class="content">
+                            <h2 class="mb-2">Janakiraman Rengaraju, CFA</h2>
+                            <h3 class="mb-4">Chief Investment Officer - EME India,Franklin Templeton Asset Management
+                                (India) Pvt Ltd.</h3>
+                            <div>
+                                Mr. Janakiraman Rengaraju is Chief Investment Officer – Equity 
+                                <span class="d-none d-md-inline-block">
+                                    for Franklin Templeton Asset Management (India)
+                                Pvt Ltd. Mr. Rengaraju is responsible for overseeing all the local equity funds. His
+                                responsibility includes mentoring
+                                all the portfolio managers apart from continuingto be the Portfolio Manager
+                                </span>
+                                ...<a href="#">Read More</a>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="member-box">
+                <div class="row">
+                    <div class="col-md-auto col-4">
+                        <img src="assets/images/about/member3.png">
+                    </div>
+                    <div class="col-md col-8">
+                        <div class="content">
+                            <h2 class="mb-2">Mr Santosh Das Kamath</h2>
+                            <h3 class="mb-4">Managing Director, Chief Investment Officer</h3>
+                            <div>
+                                Santosh Kamath is a managing director and chief investment officer for 
+                                <span class="d-none d-md-inline-block">
+                                   Franklin Templeton Fixed Income in Mumbai, India. Mr. Kamath is responsible for overseeing the fixed income
+                                functions of the locally managed and distributed debt products, and is currently
+                                responsible for
+                                managing five billion USD of fixed in 
+                                </span>
+                                ...<a href="#">Read More</a>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+</div>

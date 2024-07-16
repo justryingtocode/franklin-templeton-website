@@ -1,0 +1,12 @@
+<div class="empanel-box" *ngIf="clickLink">
+    <div>
+        <span class="link-expire">Link Expired</span>
+        <div class="text-big text-meduim my-3"><i class="bi bi-exclamation-triangle me-1 meduim-link" ></i>
+            Please note that the link to complete your request has expired. <span class="expired-link" (click)="onClick()">Click here</span>
+            to re-intiate the request for forgot password.</div>
+    </div>
+</div>
+
+<div class="empanel-box" *ngIf="resetPassword">
+    <app-reset-step1></app-reset-step1>
+</div>

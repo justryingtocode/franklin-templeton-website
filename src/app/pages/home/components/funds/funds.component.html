@@ -1,0 +1,50 @@
+<!-- start section fund types -->
+<section class="FT-fund-types bg-gradient">
+    <div class="container">
+        <div class="text-center text-white section-head">
+            <div class="FT-title fontResize">Different Goals. Diverse Funds</div>
+            <div class="text-big funds-description fontResize">
+                A wide range of equity and debt funds for all your investment goals.
+            </div>
+        </div>
+        <div class="row gx-0 mb-5 pb-3">
+            <div class="nav flex-column nav-pills me-4 col-auto" id="v-pills-tab" role="tablist" aria-orientation="vertical element" >
+            <ng-container *ngFor="let element of sideFilterOptions">
+                <button class="nav-link fontResize" [id]="element.name" [ngClass]="element.id==1 ? 'active' : ''" data-bs-toggle="pill"
+                data-bs-target="#v-pills-focus" type="button" role="tab" aria-controls="v-pills-focus"
+                aria-selected="true" (mouseover)="showContentOnHover($event)">{{element.name}}</button>
+            </ng-container>
+            </div>
+            
+         
+            <div class="tab-content col" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-focus" role="tabpanel"
+                    aria-labelledby="v-pills-focus-tab" tabindex="0">
+                    <ngx-slick-carousel *ngIf="slideConfig" class="carousel" #slickModal="slick-carousel"
+                        [config]="slideConfig">
+                        <ng-container *ngFor="let fund of funds; let i = index; trackBy: trackByFn">
+                            <div ngxSlickItem class="slide" *ngIf="i < 3">
+                                <app-fund-card1 [fund]="fund"></app-fund-card1>
+                            </div>
+                        </ng-container>
+                    </ngx-slick-carousel>
+                </div>
+
+                <ng-container *ngFor="let fund of funds; let i = index; trackBy: trackByFn">
+                    <div *ngIf="i < 3" class="tab-pane fade" id="v-pills-equity_{{i}}" role="tabpanel"
+                        aria-labelledby="v-pills-equity-tab" [tabindex]="i">...</div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="text-center">
+            <a class="more-links me-5 footer-links-CTA" [routerLink]="['/funds']">
+                <span class="fontResize">Explore all equity funds</span>
+                <img class="right-chev" src="assets/images/general/right-chevron.svg" alt="Right arrow">
+            </a>
+            <a class="more-links footer-links-CTA" [routerLink]="['/funds']">
+                <span class="fontResize">Explore all funds</span>
+                <img class="right-chev" src="assets/images/general/right-chevron.svg" alt="Right arrow">
+            </a>
+        </div>
+    </div>
+</section>

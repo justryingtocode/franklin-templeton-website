@@ -1,0 +1,126 @@
+.calculator-graph-box1 {
+    height: 310px;
+}
+
+
+
+@media(max-width: 575px) {
+    .calculator-graph-box1 {
+        height: auto;
+    }
+
+    .table-responsive {
+        margin-bottom: 30px !important;
+    }
+
+    .FT-calculator-box .FT-title-medium {
+        padding-top: 15px;
+    }
+}
+
+
+@media(max-width:899.98px) {
+    .extra-calculator-style {
+        padding-top: 15px;
+    }
+}
+
+@media(max-width: 767.98px) {
+
+    // .FT-financial .graph-table-btns {
+    //     width: max-content;
+    // }
+    .FT-calculator-box .FT-financial .tab-content.calculator-box .graph-table-btns .btn {
+        width: max-content;
+    }
+
+    #myTab2 {
+        flex-direction: column;
+    }
+}
+
+.SIP-calculator {
+    padding-top: 48px;
+}
+
+.GraphView {
+    background: #A669CA;
+}
+
+.GraphView-circle {
+    background: #00847D;
+}
+
+// .SIP-circle {
+//     background: #A669CA;
+// }
+
+// .SIP-investment {
+//     background: #00847D
+// }
+
+.Recommended-fund-block {
+    margin-top: 5px;
+}
+
+.SIP-Recommended-fund-block {
+    max-width: 322px;
+    width: 315px;
+}
+
+.risk-funds {
+    margin-bottom: auto;
+    margin-left: 19px;
+}
+
+.equity-funds {
+    white-space: nowrap;
+}
+
+.very-high-risk {
+    margin-bottom: auto;
+    margin-left: 0px !important;
+}
+
+.dropdown-menu-copylink {
+    z-index: 1026;
+}
+
+.Investors {
+    left: -100px;
+}
+
+.Annualised {
+    vertical-align: super;
+}
+
+.Inception {
+    font-size: 0.813rem !important;
+}
+
+.investors-img {
+    vertical-align: sub;
+    padding-right: 0;
+}
+.investor-icon-img{
+    gap: 3px; 
+    align-items: start;
+}
+.investor-img-icon{
+    position: relative; 
+    bottom: 3px;
+}
+.link-AUM{
+    padding-left: 25px; 
+    width: auto;
+}
+.AUM-sip{
+    gap: 3px;
+}
+.AUM-sip-img{
+    position: relative;
+    top: 2px;
+}
+.top{
+    top: 0;
+}

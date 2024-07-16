@@ -1,0 +1,236 @@
+.slide a {
+  color: inherit;
+}
+
+// .for-dropdown-menu {
+//     padding-top: 6px;
+//     transform: translate3d(-15%, 0%, 0px)!important;
+
+//     & li{
+//     padding: 0px 4px 4px 7px;
+//     font-size: 0.813rem;
+// }
+// }
+
+@media(max-width:798.98px) {
+  .FT-title-medium {
+    font-size: 20px;
+  }
+}
+
+/// for add scroll horizontal
+// .category-btns {
+//     overflow-x: auto;
+//     white-space: nowrap;
+//     padding: 10px 20px;
+//   }
+
+//   .category-container {
+//     display: inline-block;
+//   }
+
+//   /* WebKit-based browsers (Chrome, Safari) */
+//   .category-btns::-webkit-scrollbar {
+//     height: 10px;
+//   }
+
+//   .category-btns::-webkit-scrollbar-track {
+//     background-color: transparent; /* Adjust as needed */
+//   }
+
+.img-with-tooltip .tooltip-block {
+  text-align: center;
+}
+
+@media(max-width: 798.98px) {
+  .filter-block .search {
+    width: 90%;
+  }
+
+  .togglefilter {
+    min-width: 82px;
+  }
+
+  .dropdownfilter {
+    margin-right: 5px
+  }
+}
+
+.dropup .dropdown-menu li {
+  padding: 0 20px 8px 10px;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  inset: 0px auto auto 0px;
+  margin: 0px;
+  transform: translate3d(-205px, 5.6px, 0px) !important;
+}
+
+@media(max-width:987.98px) {
+  .dropdown-menu1 {
+    position: absolute;
+    inset: 0px auto auto 0px;
+    margin: 0px;
+    padding: 0;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.12);
+    transform: translate3d(-3px, 40.6px, 0px) !important;
+  }
+}
+
+@media(min-width: 1000.98px) {
+  .dropdown-menu1 {
+    position: absolute;
+    inset: 0px auto auto 0px;
+    margin: 0px;
+    padding: 0;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.12);
+    transform: translate3d(5px, 40.6px, 0px) !important;
+  }
+}
+
+// .category-card .card-body{
+//   min-height: 150px;
+// }
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  /* Adjust the gap according to your design */
+}
+
+.forcategortcardtitle {
+  min-height: 49px;
+  // border-bottom: 1px solid #D2D8EA;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
+
+.line {
+  position: relative;
+  text-decoration: none;
+}
+
+.line:after {
+  content: "";
+  position: absolute;
+  background-color: #3769ff;
+  height: 0.5px;
+  width: 0;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+}
+
+.line:hover:after {
+  width: 100%;
+}
+
+.dropdown-item li:hover {
+  background-color: #0c1738 !important;
+}
+
+.FT-ad-box {
+  background: url("/src/assets/images/knowledge-center/ad-bg.svg") no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  padding: 28px 36px;
+  border-radius: 12px;
+
+  //border: 2px solid #D2D8EA;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+
+    li {
+      display: inline-block;
+      margin-right: 40px;
+      font-size: 1.125rem;
+      letter-spacing: -0.54px;
+
+      strong {
+        margin-right: 4px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .btn {
+    padding: 16px 28px;
+    width: 100%;
+    max-width: 207px;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    font-family: "Inter";
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+  }
+}
+
+//
+.open-learning-style {
+  cursor: pointer
+}
+
+.searchTerm-size {
+  position: relative;
+  z-index: 999999;
+}
+
+.fundexplore {
+  position: relative;
+  left: 78%;
+  top: -31px;
+}
+
+.closebutton-explore {
+  position: relative;
+  left: 95%;
+  top: -26px;
+}
+
+.share-link {
+  width: 18px;
+}
+
+.share-fb {
+  width: 20px;
+}
+
+// .share-twitter {
+//   width: 21px;
+//   top: -1px;
+//   position: relative;
+//   left: 0px;
+// }
+
+.share-fb-dark {
+  width: 21px;
+  top: -1px;
+  position: relative;
+  left: 0px;
+}
+
+.forwatchlist{
+  color: var(--blue);
+}
+.progress-bar-status{
+  width: 33%;
+}

@@ -1,0 +1,683 @@
+<div class="top-part">
+    <!-- start section fund statistics-->
+    <div class="container">
+        <div class="FT-fund-statistics" [ngClass]="showCalculator ? 'calculator' : ''">
+            <div id="fund-block-wraper" class="fund-block row mb-4 justify-content-between align-items-center relative-block new-block flex-nowrap"
+                [ngClass]="showCalcBox ? 'hidden-calc-box' : 'show-calc-box'" style="height:auto;">
+                <div class="col-lg col-xl-auto ">
+                    <div class="position-relative">
+
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="recommend-tag fontResize">Focus</span>
+                            <div class="icons">
+                                <div class="dropdown d-inline-block d-lg-none">
+                                    <button class=" dropdown-toggle me-0" type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <img src="assets/images/general/dots.svg">
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item fontResize" href="#">
+                                                <img src="assets/images/general/compare-icon.svg">Compare
+                                                fund
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item fontResize" href="#">
+                                                <img src="assets/images/general/watchlist-icon.svg">Save to
+                                                watchlist
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item fontResize"  data-bs-toggle="modal" data-bs-target="#callBack1">
+                                                <img src="assets/images/general/share-icon-sm.svg">Share
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex fund-head mt-2 mb-2">
+                            <div class="d-none d-md-flex fundtitle" >
+                                <h3 class="mb-0 fontResize">
+                                    <a>
+                                        <span> {{fundDetails?.title || fundDetails?.fundName }}</span>
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="d-md-none" >
+                                <h3 class="mb-15">
+                                    <a>
+                                        <span> {{fundDetails?.title || fundDetails?.fundName }}</span>
+                                        <span  *ngIf="fundDetails?.title" class="img-with-tooltip fundName-title" (click)="scrollToRiskometer()">
+                                            <img src="assets/images/general/very-high.svg">
+                                            <span class="tooltip-block fontResize fontResize high-risk">
+                                                <img src="assets/images/general/very-high.svg">
+                                                This fund has moderately high risk
+                                            </span>
+                                        </span>
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="d-none d-md-block">
+                                <span class="img-with-tooltip" #movetoradiometer (click)="scrollToRiskometer()">
+                                    <img src="assets/images/general/very-high.svg">
+                                    <span class="tooltip-block fontResize">
+                                        <img src="assets/images/general/very-high.svg">
+                                        This fund has moderately high risk
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="d-md-none">
+                                <!-- <span class="img-with-tooltip" (click)="scrollToRiskometer()">
+                                    <img src="assets/images/general/very-high.svg">
+                                    <span class="tooltip-block fontResize" st yle="min-width: 192px;left: -246px;">
+                                        <img src="assets/images/general/very-high.svg">
+                                        This fund has moderately high risk
+                                    </span>
+                                </span> -->
+                                </div>
+                            <!-- <div>
+                                <h3 class="mb-0 d-none d-lg-inline-block">
+                                    {{fundDetails?.title}}
+                                    <span class="img-with-tooltip" (click)="scrollToRiskometer()">
+                                        <img src="assets/images/general/very-high.svg">
+                                        <span class="tooltip-block fontResize">
+                                            <img src="assets/images/general/very-high.svg">
+                                            This fund has moderately high risk
+                                        </span>
+                                    </span>
+
+                                </h3>
+                                <h3 class="mb-0 d-lg-none" (click)="toggleShowCalcBox()">
+                                    The fund’s investment is oriented towards structural themes
+                                    <span class="img-with-tooltip">
+                                        <img src="assets/images/general/very-high.svg">
+                                        <span class="tooltip-block fontResize">
+                                            <img src="assets/images/general/very-high.svg">
+                                            This fund has moderately high risk
+                                        </span>
+                                    </span>
+
+                                </h3>
+                            </div> -->
+                            <div class="icons">
+                                <div class="d-none d-lg-inline-block">
+                                    <button (click)="toggleShowSavDialoge()">
+                                        <!-- <img class="dark-mode-icon" src="assets/images/general/mark-icon.svg"> -->
+                                        <img src="assets/images/general/mark-icon.svg" class="d-inline-block mobile-icons light-mode-icon mark-icons" >
+                                        <img src="../../../../../assets/images/dark/dark-Save-icon.png" class="mobile-icons dark-mode-icon">
+                                        <span class="tooltip-box fontResize">Add to watchlist</span>
+                                    </button>
+                                    <button>
+                                        <a href="#">
+                                        <!-- <img src="assets/images/general/change-icon.svg"> -->
+                                        <img src="assets/images/general/compare-new-icon.png" class="d-inline-block mobile-icons light-mode-icon compare-new-icons" >
+                                        <img src="../../../../../assets/images/dark/compare-dark-new-icon.png" class="mobile-icons dark-mode-icon compare-new-icon-dark">
+                                        <span class="tooltip-box fontResize">Compare</span>
+                                        </a>
+                                    </button>
+                                    <button>
+                                        <a href="#">
+                                        <!-- <img src="assets/images/general/cart-icon.svg"> -->
+                                        <img src="assets/images/general/cart-icon.svg" class="d-inline-block mobile-icons light-mode-icon cart-icons">
+                                        <img src="../../../../../assets/images/dark/dark-cart-icon.png" class="mobile-icons dark-mode-icon"><span class="new-badge">New</span>
+                                        <span class="new-badge">New</span>
+                                        <span class="tooltip-box fontResize">Add to cart</span>
+                                        </a>
+                                    </button>
+                                    <button>
+                                        <div class="dropdown share-menu">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <!-- <img src="assets/images/general/share-icon.svg"> -->
+                                                <img src="assets/images/general/share-icon.svg" class="d-inline-block mobile-icons light-mode-icon cart-icons">
+                                                <img src="../../../../../assets/images/dark/dark-share-icon.png" class="mobile-icons dark-mode-icon share-icon-dark" >
+                                                <span
+                                                    class="tooltip-box fontResize">Share</span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><span class="dropdown-item fontResize" (click)="toggleShowCopyDialoge()"><img
+                                                            class="share-icon" src="assets/images/general/Link.svg">Copy
+                                                        link</span></li>
+                                                <li><a class="dropdown-item fontResize" href="#"><img
+                                                            class="share-icon cart-icons" src="../../../../../assets/images/general/twitter-new.svg">Share
+                                                        on Twitter</a></li>
+                                                <li><a class="dropdown-item fontResize" href="#"><img
+                                                            class="share-icon" src="assets/images/general/FacebookLogo.svg">Share
+                                                        on Facebook</a></li>
+                                                <li><a class="dropdown-item fontResize" href="#"><img
+                                                            class="share-icon" src="assets/images/general/LinkedinLogo.svg">Share
+                                                        on LinkedIn</a></li>
+                                                <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/whatsapps.png">Share
+                                                    on WhatsApp</a></li>
+                                            </ul>
+                                        </div>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                        <div class="d-md-flex align-items-center mb-3">
+                            <div class="tags">
+                                <ul class="list-inline m-0 p-0 fontResize">
+                                    <li *ngFor="let tag of fundDetails?.tag" class="list-inline-item fontResize">{{ tag }}</li>
+                                </ul>
+                            </div>
+                            <!-- <div class="tags">
+                                <ul class="list-inline m-0 p-0">
+                                    <li class="list-inline-item">Equity</li>
+                                    <li class="list-inline-item">Large cap</li>
+                                    <li class="list-inline-item">8 year old fund</li>
+                                </ul>
+                            </div> -->
+                            <div [ngClass]="showCalcBox ? 'd-none' : ''">
+                                <span class="note mt-2 d-none d-md-block fontResize">Benchmark : Nifty Midcap 150</span>
+                                <span class="d-md-none mt-2 text-small fontResize">Benchmark : Nifty Midcap 150</span>
+                            </div>
+                        </div>
+
+                        <div class="fund-num ml-2 d-none d-md-flex">
+                            <div class="text-big d-none d-md-block fontResize">
+                                <img src="assets/images/fund/money-sign.svg">
+                                {{ fundDetails?.aum?.totalNetAssets || fundDetails?.aum }} <span class="text-gray fontResize">Fund size
+                                    <span class="img-with-tooltip">
+                                        <img src="assets/images/home/info-icon2.svg"class="light-mode-icon">
+                                        <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon statistics-i-icon dark-info"  >
+                                        <!-- <img src="assets/images/home/info-icon2.svg"> -->
+                                        <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                        <span class="tooltip-block fontResize text-center aum-fund">
+                                            As of {{ fundDetails?.aum?.asOfDate || '30/09/2023' }}
+                                        </span>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div class="text-big d-none d-md-block fontResize">
+                                <img src="assets/images/fund/investor-icon.svg">
+                                {{fundDetails?.investors||fundDetails?.uniqueInvestors }} <span class="text-gray fontResize">Unique investors 
+                                    
+                                    <span class="img-with-tooltip">
+                                        <img src="assets/images/home/info-icon2.svg"class="light-mode-icon">
+                                        <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon statistics-i-icon dark-info"  >
+                                        <!-- <img src="assets/images/home/info-icon2.svg"> -->
+                                        <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                        <span class="tooltip-block fontResize text-center fontResize aum-fund" >
+                                            As of 30/09/2023
+                                        </span>
+                                    </span>
+                                    </span>
+                            </div>
+
+                        </div>
+                        <div class="fund-num d-md-none justify-content-between Unique-investors">
+                        
+                            <div class="text-small d-md-none">
+                                
+                                <span class="text-gray fontResize">Unique investors  
+                                    <span class="img-with-tooltip Unique-investors-img"  ><img src="assets/images/home/info-icon2.svg"class="light-mode-icon info-icon-mob">
+                                        <span class="tooltip-block fontResize text-center">
+                                            As of 30/09/2023
+                                        </span>
+                                    </span>
+                                    <br>
+                                    <span class="fontResize mob-uniq-second-wrap">
+                                        <img src="assets/images/fund/investor-icon.svg">
+                                        {{ fundDetails?.investors||fundDetails?.uniqueInvestors }}
+                                        <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon statistics-i-icon dark-info"  >
+                                        <!-- <img src="assets/images/home/info-icon2.svg"> -->
+                                        <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                    </span>
+                                    </span>
+                            </div>
+                            <div class="text-small d-md-none">
+                                <span class="text-gray fontResize"> Fund Size
+                                    <span class="img-with-tooltip Unique-investors-img" ><img src="assets/images/home/info-icon2.svg"class="light-mode-icon info-icon-mob">
+                                        <span class="tooltip-block fontResize text-center">
+                                            As of 30/09/2023
+                                        </span>
+                                    </span>
+                                    <br>
+                                    <span class="img-with-tooltip fontResize mob-uniq-second-wrap">
+                                        <img src="assets/images/fund/money-sign.svg">
+                                        {{ fundDetails?.aum || fundDetails?.aum?.totalNetAssets }}
+                                        <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon statistics-i-icon dark-info" >
+                                        <!-- <img src="assets/images/home/info-icon2.svg"> -->
+                                        <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                    
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="info block-footer">
+                            <!-- web view -->
+                            <ul class="d-flex align-items-center d-none d-md-block return-inception-since">
+                                <li class="d-none d-md-block">
+                                    <div class="mb-2 return" (click)="moveToPerformance()">
+                                        <span class="annualised-return fontResize">Returns since inception</span>
+                                        <span class="img-with-tooltip info-icons2" >
+                                            <img src="assets/images/home/info-icon2.svg" class="light-mode-icon">
+                                            <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon statistics-i-icon dark-info"
+                                                >
+                                            <!-- <img src="assets/images/home/info-icon2.svg"> -->
+                                            <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                            <span class="tooltip-block fontResize text-center fontResize fundSize">
+                                                As of 30/09/2023
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="text-big fontResize">16.09% </div>
+                                </li>
+                                <div class="d-none d-md-block showCalcBox ">
+                                    <li [ngClass]="showCalcBox ? 'd-none' : ''">
+                                        <div class="dropdown small-dropdown">
+                                            <button class="btn btn-white dropdown-toggle fontResize d-none d-md-block Direct-Growth-one" type="button"
+                                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >
+                                                Direct-Growth 1
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li>
+                                                    <a class="dropdown-item fontResize d-md-none text-center fontResize mx-2" href="#">Growth</a>
+                                                    <a class="dropdown-item fontResize d-none d-md-block fontResize mx-2" href="#">Growth</a>
+                                                </li>
+                                                <li><a class="dropdown-item fontResize fontResize mx-2" href="#">IDCW</a></li>
+                                                <li><a class="dropdown-item fontResize fontResize mx-2" href="#">Direct-Growth</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                
+                                    <li [ngClass]="showCalcBox ? 'd-none' : ''">
+                                        <div class="mb-2">
+                                            <span class="fontResize">Expense ratio</span>
+                                            <span class="img-with-tooltip fontResize info-icons2" >
+                                                <img src="assets/images/home/info-icon2.svg" class="light-mode-icon">
+                                                <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon statistics-i-icon dark-info"
+                                                    >
+                                                <!-- <img src="assets/images/home/info-icon2.svg"> -->
+                                                <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                                <span class="tooltip-block fontResize text-center fontResize fundSize-Expense">
+                                                    As of 30/09/2023
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="text-big one-percent">1.88%</div>
+                                    </li>
+                                    <li [ngClass]="showCalcBox ? 'd-none' : ''" style="border-left: 1px solid #D2D8EA;
+                                    height: 60px;">
+                                        <div class="mb-2">
+                                            <span class="fontResize">NAV</span>
+                                            <span class="img-with-tooltip info-icons2">
+                                                <img src="assets/images/home/info-icon2.svg" class="light-mode-icon">
+                                                <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon statistics-i-icon dark-info"
+                                                    >
+                                                <!-- <img src="assets/images/home/info-icon2.svg"> -->
+                                                <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                                <span class="tooltip-block fontResize text-center addTooltiModeBlock fontResize">
+                                                    As of 30/09/2023
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="text-big fontResize one-percent" >125.92</div>
+                                    </li>
+                                </div>
+                             
+                            
+                            
+                            </ul>
+                            <!-- mob view -->
+                        <div class="container">
+                            <div class="row justify-content-between">
+                                <div class="col-5 return-inception">
+                                    <div class="text-small d-md-none">
+                                    
+                                        <span class="text-gray fontResize mob-stat">Returns inception
+                                            <span class="img-with-tooltip Unique-investors-img" >
+                                                <img src="assets/images/home/info-icon2.svg"
+                                                    class="light-mode-icon info-icon-mob">
+                                                <span class="tooltip-block fontResize text-center">
+                                                    As of 30/09/2023
+                                                </span>
+                                            </span>
+                                          
+                                        </span>
+                                        <br>
+                                        <span class="fontResize uniqueInvestors-fund">
+                                            <!-- <img src="assets/images/fund/investor-icon.svg"> -->
+                                            {{ fundDetails?.investors||fundDetails?.uniqueInvestors }}
+                                            <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon statistics-i-icon dark-info"
+                                                >
+                                            <!-- <img src="assets/images/home/info-icon2.svg"> -->
+                                            <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-7 d-block d-md-none Direct-Growth-position">
+                                    <ul>
+                                        <li [ngClass]="showCalcBox ? 'd-none' : ''">
+                                            <div class="dropdown small-dropdown d-block d-md-none">
+                                                <button class="btn btn-white dropdown-toggle fontResize Direct-Growth-second" type="button"
+                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Direct-Growth 1
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                    <li>
+                                                        <a class="dropdown-item fontResize d-md-none text-center fontResize mx-2" href="#">Growth</a>
+                                                        <a class="dropdown-item fontResize d-none d-md-block fontResize mx-2" href="#">Growth</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fontResize mx-2" href="#">IDCW</a></li>
+                                                    <li><a class="dropdown-item fontResize fontResize mx-2" href="#">Direct-Growth</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                               
+                                    <div class="row">
+                                        <div class="col-6 Expense-ratio">
+                                            <div class="text-small d-md-none">
+                                                <span class="text-gray fontResize mob-stat">Expense ratio
+                                                    <div class="text-big Expense-ratio-one">1.88%</div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 NAV-tab">
+                                            <div class="text-small d-md-none">
+                                                <span class="text-gray fontResize"><span class="mob-stat">NAV</span>
+                                                    <span class="img-with-tooltip Unique-investors-img" >
+                                                        <!-- <img src="assets/images/home/info-icon2.svg"class="light-mode-icon"> -->
+                                                        <span class="tooltip-block fontResize text-center">
+                                                            As of 30/09/2023
+                                                        </span>
+                                                    </span>
+                                                    <br>
+                                                    <span class="img-with-tooltip fontResize uniqueInvestors-fund" >
+                                                        <!-- <img src="assets/images/fund/money-sign.svg"> -->
+                                                        {{ fundDetails?.aum || fundDetails?.aum?.totalNetAssets }}
+                                                        <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon statistics-i-icon"  display:inherit!important"> -->
+                                                        <!-- <img src="assets/images/home/info-icon2.svg"> -->
+                                                        <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                                    
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                            <div class="d-block d-lg-none">
+                                <button class="btn btn-light-blue fontResize"><span class="new-tag fontResize">New</span><i class="bi bi-cart3"></i> Add to
+                                    cart</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-auto col-sm-auto" id="statick-graph">
+                    <div class="returns-block">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button (click)="setSipLumpsumState(true)" class="nav-link fontResize active" id="monthly-tab" data-bs-toggle="tab"
+                                    data-bs-target="#monthly-tab-pane" type="button" role="tab"
+                                    aria-controls="monthly-tab-pane" aria-selected="true">Monthly SIP</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button (click)="setSipLumpsumState(false)" class="nav-link fontResize" id="monthly-tab" data-bs-toggle="tab"
+                                    data-bs-target="#monthly-tab-pane" type="button" role="tab"
+                                    aria-controls="monthly-tab-pane" aria-selected="false">Lumpsum </button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="monthly-tab-pane" role="tabpanel"
+                                aria-labelledby="monthly-tab" tabindex="0">
+                                <div class="graph-box" *ngIf="hideGraph">
+                                    <div class="text-semi-big text-center">
+                                        <span class="text-gray fontResize annualised-return fontResize return" (click)="moveToPerformance()">Annualised
+                                            Returns</span>
+                                        <div class="dropdown small-dropdown">
+                                            <button class="btn btn-white dropdown-toggle fontResize" type="button"
+                                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Since Inception
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item fontResize" href="#">1 Year</a></li>
+                                                <li><a class="dropdown-item fontResize" href="#">3 Years</a></li>
+                                                <li><a class="dropdown-item fontResize" href="#">5 Years</a></li>
+                                                <li><a class="dropdown-item fontResize" href="#">10 Years</a></li>
+                                                <li><a class="dropdown-item fontResize" href="#">15 Years</a></li>
+                                                <li><a class="dropdown-item fontResize" href="#">Since Inception</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="return-graph py-4">
+                                        <div>
+                                            <div class="graph graph1">
+                                                <circle-progress [percent]="100">
+                                                </circle-progress>
+                                            </div>
+                                            <span class="fontResize">This fund</span>
+                                        </div>
+                                        <div>
+                                            <div class="graph graph2">
+                                                <circle-progress [percent]="75">
+                                                </circle-progress>
+                                            </div>
+                                            <span class="fontResize">Nifty Midcap 150</span>
+                                        </div>
+                                        <div>
+                                            <div class="graph graph3">
+                                                <circle-progress [percent]="50">
+                                                </circle-progress>
+                                            </div>
+                                            <span class="fontResize">Nifty 50 TRI</span>
+                                        </div>
+                                    </div>
+                                    <div class="block-btns">
+                                        <button class="btn btn-outline-primary me-3 fontResize"
+                                            (click)="toggleShowCalculator('calculatereturn')">Calculate Returns</button>
+                                        <a href="#" class="btn btn-primary fontResize">Invest Now</a>
+                                    </div>
+                                </div>
+                                <div class="Calculate-box" *ngIf="showCalculator">
+                                    <form [formGroup]="calcForm">
+
+                                    <!-- Investment Amt -->
+                                    <div class="form-group range-group mb-4">
+                                        <label for="customRange2" class="form-label fontResize">I want to invest
+                                          
+                                            <div class="selected-range">
+                                                <span class="calc-input-prefix">₹</span>
+                                                <input 
+                                                    type="number" 
+                                                    [attr.min]="getInputLimit(sliderKeyName.amount, false)" 
+                                                    [attr.max]="getInputLimit(sliderKeyName.amount, true)"
+                                                    [(ngModel)]="calcForm?.value.amount" 
+                                                    formControlName="amount" 
+                                                    (change)="onCalculatorChange($event, 'amount')" 
+                                                    class="calc-input amount text-start">
+                                
+                                            </div>
+
+                                        </label>
+                                        <div class="range-slider">
+                                            <input 
+                                                type="range" 
+                                                [attr.min]="getInputLimit(sliderKeyName.amount, false)" 
+                                                [attr.max]="getInputLimit(sliderKeyName.amount, true)"
+                                                [value]="calcForm?.value.amount || getInputLimit(sliderKeyName.amount)" 
+                                                formControlName="amount" 
+                                                (change)="onCalculatorChange($event, 'amount')" 
+                                                class="custom-range" 
+                                                [style.background]="amountSliderStyle">
+                                        </div>
+                                        <div *ngIf="isSip" class="d-flex text-small justify-content-between">
+                                            <span>₹500</span>
+                                            <span>₹10L</span>
+                                        </div>
+                                        <div *ngIf="!isSip" class="d-flex text-small justify-content-between">
+                                            <span>₹5L</span>
+                                            <span>₹10Cr</span>
+                                        </div>
+                                    </div>
+
+                                     <!-- Period -->
+                                    <div class="form-group range-group mb-4">
+                                        <label for="customRange2" class="form-label fontResize"> For a period of
+
+                                            <div class="selected-range">
+                                                <input 
+                                                    type="number" 
+                                                    [attr.min]="getInputLimit(sliderKeyName.period, false)" 
+                                                    [attr.max]="getInputLimit(sliderKeyName.period, true)"
+                                                    formControlName="period" 
+                                                    [(ngModel)]="calcForm?.value.period" 
+                                                    (change)="onCalculatorChange($event, 'period')" 
+                                                    class="calc-input text-end forchangecustomcalculator">
+
+                                                <span class="calc-input-prefix ms-1 fontResize">Years</span>
+                                            </div>
+                                        </label>
+                                        <div class="range-slider">
+                                            <input 
+                                                type="range" 
+                                                formControlName="period" 
+                                                [value]="calcForm?.value.period || getInputLimit(sliderKeyName.period)" 
+                                                (change)="onCalculatorChange($event, 'period')" 
+                                                class="custom-range" 
+                                                [attr.min]="getInputLimit(sliderKeyName.period, false)" 
+                                                [attr.max]="getInputLimit(sliderKeyName.period, true)"
+                                                [style.background]="periodSliderStyle">
+
+                                        </div>
+                                        <div class="d-flex text-small justify-content-between">
+                                            <span>1 year</span>
+                                            <span>30 year</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row calc-stat gx-3 totalInvestAmt-rupee">
+                                        <div class="col-auto mb-4">
+                                            <div class="text-big fontResize">₹{{totalInvestAmt}}</div>
+                                            <div class="fontResize">
+                                                Amount <br />invested by You
+                                            </div>
+                                        </div>
+                                        <div class="col mb-4">
+                                            <div class="text-big">{{totalReturns | currency: "INR": 'symbol':'1.0-0' }}</div>
+                                            <div class="fontResize">
+                                                Returns<br />
+                                                from your investment
+                                            </div>
+                                        </div>
+                                        <div class="col-auto mb-4">
+                                            <div class="text-big fontResize">{{totalValues | currency: "INR": 'symbol':'1.0-0' }}</div>
+                                            <div class="fontResize">
+                                                Value of your<br />
+                                                investment
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mb-4 fontResize">With an annualised return of {{calcForm.value?.rate}}% in {{calcForm.value?.period}} years</div>
+                                    <div class="block-btns">
+                                        <button class="btn btn-outline-primary me-3 fontResize" (click)="toggleShowCalculator('Goback')">Go
+                                            back</button>
+                                        <a href="#" class="btn btn-primary fontResize">Invest Now</a>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start section nav block -->
+    <!-- <div class="FT-blocks-nav sticky-top hello">
+        <ul>
+            <li><a class="overview active-item" href="#overview">Fund Overview</a></li>
+            <li><a class="performance" href="#performance">Performance</a></li>
+            <li><a class="portfolio" href="#portfolio">Portfolio</a></li>
+            <li><a class="more-details" href="#more-details">Other Fund Details</a></li>
+        </ul>
+    </div> -->
+</div>
+
+<!-- save to watchlist alert -->
+<div class="save-alert" *ngIf="showSaveDialoge">
+
+    <div class="content">
+        <span class="close-btn" (click)="toggleShowSavDialoge()">
+            <img src="assets/images/general/close.svg">
+        </span>
+        <img src="assets/images/general/check_circle.svg" class="checked-img">
+        <span class="fontResize">Successfully added to Watchlist.</span>
+        <a href="#" class="btn btn-primary fontResize">Go to watchlist</a>
+    </div>
+
+</div>
+
+<!--copy alert -->
+<div class="save-alert copy-alert" *ngIf="showCopyDialoge">
+
+    <div class="content">
+        <span class="close-btn" (click)="toggleShowCopyDialoge()">
+            <img src="assets/images/general/close.svg">
+        </span>
+        <img src="assets/images/general/check_circle.svg" class="checked-img">
+        <div class="mb-3 fontResize">Link Copied</div>
+        <div class="link-box fontResize">https://www.franklintempletonindia.com/sharefund</div>
+    </div>
+
+</div>
+
+<div class="modal fade shareWithOther" id="callBack1" tabindex="-2" aria-labelledby="callBackLabel1" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered fundtitle-share">
+        <div class="modal-content franklintempletonindia-sharefund">
+            <div class="line"></div>
+            <div class="modal-header">
+                <div class="modal-title fontResize" id="callBackLabel1" >Share with others
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row text-center mb-4">
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/home/Framefacebook.png">
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/home/Frametwitter.png">
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/home/Framewhatsapp.png">
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/home/Framelinkedin.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="link-block d-flex justify-content-between">
+                    <div class="link fontResize copy-link">https://www.franklintempl...
+                    </div>
+                    <button class="btn btn-outline-primary fontResize">Copy Link</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="invest-now" class="d-none" >
+    <a class="btn btn-primary btn-sm fontResize">Invest Now</a>
+</div>

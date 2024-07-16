@@ -1,0 +1,311 @@
+<div id="page-content" class="img-bg">
+
+    <div class="FT-breadcrumb d-none d-md-block">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li aria-current="page" class="breadcrumb-item active">All Funds
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <section class="FT-all-funds FT-navs-funds">
+
+        <div class="container">
+            <h3 class="filter-title title">NAVs and IDCW</h3>
+            <div class="d-flex align-items-center justify-content-between tabs-block">
+                <ul class="nav nav-tabs" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                            aria-selected="true" (click)="toggleForTabNav()">NAV</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                            aria-selected="false" (click)="toggleForTabIdcw()">IDCW</button>
+                    </li>
+                </ul>
+                <a *ngIf="showNav" [routerLink]="['/investor-services/nav-alerts']"  class="btn btn-primary">NAV Alerts</a>
+            </div>
+            <div id="header-top" class="hedaerTitle">
+                <div class="filter-options mt-0 mb-4">
+                    <div class="form-group search-group bg-gradient">
+                                <div>
+                                    <input type="text" class="form-control search" placeholder="Search Mutual Fund" [(ngModel)]="searchTerm"
+                                    (input)="filterFunds(searchTerm)">
+                                    <div class="search-result">
+                                      <div class="inner">
+                                          <ng-container *ngFor="let fund of fundsForSearch">
+                                              <div class="funds-seach-title focus-ring-dark" (click)="getTableTitle(fund)" >
+                                                 {{ fund.title }}
+                                                  <span class="sub"><span class="text-gray">Fund Size</span> - {{ fund.aum }}</span>
+                                                  <span class="sub"><span class="text-gray">Unique Investors</span> - {{ fund.investors }}</span>
+                                              </div>
+                                          </ng-container>
+                                      </div>
+                                  </div>
+                                </div>
+                                <div>
+                                  <img src="./assets/images/comparefund/closebutton.svg" class="make-tag-for-all-page d-md-none btn-close" (click)="resetFundExplore()" >
+                                     <img src="./assets/images/comparefund/closebutton.svg" class="make-tag-for-all-page d-none d-md-block close-fund" (click)="resetFundExplore()">
+                                </div>
+                      
+                            
+                            <button class="btn btn-white toggle-filter d-inline-block d-lg-none"
+                                (click)="toggleShowFilterBox()"><i class="bi bi-filter"></i><span
+                                    *ngIf="forCount>0" class="items-num">{{forCount}}</span>Filters</button>
+                    </div>
+                    <div class="dataFilter d-none d-md-block">
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-white">
+                                <img src="../../../../assets/images/general/compare-new-icon.png" class="bi-newspaper" >
+                                Compare Funds<span class="list-num">{{this.forCountShowComapredCard.length}}</span></button>
+                            <button class="btn btn-white">
+                                <img src="assets/images/fund/mark-icon-sm.svg">
+                                Watchlist <span class="list-num">3</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cardFilter mt-4 w-100 d-md-none">
+                        <div class="d-flex justify-content-start  gap-5 ">
+                            <div class="icon-hidden compare-fund"> <img src="../../../../assets/images/form-icon/compare.png"> Compare Funds<span
+                                class="list-num" >{{this.forCountShowComapredCard.length}}</span></div>
+                            <div class="icon-hidden"> <i class="bi bi-bookmark"></i> Watchlist
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row gx-3">
+                <div class="col-lg-auto">
+
+                    <div class="fund-filter-block" [ngClass]="showAdvanceFilter ? 'position-relative' : ''">
+                        <div class="filters" [ngClass]="showFilterBox ? 'opened' : ''" id="filterHead">
+                            <div class="filter-container">
+                                <div class="content-box" id="header-top3">
+                                    <div class="web-view-filter">
+                                        <div class="filter-head">Filters</div>
+                                        <div class="d-md-none">
+                                            <div class="filter-selected-options mb-4" *ngIf="showSelected">
+                                                <span class="clear-filter d-none d-md-inline-block"
+                                                    (click)="hideClear(selectedOptions)">Reset</span>
+                                                <div>
+                                                    <span class="option d-md-none selectedOption"
+                                                        *ngFor="let selectedOption of selectedOptions">
+                                                        {{ selectedOption }} <i class="bi bi-x"
+                                                            (click)="removeOption(selectedOption)"></i>
+                                                    </span>
+                                                    <span class="clear-filter d-inline-block d-md-none"
+                                                        (click)="hideClear(selectedOptions)">Reset</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inner-filters" id="innerfilter">
+                                            <div class="accordion for-add-overflow" id="filterAccordion">
+                                                <div class="accordion-item"
+                                                    [ngClass]="filterObj.headerText == 'Asset Category'? 'd-none d-md-block' : ''"
+                                                    *ngFor="let filterObj of sidebarFilterList; let j=index">
+                                                    <h2 class="accordion-header" [id]="'heading'+filterObj.id">
+                                                        <button class="accordion-button collapsed accordion-button-style"
+                                                            type="button" data-bs-toggle="collapse"
+                                                            [attr.data-bs-target]="'#collapse'+filterObj.id"
+                                                            aria-expanded="false"
+                                                            [attr.aria-controls]="'collapse'+filterObj.id">
+                                                            {{filterObj.headerText}}
+                                                        </button>
+                                                    </h2>
+                                                    <div [id]="'collapse'+filterObj.id" class="accordion-collapse collapse"
+                                                        [ngClass]="j==0? 'show' : ''"
+                                                        [attr.aria-labelledby]="'heading'+filterObj.id"
+                                                        data-bs-parent="#filterAccordion">
+                                                        <div class="accordion-body" [ngStyle]="{'max-height.px': filterObj.expanded ? maxHeight : 'none', 'overflow-y': filterObj.expanded ? 'auto' : 'hidden'}">
+                                                            <ng-container
+                                                                *ngFor="let subAccordionObj of filterObj.contentData;let i=index;">
+                                                                <div class="form-check"
+                                                                    *ngIf="!filterObj.expanded && filterObj.contentData.length <8 ? i <7 : filterObj.expanded ?  i <= filterObj.contentData.length : i<5">
+                                                                    <input class="form-check-input"
+                                                                        type="{{filterObj.headerText == 'Annualised Returns'? 'radio' : 'checkbox'}}"
+                                                                        value="{{subAccordionObj.title}}"
+                                                                        id="{{subAccordionObj.title}}"
+                                                                        name="flexRadioDefault"
+                                                                        (click)="filterObj.showCustomReturn = true;getCheckboxValue($event,filterObj.headerText)">
+                                                                    <label class="form-check-label"
+                                                                        for="{{filterObj.headerText == 'Annualised Returns'? 'flexRadioDefault1' : 'flexCheckIndeterminate'}}">
+                                                                        {{subAccordionObj.title}}
+                                                                    </label>
+                                                                </div>
+                                                            </ng-container>
+                                                            <div class="form-group"
+                                                                *ngIf="filterObj.headerText == 'Annualised Returns' && filterObj.showCustomReturn">
+                                                                <label class="d-block mb-2">Custom returns</label>
+                                                                <div class="rang-slider-block">
+                                                                </div>
+    
+                                                                <div
+                                                                    class="d-flex align-items-center justify-content-between">
+                                                                    <span>{{minReturn}}</span>
+                                                                    <span>{{highReturn}}%</span>
+                                                                </div>
+                                                            </div>
+                                                            <button *ngIf="filterObj.contentData.length >7"
+                                                                class="more-option-btn toggle-btn"
+                                                                [ngClass]="filterObj.expanded ? '' : 'more'"
+                                                                (click)="filterObj.expanded = !filterObj.expanded"><i
+                                                                    class="bi bi-chevron-right"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+    
+                                    <!-- advance filter block -->
+                                    <div class="advanced-filter figure" *ngIf="showAdvanceFilter">
+    
+                                        <div class="filter-content">
+                                            <div class="inner-content">
+                                                <div class="d-flex justify-content-between">
+                                                    <h3>Advance Filters</h3>
+
+                                                </div>
+                                                <div class="accordion" id="accordionExample">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="headingOne">
+                                                            <button class="accordion-button" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                                aria-expanded="true" aria-controls="collapseOne">
+                                                                Risk Level
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                                            aria-labelledby="headingOne">
+                                                            <div class="accordion-body">
+                                                                <div class="form-group">
+    
+                                                                    <div class="rang-slider-block">
+                                                                    </div>
+    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="headingTwo">
+                                                            <button class="accordion-button" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                                aria-expanded="true" aria-controls="collapseTwo">
+                                                                Fund Size (Cr)
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseTwo" class="accordion-collapse collapse show"
+                                                            aria-labelledby="headingTwo">
+                                                            <div class="accordion-body">
+                                                                <div class="form-group">
+                                                                    <div class="rang-slider-block">
+                                                                    </div>
+    
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between">
+                                                                        <span class="forminmaxsize">{{ minSize }}</span>
+                                                                        <span>{{ highSize }}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="headingThree">
+                                                            <button class="accordion-button" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                                aria-expanded="true" aria-controls="collapseThree">
+                                                                Fund Age
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseThree" class="accordion-collapse collapse show"
+                                                            aria-labelledby="headingThree">
+                                                            <div class="accordion-body">
+                                                                <div class="form-group">
+                                                                    <div class="rang-slider-block">
+                                                                    </div>
+    
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between">
+                                                                        <span class="forageminmax">{{ minAge }} years</span>
+                                                                        <span>{{ highAge }} years</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+                                            <div class="filter-footer d-none d-lg-flex">
+                                                <button class="btn btn-outline-primary forFooterFilterToggle"
+                                                    (click)="toggleAdvanceFilter()">Cancel</button>
+                                                <button class="btn btn-primary"
+                                                    (click)="toggleAdvanceFilter()">Apply</button>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                                <div class="filter-footer d-flex d-lg-none">
+                                    <button class="btn btn-outline-primary" (click)="toggleShowFilterBox()">Cancel</button>
+                                    <button class="btn btn-primary" (click)="toggleShowFilterBox()">Apply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-9 status-line" >
+                    <div>
+                        <div class="d-md-none">
+                            <div class="filter-selected-options accordion-flush">
+                                <span class="option d-md-none preData fund-risk-manage"
+                                    [ngClass]="{'selected-option1': isOptionSelected(preseletedOption)}"
+                                    *ngFor="let preseletedOption of mobileFilterChips"
+                                    (click)="toggleOptionSelection(preseletedOption)">
+                                    {{ preseletedOption }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="filter-selected-options" *ngIf="showSelected">
+                            <span class="clear-filter d-none d-md-inline-block"
+                                (click)="hideClear(selectedOptions)">Reset</span>
+                            <div class="d-flex bi-option" >
+                                <span class="option d-none d-md-block" *ngFor="let selectedOption of selectedOptions">
+                                    {{ selectedOption }} <i class="bi bi-x" (click)="removeOption(selectedOption)"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="funds-container fund-risk" id="scroll-bar" >
+                        <ng-container *ngFor='let fund of funds; let i = index'>
+                            <div class="fund-card-wrapper">
+                                <app-fund-card1 
+                                [fund]="fund" 
+                                [investmentCartAddForm]="true"
+                                [navModal]= false
+                                [navMidTitle]= false
+                                [idcDropDown]="getData"
+                                [buttonsTitle]="getTitle"
+                                ></app-fund-card1>
+                            </div>
+                        </ng-container>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

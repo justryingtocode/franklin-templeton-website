@@ -1,0 +1,76 @@
+.form-box {
+    min-height: auto;
+    padding-top: 20px;
+}
+
+.container {
+    max-width: 1230px
+}
+
+.account-form {
+    .row {
+        max-width: 680px;
+        margin: 0 auto;
+    }
+
+    .form-control {
+        height: 44px;
+    }
+
+    .btn {
+        width: 233px;
+        height: 44px;
+        padding: 12px 28px;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        line-height: 142%;
+    }
+}
+
+.stepper-head {
+    border-bottom: 1px solid #d2d8ea;
+    margin-bottom: 40px;
+}
+
+::ng-deep .step {
+    pointer-events: none;
+    &[aria-expanded="true"] {
+        .step-num {
+            background: var(--blue);
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-name {
+            color: var(--blue);
+            font-weight: 700;
+        }
+
+    }
+}
+.collapsing {
+	transition: none !important;
+}
+
+
+
+a {
+    position: relative;
+    text-decoration: none;
+}
+
+a:after {
+    content: "";
+    position: absolute;
+    background-color: #3769ff;
+    height: 1.5px;
+    width: 0;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+}
+
+a:hover:after {
+    width: 100%;
+}

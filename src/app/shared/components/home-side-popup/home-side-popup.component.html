@@ -1,0 +1,133 @@
+<div id="callForm" *ngIf="cardClose" class="share-menu-twitter" >
+    <div *ngIf="newInvestor">
+        <div class="d-flex justify-content-between">
+            <p  class="share-menu-twitter-fund">We are happy to assist
+                you with your <br> investment need</p>
+            <!-- Request a call back -->
+            <button id="closeForm" (click)="toggleShowContactForm()"><img
+                    src="assets/images/home/close-form.svg"></button>
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+            <p class="fund-AUM">Share your contact details & request a callback</p>
+        </div>
+    </div>
+
+    <div>
+        <form [formGroup]="investNowForm">
+            <div *ngIf="newInvestor">
+                <div class="row g-3">
+                    <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+                        <input type="text" class="form-control" formControlName="name" placeholder="Your name">
+                        <div
+                            *ngIf="investNowForm?.get('name')?.hasError('required') && !investNowForm?.get('name')?.value && investNowForm?.get('name')?.touched">
+                            <span  class="share-btn-fund error-msg fontResize">Name is required.</span>
+                        </div>
+                    </div>
+                    <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+                        <input type="text" (keydown)="blockAlphabetsAndSpecialChars($event)" class="form-control"
+                            formControlName="phone" placeholder="Mobile Number" maxlength="10">
+                        <div
+                            *ngIf="investNowForm?.get('phone')?.hasError('required') && !investNowForm?.get('phone')?.value && investNowForm?.get('phone')?.touched">
+                            <span  class="share-btn-fund error-msg fontResize">Mobile Number is required.</span>
+                        </div>
+                        <!-- <div *ngIf="investNowForm?.get('phone')?.hasError('invalidPhone') && !investNowForm?.get('phone')?.hasError('required') && investNowForm?.get('phone')?.touched">
+                             <span styl e="color: #F04438;" class="error-msg">Invalid phone number (10 digits only).</span>
+                              </div> -->
+                    </div>
+                    <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+                        <input type="text" class="form-control" formControlName="email" placeholder="Email">
+                        <div
+                            *ngIf="investNowForm?.get('email')?.hasError('required') && !investNowForm?.get('email')?.value && investNowForm?.get('email')?.touched">
+                            <span  class="share-btn-fund error-msg fontResize">Email is required.</span>
+                        </div>
+                        <div
+                            *ngIf="investNowForm?.get('email')?.hasError('pattern') && !investNowForm?.get('email')?.hasError('required') && investNowForm?.get('email')?.touched">
+                            <span  class="share-btn-fund error-msg fontResize">Invalid email format.</span>
+                        </div>
+                    </div>
+                    <!-- </div>
+                         <div class="row gx-3"> -->
+                    <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+                        <select class="form-select fontResize showIconForWatchlist" aria-label="City" formControlName="city"
+                            >
+                            <option value="" disabled>Select City</option>
+                            <option value="Kanchi">Kochi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Bengloare">Bengaluru</option>
+                        </select>
+                        <div
+                            *ngIf="investNowForm?.get('city')?.hasError('required') && !investNowForm?.get('city')?.value && investNowForm?.get('city')?.touched">
+                            <span  class="share-btn-fund error-msg fontResize">City is required.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-check my-3 audio-box" >
+                    <input class="form-check-input" type="checkbox" value="" (change)="checkboxCondition($event)"
+                        id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        I give Franklin Templeton the permission to contact on call & Whatsapp
+                    </label>
+                </div>
+                <div class="row gx-3">
+                    <div class="col-12">
+                        <!-- <button class="btn btn-primary w-100" [disabled]="!investNowForm.valid || !filedDefaullt" (click)="moveTo()">Submit</button> -->
+                        <button class="btn btn-primary w-100 fontResize" (click)="onSubmit()">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="audio-box" *ngIf="otpPage">
+                <div class="d-flex justify-content-between">
+                    <p class="podcast-block">One Time Password
+                        (OTP) has been sent to your <br> registered email ID d*****u@gmail.com</p>
+
+                    <button id="closeForm" (click)="toggleShowContactForm()"><img
+                            src="assets/images/home/close-form.svg"></button>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-12 form-group mb-3">
+                        <!-- <p styl e="color: #697c91;" class="error-msg fontResize login-dark2"> An OTP (One Time password) has been
+                            sent
+                            your registered e-mail ID a****j@franklinetemplton.com and mobile *****5002.</p> -->
+
+                        <div>
+                            <input type="text" class="form-control" placeholder="Enter OTP*" id="otp"
+                                formControlName="otp">
+                            <span  class="audio-class-box"><a href="" class="login-dark2 mt-2">Resend OTP</a></span>
+                        </div>
+                    </div>
+                    <div class="mb-4">Note: Kindly note that this code will be valid for the next 20 minutes</div>
+                </div>
+
+                <div class="d-flex">
+                    <button class="btn btn btn-outline-primary w-100 me-4" id="bg-back-color"
+                        (click)="onBack()">Back</button>
+                    <button class="btn btn-primary w-100" id="bg-color" data-bs-toggle="modal"
+                        data-bs-target="#contactMsg">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- <div class="modal fade" id="contactMsg" tabindex="-1" aria-labelledby="contactMsgLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="">
+            <div class="">
+                <div class="save-alert">
+                    <div class="content">
+                        <span class="close-btn" data-bs-dismiss="modal" aria-label="Close"><img
+                                src="assets/images/general/close.svg"></span>
+                        <img src="assets/images/general/check_circle.svg" class="checked-img">
+                        <span>Successfully retrieved your user Id</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

@@ -1,0 +1,915 @@
+.new-badge {
+    // position: absolute;
+    // top: -12px;
+    // left: 9px;
+    // display: inline-block;
+    background: #E24100;
+    border-radius: 2px;
+    color: #fff;
+    padding: 0 4px;
+    font-size: 0.75rem;
+    letter-spacing: -0.36px;
+}
+
+// .fund-head {
+//     h3 {
+//         a:hover {
+//             // span {
+//                 color: Blue;
+//                 // border-bottom: 1px solid var(--blue);
+//             // }
+//         }
+//     }
+// }
+
+.fund-head {
+    .title-text:hover {
+        // span {
+        color: Blue;
+        // border-bottom: 1px solid var(--blue);
+        // }
+    }
+
+    .title-text {
+        // span {
+        color: black;
+        // border-bottom: 1px solid var(--blue);
+        // }
+    }
+}
+
+.mobile-icons {
+    // height: 18px;
+    width: 14px;
+    position: relative;
+    top: 0px;
+    margin-left: 3px;
+}
+
+// .fund-investors {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     column-gap: 5px;
+// }
+
+// .investor-aum-wrapper {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+// .investor-icon {
+//     height: 12px;
+// }
+
+// .aum-icon {
+//     height: 10px;
+// }
+
+// .info-icon {
+//     width: 12px;
+// }
+
+// .dropdown-toggle::after {
+//     display: none;
+// }
+
+// .down-chev {
+//     display: inline;
+//     margin-left: 5px;
+// }
+
+
+@media(max-width: 700px) {
+
+    .fund-block .fund-card-head .fund-card-rist-title .fund-card-title .title-text {
+        font-size: 0.813rem !important;
+    }
+
+    .fund-block .dropdown .dropdown-toggle {
+        font-size: 0.813rem !important;
+    }
+
+    .share-tital {
+        font-size: 18px !important;
+    }
+
+    .save-alert {
+        left: 34%;
+        top: 65%;
+        transform: translate(-50%, -50%);
+        width: 75%;
+        max-width: 257px;
+        margin-left: 15%;
+        // top: 49%;
+        // margin-left: 20%;
+
+        // padding: 17px;
+        // width: 154%;
+
+        // position: relative;
+        // right: 49px;
+
+
+        .content {
+            padding: 17px;
+
+            img {
+                margin: auto;
+                width: 25px;
+            }
+
+            span {
+                font-size: small;
+                font-weight: 500;
+            }
+
+            .btn {
+                font-size: small;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .save-alert2 {
+        left: auto;
+        width: 50%;
+        max-width: 362px;
+        top: 37px;
+        margin-left: 0px;
+
+        // top: 49%;
+        // margin-left: 20%;
+        .content {
+            padding: 17px;
+
+            img {
+                margin: auto;
+                width: 25px;
+            }
+
+            span {
+                font-size: small;
+                font-weight: 500;
+            }
+
+            .btn {
+                font-size: small;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .dialoadForCard {
+        max-width: fit-content !important;
+        // margin-left: 0px!important; 
+        top: 44% !important;
+    }
+
+    /// for addinh thre ... after 3 line
+
+    .forfunddcardtitle {
+        min-height: 58px;
+        // border-bottom: 1px solid #D2D8EA;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 3;
+        max-width: 249px;
+    }
+
+    // .img-with-tooltip{
+    //   float: inline-end;
+    // }
+
+    .makeTootipFundVisibleCard {
+        position: absolute;
+        left: -34px;
+        top: 100%;
+        z-index: 9;
+        min-width: 119px;
+        border-radius: 0px;
+        background: var(--berry, #F0F6FF);
+        box-shadow: 0px 4px 20px 0px rgba(23, 55, 163, 0.16);
+        box-shadow: 5px 4px 19px;
+        padding: 7px 5px;
+        color: #595A6C;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    // .fund-block.fund-card-head.fund-card-rist-title {
+    //     border-bottom: 1px solid #D2D8EA !important;
+    // }
+
+    .fund-block .info .dropdown .dropdown-menu li {
+        border-bottom: none;
+    }
+
+    // .fund-block .info .block-btns {
+    //     .get-btn-outline-primary {
+    //     width: 100%;
+    //     padding: 10px 11px;
+    //   }
+
+    // .get-btn-primary{
+    //     width: 100%;
+    //     padding: 10px 11px;
+    //   }
+    // }
+
+}
+
+// Card fund card
+.fund-block {
+
+    // position: relative;
+    // z-index: 0;
+    &>.fund-card-block:hover {
+        box-shadow: 0px 0px 5px silver;
+        scale: 1.01;
+    }
+
+    &>.fund-card-block {
+        transition: all 0.2s ease-in-out;
+    }
+
+    .img-with-tooltip {
+        margin-bottom: 3px;
+        display: inline-block;
+
+        &>img.risk-meter {
+            margin-left: 8px;
+            width: 35px;
+        }
+
+        img {
+            transform: translateY(-3px);
+        }
+    }
+
+    .fund-card-head {
+        display: flex;
+        flex-flow: column nowrap;
+
+        .fund-card-rist-title {
+            .fund-card-title {
+                display: flex;
+                align-items: center;
+                max-width: 95%;
+
+                .title-text {
+                    font-size: 1.188rem;
+                    font-weight: 500;
+                }
+            }
+
+            display: flex;
+            font-weight: 300;
+            margin-bottom: 10px;
+            flex: 1;
+
+        }
+
+        >.tags {
+            display: inline-block !important;
+            padding: 5px 17px;
+            margin-left: 10px !important;
+        }
+    }
+
+    &>.fund-card-block .info .btn {
+        padding: 6px 16px;
+    }
+
+    // NOTE: need to add all this card css here....
+    // from media file
+    // From component file
+
+
+}
+
+// fund-block-wrap
+
+
+
+// Solutions page customize style
+.solution-page-customize {
+
+    .fund-block {
+        border: 1px solid #D2D8EA;
+        margin-bottom: 15px;
+
+        .info {
+            font-size: 0.813rem;
+
+            .text-big {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .fund-block .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media(max-width:1270px) {
+    .fund-block .tags {
+        // display: block;
+        margin-left: 0;
+    }
+}
+
+.col-auto {
+    img {
+        display: inline-block;
+    }
+
+    .investor-img {
+        img {
+            margin: unset;
+            max-width: unset;
+            margin-right: 0px;
+        }
+    }
+}
+
+
+
+.fund-card-block {
+    .fund-head h3 a {
+        font-weight: 400;
+        font-size: 1.375rem;
+    }
+
+    .recommend-tag {
+        font-size: 0.75rem;
+    }
+
+    .tags ul li {
+        font-size: 0.938rem;
+    }
+
+    .info {
+        font-size: 0.875rem;
+
+        .text-big {
+            font-size: 1.125rem;
+        }
+    }
+}
+
+.forOtherCardColor {
+    .addTitleCart {
+        font-family: 'Hanken Grotesk';
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: -0.03em;
+        text-align: left;
+        color: #8189A2;
+    }
+
+    .addValueData {
+        font-family: 'Hanken Grotesk';
+        font-size: 0.875rem;
+        font-weight: 700;
+        line-height: 18px;
+        letter-spacing: -0.03em;
+        text-align: left;
+        color: #3C425D;
+    }
+
+    .addColorView {
+        font-family: 'Hanken Grotesk';
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: -0.03em;
+        text-align: left;
+        color: #3769FF;
+    }
+}
+
+.makeAddCartData {
+    background: #F0F6FF;
+    padding: 10px;
+    margin-top: 5%;
+    // width: 79%;
+}
+
+.colorExpandsColorView {
+    background: #F0F6FF;
+}
+
+.forDialogDropdwonColor ul a {
+    color: #787988 !important;
+}
+
+.tooltipblockfortitile {
+    left: -119px !important;
+    min-width: 139px !important;
+}
+
+.fund-block:hover {
+    z-index: 998;
+}
+
+
+@media(max-width:576px) {
+    .fund-detail-mob {
+        padding-left: 0px;
+    }
+
+    .fund-drop-down {
+        font-size: 0.875rem;
+        width: 7rem;
+    }
+}
+
+
+.slide {
+    width: 170px;
+    margin: 0px auto !important;
+    /* Optional: Center the slide */
+}
+
+.line {
+    width: 96px;
+    height: 2px;
+    position: absolute;
+    top: 17px;
+    left: 39%;
+    border: 2px solid #959595;
+    background: #959595;
+}
+
+@media (min-width: 375px) and (max-width: 667px) {
+    .slick-slider {
+        .slick-slide {
+            padding: 0px
+        }
+    }
+}
+
+@media (min-width: 360px) and (max-width: 740px) {
+    .slick-slider {
+        .slick-slide {
+            padding: 0px
+        }
+    }
+}
+
+.fund-dark-mode-icon {
+    display: none !important;
+}
+
+.fund-light-mode-icon {
+    display: block !important;
+}
+
+.fund-focus {
+    margin-top: 5px;
+}
+
+.very-high-general {
+    width: 33px;
+    margin-left: 5px;
+}
+
+.tag {
+    white-space: nowrap;
+}
+
+.copied {
+    z-index: 1026;
+}
+
+.annualised-return {
+    vertical-align: super;
+}
+
+.Inception-since {
+    font-size: 13px !important;
+}
+
+.investors-info {
+    vertical-align: sub;
+    padding-right: 0;
+    width: 50% !important;
+}
+
+.uniqueInvestors {
+    align-items: start;
+    flex-flow: column;
+}
+
+.investor-icon-unique {
+    position: relative;
+    bottom: 3px;
+}
+
+.investing-fund {
+    transform: translateY(-3px);
+}
+
+.unique-Investors {
+    white-space: nowrap;
+}
+
+.fund-size {
+    padding-left: 10px;
+    width: auto;
+    position: absolute;
+}
+
+.totalNetAssets {
+    align-items: start;
+    flex-flow: column;
+    gap: 6px
+}
+
+.fund-block-size {
+    position: relative;
+    top: 2px;
+}
+
+.info-icon2 {
+    margin-left: 3px;
+}
+
+.annualised-returns {
+    gap: 3px;
+}
+
+.top-block {
+    top: 0;
+}
+
+.annualised-font {
+    font-weight: 600;
+}
+
+.fund-amount {
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.space-justify {
+    justify-content: space-around;
+}
+
+.view-details {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.amount-fund {
+    justify-content: space-around;
+    margin-left: 8%;
+}
+
+.VectorforArrow {
+    transform: rotate(180deg)
+}
+
+.total-amount {
+    height: 81px;
+}
+
+.isExpanded {
+    padding: 10px;
+    text-align-last: center;
+}
+
+.deleteCartObj {
+    text-align: end;
+}
+
+.deleteicon {
+    width: 27px;
+}
+
+.EditCartDetails {
+    margin-top: 4.5rem !important;
+}
+
+.edit-cart {
+    width: 115px;
+    height: 49px;
+}
+
+.edit-cart-head {
+    align-items: center;
+}
+
+.deleteicon-cart {
+    border: 1px solid var(--blue);
+    padding: 12px 21px;
+    border-radius: 8px;
+}
+
+.edit-cart-footer {
+    width: 92%
+}
+
+.edit-class {
+    width: inherit;
+    padding: 11px;
+}
+
+.img-size {
+    width: 22px;
+}
+
+.img-size-icon {
+    width: 19px;
+}
+
+.dropdown-index {
+    z-index: 1026;
+}
+
+.isComparedCardAlreadyAdded {
+    object-fit: inherit;
+    height: 16px;
+    margin-top: 1px
+}
+
+.flex-block {
+    display: flex !important;
+}
+
+.watchlist-img {
+    width: 16px;
+}
+
+.tooltip-box-img {
+    width: 18px;
+}
+
+.info-img {
+    width: 14px;
+    top: 8px;
+}
+
+.info-icon2-unique {
+    margin-left: 3px;
+    width: 16px;
+}
+
+.information-icon {
+    margin-left: 5px;
+    width: 13px;
+    top: 8px;
+}
+
+.investor-icon-img {
+    position: relative;
+    bottom: 3px;
+    font-weight: 600;
+}
+
+.frame-img {
+    margin: 8px;
+    width: 46px;
+}
+
+.selected-fund {
+    padding: 13px 10px;
+}
+
+.India-fund {
+    color: #3769ff;
+    margin-left: 0px;
+}
+
+.Growth-fund {
+    color: #3769ff;
+    font-size: large;
+}
+
+.nav-history {
+    opacity: 0.9;
+    font-size: 13px;
+}
+
+.offcanvas-head {
+    height: 80%;
+    border-top-left-radius: 39px;
+    border-top-right-radius: 39px;
+    z-index: 1201;
+}
+
+.Historical {
+    align-items: baseline;
+    gap: 20px;
+}
+
+.Historical-title {
+    font-size: 1.1rem;
+}
+
+.accordion-head {
+    border-radius: 5px
+}
+
+.accordion-head-block {
+    border: 1px solid black;
+}
+
+.accordion-button-size {
+    border: 1px solid black;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.accordion-collapse-size {
+    border: 1px solid black;
+    margin-top: 19px;
+}
+
+.showCalender {
+    border: 1px solid black;
+    padding: 10px;
+    margin-right: 20px;
+    margin-left: 18px;
+}
+
+.showCalender-img {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.Submit-data {
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+}
+
+.Submit-data-block {
+    height: 100%;
+}
+
+.Historical-section {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.Franklin-build {
+    background: #F0F6FF;
+    padding: 13px 10px;
+}
+
+.Franklin-growth {
+    margin-left: 0px;
+    font-weight: 600;
+}
+
+.money-sign-fund {
+    position: relative;
+    top: 2px;
+    font-weight: 600;
+}
+
+.information-icon-dark {
+    margin-left: 5px;
+    width: 13px;
+    top: 1px;
+}
+
+.addnow-section {
+    margin-left: auto;
+}
+
+.alert-index {
+    z-index: 10000;
+}
+
+.Direct-IDCW {
+    width: 8rem;
+}
+
+.Direct-IDCW-section {
+    border-right: 1px solid #7F869C
+}
+
+.sharewithothers {
+    font-size: 28px;
+    margin-left: auto
+}
+
+.franklintempl-section {
+    border: 1px solid #D2D8EA;
+    padding: 12px;
+    font-size: 12px;
+}
+
+.offcanvas-header-section {
+    border-top-left-radius: 39px;
+    border-top-right-radius: 39px;
+}
+
+.sip-investment {
+    width: 233px;
+    height: 48px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.Lumpsum-investment {
+    width: 233px;
+    height: 48px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #FFFFFF;
+}
+
+.investment-day {
+    background-color: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 4px;
+    width: 100%;
+    height: 249px;
+}
+
+.Frequencies {
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.investment-amount {
+    background-color: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 4px;
+    width: 100%;
+    height: 226px;
+}
+
+.financial-goal {
+    font-size: 1rem;
+    color: #8189A2;
+}
+
+.sip-until {
+    background-color: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 4px;
+    width: 100%;
+    height: 195px;
+}
+
+.Vector3-img {
+    height: 21px;
+    margin-bottom: 4px;
+}
+
+.cancel-applied {
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.cancel-apply {
+    height: 100%;
+    padding: 0px 14px;
+}
+
+.Apply-cancel {
+    width: 233px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #FFFFFF;
+}
+
+.applied {
+    width: 233px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.Historical-navmodal {
+    z-index: 1000000;
+}
+.nav-table{
+    padding: 10px 20px
+}

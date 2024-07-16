@@ -1,0 +1,374 @@
+[
+    {
+        "id": "1",
+        "headerText": "Explore funds",
+        "contentData": [
+            {
+                "id": 1,
+                "subheading": "Funds",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"ELSS",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":2,
+                        "content":"Equity Funds",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":3,
+                        "content":"Fixed Income Funds",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":4,
+                        "content":"FoF Domestic Funds",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":5,
+                        "content":"Hybrid Funds",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":6,
+                        "content":"International Funds",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":7,
+                        "content":"Liquid Funds",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "subheading": "Others",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"Watchlist",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":2,
+                        "content":"Comparison",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":3,
+                        "content":"NAV",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":4,
+                        "content":"IDCW",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":5,
+                        "content":"Cart",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "headerText": "Plan your investment",
+        "contentData": [
+            {
+                "id": 1,
+                "subheading": "Solutions",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"Child’s Education",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":2,
+                        "content":"Retirement",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                        
+                    },
+                    {
+                        "id":3,
+                        "content":"Holiday",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":4,
+                        "content":"Cash Management",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":5,
+                        "content":"Dream Home",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":6,
+                        "content":"Wealth Creation",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":7,
+                        "content":"Tax Planning",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":8,
+                        "content":"Customise Your Plan",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "subheading": "Calculators",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"SIP Calculator",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":2,
+                        "content":"Top-Up SIP Calculator",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":3,
+                        "content":"Lumpsum Calculator",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":4,
+                        "content":"STP Calculator",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":5,
+                        "content":"SWP Calculator",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "headerText": "Knowledge Centre",
+        "contentData": [
+            {
+                "id": 1,
+                "subheading": "Education",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"Category 1",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":2,
+                        "content":"Category 2",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":3,
+                        "content":"Category 3",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":4,
+                        "content":"Frankly Speaking",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "subheading": "Market Insights",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"Blogs",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":2,
+                        "content":"Latest Commentaries",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "subheading": "Franklin Templeton Academy",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"About Us",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":2,
+                        "content":"Explore Courses",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":3,
+                        "content":"Join For Free",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "headerText": "Investor Services",
+        "contentData": [
+            {
+                "id": 1,
+                "subheading": "Account Statements",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"Account Statement",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":2,
+                        "content":"Capital Gains Statement",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":3,
+                        "content":"Consolidated Account Statement",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":4,
+                        "content": "Subscribe to Valuation/Account Statement",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "subheading": "Update Personal Details",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"Update KYC Details",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":2,
+                        "content":"Update your PAN",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":3,
+                        "content":"Certify FATCA/Update KYC Details",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "subheading": "Forms & Downloads",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"Servicing Forms",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":2,
+                        "content":"Fund docs",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":3,
+                        "content":"Factsheets",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":4,
+                        "content":"Addenda / Notices",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":5,
+                        "content":"Ter",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "subheading": "Ways to transact with us",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"Find Franklin Templeton",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":2,
+                        "content":"Online Services/SMS Services",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":3,
+                        "content":"Request a call back?",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":4,
+                        "content":"Grievance Redressal",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "subheading": "NAV and Others",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"Set NAV Alerts",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":2,
+                        "content":"Request for Historic NAVs",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":3,
+                        "content":"Unclaimed investments",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":4,
+                        "content":"Transmission Policy",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    },
+                    {
+                        "id":5,
+                        "content":"FAQs",
+                        "cardData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morem ipsum dolor sit amet"
+                    }
+                ]
+            }
+        ]
+    }
+]

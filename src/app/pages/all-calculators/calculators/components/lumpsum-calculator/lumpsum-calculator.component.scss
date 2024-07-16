@@ -1,0 +1,121 @@
+.calculator-graph-box1 {
+    height: 310px;
+}
+
+
+
+@media(max-width: 575px) {
+    .calculator-graph-box1 {
+        height: auto;
+    }
+
+    .table-responsive {
+        margin-bottom: 30px !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .FT-calculator-box .FT-title-medium {
+        padding-bottom: 6px;
+    }
+}
+
+.graph-table-btns {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: #DDEAFF;
+    display: inline-block;
+    margin-bottom: 32px;
+
+    .btn {
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        letter-spacing: -0.42px;
+        box-shadow: none;
+
+        &.active {
+            background: var(--blue);
+            color: #fff;
+        }
+    }
+}
+
+.lumpsum-cal {
+    color: #7d7d84;
+    font-size: 19px;
+    padding: 10px 0px;
+}
+
+.Invested-theme {
+    background: #A669CA
+}
+
+.Invested-theme-color {
+    background: #00847D
+}
+
+.Recommended-investment {
+    margin-top: 5px;
+}
+
+.Hybrid {
+    max-width: 322px;
+    width: 315px;
+}
+
+.Hybrid-fund {
+    margin-bottom: auto;
+    margin-left: 0px !important;
+}
+
+.moderately {
+    margin-bottom: auto;
+    margin-left: 19px;
+}
+
+.equity-risk {
+    white-space: nowrap;
+}
+
+.dropdown-index {
+    z-index: 1026;
+}
+
+.info-icon2-img {
+    left: -100px;
+}
+
+.Annualised-img {
+    vertical-align: super;
+}
+
+.Inception {
+    font-size: 0.813rem !important;
+}
+
+.investors-info {
+    vertical-align: sub;
+    padding-right: 0;
+}
+
+.investor-icon-img {
+    gap: 3px;
+    align-items: start;
+}
+.investor-img-icon{
+    position: relative; bottom: 3px;
+}
+.AUM-fund{
+    padding-left: 25px; width: auto;
+}
+.money-sign-img{
+    gap: 3px;
+}
+.AUM-fund-img{
+    position: relative; top: 2px;
+}
+.Annualised-icon{
+    top: 0;
+}

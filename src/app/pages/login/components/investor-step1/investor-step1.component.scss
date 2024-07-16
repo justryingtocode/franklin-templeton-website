@@ -1,0 +1,57 @@
+.form-container{
+max-width:785px;
+margin:0 auto;
+}
+.btn{
+    padding:10px 20px;
+    width:100% !important;
+    @media(min-width:576px){
+        width:507px
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .distributor-step2 {
+       margin-left: 0px !important;
+    }
+ }
+ //
+
+.share-menu-twitter {
+    margin-left: 256px
+}
+
+.share-menu-twitter-fund {
+    flex-direction: column;
+}
+
+.share-btn-fund {
+    color: #F04438;
+}
+
+.fund-AUM {
+    color: green;
+    margin-right: 43px;
+}
+
+// .showIconForWatchlist {
+//     margin-top: 10px;
+// }
+
+// .audio-box {
+//     height: 6px;
+// }
+
+// .podcast-block {
+//     height: 61px;
+// }
+
+// .audio-class-box {
+//     border-radius: 4px;
+//     background: #F0F6FF;
+//     padding: 0px 10px 0px 5px;
+// }
+
+// .podcast-img-box {
+//     margin-left: -9px;
+// }

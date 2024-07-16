@@ -1,0 +1,38 @@
+[
+  {
+		"id": "16",
+		"date": "2020-10-18",
+		"title": "Franklin India Dynamic Asset Allocation Fund of Funds",
+		"annualised_return_year": "10 years",
+		"asset_category": "FOF Domestic",
+		"investors": "17.74 lakh",
+		"aum": "22.15 Cr",
+		"annualised_return": "4.77%",
+		"tag": [
+			"Equity",
+			"Mid Cap",
+			"7 years old fund"
+		],
+		"investment_horizon": "Short Term",
+		"suitable_for": "{{exec_choice('Child's Education', 'Retirement Plan', 'Holiday Plan', 'Tax Saving')}}",
+		"fund_cat": "Mid Cap Fund"
+	},
+	{
+		"id": "70",
+		"date": "2021-08-21",
+		"title": "Franklin Build Equity Funds",
+		"annualised_return_year": "15 years",
+		"asset_category": "Liquid Funds",
+		"investors": "47.93 lakh",
+		"aum": "83.52 Cr",
+		"annualised_return": "23.95%",
+		"tag": [
+			"Equity",
+			"Large Cap",
+			"7 years old fund"
+		],
+		"investment_horizon": "Short Term",
+		"suitable_for": "{{exec_choice('Child's Education', 'Retirement Plan', 'Holiday Plan', 'Tax Saving')}}",
+		"fund_cat": "Liquid Fund"
+	}
+]

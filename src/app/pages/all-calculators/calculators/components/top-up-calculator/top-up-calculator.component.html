@@ -1,0 +1,539 @@
+<!-- start page breadcrumb block -->
+<div class="FT-breadcrumb mb-4 d-none d-md-block">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">All Calculators</a></li>
+                <li class="breadcrumb-item active" aria-current="page">SIP Top-up Calculator</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- start section calculator -->
+<section class="FT-calculator-box mb-6">
+    <div class="container">
+        <div class="FT-title-medium text-blue mb-2">SIP Top-Up Calculator</div>
+        <div>
+            Enhance your investment journey with Top-Up SIP, a convenient way to boost your SIP contributions over time. Increase your investment amount effortlessly to capitalize on market opportunities and accelerate your wealth creation.
+        </div>
+        <div class="FT-financial">
+
+            <!-- Tab panes -->
+            <div class="tab-content calculator-box">
+                <div class="tab-pane active" id="Systematic" role="tabpanel" aria-labelledby="Systematic-tab"
+                    tabindex="0">
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="Investment" role="tabpanel" aria-labelledby="Investment-tab"
+                            tabindex="0">
+                            <div class="row">
+                                <div class="col-lg-5 col-12 mb-2">
+                                    <!-- <div >
+                                        <div class="graph-table-btns">
+                                            <ul class="nav nav-tabs justify-content-center" id="myTab2" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button (click)="toggleIsisTargeted(false)" class="btn"
+                                                        [ngClass]="{'active': !isTargeted}" id="Investment-tab"
+                                                        type="button" role="tab" aria-controls="Investment"
+                                                        aria-selected="true">Investment amount</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button (click)="toggleIsisTargeted(true)" class="btn"
+                                                        [ngClass]="{'active': isTargeted}" id="Target-tab" type="button"
+                                                        role="tab" aria-controls="Target" aria-selected="false">Target
+                                                        amount</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                       
+                                    </div> -->
+                                    <app-top-up-calculator-form 
+                                        [(form)]="formValue" 
+                                        [isSIP]="isSIP" 
+                                        [isTargeted]="isTargeted"
+                                        (OnRecalculate)="OnRecalculate($event)"
+                                        >
+                                    </app-top-up-calculator-form>
+                                    <a href=""  data-bs-toggle="modal" data-bs-target="#exampleModal">View Disclaimer</a>
+                                   
+                                </div>
+                                <div class="col-lg-7 col-12 ps-lg-4">
+                                    <div class="calculate-statics">
+                                        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-4 pb-md-2">
+                                           <div class="graph-table-btns mb-lg-0 mb-3">
+                                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="btn active" id="Graph-tab" data-bs-toggle="tab"
+                                                        data-bs-target="#Graph-tab-pane" type="button" role="tab"
+                                                        aria-controls="Graph-tab-pane"
+                                                        aria-selected="true"
+                                                        (click)="setIsGraphView(true)">Graph</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="btn" id="Table-tab" data-bs-toggle="tab"
+                                                        data-bs-target="#Table-tab-pane" type="button" role="tab"
+                                                        aria-controls="Table-tab-pane"
+                                                        aria-selected="false"
+                                                        (click)="setIsGraphView(false)">Table</button>
+                                                </li>
+                                            </ul>
+                                        </div> 
+                                        <div class="text-small text-bold" *ngIf="isGraphView">
+                                            <div class="d-none d-md-block">
+                                                <span class="me-3">
+                                                    <span class="circle graph-color"></span>
+                                                    Amount Invested by you
+                                                </span>
+                                                <span>
+                                                    <span class="circle value-investment"></span>
+                                                    Value of your investment
+                                                </span>
+
+                                            </div>
+                                          
+                                            <div class="d-md-none row text-center">
+                                                <div class="col-6">
+                                                    <span>
+                                                        <span class="circle graph-color"></span>
+                                                        Amount Invested by you
+                                                    </span>
+                                                </div>
+                                                <div class="col-6">
+                                                    <span>
+                                                        <span class="circle value-investment"></span>
+                                                        Value of your investment
+                                                    </span>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        </div>
+                                        
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="Graph-tab-pane" role="tabpanel"
+                                                aria-labelledby="Graph-tab" tabindex="0">
+                                                <div class="calculator-graph-box mb-1">
+                                                    <div class="text-small rotated">Value of your investment</div>
+                                                    <div class="graph-container">
+                                                        <canvas baseChart [data]="sipData" [type]="'line'"
+                                                            [options]="chartOptions">
+                                                        </canvas>
+                                                    </div>
+                                                    <div class="text-small text-center ">Investment period</div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="Table-tab-pane" role="tabpanel"
+                                                aria-labelledby="Table-tab" tabindex="0">
+                                                <div class="table-responsive text-center mb-1 Yearly-return">
+                                                    <table class="table table-success table-striped stiky-head Normal-swp"
+                                                    >
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="table-color">
+                                                                    <span class="sip-top-year">Year</span>
+                                                                    
+                                                                </th>
+                                                                <th colspan="2" 
+                                                                    class="Normal-sip">
+                                                                            Normal SIP (without Top-up)</th>
+                                                                <th colspan="2"
+                                                                class="top-up-sip">Top-up SIP</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="table-color" >
+
+                                                                </th>
+                                                                <th class="table-color" >Invested Amount</th>
+                                                                <th class="table-color" >Resultant Amount</th>
+                                                                <th class="table-color" >Invested Amount</th>
+                                                                <th>Resultant Amount</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr *ngFor="let val of formValue.eachYearData">
+                                                                <td>{{val.year}}</td>
+                                                                <td>{{val.investedAmt | currency : "INR": 'symbol':'1.0-0'}}</td>
+                                                                <td>{{val.resultantAmt | currency : "INR": 'symbol':'1.0-0'}}</td>
+                                                                <td>{{val.topupInvestedAmt | currency : "INR": 'symbol':'1.0-0'}}</td>
+                                                                <td>{{val.topupResultantAmt | currency : "INR": 'symbol':'1.0-0'}}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="p-3 bg-light-blue mb-2">
+                                            <div class="text-center mb-3 cal-sub-tital without-top-up" >Normal SIP (without Top-up)</div>
+                                            <!-- <div class="p-3 d-flex topup-data-tbl bg-light-blue"> -->
+                                            <div class="numbers d-flex justify-content-center text-center mb-4">
+                                                <div class="px-3" >
+                                                    <div>Invested Amount</div>
+                                                    <ng-container>
+                                                        <h3 class="sip-recommended-funds for-sip-recommended-fund">
+                                                            {{formValue.totalInvestedAmt | currency : "INR": 'symbol':'1.0-0'}}
+                                                        <!-- {{formValue?.totalInvestAmt | indiancurrency}} -->
+                                                        </h3>
+                                                    </ng-container>
+                                                </div>
+    
+                                                <div class="px-3">
+                                                    <div>Resultant Amount</div>
+                                                    <h3 class="sip-recommended-funds for-sip-recommended-fund">
+                                                        {{formValue.totalResultantAmt | currency : "INR": 'symbol':'1.0-0'}}
+                                                      <!-- {{ formValue?.totalValues | indiancurrency}} -->
+                                                    </h3>
+                                                </div>
+                                                </div>
+                                            <!-- <table class="table table-success table-striped stiky-head main-val-tbl">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="2">Normal SIP</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th ="border-right: 1px solid #cacaca;">Invested Amount</th>
+                                                        <th>Resultant Amount</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr></tr>
+                                                    <tr>
+                                                        <td ="background-color: var(--bs-table-bg);">{{formValue.totalInvestedAmt | currency : "INR": 'symbol':'1.0-0'}}</td>
+                                                        <td ="background-color: var(--bs-table-bg);">{{formValue.totalResultantAmt | currency : "INR": 'symbol':'1.0-0'}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table class="table table-success table-striped stiky-head main-val-tbl">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="2">Topup SIP</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th 
+                                                        ="border-right: 1px solid #cacaca;">Invested Amount</th>
+                                                        <th>Resultant Amount</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr></tr>
+                                                    <tr>
+                                                        <td 
+                                                        ="background-color: var(--bs-table-bg);">
+                                                            {{formValue.topupTotalInvestedAmt | currency : "INR": 'symbol':'1.0-0'}}</td>
+                                                        <td 
+                                                        ="background-color: var(--bs-table-bg);">{{formValue.topupTotalResultantAmt | currency : "INR": 'symbol':'1.0-0'}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table> -->
+                                          
+                                            <!-- <button class="btn btn-primary recommende-btn" [ngClass]="showRiskOptions ? 'd-none' : ''" (click)="toggleShowRiskOptions()">Recommended funds to invest</button> --> 
+                                        </div>
+                                        <div class="p-3 bg-light-blue">
+                                            <div class="text-center mb-3 cal-sub-tital without-top-up"  
+                                           >Top-up SIP</div>
+                                            <!-- <div class="p-3 d-flex topup-data-tbl bg-light-blue"> -->
+                                            <div class="numbers d-flex justify-content-center text-center mb-4">
+                                                <div class="px-3" >
+                                                    <div>Invested Amount</div>
+                                                    <ng-container>
+                                                        <h3 class="sip-recommended-funds for-sip-recommended-fund">
+                                                            {{formValue.topupTotalInvestedAmt | currency : "INR": 'symbol':'1.0-0'}}
+                                                        <!-- {{formValue?.totalInvestAmt | indiancurrency}} -->
+                                                        </h3>
+                                                    </ng-container>
+                                                </div>
+    
+                                                <div class="px-3">
+                                                    <div>Resultant Amount</div>
+                                                    <h3 class="sip-recommended-funds for-sip-recommended-fund">
+                                                        {{formValue.topupTotalResultantAmt | currency : "INR": 'symbol':'1.0-0'}}
+                                                      <!-- {{ formValue?.totalValues | indiancurrency}} -->
+                                                    </h3>
+                                                </div>
+                                                </div>
+                                            <!-- <table class="table table-success table-striped stiky-head main-val-tbl">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="2">Normal SIP</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th  ="border-right: 1px solid #cacaca;">Invested Amount</th>
+                                                        <th>Resultant Amount</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr></tr>
+                                                    <tr>
+                                                        <td  ="background-color: var(--bs-table-bg);">{{formValue.totalInvestedAmt | currency : "INR": 'symbol':'1.0-0'}}</td>
+                                                        <td  ="background-color: var(--bs-table-bg);">{{formValue.totalResultantAmt | currency : "INR": 'symbol':'1.0-0'}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table class="table table-success table-striped stiky-head main-val-tbl">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="2">Topup SIP</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th  ="border-right: 1px solid #cacaca;">Invested Amount</th>
+                                                        <th>Resultant Amount</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr></tr>
+                                                    <tr>
+                                                        <td  ="background-color: var(--bs-table-bg);">
+                                                            {{formValue.topupTotalInvestedAmt | currency : "INR": 'symbol':'1.0-0'}}</td>
+                                                        <td  ="background-color: var(--bs-table-bg);">{{formValue.topupTotalResultantAmt | currency : "INR": 'symbol':'1.0-0'}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table> -->
+                                          
+                                            <!-- <button class="btn btn-primary recommende-btn" [ngClass]="showRiskOptions ? 'd-none' : ''" (click)="toggleShowRiskOptions()">Recommended funds to invest</button> --> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="recommended-fund pt-5" *ngIf="showRecomendedFunds">
+                    <h3 class="mb-3">Recommended funds</h3>
+                    <div class="fund-block position-relative">
+                        <div class="d-flex justify-content-between fund-head Recommended-build" >
+                            <div class="d-flex justify-content-between d-none d-md-flex">
+                                <div class="Hybrid">
+                                    <h3 class="mb-0">
+                                        <a href="#"><span>Franklin Build Hybrid Funds</span></a>
+                                    </h3>
+                                </div>
+                                <div>
+                                    <span class="img-with-tooltip">
+                                        <img src="assets/images/general/very-high.svg">
+                                        <span class="tooltip-block">
+                                            <img src="assets/images/general/very-high.svg"> This fund has moderately
+                                            high
+                                            risk
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="tags hybrid-tags" >
+                                    <ul>
+                                        <li class="equity-risk" >Equity</li>
+                                        <li class="equity-risk" >Larg Cap</li>
+                                        <li class="equity-risk" >8 years old fund</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="d-md-none"><span>
+                                    <h3 class="mb-0">
+                                        <a href="#"><span>Franklin Build Hybrid Funds</span></a>
+                                        <img src="assets/images/general/very-high.svg" class="ms-2">
+                                    </h3>
+                                </span>
+                                <div class="tags large-cap">
+                                    <ul>
+
+                                        <li class="equity-risk" >Equity</li>
+                                        <li class="equity-risk" >Larg Cap</li>
+                                        <li class="equity-risk" >8 years old fund</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="icons">
+                                <div class="d-none d-lg-inline-block"><button><img
+                                            src="assets/images/general/mark-icon.svg"><span class="tooltip-box">Save to
+                                            watchlist</span></button><button><img
+                                            src="assets/images/general/change-icon.svg"><span
+                                            class="tooltip-box">Compare</span></button><button><img
+                                            src="assets/images/general/cart-icon.svg"><span
+                                            class="new-badge">New</span><span class="tooltip-box">Add to
+                                            cart</span></button><button>
+                                        <div class="dropdown share-menu"><button type="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                                id="share-button83"><img
+                                                    src="assets/images/general/share-icon.svg"><span
+                                                    class="tooltip-box">Share</span></button>
+                                            <ul class="dropdown-menu dropdown-img">
+                                                <li><span class="dropdown-item"><img
+                                                            src="assets/images/general/Link.svg">Copy link</span></li>
+                                                <li><a href="#" class="dropdown-item"><img
+                                                            src="assets/images/general/TwitterLogo.svg">Share on
+                                                        Twitter</a>
+                                                </li>
+                                                <li><a href="#" class="dropdown-item"><img
+                                                            src="assets/images/general/FacebookLogo.svg">Share on
+                                                        Facebook</a></li>
+                                                <li><a href="#" class="dropdown-item"><img
+                                                            src="assets/images/general/LinkedinLogo.svg">Share on
+                                                        LinkedIn</a></li>
+                                                <li><a href="#" class="dropdown-item"><img
+                                                            src="assets/images/general/whatsapps.png">Share on
+                                                        WhatsApp</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </button></div>
+                                <div class="dropdown d-inline-block d-lg-none"><button type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false"
+                                        class="dropdown-toggle me-0"><img src="assets/images/general/dots.svg"></button>
+                                    <ul class="dropdown-menu">
+                                        <li class="d-none d-md-block"><a href="#" class="dropdown-item"><i
+                                                    class="bi bi-cart2"></i>Add to cart </a>
+                                        </li>
+                                        <li><a class="dropdown-item"><img
+                                                    src="assets/images/general/compare-icon.svg">Compare fund </a></li>
+                                        <li><span class="dropdown-item d-block"><img
+                                                    src="assets/images/general/watchlist-icon.svg">Save to watchlist
+                                            </span>
+                                        </li>
+                                        <li><a data-bs-toggle="modal" data-bs-target="#callBack1"
+                                                class="dropdown-item"><img
+                                                    src="assets/images/general/share-icon-sm.svg">Share </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row info justify-content-between">
+                            <ul class="col-auto d-none d-md-block">
+                                <li>
+                                    <div class="mb-2">Investors <span class="img-with-tooltip"><img
+                                                src="assets/images/home/info-icon2.svg"><span class="tooltip-block info-icon2-img"
+                                                >
+                                                Lorem ipsum dolor sit amet, consectetur. </span></span></div>
+                                    <div class="text-big"><span class="d-inline-block d-md-none"><img
+                                                src="assets/images/fund/investor-icon.svg"></span> 48.68 lakh <span
+                                            class="d-inline-block d-md-none">Investors</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="mb-2">AUM </div>
+                                    <div class="text-big"><span class="d-inline-block d-md-none"><img
+                                                src="assets/images/fund/money-sign.svg"></span> 25.52 Cr <span
+                                            class="d-inline-block d-md-none">AUM</span></div>
+                                </li>
+                                <li class="last-item">
+                                    <div class="mb-2 Annualised-return" >Annualised
+                                        returns <span class="img-with-tooltip"><img
+                                                src="assets/images/home/info-icon2.svg"><span class="tooltip-block">
+                                                Lorem
+                                                ipsum dolor sit
+                                                amet, consectetur. </span></span></div>
+                                    <div><span class="text-big">29%</span>
+                                        <div class="dropdown d-none d-md-inline-block"><button type="button"
+                                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
+                                                class="btn btn-white dropdown-toggle"> 15 years </button>
+                                            <ul aria-labelledby="dropdownMenuButton1" class="dropdown-menu">
+                                                <li><a href="#" class="dropdown-item">1 Year</a></li>
+                                                <li><a href="#" class="dropdown-item">3 Years</a></li>
+                                                <li><a href="#" class="dropdown-item">5 Years</a></li>
+                                                <li><a href="#" class="dropdown-item">10 Years</a></li>
+                                                <li><a href="#" class="dropdown-item">15 Years</a></li>
+                                                <li><a href="#" class="dropdown-item">Since Inception</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown Inception-dropdown d-md-none d-inline-block"><button
+                                                type="button" data-bs-toggle="modal" data-bs-target="#InceptionModal"
+                                                class="btn btn-white dropdown-toggle Inception-font"
+                                                >
+                                                Since Inception </button></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="col-auto d-md-none">
+                                <li class="investor investors-img">
+                                    <div class="mb-2">Investors <img src="assets/images/home/info-icon2.svg"
+                                            class="d-inline-block"></div>
+                                    <div class="text-small d-flex Inception-since"><span
+                                            class="d-md-none investor-img investors-wealth"><img
+                                                src="assets/images/fund/investor-icon.svg"></span> 48.68 lakh <span
+                                            class="d-inline-block d-md-none">Investors
+                                        </span><span class="img-with-tooltip"><img
+                                                src="assets/images/home/info-icon2.svg"
+                                                class="mobile-icons light-mode-icon"><img
+                                                src="assets/images/fund/dark-information-icon.png"
+                                                class="mobile-icons dark-mode-icon"><span class="tooltip-block"> Lorem
+                                                ipsum
+                                                dolor sit amet, consectetur.
+                                            </span></span></div>
+                                </li>
+                                <li class="consectetur">
+                                    <div class="mb-2">AUM </div>
+                                    <div class="text-small d-flex AUM-risk" ><span class="d-md-none fund-risk"
+                                            ><img
+                                                src="assets/images/fund/money-sign.svg"></span> 25.52 Cr <span
+                                            class="d-inline-block d-md-none">AUM</span></div>
+                                </li>
+                                <li class="last-item">
+                                    <div class="mb-2 d-flex AUM-risk">Annualised
+                                        returns <span class="img-with-tooltip"><img
+                                                src="assets/images/home/info-icon2.svg"
+                                                class="d-inline-block mobile-icons light-mode-icon img-syle" ><img
+                                                src="assets/images/fund/dark-information-icon.png"
+                                                class="d-inline-block mobile-icons dark-mode-icon"><span
+                                                class="tooltip-block"> Lorem ipsum dolor sit
+                                                amet, consectetur. </span></span></div>
+                                    <div><span class="text-small">29%</span>
+                                        <div class="dropdown d-none d-md-inline-block"><button type="button"
+                                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
+                                                class="btn btn-white dropdown-toggle"> 15 years </button>
+                                            <ul aria-labelledby="dropdownMenuButton1" class="dropdown-menu">
+                                                <li><a href="#" class="dropdown-item">1 Year</a></li>
+                                                <li><a href="#" class="dropdown-item">3 Years</a></li>
+                                                <li><a href="#" class="dropdown-item">5 Years</a></li>
+                                                <li><a href="#" class="dropdown-item">10 Years</a></li>
+                                                <li><a href="#" class="dropdown-item">15 Years</a></li>
+                                                <li><a href="#" class="dropdown-item">Since Inception</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown Inception-dropdown d-md-none d-inline-block"><button
+                                                type="button" data-bs-toggle="modal" data-bs-target="#InceptionModal"
+                                                class="btn btn-white dropdown-toggle Inception-font"
+                                                >
+                                                Since Inception </button></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="d-block d-md-none"><button class="btn btn-light-blue"><span
+                                        class="new-badge">New</span>&nbsp; <i class="bi bi-cart3"></i> Add to
+                                    cart</button>
+                            </div>
+                            <div class="col-auto block-btns">
+                                <a class="btn btn-outline-primary me-2">
+                                    <span class="">Know more</span>
+                                </a>
+                                <a class="btn btn-primary" href="#">Check Performance</a></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div class="row d-flex justify-content-end">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div>
+                The Calculators are designed to assist you in determining the appropriate amount. These Calculators
+                 alone are not sufficient and shouldn't be used 
+                for development or implementation of an investment strategy.
+                 There is no warranty about the currency of 
+                 the calculators/ reckoners. The example do not purport to represent the performance of 
+                 any security or investments. The recipient is advised to consult his or her advisor/tax consultant prior
+                  to arriving at any investment decision. Past performance may or may not be sustained in future and is not a 
+                  guarantee of any future returns.
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

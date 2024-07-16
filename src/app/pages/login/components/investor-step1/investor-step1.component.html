@@ -1,0 +1,26 @@
+<div class="form-container distributor-step2 share-menu-twitter" >
+    <form [formGroup]="panForm" (ngSubmit)="onSubmit()">
+        <div class="row share-menu-twitter-fund">
+            <div class="col-sm-8 col-12 form-group mb-3">
+                <input type="text" class="form-control" placeholder="Enter PAN*" id="panNumber"
+                    formControlName="panNumber">
+                <!-- <div
+                    *ngIf="investorRegistorForm?.get('name')?.hasError('required') && !investorRegistorForm?.get('name')?.value && investorRegistorForm?.get('name')?.touched">
+                    <span sty le="color: #F04438;" class="error-msg fontResize">Name is required.</span>
+                </div> -->
+                <div *ngIf="panForm.get('panNumber')?.errors?.['invalidPan']">
+
+                    <span class="error-msg fontResize share-btn-fund">Invalid PAN Number</span>
+                </div>
+            </div>
+            <div class="col-sm-8 col-12 mb-3">
+                <button type="submit" class="btn btn-primary" (click)="changeActiveStepper(1,true)"
+                    data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false"
+                    aria-controls="collapse2" >Send OTP</button>
+                    <!-- [disabled]="panForm.invalid" -->
+                    
+            </div>
+        </div>
+    </form>
+</div>
+

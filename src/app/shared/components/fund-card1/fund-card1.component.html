@@ -1,0 +1,2126 @@
+<div class="fund-card-wrapper" [ngClass]="{'solution-page-customize': cardType == 'SOLUTION'}">
+    <div class="fund-block position-relative" [ngStyle]="{'padding-top': (fund?.badge)? '40px': '20px'}">
+        <!-- Badge -->
+        <div class="row" *ngIf="hasFundBtn==false">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div>
+                    <span *ngIf="fund?.infocus" class="recommend-tag">{{fund?.focus || 'Focus'}}</span>
+
+                    <div class="d-flex justify-content-between fund-head fund-focus">
+                        <!-- Card Top content wrap :Web -->
+                        <div class="fund-card-head">
+                            <div class="fund-card-rist-title">
+                                <h3 class="fund-card-title mb-0">
+                                    <!-- Card Title -->
+                                    <a [routerLink]="['/funds/' + fund?.id]">
+                                        <span class="title-text">{{ fund?.fundName }}</span>
+                                        <!-- Risk Meter -->
+                                        <span class="img-with-tooltip">
+                                            <img src="assets/images/general/very-high.svg"
+                                               class="very-high-general" >
+                                            <span class="tooltip-block">
+                                                <img class="risk-meter" src="assets/images/general/very-high.svg">
+                                                This fund has moderately high risk
+                                            </span>
+                                        </span>
+                                    </a>
+                                </h3>
+                            </div>
+
+                            <!-- Fund config -->
+                            <div>
+                                <div class="tags">
+                                    <ul>
+                                        <li *ngFor="let tag of fund?.tag" class="tag">{{ tag }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="icons" *ngIf="hasThreeDotOptions">
+                            <!-- Action: Web -->
+                            <div class="d-none d-lg-inline-block">
+                                <button (click)="toggleShowSavDialoge(fund)">
+                                    <img src="assets/images/general/mark-icon.svg">
+                                    <span class="tooltip-box">Add to watchlist</span>
+                                </button>
+                                <button (click)="routeModuleCompareFund('1', fund)">
+                                    <img src="assets/images/general/change-icon.svg">
+                                    <span class="tooltip-box">Compare</span>
+                                </button>
+                                <button>
+                                    <img src="assets/images/general/cart-icon.svg"><span class="new-badge">New</span>
+                                    <span class="tooltip-box">Add to cart</span>
+                                </button>
+                                <button>
+                                    <div class="dropdown share-menu">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                            id="{{'share-button'+fund.id}}" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <img src="assets/images/general/share-icon.svg"><span
+                                                class="tooltip-box">Share</span>
+                                        </button>
+                                        <ul class="dropdown-menu copied"  [hidden]=""
+                                            (mouseleave)="contentOnHoverCLose('share-button'+fund.id)">
+                                            <li><span class="dropdown-item" (click)="toggleShowCopyDialoge()"><i class="bi bi-link-45deg fs-5"></i>Copy
+                                                    link</span></li>
+                                            <li><a class="dropdown-item" href="#"><img
+                                                        src="assets/images/general/TwitterLogo.svg">Share
+                                                    on Twitter</a></li>
+                                            <li><a class="dropdown-item" href="#"><img
+                                                        src="assets/images/general/FacebookLogo.svg">Share
+                                                    on Facebook</a></li>
+                                            <li><a class="dropdown-item" href="#"><img
+                                                        src="assets/images/general/LinkedinLogo.svg">Share
+                                                    on LinkedIn</a></li>
+                                            <li><a class="dropdown-item" href="#"><img
+                                                        src="assets/images/general/whatsapps.png">Share
+                                                    on WhatsApp</a></li>
+                                        </ul>
+                                    </div>
+                                </button>
+                            </div>
+
+                            <!-- Action: Mob -->
+                            <div class="dropdown d-inline-block d-lg-none">
+                                <button class=" dropdown-toggle me-0" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img src="assets/images/general/dots.svg">
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li class="d-none d-md-block">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="bi bi-cart2"></i>Add to cart
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" (click)="routeModuleCompareFund('1', fund)">
+                                            <img src="assets/images/general/compare-icon.svg">Compare 1
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <span class="dropdown-item d-block" (click)="toggleShowSavDialoge(fund)">
+                                            <img src="assets/images/general/watchlist-icon.svg">Add to
+                                            watchlist
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#callBack1">
+                                            <!-- <a class="dropdown-item" (click)="toggleShareModal()"> -->
+                                            <img src="assets/images/general/share-icon-sm.svg">Share
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row info justify-content-between">
+                        <!-- Funds Details: Web -->
+                        <ul class="col-auto  d-none d-md-block">
+                            <li>
+                                <div class="mb-2">Unique investors
+                                    <!-- <img src="assets/images/home/info-icon2.svg" class="d-inline-block"> -->
+                                    <span class="img-with-tooltip">
+                                        <img src="assets/images/home/info-icon2.svg">
+                                        <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                        <span class="tooltip-block">
+                                            20/06/2023 as of.
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="text-big">
+                                    <span class="d-inline-block d-md-none"><img
+                                            src="assets/images/fund/investor-icon.svg"></span>
+                                    {{fund?.uniqueInvestors}}
+                                    <span class="d-inline-block d-md-none">Unique investors</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="mb-2">Fund size
+                                    <span class="img-with-tooltip">
+                                        <img src="assets/images/home/info-icon2.svg">
+                                        <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                        <span class="tooltip-block">
+                                            20/06/2023 as of.
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="text-big">
+                                    <span class="d-inline-block d-md-none"><img
+                                            src="assets/images/fund/money-sign.svg"></span>
+                                    {{fund?.aum}}
+                                    <span class="d-inline-block d-md-none">Fund size <span class="img-with-tooltip">
+                                            <img src="assets/images/home/info-icon2.svg">
+                                            <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                            <span class="tooltip-block">
+                                                20/06/2023 as of.
+                                            </span>
+                                        </span></span>
+                                </div>
+                            </li>
+                            <li class="last-item">
+                                <div class="mb-2 annualised-return" >Annualised returns
+                                    <span class="img-with-tooltip">
+                                        <img src="assets/images/home/info-icon2.svg">
+                                        <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                        <span class="tooltip-block">
+                                            20/06/2023 as of.
+                                        </span>
+                                    </span>
+                                    <!-- <img src="assets/images/home/info-icon2.svg" class="d-inline-block"> -->
+                                </div>
+                                <div>
+                                    <span class="text-big">{{fund?.annualised_return}}</span>
+                                    <div class="dropdown d-none d-md-inline-block">
+                                        <button class="btn btn-white dropdown-toggle" type="button"
+                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            {{fund?.annualised_return_year}}
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item" href="#">1 Year</a></li>
+                                            <li><a class="dropdown-item" href="#">3 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">5 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">10 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">15 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">Since Inception</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown Inception-dropdown d-md-none d-inline-block">
+                                        <button  class="btn btn-white dropdown-toggle Inception-since"
+                                            type="button" data-bs-toggle="modal" data-bs-target="#InceptionModal">
+                                            Since Inception
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </li>
+                        </ul>
+
+                        <!-- Funds Details: Mob -->
+                        <ul class="col-auto d-md-none">
+                            <li class="investor investors-info" >
+                                <div class="mb-2">Investors
+                                    <img src="assets/images/home/info-icon2.svg" class="d-inline-block">
+                                </div>
+                                <div class="text-small d-flex uniqueInvestors" >
+                                    <span class="d-md-none investor-img investor-icon-unique" >
+                                        <img src="assets/images/fund/investor-icon.svg" class="investing-fund">
+                                        {{fund?.uniqueInvestors}}
+                                    </span>
+                                    <span class="unique-Investors">
+                                        <span class="d-inline-block d-md-none">Unique investors..</span>
+                                        <span class="img-with-tooltip">
+                                            <img src="assets/images/home/info-icon2.svg"
+                                                class="mobile-icons light-mode-icon">
+                                            <img src="assets/images/fund/dark-information-icon.png"
+                                                class="mobile-icons dark-mode-icon">
+                                            <span class="tooltip-block">
+                                                20/06/2023 as of.
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="fund-size">
+                                <div class="mb-2">Fund Size
+                                    <span class="img-with-tooltip">
+                                        <img src="assets/images/home/info-icon2.svg">
+                                        <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                        <span class="tooltip-block">
+                                            20/06/2023 as of.
+                                        </span>
+                                    </span>
+                                </div>
+
+                                <div class="text-small d-flex totalNetAssets" >
+                                    <span class="d-md-none fund-block-size" >
+                                        <img src="assets/images/fund/money-sign.svg">
+                                        {{fund?.aum.totalNetAssets}}
+                                    </span>
+                                    <span class="unique-Investors">
+                                        <span class="d-inline-block d-md-none">Fund Size</span>
+                                        <span class="img-with-tooltip">
+                                            <img src="assets/images/home/info-icon2.svg" class="info-icon2">
+                                            <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                            <span class="tooltip-block">
+                                                20/06/2023 as of.
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="last-item">
+                                <div class="mb-2 d-flex annualised-returns" >Annualised returns
+                                    <span class="img-with-tooltip">
+                                        <img src="assets/images/home/info-icon2.svg"
+                                            class="d-inline-block mobile-icons light-mode-icon top-block" >
+                                        <img src="assets/images/fund/dark-information-icon.png"
+                                            class="d-inline-block mobile-icons dark-mode-icon">
+                                        <span class="tooltip-block">
+                                            20/06/2023 as of.
+                                        </span>
+                                    </span>
+                                    <!-- <img src="assets/images/home/info-icon2.svg" class="d-inline-block mobile-icons"> -->
+                                </div>
+                                <div>
+                                    <span class="text-small annualised-font">{{fund?.annualised_return || '23.95%}}</span>
+                                    <div class="dropdown d-none d-md-inline-block">
+                                        <button class="btn btn-white dropdown-toggle" type="button"
+                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            {{fund?.annualised_return_year}}
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item" href="#">1 Year</a></li>
+                                            <li><a class="dropdown-item" href="#">3 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">5 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">10 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">15 Years</a></li>
+                                            <li><a class="dropdown-item" href="#">Since Inception</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown Inception-dropdown d-md-none d-inline-block">
+                                        <button class="btn btn-white dropdown-toggle Inception-since" type="button"
+                                            data-bs-toggle="modal" data-bs-target="#InceptionModal"
+                                            >
+                                            Since Inception
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- Add to Card: Mob -->
+                        <div class="d-block d-md-none" *ngIf="hasFundBtn">
+                            <button class="btn btn-light-blue">
+                                <span class="new-badge">New</span>
+                                &nbsp;
+                                <i class="bi bi-cart3"></i> Add to cart</button>
+                        </div>
+
+                        <!-- Action: Know more & view details -->
+                        <div class="col-auto block-btns" *ngIf="!hasAddNowBtn && hasFundBtn">
+                            <a (click)="fundDetails(fund)" class="btn btn-outline-primary me-2">
+                                <span class="d-none d-md-block">Know more</span>
+                                <span class="d-md-none">View Details</span>
+                            </a>
+                            <a *ngIf="hasInvestNowBtn" [routerLink]="['/funds/' + fund?.id]"
+                                class="btn btn-primary">Invest Now</a>
+                        </div>
+
+                        <div class="col-auto block-btns" *ngIf="hasAddNowBtn && hasFundBtn">
+                            <!-- <ng-template *ngIf="cardType == 'EMPTY_WATCHLIST'; then EMPTY_WATCHLIST_BTN else DEFAULT_BTN"></ng-template>
+                            <ng-template #EMPTY_WATCHLIST_BTN>
+                                <a class="btn btn-primary" [routerLink]="['/watchlist', { showWatchlist: true }]"  (click)="goToWatchList(fund)">Add Now</a>
+                            </ng-template>
+                            <ng-template #DEFAULT_BTN>
+                                <a class="btn btn-primary" (click)="goToCart(fund)" >Add Now</a>
+                            // <a class="btn btn-primary" (click)="goToCart2(fund)">Add Now</a>
+                            </ng-template> -->
+
+
+                            <ng-container
+                                *ngIf="cardType == 'EMPTY_WATCHLIST'; then EMPTY_WATCHLIST_BTN else otherTemplates"></ng-container>
+
+                            <ng-template #EMPTY_WATCHLIST_BTN>
+                                <a class="btn btn-primary" [routerLink]="['/watchlist', { showWatchlist: true }]"
+                                    (click)="goToWatchList(fund)">Add Now</a>
+                            </ng-template>
+
+                            <ng-template #otherTemplates>
+                                <ng-container
+                                    *ngIf="cardType == 'EMPTY_INVESTMENT'; then EMPTY_INVESTMENT_BTN else DEFAULT_BTN"></ng-container>
+                            </ng-template>
+
+                            <ng-template #EMPTY_INVESTMENT_BTN>
+                                <a class="btn btn-primary" (click)="addToCart(fund)">Add Now</a>
+                                <!-- <a class="btn btn-primary" (click)="goToCart2(fund)">Add Now</a> -->
+                            </ng-template>
+
+                            <ng-template #DEFAULT_BTN>
+                                <a class="btn btn-primary" (click)="goToCart(fund)">Add Now</a>
+                                <!-- <a class="btn btn-primary" (click)="goToCart2(fund)">Add Now</a> -->
+                            </ng-template>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="d-flex flex-wrap forOtherCardColor fund-amount">
+                    <div *ngIf="!fund.isExpanded" class="d-none d-md-block col-9 mt-1 mb-1">
+                        <div class="makeAddCartData">
+                            <div class="mt-2 d-flex space-justify">
+                                <div>
+                                    <span class="addTitleCart">Amount</span>&nbsp;<span
+                                        class="addValueData">{{fund.amount || '20,000'}}</span>
+                                </div>
+                                <div>
+                                    <span class="addTitleCart">Plan Option</span>&nbsp;<span
+                                        class="addValueData">Growth</span>
+                                </div>
+                            </div>
+                            <div class="text-center mt-4 addColorView" (click)="fund.isExpanded=!fund.isExpanded">
+                                View Details <span class="view-details"> <img
+                                        src="assets/images/general/VectorforArrow.svg"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="fund.isExpanded" class="d-none d-md-block col-9 mt-1 mb-1 makeAddCartData">
+                        <div class="mt-2 d-flex flex-row flex-wrap amount-fund"
+                            >
+                            <div class="col-6 p-2">
+                                <span class="addTitleCart">Amount</span>&nbsp;<span class="addValueData">{{fund.amount
+                                    || '-'}}</span>
+                            </div>
+                            <div class="col-6 p-2">
+                                <span class="addTitleCart">Plan Option</span>&nbsp;<span
+                                    class="addValueData">Growth</span>
+                            </div>
+                            <div class="col-6 p-2">
+                                <span class="addTitleCart">Frequency</span>&nbsp;<span
+                                    class="addValueData">Monthly</span>
+                            </div>
+                            <div class="col-6 p-2">
+                                <span class="addTitleCart">Start Date</span>&nbsp;<span
+                                    class="addValueData">23/04/2023</span>
+                            </div>
+                            <div class="col-6 p-2">
+                                <span class="addTitleCart">End Date</span>&nbsp;<span
+                                    class="addValueData">23/09/2023</span>
+                            </div>
+                            <div class="col-6 p-2">
+                                <span class="addTitleCart">Step-up</span>&nbsp;<span class="addValueData">6%</span>
+                            </div>
+                        </div>
+                        <div class="text-center mt-1 addColorView" (click)="fund.isExpanded=!fund.isExpanded">
+                            View Less Details <span  class="view-details">
+                                <img class="VectorforArrow" src="assets/images/general/VectorforArrow.svg">
+                            </span>
+                        </div>
+                    </div>
+                    <div *ngIf="!fund.isExpanded" 
+                        class="colorExpandsColorView d-md-none col-12 mt-1 mb-1 total-amount">
+                        <div class="mt-2 d-flex space-justify" >
+                            <div>
+                                <span class="addTitleCart">Amount</span>&nbsp;<span class="addValueData">20,000</span>
+                            </div>
+                            <div>
+                                <span class="addValueData">Plan Option</span>&nbsp;<span
+                                    class="addValueData">Growth</span>
+                            </div>
+                        </div>
+                        <div class="text-center mt-2 addColorView" (click)="fund.isExpanded=!fund.isExpanded">
+                            View Details
+                            <span class="view-details"> <img
+                                    src="assets/images/general/VectorforArrow.svg"></span>
+                        </div>
+                    </div>
+                    <div *ngIf="fund.isExpanded"
+                        class="colorExpandsColorView d-md-none col-12 mt-1 mb-1 isExpanded">
+                        <div class="mt-2 d-flex flex-row flex-wrap space-justify" >
+                            <div class="col-4 p-2 d-flex flex-column">
+                                <span class="addTitleCart">Amount</span><span
+                                    class="addValueData">{{fund.amount?fund.amount:'2000'}}</span>
+                            </div>
+                            <div class="col-4 p-2 d-flex flex-column">
+                                <!-- <span class="addTitleCart">Frequency</span><span
+                                class="addValueData">Monthly</span> -->
+                            </div>
+                            <div class="col-4 p-2 d-flex flex-column">
+                                <span class="addTitleCart">Plan Option</span><span class="addValueData">Growth</span>
+                            </div>
+                            <div class="col-4 p-2 d-flex flex-column">
+                                <span class="addTitleCart">Start Date</span><span class="addValueData">23/04/2023</span>
+                            </div>
+                            <div class="col-4 p-2 d-flex flex-column">
+                                <span class="addTitleCart">End Date</span><span class="addValueData">23/09/2023</span>
+                            </div>
+                            <div class="col-4 p-2 d-flex flex-column">
+                                <span class="addTitleCart">Step-up</span><span class="addValueData">6%</span>
+                            </div>
+                        </div>
+                        <div class="text-center mt-1 addColorView" (click)="fund.isExpanded=!fund.isExpanded">
+                            View Less Details <span class="view-details">
+                                <img src="assets/images/general/VectorforArrow.svg" class="VectorforArrow">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="d-none d-md-block">
+                        <div class="mb-4 deleteCartObj"  (click)="deleteCartObj(fund)">
+                            <a>
+                                <img class="share-icon2 deleteicon" src="assets/images/general/deleteicon.svg"></a>
+                        </div>
+                        <div class="mt-4 EditCartDetails">
+                            <button type="button" (click)="EditCartDetails(fund)"
+                                class="btn btn-outline-primary edit-cart"> <img
+                                class="share-icon2" src="assets/images/general/bxs_edit.svg">Edit</button>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row d-md-none w-100 justify-content-between mt-1 edit-cart-head"
+                        >
+                        <div class="deleteicon-cart">
+                            <img class="share-icon2" src="assets/images/general/deleteicon.svg">
+                        </div>
+                        <div class="text-end edit-cart-footer" >
+                            <button type="button"  (click)="EditCartDetails(fund)"
+                                class="btn btn-outline-primary edit-class"> <img class="share-icon2"
+                                    src="assets/images/general/bxs_edit.svg">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="hasFundBtn==true">
+            <span *ngIf="fund?.invfocus" class="recommend-tag">{{fund?.focus || 'Focus'}}</span>
+
+            <div class="d-flex justify-content-between fund-head fund-focus" >
+                <!-- Card Top content wrap :Web -->
+                <div class="fund-card-head">
+                    <div class="fund-card-rist-title">
+                        <h3 class="fund-card-title mb-0">
+                            <!-- Card Title -->
+                            <a class="forfunddcardtitle">
+                                <a [routerLink]="['/funds/' + fund?.id]" class="title-text">{{ fund?.fundName ||
+                                    fund?.title }}</a>&nbsp;&nbsp;
+                                <!-- Risk Meter -->
+                                <!-- <span class="img-with-tooltip makeColorForTitle" (click)="radiometerData(fund?.id,'radiometer')">
+                                        <img src="assets/images/general/very-high.svg" st yle="width: 33px;margin-left: 5px;">
+                                        <span class="tooltip-block makeTootipFundVisibleCard">
+                                            <img class="risk-meter" src="assets/images/general/very-high.svg">
+                                            This fund has moderately high risk
+                                        </span>
+                                    </span> -->
+                            </a>
+                        </h3>
+                        <span class="img-with-tooltip makeColorForTitle"
+                            (click)="radiometerData(fund?.id,'radiometer')">
+                            <img src="assets/images/general/very-high.svg" class="very-high-general">
+                            <span class="tooltip-block makeTootipFundVisibleCard">
+                                <img class="risk-meter" src="assets/images/general/very-high.svg">
+                                This fund has moderately high risk
+                            </span>
+                        </span>
+                    </div>
+
+                    <!-- Fund config -->
+                    <div class="row">
+                        <div class="col-auto">
+                            <div >
+                                <div class="tags mx-2">
+                                    <ul>
+                                        <li *ngFor="let tag of fund?.tag" class="unique-Investors">{{ tag }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div *ngIf="idcDropDown" class="">
+                                <div class="form-group">
+                                    <select class="form-select fund-drop-down" aria-label="Default select example">
+                                        <option *ngFor="let item of items" [value]="item">{{ item }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="icons" *ngIf="hasThreeDotOptions">
+                    <!-- Action: Web -->
+                    <div class="d-none d-lg-inline-block">
+                        <button (click)="toggleShowSavDialoge(fund)">
+                            <!-- <img src="assets/images/general/mark-icon.svg">
+                                    <img src="assets/images/general/Frame1000006555.svg" st yle="width: 16px;"> -->
+                            <!-- <img [src]="fund.isWatchlistAlreadyAdded ? 'assets/images/general/Frame1000006555.svg' : 'assets/images/general/mark-icon.svg'" st yle="width: 16px; "> -->
+
+                            <img *ngIf="fund.isComparedCardAlreadyAdded" 
+                                src="../../../../assets/images/general/watch fill-new.svg"
+                                [style.width.px]="18">
+
+                             <img *ngIf="!fund.isComparedCardAlreadyAdded"
+                                src="assets/images/general/mark-icon.svg"
+                                class="light-mode-icon"
+                                [style.width.px]="18">
+
+                            <img *ngIf="!fund.isComparedCardAlreadyAdded"
+                                class="dark-mode-icon"
+                                src="../../../../assets/images/dark/dark-Save-icon.png"
+                                [style.width.px]="18">
+
+                             <!-- <img src="assets/images/general/mark-icon.svg"
+                                class="d-inline-block mobile-icons light-mode-icon" sty le="width: 15px;">
+                            <img src="../../../../assets/images/dark/dark-Save-icon.png"
+                                class="mobile-icons dark-mode-icon"> -->
+                            <!-- <span class="tooltip-box">Add to watchlist2</span> -->
+                            <span class="tooltip-box"
+                                [style.color]="fund.isComparedCardAlreadyAdded ? '#3769FF' : 'inherit'"> {{
+                                fund.isWatchlistAlreadyAdded ? 'Saved to Watchlist' : 'Add to Watchlist' }}</span>
+                        </button>
+                        <button *ngIf="cardType !== 'SOLUTION'" (click)="routeModuleCompareFund('1',fund)">
+                            
+                            <img *ngIf="fund.isComparedCardAlreadyAdded" 
+                                src="../../../../assets/images/general/compare fill-new-icon.png"
+                                [style.width.px]="20">
+
+                            <img *ngIf="!fund.isComparedCardAlreadyAdded"
+                                src="../../../../assets/images/general/compare-new-icon.png"
+                                class="light-mode-icon"
+                                [style.width.px]="20">
+
+                            <img *ngIf="!fund.isComparedCardAlreadyAdded"
+                                class="dark-mode-icon"
+                                src="../../../../assets/images/dark/compare-dark-new-icon.png"
+                                [style.width.px]="20">
+                       
+                           <!-- <span class="tooltip-box">Compare1</span> -->
+                            <span class="tooltip-box"
+                                [style.color]="fund.isComparedCardAlreadyAdded ? '#3769FF' : 'inherit'"> {{
+                                fund.isComparedCardAlreadyAdded ? 'Added to Compare' : 'Compare' }}</span>
+
+                        </button>
+                        <button (click)="addToCart(fund)">
+
+                            
+                            <img *ngIf="fund.isComparedCardAlreadyAdded" 
+                                src="../../../../assets/images/general/cart-icon-fill.svg"
+                                [style.width.px]="23">
+
+                            <img *ngIf="!fund.isComparedCardAlreadyAdded"
+                                src="assets/images/general/cart-icon.svg"
+                                class="d-inline-block mobile-icons light-mode-icon img-size" 
+                                >
+
+                            <img *ngIf="!fund.isComparedCardAlreadyAdded"
+                                src="../../../../assets/images/dark/dark-cart-icon.png"
+                                class="mobile-icons dark-mode-icon img-size"
+                                >
+
+                            <span class="new-badge">New</span>
+
+                            <span class="tooltip-box"
+                                [style.color]="fund.isComparedCardAlreadyAdded ? '#3769FF' : 'inherit'"> {{
+                                fund.isAddedToCart ? 'Saved to Cart' : 'Add to Cart' }}
+                            </span>
+
+                        </button>
+                        <button>
+                            <div class="dropdown share-menu">
+                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                    id="{{'share-button'+fund.id}}" data-bs-toggle="dropdown" aria-expanded="false">
+
+                                    <img src="assets/images/general/share-icon.svg"
+                                        class="d-inline-block mobile-icons light-mode-icon img-size">
+                                    <img src="../../../../assets/images/dark/dark-share-icon.png"
+                                        class="mobile-icons dark-mode-icon img-size-icon" >
+                                    <span class="tooltip-box">Share</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-index" [hidden]=""
+                                    (mouseleave)="contentOnHoverCLose('share-button'+fund.id)">
+                                    <li><span class="dropdown-item fund-light-mode-icon" (click)="toggleShowCopyDialoge()"><img
+                                                src="assets/images/general/Link.svg">Copy
+                                            link</span>
+                                        <span class="dropdown-item fund-dark-mode-icon" (click)="toggleShowCopyDialoge()"><img
+                                                src="../../../../assets/images/dark/link-dark.png">Copy
+                                            link</span>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#"><img class="share-icon3 img-size"
+                                                src="../../../../assets/images/general/twitter-new-logo-removebg-preview.png" >Share
+                                            on Twitter</a>
+                                         
+                                            </li>
+                    
+                                    <li><a class="dropdown-item"  href="#"><img class="share-icon2"
+                                                src="assets/images/general/FacebookLogo.svg">Share
+                                            on Facebook</a>
+                                           
+                                            
+                                            </li>
+                                    <li><a class="dropdown-item" href="#"><img class="share-icon2"
+                                                src="assets/images/general/LinkedinLogo.svg">Share
+                                            on LinkedIn</a>
+                
+                                    <li><a class="dropdown-item" href="#"><img class="share-icon2"
+                                                src="assets/images/general/whatsapps.png">Share
+                                            on WhatsApp</a>
+            
+                                    
+                                </ul>
+                            </div>
+                        </button>
+                    </div>
+
+                    <!-- Action: Mob -->
+                    <div class="dropdown d-inline-block d-lg-none">
+                        <button class=" dropdown-toggle me-0" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img src="assets/images/general/dots.svg">
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li class="d-none d-md-block">
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-cart2"></i>Add to cart
+                                </a>
+                            </li>
+                         
+                            <li>
+                                <a class="dropdown-item" (click)="routeModuleCompareFund('1', fund)">
+                                    <!-- <img src="assets/images/general/compare-icon.svg">Compare 2 -->
+                                    <img  class="share-icon2 isComparedCardAlreadyAdded" [src]="fund.isComparedCardAlreadyAdded ? 'assets/images/general/_Checkboxbase.svg' : 'assets/images/form-icon/compare.png'"
+                                        [style.width.px]="fund.isComparedCardAlreadyAdded ? 13 : 15"
+                                        [style.margin-right.px]="fund.isComparedCardAlreadyAdded ? 6 : 7">
+                                    
+                                        <!-- <img class="dark-mode-icon" [src]="fund.isComparedCardAlreadyAdded ? 'assets/images/general/_Checkboxbase.svg' : 'assets/images/dark/dark-Vector-icon.png'"
+                                        [style.width.px]="fund.isComparedCardAlreadyAdded ? 13 : 18"
+                                        [style.margin-right.px]="fund.isComparedCardAlreadyAdded ? 6 : 6"> -->
+                                    <span class="tooltip-box"
+                                        [style.color]="fund.isComparedCardAlreadyAdded ? '#3769FF' : 'inherit'"> {{
+                                        fund.isComparedCardAlreadyAdded ? 'Added to Compare' : 'Compare' }}</span>
+                                </a>
+                        
+
+                               
+                            </li>
+                            <li>
+                                <span class="dropdown-item d-block flex-block"  (click)="toggleShowSavDialoge(fund)">
+                                    <!-- <img src="assets/images/general/watchlist-icon.svg">Add to Watchlist -->
+                                    <img class="light-mode-icon watchlist-img" [src]="fund.isWatchlistAlreadyAdded ? 'assets/images/general/Frame1000006555.svg' : 'assets/images/general/watchlist-icon.svg'"
+                                        >
+
+                                        <img class="dark-mode-icon watchlist-img" src="../../../../assets/images/dark/watchlist-dark.png"
+                                        >
+                                    <span class="tooltip-box"
+                                        [style.color]="fund.isWatchlistAlreadyAdded ? '#3769FF' : 'inherit'"> {{
+                                        fund.isWatchlistAlreadyAdded ? 'Saved to Watchlist' : 'Add to Watchlist'
+                                        }}</span>
+                                </span>
+                            </li>
+                            <li>
+                                <!-- <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#callBack1"> -->
+                                <a class="dropdown-item fund-light-mode-icon" (click)="toggleNewShareDataModal()">
+                                    <img src="assets/images/general/share-icon-sm.svg">Share
+                                </a>
+                                <a class="dropdown-item fund-dark-mode-icon" (click)="toggleNewShareDataModal()">
+                                    <img src="assets/images/dark/dark-share-icon.png">Share
+                                </a>
+
+                           
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!----for handle add funds three dot-->
+                <div class="icons" *ngIf="hasAddThreeDot">
+                    <!-- Action: Mob -->
+                    <div class="dropdown d-inline-block d-lg-none">
+                        <button class=" dropdown-toggle me-0" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img src="assets/images/general/dots.svg">
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li class="d-none d-md-block">
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-cart2"></i>Add to cart
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" (click)="routeModuleCompareFund('1', fund)">
+                                    <img src="../../../../assets/images/general/compare-icon.svg">Compare
+                                </a>
+                            </li>
+                            <!-- <li>
+                                        <span class="dropdown-item d-block" (click)="toggleShowSavDialoge(fund)">
+                                            <img src="assets/images/general/watchlist-icon.svg">Add to
+                                            watchlist
+                                        </span>
+                                    </li> -->
+                            <li>
+                                <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#callBack1">
+                                    <!-- <a class="dropdown-item" (click)="toggleShareModal()"> -->
+                                    <img src="assets/images/general/share-icon-sm.svg">Share
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <ng-container *ngIf="navMidTitle; else navDialog">
+                <div class="row info justify-content-between">
+                    <!-- Funds Details: Web -->
+                    <ul class="col-auto  d-none d-md-block mt-2">
+                        <li>
+                            <div class="mb-2">Unique investors
+                                <!-- <img src="assets/images/home/info-icon2.svg" class="d-inline-block"> -->
+                                <span class="img-with-tooltip">
+                                    <img src="assets/images/home/info-icon2.svg"
+                                        class="d-inline-block mobile-icons light-mode-icon tooltip-box-img" >
+                                    <img src="assets/images/fund/dark-information-icon.png"
+                                        class="mobile-icons dark-mode-icon info-img">
+                                    <!-- <img src="assets/images/home/info-icon2.svg"> -->
+                                    <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                    <span class="tooltip-block">
+                                        20/06/2023 as of.
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="text-big">
+                                <span class="d-inline-block d-md-none"><img
+                                        src="assets/images/fund/investor-icon.svg"></span>
+                                {{fund?.uniqueInvestors || fund?.investors}}
+                                <span class="d-inline-block d-md-none">Unique investors</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mb-2">Fund size
+                                <span class="img-with-tooltip">
+                                    <img src="assets/images/home/info-icon2.svg"
+                                        class="d-inline-block mobile-icons light-mode-icon tooltip-box-img" >
+                                    <img src="assets/images/fund/dark-information-icon.png"
+                                        class="mobile-icons dark-mode-icon info-img" >
+                                    <!-- <img src="assets/images/home/info-icon2.svg"> -->
+                                    <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                    <span class="tooltip-block">
+                                        20/06/2023 as of.
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="text-big">
+                                <span class="d-inline-block d-md-none"><img
+                                        src="assets/images/fund/money-sign.svg"></span>
+                                {{fund?.aum.totalNetAssets || fund?.aum }}
+                                <span class="d-inline-block d-md-none">Fund Size <span class="img-with-tooltip">
+                                        <img src="assets/images/home/info-icon2.svg">
+                                        <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                        <span class="tooltip-block">
+                                            20/06/2023 as of.
+                                        </span>
+                                    </span></span>
+                            </div>
+                        </li>
+                        <li class="last-item">
+                            <div class="mb-2 annualised-return" >Annualised returns
+                                <span class="img-with-tooltip">
+                                    <img src="assets/images/home/info-icon2.svg"
+                                        class="d-inline-block mobile-icons light-mode-icon tooltip-box-img" >
+                                    <img src="assets/images/fund/dark-information-icon.png"
+                                        class="mobile-icons dark-mode-icon info-img" >
+                                    <!-- <img src="assets/images/home/info-icon2.svg"> -->
+                                    <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                                    <span class="tooltip-block">
+                                        20/06/2023 as of.
+                                    </span>
+                                </span>
+                                <!-- <img src="assets/images/home/info-icon2.svg" class="d-inline-block"> -->
+                            </div>
+                            <div>
+                                <span class="text-big">{{fund?.annualised_return || '23.95%'}}</span>
+                                <div class="dropdown d-none d-md-inline-block">
+                                    <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{fund?.annualised_return_year}}
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">1 Year</a></li>
+                                        <li><a class="dropdown-item" href="#">3 Years</a></li>
+                                        <li><a class="dropdown-item" href="#">5 Years</a></li>
+                                        <li><a class="dropdown-item" href="#">10 Years</a></li>
+                                        <li><a class="dropdown-item" href="#">15 Years</a></li>
+                                        <li><a class="dropdown-item" href="#">Since Inception</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown Inception-dropdown d-md-none d-inline-block">
+                                    <button  class="btn btn-white dropdown-toggle annualised-return"
+                                        type="button" data-bs-toggle="modal" data-bs-target="#InceptionModal">
+                                        Since Inception
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </li>
+                    </ul>
+
+                    <!-- Funds Details: Mob -->
+                    <ul class="col-auto d-md-none">
+                        <li class="investor investors-info" >
+                            <div class="mb-2">Investors
+                                <img src="assets/images/home/info-icon2.svg" class="d-inline-block">
+                            </div>
+                            <div class="text-small d-flex uniqueInvestors" >
+                                <span class="tag">
+                                    <span class="d-inline-block d-md-none mb-2">Unique investors..</span>
+                                    <span class="img-with-tooltip">
+                                        <img src="assets/images/home/info-icon2.svg"
+                                            class="d-inline-block mobile-icons light-mode-icon info-icon2-unique"
+                                            >
+                                        <img src="assets/images/fund/dark-information-icon.png"
+                                            class="mobile-icons dark-mode-icon information-icon"
+                                        >
+                                        <span class="tooltip-block tooltipblockfortitile">
+                                            20/06/2023 as of.
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="d-md-none investor-img investor-icon-img">
+                                    <img src="assets/images/fund/investor-icon.svg" class="investing-fund">
+                                    {{fund?.investors}}
+                                </span>
+                            </div>
+                        </li>
+                        <li class="fund-size">
+                            <div class="mb-2">Fund Size
+                                <span class="img-with-tooltip">
+                                    <img src="assets/images/home/info-icon2.svg"
+                                        class="d-inline-block mobile-icons light-mode-icon info-icon2-unique">
+                                    <img src="assets/images/fund/dark-information-icon.png"
+                                        class="mobile-icons dark-mode-icon">
+                                    <span class="tooltip-block">
+                                        20/06/2023 as of.
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div class="text-small d-flex uniqueInvestors">
+                                <span class="unique-Investors">
+                                    <span class="d-inline-block d-md-none">Fund Size</span>
+                                    <span class="img-with-tooltip">
+                                        <img src="assets/images/home/info-icon2.svg"
+                                            class="d-inline-block mobile-icons light-mode-icon info-icon2-unique"
+                                            >   
+                                        <img src="assets/images/fund/dark-information-icon.png"
+                                            class="mobile-icons dark-mode-icon information-icon"
+                                        >
+                                        <span class="tooltip-block tooltipblockfortitile">
+                                            20/06/2023 as of.
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="d-md-none money-sign-fund" >
+                                    <img src="assets/images/fund/money-sign.svg">
+                                    {{fund?.aum}}
+                                </span>
+                            </div>
+                        </li>
+                        <li class="last-item">
+                            <div class="d-flex sx-black-color annualised-returns" >Annualised returns
+                                <span class="img-with-tooltip">
+                                    <img src="assets/images/home/info-icon2.svg"
+                                        class="d-inline-block mobile-icons light-mode-icon info-icon2-unique"
+                                        >
+                                    <img src="assets/images/fund/dark-information-icon.png"
+                                        class="d-inline-block mobile-icons dark-mode-icon information-icon-dark"
+                                        >
+                                    <span class="tooltip-block tooltipblockfortitile">
+                                        20/06/2023 as of.
+                                    </span>
+                                </span>
+                                <!-- <img src="assets/images/home/info-icon2.svg" class="d-inline-block mobile-icons"> -->
+                            </div>
+                            <div>
+                                <span  class="text-small annualised-font">{{fund?.annualised_return}}</span>
+                                <div class="dropdown d-none d-md-inline-block">
+                                    <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{fund?.annualised_return_year}}
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">1 Year</a></li>
+                                        <li><a class="dropdown-item" href="#">3 Years</a></li>
+                                        <li><a class="dropdown-item" href="#">5 Years</a></li>
+                                        <li><a class="dropdown-item" href="#">10 Years</a></li>
+                                        <li><a class="dropdown-item" href="#">15 Years</a></li>
+                                        <li><a class="dropdown-item" href="#">Since Inception</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown Inception-dropdown d-md-none d-inline-block">
+                                    <!-- <button class="btn btn-white dropdown-toggle" type="button" data-bs-toggle="modal"
+                                                data-bs-target="#InceptionModal" sty le="font-size:13px!important;">
+                                                Since Inception7
+                                            </button> -->
+                                    <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton2"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{fund?.annualised_return_year}}
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                        <li><a class="dropdown-item" href="#">1 Year</a></li>
+                                        <li><a class="dropdown-item" href="#">3 Years</a></li>
+                                        <li><a class="dropdown-item" href="#">5 Years</a></li>
+                                        <li><a class="dropdown-item" href="#">10 Years</a></li>
+                                        <li><a class="dropdown-item" href="#">15 Years</a></li>
+                                        <li><a class="dropdown-item" href="#">Since Inception</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Add to Card: Mob -->
+                    <ng-container *ngIf="addtoCartData">
+                        <div class="d-block d-md-none" *ngIf="makeCartToggle">
+                            <button (click)="goToCart(fund)" class="btn btn-light-blue">
+                                <span class="new-badge">New</span>
+                                &nbsp;
+                                <i class="bi bi-cart3"></i> Add to cart</button>
+                        </div>
+                    </ng-container>
+
+                    <!-- Action - 1: Know more & view details -->
+                    <ng-container *ngIf="navModal; else toTypeCardDialog">
+                        <div class="col-auto block-btns" *ngIf="!hasAddNowBtn && hasFundBtn && !hasAddRemoveButton">
+                            <a (click)="fundDetails(fund)" class="btn btn-outline-primary me-2">
+                                <span class="d-none d-md-block">Know More</span>
+                                <span class="d-md-none">View Details</span>
+                            </a>
+                            <a *ngIf="hasInvestNowBtn" [routerLink]="['/funds/' + fund?.id]"
+                                class="btn btn-primary">Invest Now</a>
+                        </div>
+                    </ng-container>
+                    <ng-template #toTypeCardDialog>
+                        <div class="col-auto block-btns">
+                            <a class="btn btn-outline-primary me-2">
+                                <span class="d-none d-md-block">Invest Now</span>
+                                <span class="d-md-none">View Details</span>
+                            </a>
+                            <a *ngIf="hasInvestNowBtn" class="btn btn-primary"> Historical NAV</a>
+                        </div>
+                    </ng-template>
+                    <!-- <div class="col-auto block-btns" *ngIf="!hasAddNowBtn && hasFundBtn && !hasAddRemoveButton">
+                                <a (click)="fundDetails(fund)" class="btn btn-outline-primary me-2">
+                                    <span class="d-none d-md-block">Know More</span>
+                                    <span class="d-md-none">View Details</span>
+                                </a>
+                                <a *ngIf="hasInvestNowBtn" [routerLink]="['/funds/' + fund?.id]" class="btn btn-primary">Invest Now1</a>
+                            </div> -->
+
+                    <!-- Action - 2: Add, remove to build plan in solution-->
+                    <div class="col-auto block-btns" *ngIf="hasAddRemoveButton">
+                        <a *ngIf="fund.isAdded" (click)="removeFundsFromSolution(fund)"
+                            class="btn btn-outline-primary me-2">
+                            Remove
+                        </a>
+                        <a *ngIf="!fund.isAdded" (click)="addFundsToSolution(fund)" class="btn btn-primary">
+                            Add
+                        </a>
+                    </div> <!-- Action: Know more & view details -->
+
+
+                    <ng-container *ngIf="navsModal;else addCardForDialog">
+                        <div class="col-auto block-btns addnow-section"  *ngIf="hasAddNowBtn && hasFundBtn">
+
+                            <ng-container
+                                *ngIf="cardType == 'EMPTY_WATCHLIST'; then EMPTY_WATCHLIST_BTN else otherTemplates"></ng-container>
+
+                            <ng-template #EMPTY_WATCHLIST_BTN>
+                                <a class="btn btn-primary" *ngIf="!hasComparCardButton"
+                                    [routerLink]="['/watchlist', { showWatchlist: true }]"
+                                    (click)="goToWatchList(fund)">Add Now</a>
+                                <a class="btn btn-primary" *ngIf="hasComparCardButton"
+                                    (click)="goToCartForCompareEmpty(fund)">Add Now</a>
+                            </ng-template>
+
+                            <ng-template #otherTemplates>
+                                <ng-container
+                                    *ngIf="cardType == 'EMPTY_INVESTMENT'; then EMPTY_INVESTMENT_BTN else otherTemplates2"></ng-container>
+                            </ng-template>
+
+                            <ng-template #EMPTY_INVESTMENT_BTN>
+                                <a class="btn btn-primary" (click)="addToCart(fund)">Add Now</a>
+                            </ng-template>
+
+
+                            <ng-template #otherTemplates2>
+                                <ng-container
+                                    *ngIf="cardType == 'CALCULATOR'; then CALCULATOR_BTN else DEFAULT_BTN"></ng-container>
+                            </ng-template>
+
+                            <ng-template #CALCULATOR_BTN>
+                                <span
+                                    class="btn btn-outline-primary me-2"><span>Invest Now</span><span></span></span>
+                                <a (click)="fundDetails(fund)" class="btn btn-primary">
+                                    <span>Check Performance</span>
+                                </a>
+                            </ng-template>
+
+                            <ng-template #DEFAULT_BTN>
+                                <a class="btn btn-primary" *ngIf="!hasComparCardButton" (click)="goToCart(fund)">Add
+                                    Now</a>
+                                <a class="btn btn-primary d-none d-md-block" *ngIf="hasComparCardButton"
+                                    (click)="goToCartForCompareCrad(fund)">Add Now </a>
+                                <a class="btn btn-primary d-md-none" *ngIf="hasComparCardButton"
+                                    (click)="goToCartForCompareMobile(fund)">Add Now </a>
+                            </ng-template>
+
+
+
+                        </div>
+                    </ng-container>
+                    <ng-template #addCardForDialog>
+                        <div class="col-auto block-btns addnow-section" >
+                            <a class="btn btn-primary" *ngIf="!fund.isAdded" (click)="addNow(fund)">Add Now</a>
+                            <a class="btn btn-outline-primary" *ngIf="fund.isAdded" (click)="remove(fund)">Remove</a>
+                        </div>
+                    </ng-template>
+                    
+                    <div class="save-alert alert-index"  *ngIf="addComparedMobileAlert">
+
+                        <div class="content">
+                            <span class="close-btn" (click)="toggleShowComparedMobileDialoge()">
+                                <img src="assets/images/general/close.svg">
+                            </span>
+                            <img src="assets/images/general/check_circle.svg" class="checked-img">
+                            <span>Successfully added to Compare Card.</span>
+                        </div>
+                    </div>
+
+
+                </div>
+            </ng-container>
+            <ng-template #navDialog>
+
+                <div class="row info justify-content-between">
+
+                    <!-- Funds Details: Mob -->
+                    <div class="">
+                        <ul class="col-auto d-md-none fund-detail-mob">
+                            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                                <div ngxSlickItem class="slide">
+                                    <div>
+                                        <div class="mb-2">Super-IDCW
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/home/info-icon2.svg"
+                                                    class="d-inline-block mobile-icons light-mode-icon tooltip-box-img"
+                                                >
+                                                <img src="assets/images/fund/dark-information-icon.png"
+                                                    class=" d-none mobile-icons dark-mode-icon mob-dark-icon info-img"
+                                                    >
+                                                <span class="tooltip-block">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="text-big">
+                                            <span class="d-inline-block d-md-none"><img
+                                                    src="assets/images/fund/investor-icon.svg"></span>
+                                            {{fund?.uniqueInvestors || fund?.investors}}
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div ngxSlickItem class="slide">
+                                    <div>
+                                        <div class="mb-2">Direct-IDCW
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/home/info-icon2.svg"
+                                                    class="d-inline-block mobile-icons light-mode-icon tooltip-box-img"
+                                                >
+                                                <img src="assets/images/fund/dark-information-icon.png"
+                                                    class="d-none mobile-icons dark-mode-icon info-img"
+                                                >
+                                                <span class="tooltip-block">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="text-big">
+                                            <span class="d-inline-block d-md-none"><img
+                                                    src="assets/images/fund/money-sign.svg"></span>
+                                            {{fund?.aum.totalNetAssets || fund?.aum }}
+                                            <span class="d-inline-block d-md-none"><span class="img-with-tooltip">
+                                                    <span class="tooltip-block">
+                                                        20/06/2023 as of.
+                                                    </span>
+                                                </span></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div ngxSlickItem class="slide">
+                                    <div>
+                                        <div class="mb-2">Super-Growth
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/home/info-icon2.svg"
+                                                    class="d-inline-block mobile-icons light-mode-icon tooltip-box-img"
+                                                >
+                                                <img src="assets/images/fund/dark-information-icon.png"
+                                                    class="d-none mobile-icons dark-mode-icon info-img"
+                                                    >
+                                                <span class="tooltip-block">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span class="text-big">{{fund?.annualised_return || '23.95%'}}</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div ngxSlickItem class="slide">
+                                    <div>
+                                        <div class="mb-2 unique-Investors" >Monthly-IDCW
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/home/info-icon2.svg"
+                                                    class="d-inline-block mobile-icons light-mode-icon tooltip-box-img"
+                                                    >
+                                                <img src="assets/images/fund/dark-information-icon.png"
+                                                    class="d-none mobile-icons dark-mode-icon info-img"
+                                                    >
+                                                <span class="tooltip-block">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="text-big">
+                                            <span class="d-inline-block d-md-none"><img
+                                                    src="assets/images/fund/investor-icon.svg"></span>
+                                            {{fund?.uniqueInvestors || fund?.investors}}
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div ngxSlickItem class="slide">
+                                    <div>
+                                        <div class="mb-2">Direct-Annual
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/home/info-icon2.svg"
+                                                    class="d-inline-block mobile-icons light-mode-icon tooltip-box-img"
+                                                >
+                                                <img src="assets/images/fund/dark-information-icon.png"
+                                                    class="d-none mobile-icons dark-mode-icon info-img" 
+                                                    >
+                                                <span class="tooltip-block">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span class="text-big">{{fund?.annualised_return || '23.95%'}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ngxSlickItem class="slide custom-slide-width">
+                                    <div>
+                                        <div class="Direct-IDCW" >
+                                            <div class="mb-2">Direct-IDCW
+                                                <span class="img-with-tooltip">
+                                                    <img src="assets/images/home/info-icon2.svg"
+                                                        class="d-inline-block mobile-icons light-mode-icon tooltip-box-img"
+                                                    >
+                                                    <img src="assets/images/fund/dark-information-icon.png"
+                                                        class="d-inline-block mobile-icons dark-mode-icon info-img"
+                                                    >
+                                                    <span class="tooltip-block">
+                                                        20/06/2023 as of.
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div class="text-big">
+                                                <span class="d-inline-block d-md-none"><img
+                                                        src="assets/images/fund/investor-icon.svg"></span>
+                                                {{fund?.uniqueInvestors || fund?.investors}}
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ngx-slick-carousel>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="row mt-4 d-md-none">
+                        <div *ngIf="!viewMoreDataToggle">
+                            <div styl e="
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        line-height: 18px;
+                                        letter-spacing: -0.03em;    
+                                        color: #3769FF;
+                                        text-align: center;
+                                        " type="button" (click)="toggleViewDialogDeatilsButton()">
+                                View More Details<span><img src="assets/images/general/Vectorp.svg"></span>
+                            </div>
+                        </div>
+                        <div *ngIf="viewMoreDataToggle">
+                            <div styl e="
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        line-height: 18px;
+                                        letter-spacing: -0.03em;    
+                                        color: #3769FF;
+                                        text-align: center;
+                                        " type="button" (click)="toggleViewDialogDeatilsButton()">
+                                Show less Details<span><img src="assets/images/general/Vectorb.svg"></span>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+
+                    <!-- Add to Card: Mob -->
+                    <ng-container *ngIf="addtoCartData">
+                        <div class="d-block d-md-none" *ngIf="makeCartToggle">
+                            <button (click)="goToCart(fund)" class="btn btn-light-blue">
+                                <span class="new-badge">New</span>
+                                &nbsp;
+                                <i class="bi bi-cart3"></i> Add to cart</button>
+                        </div>
+                    </ng-container>
+
+                    <!-- Action - 1: Know more & view details -->
+                    <ng-container>
+                        <div class="col-auto block-btns d-md-none">
+                            <a class="btn btn-outline-primary me-2">
+                                <!-- <span class="d-none d-md-block">Invest Now</span> -->
+                                <span>View Details</span>
+                            </a>
+                            <a *ngIf="hasInvestNowBtn" class="btn btn-primary" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasBottom2"> Historical {{this.buttonsTitle}}</a>
+                        </div>
+                    </ng-container>
+
+                </div>
+                <div class="row info mt-2">
+                    <div class="col-8">
+                        <div class="row d-none d-md-block">
+                            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                                <div ngxSlickItem class="slide">
+                                    <div  class="Direct-IDCW-section">
+                                        <div class="mb-2">Super-IDCW
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/home/info-icon2.svg"
+                                                    class="d-inline-block mobile-icons light-mode-icon tooltip-box-img"
+                                                    >
+                                                <img src="assets/images/fund/dark-information-icon.png"
+                                                    class="d-inline-block mobile-icons dark-mode-icon info-img"
+                                                    >
+                                                <span class="tooltip-block">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="text-big">
+                                            <span class="d-inline-block d-md-none"><img
+                                                    src="assets/images/fund/investor-icon.svg"></span>
+                                            {{fund?.uniqueInvestors || fund?.investors}}
+                                            <span class="d-inline-block d-md-none">Unique investors</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div ngxSlickItem class="slide">
+                                    <div class="Direct-IDCW-section">
+                                        <div class="mb-2">Direct-IDCW
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/home/info-icon2.svg"
+                                                    class="d-inline-block mobile-icons light-mode-icon tooltip-box-img"
+                                                    >
+                                                <img src="assets/images/fund/dark-information-icon.png"
+                                                    class="d-inline-block mobile-icons dark-mode-icon info-img"
+                                                    >
+                                                <span class="tooltip-block">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="text-big">
+                                            <span class="d-inline-block d-md-none"><img
+                                                    src="assets/images/fund/money-sign.svg"></span>
+                                            {{fund?.aum.totalNetAssets || fund?.aum }}
+                                            <span class="d-inline-block d-md-none">Direct-IDCW <span
+                                                    class="img-with-tooltip">
+                                                    <img src="assets/images/home/info-icon2.svg">
+                                                    <span class="tooltip-block">
+                                                        20/06/2023 as of.
+                                                    </span>
+                                                </span></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div ngxSlickItem class="slide">
+                                    <div class="Direct-IDCW-section">
+                                        <div class="mb-2">Super-Growth
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/home/info-icon2.svg"
+                                                    class="d-inline-block mobile-icons light-mode-icon tooltip-box-img"
+                                                    >
+                                                <img src="assets/images/fund/dark-information-icon.png"
+                                                    class="d-inline-block mobile-icons dark-mode-icon info-img"
+                                                >
+                                                <span class="tooltip-block">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span class="text-big">{{fund?.annualised_return || '23.95%'}}</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div ngxSlickItem class="slide">
+                                    <div  class="Direct-IDCW-section">
+                                        <div class="mb-2">Monthly-IDCW
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/home/info-icon2.svg"
+                                                    class="d-inline-block mobile-icons light-mode-icon tooltip-box-img"
+                                                    >
+                                                <img src="assets/images/fund/dark-information-icon.png"
+                                                    class="d-inline-block mobile-icons dark-mode-icon info-img"
+                                                    >
+                                                <span class="tooltip-block">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="text-big">
+                                            <span class="d-inline-block d-md-none"><img
+                                                    src="assets/images/fund/investor-icon.svg"></span>
+                                            {{fund?.uniqueInvestors || fund?.investors}}
+                                            <span class="d-inline-block d-md-none">Unique investors</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div ngxSlickItem class="slide">
+                                    <div  class="Direct-IDCW-section">
+                                        <div class="mb-2">Direct-Annual
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/home/info-icon2.svg"
+                                                    class="d-inline-block mobile-icons light-mode-icon tooltip-box-img"
+                                                    >
+                                                <img src="assets/images/fund/dark-information-icon.png"
+                                                    class="d-inline-block mobile-icons dark-mode-icon info-img"
+                                                >
+                                                <span class="tooltip-block">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span class="text-big">{{fund?.annualised_return || '23.95%'}}</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div ngxSlickItem class="slide custom-slide-width">
+                                    <div>
+                                        <div class="Direct-IDCW">
+                                            <div class="mb-2">Direct-IDCW
+                                                <span class="img-with-tooltip">
+                                                    <img src="assets/images/home/info-icon2.svg"
+                                                        class="d-inline-block mobile-icons light-mode-icon tooltip-box-img"
+                                                        >
+                                                    <img src="assets/images/fund/dark-information-icon.png"
+                                                        class="d-inline-block mobile-icons dark-mode-icon info-img" 
+                                                    >
+                                                    <span class="tooltip-block">
+                                                        20/06/2023 as of.
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div class="text-big">
+                                                <span class="d-inline-block d-md-none"><img
+                                                        src="assets/images/fund/investor-icon.svg"></span>
+                                                {{fund?.uniqueInvestors || fund?.investors}}
+                                                <span class="d-inline-block d-md-none">Unique investors</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </ngx-slick-carousel>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <!-- Action - 1: Know more & view details -->
+                        <div class="col-auto block-btns d-none d-md-block text-end">
+                            <a class="btn btn-outline-primary me-2">
+                                <span>Invest Now</span>
+                                <!-- <span class="d-md-none">View Details</span> -->
+                            </a>
+                            <a *ngIf="hasInvestNowBtn" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#NAVModal"> Historical {{this.buttonsTitle}}</a>
+                        </div>
+                    </div>
+                </div>
+
+            </ng-template>
+        </div>
+
+    </div>
+</div>
+<!-- Fund Card End's here  -->
+
+
+
+<!-- Dialoge: save to watchlist alert -->
+<div class="save-alert alert-index"  *ngIf="showSaveDialoge">
+
+    <div class="content">
+        <span class="close-btn" (click)="toggleShowSavDialoge(fund)">
+            <img src="assets/images/general/close.svg">
+        </span>
+        <img src="assets/images/general/check_circle.svg" class="checked-img">
+        <span>Successfully added to Watchlist.</span>
+        <!-- <a href="#" class="btn btn-primary" [routerLink]="['/watchlist']" (click)="goToDataPage(fund)">Go to watchlist</a> -->
+        <!-- <a href="#" class="btn btn-primary" [routerLink]="['/watchlist', { showWatchlist: true }]" (click)="goToDataPage(fund)">Go to watchlist</a> -->
+        <a href="#" class="btn btn-primary" [routerLink]="['/watchlist', { showWatchlist: true }]">Go to Watchlist</a>
+    </div>
+
+</div>
+
+<!-- Dialoge: save to Compared Card alert -->
+<div class="save-alert alert-index"  *ngIf="showComparedDialoge">
+
+    <div class="content">
+        <span class="close-btn" (click)="toggleShowComparedDialoge(fund)">
+            <img src="assets/images/general/close.svg">
+        </span>
+        <img src="assets/images/general/check_circle.svg" class="checked-img">
+        <span>Successfully added to Comparator.</span>
+        <!-- <a href="#" class="btn btn-primary" [routerLink]="['/watchlist']" (click)="goToDataPage(fund)">Go to watchlist</a> -->
+        <!-- <a href="#" class="btn btn-primary" [routerLink]="['/watchlist', { showWatchlist: true }]" (click)="goToDataPage(fund)">Go to watchlist</a> -->
+        <a class="btn btn-primary" (click)="routeToComparedCard()">Go to Comparator</a>
+    </div>
+
+</div>
+
+<!-- Dialoge: share alert -->
+<div class="save-alert dialoadForCard alert-index"  *ngIf="showShareDialoge">
+
+    <div class="content">
+        <span class="close-btn" (click)="toggleShowShareDialoge()">
+            <img src="assets/images/general/close.svg">
+        </span>
+        <!-- <img src="assets/images/general/check_circle.svg" class="checked-img">
+        <span>Successfully added to Watchlist.</span>
+        <a href="#" class="btn btn-primary" >Go to watchlist</a> -->
+        <div>
+            <div class="modal-title share-tital  sharewithothers" id="callBackLabel1">Share with others
+            </div>
+            <div class="d-flex gap-3 justify-content-center mb-4 mt-4">
+                <div>
+                    <a href="#" class="share-btn">
+                        <img src="assets/images/home/Framefacebook.png" class="frame-img">
+                    </a>
+                </div>
+                <div>
+                    <a href="#" class="share-btn">
+                        <img src="../../../../assets/images/general/Frame-twitter-icon.png" class="frame-img" >
+                    </a>
+                </div>
+                <div>
+                    <a href="#" class="share-btn">
+                        <img src="assets/images/home/Framewhatsapp.png" class="frame-img">
+                    </a>
+                </div>
+                <div>
+                    <a href="#" class="share-btn">
+                        <img src="assets/images/home/Framelinkedin.png" class="frame-img">
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="row text-center mb-4">
+                    <div class="col-6">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/home/Framefacebook.png">
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/home/Frametwitter.png">
+                        </a>
+                    </div>
+                </div> -->
+            <!-- <div class="row text-center mb-4">
+                    <div class="col-6">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/home/Framewhatsapp.png">
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/home/Framelinkedin.png">
+                        </a>
+                    </div>
+                </div> -->
+            <div class="link-block">
+                <div class="link franklintempl-section" >
+                    https://www.franklintempl...
+                </div>
+            </div>
+            <div class="mt-2">
+                <a href="#" class="btn btn-primary addnow-section" >Copy Link</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Dialoge: save to cart -->
+<div class="save-alert alert-index"  *ngIf="showCartSaveDialoge">
+
+    <div class="content">
+        <span class="close-btn" (click)="toggleShowSavDialoge1()">
+            <img src="assets/images/general/close.svg">
+        </span>
+        <img src="assets/images/general/check_circle.svg" class="checked-img">
+        <span>Successfully added to Cart.</span>
+        <a href="#" class="btn btn-primary">Go to Cart</a>
+    </div>
+
+</div>
+
+<!-- Dialoge: copy alert -->
+<div class="save-alert copy-alert" *ngIf="showCopyDialoge">
+
+    <div class="content">
+        <span class="close-btn" (click)="toggleShowCopyDialoge()">
+            <img src="assets/images/general/close.svg">
+        </span>
+        <img src="assets/images/general/check_circle.svg" class="checked-img">
+        <div class="mb-3">Link Copied</div>
+        <div class="link-box">https://www.franklintempletonindia.com/sharefund</div>
+    </div>
+
+</div>
+
+
+<!-- share modal small screens -->
+
+
+<!-- Modal -->
+<!-- <div class="modal fade bottom-modal" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="modal-header line">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body share-modal-body">
+                <h3 class="text-center">Share with others</h3>
+                <div class="row text-center mb-4">
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/general/facebook-sm.svg">
+                        </a>
+                        <span>Facebook</span>
+                    </div>
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/general/twitter-sm.svg">
+                        </a>
+                        <span>Twitter</span>
+                    </div>
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/general/whatsapp-sm.svg">
+                        </a>
+                        <span>Whatsapp</span>
+                    </div>
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/general/mail-sm.svg">
+                        </a>
+                        <span>Email</span>
+                    </div>
+                </div>
+                <div class="link-block">
+                    <div class="link">https://www.franklintempleton.....</div>
+                    <button class="btn btn-outline-primary">Copy Link</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+<!-- Modal: Inception-dropdown Modal Mob -->
+<div class="modal fade bottom-modal" id="InceptionModal" tabindex="-1" aria-labelledby="InceptionModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="modal-header line pt-4">
+                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body Inception-modal-body forDialogDropdwonColor ">
+                <div class="modal-head">Annualised returns</div>
+                <ul>
+                    <li><a class="dropdown-item" href="#">1 Year</a></li>
+                    <li><a class="dropdown-item" href="#">3 Years</a></li>
+                    <li><a class="dropdown-item" href="#">5 Years</a></li>
+                    <li><a class="dropdown-item" href="#">10 Years</a></li>
+                    <li><a class="dropdown-item" href="#">15 Years</a></li>
+                    <li><a class="dropdown-item" href="#">Since Inception</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- add to cart popup for mobiles -->
+<div class="offcanvas offcanvas-bottom offcanvas-header-section" tabindex="-1" id="offcanvasBottom1" aria-labelledby="offcanvasBottomLabel"
+    >
+    <div class="offcanvas-header">
+        <div class="line"></div>
+        <!-- <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+      <button type="button" class="btn-close text-reset" (click)="closeModal()" aria-label="Close"></button> -->
+    </div>
+    <div class="offcanvas-body small">
+
+        <div class="Popularity mb-4">
+            <div class="module1">
+                You are investing in
+            </div>
+            <div class="module2">
+                Franklin build India
+            </div>
+            <div class="d-flex">
+                <div class="module3">Plan Option:</div>
+                <div class="form-check radio">
+                    <input class="form-check-input" type="radio" value="Growth" (click)="getCheckboxValue($event)"
+                        name="flexRadioDefault" id="Growth" checked>
+                    <label class="form-check-label" for="Growth">
+                        Growth
+                    </label>
+                </div>
+
+                <div class="form-check radio">
+                    <input class="form-check-input" type="radio" value="Direct" (click)="getCheckboxValue($event)"
+                        name="flexRadioDefault" id="Direct">
+                    <label class="form-check-label" for="Direct">
+                        Direct
+                    </label>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center gap-3 mt-2 mb-4">
+                <div>
+                    <button class="btn btn-primary sip-investment"
+                        (click)="toggleGroup('SIP Investment')">SIP Investment</button>
+                    <button class="btn btn-outline-primary Lumpsum-investment"
+                        (click)="toggleGroup('Lumpsum Investment')">Lumpsum Investment</button>
+                </div>
+            </div>
+            <div class="card mt-4 mb-2 investment-amount"
+                >
+                <div class="form-group">
+                    <label for="investmentAmount" class="module4 mb-2 mt-2">Investment Amount</label>
+                    <input type="text" class="form-control module5 mb-2" id="investmentAmount"
+                        placeholder="Enter amount">
+                </div>
+                <div class="mt-2 financial-goal" >
+                    Will this investment meet your financial goal?
+                </div>
+                <div class="d-flex">
+                    <div class="module6">20,000</div>
+                    <div class="module6">20,000</div>
+                    <div class="module6">20,000</div>
+                </div>
+            </div>
+            <div *ngIf="makeToggle">
+                <div>
+                    <div class="card mt-4 mb-2 investment-day"
+                        >
+                        <div class="form-group">
+                            <label for="investmentAmount" class="module4 mb-2 mt-2">Day of Installment</label>
+                            <input type="date" class="form-control module5 mb-2" id="investmentAmount"
+                                placeholder="Enter amount">
+                        </div>
+                        <div class="Frequencies">
+                            Frequency
+                        </div>
+                        <div class="d-flex">
+                            <div class="module6">Monthly</div>
+                            <div class="module6">Daily</div>
+                            <div class="module6">Weekly</div>
+                        </div>
+                        <div class="mt-2  financial-goal" >
+                            Will this investment meet your financial goal?
+                        </div>
+                    </div>
+                    <div class="card mt-4 mb-2 sip-until"
+                        >
+                        <div class="d-flex align-items-center module4 mb-2 mt-2">
+                            <div>SIP Until</div>
+                            <img src="assets/images/general/Vector3.svg" class="ms-2 Vector3-img"
+                                >
+                        </div>
+                        <div class="d-flex mt-2 mb-2">
+                            <div class="form-check radio2">
+                                <input class="form-check-input" type="radio" value="Growth"
+                                    (click)="getCheckboxValue($event)" name="flexRadioDefault" id="Growth">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Untill cancelled
+                                </label>
+                            </div>
+                            <div class="form-check radio2">
+                                <input class="form-check-input" type="radio" value="Growth"
+                                    (click)="getCheckboxValue($event)" name="flexRadioDefault" id="Growth">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Installment
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-2 mb-2">
+                            <div class="form-check radio2">
+                                <input class="form-check-input" type="radio" value="Growth"
+                                    (click)="getCheckboxValue($event)" name="flexRadioDefault" id="Growth">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Years
+                                </label>
+                            </div>
+                            <div class="form-check radio2">
+                                <input class="form-check-input" type="radio" value="Growth"
+                                    (click)="getCheckboxValue($event)" name="flexRadioDefault" id="Growth">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    End Date
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mt-2 financial-goal" >Installment will continue untill you
+                            cancel this SIP</div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="form-check checkbox">
+                        <input class="form-check-input" type="checkbox" value="ELSS Fund" id="ELSS Fund"
+                            (click)="getCheckboxValue($event)">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            I can increase my SIP amount annually by
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="cancel-applied">
+                <div class="d-flex justify-content-center align-items-center gap-3 cancel-apply"
+                    >
+                    <button class="btn btn-outline-primary Apply-cancel"
+                        >Cancel</button>
+                    <button class="btn btn-primary applied"
+                    >Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- save to watchlist for add alert -->
+<div class="save-alert alert-index"  *ngIf="addFundWatchlistAlert">
+
+    <div class="content">
+        <span class="close-btn" (click)="toggleShowWatchlistDialoge()">
+            <img src="assets/images/general/close.svg">
+        </span>
+        <img src="assets/images/general/check_circle.svg" class="checked-img">
+        <span>Successfully added to Watchlist.</span>
+    </div>
+</div>
+
+
+<!-- save to compare card for add alert -->
+<div class="save-alert alert-index"  *ngIf="addComparedCardAlert">
+
+    <div class="content">
+        <span class="close-btn" (click)="toggleShowComparedCardDialoge()">
+            <img src="assets/images/general/close.svg">
+        </span>
+        <img src="assets/images/general/check_circle.svg" class="checked-img">
+        <span>Successfully added to Compare Card.</span>
+    </div>
+</div>
+
+<div *ngIf="showInvestmentCart">
+    <app-cart [hasInvestmentBtn]="true" [getFundsData]="getFundsData" [investmentCartAddForm]="investmentCartAddForm"
+        [hasCancelSaveBtn]="makeSaveCancelBtn" (addToDataOutput)="addToOutput($event)"></app-cart>
+</div>
+
+
+<!----NAV / IDCW Modal-->
+
+<!-- Modal -->
+<div class="modal fade Historical-navmodal" id="NAVModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    >
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="NAVModalLabel">Historical {{this.buttonsTitle}}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-5 mb-3">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Growth</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="col-5 history-date mb-3">
+                            <select class="form-select" aria-label="Query list">
+                                <option value="">Last 30 days</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="col-2 mb-3">
+                            <button type="button" class="btn btn-primary submit-btn nav-table" 
+                                (click)="toggleNAVTable()">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+                <div class="table-box" *ngIf="showNAVTable">
+                    <div class="title py-3">
+                        <h4>Selected Fund Details</h4>
+                    </div>
+                    <div class="selected-fund">
+
+                        <h4><span  class="India-fund">Franklin Build India Fund</span><span
+                                class="Growth-fund">Growth</span></h4>
+                        <ul >
+                            <li>Inception Date: 16/01/2008</li>
+                            <li>Fund Base Currency: INR (₹)</li>
+                        </ul>
+                        <div class="row pt-4 pb-3 text-center">
+                            <div class="col-md-3 col-6 mb-3">
+                                <div class="nav-history">NAV as of 12/06/2023:</div>
+                                <div class="text-meduim">₹25.9112</div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-3">
+                                <div class="nav-history" >Historical Prices Result:</div>
+                                <div class="text-meduim">14/05/2023 to 13/06/2023</div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-3">
+                                <div class="nav-history" >Highest NAV Within Selected Range:
+                                </div>
+                                <div class="text-meduim">₹25.9112 on 12/06/2023</div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-3">
+                                <div class="nav-history" >Lowest NAV Within Selected Range:
+                                </div>
+                                <div class="text-meduim">₹24.6829 on 01/06/2023</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-part mb-4">
+
+                        <div class="d-flex justify-content-between align-items-center py-4">
+                            <div class="text-bold">Viewing Data from 14/05/2023 to 13/06/2023</div>
+                            <div>
+                                <button class="btn btn-transparent me-3"><img
+                                        src="assets/images/fund/print.svg"></button>
+                                <a href="#"><img src="assets/images/fund/download.svg"></a>
+                            </div>
+                        </div>
+                        <div class="table-responsive text-center">
+                            <table class="table table-success table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">NAV (₹)</th>
+                                        <th scope="col">NAV Change (₹)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let navObj of historicalNavPaginatedData">
+                                        <td>{{navObj.date}}</td>
+                                        <td>{{navObj.Nav}}</td>
+                                        <td>{{navObj.NavChange}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-pagination">
+                            <nav aria-label="...">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link"><i class="bi bi-arrow-left me-sm-1"></i><span
+                                                class="d-none d-sm-inline-block">Previous</span></a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link">1</a></li>
+                                    <li class="page-item"><a class="page-link">2</a></li>
+                                    <li class="page-item active" aria-current="page"><a class="page-link">3</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">20</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#"><span class="d-none d-sm-inline-block">Next</span>
+                                            <i class="bi bi-arrow-right ms-sm-1"></i></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <!-- <select class="form-select" aria-label="Default select example" (change)="onPageSizeChange($event)">
+                            <option *ngFor="let item of paginationNumbers" [value]="item" >
+                                {{item}} per page
+                            </option>
+                        </select> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="text-small">IDCW - Income Distribution cum Capital Withdrawal</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-----offcanvas---->
+<div class="offcanvas offcanvas-bottom offcanvas-head" tabindex="-1" id="offcanvasBottom2" aria-labelledby="offcanvasBottomLabel"
+    >
+    <div class="offcanvas-header">
+        <span class="line"></span>
+    </div>
+    <div class="container d-flex flex-row Historical" >
+        <h5 class="offcanvas-title Historical-title" >Historical {{this.buttonsTitle}}</h5>
+        <hr>
+    </div>
+    <!-- <button type="button" class="btn-close text-reset" (click)="closeModal()" aria-label="Close"></button> -->
+    <div class="offcanvas-body small">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item accordion-head" >
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button id="historic-nav-canvas"  class="accordion-button collapsed accordion-head-block" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
+                        aria-controls="flush-collapseOne">
+                        {{storedEvent1Value}}
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body historic-nav-drop accordion-button-size"  (click)="getAccodian1SelectValue('Growth')">Growth</div>
+                    <div class="accordion-body historic-nav-drop accordion-button-size"  (click)="getAccodian1SelectValue('IDCW')">IDCW</div>
+                    <div class="accordion-body historic-nav-drop accordion-button-size"  (click)="getAccodian1SelectValue('Direct-Growth')">Direct-Growth</div>
+                    <div class="accordion-body historic-nav-drop accordion-button-size"  (click)="getAccodian1SelectValue('Direct-IDCW')">Direct-IDCW</div>
+                </div>
+            </div>
+            <div class="accordion-item accordion-head">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button id="historic-nav-canvas"  class="accordion-button collapsed accordion-collapse-size"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                        aria-expanded="false" aria-controls="flush-collapseTwo">
+                        {{storedEvent2Value}}
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body historic-nav-drop accordion-button-size"  (click)="getAccodian2SelectValue('Last 30 Days')">Last 30 Days</div>
+                    <div class="accordion-body historic-nav-drop accordion-button-size"  (click)="getAccodian2SelectValue('Last 60 Days')">Last 60 Days</div>
+                    <div class="accordion-body historic-nav-drop accordion-button-size"  (click)="getAccodian2SelectValue('Last 90 Days')">Last 90 Days</div>
+                    <div class="accordion-body historic-nav-drop accordion-button-size"  (click)="getAccodian2SelectValue('Last 120 Days')">Last 120 Days</div>
+                    <div type="button"  class="accordion-body historic-nav-drop accordion-button-size" (click)="showCalender()">Date range</div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 ml-4" *ngIf="showcalender">
+            <div class="mt-4 d-flex">
+                <div class="date-group ml-2 mr-2 showCalender"
+                    >
+                    <img src="assets/images/fund/calendar-outline.svg">
+                    <input type="date" class="form-control" placeholder="From">
+                </div>
+                <div class="date-group ml-2 mr-2 showCalender-img" >
+                    <img src="assets/images/fund/calendar-outline.svg">
+                    <input type="date" class="form-control" placeholder="To">
+                </div>
+            </div>
+        </div>
+        <div *ngIf="navDataExpanded">
+            <div  class="Submit-data">
+                <div class="d-flex justify-content-center align-items-center gap-3 Submit-data-block" >
+                    <button class="btn btn-primary Historical-section"
+                    
+                        (click)="historicalNavDataToggle()">Submit</button>
+                </div>
+            </div>
+        </div>
+        <ng-container *ngIf="navDataExpanded">
+            <div class="title py-3">
+                <h6>Selected Fund Details</h6>
+            </div>
+            <div class="selectFundDetails Franklin-build" >
+                <h6 class="d-flex justify-content-between"><span class="Franklin-growth">Franklin Build
+                        India Fund</span><span>Growth</span></h6>
+                <ul>
+                    <li>Inception Date: 16/01/2008</li>
+                    <li>Fund Base Currency: INR (₹)</li>
+                </ul>
+                <div class="row pt-4 pb-3 text-center">
+                    <div class="col-md-3 col-6 mb-3">
+                        <div  class="nav-history">NAV as of 12/06/2023:</div>
+                        <div class="text-meduim">₹25.9112</div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-3">
+                        <div class="nav-history" >Historical Prices Result:</div>
+                        <div class="text-meduim">14/05/2023 to 13/06/2023</div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-3">
+                        <div class="nav-history" >Highest NAV Within Selected Range:</div>
+                        <div class="text-meduim">₹25.9112 on 12/06/2023</div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-3">
+                        <div class="nav-history" >Lowest NAV Within Selected Range:</div>
+                        <div class="text-meduim">₹24.6829 on 01/06/2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center py-4">
+                <div class="text-bold">Viewing Data from 14/05/2023 to 13/06/2023</div>
+                <div>
+                    <button class="btn btn-transparent me-3"><img src="assets/images/fund/print.svg"></button>
+                    <a href="#"><img src="assets/images/fund/download.svg"></a>
+                </div>
+            </div>
+            <div class="table-responsive text-center">
+                <table class="table table-success table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">NAV (₹)</th>
+                            <th scope="col">NAV Change (₹)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let navObj of historicalNavPaginatedData">
+                            <td>{{navObj.date}}</td>
+                            <td>{{navObj.Nav}}</td>
+                            <td>{{navObj.NavChange}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-small">IDCW - Income Distribution cum Capital Withdrawal</div>
+        </ng-container>
+    </div>
+    <div *ngIf="!navDataExpanded">
+        <div class="Submit-data">
+            <div class="d-flex justify-content-center align-items-center gap-3 Submit-data-block" >
+                <button class="btn btn-primary Historical-section" 
+                    (click)="historicalNavDataToggle()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

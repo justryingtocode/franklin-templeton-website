@@ -1,0 +1,65 @@
+<div id="page-content">
+	<div class="FT-breadcrumb d-none d-md-block">
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item fontResize"><a href="#">Home</a></li>
+					<li class="breadcrumb-item active fontResize" aria-current="page">Solutions</li>
+				</ol>
+			</nav>
+		</div>
+	</div>
+	<section class="FT-solution-planning">
+		<div class="container">
+			<div class="text-start mb-sm-5 mb-3">
+				<div class="FT-title text-start fontResize">Financial Solutions</div>
+				<div class="text-big">
+					 Investing in mutual funds without a financial goal is like a journey without a destination. Hence, we are here to help you plan your financial goals and recommend funds that will help you achieve them in the long run.
+				</div>
+			</div>
+		</div>
+
+		<div class="container-row goal-cards">
+			<div class="container">
+				<h1 class="container goal-cards-heading fontResize">Choose your plan</h1>
+				<!-- Mobile -->
+				<div class="d-md-none">
+					<div class="cp-wraper">
+						<ng-container *ngFor="let content of solutionsCardContent">
+							<div class="choose-plan-card" (click)="contentData(content)">
+								<div class="img-wrap">
+									<img [src]="content.imageUrl" alt="">
+								</div>
+								<div class="choose-plan-title fontResize">{{content.title}}</div>
+							</div>
+						</ng-container>
+					</div>
+				</div>
+				
+				<!-- Desktop -->
+				<div class="d-none d-md-block">
+					<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+						<ng-container *ngFor="let content of solutionsCardContent">
+							<div ngxSlickItem class="slide">
+								<!-- <div class="solution-box-new">
+									<div class="img-hover-zoom" (click)="contentData(content)">
+										<img [src]="content.imageUrl">
+									</div>
+									<a class="btn">{{content.title}}</a>
+								</div> -->
+								<div class="choose-plan-card" (click)="contentData(content)">
+									<div class="img-wrap">
+										<img class="solution-img" [src]="content.imageUrl" alt="">
+									</div>
+									<div class="choose-plan-title fontResize">{{content.title}}</div>
+								</div>
+							</div>
+						</ng-container>
+					</ngx-slick-carousel>
+				</div>
+			</div>
+		</div>
+		<app-solution-content></app-solution-content>
+	</section>
+	<app-download></app-download>
+</div>

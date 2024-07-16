@@ -1,0 +1,64 @@
+<form [formGroup]="intrestedForm">
+    <div class="row g-3">
+        <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+            <input type="text" class="form-control" formControlName="name" placeholder="Your name">
+            <div *ngIf="intrestedForm?.get('name')?.hasError('required') && !intrestedForm?.get('name')?.value && intrestedForm?.get('name')?.touched">
+                <span  class="error-msg share-pan-num">Name is required.</span>
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+            <input type="text" class="form-control" formControlName="email" placeholder="Email">
+            <div *ngIf="intrestedForm?.get('email')?.hasError('required') && !intrestedForm?.get('email')?.value && intrestedForm?.get('email')?.touched">
+                <span  class="error-msg share-pan-num">Email is required.</span>
+            </div>
+            <div *ngIf="intrestedForm?.get('email')?.hasError('pattern') && !intrestedForm?.get('email')?.hasError('required') && intrestedForm?.get('email')?.touched">
+                <span  class="error-msg share-pan-num">Invalid email format.</span>
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+            <input type="text" (keydown)="blockAlphabetsAndSpecialChars($event)" class="form-control" formControlName="phone" placeholder="PAN Number" maxlength="10">
+            <div *ngIf="intrestedForm?.get('phone')?.hasError('required') && !intrestedForm?.get('phone')?.value && intrestedForm?.get('phone')?.touched">
+                <span  class="error-msg share-pan-num">PAN Number is required.</span>
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+            <select class="form-select" aria-label="Query list" formControlName="query">
+                <option value="" disabled>Query</option>
+                <option value="Fund related">Fund related</option>
+                <option value="Service related">Service related</option>
+                <option value="Statements related">Statements related</option>
+                <option value="Login related">Login related</option>
+            </select>
+            <div *ngIf="intrestedForm?.get('query')?.hasError('required') && !intrestedForm?.get('query')?.value && intrestedForm?.get('query')?.touched">
+                <span  class="error-msg share-pan-num">Query is required.</span>
+            </div>
+        </div>
+        <!-- <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+            <input type="text" class="form-control" formControlName="riaCode" placeholder="ARN/RIA Code">
+            <div *ngIf="intrestedForm?.get('riaCode')?.hasError('required') && !intrestedForm?.get('riaCode')?.value && intrestedForm?.get('riaCode')?.touched">
+                <span sty le="color: #F04438;" class="error-msg">ARN/RIA  is required.</span>
+            </div>
+        </div> -->
+    </div>
+    <div class="form-check my-3 d-md-none d-block">
+        <input class="form-check-input" type="checkbox" value="" (change)="checkboxCondition($event)"
+            id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+            You agree to our <a class="forCallBackLable" href="#">Privacy Policy</a>&nbsp;<span
+                >and
+                &nbsp;<a class="forCallBackLable" href="#">Terms of Use</a></span>
+        </label>
+    </div>
+    <!-- <div class="form-group col-12 mb-3">
+        <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="comments" placeholder="Comments"></textarea>
+        <div *ngIf="intrestedForm?.get('comments')?.hasError('required') && intrestedForm?.get('comments')?.touched">
+            <span st yle="color: #F04438;" class="error-msg">Comments is required.</span>
+        </div>
+    </div> -->
+    <div class="row gx-3 callBack-footer">
+        <div class="col-12 d-flex gap-3">
+            <!-- <button type="button" class="btn btn-outline-primary" st yle="padding: 10px 36px 10px 36px" data-bs-dismiss="modal">Cancel</button> -->
+            <button class="btn btn-primary w-100 Submit-section" [disabled]="!intrestedForm.valid">Submit</button>
+        </div>
+    </div>
+</form>

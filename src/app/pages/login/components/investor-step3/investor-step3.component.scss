@@ -1,0 +1,38 @@
+.form-container {
+    max-width: 785px;
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 10px 20px;
+    width: 100% !important;
+
+    @media(min-width:576px) {
+        width: 233px
+    }
+}
+
+.toggle-password {
+    position: absolute;
+    right: 11px !important;
+}
+
+@media (max-width: 1024px) {
+    .distributor-step2 {
+        margin-left: 0px !important;
+    }
+}
+.password-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .please-enter{
+    color: #697c91;
+  }
+  .acc-num{
+    color:#F04438;
+  }
+  .distributor-step{
+    margin-left: 256px;
+  }

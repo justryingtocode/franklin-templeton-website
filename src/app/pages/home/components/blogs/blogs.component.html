@@ -1,0 +1,187 @@
+<section class="FT-guide">
+    <div class="container">
+        <div class="text-center section-head progress-thrive">
+            <div class="FT-title fontResize">Learn. Progress. Thrive</div>
+            <div class="text-big fontResize">
+                Make informed decisions with our insights and comprehensive learning resources.
+            </div>
+        </div>
+      
+        <div class="row">
+            <div class="guide-box">
+                <!-- <h3 class="text-center">Blogs</h3> -->
+                <ngx-slick-carousel class="carousel d-flex desktop-blog-wrapper" #blogSlickModal="slick-carousel" [config]="slideConfig">
+                    <!-- open learning -->
+                    <div ngxSlickItem class="slide col-4" id="openlearning">
+                        <div class="container d-flex flex-column mb-4 open-learning">
+                            <span class="card-heading fontResize text-wrap ">Open Learning</span>
+                            <!-- <span class="card-subheading mb-5"></span> -->
+                        </div>
+                        <div class="blog-box" (mouseover)="changeOnHover($event,'openlearning')">
+                            <img src="assets/images/home/knowledge-centerC1.png" class="knowledge-center1">
+                            <div class="blog-info fundamentals">
+                                <div class="title fontResize">
+                                    <small>Discover the fundamentals of mutual funds with our basic learning courses.</small>
+                                    <!-- <a href="#" class="btn btn-primary making-money fontResize" st yle="padding:10px 40px;">  Savings are not investment</a> -->
+
+                                    <a href="#" class="btn btn-primary making-money fontResize view-details" >View Details</a>
+                                    
+                                </div>
+                                <!-- <a href="#" class="btn btn-primary"><i class="bi bi-arrow-right-short"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide1 col-4 d-none" id="openlearning1" (mouseleave)="changeOnHover1($event,'openlearning')">
+                        <div class="blog-box-new h-100">
+                            <img src="assets/images/home/c1.png" class="home">
+                            <div class="blog-heading">
+                                <span class="title fontResize text-wrap">Open Learning </span>
+                                <div>
+                                    <ul class="Discover-fund">
+                                        <span class="text-center fontResize">Discover the fundamentals of mutual funds with our basic learning courses. Dive into simplified content designed for easy comprehension, making financial education accessible to everyone</span>
+                                        <!-- <li>Discover the fundamentals of mutual funds with our basic learning courses, Dive into simplified content designed for easy comprehension, making financial education accessible to everyone </li> -->
+                                    </ul>
+                                </div>
+                                <a href="#" class="btn btn-primary fontResize view-details" >View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2nd -->
+                    <div ngxSlickItem class="slide col-4" id="FT-academy">
+                        <div class="container d-flex flex-column mb-4 open-learning">
+                            <span class="card-heading fontResize text-wrap">Franklin Templeton Academy</span>
+                            <!-- <span class="card-subheading mb-5"></span> -->
+                        </div>
+                        <div class="blog-box" (mouseover)="changeOnHover($event,'FT-academy')">
+                            <img src="assets/images/home/knowledge-centerC2.png" class="knowledge-center1">
+                            <div class="blog-info fundamentals">
+                                <div class="title fontResize">
+                                    <small>Discover the fundamentals of mutual funds with our basic learning courses.</small>
+                                    <a href="#" class="btn btn-primary making-money fontResize view-details"  >View Details</a>
+                                </div>
+                                <!-- <a href="#" class="btn btn-primary"><i class="bi bi-arrow-right-short"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide1 col-4 d-none" id="FT-academy1"
+                        (mouseleave)="changeOnHover1($event,'FT-academy')">
+                        <div class="blog-box-new h-100">
+                            <img src="assets/images/home/c2.png " class="home" >
+                            <div class="blog-heading Franklin-templeton" >
+                                <span class="title text-center fontResize text-wrap">Franklin Templeton Academy</span>
+                                <div>
+                                    <ul class="Discover-fund">
+                                        <span class="text-center fontResize">Introducing the Franklin Templeton Academy: Your AI-Driven Personalized Learning Platform</span>
+                                        <li class="fontResize">Segmented levels: Beginner, Intermediate, Advanced. </li>
+                                        <li class="fontResize">Diverse formats: Videos, Podcasts, Book Summaries. </li>
+                                        <li class="fontResize">Earn LinkedIn Certifications. </li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="btn btn-primary fontResize view-details" >View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3rd -->
+                    <div ngxSlickItem class="slide col-4" id="marketinsight">
+                        <div class="container d-flex flex-column mb-4 open-learning" >
+                            <span class="card-heading fontResize text-wrap">Market Insights</span>
+                            <!-- <span class="card-subheading mb-5"></span> -->
+                        </div>
+                        <div class="blog-box" (mouseover)="changeOnHover($event,'marketinsight')">
+                            <img src="assets/images/home/knowledge-centerC3.png" class="knowledge-center1">
+                            <div class="blog-info fundamentals">
+                                <div class="title fontResize">
+                                    <small>Discover the fundamentals of mutual funds with our basic learning courses.</small>
+                                    <a href="#" class="btn btn-primary making-money fontResize view-details" >View Details</a>
+                                </div>
+                                <!-- <a href="#" class="btn btn-primary"><i class="bi bi-arrow-right-short"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div ngxSlickItem class="slide1 col-4 d-none" id="marketinsight1"
+                        (mouseleave)="changeOnHover1($event,'marketinsight')">
+                        <div class="blog-box-new h-100">
+                            <img src="assets/images/home/c3.png" class="home" >
+                            <div class="blog-heading">
+                                <span class="title fontResize text-wrap">Market Insights</span>
+                                <div>
+                                    <ul class="Discover-fund">
+                                        <span class="text-center fontResize confident">Feel confident in the financial world, stay updated on market trends, and boost your financial know-how with our helpful insights</span>
+                                        <!-- <li>Feel confident in the financial world, stay updated on market trends, and boost your financial know-how with our helpful insights. </li> -->
+                                    </ul>
+                                </div>
+                                <a href="#" class="btn btn-primary fontResize view-details" >View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-slick-carousel>
+
+                <div class="horizontal-scroll-container">
+                <div class="mobile-blog-wrapper Discover-mutual-fund" >
+                    <a href="#" class="blog blog-mobile-card card p-3 basic-fundamentals" >
+                        <div class="container d-flex flex-column">
+                            <span class="card-heading fontResize text-wrap">Open Learning</span>
+                            <span class="card-subheading mb-3 fontResize confident" >Discover the fundamentals of mutual funds with our basic learning courses, Dive into simplified content designed for easy comprehension, making financial education accessible to everyone..</span>
+                        </div>
+                        <div class="blog-box" (mouseover)="changeOnHover($event,'openlearning')">
+                            <img class="blog-box-img" src="assets/images/home/mobile-open-learning.svg">
+                            <div class="blog-info">
+                                <div class="title">
+                                    <small class="fontResize">14 Feb, 2023</small>
+                                    Making your money work
+                                </div>
+                                <!-- <a href="#" class="btn btn-primary"><i class="bi bi-arrow-right-short"></i></a> -->
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="blog blog-mobile-card card p-3 basic-fundamentals" >
+                        <div class="container d-flex flex-column open-learning">
+                            <span class="card-heading fontResize text-wrap">Franklin Templeton Academy</span>
+                            <span class="card-subheading mb-1 fontResize confident" > Introducing the Franklin Templeton Academy: Your AI-Driven Personalized Learning Platform.</span>
+                            <ul class="blog-subheadinng confident" >
+                                <li class="fontResize"> Segmented levels: Beginner, Intermediate, Advanced.</li>
+                                <li class="fontResize"> Diverse formats: Videos, Podcasts, Book Summaries.</li>
+                                <li class="fontResize">  Earn LinkedIn Certifications.</li>
+                            </ul>                
+                        </div>
+                        <div class="blog-box" (mouseover)="changeOnHover($event,'openlearning')">
+                            <img class="blog-box-img" src="assets/images/home/mobile-academy.svg">
+                            <div class="blog-info">
+                                <div class="title">
+                                    <small class="fontResize">14 Feb, 2023</small>
+                                    Making your money work
+                                </div>
+                                <!-- <a href="#" class="btn btn-primary"><i class="bi bi-arrow-right-short"></i></a> -->
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="blog blog-mobile-card card p-3 basic-fundamentals">
+                        <div class="container d-flex flex-column open-learning">    
+                            <span class="card-heading fontResize text-wrap">Market Insights</span>
+                            <span class="card-subheading mb-3 fontResize confident" >Feel confident in the financial world, stay updated on market trends, and boost your financial know-how with our helpful insights.</span>
+                        </div>
+                        <div class="blog-box" (mouseover)="changeOnHover($event,'openlearning')">
+                            <img class="blog-box-img" src="assets/images/home/mobile-market.svg">
+                            <div class="blog-info">
+                                <div class="title">
+                                    <small class="fontResize">14 Feb, 2023</small>
+                                    Making your money work
+                                </div>
+                                <!-- <a href="#" class="btn btn-primary"><i class="bi bi-arrow-right-short"></i></a> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                </div>
+                <!-- <div class="text-center blog-CTA" st yle="padding: 15px;">
+                    <a [routerLink]="['/knowledge-center']" class="more-links">
+                        <span>Explore more1</span><i class="bi bi-chevron-right ms-3"></i>
+                    </a>
+                </div> -->
+            </div>
+        </div>
+        <div class="text-center blog-CTA1">
+            <a routerLink="/knowledge-center" class="more-links"><span class="fontResize">Explore more</span><i class="bi bi-chevron-right ms-3"></i></a>
+        </div>
+    </div>
+</section>

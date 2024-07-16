@@ -1,0 +1,911 @@
+<!-- scroll top button-->
+<div id="scrollTopBtn" class="scroll-top d-none">
+    <a (click)="scrollToTop()" class="btn btn fontResize top" ><i
+            class="bi bi-arrow-up"></i>{{isMobileView?'':'Top'}}</a>
+</div>
+
+
+
+<!-- contact us block -->
+<div id="contact-block">
+    <div class="contact-box" *ngIf="showContactBox">
+        <div class="d-block" *ngIf="showContactBoxInner">
+            <div class="d-flex">
+                <div class="d-md-block d-none fontResize" data-bs-toggle="modal" data-bs-target="#speakModal">
+                    <small>call us</small>
+                    <div class="text-blue">1800 258 4255</div>
+                </div>
+                <div class="d-md-none d-block fontResize" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasBottomSpeak"
+                aria-controls="offcanvasBottomSpeak">
+                    <small>call us</small>
+                    <div class="text-blue">1800 258 4255</div>
+                </div>
+                <span class="box-icon"><img src="../../../../assets/images/form-icon/call.png"></span>
+            </div>
+            <div class="d-flex">
+                <div class="d-md-block d-none fontResize" data-bs-toggle="modal" data-bs-target="#emailModal">
+                    <small>write to us</small>
+                    <div class="text-blue">service@franklintempleton.com</div>
+                </div>
+                <div class="d-md-none d-block fontResize" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasBottomEmail"
+                aria-controls="offcanvasBottomEmail">
+                    <small>write to us</small>
+                    <div class="text-blue">service@franklintempleton.com</div>
+                </div>
+                <span class="box-icon"><img src="../../../../assets/images/form-icon/message.png"></span>
+            </div>
+            <div class="d-flex">
+                <div>
+                    <div class="text-blue fontResize" id="toggleChat">Chat with us</div>
+                </div>
+                <span class="box-icon"><img src="../../../../assets/images/form-icon/chat.png"></span>
+            </div>
+            <!-- <div class="d-flex" (click)="toggleShowContactForm()"> -->
+            <div class="d-flex" data-bs-toggle="modal" data-bs-target="#callBack">
+
+                <div>
+                    <small></small>
+                    <div class="text-blue fontResize" id="toggleForm">Request a call back</div>
+                </div>
+                <span class="box-icon"><img src="../../../../assets/images/form-icon/callback.png"></span>
+            </div>
+        </div>
+        <div id="callForm" *ngIf="showContactForm">
+            <div class="d-flex justify-content-end mb-3">
+                <!-- Request a call back -->
+                <button id="closeForm" (click)="toggleShowContactForm()"><img
+                        src="assets/images/home/close-form.svg"></button>
+            </div>
+            <div>
+                <app-call-back-form [isSmall]="true"></app-call-back-form>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" id="toggleBox" (click)="toggleShowContactBox()"
+        [ngClass]="showContactBox ? 'opened' : ''"></button>
+
+
+    
+
+</div>
+
+<!-- footer block -->
+<footer>
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between" id="footer-head">
+            <div>
+                <span href="#" class="logo-img footer-head"><img
+                        src="assets/images/general/footer-logo.svg"></span>
+                <!-- <div class="address d-md-none mt-2 mb-3">
+                    One International Centre, Tower 2, 12th & 13th Floor, Senapati Bapat Marg, Elphinstone (West)
+                    Mumbai-400013.
+                </div> -->
+            </div>
+            <!-- <div class="social-links d-none d-md-flex">
+                <a href="#"><img src="assets/images/general/ri_whatsapp-fill.png"></a>
+                <a href="#"><img src="assets/images/general/ic_baseline-apple.png"></a>
+                <a href="#"><img src="assets/images/general/basil_android-solid.png"></a>
+                <a href="#"><img src="assets/images/general/footer-facebook.svg"></a>
+                <a href="#"><img src="assets/images/general/brandico_twitter-bird.png"></a>
+                <a href="#"><img src="assets/images/general/mdi_youtube.png"></a>
+                <a href="#"><img src="assets/images/general/footer-insta.svg"></a>
+                <a href="#"><img src="assets/images/general/footer-linkedin.svg"></a>
+            </div> -->
+            <div class="social-links social-links-head">
+                <a href="https://www.whatsapp.com/" target="_blank" ><img src="assets/images/general/ri_whatsapp-fill.png"></a>
+                <a href="#" target="_blank"><img src="assets/images/general/ic_baseline-apple.png"></a>
+                <a href="#" target="_blank"><img src="assets/images/general/basil_android-solid.png"></a>
+                <a href="https://www.facebook.com" target="_blank"><img src="assets/images/general/footer-facebook.svg"></a>
+                <a href="https://twitter.com" target="_blank"><img src="../../../../assets/images/general/X-twitter-footer.svg" class="footer-twitter"></a>
+                <a href="https://www.youtube.com/@TempletonIndia" target="_blank"><img src="assets/images/general/mdi_youtube.png"></a>
+                <a href="https://www.instagram.com/accounts/login/?hl=en"><img src="assets/images/general/footer-insta.svg"></a>
+                <a href="https://www.linkedin.com" target="_blank"><img src="assets/images/general/footer-linkedin.svg"></a>
+            </div>
+        </div>
+        <div class="row gx-xl-5">
+            <div class="col-md-4 col-12" *ngFor="let footerObj of footerContent">
+                <div class="light-box">
+                    <div class="d-none d-md-flex footer-title fontResize">{{footerObj.headerText}}</div>
+                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                        <div class="accordion-item accordion-head" >
+                            <h2 class="accordion-header" [id]="'heading'+footerObj.id">
+                                <button class="accordion-button collapsed accordion-button-style fontResize" type="button"
+                                    data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+footerObj.id"
+                                    aria-expanded="false" [attr.aria-controls]="'collapse'+footerObj.id">
+                                    {{footerObj.headerText}}
+                                </button>
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="row d-none d-md-flex">
+                        <ng-container *ngFor="let webViewobj of footerObj.contentData">
+                            <div
+                                [ngClass]="footerObj.headerText == 'Knowledge Centre' && webViewobj.subheading=='Franklin Templeton Academy'?'col-7 mt-3' : 'col-6'">
+                                <div class="small-title fontResize">{{webViewobj.subheading}}</div>
+                                <ul>
+                                    <ng-container *ngFor="let listItemweb of webViewobj.list">
+                                        <li><a href="#" class="fontResize">{{listItemweb.content}}</a></li>
+                                    </ng-container>
+                                </ul>
+                            </div>
+                        </ng-container>
+                    </div>
+
+                    <div [id]="'collapse'+footerObj.id" class="accordion-collapse collapse"
+                        [attr.aria-labelledby]="'heading'+footerObj.id" data-bs-parent="#filterAccordion">
+                        <div class="accordion-body mt-1">
+                            <div class="row accordion-item-head">
+                                <div class="col-12" *ngFor="let subAccordionObj of footerObj.contentData">
+                                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                                        <div class="accordion-item accordion-head" >
+                                            <h2 class="accordion-header"
+                                                id="{{'subheading'+footerObj.id+subAccordionObj.id}}">
+                                                <button class="accordion-button collapsed accordion-button-style fontResize accordion-control"
+                                                    type="button" 
+                                                    data-bs-toggle="collapse"
+                                                    [attr.data-bs-target]="'#collapse'+footerObj.id+subAccordionObj.id"
+                                                    aria-expanded="false"
+                                                    [attr.aria-controls]="'collapse'+footerObj.id+subAccordionObj.id">
+                                                    {{subAccordionObj.subheading}}
+                                                </button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div [id]="'collapse'+footerObj.id+subAccordionObj.id"
+                                        class="accordion-collapse collapse"
+                                        [attr.aria-labelledby]="'subheading'+footerObj.id+subAccordionObj.id">
+                                        <div class="container accordion-body mt-3">
+                                            <ul class="accordion-content-head">
+                                                <ng-container *ngFor="let listItem of subAccordionObj.list">
+                                                    <li><a href="#" class="fontResize">{{listItem.content}}</a></li>
+                                                </ng-container>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- old footer code -->
+        <!-- <div class="row gx-xl-5">
+            <div class="col-md-4 col-12">
+                <div class="light-box">
+                    <div class="d-none d-md-flex footer-title">Explore funds</div>
+                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                        <div class="accordion-item"  ="border:0;">
+                            <h2 class="accordion-header" id="heading1">
+                                <button class="accordion-button collapsed accordion-button-style" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false"
+                                    aria-controls="collapse">
+                                    Explore Funds
+                                </button>
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="row d-none d-md-flex">
+                        <div class="col-6">
+                            <div class="small-title">Funds</div>
+                            <ul>
+                                <li><a href="#">ELSS</a></li>
+                                <li><a href="#">Equity Funds</a></li>
+                                <li><a href="#">Fixed Income Funds</a></li>
+                                <li><a href="#">FoF Domestic Funds</a></li>
+                                <li><a href="#">Hybrid Funds</a></li>
+                                <li><a href="#">International Funds</a></li>
+                                <li><a href="#">Liquid Funds</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <div class="small-title">Others</div>
+                            <ul>
+                                <li><a href="#">Watchlist</a></li>
+                                <li><a href="#">Comparison</a></li>
+                                <li><a href="#">NAV</a></li>
+                                <li><a href="#">IDCW</a></li>
+                                <li><a href="#">Cart</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
+                        data-bs-parent="#filterAccordion">
+                        <div class="accordion-body mt-1">
+                            <div class="row"  ="gap:18px;">
+                                <div class="col-12">
+                                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                                        <div class="accordion-item"  ="border:0;">
+                                            <h2 class="accordion-header" id="heading5">
+                                                <button class="accordion-button collpased accordion-button-style"
+                                                    type="button"  ="padding: 0px 20px;font-size: 0.938rem;"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapse5"
+                                                    aria-expanded="false" aria-controls="collapse5">
+                                                    Funds
+                                                </button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5">
+                                        <div class="container accordion-body mt-3">
+                                            <ul  ="list-style: initial;margin: 0px 6px;">
+                                                <li><a href="#">ELSS</a></li>
+                                                <li><a href="#">Equity Funds</a></li>
+                                                <li><a href="#">Fixed Income Funds</a></li>
+                                                <li><a href="#">FoF Domestic Funds</a></li>
+                                                <li><a href="#">Hybrid Funds</a></li>
+                                                <li><a href="#">International Funds</a></li>
+                                                <li><a href="#">Liquid Funds</a></li>
+                                                <li><a href="#">Winding up of specific schemes</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                                        <div class="accordion-item"  ="border:0;">
+                                            <h2 class="accordion-header" id="heading6">
+                                                <button class="accordion-button collapsed accordion-button-style"
+                                                    type="button"  ="padding: 0px 20px;font-size: 0.938rem;"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapse6"
+                                                    aria-expanded="false" aria-controls="collapse6">
+                                                    Others
+                                                </button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6"
+                                        data-bs-parent="#filterAccordion">
+                                        <div class="container accordion-body mt-3">
+                                            <ul  ="list-style:initial;margin: 0px 6px;">
+                                                <li><a href="#">Watchlist</a></li>
+                                                <li><a href="#">Comparison</a></li>
+                                                <li><a href="#">NAV</a></li>
+                                                <li><a href="#">IDCW</a></li>
+                                                <li><a href="#">Cart</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                <div class="light-box">
+                    <div class="footer-title d-none d-md-flex">Plan your investment</div>
+                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                        <div class="accordion-item"  ="border:0;">
+                            <h2 class="accordion-header" id="heading2">
+                                <button class="accordion-button collapsed accordion-button-style" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false"
+                                    aria-controls="collapse2">
+                                    Plan your investment
+                                </button>
+                            </h2>
+                        </div>
+                    </div>
+                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
+                        data-bs-parent="#filterAccordion">
+                        <div class="accordion-body">
+                            <div class="row"  ="gap:18px;">
+                                <div class="col-12">
+                                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                                        <div class="accordion-item"  ="border:0;">
+                                            <h2 class="accordion-header" id="heading7">
+                                                <button class="accordion-button collapsed accordion-button-style"
+                                                    type="button"  ="padding: 0px 20px;font-size: 0.938rem;"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapse7"
+                                                    aria-expanded="false" aria-controls="collapse7">
+                                                    Solutions
+                                                </button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7">
+                                        <div class="container accordion-body mt-3">
+                                            <ul  ="list-style: initial;margin: 0px 6px;">
+                                                <li><a href="#">Child’s Education</a></li>
+                                                <li><a href="#">Retirement</a></li>
+                                                <li><a href="#">Holiday</a></li>
+                                                <li><a href="#">Cash Management</a></li>
+                                                <li><a href="#">Dream Home</a></li>
+                                                <li><a href="#">Wealth Creation</a></li>
+                                                <li><a href="#">Tax Planning</a></li>
+                                                <li><a href="#">Customise Your Plan</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                                        <div class="accordion-item"  ="border:0;">
+                                            <h2 class="accordion-header" id="heading8">
+                                                <button class="accordion-button collapsed accordion-button-style"
+                                                    type="button" 
+                                                    ="padding: 0px 20px;font-size: 0.938rem;"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapse8"
+                                                    aria-expanded="false" aria-controls="collapse8">
+                                                    Calculators
+                                                </button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8">
+                                        <div class="container accordion-body mt-3">
+                                            <ul  ="list-style: initial;margin: 0px 6px;">
+                                                <li><a href="#">SIP Calculator</a></li>
+                                                <li><a href="#">Top-Up SIP Calculator</a></li>
+                                                <li><a href="#">Lumpsum Calculator</a></li>
+                                                <li><a href="#">STP Calculator</a></li>
+                                                <li><a href="#">SWP Calculator</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-none d-md-flex">
+                        <div class="col-6">
+                            <div class="small-title">Solutions</div>
+                            <ul>
+                                <li><a href="#">Child’s Education</a></li>
+                                <li><a href="#">Retirement</a></li>
+                                <li><a href="#">Holiday</a></li>
+                                <li><a href="#">Cash Management</a></li>
+                                <li><a href="#">Dream Home</a></li>
+                                <li><a href="#">Wealth Creation</a></li>
+                                <li><a href="#">Tax Planning</a></li>
+                                <li><a href="#">Customise Your Plan</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <div class="small-title">Calculators</div>
+                            <ul>
+                                <li><a href="#">SIP Calculator</a></li>
+                                <li><a href="#">Top-Up SIP Calculator</a></li>
+                                <li><a href="#">Lumpsum Calculator</a></li>
+                                <li><a href="#">STP Calculator</a></li>
+                                <li><a href="#">SWP Calculator</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 col-12">
+                <div class="light-box">
+                    <div class="footer-title d-none d-md-flex">Knowledge Centre</div>
+                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                        <div class="accordion-item"  ="border:0;">
+                            <h2 class="accordion-header" id="heading3">
+                                <button class="accordion-button collapsed accordion-button-style" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true"
+                                    aria-controls="collapse3">
+                                    Knowledge Centre
+                                </button>
+                            </h2>
+                        </div>
+                    </div>
+                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
+                        data-bs-parent="#filterAccordion">
+                        <div class="accordion-body">
+                            <div class="row"  ="gap:18px;">
+                                <div class="col-12">
+                                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                                        <div class="accordion-item"  ="border:0;">
+                                            <h2 class="accordion-header" id="heading9">
+                                                <button class="accordion-button collapsed accordion-button-style"
+                                                    type="button"  ="padding: 0px 20px;font-size: 0.938rem;"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapse9"
+                                                    aria-expanded="false" aria-controls="collapse9">
+                                                    Education
+                                                </button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9">
+                                        <div class="container accordion-body mt-3">
+                                            <ul  ="list-style: initial;margin: 0px 6px;">
+                                                <li><a href="#">Videos</a></li>
+                                                <li><a href="#">Podcasts</a></li>
+                                                <li><a href="#">Presentations</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                                        <div class="accordion-item"  ="border:0;">
+                                            <h2 class="accordion-header" id="heading10">
+                                                <button class="accordion-button collapsed accordion-button-style"
+                                                    type="button"  ="padding: 0px 20px;font-size: 0.938rem;"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapse10"
+                                                    aria-expanded="false" aria-controls="collapse10">
+                                                    Market Insights
+                                                </button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div id="collapse10" class="accordion-collapse collapse"
+                                        aria-labelledby="heading10">
+                                        <div class="container accordion-body mt-3">
+                                            <ul>
+                                                <li><a href="#">Blogs</a></li>
+                                                <li><a href="#">Latest Commentaries</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                                        <div class="accordion-item" sty le="border:0;">
+                                            <h2 class="accordion-header" id="heading11">
+                                                <button class="accordion-button collapsed accordion-button-style"
+                                                    type="button" sty le="padding: 0px 20px;font-size: 0.938rem;"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapse11"
+                                                    aria-expanded="false" aria-controls="collapse11">
+                                                    Franklin Templeton Academy
+                                                </button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div id="collapse11" class="accordion-collapse collapse"
+                                        aria-labelledby="heading11">
+                                        <div class="container accordion-body mt-3">
+                                            <ul st yle="list-style: initial;margin: 0px 6px;">
+                                                <li><a href="#">About Us</a></li>
+                                                <li><a href="#">Explore Courses </a></li>
+                                                <li><a href="#">Join for free</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-none d-md-flex">
+                        <div class="col-6">
+                            <div class="small-title">Education</div>
+                            <ul>
+                                <li><a href="#">Category 1</a></li>
+                                <li><a href="#">Category 2</a></li>
+                                <li><a href="#">Category 3</a></li>
+                                <li><a href="#">Frankly Speaking</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <div class="small-title">Market Insights</div>
+                            <ul>
+                                <li><a href="#">Blogs</a></li>
+                                <li><a href="#">Latest Commentaries</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-7" st yle="margin-top:16px;">
+                            <div class="small-title">Franklin Templeton Academy</div>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Explore Courses</a></li>
+                                <li><a href="#">Join For Free</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div> -->
+        <div class="row">
+            <div class="col-12">
+                <div class="light-box">
+                    <div class="footer-title d-none d-md-flex fontResize">Investor Services</div>
+                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                        <div class="accordion-item accordion-head" >
+                            <h2 class="accordion-header" id="heading50">
+                                <button class="accordion-button collapsed accordion-button-style fontResize" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse40" aria-expanded="false"
+                                    aria-controls="collapse4">
+                                    Investor Services
+                                </button>
+                            </h2>
+                        </div>
+                    </div>
+                    <div id="collapse40" class="accordion-collapse collapse" aria-labelledby="heading50"
+                        data-bs-parent="#filterAccordion">
+                        <div class="accordion-body">
+                            <div class="row accordion-item-head" >
+                                <div class="col-12">
+                                    <!-- <div class="small-title">Instant Services</div> -->
+                                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                                        <div class="accordion-item accordion-head" >
+                                            <h2 class="accordion-header" id="heading51">
+                                                <button class="accordion-button collapsed accordion-button-style fontResize accordion-control"
+                                                    type="button" 
+                                                    data-bs-toggle="collapse" data-bs-target="#collapse51"
+                                                    aria-expanded="false" aria-controls="collapse51">
+                                                    Instant Services
+                                                </button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div id="collapse51" class="accordion-collapse collapse"
+                                        aria-labelledby="heading51">
+                                        <div class="container accordion-body mt-3">
+                                            <ul class="fontResize accordion-content-head">
+                                                <li><a href="#">Instant Mail Back</a></li>
+                                                <li><a href="#">Consolidated A/C statement</a></li>
+                                                <li><a href="#">Certify FATCA/ Update KYC Details</a></li>
+                                                <li><a href="#">Request for Historic NAV’s</a></li>
+                                                <li><a href="#">Update your PAN</a></li>
+                                                <li><a href="#">Update FATCA/ CRS Details</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <!-- <div class="small-title">Account Services</div> -->
+                                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                                        <div class="accordion-item accordion-head" >
+                                            <h2 class="accordion-header" id="heading52">
+                                                <button class="accordion-button collapsed accordion-button-style fontResize accordion-control"
+                                                    type="button" 
+                                                    data-bs-toggle="collapse" data-bs-target="#collapse52"
+                                                    aria-expanded="false" aria-controls="collapse52">
+                                                    Account Services
+                                                </button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div id="collapse52" class="accordion-collapse collapse"
+                                        aria-labelledby="heading52">
+                                        <div class="container accordion-body mt-3">
+                                            <ul  class="fontResize accordion-content-head">
+                                                <li><a href="#">Transition to CAMS</a></li>
+                                                <li><a href="#">Ways to transact with us</a></li>
+                                                <li><a href="#">SMS Services</a></li>
+                                                <li><a href="#">Online Services</a></li>
+                                                <li><a href="#">Unclaimed Investments</a></li>
+                                                <li><a href="#">Transmission policy</a></li>
+                                                <li><a href="#">Forms</a></li>
+                                                <li><a href="#">FAQs</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                                        <div class="accordion-item accordion-head" >
+                                            <h2 class="accordion-header" id="heading53">
+                                                <button class="accordion-button collapsed accordion-button-style fontResize accordion-control"
+                                                    type="button" 
+                                                    data-bs-toggle="collapse" data-bs-target="#collapse53"
+                                                    aria-expanded="false" aria-controls="collapse53">
+                                                    Product downloads
+                                                </button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div id="collapse53" class="accordion-collapse collapse"
+                                        aria-labelledby="heading53">
+                                        <div class="container accordion-body mt-3">
+                                            <ul  class="fontResize accordion-content-head">
+                                                <li><a href="#">Forms</a></li>
+                                                <li><a href="#">Leaflets</a></li>
+                                                <li><a href="#">Presentations</a></li>
+                                                <li><a href="#">SID</a></li>
+                                                <li><a href="#">SAI</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="small-title">Product downloads</div> -->
+                                </div>
+                                <div class="col-12">
+                                    <!-- <div class="small-title">Other downloads</div> -->
+                                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                                        <div class="accordion-item accordion-head" >
+                                            <h2 class="accordion-header" id="heading54">
+                                                <button class="accordion-button collapsed accordion-button-style fontResize accordion-control"
+                                                    type="button" 
+                                                    data-bs-toggle="collapse" data-bs-target="#collapse54"
+                                                    aria-expanded="false" aria-controls="collapse54">
+                                                    Other downloads
+                                                </button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div id="collapse54" class="accordion-collapse collapse"
+                                        aria-labelledby="heading54">
+                                        <div class="container accordion-body mt-3">
+                                            <ul class="fontResize accordion-content-head">
+                                                <li><a href="#">Financials</a></li>
+                                                <li><a href="#">Addendums</a></li>
+                                                <li><a href="#">Month End Portfolio</a></li>
+                                                <li><a href="#"><span
+                                                            class="d-none d-md-inline-block">Valuations</span><span
+                                                            class="d-md-none">Validation</span> Policy</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                                        <div class="accordion-item accordion-head" >
+                                            <h2 class="accordion-header" id="heading55">
+                                                <button class="accordion-button collapsed accordion-button-style fontResize accordion-control"
+                                                    type="button" 
+                                                    data-bs-toggle="collapse" data-bs-target="#collapse55"
+                                                    aria-expanded="false" aria-controls="collapse55">
+                                                    Account Subscription
+                                                </button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div id="collapse55" class="accordion-collapse collapse"
+                                        aria-labelledby="heading55">
+                                        <div class="container accordion-body mt-3">
+                                            <ul class="fontResize accordion-content-head">
+                                                <li><a href="#">Valuation / Account Statement</a></li>
+                                                <li><a href="#">NAV Alerts</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="small-title">Account Subscription</div> -->
+                                </div>
+                                <div class="col-12">
+                                    <div class="accordion row g-0 d-md-none" id="more-links-btns">
+                                        <div class="accordion-item accordion-head" >
+                                            <h2 class="accordion-header" id="heading56">
+                                                <button class="accordion-button collapsed accordion-button-style fontResize accordion-control"
+                                                    type="button" 
+                                                    data-bs-toggle="collapse" data-bs-target="#collapse56"
+                                                    aria-expanded="false" aria-controls="collapse56">
+                                                    Connect with us
+                                                </button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div id="collapse56" class="accordion-collapse collapse"
+                                        aria-labelledby="heading56">
+                                        <div class="container accordion-body mt-3">
+                                            <ul class="fontResize accordion-content-head">
+                                                <li><a href="#">Locate us</a></li>
+                                                <li><a href="#">Speak to us</a></li>
+                                                <li><a href="#">Email us</a></li>
+                                                <li><a href="#">Request a call back</a></li>
+                                                <li><a href="#">Need a Distributors</a></li>
+                                                <li><a href="#">Grievance Redressal</a></li>
+                                                <li><a href="#">Contact us</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="small-title">Connect with us</div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-none d-md-flex justify-content-around">
+                        <div class="col-lg-2 col-md-4 col-6">
+
+                            <div class="small-title fontResize">Account Statements</div>
+                            <ul>
+                                <li><a href="#" class="fontResize">Account Statement</a></li>
+                                <li><a href="#" class="fontResize">Capital Gains Statement</a></li>
+                                <li><a href="#" class="fontResize">Consolidated Account Statement</a></li>
+                                <li><a href="#" class="fontResize">Request for Historic NAV’s</a></li>
+                                <li><a href="#" class="fontResize">Subscribe to Valuation/
+                                        Account Statement</a></li>
+                                <!-- <li><a href="#">Update FATCA/ CRS Details</a></li> -->
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-6">
+                            <div class="small-title fontResize">Update Personal Details</div>
+                            <ul>
+                                <li><a href="#" class="fontResize">Update KYC Details</a></li>
+                                <li><a href="#" class="fontResize">Update your PAN</a></li>
+                                <li><a href="#" class="fontResize">Certify FATCA/Update KYC Details</a></li>
+                                <!-- <li><a href="#">Online Services</a></li>
+                                <li><a href="#">Unclaimed Investments</a></li>
+                                <li><a href="#">Transmission policy</a></li>
+                                <li><a href="#">Forms</a></li>
+                                <li><a href="#">FAQs</a></li> -->
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-6">
+                            <div class="small-title fontResize">Forms & Downloads</div>
+                            <ul>
+                                <li><a href="#" class="fontResize">Servicing Forms</a></li>
+                                <li><a href="#" class="fontResize">Fund docs</a></li>
+                                <li><a href="#" class="fontResize">Factsheets</a></li>
+                                <li><a href="#" class="fontResize">Addenda / Notices</a></li>
+                                <li><a href="#" class="fontResize">TER</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-6">
+                            <div class="small-title fontResize">Ways to transact with us</div>
+                            <ul>
+                                <li><a href="#" class="fontResize">FIND FRANKLIN TEMPLETON</a></li>
+                                <li><a href="#" class="fontResize">Online Services/SMS services</a></li>
+                                <li><a href="#" class="fontResize">Request a call back?</a></li>
+                                <li><a href="#" class="fontResize">Grievance Redressal</a></li>
+                                <!-- <li><a href="#"><span class="d-none d-md-inline-block">Valuations</span><span
+                                            class="d-md-none">Validation</span> Policy</a></li> -->
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-6">
+                            <div class="small-title fontResize">NAV and Others</div>
+                            <ul>
+                                <li><a href="#" class="fontResize">NAVs</a></li>
+                                <li><a href="#" class="fontResize">Request for Historic NAVs</a></li>
+                                <li><a href="#" class="fontResize">Unclaimed Investments</a></li>
+                                <li><a href="#" class="fontResize">Transmission Policy</a></li>
+                                <li><a href="#" class="fontResize">FAQs</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                        <!-- <div class="col-lg-2 col-md-4 col-6">
+                            <div class="small-title">Connect with us</div>
+                            <ul>
+                                <li><a href="#">Locate us</a></li>
+                                <li><a href="#">Speak to us</a></li>
+                                <li><a href="#">Email us</a></li>
+                                <li><a href="#">Request a call back</a></li>
+                                <li><a href="#">Need a Distributors</a></li>
+                                <li><a href="#">Grievance Redressal</a></li>
+                                <li><a href="#">Contact us</a></li>
+                            </ul>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row py-32">
+            <div class="col-lg-3 col-6">
+                <ul>
+                    <li><a href="#" class="fontResize">Careers</a></li>
+                    <li><a [routerLink]="['/media']" class="fontResize">Media</a></li>
+                    <li><a [routerLink]="['/reports']" class="fontResize">Reports</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-6">
+                <ul>
+                    <li><a [routerLink]="['/risk-factors']" class="fontResize">Risk Factors</a></li>
+                    <li><a [routerLink]="['/terms']" class="fontResize">Terms & Conditions</a></li>
+                    <li><a [routerLink]="['/disclaimer']" class="fontResize">Disclaimer</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-6">
+                <ul>
+                    <li><a [routerLink]="['/privacy']" class="fontResize">Security & Privacy</a></li>
+                    <li><a [routerLink]="['/help']" class="fontResize">Help</a></li>
+                    <li><a [routerLink]="['/AntiCorruption']" class="fontResize">Anti-Corruption Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-6">
+                <ul>
+                    <li><a [routerLink]="['/feedback']" class="fontResize">Feedback</a></li>
+                    <li><a href="#" class="fontResize">Voting Policy</a></li>
+                    <li><a href="#" class="fontResize">Disclosure of Votes Exercised</a></li>
+                </ul>
+            </div>
+        </div>
+            <!-- Content visible on mobile only -->
+
+         <!-- <div class="row py-32 info justify-content-between ">
+            <div class="col-lg-auto col-md-6  d-md-block mb-lg-0 mb-sm-3 Registered-office-address-box">
+                <div class="text-big fontResize text-big-imp">Registered Office</div>
+                <div class="text-bold fontResize" id="Registered-office-address">
+                    One International Centre, Tower 2, 12th & 13th Floor, Senapati Bapat Marg, Elphinstone (West)
+                    Mumbai-400013.
+                </div>
+            </div>
+            <div class="col-lg-auto col-md-6 col-12 mb-lg-0 mb-sm-3">
+                <div class="text-big fontResize text-big-imp">For queries <span class="d-md-inline-block d-none fontResize">or grievances</span> <span
+                        class="d-md-none fontResize">or Grievances</span></div>
+                <div class="text-bold fontResize">grievanceredressal@franklintempleton.com</div>
+            </div>
+            <div class="col-lg-auto col-sm-4 col-12 mb-lg-0 mb-sm-3">
+                <div class="text-big fontResize text-big-imp">Telephone No</div>
+                <div class="text-bold fontResize">022-67519100</div>
+            </div>
+            <div class="col-lg-auto col-sm-4 col-12 mb-lg-0 mb-sm-3">
+                <div class="text-big fontResize text-big-imp">Fax <span class="d-md-inline-block d-none fontResize">No</span></div>
+                <div class="text-bold fontResize">022- 66391282</div>
+            </div>
+            <div class="col-lg-auto col-sm-4 col-12 mb-lg-0 mb-sm-3">
+                <div class="text-big fontResize text-big-imp">CIN</div>
+                <div class="text-bold fontResize">U67190MH1995PTC093356</div>
+            </div>
+        </div> -->
+        
+        <div class="row py-32 info justify-content-between d-md-none">
+            <div class="col-lg-auto col-md-6 d-md-block mb-lg-0 mb-sm-3 Registered-office-address-box">
+                <div class="text-big fontResize text-big-imp">Registered Office</div>
+                <div class="text-bold fontResize" id="Registered-office-address">
+                    One International Centre, Tower 2, 12th & 13th Floor, Senapati Bapat Marg, Elphinstone (West) Mumbai-400013.
+                </div>
+            </div>
+            <div class="col-lg-auto col-md-6 col-12 mb-lg-0 mb-sm-3">
+                <div class="text-big fontResize text-big-imp">For queries <span class="d-md-inline-block d-none fontResize">or grievances</span> <span class="d-md-none fontResize">or Grievances</span></div>
+                <div class="text-bold fontResize">grievanceredressal@franklintempleton.com</div>
+            </div>
+            <div class="col-lg-auto col-sm-4 col-12 mb-lg-0 mb-sm-3">
+                <div class="text-big fontResize text-big-imp">Telephone No</div>
+                <div class="text-bold fontResize">022-67519100</div>
+            </div>
+            <div class="col-lg-auto col-sm-4 col-12 mb-lg-0 mb-sm-3">
+                <div class="text-big fontResize text-big-imp">Fax <span class="d-md-inline-block d-none fontResize">No</span></div>
+                <div class="text-bold fontResize">022- 66391282</div>
+            </div>
+            <div class="col-lg-auto col-sm-4 col-12 mb-lg-0 mb-sm-3">
+                <div class="text-big fontResize text-big-imp">CIN</div>
+                <div class="text-bold fontResize">U67190MH1995PTC093356</div>
+            </div>
+        </div>
+        
+        
+        <div class="row text-center Mutual-size" >
+            <div class="desktop-view">
+                <!-- Content visible on desktop -->
+                <span
+                 class="fontResize footer-Copyright-Hanken ">Copyright © 1999-2024. Franklin Templeton Investments. All Rights Reserved</span>
+            </div>
+            <div class="desktop-view pt-4">
+                <span
+                 class="fontResize Copyright">Franklin Templeton Asset Management (India) Pvt. Ltd</span>
+            </div>
+            <div class="desktop-view">
+                <span
+                 class="fontResize Copyright ">Registered Office: One International Centre, Tower 2, 12th & 13th Floor, Senapati Bapat Marg, Elphinstone (West) Mumbai-400013.</span>
+            </div>
+            <div class="desktop-view">
+                <span
+                 class="fontResize Copyright ">CIN: U67190MH1995PTC093356</span>
+            </div>
+            <div class="desktop-view">  
+                <span
+                 class="fontResize Copyright ">Telephone No: 022-67519100; Fax No: 022- 66391282</span>
+            </div>
+            <div class="desktop-view">
+                <span
+                 class="fontResize Copyright ">For queries or grievances:grievanceredressal@franklintempleton.com</span>
+            </div>
+        </div>
+        <div class="row text-center Mutual-size">
+            <div class="desktop-view">
+                <!-- Content visible on desktop -->
+                <span  class="fontResize Mutual-font" >Mutual Fund investments are subject to market risks, read all scheme
+                    related
+                    documents carefully.</span>
+            </div>
+
+            <div class="mobile-view">
+                <!-- Content visible on mobile only -->
+                <span class="fontResize mobile-font">Mutual Fund investments are subject to market risks, read all scheme
+                    related
+                    documents carefully.</span>
+            </div>
+        </div>
+        <div class="copyrights footer-copyright">
+            <div class="container">
+                <div class="row algin-items-center justify-content-between fontResize">
+                    <div class="col-auto">Franklin Templeton Asset Management (India) Pvt. Ltd</div>
+                    <!-- <div class="col-auto">Non Copyrighted © 2022 Design and upload by Gozoop</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

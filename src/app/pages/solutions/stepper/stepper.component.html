@@ -1,0 +1,305 @@
+<div class="">
+    <div class="accordion" id="accordionExample">
+        <div class="steps" id="stepHeader">
+            <!-- <progress id="progress" value=0 max=100></progress> -->
+            <div class="step-item d-flex flex-row active" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne" disabled>
+                <button class="step-button text-center" type="button">
+                    <img *ngIf="!stepperArray[0].hasTraversed" src="assets/images/solutions/profile.png">
+                    <img *ngIf="stepperArray[0].hasTraversed" src="assets/images/general/check_circle.svg">
+                </button>
+                <div class="step-title fontResize"
+                    [ngStyle]="{'color': stepperArray[0].hasTraversed ? 'rgba(60, 66, 93, 1)' : ''}"> Your Details
+                </div>
+            </div>
+            <div class="stip-line col-2 text-center">
+                <img *ngIf="!stepperArray[0].hasTraversed" src="assets/images/solutions/Line 976.png">
+                <img *ngIf="stepperArray[0].hasTraversed" src="assets/images/solutions/Line 9761.png">
+            </div>
+
+            <div class="step-item d-flex flex-row" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+                <button class="step-button text-center collapsed" type="button" disabled>
+                    <img *ngIf="!stepperArray[1].hasTraversed" src="assets/images/solutions/gps.png">
+                    <img *ngIf="stepperArray[1].hasTraversed" src="assets/images/general/check_circle.svg">
+                </button>
+                <div class="step-title fontResize"
+                    [ngStyle]="{'color': stepperArray[1].hasTraversed ? 'rgba(60, 66, 93, 1)' : ''}"> Planning my goal
+                </div>
+            </div>
+            <div class="stip-line col-2 text-center">
+                <img *ngIf="stepperArray[1].hasTraversed" src="assets/images/solutions/Line 9761.png">
+                <img *ngIf="!stepperArray[1].hasTraversed" src="assets/images/solutions/Line 976.png">
+            </div>
+            <div class="step-item d-flex flex-row" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                aria-expanded="false" aria-controls="collapseThree">
+                <button class="step-button text-center collapsed" type="button" disabled>
+                    <img src="assets/images/solutions/documenttext.png">
+                </button>
+                <div class="step-title fontResize"> My goal summary </div>
+            </div>
+        </div>
+        <div *ngIf="showclass" class="steps1 share-menu-twitter" >
+
+        </div>
+        <div class="container">
+            <!-- stepper step one -->
+            <div id="collapseOne" class="collapseOne collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <!-- <div id="headingOne"> </div> -->
+                <div class="d-md-none mobile-card-header">
+                    <div class="you-details">
+                        <img src="assets/images/solutions/profile1.png">
+                        <h5 class="mt-2 fontResize">Your Details</h5>
+                    </div>
+                    <span class="fontResize">
+                        To enjoy a happy comfirtable retired life, you need to start building your safety net right now
+                        find out below using our retirement planning calculator
+                    </span>
+                </div>
+
+                <div class="card goal-cards">
+                    <div class="d-none card-header goal-cards-heading d-md-flex">
+                        <div>
+                            <img src="assets/images/solutions/profile1.png">
+                        </div>
+                        <span>
+                            <h5 class="mt-2 fontResize">Share Your Details</h5>
+                            Get your customised plan by providing below essential information
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="planDetailsForm">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="form-sec-wrap d-flex flex-row justify-content-between flex-wrap row-gap">
+
+                                        <!-- Name -->
+                                        <div class="col-6 col-sm-8  row-title fontResize">
+                                            What is your name?
+                                        </div>
+                                        <div class="col-6 col-sm-4 ">
+                                            <input type="text" class="form-control" placeholder="Your name" tabindex="1"
+                                                formControlName="name">
+                                        </div>
+
+                                        <!-- Age -->
+                                        <div class="col-8 row-title fontResize">
+                                            How old are you?
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="number" class="form-control"
+                                                value="{{planDetailsForm.value?.age}}" placeholder="20 years"
+                                                (input)="onEarningChange($event ,'age',100)" tabindex="2">
+                                        </div>
+                                        <div class="text-end col-12 fund-AUM"
+                                            *ngIf="_planDetailsForm['age'].errors?.['min']">
+                                            <span class="alert-danger fontResize">Minimum
+                                                Age is 20.
+                                            </span>
+                                        </div>
+                                        <div class="range-slider col-12 share-menu-twitter-fund">
+                                            <input type="range" formControlName="age" 
+                                                #ageInput class="custom-range"
+                                                value="{{planDetailsForm.value?.age}}" min="20" max="100"
+                                                id="customRange1">
+                                            <div class="d-flex text-small justify-content-between">
+                                                <span class="fontResize">20 year</span>
+                                                <span class="fontResize">100 year</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Retirement age -->
+                                        <div class="col-8 row-title fontResize">
+                                            In how many years do you plan to retire?
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" class="form-control"
+                                                value="{{planDetailsForm.value?.retirementAgeLeft}}" tabindex="3"
+                                                (input)="onEarningChange($event ,'retirementAgeLeft',40)"
+                                                placeholder="1 year">
+                                        </div>
+                                        <div class="range-slider col-12 share-menu-twitter-fund">
+                                            <input type="range" formControlName="retirementAgeLeft" class="custom-range"
+                                                #retirementAgeLeftInput
+                                                value="{{planDetailsForm.value?.retirementAgeLeft}}" min="1" max="40"
+                                                id="customRange1">
+                                            <div class="d-flex text-small justify-content-between">
+                                                <span class="fontResize">1 year</span>
+                                                <span class="fontResize">40 year</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Retirement Amount -->
+                                        <div class="col-8 row-title fontResize">
+                                            How much should the Retirement amount be, if you were to retire today?
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" class="form-control"
+                                                value="{{planDetailsForm.value?.retirementAmount}}" tabindex="4"
+                                                (input)="onEarningChange($event ,'retirementAmount',9900000)"
+                                                placeholder="₹ 1,00,000">
+                                        </div>
+                                        <div class="text-end col-12 fund-AUM" 
+                                            *ngIf="_planDetailsForm['retirementAmount'].errors?.['min']">
+                                            <span class="alert-danger fontResize">Minimum Goal Amount is 1,00,000</span>
+                                        </div>
+                                        <div class="range-slider col-12 share-menu-twitter-fund">
+                                            <input type="range" formControlName="retirementAmount" class="custom-range"
+                                                #retirementAmountInput
+                                                value="{{planDetailsForm.value?.retirementAmount}}" min="100000"
+                                                max="9900000" id="customRange1">
+                                            <div class="d-flex text-small justify-content-between">
+                                                <span class="fontResize">₹1 lakh</span>
+                                                <span class="fontResize">₹99 crore</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Equity percentage -->
+                                        <ng-container
+                                            *ngIf="planDetailsForm.value?.retirementAgeLeft>5 && planDetailsForm.value?.age>20">
+                                            <div class="col-8 row-title fontResize">
+                                                How much equity risk are you comformtable with?
+                                            </div>
+                                            <div class="col-4">
+                                                <input type="text" class="form-control"
+                                                    value="{{planDetailsForm.value?.equityRiskPercentage}}" tabindex="5"
+                                                    (input)="onEarningChange($event ,'equityRiskPercentage',100)"
+                                                    placeholder="Equity percentage">
+                                            </div>
+                                            <div class="range-slider col-12 share-menu-twitter-fund">
+                                                <input 
+                                                    type="range" 
+                                                    formControlName="equityRiskPercentage" 
+                                                    step="1"
+                                                    #equityRiskPercentageInput
+                                                    class="custom-range"
+                                                    value="{{planDetailsForm.value?.equityRiskPercentage}}" 
+                                                    min="0"
+                                                    max="100" id="customRange1">
+                                                <div class="d-flex text-small justify-content-between">
+                                                    <span class="fontResize">0%</span>
+                                                    <span class="fontResize">100%</span>
+                                                </div>
+                                            </div>
+                                        </ng-container>
+
+                                        <!-- Inflation Risk -->
+                                        <div class="col-8 row-title fontResize">
+                                            Applied inflation rate
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" value="{{planDetailsForm.value?.inflationRate}}"
+                                                tabindex="6" (input)="onEarningChange($event ,'inflationRate',15)"
+                                                class="form-control" placeholder="6%">
+                                        </div>
+                                        <div class="range-slider col-12 share-menu-twitter-fund">
+                                            <input type="range" formControlName="inflationRate" class="custom-range"
+                                                #inflationRateInput
+                                                value="{{planDetailsForm.value?.inflationRate}}" min="0" max="15"
+                                                id="customRange1">
+                                            <div class="d-flex text-small justify-content-between">
+                                                <span class="fontResize">0%</span>
+                                                <span class="fontResize">15%</span>
+                                            </div>
+                                        </div>
+                                        <span *ngIf="showCalculatedGoalAmt"
+                                            class="d-flex flex-row justify-content-between calculated-goal-amt col-12 mb-3">
+                                            <div class="fontResize">
+                                                Future value of goal amount is <br>
+                                                <span class="showIconForWatchlist">*This value accounts for inflation</span>
+                                            </div>
+                                            <div class="fontResize share-btn-fund">
+                                                ₹5,00,000
+                                            </div>
+                                        </span>
+                                        <div class="container col-12">
+                                            <button *ngIf="showCalculatedGoalAmt" href="#accordionExample" type="button"
+                                                class="btn btn-primary w-100 fontResize" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo" (click)="changeActiveStepper(1)">Choose
+                                                Your Plan</button>
+                                            <button *ngIf="!showCalculatedGoalAmt " type="button"
+                                                class="btn btn-primary w-100 fontResize">Plan
+                                            </button>
+                                            <span class="row footer-text fontResize"><span class="star-icon fontResize">*</span>
+                                                &nbsp;&nbsp;It may be noted that this is a simplified solution based on
+                                                inputs from users and is
+                                                purely for illustration purpose and is not an investment advice. We have
+                                                not considere the financial status of the users and the Goals mentioned
+                                                herein are only for reference. Users are requested to consult their
+                                                tax/investment advisors before investing based on the outcome of this
+                                                exercise.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 stepper-card-wrap">
+                                    <div class="stepper-card">
+                                        <span class="mb-1 heading fontResize"> {{contentData.title}} Plan</span>
+                                        <img class="img-fluid" src="assets/images/solutions/Rectangle18.png">
+                                        <span class="image-text fontResize">
+                                            {{solutionContent}}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- stepper step two -->
+            <div id="collapseTwo" class="collapseTwo collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <!-- <div id="headingTwo"> </div> -->
+                <div class="card goal-cards">
+                    <div class="card-header goal-cards-heading d-flex">
+                        <div class="card-user-name">
+                            <div>
+                                <img src="assets/images/solutions/gps.png">
+                            </div>
+                            <span>
+                                <h5 class="mt-2 fontResize">Hello {{initialFormValue?.name}}</h5>
+                                <span class="d-none d-md-block fontResize">Based on the information you provided us, here how you can plan your goal.</span>
+                            </span>
+                        </div>
+                        <div class="d-md-none fontResize">Based on the information you provided us, here how you can plan your goal.</div>
+                    </div>
+
+                    <div *ngIf="stepperArray[0].hasTraversed" class="card-body planner">
+                        <app-stepper-s2-goal-planner id="step1"
+                            (backToStepper)="backTosteps($event)"></app-stepper-s2-goal-planner>
+                    </div>
+                </div>
+            </div>
+
+            <!-- stepper step three -->
+            <div id="collapseThree" class="collapseThree collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="card goal-cards">
+                    <div class="card-header goal-cards-heading d-flex">
+                        <div class="card-user-name">
+                            <div>
+                                <img src="assets/images/solutions/Frame11.png">
+                            </div>
+                            <span>
+                                <h5 class="mt-2 fontResize">My goal sumary</h5>
+                                <span class="d-none d-md-block fontResize">
+                                    Hello {{initialFormValue?.name}}, Based on the information you provided us, here is a summary for your Child's Education plan
+
+                                </span>
+                            </span>
+                        </div>
+                        <div class="d-md-none fontResize">
+                            Hello {{initialFormValue?.name}}, Based on the information you provided us, here is a summary for your Child's Education plan
+                        </div>
+                    </div>
+                    <div *ngIf="stepperArray[1].hasTraversed" class="card-body">
+                        <app-stepper-s3-goal-summary [allFunds]="allFunds" [yourDetails]="initialFormValue"
+                            [planDetails]="contentData"
+                            (backToStepper2)="backTostep2($event)"></app-stepper-s3-goal-summary>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

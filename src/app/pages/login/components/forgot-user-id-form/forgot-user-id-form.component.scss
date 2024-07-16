@@ -1,0 +1,105 @@
+.form-box {
+    min-height: auto;
+    padding: 32px;
+
+    .form-group {
+        margin-bottom: 40px;
+    }
+}
+
+.otp-wraper {
+    .backFromOtp {
+        display: inline-block;
+        line-height: 11px;
+        font-size: 23px;
+        color: #777777;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+    >p {
+        color: #00847D;
+        margin-bottom: 23px;
+    }
+
+    >input {
+        margin-bottom: 19px;
+    }
+}
+
+// a{
+//     color: blue;
+//     cursor: pointer;
+// }
+// a:hover{
+//     text-decoration: underline;
+// }
+
+// a {
+//     position: relative;
+//     text-decoration: none;
+// }
+
+// a:after {
+//     content: "";
+//     position: absolute;
+//     background-color: #3769ff;
+//     height: 1.5px;
+//     width: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: -2px;
+// }
+
+// a:hover:after {
+//     width: 100%;
+// }
+
+@media (max-width:778.91px) {
+    .FT-login-form .form-head h2 {
+        font-size: 1.25rem;
+    }
+}
+
+//
+
+.share-menu-twitter {
+    margin-bottom: 16px;
+}
+
+.share-menu-twitter-fund {
+    margin-bottom: 23px;
+}
+
+.share-btn-fund {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 40px;
+}
+
+.fund-AUM {
+    display: flex;
+    justify-content: space-between;
+}
+
+.showIconForWatchlist {
+    margin-top: 10px;
+}
+
+// .audio-box {
+//     height: 6px;
+// }
+
+// .podcast-block {
+//     height: 61px;
+// }
+
+// .audio-class-box {
+//     border-radius: 4px;
+//     background: #F0F6FF;
+//     padding: 0px 10px 0px 5px;
+// }
+
+// .podcast-img-box {
+//     margin-left: -9px;
+// }

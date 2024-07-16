@@ -1,0 +1,620 @@
+ // Media query for desktop view
+ @media screen and (min-width: 768px) {
+     .mobile-view {
+         display: none; // Hide on desktop
+     }
+
+     .desktop-view {
+         display: block; // Show on desktop
+     }
+ }
+
+ @media(min-width: 992px) {
+     .empty-cart-wraper {
+         margin-top: 0px !important;
+     }
+ }
+
+ // Media query for mobile view
+ @media screen and (max-width: 767px) {
+     .desktop-view {
+         display: none; // Hide on mobile
+     }
+
+     .mobile-view {
+         display: block; // Show on mobile
+     }
+
+     .forNavsInputBox {
+         width: 100% !important;
+     }
+ }
+
+ @media(max-width: 767.98px) {
+     .FT-all-funds {
+         padding-top: 0px;
+         padding-bottom: 20px;
+     }
+
+     .FT-navs-alerts {
+         padding-top: 45px;
+     }
+
+     .Nav-title-content .Nav-heading {
+         font-size: 1.25rem !important;
+     }
+ }
+
+ @media(max-width: 991.98px) {
+     .watchlist-funds {
+         background: #fff !important;
+     }
+ }
+
+ @media(max-width: 767.98px) {
+     .watchlist-funds .watchlist-box .funds-container {
+         padding: 0 0px !important;
+     }
+
+     .add-watchlist-funds {
+         border-top: none !important;
+     }
+
+     .for-watchlist-box {
+         border-right: none !important;
+     }
+
+     .form-control1 {
+         width: 149% !important;
+         border: 0.776786px solid #D2D8EA;
+         box-shadow: 0px 0.776786px 1.55357px rgba(16, 24, 40, 0.05) !important;
+         border-radius: 6.21429px;
+         height: 45px;
+         padding: 13px 16px;
+         font-size: 0.875rem;
+         outline: none !important;
+     }
+
+     .forSubmitButton {
+         height: 45px;
+         padding: 10px 49px 10px 49px !important;
+     }
+
+     .container-scroll {
+         padding-top: 4px;
+         height: auto !important;
+         overflow-y: none !important;
+     }
+
+     .for-content {
+         width: 80%;
+         margin-left: 41px;
+     }
+ }
+
+ .mobile-view {
+     i {
+         font-size: 1.563rem;
+     }
+
+     margin-top: -15px;
+     margin-bottom: 35px;
+ }
+
+ .contact-box {
+     padding: 19px;
+     border-radius: 7px;
+     background: #FFF;
+     box-shadow: 0px 2px 11.81px 0px rgba(0, 0, 0, 0.1);
+ }
+
+ .forNavsInputBox {
+     width: 30%;
+ }
+
+ .form-control1 {
+     width: 164%;
+     border: 0.776786px solid #D2D8EA;
+     box-shadow: 0px 0.776786px 1.55357px rgba(16, 24, 40, 0.05) !important;
+     border-radius: 6.21429px;
+     height: 45px;
+     padding: 13px 16px;
+     font-size: 0.875rem;
+     outline: none !important;
+ }
+
+ // .my-card1 {
+ // 	width: (378px);
+ // 	// width: 40%;
+ // 	margin: auto;
+ // 	height: (50px);
+ // 	padding: 12px 14px;
+ // 	border-radius: 8px;
+ // 	background: linear-gradient(90.29deg, #583EE7 26.99%, #0EA0E6 50.09%, #00B6AE 74.69%);
+ //     position: absolute;
+ //     content: "";
+ //     border-bottom: 1px solid rgba(210, 216, 234, 1);
+ //     width: 80%;
+ //     transform: translateX(-50%);
+ //     top: 217px;
+ //     left: 50%;
+
+ // 	// padding-bottom: 20px;
+ // 	// border-bottom: 1px solid rgba(210, 216, 234, 1);
+ // 	// gap: 57px;
+ // 	&::after {
+ // 		position: absolute;
+ // 		content: "";
+ // 		border-top: 1px solid rgba(210, 216, 234, 1);
+ // 		width: 100%;
+ // 		transform: translateX(-50%);
+ // 		top: 97px;
+ // 		left: 50%;
+ // 	}
+ // }
+
+ .foraddLine {
+     position: absolute;
+     border-top: 1px solid rgba(210, 216, 234, 1);
+     width: 100%;
+     transform: translateX(-50%);
+     top: 97px;
+     left: 50%;
+
+ }
+
+ .FT-all-funds {
+     background: #fff;
+ }
+
+ // .FT-all-funds .filter-options .form-group .form-control {
+ //     width: 67%;
+ //     height: 39px;
+ // }
+
+ .scrollable-tabs {
+     // width: 100%; /* Set a fixed width or a percentage */
+     overflow-x: auto;
+     white-space: nowrap;
+     /* Prevent button wrapping to the next line */
+ }
+
+ .nav-tabs {
+     display: inline-flex;
+     /* Make sure the tabs stay in one line */
+ }
+
+
+ /* Style scrollbar for WebKit-based browsers */
+ .scrollable-tabs::-webkit-scrollbar {
+     width: 1px !important;
+     /* Width of the scrollbar */
+     height: 7px !important;
+ }
+
+ .scrollable-tabs::-webkit-scrollbar-thumb {
+     background-color: #ccc;
+     /* Color of the scrollbar thumb */
+ }
+
+ .search-result1 {
+     // padding: 8px;
+     width: 88%;
+     border-radius: 8px;
+     border: 1px solid #F2F4F7;
+     background: #fff;
+     // box-shadow: 0px 0px 5px gray;
+     font-size: 1rem;
+     font-weight: 500;
+     letter-spacing: -0.48px;
+     position: absolute;
+     z-index: 999;
+     margin-top: 10px;
+     opacity: 0;
+     visibility: hidden;
+
+     .inner1 {
+         // width: 89%;
+         border-radius: 8px;
+         max-height: 400px;
+         overflow-y: auto;
+         padding-top: 5px;
+         // padding: 8px 16px;
+         box-shadow: 0px 0px 5px gray;
+
+         .funds-seach-title1 {
+             padding: 8px 10px;
+         }
+
+     }
+
+     .sub1 {
+         display: inline-block;
+         font-size: 0.875rem;
+         font-weight: 400;
+         letter-spacing: -0.42px;
+         color: #595A6C;
+         position: relative;
+         margin-left: 8px;
+
+         .text-gray {
+             color: #8189A2
+         }
+
+         &::before {
+             content: "";
+             display: inline-block;
+             width: 4px;
+             height: 4px;
+             border-radius: 50%;
+             background: var(--black);
+             margin-right: 8px;
+         }
+     }
+ }
+
+ .search:focus+.search-result1 {
+     opacity: 1;
+     visibility: visible;
+ }
+
+ .add-watchlist-funds {
+     border-top: 1px solid rgba(210, 216, 234, 1);
+ }
+
+ .for-watchlist-box {
+     border-right: 1px solid rgba(210, 216, 234, 1);
+ }
+
+ .nav-tabs {
+     border: 0;
+     border-bottom: 1px solid #D2D8EA;
+     flex-wrap: nowrap;
+     overflow: auto;
+     scrollbar-width: none;
+ }
+
+ .nav-tabs {
+     display: inline-flex;
+ }
+
+ .mobile-resend-otp {
+     font-size: 0.813rem;
+     color: #3769FF;
+ }
+
+ .web-resend-otp {
+     margin-left: 12%;
+     margin-top: 0.9%;
+     font-size: 0.813rem;
+     color: #3769FF;
+ }
+
+
+ .forSubmitButton {
+     height: 45px;
+     padding: 10px 61px 10px 61px;
+ }
+
+ .container-scroll {
+     padding: 4px 5px 0px 5px;
+     height: 414px;
+     overflow-y: scroll;
+ }
+
+ .for-selected-fund {
+     font-size: 1rem;
+     font-weight: 600;
+     color: #3C425D;
+ }
+
+ .Nav-title-content {
+     .Nav-heading {
+         font-size: 2rem;
+         font-weight: 600;
+         line-height: 42px;
+         letter-spacing: -0.03em;
+         text-align: left;
+         color: #3769FF;
+     }
+
+     .for-proceed-with-fund {
+         position: fixed;
+         top: 83%;
+         z-index: 9999;
+         width: -webkit-fill-available;
+         margin-right: 9%;
+         height: 49px;
+     }
+
+ }
+
+ .line {
+     width: 96px;
+     height: 2px;
+     position: absolute;
+     top: 17px;
+     left: 39%;
+     border: 2px solid #959595;
+     background: #959595;
+ }
+
+
+
+
+
+
+ @media (max-width: 778px) {
+     .email-nav {
+         gap: 0px !important;
+         display: flex;
+         white-space: nowrap;
+         margin-right: 20px;
+     }
+
+     .form-check-input {
+         width: 1em !important;
+         height: 1em !important;
+     }
+
+     .last-email-nav {
+         gap: 0px !important;
+         flex-wrap: wrap;
+     }
+
+     .nav-first-name {
+         font-size: 15px !important;
+     }
+
+     .discl-nav {
+         font-size: 14px !important;
+     }
+
+     .watchlist-funds .tab-head .nav-tabs .nav-link {
+         font-size: 14px !important;
+         padding: 10px 10px !important;
+         font-weight: 500;
+     }
+
+     .date-pick-nav {
+         position: relative;
+         right: 0px !important;
+     }
+
+     .nav-button {
+         justify-content: center !important;
+     }
+
+     .filter-footer {
+         background: #F2F2F2;
+         padding: 16px 12px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 12px;
+
+         .btn {
+             width: 50%;
+             height: 47px;
+             font-size: 1rem;
+             font-weight: 700
+         }
+     }
+ }
+
+ @media (min-width: 372px) and (max-width: 375px) {
+
+     .last-email-nav,
+     .email-nav {
+         font-size: 12px !important;
+     }
+
+     form .form-control,
+     form .form-select,
+     form .date-group {
+         height: 40px !important;
+     }
+ }
+
+ .channel-section {
+     font-size: 1.125rem;
+     font-weight: 600;
+     line-height: 23px;
+     letter-spacing: -0.03em;
+     text-align: left;
+     color: #595A6C;
+ }
+
+ .msg-number {
+     color: #F04438;
+ }
+
+ .submit-content {
+     display: flex;
+ }
+
+ .Reset-OTP {
+     height: 45px;
+     background: #FFFFFF;
+ }
+
+ .submit-section {
+     height: 45px;
+ }
+
+ .password-OTP {
+     font-size: 1.125rem;
+     font-weight: 600;
+     line-height: 23px;
+     letter-spacing: -0.03em;
+     text-align: left;
+     color: #00847D;
+ }
+
+ .channel-block {
+     font-size: 18px;
+     line-height: 23px;
+     letter-spacing: -0.03em;
+     text-align: left;
+     color: #595A6C;
+ }
+
+ .email-address {
+     font-size: 18px;
+     line-height: 23px;
+     letter-spacing: -0.03em;
+     text-align: left;
+     color: #00847D;
+ }
+
+ .getButton-index {
+     z-index: 99999;
+ }
+
+ .Reset-block {
+     height: 39px;
+     background: #FFFFFF;
+     margin-right: 5px;
+     width: 123px;
+ }
+
+ .Subscribe-block {
+     height: 39px;
+     margin-left: 5px;
+     width: 123px;
+ }
+
+ .calendar-inline {
+     position: relative;
+     right: 24rem;
+ }
+
+ .funds-data {
+     margin-top: 10px;
+ }
+
+ .myTab-element {
+     margin-bottom: 3px;
+ }
+
+ .fund-selected {
+     margin-left: 5px;
+ }
+
+ .fund-franklin-size {
+     position: relative;
+     z-index: 999999;
+ }
+
+ .close-btn-img {
+     position: relative;
+     left: -434%;
+     top: -3px;
+ }
+
+ .close-button {
+     position: relative;
+     left: -867%;
+     top: 0px;
+ }
+
+ .wrapper {
+     height: 500px;
+     overflow-y: scroll;
+     scrollbar-width: thin;
+ }
+
+ .fund-name {
+     font-size: 1rem;
+     text-align: left;
+     padding: 10px 10px 10px 10px;
+     background: #F0F6FF;
+ }
+
+ .navTitle-head {
+     border-collapse: collapse;
+     width: 80%;
+     margin: 1.5em;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 0.85em;
+ }
+
+ .title-frame {
+     border-bottom: 1px solid #ccc;
+ }
+
+ .api-title {
+     font-size: 0.875rem;
+     font-weight: 500;
+     text-align: left;
+     color: #3C425D;
+     padding: 6px;
+ }
+
+ .Frame-img {
+     width: 30%;
+     text-align: right;
+ }
+
+ .fund-select {
+     color: red;
+ }
+
+ .offcanvas-body-content {
+     height: 55%;
+     border-top-left-radius: 39px;
+     border-top-right-radius: 39px;
+     z-index: 99999;
+ }
+
+ .sort-by {
+     font-weight: 600;
+ }
+
+ .Returns-SWP {
+     font-size: 0.938rem;
+     font-weight: 600;
+     margin-top: 10px;
+ }
+
+ .High-low {
+     font-size: 0.938rem;
+ }
+
+ .Cancel-content {
+     width: 233px;
+     height: 50px;
+     font-size: 1.25rem;
+     font-weight: 600;
+ }
+
+ .Apply-block {
+     height: 100%;
+     padding: 0px 14px;
+     background: #F0F6FF;
+ }
+
+ .nav-alert-funds {
+     background-color: #112138;
+     height: 100px;
+     width: 100%;
+ }
+
+ .frequency-fund {
+     font-size: 0.875rem;
+     font-weight: 500;
+     text-align: left;
+     color: #3C425D;
+     padding: 6px;
+ }
+
+ .frequency-fund-risk {
+     width: 30%;
+     text-align: right;
+ }
+ .frequency-fund-data{
+    font-size: 1rem;
+ }
+ .general-close{
+    z-index:10000
+ }

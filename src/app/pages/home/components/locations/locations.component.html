@@ -1,0 +1,317 @@
+<!-- start invest btns block -->
+<section class="FT-invest-btns text-center">
+    <div class="container pt-1">
+        <button type="button" class="btn btn-outline-primary fontResize" data-bs-toggle="modal"
+            data-bs-target="#callBack" (click)="clearFields()">Request a call back</button>
+        <a [routerLink]="['/invest']" class="btn btn-primary fontResize">Invest Now</a>
+    </div>
+</section>
+
+<!-- start section locations -->
+<section class="FT-locations">
+    <div class="container">
+        <div class="text-center">
+            <div class="FT-title fontResize">Experience Innovative Funds from a Global Leader in Finance</div>
+            <div class="text-big locations-description fontResize">
+                Benefit from the unparalleled track record of a global leader to achieve your financial goals
+            </div>
+        </div>
+        <div class="d-relative">
+            <div id="map-statistics-block" [class.d-none]="isVideoPlaying" class="statistics-block d-none">
+
+                <div class="">
+                    <h1>Franklin Templeton India</h1>
+                    <div class="franklin-grid" id="franklin-grid2">
+                        <span class="tooltip tooltip-box-vector " id="tooltip1" (mouseover)="onMouseOver($event)" (mouseleave)="onMouseOut($event)"><img 
+                                src="assets/images/home/Vector (4).svg" alt="img" class="vector">
+                            <span id ="tooltip123" class="tooltip-box">Lorem Ipsum is simply dummy text.</span>
+                        </span>
+                        <div class="box green">
+                            <img src="assets/images/home/Group.svg" alt="img" class="Group-img">
+                            <p>30+</p>
+                            <div class="flex-container">
+                                <p>MF Schemes</p>
+                                <!-- <span class="vector1" ><img (mouseenter)="onMouseover($event)" src="assets/images/home/Vector (4).svg" alt="img" class="vector"
+                                >
+                                <span class="tooltip-box">Save to watchlist</span>
+                                </span>        -->
+                            </div>
+                        </div>
+                        <div class="box pink">
+                            <img src="assets/images/home/Vector (1).svg" alt="img" class="Group-img">
+                            <p>290+</p>
+                            <div class="flex-container">
+                                <p>Servicing Branches</p>
+                                <!-- <span><img src="assets/images/home/Vector (4).svg" alt="img" class="vector"></span> -->
+                            </div>
+
+                        </div>
+                        <div class="box yellow">
+                            <img src="assets/images/home/Vector (2).svg" alt="img"  class="vector-img">
+                            <p>₹ 62,379 Cr</p>
+                            <div class="flex-container">
+                                <p>AUM as of Mar 2023</p>
+                                <!-- <span><img src="assets/images/home/Vector (4).svg" alt="img" class="vector"></span> -->
+                            </div>
+                        </div>
+                        <div class="box blue">
+                            <img src="assets/images/home/Vector (3).svg" alt="img" class="vector-third">
+                            <p>50 Lacs+</p>
+                            <div class="flex-container">
+                                <p>Entrusted Indian Investors</p>
+                                <!-- <span><img src="assets/images/home/Vector (4).svg" alt="img" class="vector"></span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- global-strength.component.html -->
+            <div id="map-statistics-block-new" [class.d-none]="isVideoPlaying" class="statistics-block2 d-none">
+                <div class="">
+                    <h1 class="h1 head head2">Our Global Strength</h1>
+                    <div class="gridd">
+                        <div class="boxx">
+                            <p class="number">$1.6tn</p>
+                            <p class="label">(USD) total assets under management</p>
+                        </div>
+                        <div class="boxx">
+                            <p class="number">75+</p>
+                            <p class="label">years of asset management experience</p>
+                        </div>
+                        <div class="boxx">
+                            <p class="number">1500+</p>
+                            <p class="label">investment professionals in 25 countries.</p>
+                        </div>
+                        <div class="boxx">
+                            <p class="number">10000+</p>
+                            <p class="label">employees globally</p>
+                        </div>
+                    </div>
+                    <p class="disclaimer disclaimer-para ">
+                        Disclaimer:
+                        <span class="disclaimer-label"> World Map used for illustration purpose only. Map of India is
+                            used for illustration purpose only. It is not a political map of India.
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="location-img-block text-center location-image">
+                <ng-container *ngIf="isMediaTypeVideo;else imageSection">
+                    <video playsinline type="video/mp4" [src]="mediaSrc" class="w-100 d-none d-lg-block" id="map-video"
+                        muted></video>
+
+                    <video [src]="mediaSrc" playsinline type="video/mp4" class="w-100 d-lg-none" id="map-video-mobile"
+                        autoplay muted></video>
+                </ng-container>
+                <!-- will be based on size of image -->
+                <ng-template #imageSection>
+                    <img src="assets/images/home/fund3.png" class="img-fluid">
+                </ng-template>
+            </div>
+        </div>
+        <div class="text-center">
+            <a [routerLink]="['/about-us']" class="more-links fontResize"><span>Learn more about us</span><i
+                    class="bi bi-chevron-right ms-3"></i></a>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="callBack" tabindex="-1" aria-labelledby="callBackLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title fontResize" id="callBackLabel">Share your details and we will guide you in your
+                    investment
+                    journey.</div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="investNowForm" *ngIf="!otpRequired">
+                    <div class="row gx-3">
+                        <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+                            <input type="text" class="form-control" formControlName="name" placeholder="Your name">
+                            <div
+                                *ngIf="investNowForm?.get('name')?.hasError('required') && !investNowForm?.get('name')?.value && investNowForm?.get('name')?.touched">
+                                <!-- <i  ="color: #F04438;" class="bi bi-exclamation-circle"></i> -->
+                                <span  class="error-msg fontResize required-color">Name is required.</span>
+                            </div>
+                        </div>
+
+                        <!-- </div>
+                <div class="row gx-3"> -->
+                        <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+                            <input type="text" class="form-control" (keydown)="blockAlphabetsAndSpecialChars($event)"
+                                formControlName="phone" placeholder="Mobile Number" maxlength="10">
+                            <div
+                                *ngIf="investNowForm?.get('phone')?.hasError('required') && !investNowForm?.get('phone')?.value && investNowForm?.get('phone')?.touched">
+                                <span  class="error-msg fontResize required-color">Mobile Number is
+                                    required.</span>
+                            </div>
+                            <div
+                                *ngIf="investNowForm?.get('phone')?.hasError('invalidPhone') && !investNowForm?.get('phone')?.hasError('required') && investNowForm?.get('phone')?.touched">
+                                <span  class="error-msg fontResize required-color">Invalid phone number (10
+                                    digits
+                                    only).</span>
+                            </div>
+                        </div>
+                        <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+                            <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                            <div
+                                *ngIf="investNowForm?.get('email')?.hasError('required') && !investNowForm?.get('email')?.value && investNowForm?.get('email')?.touched">
+                                <span  class="error-msg fontResize required-color">Email is required.</span>
+                            </div>
+                            <div
+                                *ngIf="investNowForm?.get('email')?.hasError('pattern') && !investNowForm?.get('email')?.hasError('required') && investNowForm?.get('email')?.touched">
+                                <span  class="error-msg fontResize required-color">Please enter vaid email
+                                    ID</span>
+                            </div>
+                        </div>
+                        <div class="form-group" [ngClass]="{'col-12': isSmall, 'col-6 mb-3': !isSmall}">
+                            <select class="form-select fontResize" aria-label="Query list" formControlName="query"
+                                (change)="onSelect()">
+                                <option value="" disabled>Query</option>
+                                <option value="Fund related">Fund related</option>
+                                <option value="Service related">Service related</option>
+                                <option value="Statements related">Statements related</option>
+                                <option value="Login related">Login related</option>
+                            </select>
+                            <div
+                                *ngIf="investNowForm?.get('query')?.hasError('required') && !investNowForm?.get('query')?.value && investNowForm?.get('query')?.touched">
+                                <span class="error-msg fontResize required-color">Query is required.</span>
+                            </div>
+                        </div>
+                        <!-- </div>
+                <div class="row gx-3"> -->
+                        <div class="form-group col-12 mb-3" *ngIf="showTextArea">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="remarks"
+                                placeholder="Type your query here"></textarea>
+                            <div
+                                *ngIf="investNowForm?.get('remarks')?.hasError('required') && investNowForm?.get('remarks')?.touched">
+                                <span class="error-msg fontResize required-color">Remarks is required.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-check my-3">
+                        <input class="form-check-input" type="checkbox" value="" (change)="checkboxCondition($event)"
+                            id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            You agree to our <a class="forCallBackLable fontResize" href="#">Privacy
+                                Policy</a>&nbsp;<span>and
+                                &nbsp;<a class="forCallBackLable fontResize" href="#">Terms of Use</a></span>
+                        </label>
+                    </div>
+                    <div class="row gx-3 callBack-footer">
+                        <div class="col-12">
+                            <button class="btn btn-primary fontResize"
+                                [disabled]="!investNowForm.valid || !filedDefaullt" (click)="moveTo()">Submit</button>
+                            <button type="button" class="btn btn-outline-primary fontResize"
+                                data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="container row gx-3 text-center" *ngIf="otpRequired && !otpSubmitted">
+                    <span class="mb-2">
+                        <h5><strong class="fontResize">Please enter OTP</strong></h5>
+                    </span>
+                    <span class="mb-4 fontResize otp-password" >Your one Time Password(OTP) has been sent via
+                        SMS to your
+                        registered mobile number</span>
+                    <div class="container inputfield">
+                        <input type="text" pattern="[0-9]+" maxlength="1" [(ngModel)]="otpNumber[0]"
+                            (keydown)="blockAlphabetsAndSpecialChars($event)" class="input" />
+                        <input type="text" pattern="[0-9]+" maxlength="1" [(ngModel)]="otpNumber[1]"
+                            (keydown)="blockAlphabetsAndSpecialChars($event)" class="input" />
+                        <input type="text" pattern="[0-9]+" maxlength="1" [(ngModel)]="otpNumber[2]"
+                            (keydown)="blockAlphabetsAndSpecialChars($event)" class="input" />
+                        <input type="text" pattern="[0-9]+" maxlength="1" [(ngModel)]="otpNumber[3]"
+                            (keydown)="blockAlphabetsAndSpecialChars($event)" class="input" />
+                        <input type="text" pattern="[0-9]+" maxlength="1" [(ngModel)]="otpNumber[4]"
+                            (keydown)="blockAlphabetsAndSpecialChars($event)" class="input" />
+                        <input type="text" pattern="[0-9]+" maxlength="1" [(ngModel)]="otpNumber[5]"
+                            (keydown)="blockAlphabetsAndSpecialChars($event)" class="input" />
+                    </div>
+                    <div class="d-flex flex-row justify-content-center mt-2">
+                        <ng-container *ngIf="remainingTime > 0; else resendOTP" class="fontResize">
+                            Did not receive OTP?<div  class="fontResize otp-block-color">Active in 0:{{
+                                remainingTime }}</div>
+                        </ng-container>
+                        <ng-template #resendOTP class="fontResize">
+                            Did not receive OTP?<div  class="fontResize otp-block-color"
+                                (click)="resetCountdown()">Resend OTP</div>
+                        </ng-template>
+                    </div>
+                    <div class="row gx-3 callBack-footer mt-4">
+                        <div class="col-12">
+                            <button class="btn btn-primary fontResize Submit-section"
+                                (click)="otpSubmitted=!otpSubmitted;">Submit</button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="container row gx-3 text-center Thankyou-page"  *ngIf="otpSubmitted">
+                    <img src="assets/images/general/check_circle.svg" 
+                        class="checked-img mt-4 mb-2 Thankyou-img">
+                    <span  class="Thankyou-text"><strong class="fontResize">Thankyou! your request has been
+                            registered. A distributor will
+                            contact you within 24 business hours.</strong></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade modal-body-style" id="callBack1" tabindex="-2" aria-labelledby="callBackLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-header-style" >
+        <div class="modal-content modal-content-style">
+            <div class="line"></div>
+            <div class="modal-headerr">
+                <div class="modal-title fontResize share-with-others" id="callBackLabel1" >
+                    Share with others
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row text-center mb-4">
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/home/Framefacebook.png">
+                        </a>
+                        <!-- <span>Facebook</span> -->
+                    </div>
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/home/Frametwitter.png">
+                        </a>
+                        <!-- <span>Twitter</span> -->
+                    </div>
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/home/Framewhatsapp.png">
+                        </a>
+                        <!-- <span>Whatsapp</span> -->
+                    </div>
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/home/Framelinkedin.png">
+                        </a>
+                        <!-- <span>Email</span> -->
+                    </div>
+                </div>
+                <div class="link-block d-flex justify-content-between">
+                    <div class="link fontResize franklintempl-ton" >
+                        https://www.franklintempl...
+                    </div>
+                    <button class="btn btn-outline-primary fontResize">Copy Link</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

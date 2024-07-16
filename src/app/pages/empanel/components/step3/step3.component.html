@@ -1,0 +1,67 @@
+<div>
+    <div class="row">
+        <div class="form-group col-md-8 col-12 mb-4">
+            <input type="text" class="form-control" placeholder="Nominee(s) Name*">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group group-info col-md-4 col-sm-6 col-6 mb-4">
+            <div class="date-group date-input">
+                <input type="date" class="form-control">
+                <img class="share-icon2" src="assets/images/fund/calendar-outline.svg">
+            </div>
+            <!-- <input type="date" class="form-control" placeholder="Date of birth*"> -->
+            <!-- <span class="info-icon">
+                <i class="bi bi-info-circle-fill"></i>
+            </span> -->
+            <span class="img-with-tooltip bookmark-fund" ><img src="assets/images/home/info-icon2.svg"
+                class="d-inline-block mobile-icons light-mode-icon light-info" >
+            <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon dark-mobile-fund" >
+               <span class="tooltip-block">Lorem ipsum dolor sit amet.</span>
+            
+            </span>
+        </div>
+        <!-- <div class="form-group col-md-4 col-sm-6 col-6 mb-4">
+            <input type="text" class="form-control" placeholder="Date of birth*">
+        </div> -->
+        <div class="form-group col-md-4 col-sm-6 col-6 mb-4">
+            <input type="text" class="form-control" placeholder="Relationship">
+        </div>
+        <div class="form-group col-md-4 col-sm-6 col-12 mb-4">
+            <input type="text" class="form-control" placeholder="Guardian(s) Name in case minor">
+        </div>
+        <div class="form-group col-md-4 col-sm-6 col-12 mb-4">
+            <input type="text" class="form-control" placeholder="Address of Nominee/Guardian">
+        </div>
+        <div class="form-group col-md-4 col-sm-6 col-6 mb-4">
+            <select class="form-select">
+                <option selected>Select City*</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        <div class="form-group col-md-4 col-sm-6 col-6 mb-4">
+            <input type="text" class="form-control" placeholder="Pincode*">
+        </div>
+        <div class="form-group col-md-4 col-sm-6 col-6 mb-4">
+            <select class="form-select step3-ac-type">
+                <option selected>ID Proof of Nominee (Optional)</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        <div class="form-group col-md-4 col-sm-6 col-6 mb-4">
+            <input type="text" class="form-control" placeholder="ID Proof Number">
+        </div>
+    </div>
+
+    <div class="btn-options">
+  
+        <button type="button" class="btn btn-outline-primary me-4" (click)="changeActiveStepper(2,false)" data-bs-toggle="collapse" data-bs-target="#collapse2"
+        aria-expanded="false" aria-controls="collapse2">Back</button>
+        <button type="button" class="btn btn-primary" (click)="changeActiveStepper(3,true)" data-bs-toggle="collapse" data-bs-target="#collapse4"
+        aria-expanded="false" aria-controls="collapse4">Next</button>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+.FT-comparefund-accordiandetails {
+	.accordianData {
+		border: none;
+		background: #FFFFFF;
+		box-shadow: 0px 4px 60px rgba(208, 209, 214, 0.24);
+		//rgba(16, 27, 66, 0.24)
+		padding: 16px;
+		border-radius: 4px;
+		gap: 10px;
+
+		.iconImage {
+			display: flex;
+			align-items: center;
+
+			img {
+				margin-right: 5px;
+			}
+		}
+
+		.iconHeading {
+			flex-grow: 1;
+			/* Add this to allow the heading to take remaining space */
+			font-family: 'Hanken Grotesk';
+			font-size: 1.25rem;
+			font-weight: 600;
+			line-height: 26px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #3C425D;
+			;
+		}
+
+		.accordion-body {
+			font-family: 'Hanken Grotesk';
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 23px;
+			letter-spacing: -0.03em;
+			text-align: left;
+			color: #667085;
+
+		}
+
+		.addScroll{
+			overflow-y: scroll;
+			max-height:350px;
+			padding: 10px;
+		}
+	}
+	
+}

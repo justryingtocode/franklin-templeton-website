@@ -1,0 +1,67 @@
+<div id="page-content" class="bg-img">
+    <!-- start page breadcrumb block -->
+    <div class="FT-breadcrumb d-md-block d-none">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Media</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <section class="FT-footer-pages FT-knowledge">
+        <div class="container">
+            <div class="d-md-none fund-AUM-SIP">
+                <i class="bi bi-arrow-left fs-5"></i>
+            </div>
+            <div class="FT-title-medium text-bold text-blue">Media</div>
+            <div class="media-contact">
+                <h3 class="d-none d-md-block">Media Contacts</h3>
+                <div class="row">
+                    <div class="col-lg-6 mt-4">
+                        <div class="contact-box">
+                            <h3>Pradeep Rajashekharan</h3>
+                            <p>Director and Head of Corporate Communications Asia Pacific</p>
+                            <div class="d-flex">
+                                <img src="assets/images/footer-pages/Phone.svg">
+                                <div class="mob">+91-22-6751-9497</div>
+                            </div>
+                            <div class="d-flex">
+                                <img src="assets/images/footer-pages/Envelope.svg">
+                                <div class="mob">pradeep.rajasekharan@franklintempleton.com</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4">
+                        <div class="contact-box">
+                            <h3>Padmanaban Nair</h3>
+                            <p>Head of Corporate Communications - India</p>
+                            <div class="d-flex">
+                                <img src="assets/images/footer-pages/Phone.svg">
+                                <div class="mob">+91-98407-00786</div>
+                            </div>
+                            <div class="d-flex">
+                                <img src="assets/images/footer-pages/Envelope.svg">
+                                <div class="mob">padmanaban.nair@franklintempleton.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            
+        </div>
+        <div class="container release-container">
+            <!-- start section nav block -->
+            <div class="FT-blocks-nav sticky-top">
+                <ul class="mb-0 ps-0">
+                    <li><a class="articles active-item fund-AUM" (click)="scrollTo('articles')">Articles & Interviews</a></li>
+                    <li><a class="releases fund-AUM" (click)="scrollTo('releases')">Releases</a></li>
+                </ul>
+            </div>
+            <app-media-articles></app-media-articles>
+            <app-media-releases></app-media-releases>
+        </div>
+    </section>
+</div>

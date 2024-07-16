@@ -1,0 +1,379 @@
+.goal-summary {
+	gap: 20px;
+	display: flex;
+	flex-direction: column;
+
+	.title {
+		font-family: Hanken Grotesk;
+		font-size: 1.25rem;
+		font-weight: 500;
+		line-height: 26px;
+		letter-spacing: -0.03em;
+		text-align: left;
+		color: rgba(60, 66, 93, 1);
+	}
+
+	.card-title {
+		font-family: Hanken Grotesk;
+		font-size: 1.25rem;
+		font-weight: 600;
+		line-height: 26px;
+		letter-spacing: -0.03em;
+		text-align: left;
+		color: rgba(60, 66, 93, 1);
+	}
+
+	.fund-block {
+		padding: 20px;
+		// box-shadow: none;
+		border: 1px solid #D2D8EA;
+		z-index: initial;
+		scale: initial;
+		cursor: pointer;
+	}
+
+	.fund-head-title {
+		font-size: 1.063rem;
+	}
+
+	.tags {
+		padding: 4px 8px;
+
+		ul li {
+			font-size: 0.875rem;
+		}
+	}
+
+	.plan-button {
+		padding: 17px 20px 18px 20px;
+		min-width: 135px;
+		font-size: 1.125rem;
+		font-weight: 600;
+	}
+}
+
+// stepper 3 grah
+.performance-graph {
+	height: 300px;
+}
+
+.graph-block {
+	position: relative;
+
+	.graph-head {
+		display: flex;
+		align-items: center;
+		justify-content: end;
+		color: #595A6C;
+		font-size: 0.875rem;
+		font-weight: 400;
+		letter-spacing: -0.42px;
+
+		span {
+			display: inline-block;
+		}
+
+		.graph-name {
+			padding: 4px 12px;
+			border-radius: 26px;
+			// background: #F0F6FF;
+
+			.circle {
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				margin-right: 4px;
+			}
+		}
+
+		.graph-stat {
+			color: #00847D;
+			font-weight: 600;
+			letter-spacing: -0.42px;
+		}
+
+		.vs {
+			font-size: 1rem;
+			font-weight: 500;
+			margin-left: 40px;
+			margin-right: 28px;
+		}
+	}
+
+	.graph-info {
+		color: #3C425D;
+		font-size: 0.875rem;
+		font-weight: 400;
+		letter-spacing: -0.42px;
+	}
+
+	.position-absolute {
+		left: -75px;
+		transform: rotate(271deg);
+		top: calc(50% - 60px);
+	}
+}
+
+.my-card {
+	// width: (378px);
+	// width: 40%; margin: auto;
+	// margin: auto;
+	height: (97px);
+	padding: 20px 40px;
+	border-radius: 8px;
+	background: linear-gradient(90.29deg, #583EE7 26.99%, #0EA0E6 50.09%, #00B6AE 74.69%);
+	// gap: 57px;
+}
+
+.added-funds-subheader {
+	padding: 12px 24px;
+	background: rgba(240, 246, 255, 1);
+	margin-top: 20px;
+}
+
+.footer-text {
+	font-family: HK Grotesk;
+	font-size: 0.813rem;
+	font-weight: 500;
+	line-height: 20px;
+	letter-spacing: -0.5px;
+	text-align: left;
+
+	font-family: Inter;
+	font-size: 0.813rem;
+	font-weight: 500;
+	line-height: 20px;
+	letter-spacing: -0.5px;
+	text-align: left;
+	color: #676e76;
+	padding: 20px;
+}
+
+.offcanvas {
+	transition: opacity 0.15s linear, transform 0.15s linear !important;
+}
+
+.offcanvas.offcanvas-en {
+	top: 0;
+	right: 0;
+	left: 0;
+	font-family: Hanken Grotesk;
+	height: min-content;
+	width: min-content;
+	min-width: 50%;
+	margin: auto;
+	border-radius: 13px;
+
+	.offcanvas-body {
+		font-size: 1.25rem;
+		line-height: 26px;
+		letter-spacing: -0.03em;
+		color: rgba(60, 66, 93, 1);
+
+		.modal-heading {
+			font-size: 1.5rem;
+			font-weight: 600;
+			line-height: 31px;
+		}
+
+		.radio-cards {
+			display: flex;
+			gap: 14px;
+
+			.form-check-label {
+				// font-size: 1.25rem;
+				font-weight: 400;
+				// line-height: 26px;
+				// letter-spacing: -0.03em;
+				// text-align: left;
+				// color: rgba(60, 66, 93, 1);
+			}
+		}
+	}
+
+	.container.d-flex button {
+		opacity: 1;
+		transform: translateY(0);
+		transition: opacity 0.15s linear, transform 0.15s linear;
+	}
+
+	/* Apply styles for when buttons are hidden */
+	.container.d-flex button.hidden {
+		opacity: 0;
+		transform: translateY(-20px);
+		/* Adjust this value as needed */
+	}
+}
+
+// mobile responsive 
+@media(max-width: 768px) {
+	.goal-summary {
+		.card {
+			padding: 0px !important;
+			border: none !important;
+		}
+	}
+
+	.added-funds-subheader {
+		gap: 41px !important;
+		flex-wrap: wrap;
+		padding: 20px 0px;
+
+		.goal-summary {
+			gap: 0;
+		}
+
+		&>div {
+			width: 40%;
+			text-align: center;
+
+			strong {
+				display: block;
+			}
+		}
+
+	}
+
+	.my-card {
+		gap: 26px;
+		flex-wrap: wrap;
+		height: 235px;
+		align-items: center;
+		margin-bottom: 15px;
+	}
+
+	.selected-funds-wrap {
+		.card-title {
+			display: block;
+			margin-bottom: 30px;
+		}
+
+		.selected-funds-main {
+			flex-flow: column-reverse;
+		}
+
+		.proceed-button-wrap {
+			padding: 0px;
+
+			&>button {
+				flex: 1;
+				padding: 18px 10px;
+			}
+		}
+	}
+
+	.solution-confirm-dialog {
+		width: 350px !important;
+		max-width: 100%;
+
+		.card-header {
+			padding: 13px 16px !important;
+			align-items: center;
+		}
+
+		.offcanvas-body {
+			padding: 21px 0px;
+
+			&>div {
+				margin-bottom: 24px;
+
+				.radio-cards label {
+					font-size: 0.938rem;
+				}
+			}
+
+			.goal-name {
+				font-size: 1.125rem;
+			}
+
+			.goal-description {
+				padding: 10px 16px;
+				min-height: 130px;
+			}
+
+			.solution-submit {
+				button {
+					flex: 1;
+				}
+			}
+		}
+
+	}
+}
+
+// mobile responsive Ends
+
+
+//
+
+.share-menu-twitter {
+	padding: 20px 40px;
+	gap: 20px;
+}
+
+.fund-AUM {
+	gap: 65px;
+	flex-wrap: wrap;
+}
+
+.share-menu-twitter-fund {
+	gap: 8px
+}
+
+.share-btn-fund {
+	margin-left: 10px;
+}
+
+
+.showIconForWatchlist {
+	gap: 12px;
+}
+
+.audio-box {
+	background: rgba(216, 175, 231, 1)
+}
+
+.podcast-block {
+	background: rgba(32, 188, 201, 1)
+}
+
+.audio-class-box {
+	padding: 24px;
+}
+
+.podcast-img-box {
+	gap: 25px
+}
+
+.report-search-box {
+	padding: 12px 20px;
+	border: 1px solid blue !important;
+	background-color: white;
+	color: blue;
+}
+
+.report-share {
+    padding:12px 20px
+}
+
+.report-bcakground {
+    gap:16px;
+}
+
+.report-share-box {
+	padding:20px;
+}
+
+.report-detail {
+	font-size: 1rem;
+}
+
+// .offcanvas-head {
+//     height: 75%;
+//     border-top-left-radius: 39px;
+//     border-top-right-radius: 39px;
+// }
+
+// .report-date-details {
+//     margin-left: 8px;
+// }

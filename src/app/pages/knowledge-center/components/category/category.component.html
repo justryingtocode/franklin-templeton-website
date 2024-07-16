@@ -1,0 +1,753 @@
+<!-- start section nav block -->
+<div class="FT-blocks-nav sticky-top hello">
+    <ul>
+        <li><a class="open-learning-style learning active-item fontResize" (click)="scrollTo('learning')">Open Learning</a></li>
+        <li><a class="open-learning-style academy fontResize" (click)="scrollTo('academy')">Franklin Templeton Academy</a></li>
+        <li><a class="open-learning-style insights fontResize" (click)="scrollTo('insights')">Market Insights</a></li>
+    </ul>
+</div>
+
+<!-- start categories box -->
+<div class="fd-tab-sections knowledge-box categories" id="learning">
+
+    <!-- start ad box -->
+    <div class="FT-ad-box">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md col-12">
+                <div class="FT-title-medium text-bold mb-2 fontResize">Open Learning</div>
+                <div class="text-big mb-lg-4 mb-3 fontResize kc-open-height">Discover the fundamentals of mutual funds with our basic learning courses. Dive into simplified
+                  content designed for easy comprehension, making financial education accessible to everyone.</div>
+                <!-- <ul>
+                    <li class="fontResize"><strong>50 Lacs+</strong>Learners</li>
+                    <li class="fontResize"><strong>30+</strong>Courses</li>
+                    <li class="fontResize"><strong>30+</strong>Consectetur adipiscing</li>
+                </ul> -->
+            </div>
+            <div class="col-md-auto col-12 mt-4 mt-md-0">
+                <a [routerLink]="['/knowledge-center/open-learning']" class="btn btn-primary fontResize">Start Learning</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- start categories filter block -->
+    <!-- <div class="filter-block">
+        <div class="row justify-content-between">
+            <div class="col-auto">
+              <div class="filter-options mt-0 mb-4">
+                <div class="form-group ">
+                    <input type="text" class="form-control search" placeholder="Search Mutual Fund" [(ngModel)]="searchTerm"
+                    (input)="filterFunds(searchTerm)">
+                    <div class="search-result">
+                      <div class="inner">
+                          <ng-container *ngFor="let fund of fundsForSearch">
+                              <div class="funds-seach-title" (click)="getTableTitle(fund)" st yle="position: relative; z-index: 999999;">
+                                 {{ fund.title }}
+                                  <span class="sub"><span class="text-gray">Fund Size</span> - {{ fund.aum }}</span>
+                                  <span class="sub"><span class="text-gray">Unique Investors</span> - {{ fund.investors }}</span>
+                              </div>
+                          </ng-container>
+                      </div>
+                  </div>
+                </div>
+                <div>
+                  <img src="./assets/images/comparefund/closebutton.svg" class="make-tag-for-all-page" (click)="resetFundExplore()" st yle="
+                  position: relative;
+                  left: 93%;
+                  top: -31px;">
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+                <div class="dropdown me-3 d-none d-sm-inline-block">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sort
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Likes</a></li>
+                        <li><a class="dropdown-item" href="#">Date</a></li>
+                        <li><a class="dropdown-item" href="#">Views</a></li>
+                        <li><a class="dropdown-item" href="#">Read Time</a></li>
+                    </ul>
+                </div>
+                <button class="btn btn-white toggle-filter" (click)="toggleFilterBox()">
+                    <img src="assets/images/fund/sort.svg" class="me-2 show-light-mode">
+                    <img src="assets/images/dark/sort-white.svg" class="me-2 show-dark-mode">
+                    Filters
+                </button>
+            </div>
+        </div>
+    </div> -->
+
+
+    <div class="filter-block pt-md-3">
+      <div class="d-flex justify-content-between">
+          <div>
+              <div class="filter-options mt-0 mb-4">
+                  <div class="form-group ">
+                      <input type="text" class="form-control search" [placeholder]="searchPlaceholderText" [(ngModel)]="searchTerm"
+                      (input)="filterFunds(searchTerm)">
+                      <div class="search-result">
+                        <div class="inner">
+                            <ng-container *ngFor="let fund of fundsForSearch">
+                                <div class="funds-seach-title fontResize searchTerm-size" (click)="getTableTitle(fund)">
+                                   {{ fund.title }}
+                                    <span class="sub fontResize"><span class="text-gray fontResize">Fund Size</span> - {{ fund.aum }}</span>
+                                    <span class="sub fontResize"><span class="text-gray fontResize">Unique Investors</span> - {{ fund.investors }}</span>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                  </div>
+                  <div>
+                    <img src="./assets/images/comparefund/closebutton.svg" class="make-tag-for-all-page d-md-none share-icon2 fundexplore" (click)="resetFundExplore()" >
+                    <img src="./assets/images/comparefund/closebutton.svg" class="make-tag-for-all-page d-none d-md-block share-icon2 closebutton-explore" (click)="resetFundExplore()" >
+                  </div>
+              </div>
+          </div>
+          <!-- <div class="d-flex">
+              <div class="dropdown">
+                  <button class="btn dropdown-toggle fontResize" type="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Sort
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu1">
+                      <li><a class="dropdown-item fontResize" href="#">Likes</a></li>
+                      <li><a class="dropdown-item fontResize" href="#">Date</a></li>
+                      <li><a class="dropdown-item fontResize" href="#">Views</a></li>
+                      <li><a class="dropdown-item fontResize" href="#">Read Time</a></li>
+                  </ul>
+              </div>
+              <div class="togglefilter">
+                  <button class="btn btn-white toggle-filter" (click)="toggleFilterBox()">
+                      <i class="bi bi-filter me-2"></i>Filters
+                  </button>
+              </div>
+          </div> -->
+      </div>
+      <!-- <div class="row d-none mt-2">
+              <div class="dropdown me-3">
+                  <button class="btn dropdown-toggle fontResize" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Sort
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu1">
+                      <li><a class="dropdown-item fontResize" href="#">Likes</a></li>
+                      <li><a class="dropdown-item fontResize" href="#">Date</a></li>
+                      <li><a class="dropdown-item fontResize" href="#">Views</a></li>
+                      <li><a class="dropdown-item fontResize" href="#">Read Time</a></li>
+                  </ul>
+              </div>          
+      </div>  -->
+      <!-- <div class="row justify-content-between">
+          <div class="col-auto">
+              <div class="form-group">
+                  <input type="text" placeholder="Search" class="form-control search">
+              </div>
+          </div>
+          <div class="col-auto">
+              <div class="dropdown me-3 d-none d-sm-inline-block">
+                  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Sort
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Likes</a></li>
+                      <li><a class="dropdown-item" href="#">Date</a></li>
+                      <li><a class="dropdown-item" href="#">Views</a></li>
+                      <li><a class="dropdown-item" href="#">Read Time</a></li>
+                  </ul>
+              </div>
+              <button class="btn btn-white toggle-filter">
+                  <img src="assets/images/fund/sort.svg" class="me-2">Filters
+              </button>
+          </div>
+      </div> -->
+  </div>
+
+    <!-- start selected category btn -->
+    <!-- <div class="category-btns">
+        <ul>
+            <li class="active">All</li>
+            <li> <a [routerLink]="['/']">Category 1</a></li>
+            <li> <a [routerLink]="['/knowledge-center/booklets']">Category 2</a></li>
+            <li> <a [routerLink]="['/knowledge-center/blogs']"> Category 3</a> </li>
+            <li> <a [routerLink]="['/knowledge-center/podcast']">Category 4</a> </li>
+            <li> <a [routerLink]="['/knowledge-center/frankly']">Frankly Speaking</a></li>
+        </ul>
+    </div> -->
+
+    <!-- <div class="category-btns">
+      <div class="category-container">
+        <ul>
+          <li [class.active]="selectedCategory === 'All'" (click)="selectCategory('All')">All</li>
+          <li [class.active]="selectedCategory === 'Category_1'" (click)="selectCategory('Category_1')">Category 1</li>
+          <li [class.active]="selectedCategory === 'E-Booklets'" (click)="selectCategory('E-Booklets')">E-Booklet</li>
+          <li [class.active]="selectedCategory === 'Blog'" (click)="selectCategory('Blog')">Blogs</li>
+          <li [class.active]="selectedCategory === 'Prodcast'" (click)="selectCategory('Prodcast')">Podcast</li>
+          <li [class.active]="selectedCategory === 'Frankly_Speaking'" (click)="selectCategory('Frankly_Speaking')">Frankly Speaking</li>
+          <li [class.active]="selectedCategory === 'Like'" (click)="selectCategory('Like')">Like</li>
+          <li [class.active]="selectedCategory === 'Wishlist'" (click)="selectCategory('Wishlist')">Wishlist</li>
+      </ul>
+      </div>
+    </div> -->
+    <div class="category-btns">
+      <ul class="category-list">
+        <li [class.active]="selectedCategory === 'All'" class="fontResize" (click)="selectCategory('All')">New-to-investing</li>
+        <li [class.active]="selectedCategory === 'Category_1'" class="fontResize" (click)="selectCategory('Category_1')">New-to-mutual-funds</li>
+        <li [class.active]="selectedCategory === 'E-Booklets'" class="fontResize" (click)="selectCategory('E-Booklets')">More-about-mutual-funds</li>
+        <li [class.active]="selectedCategory === 'Frankly Speaking'" class="fontResize" (click)="selectCategory('Frankly Speaking')">Frankly Speaking</li>
+        <li [class.active]="selectedCategory === 'Prodcast'" class="fontResize" (click)="selectCategory('Prodcast')">Women-and-investing</li>
+        <li [class.active]="selectedCategory === 'Frankly_Speaking'" class="fontResize" (click)="selectCategory('Frankly_Speaking')">Planning-for-retirement</li>
+        <li [class.active]="selectedCategory === 'Your-childs-future'" class="fontResize" (click)="selectCategory('Your-childs-future')">Your-childs-future</li>
+        <li [class.active]="selectedCategory === 'Smart-tax-planning'" class="fontResize" (click)="selectCategory('Smart-tax-planning')">Smart-tax-planning</li>
+        <li [class.active]="selectedCategory === 'Blogs'" class="fontResize" (click)="selectCategory('Blogs')">Blogs</li>
+      </ul>
+    </div>
+
+    <!-- start categories block -->
+    <div class="category-block" id="Category_1" *ngIf=" (selectedCategory === 'All' || selectedCategory === 'Category_1') && categories.indexOf('Category_1') < visibleCategories ">
+        <div class="d-flex align-items-center justify-content-between">
+            <h3 class="fontResize">New-to-mutual-funds</h3>
+            <a class="knowledge-center-CTA fontResize" [routerLink]="['/knowledge-center/category']">
+                <span class="login-dark2">View all</span><i class="bi bi-chevron-right"></i></a>
+        </div>
+
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem class="slide" *ngFor="let slide of relatedData; let i = index">
+              <div class="category-card" >
+                <div class="card-img" type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']">
+                  <img src="{{ slide.imgSrc }}">
+                  <!-- <span class="time-tag fontResize">{{ slide.timeTag }}</span> -->
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <!-- <div><i class="bi bi-eye-fill me-1 fontResize"></i>{{ slide.views }} </div> -->
+                        <span class="time-tag fontResize">{{ slide.timeTag }}</span>
+
+                    <div class="card-icons d-flex">
+                      <!-- <span class="img-with-tooltip me-3 d-flex" st yle="color: var(--blue);" (click)="toggleIconForWishlist(i)">
+                        <i [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="bi bi-heart me-1" (click)="addToLike(slide)"></i>
+                        <i *ngIf="!showIconForWishlist[i]" class="bi bi-heart-fill me-1" (click)="removeToLike(slide)"></i>
+                         <span [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Like</span>
+                        <span *ngIf="!showIconForWishlist[i]" class="tooltip-block fontResize">UnLike</span>
+                        <span styl e="margin-top: 2px;" class="fontResize">{{ slide.wishlistCount }}</span>
+                      </span> -->
+                      <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist(i)">
+                        <i [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="bi bi-bookmark" (click)="addToWatshlist(slide)"></i>
+                        <i *ngIf="!showIconForWatchlist[i]" class="bi bi-bookmark-fill" (click)="removeToWatchlist(slide)" ></i>
+                        <span [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Save</span>
+                        <span *ngIf="!showIconForWatchlist[i]" class="tooltip-block fontResize">Remove from Saved</span>
+                      </span>
+                      <span class="dropup">
+                        <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-link">
+                            <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-fb-dark" >    
+                            <span *ngIf="showTooltip" class="tooltip-block fontResize">share</span>
+                        </span>
+                        
+                    <ul class="dropdown-menu relet-resour">
+                        <li><span class="dropdown-item fontResize"><img class="share-icon" src="assets/images/general/Link.svg">Copy link</span></li>
+
+                        <li><a class="dropdown-item fontResize" href="#"><img class="share-icon3 share-fb" src="../../../../../assets/images/general/twitter-new-logo-removebg-preview.png" >Share on Twitter</a></li>
+                        <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                        <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                        <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                    </ul>
+                  </span>
+                    </div>
+                  </div>
+                  <div type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']" class="text-bold card-title forcategortcardtitle fontResize">{{ slide.title }}</div>
+                </div>
+              </div>
+            </div>
+        </ngx-slick-carousel>
+
+    </div>
+    <!-- start categories block -->
+    <div class="category-block" id="E-Booklets" *ngIf=" (selectedCategory === 'All' || selectedCategory === 'E-Booklets') && categories.indexOf('E-Booklets') < visibleCategories  ">
+        <div class="d-flex align-items-center justify-content-between">
+            <h3 class="fontResize">More-about-mutual-funds</h3>
+            <a class="knowledge-center-CTA fontResize" [routerLink]="['/knowledge-center/booklets']">
+                <span class="login-dark2">View all</span><i class="bi bi-chevron-right"></i></a>
+        </div>
+
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem class="slide" *ngFor="let slide of relatedData1; let i = index">
+              <div class="category-card">
+                <div class="card-img" type="button"  [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']">
+                    <img src="{{ slide.imgSrc }}" class="box-img">
+                    <span class="ebook-icon">
+                      <img src="assets/images/knowledge-center/ebook-icon.svg">
+                    </span>
+                  </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-end">
+                    <!-- <div class="fontResize"><i class="bi bi-eye-fill me-1"></i>{{ slide.views }} </div> -->
+                    <div class="card-icons d-flex">
+                      <!-- <span class="img-with-tooltip me-3 d-flex" st yle="color: var(--blue);" (click)="toggleIconForWishlist(i)">
+                        <i [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                        <i *ngIf="!showIconForWishlist[i]" class="bi bi-heart-fill me-1"></i>
+                        <span [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Like</span>
+                        <span *ngIf="!showIconForWishlist[i]" class="tooltip-block fontResize">Unlike</span>
+                        <span st yle="margin-top: 2px;" class="fontResize">{{ slide.wishlistCount }}</span>
+                      </span> -->
+                      <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist(i)">
+                        <i [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                        <i *ngIf="!showIconForWatchlist[i]" class="bi bi-bookmark-fill"></i>
+                        <span [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Save</span>
+                        <span *ngIf="!showIconForWatchlist[i]" class="tooltip-block fontResize">Remove from Saved</span>
+                      </span>
+                      <span class="dropup">
+                        <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-link">
+                          <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-fb-dark" >    
+                          <span *ngIf="showTooltip" class="tooltip-block fontResize">share</span>
+                      </span>
+                        <ul class="dropdown-menu relet-resour">
+                            <li><span class="dropdown-item fontResize"><img class="share-icon" src="assets/images/general/Link.svg">Copy link</span></li>
+                            <li><a class="dropdown-item fontResize" href="#"><img class="share-icon3 share-fb" src="../../../../../assets/images/general/twitter-new-logo-removebg-preview.png" >Share on Twitter</a></li>
+                            <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                            <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                            <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                        </ul>
+                    </span>
+                    </div>
+                  </div>
+                  <div type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']" class="text-bold card-title forcategortcardtitle fontResize">{{ slide.title }}</div>
+                </div>
+              </div>
+            </div>
+        </ngx-slick-carousel>
+    
+    </div>
+    <!-- start categories block -->
+    <div class="category-block" id="Blog" *ngIf=" (selectedCategory === 'All' || selectedCategory === 'Blog') && categories.indexOf('Blog') < visibleCategories ">
+        <div class="d-flex align-items-center justify-content-between">
+            <h3 class="fontResize">Frankly Speaking</h3>
+            <a class="knowledge-center-CTA fontResize" [routerLink]="['/knowledge-center/blogs']">
+                <span class="login-dark2">View all</span><i class="bi bi-chevron-right"></i></a>
+        </div>
+
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem class="slide" *ngFor="let slide of relatedData; let i = index">
+              <div class="category-card">
+                <div class="card-img" type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']">
+                  <img src="{{ slide.imgSrc }}">
+                  <!-- <span class="time-tag fontResize">{{ slide.timeTag }}</span> -->
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <!-- <div><i class="bi bi-eye-fill me-1 fontResize"></i>{{ slide.views }} </div> -->
+                    <span class="time-tag fontResize">{{ slide.timeTag }}</span>
+                    <div class="card-icons d-flex">
+                        <!-- <span class="img-with-tooltip me-3 d-flex" st yle="color: var(--blue);" (click)="toggleIconForWishlist(i)"> 
+                          <i [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                          <i *ngIf="!showIconForWishlist[i]" class="bi bi-heart-fill me-1"></i>
+                          <span [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Like</span>
+                          <span *ngIf="!showIconForWishlist[i]" class="tooltip-block fontResize">Unlike</span>
+                          <span sty le="margin-top: 2px;" class="fontResize">{{ slide.wishlistCount }}</span>
+                        </span> -->
+                        <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist(i)">
+                          <i [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                          <i *ngIf="!showIconForWatchlist[i]" class="bi bi-bookmark-fill"></i>
+                          <span [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Save</span>
+                          <span *ngIf="!showIconForWatchlist[i]" class="tooltip-block fontResize">Remove from Saved</span>
+                        </span>
+                        <span class="dropup">
+                          <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-link" >
+                            <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-fb-dark" >    
+                            <span *ngIf="showTooltip" class="tooltip-block fontResize">share</span>
+                          </span>
+                          <ul class="dropdown-menu relet-resour">
+                              <li><span class="dropdown-item fontResize"><img class="share-icon" src="assets/images/general/Link.svg">Copy link</span></li>
+                              <li><a class="dropdown-item fontResize" href="#"><img class="share-icon3 share-fb" src="../../../../../assets/images/general/twitter-new-logo-removebg-preview.png" >Share on Twitter</a></li>
+                              <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                              <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                              <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                          </ul>
+                      </span>
+                      </div>
+                  </div>
+                  <div type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']" class="text-bold card-title forcategortcardtitle fontResize">{{ slide.title }}</div>
+                </div>
+              </div>
+            </div>
+        </ngx-slick-carousel>
+
+
+    </div>
+
+    <!-- start categories block -->
+    <div class="category-block" id="Prodcast" *ngIf=" (selectedCategory === 'All' || selectedCategory === 'Prodcast') && categories.indexOf('Prodcast') < visibleCategories ">
+        <div class="d-flex align-items-center justify-content-between">
+            <h3 class="fontResize">Women-and-investing</h3>
+            <a class="knowledge-center-CTA fontResize" [routerLink]="['/knowledge-center/podcast']">
+                <span class="login-dark2">View all</span><i class="bi bi-chevron-right"></i></a>
+        </div>
+
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem class="slide" *ngFor="let slide of relatedData2; let i = index">
+              <div class="category-card">
+                <div class="card-img" type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']">
+                  <img src="{{ slide.imgSrc }}">
+                  <div class="audio-box">
+                    <div class="inner-box">
+                        <span class="time start fontResize">01:34</span>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-status" role="progressbar" aria-label="Basic example"
+                                 aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                        <span class="time end fontResize">03:04</span>
+                        <button class="btn btn-transparent">
+                            <i class="bi bi-play-circle"></i>
+                            <i class="bi bi-pause-circle d-none"></i>
+                        </button>
+                    </div>
+                </div>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-end">
+                    <!-- <div class="fontResize"><i class="bi bi-eye-fill me-1"></i>{{ slide.views }} </div> -->
+                    <div class="card-icons d-flex">
+                      <!-- <span class="img-with-tooltip me-3 d-flex" st yle="color: var(--blue);" (click)="toggleIconForWishlist(i)">
+                        <i [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                        <i *ngIf="!showIconForWishlist[i]" class="bi bi-heart-fill me-1"></i>
+                        <span [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Like</span>
+                        <span *ngIf="!showIconForWishlist[i]" class="tooltip-block fontResize">Unlike</span>
+                        <span st yle="margin-top: 2px;" class="fontResize">{{ slide.wishlistCount }}</span>
+                      </span> -->
+                      <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist(i)">
+                        <i [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                        <i *ngIf="!showIconForWatchlist[i]" class="bi bi-bookmark-fill"></i>
+                        <span [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Save</span>
+                        <span *ngIf="!showIconForWatchlist[i]" class="tooltip-block fontResize">Remove from Saved</span>
+                      </span>
+                      <span class="dropup">
+                        <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-link share-link" >
+                          <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-fb-dark" >    
+                          <span *ngIf="showTooltip" class="tooltip-block fontResize">share</span>
+                        </span>
+                        <ul class="dropdown-menu">
+                            <li><span class="dropdown-item fontResize"><img class="share-icon" src="assets/images/general/Link.svg">Copy link</span></li>
+                            <li><a class="dropdown-item fontResize" href="#"><img class="share-icon3 share-fb" src="../../../../../assets/images/general/twitter-new-logo-removebg-preview.png" >Share on Twitter</a></li>
+                            <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                            <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                            <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                        </ul>
+                    </span>
+                    </div>
+                  </div>
+                  <div type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']" class="text-bold card-title forcategortcardtitle fontResize">{{ slide.title }}</div>
+                </div>
+              </div>
+            </div>
+        </ngx-slick-carousel>
+
+    </div>
+    <!-- start categories block -->
+    <div class="category-block" id="Frankly_Speaking" *ngIf=" (selectedCategory === 'All' || selectedCategory === 'Frankly_Speaking') && categories.indexOf('Frankly_Speaking') < visibleCategories ">
+        <div class="d-flex align-items-center justify-content-between">
+            <h3 class="fontResize">Planning-for-retirement</h3>
+            <a class="knowledge-center-CTA fontResize" [routerLink]="['/knowledge-center/frankly']">
+                <span class="fontResize login-dark2">View all</span><i class="bi bi-chevron-right"></i></a>
+        </div>
+
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem class="slide" *ngFor="let slide of relatedData; let i = index">
+              <div class="category-card">
+                <div class="card-img" type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']">
+                  <img src="{{ slide.imgSrc }}">
+                  <!-- <span class="time-tag fontResize">{{ slide.timeTag }}</span> -->
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <span class="time-tag fontResize">{{ slide.timeTag }}</span>
+                    <!-- <div><i class="bi bi-eye-fill me-1 fontResize"></i>{{ slide.views }} </div> -->
+                    <div class="card-icons d-flex">
+                      <!-- <span class="img-with-tooltip me-3 d-flex" sty le="color: var(--blue);" (click)="toggleIconForWishlist(i)">
+                        <i [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                        <i *ngIf="!showIconForWishlist[i]" class="bi bi-heart-fill me-1"></i>
+                        <span [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Like</span>
+                        <span *ngIf="!showIconForWishlist[i]" class="tooltip-block fontResize">Unlike</span>
+                        <span st yle="margin-top: 2px;" class="fontResize">{{ slide.wishlistCount }}</span>
+                      </span> -->
+                      <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist(i)">
+                        <i [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                        <i *ngIf="!showIconForWatchlist[i]" class="bi bi-bookmark-fill"></i>
+                        <span [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Save</span>
+                        <span *ngIf="!showIconForWatchlist[i]" class="tooltip-block fontResize">Remove from Saved</span>
+                      </span>
+                      <span class="dropup">
+                        <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-link" >
+                          <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-fb-dark" >    
+                          <span *ngIf="showTooltip" class="tooltip-block fontResize">share</span>
+                        </span>
+                        <ul class="dropdown-menu">
+                            <li><span class="dropdown-item fontResize"><img class="share-icon" src="assets/images/general/Link.svg">Copy link</span></li>
+                            <li><a class="dropdown-item fontResize" href="#"><img class="share-icon3 share-fb" src="../../../../../assets/images/general/twitter-new-logo-removebg-preview.png" >Share on Twitter</a></li>
+                            <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                            <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                            <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                        </ul>
+                    </span>
+                    </div>
+                  </div>
+                  <div type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']" class="text-bold card-title forcategortcardtitle fontResize">{{ slide.title }}</div>
+                </div>
+              </div>
+            </div>
+        </ngx-slick-carousel>
+
+
+    </div>
+
+      <!-- start categories block -->
+      <!-- <div class="category-block" id="Like" *ngIf=" (selectedCategory === 'All' || selectedCategory === 'Like') && categories.indexOf('Like') < visibleCategories ">
+        <div class="d-flex align-items-center justify-content-between">
+            <h3>Like</h3>
+            <a class="knowledge-center-CTA" [routerLink]="['/knowledge-center/like']">
+                <span>View all</span><i class="bi bi-chevron-right"></i></a>
+        </div>
+
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem class="slide" *ngFor="let slide of relatedData2; let i = index">
+              <div class="category-card">
+                <div class="card-img" type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']">
+                  <img src="{{ slide.imgSrc }}">
+                  <span class="time-tag">{{ slide.timeTag }}</span>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <div><i class="bi bi-eye-fill me-1"></i>{{ slide.views }} </div>
+                    <div class="card-icons d-flex">
+                      <span class="img-with-tooltip me-3 d-flex" sty le="color: var(--blue);" (click)="toggleIconForWishlist(i)">
+                        <i [ngStyle]="{'display': !showIconForWishlist[i] ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                        <i *ngIf="showIconForWishlist[i]" class="bi bi-heart-fill me-1"></i>
+                        <span [ngStyle]="{'display': !showIconForWishlist[i] ? 'inline' : 'none'}" class="tooltip-block">add to wishlist</span>
+                        <span *ngIf="showIconForWishlist[i]" class="tooltip-block">remove from wishlist</span>
+                        <span sty le="margin-top: 2px;">{{ slide.wishlistCount }}</span>
+                      </span>
+                      <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist(i)">
+                        <i [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                        <i *ngIf="!showIconForWatchlist[i]" class="bi bi-bookmark-fill"></i>
+                        <span [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="tooltip-block">add to watchlist</span>
+                        <span *ngIf="!showIconForWatchlist[i]" class="tooltip-block">remove from watchlist</span>
+                      </span>
+                      <span class="dropup">
+                        <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon" st yle="width: 18px;">
+                          <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon" styl e="width: 21px; top: -1px; position: relative; left: 0px;">    
+                          <span *ngIf="showTooltip" class="tooltip-block">share</span>
+                        </span>
+                        <ul class="dropdown-menu">
+                            <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                        </ul>
+                    </span>
+                    </div>
+                  </div>
+                  <div type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']" class="text-bold card-title">{{ slide.title }}</div>
+                </div>
+              </div>
+            </div>
+        </ngx-slick-carousel>
+
+
+      </div> -->
+
+      <!-- start categories block -->
+      <div class="category-block" id="Wishlist" *ngIf=" (selectedCategory === 'All' || selectedCategory === 'Wishlist') && categories.indexOf('Wishlist') < visibleCategories ">
+        <div class="d-flex align-items-center justify-content-between">
+            <h3 class="fontResize">Planning-for-retirement</h3>
+            <a class="knowledge-center-CTA fontResize" [routerLink]="['/knowledge-center/wishlist']">
+                <span class="login-dark2">View all</span><i class="bi bi-chevron-right"></i></a>
+        </div>
+
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem class="slide" *ngFor="let slide of relatedData2; let i = index">
+              <div class="category-card">
+                <div class="card-img" type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']">
+                  <img src="{{ slide.imgSrc }}">
+                  <!-- <span class="time-tag fontResize">{{ slide.timeTag }}</span> -->
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                  <span class="time-tag fontResize">{{ slide.timeTag }}</span>
+
+                    <!-- <div class="fontResize"><i class="bi bi-eye-fill me-1"></i>{{ slide.views }} </div> -->
+                    <div class="card-icons d-flex">
+                      <span class="img-with-tooltip me-3 d-flex forwatchlist" (click)="toggleIconForWishlist(i)">
+                        <!-- <i [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                        <i *ngIf="!showIconForWishlist[i]" class="bi bi-heart-fill me-1"></i>
+                        <span [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Like</span>
+                        <span *ngIf="!showIconForWishlist[i]" class="tooltip-block fontResize">Unlike</span>
+                        <span st yle="margin-top: 2px;" class="fontResize">{{ slide.wishlistCount }}</span> -->
+                      </span>
+                      <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist(i)">
+                        <i [ngStyle]="{'display': !showIconForWatchlist[i] ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                        <i *ngIf="showIconForWatchlist[i]" class="bi bi-bookmark-fill"></i>
+                        <span [ngStyle]="{'display': !showIconForWatchlist[i] ? 'inline' : 'none'}" class="tooltip-block fontResize">Save</span>
+                        <span *ngIf="showIconForWatchlist[i]" class="tooltip-block fontResize">Remove from Saved</span>
+                      </span>
+                      <span class="dropup">
+                        <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-link" >
+                          <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-fb-dark" >    
+                          <span *ngIf="showTooltip" class="tooltip-block fontResize">share</span>
+                        </span>
+                        <ul class="dropdown-menu">
+                            <li><span class="dropdown-item fontResize"><img class="share-icon" src="assets/images/general/Link.svg">Copy link</span></li>
+                            <li><a class="dropdown-item fontResize" href="#"><img class="share-icon3 share-fb" src="../../../../../assets/images/general/twitter-new-logo-removebg-preview.png">Share on Twitter</a></li>
+                            <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                            <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                            <li><a class="dropdown-item fontResize" href="#"><img class="share-icon" src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                        </ul>
+                    </span>
+                    </div>
+                  </div>
+                  <div type="button" [routerLink]="slide.id % 2 === 1 ? ['/knowledge-center/article1'] : ['/knowledge-center/article2']" class="text-bold card-title forcategortcardtitle fontResize">{{ slide.title }}</div>
+                </div>
+              </div>
+            </div>
+        </ngx-slick-carousel>
+
+
+    </div>
+
+    <div class="text-center" *ngIf="selectedCategory === 'All' && categories.length > visibleCategories && !showNextData" >
+        <button class="btn btn-white fontResize" (click)="loadMoreCategories()">Load more</button>
+    </div>
+    <div class="text-center" *ngIf="showNextData" >
+      <button class="btn btn-white fontResize" (click)="loadMoreData()">Load more</button>
+    </div>
+    <div class="text-center" *ngIf=" selectedCategory === 'All' && categories.length === visibleCategories" >
+        <button class="btn btn-white fontResize" (click)="loadLessCategories()">View Less</button>
+    </div>
+</div>
+
+<!-- start category filter-->
+<div class="FT-general-filter" [ngClass]="toggleFilter ? 'show' : ''">
+    <div class="filter-box">
+        <div class="filter-content">
+            <h3 class="fontResize">Filters</h3>
+            <div class="filter-options">
+                <div class="text-bold mb-3 fontResize">Common Filters<img src="assets/images/knowledge-center/info-icon.svg"
+                        class="d-lg-none ms-2"></div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        Most viewed
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        5 min read
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        Trending
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        Content of the week
+                    </label>
+                </div>
+            </div>
+            <div class="filter-options">
+                <div class="text-bold mb-3 fontResize">Content <img src="assets/images/knowledge-center/info-icon.svg"
+                        class="d-lg-none ms-2"></div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        Video
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        Article
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        Presentation
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        Blog
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        Podcast
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        E-Booklet
+                    </label>
+                </div>
+            </div>
+            <div class="filter-options">
+                <div class="text-bold mb-3 fontResize">Categories <img src="assets/images/knowledge-center/info-icon.svg"
+                        class="d-lg-none ms-2"></div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        New to Mutual Fund
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        New to Investing
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        Women & Investing
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        Blog
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        Podcast
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fontResize" for="flexCheckDefault">
+                        E-Booklet
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="filter-footer">
+            <button class="btn btn-outline-primary fontResize" (click)="toggleFilterBox()">Cancel</button>
+            <button class="btn btn-primary fontResize">Apply</button>
+        </div>
+    </div>
+</div>

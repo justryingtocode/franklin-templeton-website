@@ -1,0 +1,212 @@
+<!-- start section financial plan -->
+<section class="FT-financial">
+    <div class="container">
+        <div class="text-center mb-sm-5 mb-4">
+            <div class="FT-title d-none d-md-block fontResize">Calculate. Evaluate. Progress</div>
+            <div class="FT-title d-md-none px-1 fontResize">Tailor Your Financial Goals with Our Personalised Services</div>
+            <div class="text-big px-3 goal-description fontResize">
+                Plan every step of your investment journey.
+            </div>
+        </div>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button (click)="toggleIsSIP(true)" class="nav-link fontResize" [ngClass]="{'active': isSIP}" id="Systematic-tab"
+                    type="button" role="tab" aria-controls="Systematic" aria-selected="true">Systematic Investment
+                    Plan</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button (click)="toggleIsSIP(false)" class="nav-link fontResize" [ngClass]="{'active': !isSIP}" id="Lumpsum-tab"
+                    type="button" role="tab" aria-controls="Lumpsum" aria-selected="false">Lumpsum
+                    Investment</button>
+            </li>
+        </ul>
+        <!-- <div class="text-big d-md-none pt-4 text-center">{{isSIP ? 'A popular choice to invest regularly to reach your financial goals' : 'Accelerate with your wealth with a lumpsum investment'}}</div> -->
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane active" id="Systematic" role="tabpanel" aria-labelledby="Systematic-tab" tabindex="0">
+                <h3 class="mb-md-2 fontResize">{{isSIP ? 'SIP Calculator' : 'Lumpsum Investment'}}</h3>
+                <div class="text-big fontResize">{{isSIP ? 'A popular choice to invest regularly to reach your financial goals' : 'Accelerate with your wealth with a lumpsum investment'}}</div>
+                <div>
+                    <div class="graph-table-btns">
+                        <ul class="nav nav-tabs justify-content-center" id="myTab2" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button (click)="toggleIsisTargeted(false,'Investment amount')" class="btn fontResize" [ngClass]="{'active': !isTargeted}" id="Investment-tab"  type="button" role="tab" aria-controls="Investment"
+                                    aria-selected="true">Investment amount</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button (click)="toggleIsisTargeted(true,'Target amount')" class="btn fontResize" [ngClass]="{'active': isTargeted}" id="Target-tab"
+                                    type="button" role="tab" aria-controls="Target" aria-selected="false">Target amount</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="Investment" role="tabpanel" aria-labelledby="Investment-tab"
+                        tabindex="0">
+                        <div class="row">
+                            <div class="col">
+                                <!-- Calc from -->
+                                <app-calculator-form 
+                                    [(form)]="formValue" 
+                                    [isSIP]="isSIP" 
+                                    [isTargeted]="isTargeted" >
+                                </app-calculator-form>
+                                <div class="pt-4">
+                                    <a href="" class="text-white"  data-bs-toggle="modal" data-bs-target="#exampleModal">View Disclaimer</a>
+                                </div>
+                            </div>
+                            <div class="col-auto mt-3" [ngClass]="isTargeted?'m-auto':''" >
+                                <div class="fund-info d-flex flex-column">
+                                    <div class="numbers d-flex flex-column">
+                                        <div class=""  *ngIf="!(!isSIP && !isTargeted)">
+                                            <!-- <div>Amount invested by you</div> -->
+                                            <ng-container *ngIf="!(isSIP && isTargeted); else haveToInvestRef">
+                                                <div *ngIf="isSIP && !isTargeted" class="fontResize" >Invested Amount</div>
+                                                <div *ngIf="!isSIP && isTargeted" class="fontResize">Required Investment Amount</div>
+                                                <h3 class="sip-recommended-funds fontResize">{{ formValue?.totalInvestAmt  | currency : "INR": 'symbol':'1.0-0'}}</h3>
+                                            </ng-container>
+                                            <ng-template #haveToInvestRef>
+                                                <!-- <h3 class="sip-recommended-funds">{{ formValue?.totalInvestAmt | currency: "INR": 'symbol':'1.0-0'}}</h3> -->
+                                            </ng-template>
+                                        </div>
+                                        <!-- <div class="" *ngIf="!(isSIP && isTargeted)">
+                                            <div>Returns from your investment</div>
+                                            <h3 class="sip-recommended-funds">{{ formValue?.totalReturns | currency: "INR" : 'symbol':'1.0-0'}}</h3>
+                                        </div> -->
+                                        <div class="" *ngIf="!isTargeted">
+                                            <!-- <div>Value of your investment</div> -->
+                                            <div class="fontResize">Resultant Amount</div>
+                                            <h3 class="sip-recommended-funds fontResize">{{ formValue?.totalValues | currency: "INR" : 'symbol':'1.0-0'}}</h3>
+                                        </div>
+                                        <div class="" *ngIf="isSIP && isTargeted">
+                                            <!-- <div>You have to invest <span class="text-lowercase">{{formValue?.time}}</span></div> -->
+                                            <div class="fontResize">Installment Amount <span class="text-lowercase fontResize">{{formValue?.time}}</span></div>
+                                            <h3 class="sip-recommended-funds fontResize">{{ formValue?.installmentAmount | currency: "INR" : 'symbol':'1.0-0'}}</h3>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="btn btn-primary fontResize">{{isSIP?'Start a SIP':'Invest Now'}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="tab-pane" id="Target" role="tabpanel" aria-labelledby="Target-tab" tabindex="0">
+                        <div class="row">
+                            <div class="col">
+                                <app-calculator-form [(form)]="formValue"></app-calculator-form>
+                            </div>
+                            <div class="col-auto">
+                                <div class="fund-info">
+                                    <div class="numbers">
+                                        <div class="mb-4 pb-2">
+                                            <div>Total Invested</div>
+                                            <h3>{{getTotalInvestment() | currency: "INR"}}</h3>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="btn btn-primary">View Recommended Funds</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+
+            </div>
+            <!-- <div class="tab-pane" id="Lumpsum" role="tabpanel" aria-labelledby="Lumpsum-tab" tabindex="0">
+                <h3>SIP Calculator</h3>
+                <div class="text-big">A popular choice to invest regularly to reach your financial goals</div>
+                <div>
+                    <div class="graph-table-btns">
+                        <ul class="nav nav-tabs justify-content-center" id="myTab2" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="btn active" id="Investment2-tab" data-bs-toggle="tab"
+                                    data-bs-target="#Investment2" type="button" role="tab" aria-controls="Investment2"
+                                    aria-selected="true">Investment amount</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="btn" id="Target2-tab" data-bs-toggle="tab" data-bs-target="#Target2"
+                                    type="button" role="tab" aria-controls="Target2" aria-selected="false">Target
+                                    amount</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="Investment2" role="tabpanel" aria-labelledby="Investment2-tab"
+                        tabindex="0">
+                        <div class="row">
+                            <div class="col">
+                                <app-calculator-form [(form)]="formValue"></app-calculator-form>
+                            </div>
+                            <div class="col-auto">
+                                <div class="fund-info">
+                                    <div class="numbers">
+                                        <div class="mb-4 pb-2">
+                                            <div>Total Invested</div>
+                                            <h3 class="text-teal">{{getTotalInvestment() | currency: "INR"}}</h3>
+                                        </div>
+                                        
+                                        <div class="mb-4 pb-2">
+                                            <div>Total Value</div>
+                                            <h3 class="text-teal">{{getTotalInvestment() + getPotentialGains() | currency: "INR"}}</h3>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="btn btn-primary">View Recommended Funds</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="Target2" role="tabpanel" aria-labelledby="Target2-tab" tabindex="0">
+                        <div class="row">
+                            <div class="col">
+                                <app-calculator-form [(form)]="formValue"></app-calculator-form>
+                            </div>
+                            <div class="col-auto">
+                                <div class="fund-info">
+                                    <div class="numbers">
+                                        <div class="mb-4 pb-2">
+                                            <div>Total Invested</div>
+                                            <h3 class="text-teal">{{getTotalInvestment() | currency: "INR"}}</h3>
+                                        </div>
+                                        
+                                        <div class="mb-4 pb-2">
+                                            <div>Potential returns from your investment</div>
+                                            <h3 class="text-teal">₹10,000</h3>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="btn btn-primary">View Recommended Funds</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="text-center calculators-CTA">
+            <a routerLink="/all-calculators" class="more-links"><span class="fontResize">Explore all calculators</span><i class="bi bi-chevron-right ms-3"></i></a>
+        </div>
+    </div>
+     <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div class="row d-flex justify-content-end">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div>
+                The Calculators are designed to assist you in determining the appropriate amount. These Calculators
+                 alone are not sufficient and shouldn't be used 
+                for development or implementation of an investment strategy.
+                 There is no warranty about the currency of 
+                 the calculators/ reckoners. The example do not purport to represent the performance of 
+                 any security or investments. The recipient is advised to consult his or her advisor/tax consultant prior
+                  to arriving at any investment decision. Past performance may or may not be sustained in future and is not a 
+                  guarantee of any future returns.
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

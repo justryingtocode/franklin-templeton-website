@@ -1,0 +1,57 @@
+<div class="form-container distributor-step2 distributor-step" >
+    <form [formGroup]="bankAccountForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-sm-8 col-12 form-group mb-3">
+
+                <p class="error-msg fontResize login-dark2 please-enter">Please enter any of the bank account number(s) registerd with us.</p>
+                
+                <div class="password-input">
+                    <input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" #passwordField
+                        class="form-control" placeholder="Bank Account Numbers*" id="accountNumber"
+                        formControlName="accountNumber">
+
+
+                    <span class="toggle-password" (click)="togglePasswordVisibility()">
+                        <i class="bi fs-5" [ngClass]="showPassword ? 'bi-eye' : 'bi-eye-slash'"></i>
+                    </span>
+                </div>
+
+                <div *ngIf="formControls?.['accountNumber']?.errors && formControls?.['accountNumber']?.touched">
+                    <!-- <span *ngIf="formControls?.['accountNumber']?.errors?.['required']">Please enter any of the bank account number(s) registerd with us.</span> -->
+                    <span  *ngIf="formControls?.['accountNumber']?.errors?.['pattern']" class="acc-num">Please enter a valid 9-digit
+                        account number.
+                    </span>
+                </div>
+
+        
+    
+            </div>
+
+            <!-- <div class="col-sm-auto col-12 mb-3">
+                <button type="button" class="btn btn-primary" (click)="changeActiveStepper(3,true)"
+                    data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false"
+                    aria-controls="collapse4">Next</button>
+            </div> -->
+            
+
+     
+
+            <div class="col-sm-8 col-12 mb-3">
+            
+                <div class="btn-options d-flex">
+                    <button type="button" class="btn btn-outline-primary me-4" (click)="changeActiveStepper(2,false)"
+                    data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false"
+                    aria-controls="collapse2">Back</button>
+                <button type="button" class="btn btn-primary" (click)="changeActiveStepper(3,true)" data-bs-toggle="collapse"
+                    data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">Next</button>
+                <!-- [disabled]="bankAccountForm.invalid" -->
+            
+                </div>
+            
+            </div>
+
+                
+
+        </div>
+    </form>
+</div>

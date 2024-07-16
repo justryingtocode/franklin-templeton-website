@@ -1,0 +1,117 @@
+.btn {
+    padding: 10px 20px;
+    width: 100%;
+
+    @media(min-width:576px) {
+        width: 233px
+    }
+}
+
+.save-alert {
+    position: relative;
+    left: 0;
+    margin: 0 auto
+}
+
+.modal {
+    .modal-content {
+        background: transparent;
+        box-shadow: none;
+        border: 0;
+    }
+
+    .modal-body {
+        padding: 0;
+
+        .save-alert {
+            position: relative;
+        }
+    }
+}
+
+.forCallBackLable {
+    text-decoration: underline;
+}
+
+.toggle-password {
+    right: 10px !important;
+}
+
+.toggle-password2 {
+    position: absolute;
+    top: 50%;
+    right: 10px !important;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .distributor-step2 {
+        margin-left: 0px !important;
+    }
+}
+
+
+.pan-container {
+    position: relative;
+    /* Enable relative positioning */
+}
+
+.pan-input {
+    width: 100%;
+}
+
+.pan-info {
+    position: absolute !important;
+    top: 50% !important;
+    right: -23px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.password-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.distributor-step {
+    margin-left: 256px;
+}
+
+.password-form {
+    color: red;
+}
+
+.info-icon2-img {
+    width: 18px;
+}
+
+.information-dark {
+    width: 14px;
+}
+
+.investor-TC {
+    text-align: left;
+}
+
+.modal-body-head {
+    z-index: 100000;
+}
+
+.modal-content-head {
+    background-color: rgb(255 255 255);
+}
+
+.IDN {
+    width: auto;
+    font-size: smaller;
+}
+
+.modal-dialog-head {
+    padding: 15px;
+}
+
+.checkcircle {
+    display: none;
+}

@@ -1,0 +1,213 @@
+/**** contact-block style *****/
+#contact-block {
+    // width: 100%;
+    max-width: 393px;
+    text-align: right;
+    position: absolute;
+    right: 30px;
+    z-index: 1032;
+    bottom: -30px;
+
+    .contact-box {
+        border-radius: 16px;
+        background: #FFF;
+        box-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.18);
+        padding: 0px !important;
+        margin-bottom: 24px;
+
+        .d-flex {
+            border-radius: 8px 8px 0px 8px;
+            border-bottom: 1px solid #D2D8EA;
+            background: #FFF;
+            padding: 16px;
+            text-align: right;
+            justify-content: flex-end;
+            align-items: center;
+
+            .box-icon {
+                border-radius: 50%;
+                background: #DDEAFF;
+                display: flex;
+                width: 34px;
+                height: 34px;
+                padding: 9.488px;
+                justify-content: center;
+                align-items: center;
+                margin-left: 12px;
+            }
+
+            small {
+                font-size: 0.75rem;
+                font-weight: 500;
+                letter-spacing: -0.36px;
+                display: block;
+            }
+
+            .text-blue {
+                color: #3769FF;
+                font-size: 0.875rem;
+                font-weight: 600;
+                letter-spacing: -0.42px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    form {
+        font-size: 0.875rem;
+
+        .form-control,
+        .form-select {
+            height: 37px;
+            padding: 9px 12px;
+        }
+
+        textarea.form-control {
+            height: 70px;
+        }
+
+        .btn-primary {
+            height: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    #toggleBox.btn {
+        padding: 0;
+        width: 84px;
+        height: 84px;
+        // background: url("../images/home/contact-icon.svg") no-repeat center;
+        background-size: 100% 100%;
+        box-shadow: none !important;
+
+        // scale: 1 !important;
+        &:hover {
+            scale: 1.01 !important;
+        }
+
+        &.opened {
+            // background: url("../images/home/close-contact.svg") no-repeat center;
+        }
+    }
+
+    #callForm {
+        .d-flex {
+            padding: 0;
+            border: 0;
+            align-items: center;
+
+            button {
+                border: 0;
+                background: transparent;
+                padding: 0;
+                outline: none;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+#bg-color {
+    background-color: #3769ff !important;
+}
+
+#bg-back-color {
+    color: blueviolet !important;
+    border: 1px solid blue !important;
+    height: 44px !important;
+}
+
+.modal-backdrop.fade {
+    opacity: 0 !important;
+}
+
+//
+
+.share-menu-twitter {
+    padding: 24px;
+}
+
+.fund-AUM {
+    font-size: 14px;
+}
+
+.share-menu-twitter-fund {
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+
+.share-btn-fund {
+    color: #F04438;
+}
+
+
+.showIconForWatchlist {
+    color: #6d7072
+}
+
+.audio-box {
+    text-align: left;
+}
+
+.podcast-block {
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    font-size: 14px;
+
+}
+
+.audio-class-box {
+    display: flex;
+    justify-content: end;
+}
+
+// .podcast-img-box {
+//     font-size: 0.875rem;
+//     font-weight: 600;
+//     letter-spacing: -0.28px;
+// }
+
+// .report-search-box {
+//     width: fit-content;
+//     margin-bottom: 4px;
+// }
+
+// .report-share {
+//     text-align: center;
+//     margin-bottom: 13px;
+//     width: 374px;
+//     position: relative;
+//     left: 50%;
+//     right: 50%;
+//     transform: translateX(-50%);
+// }
+
+// .report-bcakground {
+//     display: contents;
+// }
+
+// .report-share-box {
+//     padding: 8px 20px;
+//     font-size: 0.831rem;
+// }
+
+// .report-detail {
+//     position: relative;
+//     cursor: pointer;
+//     top: -27px;
+// }
+
+// .offcanvas-head {
+//     height: 75%;
+//     border-top-left-radius: 39px;
+//     border-top-right-radius: 39px;
+// }
+
+// .report-date-details {
+//     margin-left: 8px;
+// }

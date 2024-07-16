@@ -1,0 +1,837 @@
+<div id="page-content" class="bg-img">
+    <div class="FT-breadcrumb d-md-block d-none">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item" aria-current="page"> Investor service</li>
+                    <li class="breadcrumb-item active" aria-current="page"> NAV alerts</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <section class="FT-navs-alerts">
+        <div class="container Nav-title-content">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 mt-4 mb-4">
+                    <div *ngIf="forDataPartBefore">
+                        <h3 class="Nav-heading mb-4"> NAV Alerts</h3>
+                        <div class="mt-4 mb-4">Subscribe for NAV alerts in quick easy steps. You can choose to receive
+                            NAV alerts of up to 3 funds via SMS or all funds via email at your selected frequency.</div>
+                    </div>
+                    <div class="d-md-none" *ngIf="!forDataPartBefore">
+                        <h3 class="Nav-heading">NAV Alerts</h3>
+                        <div class="mt-4 mb-4">Subscribe for NAV alerts in quick easy steps. You can choose to receive
+                            NAV alerts of up to 3 funds via SMS or all funds via email at your selected frequency.</div>
+                    </div>
+                    <div class="contact-box nav-contact-box">
+                        <div class="d-none d-md-block" *ngIf="!forDataPartBefore">
+                            <h3 class="Nav-heading">NAV Alerts</h3>
+                            <div class="mt-4">Subscribe for NAV alerts in quick easy steps. You can choose to receive
+                                NAV alerts of up to 3 funds via SMS or all funds via email at your selected frequency.
+                            </div>
+                        </div>
+
+                        <!-- <div *ngIf="forDataPartBefore">
+                                <div class="mb-4">Please select the fund(s)</div>
+                            </div> -->
+
+                        <div class="mt-2 d-md-none" *ngIf="forDataPartBefore">
+                            <button type="button" class="btn btn-primary ml-2 for-proceed-with-fund "
+                                data-bs-toggle="offcanvas" data-bs-target="#getcardoffcanvasBottom"
+                                aria-controls="offcanvasBottom">Proceed with {{this.navTitle.length}} funds</button>
+                        </div>
+
+                        <div *ngIf="forNavsDataFlow">
+                            <div *ngIf="navInputEmailScreenBox">
+                                <div class="mt-4 nav-first-name channel-section">
+                                    I / We would like to receive NAV Alerts on the below mentioned channel(s) :
+                                </div>
+                                <div class="d-flex gap-5 mt-4">
+
+                                    <div class="radio-cards">
+                                        <div>
+                                            <input class="form-check-input" type="radio" name="exampleRadios" (click)="forMobile('mobile')" id="exampleRadios1" [value]="'option1'" [checked]="forToggle == 'mobile' ? true : false"> &nbsp;
+                                            <label class="form-check-label" for="exampleRadios1">Mobile</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="radio-cards">
+                                        <div>
+                                            <input class="form-check-input" type="radio" name="exampleRadios" (click)="forEmail('email')" id="exampleRadios2" [value]="'option2'" [checked]="forToggle == 'email' ? true : false"> &nbsp;
+                                            <label class="form-check-label" for="exampleRadios2">Email</label>
+                                        </div>
+                                    </div>
+                                    
+
+                                </div>
+                                <div class="mt-4">
+                                    <form [formGroup]="dialOtp">
+                                        <ng-container *ngIf="mobile; else addData">
+                                            <div class="form-group">
+                                                <input type="text" (keydown)="blockAlphabetsAndSpecialChars($event)"
+                                                    formControlName="phone" maxlength="10"
+                                                    class="form-control forNavsInputBox" placeholder="Mobile">
+                                                <div
+                                                    *ngIf="dialOtp?.get('phone')?.hasError('required') && !dialOtp?.get('phone')?.value && dialOtp?.get('phone')?.touched">
+                                                    <span class="error-msg msg-number">Mobile Number is
+                                                        required.</span>
+                                                </div>
+                                            </div>
+                                        </ng-container>
+                                        <ng-template #addData>
+                                            <div class="form-group">
+                                                <input type="text" formControlName="email"
+                                                    class="form-control forNavsInputBox" placeholder="Email">
+                                                <div
+                                                    *ngIf="dialOtp?.get('email')?.hasError('required') && !dialOtp?.get('email')?.value && dialOtp?.get('email')?.touched">
+                                                    <span  class="error-msg msg-number">Email is
+                                                        required.</span>
+                                                </div>
+                                                <div
+                                                    *ngIf="dialOtp?.get('email')?.hasError('pattern') && !dialOtp?.get('email')?.hasError('required') && dialOtp?.get('email')?.touched">
+                                                    <span  class="error-msg msg-number">Invalid email
+                                                        format.</span>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </form>
+                                </div>
+                                <div class="mt-4">
+                                    <div class="d-md-flex justify-content-md-start gap-3 submit-content">
+                                        <div class="mt-2">
+                                            <button type="button"
+                                                class="btn btn-outline-primary forSubmitButton Reset-OTP"
+                                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                                                aria-controls="offcanvasExample">Reset</button>
+                                        </div>
+                                        <div class="mt-2 ml-md-1">
+                                            <button (click)="goToVerificationsFlowPage()"
+                                                type="button" class="btn btn-primary forSubmitButton submit-section">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                                  <!-- for Mobile -->
+                            <div *ngIf="forGo">
+                                <div *ngIf="getMobile">
+                                    <div class="mt-4 discl-nav password-OTP">
+                                        One Time Password (OTP) has been sent to 7709674462
+                                    </div>
+
+                                    <div class="mt-4 d-flex">
+                                        <div class="form-group">
+                                            <input type="text" (keydown)="blockAlphabetsAndSpecialChars($event)"
+                                                class="form-control form-control1"
+                                                placeholder="Enter one time password(OTP)">
+                                        </div>
+                                        <div class="d-none d-md-block web-resend-otp">
+                                            <span class="otherlinks">Resend OTP</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-md-none mt-4 mobile-resend-otp">
+                                        <span>Resend OTP</span>
+                                    </div>
+                                    <div class="mt-4">
+                                        <b>Note:</b> Kindly note that this code will be valid for the next 20 minutes
+                                        only.
+                                    </div>
+                                    <div class="mt-4">
+                                        <div class="d-flex justify-content-start">
+                                            <div class="mt-2 me-4">
+                                                <button type="button" (click)="backMob()" class="btn btn-outline-primary ml-2 forSubmitButton">Back</button>
+                                            </div>
+                                            <div class="mt-2">
+                                                <button type="button" class="btn btn-primary ml-2 forSubmitButton"
+                                                    (click)="forGoSelectFundFlow()">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- for email -->
+                                <div *ngIf="getEmail">
+                                    <div class="mt-4 nav-first-name password-OTP">
+                                        One Time Password (OTP) has been sent to tushar@gmail.com.
+                                    </div>
+
+                                    <div class="mt-4 d-flex">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control1"
+                                                (keydown)="blockAlphabetsAndSpecialChars($event)"
+                                                placeholder="Enter one time password(OTP)">
+                                        </div>
+                                        <div class="d-none d-md-block web-resend-otp">
+                                            <span class="nav-first-name otherlinks">Resend OTP</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-md-none mt-4 mobile-resend-otp">
+                                        <span class="nav-first-name">Resend OTP</span>
+                                    </div>
+                                    <div class="mt-4">
+                                        <b>Note:</b> Kindly note that this code will be valid for the next 20 minutes
+                                        only.
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <div class="d-flex justify-content-start">
+                                            <div class="mt-2 me-4">
+                                                <button type="button" (click)="onBack()" class="btn btn-outline-primary ml-2 forSubmitButton">Back</button>
+                                            </div>
+                                            <div class="mt-2">
+                                                <button type="button" class="btn btn-primary ml-2 forSubmitButton"
+                                                (click)="forGoSelectFundFlow()">Submit</button>
+                                            </div>
+                                       
+    
+                                        </div>
+                                        <!-- <div class="d-flex justify-content-start gap-3">
+                                            <div class="mt-2">
+                                               
+                                                <button st yle="height: 45px; margin-left: 5px;" type="button"
+                                                    class="btn btn-primary ml-2 forSubmitButton"
+                                                    (click)="forGoSelectFundFlow()">Submit</button>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 discl-nav channel-section">
+                                Disclaimer
+                            </div>
+                            <div class="mt-4">
+                                <p>
+                                    NAV of a chosen fund will be sent on the next day. For example, NAV of Monday will
+                                    be sent on Tuesday. In case of liquid funds, holiday NAV will be sent on Monday.
+                                    Receipt of the alert is subject to validity of the mobile number / email address.
+                                    Franklin Templeton cannot be held responsible for any delay in receiving the alert
+                                    due to invalid or incorrect mobile number / email address or any network
+                                    connectivity.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- after email submit  -->
+                        <div *ngIf="nvmEmail">
+                            <div class="mt-4 d-md-block d-none discl-nav channel-block">
+                                I / We would like to receive NAV Alerts on the below mentioned channel(s) :
+                            </div>
+                            <div class="mt-4 fw-semibold d-md-block d-none discl-nav email-address">
+                                Email Address :xyz@gmail.com
+                            </div>
+                            <div class="mt-4">
+                                <div class="mb-2">
+                                    <p>Frequency</p>
+                                </div>
+                                <div class="d-flex gap-3 mt-4 email-nav">
+
+                                    <div class="radio-cards">
+                                        <div class="email-nav">
+                                            <!-- <input class="form-check-input" type="radio" name="exampleRadios" id="daily"
+                                                value="option1" checked> &nbsp; -->
+                                                <input class="form-check-input" type="radio" id="exampleRadios1" [value]="0"
+                                                [(ngModel)]="otpChecked" name="otpChecked" [checked]="otpChecked === 0" (click)="onDaily()">
+                                                &nbsp;
+                                            <label class="form-check-label">Daily</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="radio-cards">
+                                        <div class="email-nav">
+                                            <!-- <input class="form-check-input" type="radio" name="exampleRadios"
+                                                id="weekly" value="option2"> -->
+                                                <input class="form-check-input" type="radio" id="exampleRadios1" [value]="1"
+                                                [(ngModel)]="otpChecked"  name="otpChecked" [checked]="otpChecked === 1" (click)="onDaily()">
+                                            &nbsp;
+                                            <label class="form-check-label">Weekly</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="radio-cards">
+                                        <div class="email-nav">
+                                            <input class="form-check-input" type="radio" id="exampleRadios1" [value]="2"
+                                            [(ngModel)]="otpChecked"  name="otpChecked" [checked]="otpChecked === 2" (click)="onDaily()">
+                                            &nbsp;
+                                            <label class="form-check-label">Monthly</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="radio-cards">
+                                        <div class="email-nav">
+                                            <input class="form-check-input" type="radio" id="exampleRadios1" [value]="3"
+                                            [(ngModel)]="otpChecked" name="otpChecked" [checked]="otpChecked === 3" (click)="onOneTime()">
+                                            <!-- <input class="form-check-input" type="radio" name="exampleRadios"
+                                                id="One-Time" value="option4" (click)="onOneTime()"> -->
+                                            &nbsp;
+                                            <label class="form-check-label">One-Time</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div *ngIf="getButton">
+                                    <div class="d-flex justify-content-start nav-button gap-3 mt-4 mb-4 getButton-index">
+                                        <div class="mt-2">
+                                            <button
+                                                
+                                                type="button" class="btn btn-outline-primary mr-2 Reset-block"
+                                                (click)="onReset()">Reset</button>
+                                        </div>
+                                        <div class="mt-2">
+                                            <button  type="button"
+                                                class="btn btn-primary ml-2 Subscribe-block" (click)="toggleDialog()">Subscribe</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div *ngIf="periodFrequncy">
+                            <div class="mt-4" *ngIf="periodFormate">
+                                <div class="mb-2">
+                                    <p>Period</p>
+                                </div>
+                                <div class="d-flex gap-3 mt-4 last-email-nav">
+
+                                    <div class="radio-cards">
+                                        <div class="email-nav">
+                                            <input class="form-check-input" type="radio" id="exampleRadios1" [value]="0"
+                                            [(ngModel)]="monthChecked"  name="monthChecked" [checked]="monthChecked === 0" (click)="hideCustomDate()">
+                                                 &nbsp;
+                                            <label class="form-check-label" for="exampleRadios1">Last 1 day</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="radio-cards">
+                                        <div class="email-nav">
+                                            <input class="form-check-input" type="radio" id="exampleRadios1" [value]="1"
+                                            [(ngModel)]="monthChecked"  name="monthChecked" [checked]="monthChecked === 1" (click)="hideCustomDate()">
+                                            &nbsp;
+                                            <label class="form-check-label" for="exampleRadios2">Last 1 week</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="radio-cards">
+                                        <div class="email-nav">
+                                            <!-- <input class="form-check-input" type="radio" name="exampleRadios"
+                                                id="exampleRadios1" value="option2" (click)="hideCustomDate()"> -->
+                                                <input class="form-check-input" type="radio" id="exampleRadios1" [value]="2"
+                                                [(ngModel)]="monthChecked"  name="monthChecked" [checked]="monthChecked === 2" (click)="hideCustomDate()">
+                                            &nbsp;
+                                            <label class="form-check-label" for="exampleRadios2">Last 1 month</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="radio-cards">
+                                        <div class="email-nav">
+                                            <!-- <input class="form-check-input" type="radio" name="exampleRadios"
+                                                id="exampleRadios1" value="option2" (click)="showCustomDate()"> -->
+                                                <input class="form-check-input" type="radio" id="exampleRadios1" [value]="3"
+                                                [(ngModel)]="monthChecked"  name="monthChecked" [checked]="monthChecked === 3" (click)="showCustomDate()">
+                                            &nbsp;
+                                            <label class="form-check-label" for="exampleRadios2">Custom</label>
+                                        </div>
+
+                                        <div>
+                                            <div class="filter-date mt-3">
+                                                <!-- <div class="mb-3">Date Range </div> -->
+                                                <form *ngIf="navDate">
+                                                    <div class="row date-pick-nav calendar-inline">
+                                                        <div class="col-6">
+                                                            <div class="date-group">
+                                                                <img src="assets/images/fund/calendar-outline.svg">
+                                                                <input type="text" placeholder="From"
+                                                                    class="form-control nav-date" onfocus="(this.type='date')">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="date-group">
+                                                                <img src="assets/images/fund/calendar-outline.svg">
+                                                                <input type="text" placeholder="To" class="form-control nav-date"
+                                                                    onfocus="(this.type='date')">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+
+                                <div class="mt-4 mb-4">
+                                    <div class="mb-2">
+                                        <p>Formate</p>
+                                    </div>
+                                    <div class="d-flex gap-3 mt-4 email-nav">
+
+                                        <div class="radio-cards">
+                                            <div class="email-nav">
+                                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                                    id="daily" value="option1" checked> &nbsp;
+                                                <label class="form-check-label" for="exampleRadios1">Excel</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="radio-cards">
+                                            <div class="email-nav">
+                                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                                    id="weekly" value="option2">
+                                                &nbsp;
+                                                <label class="form-check-label" for="exampleRadios2">Text</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="radio-cards">
+                                            <div class="email-nav">
+                                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                                    id="monthly" value="option2">
+                                                &nbsp;
+                                                <label class="form-check-label" for="exampleRadios2">DBL</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div *ngIf="forDataPartBefore">
+                            <div class="mb-4">Please select the fund(s)</div>
+                        </div>
+
+                        <div *ngIf="forNavsCheckFlow">
+
+                            <section class="FT-all-funds watchlist-funds add-watchlist-funds nav-contact-box">
+                                <div class="funds-data">
+                                    <div class="FT-all-funds-Card">
+                                        <div class="row align-items-center watchlist-box">
+                                            <div class="col-lg-8 for-watchlist-box">
+                                                <div class="filter-options mt-0 mb-4">
+                                                    <div class="form-group ">
+                                                        <input type="text" class="form-control search"
+                                                            placeholder="Search Mutual Fund" [(ngModel)]="searchTerm"
+                                                            (input)="filterFunds(searchTerm)">
+                                                        <div class="search-result" *ngIf="showFundSearchDropdown">
+                                                            <div class="inner">
+                                                                <ng-container *ngFor="let fund of fundsForSearch">
+                                                                    <div class="funds-seach-title fund-franklin-size "
+                                                                        (click)="getTableTitle(fund)"
+                                                                    >
+                                                                        {{ fund.title }}
+                                                                        <span class="sub"><span class="text-gray">Fund
+                                                                                Size</span> - {{ fund.aum }}</span>
+                                                                        <span class="sub"><span class="text-gray">Unique
+                                                                                Investors</span> - {{ fund.investors
+                                                                            }}</span>
+                                                                    </div>
+                                                                </ng-container>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <img src="./assets/images/comparefund/closebutton.svg"
+                                                            class="make-tag-for-all-page d-md-none close-btn-img"
+                                                            (click)="resetFundExplore()">
+                                                        <img src="./assets/images/comparefund/closebutton.svg"
+                                                            class="make-tag-for-all-page d-none d-md-block close-button"
+                                                            (click)="resetFundExplore()">
+                                                    </div>
+                                                    <div>
+                                                    </div>
+                                                    <div class="dataFilter">
+                                                        <div class="d-none d-md-inline-block">
+                                                            <div class="d-flex align-items-center ">
+                                                                <span class="me-2">Sort by </span>
+                                                                <div class="dropdown">
+                                                                    <button class="btn dropdown-toggle" type="button"
+                                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                                        <div class="has-filter-red-dot d-none"></div>
+                                                                        <span class="sort-by-text">Returns High to
+                                                                            Low</span>
+                                                                        <!-- Returns High to Low -->
+                                                                    </button>
+                                                                    <ul class="dropdown-menu">
+                                                                        <li><a class="dropdown-item"
+                                                                                href="#">Popularity</a></li>
+                                                                        <li class="selected-option"><a
+                                                                                class="dropdown-item" href="#">Returns -
+                                                                                High to Low</a></li>
+                                                                        <li><a class="dropdown-item" href="#">AUM - High
+                                                                                to Low</a></li>
+                                                                        <li><a class="dropdown-item" href="#">Unique
+                                                                                Investors - High to Low</a></li>
+                                                                    </ul>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex align-items-center d-md-none">
+                                                            <button class="btn dropdown-toggle " type="button"
+                                                                data-bs-toggle="offcanvas"
+                                                                data-bs-target="#offcanvasBottom"
+                                                                aria-controls="offcanvasBottom">
+                                                                Sort by
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tab-head mb-4 forwatclistnavtab side-filter-options">
+
+
+
+                                                    <div class="scrollable-tabs">
+                                                        <ul class="nav nav-tabs myTab-element"  id="myTab"
+                                                            role="tablist">
+                                                            <li class="nav-item" role="presentation"
+                                                                *ngFor="let element of sideFilterOptions; let i = index">
+                                                                <button class="nav-link"
+                                                                    [ngClass]="{'active': activeTab === i}"
+                                                                    [id]="element.id + '-tab'" data-bs-toggle="tab"
+                                                                    [attr.data-bs-target]="'#' + element.id + '-tab-pane'"
+                                                                    type="button" role="tab"
+                                                                    [attr.aria-controls]="element.id + '-tab-pane'"
+                                                                    [attr.aria-selected]="activeTab === i"
+                                                                    (mouseenter)="changeActiveTab(i)"
+                                                                    (mouseleave)="resetActiveTab()">{{element.name}}
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="tab-content" id="v-pills-tabContent">
+                                                    <div class="tab-pane fade show active" id="v-pills-all"
+                                                        role="tabpanel" aria-labelledby="v-pills-all-tab" tabindex="0">
+                                                        <div class="d-md-block d-none fund-selected">Fund selected
+                                                            ({{this.navTitle.length}})</div>
+
+                                                            <div *ngIf="isEmailSelectAll">
+                                                                <input type="checkbox" class="checkall" (click)="selectedAll()"> Select All
+                                                            </div>
+                                                        <div class="funds-container container-scroll mt-2">
+
+                                                            <ng-container *ngFor='let fund of funds; let i = index'>
+                                                                <app-fund-card1 [fund]="fund"
+                                                                    [hasThreeDotOptions]="false" [hasAddThreeDot]="true"
+                                                                    [hasAddNowBtn]="true" [navsModal]=false
+                                                                    (navOutput)="getNav($event)"
+                                                                    (navRemove)="removeNav($event)"
+                                                                    [addtoCartData]=false>
+                                                                </app-fund-card1>
+                                                            </ng-container> 
+
+                                                         </div>
+                                                     </div>
+                                                 </div> 
+
+                                                 <!-- <div class="tab-content" id="v-pills-tabContent">
+                                                            <div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab"
+                                                                tabindex="0">
+                                                                <div sty le="margin-left: 5px;">Fund selected ({{this.navTitle.length}})</div>
+                                                                  <div>
+                                                                    <input type="checkbox" id="selectAllCheckbox" (click)="addAllFundsButtonClicked()"> Select All
+                                                                          
+                                                                </div>          
+    
+                                                                <div class="funds-container container-scroll mt-2">
+                                                                    <ng-container *ngFor='let fund of funds; let i = index'>
+                                                                      <app-fund-card1
+                                                                        [fund]="fund"
+                                                                        [hasThreeDotOptions]="false"
+                                                                        [hasAddThreeDot]="true"
+                                                                        [hasAddNowBtn]="true"
+                                                                        [navsModal] = false
+                                                                        (navOutput)="getNav($event)"
+                                                                        (navRemove)="removeNav($event)"
+                                                                        [addtoCartData] = false
+                                                                        >
+                                                                    </app-fund-card1>
+                                                                    </ng-container>
+                                                                </div>
+                                                            </div>
+                                                        </div>  -->
+
+                                            </div>
+                                            <div class="col-lg-4 d-none d-md-block empty-cart-wraper">
+                                                <div class="wrapper">
+                                                    <div>
+                                                        <div class="for-selected-fund">Selected Funds
+                                                            ({{this.funds.length}}/{{this.navTitle.length}})</div>
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <h3 class="nav-form fund-name">Fund Name</h3>
+                                                    </div>
+                                                    <div class="mt-2">
+                
+                                                        <table border="0" cellpadding="0" cellspacing="0"
+                                                            class="navTitle-head">
+                                                            <tbody>
+                                                                <ng-container
+                                                                    *ngFor="let api of navTitle; let i = index">
+                                                                    <tr *ngIf="i < fundsLimit" class="mb-2 title-frame"
+                                                                        >
+                                                                        <td class="nav-alert-fund api-title"
+                                                                            >
+                                                                            {{ api.title }}</td>
+                                                                        <td class="Frame-img"><img
+                                                                                src="./assets/images/comparefund/Frame1000007898.svg"
+                                                                                alt="" (click)="removeNav(api)"></td>
+                                                                    </tr>
+                                                                    
+                                                                </ng-container>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div *ngIf="maximumLimit" class="text-center fund-select">
+                                                        maximum limit for fund select is 3
+                                                    </div>
+                                                    <!-- <div *ngIf="mobileFundLimitExceeded" class="text-center" st yle="color: red;">
+                                                        maximum limit for fund select is 3
+                                                      </div> -->
+                                                </div>
+                                                <div class="mt-2" *ngIf="frequencyMob">
+                                                    <div class="mb-2">
+                                                        <p>Frequency</p>
+                                                    </div>
+                                                    <div class="d-flex gap-5 mt-4">
+
+                                                        <div class="radio-cards">
+                                                            <div>
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="exampleRadios" id="daily" value="option1"
+                                                                    checked>
+                                                                &nbsp;
+                                                                <label class="form-check-label"
+                                                                    for="exampleRadios1">Daily</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="radio-cards">
+                                                            <div>
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="exampleRadios" id="weekly" value="option2">
+                                                                &nbsp;
+                                                                <label class="form-check-label"
+                                                                    for="exampleRadios2">Weekly</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="radio-cards">
+                                                            <div>
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="exampleRadios" id="monthly" value="option2">
+                                                                &nbsp;
+                                                                <label class="form-check-label"
+                                                                    for="exampleRadios2">Monthly</label>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="d-flex justify-content-start gap-3 mt-2 nav-button getButton-index"
+                                                >
+                                                        <div class="mt-2">
+                                                            <button
+                                                               
+                                                                type="button"
+                                                                class="btn btn-outline-primary mr-2 Reset-block" (click)="onFundReset()" >Reset</button>
+                                                        </div>
+                                                        <div class="mt-2">
+                                                            <button
+                                                               
+                                                                type="button" class="btn btn-primary ml-2 Subscribe-block"
+                                                                (click)="toggleDialog()">Subscribe</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+<div class="offcanvas offcanvas-bottom sort-bottom offcanvas-body-content" tabindex="-1" id="offcanvasBottom"
+    aria-labelledby="offcanvasBottomLabel"
+>
+    <div class="offcanvas-header">
+        <div class="line"></div>
+    </div>
+    <div class="offcanvas-body small">
+        <div class="Popularity mb-4">
+            <div class="mb-4">
+                <h4 class="mb-2 sort-by">Sort By</h4>
+            </div>
+            <div>
+                <h4 class="Returns-SWP">Returns</h4>
+                <div class="d-flex gap-3">
+                    <div class="form-check radioModule">
+                        <input class="form-check-input" type="radio" value="Popularity" name="flexRadioDefault"
+                            id="Popularity">
+                        <label class="form-check-label High-low"  for="flexRadioDefault1">
+                            High to Low
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h4 class="Returns-SWP" >Fund Size</h4>
+                <div class="d-flex gap-3">
+                    <div class="form-check radioModule">
+                        <input class="form-check-input" type="radio" value="Popularity" name="flexRadioDefault"
+                            id="Popularity">
+                        <label class="form-check-label High-low" for="flexRadioDefault1">
+                            High to Low
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h5 class="Returns-SWP" >Unique Investors</h5>
+                <div class="d-flex gap-3">
+                    <div class="form-check radioModule">
+                        <input class="form-check-input" type="radio" value="Popularity" name="flexRadioDefault"
+                            id="Popularity">
+                        <label class="form-check-label High-low" for="flexRadioDefault1">
+                            High to Low
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-alert-funds">
+        <div class="d-flex justify-content-center align-items-center gap-3 Apply-block"
+            >
+            <button class="btn btn-outline-primary Cancel-content"
+                >Cancel</button>
+            <button class="btn btn-primary Cancel-content"
+                >Apply</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="offcanvas offcanvas-bottom sort-bottom offcanvas-body-content" tabindex="-1" id="getcardoffcanvasBottom"
+    aria-labelledby="offcanvasBottomLabel"
+     >
+    <div class="offcanvas-header">
+        <div class="line"></div>
+    </div>
+    <div class="offcanvas-body small">
+        <div>
+            <div class="text-center">
+                <div class="for-selected-fund">Selected Funds ({{this.funds.length}}/{{this.navTitle.length}})</div>
+            </div>
+            <div class="mt-4">
+                <h3 class="nav-contact-box fund-name" >Fund Name</h3>
+            </div>
+            <div class="mt-4 mb-4">
+                <table border="0" cellpadding="0" cellspacing="0"
+                 class="navTitle-head">
+                    <tbody>
+                        <tr *ngFor="let api of navTitle" class="mb-2 title-frame" >
+                            <td class="nav-alert-fund frequency-fund"
+                                >
+                                {{ api.title }}</td>
+                            <td class="frequency-fund-risk"><img
+                                    src="./assets/images/comparefund/Frame1000007898.svg" alt=""
+                                    (click)="removeNav(api)"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-4 mb-4" *ngIf="frequencyMob">
+                <div class="mb-2">
+                    <p class="frequency-fund-data">Frequency</p>
+                </div>
+                <div class="d-flex gap-5 mt-4">
+
+                    <div class="radio-cards">
+                        <div>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="daily" value="option1"
+                                checked> &nbsp;
+                            <label class="form-check-label" for="exampleRadios1">Daily</label>
+                        </div>
+                    </div>
+
+                    <div class="radio-cards">
+                        <div>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="weekly"
+                                value="option2"> &nbsp;
+                            <label class="form-check-label" for="exampleRadios2">Weekly</label>
+                        </div>
+                    </div>
+
+                    <div class="radio-cards">
+                        <div>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="monthly"
+                                value="option2"> &nbsp;
+                            <label class="form-check-label" for="exampleRadios2">Monthly</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div>
+
+              
+
+                
+
+                    <div class="filter-footer d-flex d-lg-none">
+                        <button class="btn btn-outline-primary" (click)="toggleDialog()">Subscribe</button>
+                        <button class="btn btn-primary">Reset</button>
+                    </div>
+                    
+                    <!-- <div class="mt-4">
+                        <button s tyle="height: 47px;
+                        margin-left: 5px;
+                        width: 139px;" type="button" class="btn btn-primary ml-2"
+                            (click)="toggleDialog()">Subscribe</button>
+                    </div>
+                    <div class="mt-4">
+                        <button sty le="height: 47px; background: #FFFFFF; margin-right: 5px;  width: 139px;"
+                            type="button" class="btn btn-outline-primary mr-2">Reset</button>
+                    </div> -->
+            
+            </div>
+        </div>
+        <!-- <div class="filter-footer d-flex d-lg-none">
+            <button class="btn btn-outline-primary fontResize">Cancel</button>
+            <button
+                class="btn btn-primary fontResize">Apply
+            </button>
+            </div> -->
+    </div>
+</div>
+
+<div class="save-alert general-close"  *ngIf="addAlert">
+
+    <div class="content for-content">
+        <span class="close-btn" (click)="toggleCard()">
+            <img src="assets/images/general/close.svg">
+        </span>
+        <img src="assets/images/general/check_circle.svg" class="checked-img">
+        <span>Thankyou for subscribing! Stay tuned for more updates.</span>
+    </div>
+</div>

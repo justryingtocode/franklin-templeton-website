@@ -1,0 +1,22 @@
+<section class="FT-calculators-slider mb-6">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between mb-sm-4 mb-3">
+            <div class="FT-title-small">Other Calculators</div>
+            <a href="#" class="line login-dark2">View All <i class="bi bi-chevron-right"></i></a>
+        </div>
+        
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+
+            <div ngxSlickItem class="slide" *ngFor="let item of calculators">
+                <div >
+                    <div class="calc-box">
+                        <img [src]="'assets/images/calculators/' + item.img">
+                        <h4>{{item.name}}</h4>
+                        <a [routerLink]="item.route" class="btn btn-primary">{{item.cta}}</a>
+                    </div>
+                </div>
+            </div>
+
+        </ngx-slick-carousel>
+    </div>
+</section>

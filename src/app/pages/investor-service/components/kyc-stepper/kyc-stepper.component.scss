@@ -1,0 +1,320 @@
+.container {
+	max-width: 1230px
+}
+
+.account-form {
+	.row {
+		max-width: 680px;
+		margin: 0 auto;
+	}
+
+	.form-control {
+		height: 44px;
+	}
+
+	.btn {
+		width: 233px;
+		height: 44px;
+		padding: 12px 28px;
+		border-radius: 8px;
+		font-size: 0.875rem;
+		line-height: 142%;
+	}
+}
+
+.stepper-head {
+	border-bottom: 1px solid #d2d8ea;
+	margin-bottom: 40px;
+}
+
+::ng-deep .steps {
+	display: flex;
+	justify-content: space-between;
+	//align-items: center;
+	margin-bottom: 0;
+	position: relative;
+	margin: 0 -16px;
+
+	.step-item {
+		width: -webkit-fill-available;
+		justify-content: center;
+		gap: 16px;
+		z-index: 10;
+		text-align: initial;
+		align-items: center;
+		pointer-events: none;
+		margin: 0 16px;
+		padding: 12px 16px;
+
+		&[aria-expanded="true"] {
+			border-bottom: 4px solid #3769ff;
+			background: #f0f6ff;
+
+			.step-title {
+				color: #3769ff;
+			}
+		}
+	}
+
+	.step-button {
+		width: 37px;
+		height: 37px;
+		border-radius: 50%;
+		border: none;
+		background-color: var(--prm-gray);
+		transition: .4s;
+	}
+
+	.step-button[aria-expanded="true"] {
+		background-color: var(--prm-color);
+		border-bottom: 1px solid;
+		color: #fff;
+
+		&::after {
+			position: absolute;
+			content: "";
+			border-bottom: 1px solid #d2d8ea;
+			width: 100%;
+			// transform: translateX(-50%);
+			bottom: -9px;
+			// left: 50%;
+		}
+	}
+}
+
+
+
+.done {
+	background-color: var(--prm-color);
+	color: #fff;
+}
+
+.stip-line {
+	max-width: 90px;
+	display: flex;
+	align-items: center;
+}
+
+.step-title {
+	font-size: 1rem;
+	color: #8189a2;
+	flex: 1 0 0
+}
+
+.show-active {
+	border-bottom: 1px solid;
+}
+
+
+.goal-cards {
+	border: 0;
+	padding: 0;
+
+	.card-body {
+		padding: 0;
+		border: 0;
+		box-shadow: none;
+
+		.alert-danger {
+			padding: 5px 10px;
+			background-color: #f8d7da;
+			margin-bottom: 1rem;
+		}
+	}
+
+}
+
+.collapsing {
+	transition: none !important;
+}
+
+
+@media(max-width:768px) {
+	.steps {
+		width: 100%;
+		border-bottom: none;
+		// align-items: center;
+
+	}
+
+	.steps .step-item {
+		flex-wrap: wrap;
+		flex-direction: column !important;
+		margin: 0;
+	}
+
+	.step-title {
+		font-size: 0.813rem;
+	}
+
+	.stip-line {
+		max-width: 30px;
+	}
+
+	.account-form {
+		.btn {
+			margin-left: 0px;
+			width: 140px;
+			border-radius: 6px;
+			height: 38px;
+			padding: 8px 28px;
+		}
+	}
+
+}
+
+
+// mobile responsive 
+@media (max-width: 768px) {
+
+	// steper one
+	.collapseOne {
+		.goal-cards {
+			box-shadow: none;
+			border: none;
+			background-color: transparent;
+
+			.card-body {
+				padding: 0px;
+
+				.form-sec-wrap {
+					padding: 20px;
+					border: 1px solid #98989826;
+					box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.0588235294);
+					border-radius: 7px;
+				}
+
+				.stepper-card-wrap {
+					margin-top: 0px;
+					transform: scale(0.9);
+				}
+			}
+		}
+	}
+
+	// steper two
+	.collapseTwo {
+		.goal-cards {
+			padding: 0px;
+			margin-bottom: 40px;
+			border: none;
+
+			.card-header {
+				gap: 2px;
+				flex-flow: column;
+				border: none;
+				margin-bottom: 15px;
+
+				.card-user-name {
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+					gap: 13px;
+				}
+			}
+		}
+	}
+
+	// steper three
+	.collapseThree {
+		.card-header {
+			border-bottom: none;
+		}
+
+		.goal-cards {
+			padding: 0px;
+			margin-bottom: 40px;
+			border: none;
+
+			.card-header {
+				gap: 2px;
+				flex-flow: column;
+				border: none;
+				margin-bottom: 15px;
+
+				.card-user-name {
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+					gap: 13px;
+				}
+			}
+		}
+
+		.card-body {
+			// padding: 20px 20px;	
+		}
+	}
+
+}
+
+@media (min-width:373px) and (max-width:375px) {
+	.steps {
+		width: 32%;
+		// align-items: center;
+	}
+}
+
+@media (max-width: 420px) {
+	.steps .step-item {
+		padding: 12px 0px !important;
+	}
+}
+
+
+// mo
+
+.form-container {
+	max-width: 785px;
+	margin: 0 auto;
+}
+
+.btn {
+	padding: 10px 20px;
+	width: 100% !important;
+
+	@media(min-width:576px) {
+		width: 507px
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.distributor-step2 {
+		margin-left: 0px !important;
+	}
+}
+
+
+.password-input {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.toggle-password {
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+
+.invalidPan-num {
+	margin-left: 285px
+}
+
+.invalidPan-numumber {
+	flex-direction: column;
+}
+
+.invalidPan-color {
+	color: #F04438;
+}
+
+.resend {
+	display: flex;
+	justify-content: end;
+}
+.acc-number{
+	margin-left: 28%;
+}

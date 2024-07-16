@@ -1,0 +1,73 @@
+.form-container {
+    max-width: 785px;
+    margin: 0 auto;
+
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.btn {
+    padding: 10px 20px;
+    width: 100%;
+
+    @media(min-width:576px) {
+        width: 233px
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .distributor-step2 {
+        margin-left: 0px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .mr {
+        margin-right: 33px !important;
+    }
+}
+
+//
+
+.share-menu-twitter {
+    color: #F04438;
+}
+
+.share-menu-twitter-fund {
+    margin-left: 256px;
+}
+
+.share-btn-fund {
+    color: #697c91;
+}
+
+.fund-AUM {
+    display: flex;
+    justify-content: end;
+}
+
+.showIconForWatchlist {
+    color: green;
+    margin-right: 73px;
+}
+
+// .audio-box {
+//     height: 6px;
+// }
+
+// .podcast-block {
+//     height: 61px;
+// }
+
+// .audio-class-box {
+//     border-radius: 4px;
+//     background: #F0F6FF;
+//     padding: 0px 10px 0px 5px;
+// }
+
+// .podcast-img-box {
+//     margin-left: -9px;
+// }

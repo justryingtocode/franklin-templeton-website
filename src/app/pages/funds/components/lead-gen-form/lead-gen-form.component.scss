@@ -1,0 +1,129 @@
+.lead-gen-block {
+    background: #F0F6FF;
+    padding: 10px 12px;
+    border: 1px solid #3769FF;
+    border-radius: 5px;
+    border-radius: 11px;
+}
+
+.lead-first-section h3,
+.lead-name span {
+    font-family: Hanken Grotesk;
+    font-size: 1.063rem;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: -0.03em;
+    text-align: left;
+}
+
+
+
+.lead-form-btn {
+    width: 9rem;
+}
+
+.lead-first-section img {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+}
+
+input {
+    height: 40px;
+}
+
+.lead-form {
+    display: flex;
+    gap: 22px;
+}
+
+::ng-deep .step {
+    pointer-events: none;
+
+    &[aria-expanded="true"] {
+        .step-num {
+            background: var(--blue);
+        }
+    }
+}
+
+.collapsing {
+    transition: none !important;
+}
+
+@media (max-width: 900px) {
+    .form-control {
+        height: 40px;
+        width: 18rem;
+        padding: 10px;
+        margin: 10px;
+        position: relative;
+        right: 45px;
+
+        &::placeholder {
+            font-size: 13px !important;
+        }
+    }
+
+}
+
+@media (max-width: 900px) {
+    .account-form-email {
+        position: relative;
+        left: 0px !important;
+    }
+
+    .form-otp {
+        position: relative !important;
+        left: -13px;
+        width: 18rem !important;
+    }
+
+    .save-alert {
+        margin-left: 50px;
+        width: 317px;
+    }
+
+    .lead-first-section h3,
+    .lead-name span {
+        font-size: 15px;
+    }
+
+    .lead-first-section img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .lead-button {
+        width: 17rem !important;
+        position: relative;
+        right: 29px;
+    }
+
+    .lead-otp-button {
+        right: -5px !important;
+        position: relative;
+        width: 17rem !important;
+    }
+}
+
+//
+.yourname {
+    width: 100%;
+    position: relative;
+    left: 2rem;
+}
+
+.submit-data {
+    width: 9rem;
+}
+
+.Enter-OTP {
+    width: 100%;
+    position: relative;
+    left: 19rem;
+}

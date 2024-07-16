@@ -1,0 +1,144 @@
+[
+    {
+        "id": 1,
+        "headerText": "Asset Category",
+        "expanded": false,
+        "contentData": [
+            {
+                "id": 1,
+                "title": "ELSS Fund"
+            },
+            {
+                "id": 2,
+                "title": "Equity Funds"
+            },
+            {
+                "id": 3,
+                "title": "Fixed Income Funds"
+            },
+            {
+                "id": 4,
+                "title": "FOF Domestic"
+            },
+            {
+                "id": 5,
+                "title": "Hybrid Funds"
+            },
+            {
+                "id": 6,
+                "title": "International Funds"
+            },
+            {
+                "id": 7,
+                "title": "Liquid Funds"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "headerText": "Fund Category",
+        "expanded": false,
+        "contentData": [
+            {
+                "id": 1,
+                "title": "Aggressive Hybrid Fund"
+            },
+            {
+                "id": 2,
+                "title": "Banking & PSU Fund"
+            },
+            {
+                "id": 3,
+                "title": "Close-Ended Debt Fund"
+            },
+            {
+                "id": 4,
+                "title": "Conservative Hybrid Fund"
+            },
+            {
+                "id": 5,
+                "title": "Corporate Bond Fund"
+            },
+            {
+                "id": 6,
+                "title": "Dividend Yield Fund"
+            },
+            {
+                "id": 7,
+                "title": "Dynamic Bond"
+            },
+            {
+                "id": 8,
+                "title": "ELSS"
+            },
+            {
+                "id": 9,
+                "title": "Equity Saving Fund"
+            },
+            {
+                "id": 10,
+                "title": "Flexi Cap Fund"
+            },
+            {
+                "id": 11,
+                "title": "FLoater Fund"
+            },
+            {
+                "id": 12,
+                "title": "Focussed Fund"
+            },
+            {
+                "id": 13,
+                "title": "FoF - Domestic"
+            },
+            {
+                "id": 14,
+                "title": "Gilt Fund"
+            },
+            {
+                "id": 15,
+                "title": "Index Fund"
+            },
+            {
+                "id": 16,
+                "title": "Large & Mid Cap Fund"
+            },
+            {
+                "id": 17,
+                "title": "Large Cap Fund"
+            },
+            {
+                "id": 17,
+                "title": "Liquid Fund"
+            },
+            {
+                "id": 17,
+                "title": "Low Duration Fund"
+            },
+            {
+                "id": 17,
+                "title": "Medium Duration Fund"
+            },
+            {
+                "id": 17,
+                "title": "Mid Cap Fund"
+            },
+            {
+                "id": 17,
+                "title": "Money Market Fund"
+            },
+            {
+                "id": 17,
+                "title": "Open-Ended Hybrid"
+            },
+            {
+                "id": 17,
+                "title": "Retirement Fund"
+            },
+            {
+                "id": 17,
+                "title": "Short Duration Fund"
+            }
+        ]
+    } 
+]

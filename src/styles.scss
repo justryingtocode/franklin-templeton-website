@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import "/src/assets/scss/style.scss";
+
+body {
+    overflow-x: hidden;
+}
+
+
+// --> Handle on Large font size
+// mobile view;
+@media(max-width: 576px){
+    html.large{
+        .header-notice{
+            height: 280px !important;
+        }
+        .FT-top-spacing{
+            margin-top: 394px;
+        }
+        .mobile-fix-top{
+            top: -346px !important;
+        }
+    }
+
+}
+
+
+@media (max-width: 768px){
+    .sx-black-color{
+        // color: #000;
+        color: #3c425d;
+    }
+}
+
+// global font resize
+.fontResize{
+    transition: font 0.2s ease-in-out !important;
+}
+
+html.small{
+    font-size: 14px !important;
+}
+    
+
+html.large{
+    font-size: 18px !important;
+}
+
+
+html.large .header-notice{
+    height: 165px;
+}

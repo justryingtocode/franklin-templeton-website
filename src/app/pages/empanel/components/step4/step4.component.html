@@ -1,0 +1,50 @@
+<div>
+    <div class="row">
+        <div class="form-group col-lg-7 mb-4">
+            <select class="form-select">
+                <option selected>Select KYD(Know Your Distributor) Status*</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+    </div>
+    <div class="text-big text-meduim mb-4">
+        Please upload a scanned image of cancelled cheque of AMFI registered account to facilitate NEFT commission
+        transfer
+    </div>
+    <div class="row">
+        <div class="col-lg-8 col-12">
+
+            <div class="upload-file-box mb-3">
+                <input class="form-control" type="file" id="formFile">
+                <div class="file-name me-lg-5 me-md-4 me-3"></div>
+                <div class="upload-files">
+                    <span>Upload</span>
+                </div>
+            </div>
+            <div class="mb-4">
+                Note: JPG or JPEF file are only supported and max file size is 2MB
+            </div>
+            <div class="mb-4 pb-md-3">
+               
+                <div class="form-check form-check-inline me-md-5 me-4 text-big">
+                    <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                    <label class="form-check-label text-meduim" for="inlineRadio1">Terms & Conditions</label>
+                  </div>
+                  <div class="form-check form-check-inline text-big">
+                    <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label text-meduim" for="inlineRadio2">Anti Corruption Policy</label>
+                  </div>
+            </div>
+            <div class="btn-options">
+                <button type="button" class="btn btn-outline-primary me-4" (click)="changeActiveStepper(3,false)" data-bs-toggle="collapse" data-bs-target="#collapse3"
+                aria-expanded="false" aria-controls="collapse3">Back</button>
+                <!-- <button type="button" class="btn btn-outline-primary me-4">Back</button> -->
+                <button type="button" class="btn btn-primary" (click)="changeActiveStepper(4,true)" data-bs-toggle="collapse" data-bs-target="#collapse5"
+                aria-expanded="false" aria-controls="collapse5">Next</button>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,236 @@
+.new-badge {
+  // position: absolute;
+  // top: -12px;
+  // left: 9px;
+  // display: inline-block;
+  background: #E24100;
+  color: #fff;
+  padding: 0 4px;
+  font-size: 0.75rem;
+  letter-spacing: -0.36px;
+}
+
+.fund-head h3 a:hover {
+  color: var(--blue);
+}
+
+.line {
+  width: 96px;
+  height: 2px;
+  position: absolute;
+  top: 17px;
+  left: 39%;
+  border: 2px solid #959595;
+  background: #959595;
+}
+
+.module1 {
+  //styleName: 16-semibold;
+  font-family: 'Hanken Grotesk';
+  font-size: 1.438rem;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.module2 {
+  //styleName: 16-semibold;
+  font-family: 'Hanken Grotesk';
+  font-size: 1.438rem;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  color: #3769FF;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.module3 {
+  font-family: 'Hanken Grotesk';
+  font-size: 1.188rem;
+  line-height: 21px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  margin-top: 13px;
+  margin-bottom: 10px;
+}
+
+.radio2 {
+  font-size: 1.188rem;
+  font-weight: 400;
+}
+
+.radio {
+  font-size: 1.438rem;
+  margin-top: 5px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-left: 19px;
+}
+
+.module4 {
+  font-size: 1.313rem;
+  font-weight: 500;
+}
+
+.module5 {
+  height: 61px;
+  font-size: 1.438rem
+}
+
+.checkbox {
+  font-size: 1.313rem;
+  font-weight: 500;
+}
+
+.module6 {
+  background-color: #F0F6FF;
+  color: #3769FF;
+  text-align: center;
+  font-size: 1.125rem;
+  padding: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  border-radius: 29px;
+  height: 49px;
+  width: 94px;
+}
+
+.fund-block {
+  .fund-head h3 a {
+    font-weight: 400;
+    font-size: 1.375rem;
+  }
+
+  .recommend-tag {
+    font-size: 0.75rem;
+  }
+
+  .tags ul li {
+    font-size: 0.938rem;
+  }
+
+  .info {
+    font-size: 0.875rem;
+
+    .text-big {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+//
+
+.share-menu-twitter {
+  margin-top: 5px;
+}
+
+.fund-AUM {
+  max-width: 322px;
+  width: 315px;
+}
+
+.share-menu-twitter-fund {
+  margin-bottom: auto;
+  margin-left: 19px;
+}
+
+.share-btn-fund {
+  white-space: nowrap;
+}
+
+
+.showIconForWatchlist {
+  margin-bottom: auto;
+  margin-left: 0px !important;
+}
+
+.audio-box {
+  z-index: 1026;
+}
+
+.podcast-block {
+  left: -100px;
+}
+
+.audio-class-box {
+  vertical-align: super;
+}
+
+.podcast-img-box {
+  font-size: 0.813rem !important;
+}
+
+.report-search-box {
+  vertical-align: sub;
+  padding-right: 0;
+}
+
+.report-share {
+  gap: 3px;
+  align-items: start;
+}
+
+.report-bcakground {
+  position: relative;
+  bottom: 3px;
+}
+
+.report-share-box {
+  padding-left: 4px;
+  width: auto;
+  position: absolute;
+}
+
+.report-detail {
+  top: 0;
+}
+
+.offcanvas-head {
+  border: 1px solid #D2D8EA;
+  padding: 12px;
+}
+
+.report-date-details {
+  gap: 3px;
+}
+
+.money-sign-fund {
+  position: relative;
+  top: 2px;
+}
+
+.alert-index {
+  z-index: 10000;
+}
+
+.share-fund-empty {
+  position: fixed;
+  top: calc(43% - 75px);
+  width: -webkit-fill-available;
+  display: none;
+  z-index: 1201;
+}
+
+.share-funds-empty {
+  padding: 0px;
+  margin: 0;
+}
+
+.share-REPORT {
+  border-top-right-radius: 15%;
+  border-top-left-radius: 15%;
+}
+
+.Share-WITH-other {
+  font-size: 1.75rem;
+  margin-left: auto
+}
+
+.fund-card-two {
+  white-space: nowrap;
+}

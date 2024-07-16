@@ -1,0 +1,472 @@
+<div class="fund-block position-relative">
+    <span *ngIf="fund?.badge" class="recommend-tag share-menu-twitter">{{fund?.badge}}</span>
+    <div class="d-flex justify-content-between fund-head share-menu-twitter">
+        <div class="d-flex justify-content-between d-none d-md-flex">
+            <div class="fund-AUM">
+                <h3 class="mb-0">
+                    <a [routerLink]="['/funds/' + fund?.id]">
+                        <span>{{ fund?.title }}</span>
+                    </a>
+                </h3>
+            </div>
+            <div>
+                <span class="img-with-tooltip">
+                    <img src="assets/images/general/very-high.svg">
+                    <span class="tooltip-block">
+                        <img src="assets/images/general/very-high.svg">
+                        This fund has moderately high risk
+                    </span>
+                </span>
+            </div>
+            <div class="tags share-menu-twitter-fund">
+                <ul>
+                    <li *ngFor="let tag of fund?.tag" class="share-btn-fund">{{ tag }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-md-none">
+            <span>
+                <h3 class="mb-0">
+                    <a [routerLink]="['/funds/' + fund?.id]">
+                        <span>{{ fund?.title }}</span>
+                    </a>
+                    <!-- <span class="img-with-tooltip"> -->
+                    <img src="assets/images/general/very-high.svg" class="ms-2">
+                    <!-- <span class="tooltip-block"> -->
+                    <!-- <img src="assets/images/general/very-high.svg">
+                            This fund has moderately high risk -->
+                    <!-- </span>
+                    </span> -->
+                    <!-- <img src="assets/images/general/very-high.svg" alt="Very High" class="ms-2"> -->
+                </h3>
+            </span>
+            <div class="tags showIconForWatchlist" >
+                <ul>
+                    <li *ngFor="let tag of fund?.tag" class="fund-card-two">{{ tag }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="icons">
+            <div class="d-none d-lg-inline-block">
+                <button (click)="toggleShowSavDialoge(fund)">
+                    <img src="assets/images/general/mark-icon.svg">
+                    <span class="tooltip-box">Add to watchlist</span>
+                </button>
+                <button (click)="routeModuleCompareFund('1')">
+                    <img src="assets/images/general/change-icon.svg">
+                    <span class="tooltip-box">Compare</span>
+                </button>
+                <button (click)="cartObjDetails=fund;showCart=!showCart">
+                    <img src="assets/images/general/cart-icon.svg"><span class="new-badge">New</span>
+                    <span class="tooltip-box">Add to cart</span>
+                </button>
+                <button>
+                    <div class="dropdown share-menu">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="{{'share-button'+fund.id}}"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="assets/images/general/share-icon.svg"><span class="tooltip-box">Share</span>
+                        </button>
+                        <ul class="dropdown-menu audio-box" [hidden]=""
+                            (mouseleave)="contentOnHoverCLose('share-button'+fund.id)">
+                            <li><span class="dropdown-item" (click)="toggleShowCopyDialoge()"><img
+                                        src="assets/images/general/Link.svg">Copy
+                                    link</span></li>
+                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share
+                                    on Twitter</a></li>
+                            <li><a class="dropdown-item" href="#"><img
+                                        src="assets/images/general/FacebookLogo.svg">Share
+                                    on Facebook</a></li>
+                            <li><a class="dropdown-item" href="#"><img
+                                        src="assets/images/general/LinkedinLogo.svg">Share
+                                    on LinkedIn</a></li>
+                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share
+                                    on WhatsApp</a></li>
+                        </ul>
+                    </div>
+                </button>
+            </div>
+            <div class="dropdown d-inline-block d-lg-none">
+                <button class=" dropdown-toggle me-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="assets/images/general/dots.svg">
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="d-none d-md-block">
+                        <a class="dropdown-item" href="#">
+                            <i class="bi bi-cart2"></i>Add to cart
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" (click)="routeModuleCompareFund('1')">
+                            <img src="assets/images/general/compare-icon.svg">Compare
+                        </a>
+                    </li>
+                    <li>
+                        <span class="dropdown-item d-block" (click)="toggleShowSavDialoge(fund)">
+                            <img src="assets/images/general/watchlist-icon.svg">Add to
+                            watchlist
+                        </span>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#callBack1">
+                            <!-- <a class="dropdown-item" (click)="toggleShareModal()"> -->
+                            <img src="assets/images/general/share-icon-sm.svg">Share
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row info justify-content-between">
+        <ul class="col-auto  d-none d-md-block">
+            <li>
+                <div class="mb-2">Unique investors
+                    <!-- <img src="assets/images/home/info-icon2.svg" class="d-inline-block"> -->
+                    <span class="img-with-tooltip">
+                        <img src="assets/images/home/info-icon2.svg">
+                        <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                        <span class="tooltip-block podcast-block" >
+                            Lorem ipsum dolor sit amet, consectetur.
+                        </span>
+                    </span>
+                </div>
+                <div class="text-big">
+                    <span class="d-inline-block d-md-none"><img src="assets/images/fund/investor-icon.svg"></span>
+                    {{fund?.investors}}
+                    <span class="d-inline-block d-md-none">Unique investors</span>
+                </div>
+            </li>
+            <li>
+                <div class="mb-2">Fund Size
+                    <span class="img-with-tooltip">
+                        <img src="assets/images/home/info-icon2.svg">
+                        <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                        <span class="tooltip-block podcast-block" >
+                            Lorem ipsum dolor sit amet, consectetur.
+                        </span>
+                    </span>
+                </div>
+                <div class="text-big">
+                    <span class="d-inline-block d-md-none"><img src="assets/images/fund/money-sign.svg"></span>
+                    {{fund?.aum}}
+                    <span class="d-inline-block d-md-none">Fund Size</span>
+                </div>
+            </li>
+            <li class="last-item">
+                <div class="mb-2 audio-class-box" >Annualised Returns
+                    <span class="img-with-tooltip">
+                        <img src="assets/images/home/info-icon2.svg">
+                        <!-- <img src="assets/images/fund/dark-information-icon.png" class="dark-mode-icon"> -->
+                        <span class="tooltip-block">
+                            Lorem ipsum dolor sit amet, consectetur.
+                        </span>
+                    </span>
+                    <!-- <img src="assets/images/home/info-icon2.svg" class="d-inline-block"> -->
+                </div>
+                <div>
+                    <span class="text-big">{{fund?.annualised_return}}</span>
+                    <div class="dropdown d-none d-md-inline-block">
+                        <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {{fund?.annualised_return_year}}
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">1 Year</a></li>
+                            <li><a class="dropdown-item" href="#">3 Years</a></li>
+                            <li><a class="dropdown-item" href="#">5 Years</a></li>
+                            <li><a class="dropdown-item" href="#">10 Years</a></li>
+                            <li><a class="dropdown-item" href="#">15 Years</a></li>
+                            <li><a class="dropdown-item" href="#">Since Inception</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dropdown Inception-dropdown d-md-none d-inline-block">
+                        <button  class="btn btn-white dropdown-toggle podcast-img-box" type="button"
+                            data-bs-toggle="modal" data-bs-target="#InceptionModal">
+                            Since Inception
+                        </button>
+                    </div>
+
+                </div>
+
+            </li>
+        </ul>
+        <ul class="col-auto d-md-none">
+            <li class="investor report-search-box" >
+                <div class="mb-2">Investors
+                    <img src="assets/images/home/info-icon2.svg" class="d-inline-block">
+                </div>
+                <div class="text-small d-flex report-share">
+                    <span class="d-md-none investor-img report-bcakground"><img
+                            src="assets/images/fund/investor-icon.svg"></span>
+                    {{fund?.investors}}
+                    <span class="d-inline-block d-md-none">Investors
+
+                    </span>
+                    <!-- <img src="assets/images/home/info-icon2.svg" class="mobile-icons"> -->
+                    <span class="img-with-tooltip">
+                        <img src="assets/images/home/info-icon2.svg" class="mobile-icons light-mode-icon">
+                        <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon">
+                        <span class="tooltip-block">
+                            Lorem ipsum dolor sit amet, consectetur.
+                        </span>
+                    </span>
+                </div>
+            </li>
+            <li class="report-share-box">
+                <div class="mb-2">Fund Size
+                    <span class="img-with-tooltip">
+                        <img src="assets/images/home/info-icon2.svg" class="d-inline-block mobile-icons light-mode-icon report-detail"
+                            >
+                        <img src="assets/images/fund/dark-information-icon.png"
+                            class="d-inline-block mobile-icons dark-mode-icon">
+                        <span class="tooltip-block">
+                            Lorem ipsum dolor sit amet, consectetur.
+                        </span>
+                    </span>
+                </div>
+                <div class="text-small d-flex report-date-details">
+                    <span class="d-md-none money-sign-fund">
+                        <img src="assets/images/fund/money-sign.svg"></span>
+                    {{fund?.aum}}
+                    <span class="d-inline-block d-md-none">Fund Size<span class="img-with-tooltip">
+                            <img src="assets/images/home/info-icon2.svg"
+                                class="d-inline-block mobile-icons light-mode-icon report-detail" >
+                            <img src="assets/images/fund/dark-information-icon.png"
+                                class="d-inline-block mobile-icons dark-mode-icon">
+                            <span class="tooltip-block">
+                                Lorem ipsum dolor sit amet, consectetur.
+                            </span>
+                        </span></span>
+                </div>
+            </li>
+            <li class="last-item">
+                <div class="mb-2 d-flex report-date-details" >Annualised Returns
+                    <span class="img-with-tooltip">
+                        <img src="assets/images/home/info-icon2.svg" class="d-inline-block mobile-icons light-mode-icon report-detail"
+                            >
+                        <img src="assets/images/fund/dark-information-icon.png"
+                            class="d-inline-block mobile-icons dark-mode-icon">
+                        <span class="tooltip-block">
+                            Lorem ipsum dolor sit amet, consectetur.
+                        </span>
+                    </span>
+                    <!-- <img src="assets/images/home/info-icon2.svg" class="d-inline-block mobile-icons"> -->
+                </div>
+                <div>
+                    <span class="text-small">{{fund?.annualised_return}}</span>
+                    <div class="dropdown d-none d-md-inline-block">
+                        <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {{fund?.annualised_return_year}}
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">1 Year</a></li>
+                            <li><a class="dropdown-item" href="#">3 Years</a></li>
+                            <li><a class="dropdown-item" href="#">5 Years</a></li>
+                            <li><a class="dropdown-item" href="#">10 Years</a></li>
+                            <li><a class="dropdown-item" href="#">15 Years</a></li>
+                            <li><a class="dropdown-item" href="#">Since Inception</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dropdown Inception-dropdown d-md-none d-inline-block">
+                        <button class="btn btn-white dropdown-toggle podcast-img-box" type="button" data-bs-toggle="modal"
+                            data-bs-target="#InceptionModal" >
+                            Since Inception
+                        </button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="d-block d-md-none" (click)="showCart=!showCart">
+            <button class="btn btn-light-blue">
+                <span class="new-badge">New</span>&nbsp;
+                <i class="bi bi-cart3"></i> Add to
+                cart</button>
+        </div>
+        <div class="col-auto block-btns">
+
+            <a (click)="fundDetails(fund)" class="btn btn-outline-primary me-2">
+                <span class="d-none d-md-block"> {{ (comaprecard ? 'Invest Now' : 'Know more') }} </span>
+                <span class="d-md-none">View Details</span>
+            </a>
+            <a *ngIf="!changeName && !toggletitile && !comaprecard" [routerLink]="['/funds/' + fund?.id]"
+                class="btn btn-primary">Invest Now</a>
+            <!-- <a class="btn btn-primary">
+                {{ (changeName ? 'Add Fund' : (toggletitile ? 'Add Fund' :(comaprecard ? 'Check Performance' : 'Invest Now'))) }}
+              </a> -->
+            <a *ngIf="changeName || toggletitile || comaprecard " (click)="getdata(fund)" class="btn btn-primary">
+                {{ (changeName ? 'Add Fund' : (toggletitile ? 'Add Fund' :'Check Performance')) }}
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- save to watchlist alert -->
+<div class="save-alert alert-index" *ngIf="showSaveDialoge">
+
+    <div class="content">
+        <span class="close-btn" (click)="toggleShowSavDialoge1()">
+            <img src="assets/images/general/close.svg">
+        </span>
+        <img src="assets/images/general/check_circle.svg" class="checked-img">
+        <span>Successfully added to Watchlist.</span>
+        <!-- <a href="#" class="btn btn-primary" [routerLink]="['/watchlist']">Go to watchlist</a> -->
+        <!-- <a href="#" class="btn btn-primary" [routerLink]="['/watchlist', { showWatchlist: true }]" (click)="goToDataPage(fund)">Go to watchlist</a> -->
+        <a href="#" class="btn btn-primary" [routerLink]="['/watchlist', { showWatchlist: true }]">Go to watchlist</a>
+    </div>
+
+</div>
+
+<!-- save to cart -->
+<div class="save-alert alert-index"  *ngIf="showCartSaveDialoge">
+
+    <div class="content">
+        <span class="close-btn" (click)="toggleShowSavDialoge1()">
+            <img src="assets/images/general/close.svg">
+        </span>
+        <img src="assets/images/general/check_circle.svg" class="checked-img">
+        <span>Successfully added to Cart.</span>
+        <a href="#" class="btn btn-primary">Go to Cart</a>
+    </div>
+
+</div>
+
+<!--copy alert -->
+<div class="save-alert copy-alert" *ngIf="showCopyDialoge">
+
+    <div class="content">
+        <span class="close-btn" (click)="toggleShowCopyDialoge()">
+            <img src="assets/images/general/close.svg">
+        </span>
+        <img src="assets/images/general/check_circle.svg" class="checked-img">
+        <div class="mb-3">Link Copied</div>
+        <div class="link-box">https://www.franklintempletonindia.com/sharefund</div>
+    </div>
+
+</div>
+
+
+<!-- share modal small screens -->
+
+
+<!-- Modal -->
+<!-- <div class="modal fade bottom-modal" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="modal-header line">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body share-modal-body">
+                <h3 class="text-center">Share with others</h3>
+                <div class="row text-center mb-4">
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/general/facebook-sm.svg">
+                        </a>
+                        <span>Facebook</span>
+                    </div>
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/general/twitter-sm.svg">
+                        </a>
+                        <span>Twitter</span>
+                    </div>
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/general/whatsapp-sm.svg">
+                        </a>
+                        <span>Whatsapp</span>
+                    </div>
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/general/mail-sm.svg">
+                        </a>
+                        <span>Email</span>
+                    </div>
+                </div>
+                <div class="link-block">
+                    <div class="link">https://www.franklintempleton.....</div>
+                    <button class="btn btn-outline-primary">Copy Link</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+<!-- Inception-dropdown Modal -->
+<div class="modal fade bottom-modal" id="InceptionModal" tabindex="-1" aria-labelledby="InceptionModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="modal-header line pt-4">
+                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body Inception-modal-body">
+                <div class="modal-head">Share with others</div>
+                <ul>
+                    <li><a class="dropdown-item" href="#">1 Year</a></li>
+                    <li><a class="dropdown-item" href="#">3 Years</a></li>
+                    <li><a class="dropdown-item" href="#">5 Years</a></li>
+                    <li><a class="dropdown-item" href="#">10 Years</a></li>
+                    <li><a class="dropdown-item" href="#">15 Years</a></li>
+                    <li><a class="dropdown-item" href="#">Since Inception</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- share links popup -->
+<div class="modal fade share-fund-empty" id="callBack1" tabindex="-2" aria-labelledby="callBackLabel1" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered share-funds-empty" >
+        <div class="modal-content share-REPORT" >
+            <div class="line"></div>
+            <div class="modal-header">
+                <div class="modal-title Share-WITH-other" id="callBackLabel1" >Share with others
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- <h3 class="text-center">Share with others</h3> -->
+                <div class="row text-center mb-4">
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/home/Framefacebook.png">
+                        </a>
+                        <!-- <span>Facebook</span> -->
+                    </div>
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/home/Frametwitter.png">
+                        </a>
+                        <!-- <span>Twitter</span> -->
+                    </div>
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/home/Framewhatsapp.png">
+                        </a>
+                        <!-- <span>Whatsapp</span> -->
+                    </div>
+                    <div class="col-3">
+                        <a href="#" class="share-btn">
+                            <img src="assets/images/home/Framelinkedin.png">
+                        </a>
+                        <!-- <span>Email</span> -->
+                    </div>
+                </div>
+                <div class="link-block d-flex justify-content-between">
+                    <div class="link offcanvas-head" >https://www.franklintempl...
+                    </div>
+                    <button class="btn btn-outline-primary">Copy Link</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-cart [cartData]="cartObjDetails" (addCartDetailsEmit)="addedCartDetails($event)" *ngIf="showCart"></app-cart>

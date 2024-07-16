@@ -1,0 +1,267 @@
+<div id="page-content">
+    <!-- start page breadcrumb block -->
+    <div class="FT-breadcrumb d-md-block d-none">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Investor Services</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Instant Mailback</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <section class="FT-investor-services ">
+        <div class="container">
+            <div class="FT-title-medium text-bold text-blue mb-3"><span class="Statements-bold"><i class="bi bi-arrow-left" ></i></span> Statements</div>
+            <div class="font-medium mb-4">
+                As a Franklin Templeton investor, you can request a onetime mail back of your Valuation/Statements,
+                Capital Gains Statement, Transaction details, Income Distribution cum Capital Withdrawal (IDCW)
+                details etc.
+            </div>
+            <div class="font-medium mb-4">
+                Simply provide us with your PAN/Folio number (for Capital Gains Statement, always provide your folio
+                number in the below input box) along with your registered email address, so that the required
+                details can be mailed back to you.
+            </div>
+            <div class="bg-white info-box">
+                <ul>
+                    <li>PAN/Customer Folio: <span>GHJSB4568</span></li>
+                    <li>Email Address: <span>kumarsaurabh.spy@gmail.com</span></li>
+                </ul>
+            </div>
+            <div class="box-shadow bg-white mailback-box">
+                <form>
+                    <div class="form-group">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected value="">Folio Number</option>
+                            <option value="1235467">1235467</option>
+                            <option value="1298769">1298769</option>
+                            <option value="1984565">1984565</option>
+                            <option value="2334534">2334534</option>
+                        </select>
+                    </div>
+                    <div class="form-group">                        
+                        <div class="form-check checkbox-group">
+                            <input class="form-check-input" type="checkbox" value="" id="checkbox1" checked>
+                            <label class="form-check-label" for="checkbox1">
+                                <img src="assets/images/home/pdf.svg">Valuation Statement
+                            </label>
+                        </div>
+                        <div class="validation-form">
+                           <div>
+                            <div class="form-check">
+                                <input (click)="periodDatehide()" class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1" checked>
+                                <label class="form-check-label " for="flexRadioDefault1">
+                                    As on date
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input (click)="periodDateVisible()" class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Period
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input (click)="periodDatehide()" class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault3">
+                                <label class="form-check-label" for="flexRadioDefault3">
+                                    Since Inception
+                                </label>
+                            </div>
+                             <div *ngIf="fillterDateRange1">
+                                <div class="filter-date mt-3">
+                                    <div class="mb-3">Date Range </div>
+                                    <form>
+                                         <div class="row">
+                                            <div class="col-6">
+                                                <div class="date-group">
+                                                    <img src="assets/images/fund/calendar-outline.svg">
+                                                    <input type="text" placeholder="From" class="form-control"
+                                                        onfocus="(this.type='date')">
+                                                </div>
+                                            </div>       
+                                            <div class="col-6">
+                                                <div class="date-group">
+                                                    <img src="assets/images/fund/calendar-outline.svg">
+                                                    <input type="text" placeholder="To" class="form-control"
+                                                        onfocus="(this.type='date')">
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        
+                                    </form>
+                                </div>
+                            </div>
+                           </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group ">
+
+                        <div class="form-check checkbox-group">
+                            <input class="form-check-input" type="checkbox" value="" id="checkbox1">
+                            <label class="form-check-label lable" for="checkbox1">
+                                <img src="assets/images/home/xls.svg">Capital Gains Statement
+                            </label>
+                        </div>
+                        <div class="capital-state">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Current Financial Year
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Previous Financial Year
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="MoreOptions">
+                        <div class="form-group">
+
+                            <div class="form-check checkbox-group">
+                                <input class="form-check-input" type="checkbox" value="" id="checkbox1">
+                                <label class="form-check-label lable" for="checkbox1">
+                                    <img src="assets/images/home/xls.svg">Transaction Details
+                                </label>
+                            </div>
+                            <div>
+                                <div class="" class="validation-form-2">
+                                    <div class="form-check">
+                                        <input (click)="periodDatehide2()" class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            As on date
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input (click)="periodDateVisible2() " class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Period
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input (click)="periodDatehide2()" class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Since Inception
+                                        </label>
+                                    </div>
+                                    <div *ngIf="fillterDateRange2">
+                                        <div class="filter-date mt-3">
+                                            <div class="mb-3">Date Range </div>
+                                            <form>
+                                                 <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="date-group">
+                                                            <img src="assets/images/fund/calendar-outline.svg">
+                                                            <input type="text" placeholder="From" class="form-control"
+                                                                onfocus="(this.type='date')">
+                                                        </div>
+                                                    </div>       
+                                                    <div class="col-6">
+                                                        <div class="date-group">
+                                                            <img src="assets/images/fund/calendar-outline.svg">
+                                                            <input type="text" placeholder="To" class="form-control"
+                                                                onfocus="(this.type='date')">
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="form-check checkbox-group">
+                                <input class="form-check-input" type="checkbox" value="" id="checkbox1">
+                                <label class="form-check-label" for="checkbox1">
+                                    <img src="assets/images/home/pdf.svg">Dividend Details
+                                </label>
+                            </div>
+                            <div>
+                                <div class="" class="validation-form-3">
+                                    <div class="form-check">
+                                        <input (click)="periodDatehide3()" class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            As on date
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input (click)="periodDateVisible3() " class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Period
+                                        </label>
+                                    </div>
+    
+                                    <div class="form-check">
+                                        <input (click)="periodDatehide3()"class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Since Inception
+                                        </label>
+                                    </div>
+                                    <div *ngIf="fillterDateRange3">
+                                        <div class="filter-date mt-3">
+                                            <div class="mb-3">Date Range </div>
+                                            <form>
+                                                 <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="date-group">
+                                                            <img src="assets/images/fund/calendar-outline.svg">
+                                                            <input type="text" placeholder="From" class="form-control"
+                                                                onfocus="(this.type='date')">
+                                                        </div>
+                                                    </div>       
+                                                    <div class="col-6">
+                                                        <div class="date-group">
+                                                            <img src="assets/images/fund/calendar-outline.svg">
+                                                            <input type="text" placeholder="To" class="form-control"
+                                                                onfocus="(this.type='date')">
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-5 pt-2 more-options" *ngIf="hidePragraph">
+                        Would you also like to download your transaction and dividend details for your records? <span
+                            class="text-blue" (click)="toggleMoreOption()">Click here</span>
+                    </div>
+                    <div class="">
+                        <button type="submit" class="btn btn-outline-primary me-4 desktop">Reset</button>
+                        <button type="submit" class="btn btn-primary desktop">Submit</button>
+                        <button type="submit" class="btn btn-primary me-4 mobile">Submit</button>
+                        <button type="submit" class="btn btn-outline-primary mobile">Reset</button>
+                        
+                    </div>
+                </form>
+
+            </div>
+            <app-subscribe-box></app-subscribe-box>
+            <app-standpage></app-standpage>
+        </div>
+    </section>
+</div>

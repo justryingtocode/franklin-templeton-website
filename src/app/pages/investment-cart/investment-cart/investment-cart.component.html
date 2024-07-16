@@ -1,0 +1,328 @@
+<div id="page-content">
+
+    <div class="FT-breadcrumb">
+        <div class="container">
+            <nav aria-label="breadcrumb" class="d-none d-md-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Franklin Build India Fund</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                </ol>
+            </nav>
+
+            <nav aria-label="breadcrumb" class="d-md-none">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a (click)="makeToggle()"><img
+                                src="./assets/images/comparefund/arrow.png"></a><span
+                         class="ms-2 mt-2 add-fund-section"
+                            *ngIf="!makeFundsCardToggle">Add Fund</span></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div *ngIf="makeFundsCardToggle" class="makeCardWithCompare">
+
+        <section class="FT-investmentcart-heading d-none d-md-block">
+            <div class="container">
+                <div class="row gx-3">
+                    <div class="comapre-fund col-lg-auto">
+                        <h3 class="filter-title" (click)="toggleCart()">Investment Cart</h3>
+                    </div>
+                    <div>
+                        Review and manage your selected funds seamlessly. Add, adjust, or proceed to checkout with ease to navigate your financial journey effortlessly.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="FT-investmentcart-heading d-md-none investment-cart-build">
+            <div class="container">
+                <div class="row gx-3">
+                    <div class="comapre-fund col-lg-auto">
+                        <h3 class="filter-title2" (click)="toggleCart()">Investment Cart</h3>
+                    </div>
+                    <div *ngIf="titleCart">
+                        Streamline Your Investments with Our Investment Cart,Effortlessly Build and Manage Your
+                        Portfolio.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div *ngIf="isCartEmpty" class="container">
+
+            <section class="FT-all-funds watchlist-funds empty-watchlist">
+
+                <app-empty-page [CartSectionImg]="true" [cardTypeData]="'EMPTY_INVESTMENT'" [makeCartToggle]="false"
+                    (addToCartOutputInEmptyPage)="handleAddToCartInInvestment($event)">
+                    <!-- pageSubHeading="Streamline Your Investments with Our Investment Cart,Effortlessly Build and Manage Your Portfolio." -->
+                </app-empty-page>
+
+            </section>
+        </div>
+
+        <div *ngIf="!isCartEmpty">
+            <div class="d-md-none mt-3 mb-3 empty-cart-box">
+                <button type="button" class="btn btn-outline-primary total-fund-amount">
+                    <span class="forInvestmentCartColor showInvestment-cart">Total {{
+                        showInvestment }}
+                        Amount:</span>&nbsp;<span class="forInvestmentCartColor Amount-cart"
+                        >60,000</span></button>
+            </div>
+            <div class="d-md-none showInvestment-fund-cart">
+                <button  type="button"
+                    class="btn btn-outline-primary mr-2 proceed-fund" (click)="toGoFundsCard()">Add funds</button>
+                <button type="button" class="btn btn-primary ml-2 cart-SIP">Proceed to
+                    buy</button>
+            </div>
+        </div>
+        <div *ngIf="!isCartEmpty" class="container">
+            <section class="mb-1">
+                <div class="cartSipInvestment">
+                    <!-- <div  class="mt-4 alignSIPandLUMPSUMboth">
+                        <div class="for-Tab" sty le="padding-top: 19px;">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="Equity-tab" sty le="min-width: 8rem;"
+                                        data-bs-toggle="tab" data-bs-target="#All-tab-pane" type="button" role="tab"
+                                        aria-controls="All-tab-pane" aria-selected="false"
+                                        (click)="getInvestmentData('SIP')">SIP(3)1</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="Equity-tab" data-bs-toggle="tab"
+                                        data-bs-target="#Equity-tab-pane" type="button" role="tab"
+                                        aria-controls="Equity-tab-pane" aria-selected="true"
+                                        (click)="getInvestmentData('Lumpsum')">Lumpsum</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
+                    <div class="mt-4 alignSIPandLUMPSUMboth">
+                        <div class="for-Tab Lumpsum-icon" >
+                            <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active sip-style" id="Equity-tab"
+                                        data-bs-toggle="tab" data-bs-target="#All-tab-pane" type="button" role="tab"
+                                        aria-controls="All-tab-pane" aria-selected="false"
+                                        (click)="getInvestmentData('SIP')">SIP(3)</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link sip-style" id="Equity-tab" 
+                                        data-bs-toggle="tab" data-bs-target="#Equity-tab-pane" type="button" role="tab"
+                                        aria-controls="Equity-tab-pane" aria-selected="true"
+                                        (click)="getInvestmentData('Lumpsum')">Lumpsum</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- <div class="d-none d-md-block" st yle="text-align: right; padding: 10px;">
+                        <div sty le="margin-right: 5px;"><span class="forInvestmentCartColor"
+                                st yle="font-size: 1.313rem; font-weight: 500;">Total {{ showInvestment }}
+                                Amount:</span>&nbsp;<span class="forInvestmentCartColor"
+                                st  yle="font-size: 1.5rem; font-weight: 700;">{{totalCartAmount || '60,000'}}</span> 
+                            <button sty le="width: 227px; height: 45px; margin-left: 5px;" type="button"
+                                class= "btn btn-primary ml-2">Proceed to buy</button>
+                        </div>
+                        <div class="mt-2">
+                            <button styl e="width: 227px; height: 45px; background: #FFFFFF; margin-right: 5px;"
+                                type="button" class="btn btn-outline-primary mr-2" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Add funds</button>
+                        </div>
+                    </div> -->
+
+                    <div class="d-none d-md-block totalCartAmount-icon">
+                        <div class="toggleCart-fund" ><span class="forInvestmentCartColor Investment-show"
+                                >Total {{ showInvestment }}
+                                Amount:</span>&nbsp;<span class="forInvestmentCartColor Continue-fund"
+                                >{{totalCartAmount || '60,000'}}</span>
+                        </div>
+                        <div class="d-flex justify-content-end gap-3">
+                            <div class="mt-2">
+                                <button  type="button"
+                                class="btn btn-primary ml-2 Continue-fund-risk">Continue</button>
+                            </div>
+                            <div class="mt-2">
+                                <button
+                                    type="button" class="btn btn-outline-primary mr-2 check-focus" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Add Funds</button>
+                                <!-- <button st yle="width: 227px; height: 45px; margin-left: 5px;" type="button"
+                                    class="btn btn-primary ml-2">Proceed to buy</button> -->
+                            </div>
+                        </div>
+                      
+                    </div>
+
+                    <div class="mt-2 mb-1 ml-2">
+                        <div  class="fund-franklin">
+
+                            <ng-container *ngFor='let fund of selectedCartDetails; let i = index'>
+                                <h5 class="fund-franklin-continue">Fund {{i+1}}</h5>
+                                <app-fund-card1 [fund]="fund" [hasThreeDotOptions]="false" [hasAddNowBtn]="false"
+                                    [hasFundBtn]="false">
+                                </app-fund-card1>
+                            </ng-container>
+
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="mt-4 mb-4 addCheck d-md-none">
+                Check the focus funds
+            </div>
+
+            <section class="container investmenttData mb-2 mt-4">
+                <div class="mt-4 mb-4 text-center addCheck d-none d-md-block">
+                    Check the focus funds
+                </div>
+                <!-- <div class="row mt-1 mb-1">
+                        <ng-container *ngFor="let trendingFunds of funds;let t =index;">                
+                                <div class="col-lg-6 col-md-6 col-12 mt-1 mb-1 ml-1 mr-1" *ngIf="t<4">
+                                    <div class="makeCardFitData" styl e="border: 1px solid #D2D8EA; padding: 25px; border-radius: 8px;">
+                                        <div class="titleAdd d-md-none">
+                                            Would you like to add Franklin Build India Fund to your cart?
+                                        </div>
+                                        <div class="titlecolor d-none d-md-block">
+                                            {{trendingFunds.title}}
+                                        </div>
+                                        <div class="addForDivColor mt-1 mb-1">
+                                            <div class="mt-2 d-flex" sty le="justify-content: center;">
+                                                <div class="mt-2">
+                                                    <span class="cartInteger">{{trendingFunds.aum}} Cr</span>&nbsp;<span class="cartText">AUM</span>
+                                                </div>
+                                                <div sty le="margin-top: 19px; margin-left:5px; margin-right:14px;">
+                                                    <span class="line2"></span>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <span class="cartInteger">{{trendingFunds?.annualised_return}}%</span>&nbsp;<span class="cartText">Returns</span>
+                                                </div>
+                                            </div>
+                                            <div class="text-center mt-2">
+                                                <span><img
+                                                        src="./assets/images/investment-cart/groups_FILL0_wght400_GRAD0_opsz48%20(1)%201.svg"></span>
+                                                <span class="cartInvestor"> {{trendingFunds.investors}} Existing Investors </span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mt-2" st  yle="gap: 10px;">
+                                            <button type="button" st yle="width: 15%;" class="btn btn-outline-primary" (click)="cartObjDetails=trendingFunds;showCart=!showCart"><img src="./assets/images/investment-cart/Frame10000074.svg"></button>
+                                            <button type="button" sty le="width: 100%;" class="btn btn-primary" (click)="cartObjDetails=trendingFunds;showCart=!showCart">Invest Now</button>
+                                        </div>
+                                    </div>
+                                </div>                
+                        </ng-container>
+                </div>        -->
+
+                <div class="row justify-content-center">
+                    <div class="row scrollnextgo">
+                        <div *ngFor="let trendingFunds of funds.slice(0, 4);;"
+                            class="col-md-6 col-sm-12 col-11 mb-3 mb-md-4">
+                            <div class="makeCardFitData"
+                                >
+                                <div class="titleAdd d-md-none">
+                                    {{trendingFunds.title}}
+                                </div>
+                                <div class="titlecolor d-none d-md-block">
+                                    {{trendingFunds.title}}
+                                </div>
+                                <div class="addForDivColor mt-1 mb-1">
+                                    <div class="mt-2 d-flex trendingFunds-cart" >
+                                        <div class="mt-2">
+                                            <span class="cartInteger">{{trendingFunds.aum}}</span>&nbsp;<span class="cartText">AUM</span>
+                                        </div>
+                                        <div class="AUM-SIP">
+                                        </div>
+                                        <div class="mt-2 annualised-return" >
+                                            <span class="cartInteger">{{trendingFunds?.annualised_return}}</span>&nbsp;<span class="cartText">Returns</span>
+                                            <span class="img-with-tooltip cart-AUM-SIP" ><img src="assets/images/home/info-icon2.svg"
+                                                    class="d-inline-block mobile-icons light-mode-icon Returns-SIP">
+                                                <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon dark-info-cart">
+                                                   <span class="tooltip-block"> 20/06/2023 as of.</span>
+                                                
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-2">
+                                        <span><img
+                                                src="./assets/images/investment-cart/groups_FILL0_wght400_GRAD0_opsz48%20(1)%201.svg"></span>
+                                        <span class="cartInvestor"> {{trendingFunds.investors}} Existing Investors
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 investors-data" >
+                                    <button type="button" class="btn btn-outline-primary invest-now"
+                                        (click)="cartObjDetails=trendingFunds;showCart=!showCart"><span
+                                            >  <i class="bi bi-cart2 fs-5"></i></span></button>
+                                    <button type="button" class="btn btn-primary invest-now-section"
+                                        (click)="cartObjDetails=trendingFunds;showCart=!showCart">Invest Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <section class="conatiner checkGoToCheckout mt-5 mb-4 d-none d-md-block">
+                <div class="addColorCard">
+                    <div class="d-flex watchlist-fund-data">
+                        <div class="checkAdded">
+                            Check the funds you added in the watchlist
+                        </div>
+                        <div>
+                            <button type="button" [routerLink]="['/watchlist']"
+                                class="btn btn-outline-primary bg-white go-to-watch"><span class="addNow">Go to
+                                    Watchlist</span></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="forCartDataLinearGradient d-md-none mt-3">
+                <section class="conatiner checkGoToCheckout mt-5 mb-6">
+                    <div class="addColorCard">
+                        <div class="d-flex watchlist-progress">
+                            <div class="checkAdded1">
+                                Check the progress of the funds added in the watchlist
+                            </div>
+                            <div class="watchlist-fund-add">
+                                <button type="button"
+                                    [routerLink]="['/watchlist']" class="btn btn-outline-primary bg-white"><span
+                                        class="addNow1 progress-watchlist">Go to
+                                        Watchlist</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div *ngIf="!makeFundsCardToggle">
+        <app-add-fund-data [getAllowedFilter]="true" [makeCartToggle]="false"
+            (fund)="getData($event)"></app-add-fund-data>
+    </div>
+
+</div>
+
+<app-cart [cartData]="cartObjDetails" (addCartDetailsEmit)="addedCartDetails($event)" *ngIf="showCart"></app-cart>
+
+
+<!-- offcanvas -->
+<div>
+    <div class="offcanvas offcanvas-end custom-offcanvas watchlist-funds-data" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-body">
+            <!-- <div class="d-flex justify-content-between mt-2" styl e="padding: 4px 31px;">
+                <div class="cardAdd">Add Funds</div>
+                <div type="button" data-bs-dismiss="offcanvas" aria-label="Close"><img src="./assets/images/comparefund/Frame 1000007569.png"></div>
+                </div> -->
+            <!-- <app-all-funds [isAddFund]="true" [changeName]="true" (compareToggleChangedDataValueCard)="onCompareToggleChangedDataValueCard($event)"></app-all-funds> -->
+            <app-add-fund-data (fund)="goToCart($event)" [cardTypeData]="'EMPTY_INVESTMENT'"
+                (addOffCanvasOutput)="handleaddOffCanvasOutput($event)"></app-add-fund-data>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,147 @@
+<div id="page-content" class="bg-img">
+    <!-- start page breadcrumb block -->
+    <div class="FT-breadcrumb d-md-block d-none">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Feedback</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <section>
+        <div class="container" >
+            <div class="container-wraper">
+                <div class="page-wrap">
+                    <div class="title">Feedback</div>
+                    <h3 class="title-2">How would you rate your experience? <span>*</span></h3>
+    
+                    <!-- Choose feedback -->
+                    <div class="choose-feedback-wrap">
+                        <div class="fb-card-wrap" [ngClass]="{'active': currentRatting === 3}">
+                            <button class="fb-card-img" (click)="setRatting(3)">
+                                <img src="assets/images/feedback/feedback_1.svg" class="share-menu-twitter" alt=" very poor">
+                            </button>
+                            <p>Very Poor</p>
+                        </div>
+                        <div class="fb-card-wrap" [ngClass]="{'active': currentRatting === 2}">
+                            <button class="fb-card-img" (click)="setRatting(2)">
+                                <img src="assets/images/feedback/feedback_2.svg" alt="poor">
+                            </button>
+                            <p>Poor</p>
+                        </div>
+                        <div class="fb-card-wrap" [ngClass]="{'active': currentRatting === 1}">
+                            <button class="fb-card-img" (click)="setRatting(1)">
+                                <img src="assets/images/feedback/feedback_3.svg" alt="Premium">
+                            </button>
+                            <p>Premium</p>
+                        </div>
+                    </div>
+    
+                    <!-- Rating - 1 -->
+                    <div class="rating-1-wraper" *ngIf="currentRatting == 1">
+                        <p>Thank you for your rating.</p>
+                        <button (click)="submitForm('submitFeedback')">Submit</button>
+                    </div>
+    
+                    <!-- Rating - rest -->
+                    <div class="rating-reest-wraper" *ngIf="currentRatting > 1">
+                        <p class="title" [ngStyle]="{'color': currentRatting == 2 ? 'green' : 'red'}">
+                            We regret the inconvenience. Would you like to share any issues or suggestions?</p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="form-label share-please" >Please share your contact details to reach out to you
+                                    </label>
+                                    <form class="feedback-form forms-data">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group mb-5">
+                                                    <label class="form-label">Name <span class="required">*</span></label>
+                                                    <input type="" class="form-control" placeholder="Enter name">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group mb-5">
+                                                    <label class="form-label">Email Address <span class="required">*</span></label>
+                                                    <input type="" class="form-control" placeholder="Enter email address">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group mb-5">
+                                                    <label class="form-label">PAN Number / Folio Number <span
+                                                            class="required">*</span></label>
+                                                    <input type="" class="form-control" placeholder="Enter PAN / Folio number">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+    
+                            <div class="col-sm-6">
+                                <div class="form-group share-please" >
+                                    <label class="form-label share-please" >Reason of your visit?
+                                    </label>
+                                    <div class="category-btns">
+                                        <ul>
+                                            <li [class.active]="selectedCategory.includes('checking_fund_details')"
+                                                (click)="selectCategory('checking_fund_details')" class="me-3">Checking Fund details
+                                            </li>
+                                            <li [class.active]="selectedCategory.includes('service_releted')"
+                                                (click)="selectCategory('service_releted')" class="me-3">Service releted</li>
+                                            <li [class.active]="selectedCategory.includes('account_statement')"
+                                                (click)="selectCategory('account_statement')" class="me-3">Account Statement</li>
+                                            <li [class.active]="selectedCategory.includes('login_releted')"
+                                                (click)="selectCategory('login_releted')" class="me-3">Login Releted</li>
+                                            <li [class.active]="selectedCategory.includes('learning_related')" (click)="selectCategory('learning_related')"
+                                                class="me-3">Learning Related</li>
+                                            <li [class.active]="selectedCategory.includes('others')" (click)="selectCategory('others')"
+                                                class="me-3">Others</li>
+                                        </ul>
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <label class="form-label">Describe in detail what is the issue you faced.
+                                    </label>
+                                    <textarea class="form-control Describe-fund"></textarea>
+                                </div>
+                                <div class="text-end">
+                                    <button (click)="submitForm('submitFeedback')" class="btn btn-primary fund-AUM" >Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Feedback Modal -->
+<div class="success-modal">
+    <div class="modal fade" id="submitFeedback" tabindex="-1" aria-labelledby="submitFeedbackLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="save-alert">
+                        <div class="content">
+                            <span class="close-btn" data-bs-dismiss="modal" aria-label="Close" 
+                                (click)="closeSuccessPopup('submitFeedback')"><img
+                                    src="assets/images/general/close.svg"></span>
+                            <img src="assets/images/general/check_circle.svg" class="checked-img">
+                            <span>Thank you for providing valuable feedback</span>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,169 @@
+// .addWidthForEmpty{
+//   max-width: 800px;  
+// }
+
+@media (max-width: 768px) {
+  .filter-options .form-group {
+    max-width: unset;
+  }
+
+  // .addWidthForEmpty{
+  //     max-width: 298px;  
+  //   }
+
+  .scrollable-tabs {
+    overflow-x: auto;
+    white-space: normal;
+    /* Add additional styles as needed for mobile view */
+  }
+
+  .nav-tabs {
+    display: block;
+    /* Display tabs in a block for mobile view */
+  }
+
+  .nav-link {
+    min-width: auto;
+    /* Reset the minimum width for mobile view */
+  }
+
+  .FT-all-funds-Card {
+    .filter-options {
+      .make-tag-for-all-page {
+        position: relative;
+        top: 20%;
+        left: -482% !important;
+      }
+    }
+
+  }
+
+}
+
+// .search-result{
+//   width: 60%;
+// }
+
+
+.scrollable-tabs {
+  // width: 100%; /* Set a fixed width or a percentage */
+  overflow-x: auto;
+  white-space: nowrap;
+  /* Prevent button wrapping to the next line */
+}
+
+.nav-tabs {
+  display: inline-flex;
+  /* Make sure the tabs stay in one line */
+}
+
+
+/* Style scrollbar for WebKit-based browsers */
+.scrollable-tabs::-webkit-scrollbar {
+  width: 1px !important;
+  /* Width of the scrollbar */
+  height: 7px !important;
+}
+
+.scrollable-tabs::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  /* Color of the scrollbar thumb */
+}
+
+.FT-all-funds-Card {
+  .filter-options {
+    .make-tag-for-all-page {
+      position: relative;
+      top: 20%;
+      left: -1164%;
+    }
+  }
+
+}
+
+.nav-link:hover:not(.active) {
+  color: var(--blue);
+  border-bottom-color: var(--blue);
+}
+
+.btn-white:not(.dropdown-toggle) {
+  border: 1px solid #D2D8EA;
+}
+
+//
+
+.share-menu-twitter {
+  justify-content: space-between;
+}
+
+.fund-AUM {
+  width: 15px;
+  margin-right: 5px;
+}
+
+.share-menu-twitter-fund {
+  width: 110px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.share-btn-fund {
+  width: 170px;
+  height: auto;
+  margin: 0 auto;
+}
+
+
+.showIconForWatchlist {
+  position: relative;
+  z-index: 999999;
+}
+
+.audio-box {
+  margin-bottom: 3px;
+}
+
+.podcast-block {
+  padding-top: 4px;
+}
+
+// .audio-class-box {
+// 	padding: 24px;
+// }
+
+// .podcast-img-box {
+// 	gap: 25px
+// }
+
+// .report-search-box {
+// 	padding: 12px 20px;
+// 	border: 1px solid blue !important;
+// 	background-color: white;
+// 	color: blue;
+// }
+
+// .report-share {
+//     padding:12px 20px
+// }
+
+// .report-bcakground {
+//     gap:16px;
+// }
+
+// .report-share-box {
+// 	padding:20px;
+// }
+
+// .report-detail {
+// 	font-size: 1rem;
+// }
+
+// .offcanvas-head {
+//     height: 75%;
+//     border-top-left-radius: 39px;
+//     border-top-right-radius: 39px;
+// }
+
+// .report-date-details {
+//     margin-left: 8px;
+// }

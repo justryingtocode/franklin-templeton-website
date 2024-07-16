@@ -1,0 +1,123 @@
+.FT-knowledge {
+    .knowledge-box {
+        box-shadow: none !important;
+        padding: 0;
+        background: transparent;
+
+        .col-lg-3 {
+            margin-bottom: 24px;
+
+            @media(min-width:992px) {
+                margin-bottom: 40px;
+            }
+        }
+
+        .category-btns ul li:not(.active) {
+            background: #F0F6FF;
+        }
+    }
+
+    .container {
+        max-width: 1310px;
+    }
+
+    .category-dropdown {
+        @media(min-width:768px) {
+            margin-bottom: 38px !important;
+        }
+    }
+
+    .FT-category-ad {
+        margin-top: 60px !important;
+    }
+
+}
+
+.FT-inner-banners {
+    img {
+        margin-bottom: 34px;
+    }
+}
+
+@media(max-width: 798.98px) {
+    .FT-knowledge .knowledge-box .filter-block .search {
+        width: 90%;
+    }
+
+    .togglefilter {
+        min-width: 82px;
+    }
+
+    .dropdownfilter {
+        margin-right: 5px
+    }
+}
+
+.img-with-tooltip .tooltip-block {
+    text-align: center;
+}
+
+//   .category-card .card-body{
+//     min-height: 150px;
+//   }
+
+.forlikecardtitle {
+    min-height: 49px;
+    // border-bottom: 1px solid #D2D8EA;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+}
+
+//
+
+.share-menu-twitter {
+    width: 18px;
+}
+
+.share-menu-twitter-fund {
+    position: relative;
+    left: 93%;
+    top: -31px;
+}
+
+.share-btn-fund {
+    width: 21px;
+    top: -1px;
+    position: relative;
+    left: 0px;
+}
+
+.fund-AUM {
+    position: relative;
+    z-index: 999999;
+}
+
+// .showIconForWatchlist {
+//     font-size: 0.75rem;
+//     font-weight: 400;
+//     line-height: 16px;
+//     letter-spacing: -0.03em;
+//     text-align: left;
+//     color: #595A6C;
+// }
+
+// .audio-box {
+//     height: 6px;
+// }
+
+// .podcast-block {
+//     height: 61px;
+// }
+
+// .audio-class-box {
+//     border-radius: 4px;
+//     background: #F0F6FF;
+//     padding: 0px 10px 0px 5px;
+// }
+
+// .podcast-img-box {
+//     margin-left: -9px;
+// }

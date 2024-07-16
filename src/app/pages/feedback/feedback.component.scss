@@ -1,0 +1,361 @@
+.container {
+    max-width: 1230px;
+}
+
+.feedback-form {
+    // width: 1040px;
+    width: 100%;
+    padding: 32px 16px 32px 16px;
+    border-radius: 8px;
+    gap: 39px;
+    background: #F0F6FF;
+
+}
+
+.category-btns ul {
+    list-style: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.category-btns ul li {
+    padding: 12px 32px;
+    border-radius: 32px;
+    background: #F0F6FF;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.48px;
+    color: var(--blue);
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    margin-right: 16px;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.category-btns ul li {
+    // background: var(--blue);
+    color: var(--blue);
+}
+
+.category-btns ul li.active {
+    background: var(--blue);
+    color: #fff;
+}
+
+.feedback-rate-icon {
+    width: 520px;
+    height: 40px;
+    top: 12px;
+    left: 125px;
+    gap: 50px;
+    font-size: 2rem;
+    margin: opx 10px;
+    display: inline-flex;
+    color: #FAC817;
+    cursor: pointer;
+
+
+
+}
+
+.active {
+    color: rgb(51, 45, 34);
+}
+
+.experiance-rate {
+    justify-content: space-between;
+    display: flex;
+    width: 805px;
+    margin-left: 112px;
+}
+
+.rate-btn {
+    width: 12rem !important;
+    height: 53px;
+}
+
+.red-lebel {
+    color: red !important;
+}
+
+.green-lebel {
+    color: #40A39D !important;
+}
+
+ngb-rating {
+    color: #FAC817;
+    font-size: 5rem;
+}
+
+
+
+.rating-box {
+    position: relative;
+    background: #fff;
+    padding: 25px 50px 35px 97px;
+    border-radius: 25px;
+    // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+
+.rating-box .stars {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.stars i {
+    color: #e6e6e6;
+    font-size: 2.188rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.stars i.active {
+    color: #ff9c1a;
+}
+
+@media(max-width: 991.98px) {
+    .feedback-suggesion-btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    .feedback-suggesion-btn .rate-btn {
+        font-size: 0.688rem;
+        height: 43px;
+    }
+
+}
+
+@media (max-width: 412.98px) {}
+
+
+@media (max-width: 575.98px) {
+    .save-alert .content {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%
+    }
+
+    .feedback-form {
+        //    width: 22rem;
+        width: 100%;
+    }
+
+    .category-btns ul {
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .save-alert {
+        left: calc(50% - 50%);
+
+    }
+
+
+
+
+
+}
+
+@media (max-width: 820px) {
+    .rating-box {
+        padding: 0px;
+    }
+
+    .experiance-rate {
+        width: 517px;
+        margin-left: 98px;
+    }
+
+    .rating-box .stars {
+        gap: 15px;
+    }
+
+}
+
+
+// new UI Starts here
+.page-wrap {
+    box-shadow: 0px 0px 6px #c7c7c7;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    padding: 20px 16px;
+    margin: 20px 0px;
+
+    >.title {
+        color: #3769FF;
+        text-align: center;
+        font-size: 2.1rem;
+        margin-bottom: 24px;
+    }
+
+    .title-2 {
+        text-align: center;
+        margin-bottom: 24px;
+
+        >span {
+            color: red;
+        }
+    }
+
+    .choose-feedback-wrap {
+        display: flex;
+        max-width: 380px;
+        gap: 50px;
+        justify-content: space-between;
+        margin: 0 auto;
+        margin-bottom: 20px;
+
+        .fb-card-img {
+            border: none;
+            background: transparent;
+            width: 65px;
+            height: 65px;
+            padding: 8px;
+            margin-bottom: 6px;
+
+            >img {
+                transition: all 0.5s ease-in-out;
+                width: 100%;
+            }
+
+            +p {
+                color: #8189A2;
+                text-align: center;
+            }
+        }
+
+        .active {
+            .fb-card-img {
+                background-color: #ecf0ff;
+                border: 1px solid #3769FF;
+                border-radius: 50px;
+            }
+
+            img {
+                transform: scale(1.3);
+            }
+        }
+    }
+}
+
+.rating-1-wraper {
+    text-align: center;
+
+    >p {
+        color: green;
+        font-size: 1.4rem;
+        margin-bottom: 40px;
+    }
+
+    >button {
+        background-color: var(--blue);
+        color: #fff;
+        padding: 7px 30px;
+        border-radius: 7px;
+        border: none;
+    }
+}
+
+.rating-reest-wraper {
+    .title {
+        text-align: center;
+        color: red;
+        margin-bottom: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+.container-wraper {
+    min-height: 400px;
+}
+
+.success-modal {
+    >div.show {
+        display: block;
+    }
+
+    .modal-dialog-centered {
+        justify-content: center;
+    }
+
+    .save-alert {
+        position: static;
+    }
+
+    .modal-content {
+        background-color: transparent;
+        border: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+    .page-wrap .choose-feedback-wrap {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-wraper {
+        transform: translateY(20px);
+        margin-bottom: 50px;
+    }
+}
+
+.choose-feedback-wrap .fb-card-img:hover {
+    background-color: #ecf0ff !important;
+    border: 1px solid #3769FF !important;
+    border-radius: 50px !important;
+    color: #3769FF !important;
+    /* Change to the desired color */
+}
+
+.choose-feedback-wrap .fb-card-img:hover img {
+    transform: scale(1.3) !important;
+}
+
+.share-please {
+    margin-bottom: 20px;
+}
+
+.Describe-fund {
+    margin-bottom: 32px;
+    min-height: 160px;
+}
+//
+
+.share-menu-twitter {
+    width: 75%
+  }
+  
+  .fund-AUM {
+    padding: 7px 30px;
+  }
+  
+//   .share-menu-twitter-fund {
+//     margin-right: 10px;
+//   }
+  
+//   .share-btn-fund {
+//     font-weight: bold;
+//     color: #3769ff;
+//     font-size: 1.125rem;
+//   }

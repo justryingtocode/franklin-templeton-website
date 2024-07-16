@@ -1,0 +1,38 @@
+.toggle-password {
+    position: absolute;
+    right: 10px !important;
+}
+
+@media only screen and (max-width: 1024px) {
+    .distributor-step2 {
+       margin-left: 0px !important;
+    }
+ }
+
+ .pan-container {
+    position: relative;
+    /* Enable relative positioning */
+ }
+ 
+ .pan-input {
+    width: 100%;
+ }
+ 
+ .pan-info {
+    position: absolute !important;
+    top: 50% !important;
+    right: -23px;
+    transform: translateY(-50%);
+    cursor: pointer;
+ }
+ .password-input {
+   position: relative;
+   display: flex;
+   align-items: center;
+ }
+ .info-icon-img{
+   width: 18px;
+ }
+ .information{
+   width: 14px;
+ }

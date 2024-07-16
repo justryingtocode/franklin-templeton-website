@@ -1,0 +1,156 @@
+.FT-knowledge {
+  .knowledge-box {
+    box-shadow: none !important;
+    padding: 0;
+    background: transparent;
+  }
+}
+
+.slide a {
+  color: inherit;
+}
+
+// .for-dropdown-menu {
+//     padding-top: 6px;
+//     transform: translate3d(-15%, 0%, 0px)!important;
+
+//     & li{
+//     padding: 0px 4px 4px 7px;
+//     font-size: 0.813rem;
+// }
+// }
+
+// @media(max-width:798.98px)
+// {
+//     .for-dropdown-menu {
+//         padding-top: 6px;
+//         transform: translate3d(-13%, -67%, 0px)!important;
+
+//         & li{
+//         padding: 0px 4px 4px 7px;
+//         font-size: 0.813rem;
+//     } 
+//   }
+// }
+
+/// for add scroll horizontal
+.category-btns {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 20px;
+}
+
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category-container {
+  display: inline-block;
+}
+
+/* WebKit-based browsers (Chrome, Safari) */
+.category-btns::-webkit-scrollbar {
+  height: 10px;
+}
+
+.category-btns::-webkit-scrollbar-track {
+  background-color: transparent;
+  /* Adjust as needed */
+}
+
+.img-with-tooltip .tooltip-block {
+  text-align: center;
+}
+
+@media(max-width: 798.98px) {
+  .FT-knowledge .knowledge-box .filter-block .search {
+    width: 90%;
+  }
+
+  .togglefilter {
+    min-width: 82px;
+  }
+
+  .dropdownfilter {
+    margin-right: 5px
+  }
+}
+
+// .category-card{
+//   min-height: 356px;
+// }
+
+.dropup .dropdown-menu li {
+  padding: 0 20px 8px 10px;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+}
+
+// .dropdown-menu{    
+// position: absolute;
+// inset: 0px auto auto 0px;
+// margin: 0px;
+// transform: translate3d(-31px, -148.4px, 0px) !important;
+// }
+
+// .dropdown .for-custom-dropdown {
+//   transform: translate3d(-31px, -148.4px, 0px) !important;
+
+//   & li{
+//     padding: 0 20px 8px 10px;
+//     display: block;
+//     font-size: 0.875rem;
+//     font-weight: 400;
+//     letter-spacing: -0.32px;
+// }
+// }
+
+.for-custom-dropdown {
+  position: absolute;
+  inset: 0px auto auto 0px;
+  margin: 0px;
+  transform: translate3d(-31px, -148.4px, 0px) !important;
+}
+
+.forlikecardtitle {
+  min-height: 49px;
+  // border-bottom: 1px solid #D2D8EA;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
+
+//
+
+.share-menu-twitter {
+  width: 18px;
+}
+
+.share-menu-twitter-fund {
+  width: 20px;
+}
+
+.share-btn-fund {
+  width: 21px;
+  top: -1px;
+  position: relative;
+  left: 0px;
+}
+
+.fund-AUM {
+  position: relative;
+  z-index: 999999;
+}
+.showIconForWatchlist{
+  color: var(--blue);
+}
+.closebutton-fund{
+  position: relative;
+  left: 95%;
+  top: -31px;
+}

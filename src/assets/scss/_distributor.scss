@@ -1,0 +1,129 @@
+.FT {
+    &-short-links {
+        padding-top: 34px;
+        padding-bottom: 32px;
+
+
+        .btn {
+            padding: 12px 30px;
+            font-family: "Inter";
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 155.556%;
+            margin: 6px;
+            box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+        }
+    }
+
+    &-quick-links {
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+        .FT-title {
+            margin-bottom: 40px;
+        }
+
+        .quick-links-box {
+            margin: 8px 0;
+        }
+    }
+
+    &-distributor-features {
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        .FT-title {
+            margin-bottom: 50px;
+        }
+
+        .feature-box {
+            height: 100%;
+        }
+    }
+
+    &-digital-offers {
+        padding-top: 58px;
+        padding-bottom: 58px;
+
+
+        .offer-box {
+           
+            height: 100%;
+
+        }
+    }
+
+    &-distributor-events {
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        .FT-title {
+            margin-bottom: 40px;
+        }
+
+        .category-card {
+            .tags {
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+                list-style: none;
+                font-size: 0.75rem;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: -0.36px;
+                padding: 0;
+                margin: 0;
+                margin-top: 12px;
+
+                li {
+                    display: inline-block;
+                    position: relative;
+                    padding-left: 6.5px;
+
+                    &::before {
+                        content: "";
+                        display: inline-block;
+                        width: 5.124px;
+                        height: 5.124px;
+                        border-radius: 50%;
+                        background: #D2D8EA;
+                        vertical-align: middle;
+                        margin-right: 6.5px;
+                    }
+                    &:first-child{
+                        &::before{
+                            display:none;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .carousel {
+   
+            .slick-arrow {
+                 top: 30%;
+             
+                 &.right-arrow {
+                     right: -20px;
+                 }
+             
+                 &.left-arrow {
+                     left: -20px
+                 }
+             } 
+         }
+    }
+    &-distributor-testimonials{
+        padding-top: 80px;
+        padding-bottom: 80px;
+        .slick-slider{
+            padding-left: 55px;
+            padding-right: 55px;
+        }
+        .slide{
+            padding:10px 20px
+        }
+    }
+}

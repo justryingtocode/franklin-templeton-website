@@ -1,0 +1,61 @@
+ .category-card .card-body {
+   min-height: 150px;
+ }
+
+ .dropup .dropdown-menu li {
+   padding: 0 20px 8px 10px;
+   display: block;
+   font-size: 0.875rem;
+   font-weight: 400;
+   letter-spacing: -0.32px;
+ }
+
+ .for-custom-dropdown {
+   position: absolute;
+   inset: 0px auto auto 0px;
+   margin: 0px;
+   transform: translate3d(-31px, -148.4px, 0px) !important;
+ }
+
+ .line {
+   position: relative;
+   text-decoration: none;
+ }
+
+ .line:after {
+   content: "";
+   position: absolute;
+   background-color: #3769ff;
+   height: 0.5px;
+   width: 0;
+   left: 0;
+   right: 0;
+   bottom: 1px;
+ }
+
+ .line:hover:after {
+   width: 80%;
+ }
+
+ .FT-title-small {
+   font-size: 1.625rem;
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+   letter-spacing: -0.84px;
+ }
+
+ .Related-resources {
+   text-align: center;
+ }
+
+ .light-mode-icon-size {
+   width: 18px;
+ }
+
+ .dark-mode-icon-size {
+   width: 21px;
+   top: -1px;
+   position: relative;
+   left: 0px;
+ }

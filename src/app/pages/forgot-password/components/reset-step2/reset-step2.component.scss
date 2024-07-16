@@ -1,0 +1,37 @@
+.btn {
+    width: 100% !important;
+    height: 45px;
+
+    @media(min-width:768px) {
+        width: 494px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .reset-password {
+        padding: 0px 0px !important;
+    }
+
+    .text-bold {
+        margin-bottom: 10px !important;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .distributor-step2 {
+        margin-left: 0px !important;
+    }
+}
+
+.OTP-sent {
+    margin-left: 256px;
+}
+
+.correct-email {
+    color: #697c91;
+}
+
+.Resend-OTP {
+    display: flex;
+    justify-content: end;
+}

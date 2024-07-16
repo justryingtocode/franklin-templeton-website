@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1",
+        "name": "Recent Searches"
+    },
+    {
+        "id": "2",
+        "name": "ALL Funds"
+    },
+    {
+    "id": "3",
+    "name": "Focus Funds"
+},
+{
+    "id": "4",
+    "name": "Equity Funds"
+},
+{
+    "id":"5",
+    "name": "Fixed Income Funds"
+},
+{
+    "id": "6",
+    "name": "Debt Funds"
+},
+{
+    "id": "7",
+    "name": "International Funds"
+},
+{
+    "id": "8",
+    "name": "Hybrid Funds"
+},
+{
+    "id": "9",
+    "name": "Liquid Funds"
+}
+]

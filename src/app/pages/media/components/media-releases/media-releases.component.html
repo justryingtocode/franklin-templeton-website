@@ -1,0 +1,124 @@
+
+    <!-- start categories box -->
+    <div class="fd-tab-sections knowledge-box categories" id="releases">
+
+        <!-- start ad box -->
+        <div class="FT-ad-box">
+            <div class="FT-title-medium text-bold mb-2 text-white">Releases</div>
+            <div class="text-big mb-lg-4 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+        </div>
+
+        <!-- start categories filter block -->
+        <div class="filter-block">
+            <div class="row justify-content-between">
+                <div class="col-auto">
+                    <!-- <div class="form-group">
+                        <input type="text" placeholder="Search" class="form-control search">
+                    </div> -->
+                    <div class="filter-options mt-0 mb-4">
+                        <div class="form-group ">
+                            <input type="text" class="form-control search" placeholder="Search Mutual Fund" [(ngModel)]="searchTerm"
+                            (input)="filterFunds(searchTerm)">
+                            <div class="search-result">
+                              <div class="inner">
+                                  <ng-container *ngFor="let fund of fundsForSearch">
+                                      <div class="funds-seach-title" (click)="getTableTitle(fund)">
+                                         {{ fund.title }}
+                                          <span class="sub"><span class="text-gray">Fund Size</span> - {{ fund.aum }}</span>
+                                          <span class="sub"><span class="text-gray">Unique Investors</span> - {{ fund.investors }}</span>
+                                      </div>
+                                  </ng-container>
+                              </div>
+                          </div>
+                        </div>
+                        <div>
+                          <img src="./assets/images/comparefund/closebutton.svg" class="make-tag-for-all-page fund-AUM" (click)="resetFundExplore()">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-auto ">
+                    <div class="dropdown me-3">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Sort
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Likes</a></li>
+                            <li><a class="dropdown-item" href="#">Date</a></li>
+                            <li><a class="dropdown-item" href="#">Views</a></li>
+                            <li><a class="dropdown-item" href="#">Read Time</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- start selected category btn -->
+        <div class="category-btns">
+            <div class="category-container">
+                <ul>
+                    <li [class.active]="selectedCategory === 'All'" (click)="selectCategory('All')">All</li>
+                    <li [class.active]="selectedCategory === '2023'" (click)="selectCategory('2023')">2023</li>
+                    <li [class.active]="selectedCategory === '2022'" (click)="selectCategory('2022')">2022</li>
+                    <li [class.active]="selectedCategory === '2021'" (click)="selectCategory('2021')">2021</li>
+                    <li [class.active]="selectedCategory === '2020'" (click)="selectCategory('2020')">2020</li>
+                    <li [class.active]="selectedCategory === '2019'" (click)="selectCategory('2019')">2019</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- start categories block -->
+        <div class="category-block">
+            <div class="table-responsive reports-box">
+                <table class="table table-success table-striped">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Title</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-nowrap">05-02-2019</td>
+                            <td>Franklin Templeton celebrates 25 years of wealth creation</td>
+                            <td class="text-end"><img src="assets/images/home/pdf.svg"></td>
+                        </tr>
+                        <tr>
+                            <td class="text-nowrap">05-02-2019</td>
+                            <td>Franklin Templeton celebrates 25 years of wealth creation</td>
+                            <td class="text-end"><img src="assets/images/home/pdf.svg"></td>
+                        </tr>
+                        <tr>
+                            <td class="text-nowrap">05-02-2019</td>
+                            <td>Franklin Templeton celebrates 25 years of wealth creation</td>
+                            <td class="text-end"><img src="assets/images/home/pdf.svg"></td>
+                        </tr>
+                        <tr>
+                            <td class="text-nowrap">05-02-2019</td>
+                            <td>Franklin Templeton celebrates 25 years of wealth creation</td>
+                            <td class="text-end"><img src="assets/images/home/pdf.svg"></td>
+                        </tr>
+                        <tr>
+                            <td class="text-nowrap">05-02-2019</td>
+                            <td>Franklin Templeton celebrates 25 years of wealth creation</td>
+                            <td class="text-end"><img src="assets/images/home/pdf.svg"></td>
+                        </tr>
+                        <tr>
+                            <td class="text-nowrap">05-02-2019</td>
+                            <td>Franklin Templeton celebrates 25 years of wealth creation</td>
+                            <td class="text-end"><img src="assets/images/home/pdf.svg"></td>
+                        </tr>
+                        <tr>
+                            <td class="text-nowrap">05-02-2019</td>
+                            <td>Franklin Templeton celebrates 25 years of wealth creation</td>
+                            <td class="text-end"><img src="assets/images/home/pdf.svg"></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>

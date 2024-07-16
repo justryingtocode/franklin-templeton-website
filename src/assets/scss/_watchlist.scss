@@ -1,0 +1,344 @@
+.watchlist-funds {
+    background: url("../images/general/bg.png") center center;
+    // padding-bottom: 90px;
+.filter-title{
+    cursor: pointer;
+}
+    .row {
+        // margin-top: 0px;
+
+        .col-lg-auto {
+            .text-big {
+                margin-top: 34px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .watchlist-tab-box {
+        border-radius: 0px 0px 8px 8px;
+        // border: 2px solid #D2D8EA;
+        background: #fff;
+        padding: 24px 16px;
+        position: sticky;
+        top: 20px;
+
+        .nav-link {
+            padding: 8px 8px 16px 8px;
+            margin-bottom: 32px;
+            border-radius: 0;
+            border: 0;
+            border-bottom: 1px solid #DDEAFF;
+            color: var(--black);
+            font-size: 1.25rem;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: -0.6px;
+
+            &.active {
+                border-bottom: 4px solid var(--blue);
+                color: var(--blue);
+                font-weight: 700;
+                background: transparent;
+            }
+
+            &:last-child {
+                border: 0;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+
+        }
+    }
+
+    .tab-head {
+        .nav-tabs {
+            .nav-link {
+                font-size: 1.1rem;
+                line-height: normal;
+                letter-spacing: -0.6px;
+                padding: 10px 18px;
+                white-space: nowrap;
+            }
+        }
+
+        .btn-primary {
+            // padding: 16px 28px;
+            padding: 12px 24px;
+            box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+            font-family: "Inter";
+            // font-size: 1.125rem;
+            font-size: 1.063rem;
+            font-weight: 500;
+            line-height: 155.556%;
+        }
+    }
+
+    .small-tab-dropdown {
+        .dropdown {
+            width: 100%;
+            margin-bottom: 12px;
+
+            .dropdown-toggle {
+                width: 100%;
+                color: #595A6C;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &::after {
+                    width: 22.138px;
+                    height: 22.138px;
+                    border: 0;
+                    background: url("../images/knowledge-center/arrow-down.svg")center center;
+                    background-repeat: no-repeat;
+                    transition: all 0.3s ease-in-out
+                }
+
+                &.show {
+                    &::after {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            .dropdown-menu {
+                width: 100%;
+
+                li {
+                    .dropdown-item {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+
+    .filter-options {
+        .form-group {
+            max-width: 339px;
+             .form-control {
+                width:100% !important;
+            }
+        }
+    }
+
+    &.empty-watchlist {
+        // padding-bottom: 135px;
+
+        .nav-tabs {
+            border: 0;
+            border-bottom: 1px solid #D2D8EA;
+            flex-wrap: nowrap;
+            overflow: auto;
+            scrollbar-width: none;
+            /* For Firefox */
+
+            &::-webkit-scrollbar {
+                display: none;
+                /* Safari and Chrome */
+            }
+
+            li {
+                min-width: fit-content;
+            }
+
+            .nav-link {
+                padding: 8px 16px;
+                border-color: transparent;
+                font-size: 0.875rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: -0.48px;
+                border-bottom: 3px solid transparent;
+                margin-bottom: 0px;
+                &.active{
+                    border-bottom-color: var(--blue);
+                }
+
+            }
+        }
+
+        .watchlist-box {
+            margin-top: 0;
+            border-radius: 8px;
+            box-shadow: 0px 2px 11.81px 0px rgba(0, 0, 0, 0.10);
+            background: #fff;
+            margin: 0;
+
+            .col-lg-8 {
+                // border-right: 1px solid #D2D8EA;
+                padding: 32px 24px 32px 32px;
+            }
+
+            .col-lg-4 {
+                padding: 32px 24px
+            }
+
+            .funds-container {
+                max-height: 565px;
+                overflow-y: scroll !important;
+                overflow-x: hidden;
+                padding: 0 5px 0 5px;
+            }
+        }
+    }
+}
+
+@media(max-width:991.98px) {
+    .watchlist-funds {
+        background: #F8F8F8 !important;
+
+        .tab-head {
+            margin-bottom: 20px !important;
+        }
+
+        .fund-block {
+            padding: 24px;
+            min-height: auto;
+            height: auto;
+            display: block;
+        }
+
+        &.empty-watchlist {
+            .watchlist-box {
+                flex-direction: row-reverse !important;
+                background: transparent;
+                box-shadow: none;
+
+                .col-lg-8 {
+                    border: 0;
+                    padding:0
+                }
+                .col-lg-4{
+                    padding:18px 0 32px 0
+                }
+                .funds-container{
+                    max-height: initial;
+                    padding:0;
+                }
+            }
+            .empty-cart{
+                img{
+                    max-width: 113px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:767.98px) {
+    .watchlist-funds {
+        padding-top: 16px;
+
+        .back {
+            margin-bottom: 12px;
+        }
+
+        .row {
+            margin-top: 20px;
+        }
+        .watchlist-box{
+            // flex-direction: row-reverse !important;
+        }
+        .watchlist-box .funds-container{
+            padding:0 15px
+         }
+          .funds-container{
+            //padding:0 15px !important
+         }
+        .fund-block {
+            box-shadow: 0px 4px 20px 0px rgba(23, 55, 163, 0.16);
+            border: 0;
+            border-radius: 8px;
+
+            .tags {
+                margin-left: 0 !important;
+                margin-bottom: 0;
+
+            }
+        }
+        
+         .filter-options .form-group{
+            max-width: 200px;
+         }
+    }
+}
+
+@media(max-width:575.98px) {
+    .watchlist-funds {
+        .filter-title {
+            //font-size: 1.125rem !important;
+        }
+
+        .fund-block {
+            .tags {
+                ul li {
+                    font-size: 0.75rem;
+                }
+            }
+        }
+
+        .tab-head {
+            flex-direction: column-reverse;
+
+            .btn-primary {
+                width: 100%;
+                max-width: 144px;
+                padding: 12px 8px;
+                margin: 0 0 0 auto;
+                font-size: 0.875rem;
+                letter-spacing: -0.42px;
+                line-height: 1;
+                margin-bottom: 20px;
+            }
+
+            .fund-type-tab{
+                .nav-tabs {
+                    border-radius: 8px 8px 0px 0px;
+                    background: #ECF3FF;
+    
+                    .nav-link {
+                        padding: 12px;
+                        border: 0;
+                        font-weight: 400;
+                        font-size: 0.875rem;
+    
+                        &.active {
+                            border-bottom: 2px solid var(--blue);
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+        .filter-options {
+            justify-content: center;
+            .form-group{
+                max-width: 100%;
+            }
+        }
+        .fund-block {
+            .icons{
+                .dropdown{
+                    margin-left: 0;
+                }
+            }
+        }
+         
+        &.empty-watchlist{
+            .nav-tabs{
+                background: transparent;
+            }
+        }
+    }
+}
+
+@media(min-width: 992px){
+    .empty-cart-wraper{
+        align-self: self-start;
+        margin-top: 80px;
+    }
+}

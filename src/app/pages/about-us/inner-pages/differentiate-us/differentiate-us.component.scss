@@ -1,0 +1,163 @@
+.FT {
+    &-inner-banners {
+        .content-box {
+            max-width: 542px;
+        }
+    }
+}
+.FT-proposition {
+    padding-top: 43px;
+    padding-bottom: 98px;
+
+    .container {
+        max-width: 1175px
+    }
+
+    .FT-title {
+        margin-bottom: 40px;
+        color: var(--black);
+        background: linear-gradient(90.29deg, var(--black) 26.99%, var(--black) 50.09%, var(--black) 74.69%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        vertical-align: middle;
+    }
+
+    .content {
+        padding: 32px;
+
+        .nav-tabs {
+            margin-bottom: 32px;
+            justify-content: center;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scrollbar-width: 0;
+            &::-webkit-scrollbar {
+                width: 0;
+            }
+        
+            /* Track */
+            &::-webkit-scrollbar-track,&::-webkit-scrollbar-thumb, &::-webkit-scrollbar-thumb:hover{
+                background: transparent;
+            }
+            .nav-item{
+               min-width: fit-content; 
+            }
+            .nav-link {
+                padding: 24px;
+                font-size: 1.125rem;
+                letter-spacing: -0.6px;
+                border-color: #D2D8EA;
+
+                &.active {
+                    border-color: var(--blue);
+                }
+            }
+        }
+
+        .tab-content {
+            padding: 32px;
+            background: #fff;
+
+            .row {
+                align-items: center;
+            }
+
+            .text-big {
+                max-width: 555px;
+                height: auto;     
+            }
+        }
+    }
+}
+.FT-concepts {
+    .FT-title {
+        margin-bottom: 40px;
+        color: var(--black);
+        background: linear-gradient(90.29deg, var(--black) 26.99%, var(--black) 50.09%, var(--black) 74.69%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        vertical-align: middle;
+    }
+
+    .conatiner {
+        max-width: 1285px
+    }
+
+    .box-title {
+        font-size: 1.625rem;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: -0.84px;
+    }
+
+    .content {
+        padding: 32px;
+        border-radius: 8px;
+        margin-top: 40px;
+        margin-bottom: 48px;
+    }
+
+    .faq-box {
+        box-shadow: none;
+        background: #F0F6FF;
+
+        .accordion {
+
+            .accordion-item {
+
+                border-radius: 7px;
+                background: #fff;
+                box-shadow: 0px 2px 11.81px 0px rgba(201, 201, 201, 0.10);
+                padding: 16px;
+                margin-bottom: 16px;
+                border-bottom: 1px solid rgba(222, 228, 247, 0.5019607843);
+
+                .accordion-header {
+                    .accordion-button {
+                        color: var(--black);
+                        font-size: 1.375rem;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+                        letter-spacing: -0.72px;
+
+                        .title {
+                            display: flex;
+                            align-items: center;
+                            padding-right: 16px;
+
+                            img {
+                                margin-right: 16px;
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+                    padding-bottom: 16px;
+                }
+            }
+        }
+    }
+}
+.vintage-box {
+    padding: 16px;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0px 2px 11.81px 0px rgba(201, 201, 201, 0.10);
+    font-size: 0.938rem;
+    line-height: 142.5%;
+    letter-spacing: -0.48px;
+
+    h3 {
+        font-weight: 600;
+        letter-spacing: -0.6px;
+        margin-bottom: 0;
+    }
+
+
+}

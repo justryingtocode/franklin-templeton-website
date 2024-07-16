@@ -1,0 +1,233 @@
+.new-badge {
+  // position: absolute;
+  // top: -12px;
+  // left: 9px;
+  // display: inline-block;
+  background: #E24100;
+  color: #fff;
+  padding: 0 4px;
+  font-size: 0.75rem;
+  letter-spacing: -0.36px;
+}
+
+.line {
+  width: 96px;
+  height: 2px;
+  position: absolute;
+  top: 17px;
+  left: 39%;
+  border: 2px solid #959595;
+  background: #959595;
+}
+
+.module1 {
+  //styleName: 16-semibold;
+  font-family: 'Hanken Grotesk';
+  font-size: 1.438rem;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.module2 {
+  //styleName: 16-semibold;
+  font-family: 'Hanken Grotesk';
+  font-size: 1.438rem;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  color: #3769FF;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.module3 {
+  font-family: 'Hanken Grotesk';
+  font-size: 1.188rem;
+  line-height: 21px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  margin-top: 13px;
+  margin-bottom: 10px;
+}
+
+.radio2 {
+  font-size: 1.188rem;
+  font-weight: 400;
+}
+
+.radio {
+  font-size: 1.438rem;
+  margin-top: 5px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-left: 19px;
+}
+
+.module4 {
+  font-size: 1.313rem;
+  font-weight: 500;
+}
+
+.module5 {
+  height: 61px;
+  font-size: 1.438rem;
+}
+
+.checkbox {
+  font-size: 1.313rem;
+  font-weight: 500;
+}
+
+.module6 {
+  background-color: #F0F6FF;
+  color: #3769FF;
+  text-align: center;
+  font-size: 1.125rem;
+  padding: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  border-radius: 29px;
+  height: 49px;
+  width: 94px;
+}
+
+//
+
+.share-menu-twitter {
+  max-width: 300px;
+}
+
+.fund-AUM {
+  margin-bottom: auto;
+  margin-left: 19px;
+}
+
+.share-menu-twitter-fund {
+  white-space: nowrap;
+}
+
+.share-btn-fund {
+  z-index: 100005;
+}
+
+
+.showIconForWatchlist {
+  margin-left: 4px;
+}
+
+.audio-box {
+  height: 83%;
+  border-top-left-radius: 39px;
+  border-top-right-radius: 39px;
+}
+
+.podcast-block {
+  width: 233px;
+  height: 48px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.report-detail {
+  width: 233px;
+  height: 48px;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #FFFFFF;
+}
+
+.audio-class-box {
+  background-color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 4px;
+  width: 100%;
+  height: 226px;
+}
+
+.podcast-img-box {
+  font-size: 16px;
+  color: #8189A2;
+}
+
+.report-search-box {
+  background-color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 4px;
+  width: 100%;
+  height: 249px;
+}
+
+.report-share {
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.report-bcakground {
+  background-color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 4px;
+  width: 100%;
+  height: 195px;
+}
+
+.report-share-box {
+  height: 21px;
+  margin-bottom: 4px;
+}
+
+
+// .offcanvas-head {
+//   border: 1px solid #D2D8EA;
+//   padding: 12px;
+// }
+
+.report-date-details {
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+// .money-sign-fund {
+//   position: relative;
+//   top: 2px;
+// }
+
+.alert-index {
+  height: 100%;
+  padding: 0px 14px;
+}
+
+// .share-fund-empty {
+//   position: fixed;
+//   top: calc(43% - 75px);
+//   width: -webkit-fill-available;
+//   display: none;
+//   z-index: 1201;
+// }
+
+// .share-funds-empty {
+//   padding: 0px;
+//   margin: 0;
+// }
+
+// .share-REPORT {
+//   border-top-right-radius: 15%;
+//   border-top-left-radius: 15%;
+// }
+
+// .Share-WITH-other {
+//   font-size: 1.75rem;
+//   margin-left: auto
+// }
+
+// .fund-card-two {
+//   white-space: nowrap;
+// }

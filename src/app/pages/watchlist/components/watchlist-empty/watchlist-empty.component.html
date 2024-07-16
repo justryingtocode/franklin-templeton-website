@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="mb-4 d-none d-lg-block">
+    A list of selected securities monitored for potential investment opportunities. It's important as it
+    helps investors track market movements and make informed decisions.
+  </div>
+
+  <div class="row align-items-center watchlist-box">
+    <div class="col-lg-4 empty-cart-wraper">
+        <div class="empty-cart text-center">
+            <img src="assets/images/watchlist/Save.svg" class="mb-4">
+            <h3 class="mb-md-4 mb-3">Your watchlist is empty</h3>
+            <div>
+                Looks like you have not added anything to your watchlist. Go ahead and explore our funds
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="filter-options mt-0 mb-4">
+            <div class="form-group ">
+                <input type="text" class="form-control search" placeholder="Search Mutual Fund">
+
+                <div class="search-result">
+                    <div class="inner">
+                        <div class="mb-3" *ngFor="let fund of funds" (click)="getTableTitle(fund.title)">
+                            {{ fund.title }}
+                            <span class="sub"><span class="text-gray">Fund Size</span> - {{ fund.aum }}</span>
+                            <span class="sub"><span class="text-gray">Unuique Investors</span> -
+                                {{ fund.investors }}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dataFilter">
+                <div class="d-flex align-items-center">
+                    <span class="me-2">Sort by </span>
+
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Returns High to Low
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Popularity</a></li>
+                            <li class="selected-option"><a class="dropdown-item" href="#">Returns - High to Low</a></li>
+                            <li><a class="dropdown-item" href="#">AUM - High to Low</a></li>
+                            <li><a class="dropdown-item" href="#">Unique Investors - High to Low</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-head mb-4 forwatclistnavtab">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation" *ngFor="let element of sideFilterOptions; let i = index">
+                    <button class="nav-link" [ngClass]="{'active': activeTab === i}" [id]="element.id + '-tab'"
+                          data-bs-toggle="tab" [attr.data-bs-target]="'#' + element.id + '-tab-pane'"
+                          type="button" role="tab" [attr.aria-controls]="element.id + '-tab-pane'"
+                          [attr.aria-selected]="activeTab === i" 
+                          (mouseenter)="changeActiveTab(i)" (mouseleave)="resetActiveTab()">{{element.name}}
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab"
+                tabindex="0">
+                <div class="funds-container" sty le="padding-top: 4px;">
+                    <ng-container *ngFor='let fund of funds; let i = index'>
+                        <app-fund-card1
+                            (fundOutput)="goToCart($event)" 
+                            [fund]="fund" 
+                            [hasThreeDotOptions]="false" 
+                            [hasAddNowBtn]="true"
+                            [cardType]="'EMPTY_WATCHLIST'">
+                        </app-fund-card1>
+                    </ng-container>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+ 
+  </div>
+</div>

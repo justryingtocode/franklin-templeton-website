@@ -1,0 +1,297 @@
+<!-- start section related articles -->
+<section class="FT-knowledge">
+    <div class="container">
+        <!-- start categories block -->
+    <div class="category-block">
+        <div class="d-flex align-items-center justify-content-between">
+            <h3>Category 1</h3>
+            <a class="knowledge-center-CTA" href="#">
+                <span>View all</span><i class="bi bi-chevron-right"></i></a>
+        </div>
+
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem class="slide" *ngFor="let slide of relatedData; let i = index">
+              <div class="category-card">
+                <div class="card-img">
+                  <img src="{{ slide.imgSrc }}">
+                  <span class="time-tag">{{ slide.timeTag }}</span>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <div><i class="bi bi-eye-fill me-1"></i>{{ slide.views }} </div>
+                    <div class="card-icons d-flex">
+                      <span class="img-with-tooltip me-3 d-flex showIconForWatchlist"  (click)="toggleIconForWishlist(i)">
+                        <i [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                        <i *ngIf="!showIconForWishlist[i]" class="bi bi-heart-fill me-1"></i>
+                        <span [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="tooltip-block">Like</span>
+                        <span *ngIf="!showIconForWishlist[i]" class="tooltip-block">Unlike</span>
+                        <!-- <img *ngIf="!showIconForWishlist[i]" src="assets/images/knowledge-center/HeartStraight.svg" class="me-1"
+                          sty le="bottom: 3px; position: relative; height: 23px; width: 23px;"> -->
+                        <span class="fund-AUM">{{ slide.wishlistCount }}</span>
+                      </span>
+                      <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist(i)">
+                        <i [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                        <i *ngIf="!showIconForWatchlist[i]" class="bi bi-bookmark-fill"></i>
+                        <span [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="tooltip-block">Save</span>
+                        <span *ngIf="!showIconForWatchlist[i]" class="tooltip-block">Saved Course</span>
+                        <!-- <img *ngIf="!showIconForWatchlist[i]" src="assets/images/knowledge-center/Variant3.svg" class="me-1"
+                          sty le="margin-bottom: 3px; height: 19px; width: 19px;"> -->
+                      </span>
+                      <span class="dropdown">
+                        <!-- <span type="button" data-bs-toggle="dropdown" aria-expanded="false"> -->
+                            <!-- <img src="assets/images/knowledge-center/share.svg" s tyle="height: 17px;"> -->
+                            <!-- <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="assets/images/knowledge-center/share.svg" class="d-inline-block mobile-icons light-mode-icon" sty le="width: 18px;">
+                            <img src="../../../../../../assets/images/dark/share-dark-icon.png" class="mobile-icons dark-mode-icon" sty le="width: 21px; top: -1px; position: relative; left: 0px;">
+                            </span> -->
+                            <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-menu-twitter" >
+                                <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-btn-fund" >    
+                                <span *ngIf="showTooltip" class="tooltip-block">share</span>
+                            </span>
+                        <!-- </span> -->
+                        <ul class="dropdown-menu">
+                            <!-- <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li> -->
+                            <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                            <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                        </ul>
+                    </span>
+                    </div>
+                  </div>
+                  <div class="text-bold card-title mt-3 forlikecardtitle">{{ slide.title }}</div>
+                </div>
+              </div>
+            </div>
+        </ngx-slick-carousel>
+
+            <!-- <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem class="slide">
+                <div class="category-card">
+                    <div class="card-img">
+                        <img src="assets/images/knowledge-center/category1.png">
+                        <span class="time-tag">4 mins read</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                            <div class="card-icons d-flex">
+                                <span class="me-3 d-flex" sty le="color: var(--blue);" (click)="toggleIconForWishlist()">
+                                    <i [ngStyle]="{'display': showIconForWishlist ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                                    <img *ngIf="!showIconForWishlist" src="assets/images/knowledge-center/HeartStraight.svg" class="me-1" sty le="bottom: 3px; position: relative; height: 23px; width: 23px;">
+                                    <span sty le="margin-top: 2px;">300</span></span>
+                                <span class="me-3" (click)="toggleIconForWatchlist()">
+                                    <i [ngStyle]="{'display': showIconForWatchlist ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                                    <img *ngIf="!showIconForWatchlist" src="assets/images/knowledge-center/Variant3.svg" class="me-1" sty le="margin-bottom: 3px; height: 19px; width: 19px;">
+                                </span>
+                                <span class="dropdown">
+                                    <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="assets/images/knowledge-center/share.svg" st yle="height: 17px;">
+                                    </span>
+                                    <ul class="dropdown-menu">
+                                        <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                    </div>
+                </div>
+            </div>
+            <div ngxSlickItem class="slide">
+                <div class="category-card">
+                    <div class="card-img">
+                        <img src="assets/images/knowledge-center/category2.png">
+                        <a href="#" class="video-btn"><img src="assets/images/knowledge-center/video-icon.svg"></a>
+                        <span class="time-tag">11.21</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                            <div class="card-icons d-flex">
+                                <span class="me-3 d-flex" st yle="color: var(--blue);" (click)="toggleIconForWishlist()">
+                                    <i [ngStyle]="{'display': showIconForWishlist ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                                    <img *ngIf="!showIconForWishlist" src="assets/images/knowledge-center/HeartStraight.svg" class="me-1" st yle="bottom: 3px; position: relative; height: 23px; width: 23px;">
+                                    <span st yle="margin-top: 2px;">300</span></span>
+                                <span class="me-3" (click)="toggleIconForWatchlist()">
+                                    <i [ngStyle]="{'display': showIconForWatchlist ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                                    <img *ngIf="!showIconForWatchlist" src="assets/images/knowledge-center/Variant3.svg" class="me-1" st yle="margin-bottom: 3px; height: 19px; width: 19px;">
+                                </span>
+                                <span class="dropdown">
+                                    <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="assets/images/knowledge-center/share.svg" sty le="height: 17px;">
+                                    </span>
+                                    <ul class="dropdown-menu">
+                                        <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                    </div>
+                </div>
+            </div>
+            <div ngxSlickItem class="slide">
+                <div class="category-card">
+                    <div class="card-img">
+                        <img src="assets/images/knowledge-center/category1.png">
+                        <span class="time-tag">4 mins read</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                            <div class="card-icons d-flex">
+                                <span class="me-3 d-flex" sty le="color: var(--blue);" (click)="toggleIconForWishlist()">
+                                    <i [ngStyle]="{'display': showIconForWishlist ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                                    <img *ngIf="!showIconForWishlist" src="assets/images/knowledge-center/HeartStraight.svg" class="me-1" st yle="bottom: 3px; position: relative; height: 23px; width: 23px;">
+                                    <span sty le="margin-top: 2px;">300</span></span>
+                                <span class="me-3" (click)="toggleIconForWatchlist()">
+                                    <i [ngStyle]="{'display': showIconForWatchlist ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                                    <img *ngIf="!showIconForWatchlist" src="assets/images/knowledge-center/Variant3.svg" class="me-1" st yle="margin-bottom: 3px; height: 19px; width: 19px;">
+                                </span>
+                                <span class="dropdown">
+                                    <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="assets/images/knowledge-center/share.svg" sty le="height: 17px;">
+                                    </span>
+                                    <ul class="dropdown-menu">
+                                        <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                    </div>
+                </div>
+            </div>
+            <div ngxSlickItem class="slide">
+                <div class="category-card">
+                    <div class="card-img">
+                        <img src="assets/images/knowledge-center/category2.png">
+                        <a href="#" class="video-btn"><img src="assets/images/knowledge-center/video-icon.svg"></a>
+                        <span class="time-tag">11.21</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                            <div class="card-icons d-flex">
+                                <span class="me-3 d-flex" sty le="color: var(--blue);" (click)="toggleIconForWishlist()">
+                                    <i [ngStyle]="{'display': showIconForWishlist ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                                    <img *ngIf="!showIconForWishlist" src="assets/images/knowledge-center/HeartStraight.svg" class="me-1" sty le="bottom: 3px; position: relative; height: 23px; width: 23px;">
+                                    <span sty le="margin-top: 2px;">300</span></span>
+                                <span class="me-3" (click)="toggleIconForWatchlist()">
+                                    <i [ngStyle]="{'display': showIconForWatchlist ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                                    <img *ngIf="!showIconForWatchlist" src="assets/images/knowledge-center/Variant3.svg" class="me-1" sty le="margin-bottom: 3px; height: 19px; width: 19px;">
+                                </span>
+                                <span class="dropdown">
+                                    <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="assets/images/knowledge-center/share.svg" sty le="height: 17px;">
+                                    </span>
+                                    <ul class="dropdown-menu">
+                                        <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                    </div>
+                </div>
+            </div>
+            <div ngxSlickItem class="slide">
+                <div class="category-card">
+                    <div class="card-img">
+                        <img src="assets/images/knowledge-center/category1.png">
+                        <span class="time-tag">4 mins read</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                            <div class="card-icons d-flex">
+                                <span class="me-3 d-flex" st yle="color: var(--blue);" (click)="toggleIconForWishlist()">
+                                    <i [ngStyle]="{'display': showIconForWishlist ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                                    <img *ngIf="!showIconForWishlist" src="assets/images/knowledge-center/HeartStraight.svg" class="me-1" st yle="bottom: 3px; position: relative; height: 23px; width: 23px;">
+                                    <span st yle="margin-top: 2px;">300</span></span>
+                                <span class="me-3" (click)="toggleIconForWatchlist()">
+                                    <i [ngStyle]="{'display': showIconForWatchlist ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                                    <img *ngIf="!showIconForWatchlist" src="assets/images/knowledge-center/Variant3.svg" class="me-1" sty le="margin-bottom: 3px; height: 19px; width: 19px;">
+                                </span>
+                                <span class="dropdown">
+                                    <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="assets/images/knowledge-center/share.svg" st yle="height: 17px;">  
+                                    </span>
+                                    <ul class="dropdown-menu">
+                                        <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                    </div>
+                </div>
+            </div>
+            <div ngxSlickItem class="slide">
+                <div class="category-card">
+                    <div class="card-img">
+                        <img src="assets/images/knowledge-center/category2.png">
+                        <a href="#" class="video-btn"><img src="assets/images/knowledge-center/video-icon.svg"></a>
+                        <span class="time-tag">11.21</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div><i class="bi bi-eye-fill me-1"></i>1K </div>
+                            <div class="card-icons d-flex">
+                                <span class="me-3 d-flex" sty le="color: var(--blue);" (click)="toggleIconForWishlist()">
+                                    <i [ngStyle]="{'display': showIconForWishlist ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                                    <img *ngIf="!showIconForWishlist" src="assets/images/knowledge-center/HeartStraight.svg" class="me-1" sty le="bottom: 3px; position: relative; height: 23px; width: 23px;">
+                                    <span sty le="margin-top: 2px;">300</span></span>
+                                <span class="me-3" (click)="toggleIconForWatchlist()">
+                                    <i [ngStyle]="{'display': showIconForWatchlist ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                                    <img *ngIf="!showIconForWatchlist" src="assets/images/knowledge-center/Variant3.svg" class="me-1" styl e="margin-bottom: 3px; height: 19px; width: 19px;">
+                                </span>
+                                <span class="dropdown">
+                                    <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="assets/images/knowledge-center/share.svg" st yle="height: 17px;">
+                                    </span>
+                                    <ul class="dropdown-menu">
+                                        <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="text-bold card-title mt-3">How to save tax with ELSS</div>
+                    </div>
+                </div>
+            </div>
+        </ngx-slick-carousel> -->
+        </div>
+    </div>
+</section>

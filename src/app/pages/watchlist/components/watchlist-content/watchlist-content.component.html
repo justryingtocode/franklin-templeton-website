@@ -1,0 +1,171 @@
+<div class="container">
+    <div class="mb-4">
+        Curate and monitor your preferred funds here. Stay informed and make strategic decisions as you track the performance of your chosen investments. 
+    </div>
+  
+    <div class="row ">
+
+       <!-- <div class="col-lg-auto d-none d-lg-block">         
+        <div class="sticky-filter">
+           <div class="filter-head">Categories</div>
+           <div class="nav flex-column nav-pills watchlist-tab-box" id="v-pills-tab" role="tablist"
+               aria-orientation="vertical">
+               <ng-container *ngFor="let element of sideFilterOptions">
+                  <button class="nav-link ms-2" [id]="element.name" [ngClass]="element.id==1 ? 'active' : ''" data-bs-toggle="pill"
+                  data-bs-target="#v-pills-focus" type="button" role="tab" aria-controls="v-pills-focus"
+                  aria-selected="true" (mouseover)="showContentOnHover($event)">{{element.name}}</button>
+              </ng-container>
+           </div>
+        </div>
+       </div> -->
+
+       <div class="col-lg-auto d-none d-lg-block" >
+        <div class="sticky-filter">
+          <div class="Ft-watchlist-content-filter-head">Asset Category</div>
+          <div class="nav flex-column nav-pills watchlist-tab-box share-menu-twitter" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <ng-container *ngFor="let element of sideFilterOptions">
+              <button class="nav-link ms-2" [id]="element.name" [ngClass]="element.id==1 ? 'active' : ''"
+                      data-bs-toggle="pill" data-bs-target="#v-pills-focus" type="button" role="tab"
+                      aria-controls="v-pills-focus" aria-selected="true"
+                      (mouseover)="showContentOnHover($event)">{{element.name}}</button>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      
+    
+
+       <div class="col-lg forwatchlistchangetab">
+        <div class="d-flex fund-AUM">
+            <button class="btn btn-white d-none d-md-block"><img src="../../../../assets/images/general/compare-new-icon.png" class="share-icon2 share-menu-twitter-fund" >Compare</button>
+        </div>
+   
+        <div class="FT-watchlist-content-sticky-tab">
+           <div class="d-flex fund-type-tab justify-content-between align-items-sm-center tab-head mb-3">
+               <ul class="nav nav-tabs" id="myTab" role="tablist">
+                   <li class="nav-item" role="presentation">
+                       <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                           type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Watchlist</button>
+                   </li>
+                   <li class="nav-item" role="presentation">
+                       <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                           type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Recent
+                           Searches</button>
+                   </li>
+               </ul>
+           
+               <button class="btn btn-primary d-none d-md-block share-btn-fund" data-bs-toggle="offcanvas"
+               data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" (click)="makeCartToggle2()">Add Funds</button>
+               <button class="btn btn-primary d-md-none" (click)="makeCartToggle()">Add Funds</button>
+           </div>
+        </div>
+           <!-- <div class="filter-options small-tab-dropdown d-lg-none">
+               <div class="dropdown">
+                   <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                       All
+                   </button>
+                   <ul class="dropdown-menu">
+                       <li class="selected-option"><a class="dropdown-item" href="#">All</a></li>
+                       <li><a class="dropdown-item" href="#">Focus Funds</a></li>
+                       <li><a class="dropdown-item" href="#">Equity Funds</a></li>
+                       <li><a class="dropdown-item" href="#">Debt Funds</a></li>
+                       <li><a class="dropdown-item" href="#">International Funds</a></li>
+                       <li><a class="dropdown-item" href="#">Hybrid Funds</a></li>
+                       <li><a class="dropdown-item" href="#">Liquid Funds</a></li>
+                   </ul>
+               </div>
+           </div> -->
+           <div class="d-md-none">
+               <div class="tab-head mb-4 forwatclistnavtab side-filter-options">
+                 <ul class="nav nav-tabs" id="myTab" role="tablist">
+                     <li class="nav-item" role="presentation" *ngFor="let element of sideFilterOptions; let i = index">
+                         <button class="nav-link" [ngClass]="{'active': activeTab === i}" [id]="element.id + '-tab'"
+                               data-bs-toggle="tab" [attr.data-bs-target]="'#' + element.id + '-tab-pane'"
+                               type="button" role="tab" [attr.aria-controls]="element.id + '-tab-pane'"
+                               [attr.aria-selected]="activeTab === i" 
+                               (mouseenter)="changeActiveTab(i)" (mouseleave)="resetActiveTab()">{{element.name}}
+                         </button>
+                     </li>
+                 </ul>
+             </div>
+          </div>
+
+           <div class="tab-content" id="v-pills-tabContent">
+               <div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab"
+                   tabindex="0">
+                   <div class="funds-container showIconForWatchlist">
+                       <ng-container *ngFor='let fund of funds; let i = index'>
+                            <app-fund-card1 
+                                (fundOutput)="goToCart($event)" 
+                                [fund]="fund" 
+                                [hasThreeDotOptions]="true" 
+                                [hasAddNowBtn]="false">
+                            </app-fund-card1>
+                       </ng-container>
+                   </div>
+               </div>
+           </div>
+  
+       </div>
+    </div>
+  
+    <div>
+      <div class="offcanvas offcanvas-end custom-offcanvas offcanvas-head" tabindex="-1" id="offcanvasExample"
+          aria-labelledby="offcanvasExampleLabel" >
+          <div class="offcanvas-body darkOffcanvasAddbody">
+              <!-- <div class="d-flex justify-content-between mt-2" sty le="padding: 4px 31px;">
+                    <div class="cardAdd">Add Funds</div>
+                    <div type="button" data-bs-dismiss="offcanvas" aria-label="Close"><img src="./assets/images/comparefund/Frame 1000007569.png"></div>
+                    </div> -->
+                    <app-add-fund-data 
+                    [comaredFundInputFund]="true"
+                     (fund)="goToCart($event)"
+                     >
+                    </app-add-fund-data>
+                    <!-- <app-all-funds [isAddFund]="true" [changeName]="true" (compareToggleChangedDataValueCard)="onCompareToggleChangedDataValueCard($event)"></app-all-funds> -->
+                    <!-- <app-fund-card1 [fund]="fund"></app-fund-card1> -->
+          
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="page-content">
+  
+      <app-standpage></app-standpage>
+      
+  </div>
+  
+  <div class="container">
+  
+      <!-- <section class="conatiner checkGoToCheckout mt-5 mb-4">
+          <div class="FT-Watchlist-Content-Color-Checkout">
+              <div class="d-flex forCheckoutView">
+                  <div class="checkAdded">
+                      Check the progress of the funds added in the Cart
+                  </div>
+                  <div sty le="margin: auto;">
+                      <button type="button" [routerLink]="['/investment-cart']"
+                          class="btn btn-outline-primary bg-white checkOutTitle"><span class="addNow">Go to
+                              Cart</span></button>
+                  </div>
+              </div>
+          </div>
+      </section> -->
+
+      <section class="conatiner checkGoToCheckout mt-5 mb-4 d-none d-md-block">
+        <div class="addColorCard money-sign-fund" >
+            <!-- <div class="d-flex" s tyle="justify-content: space-around; padding: 19px 5px;">
+                <div class="checkAdded">
+                    Check the progress of the funds added in the Cart
+                </div>
+                <div>
+                    <button type="button" sty le="width: 160px; height: 50px;" [routerLink]="['/investment-cart']"
+                        class="btn btn-outline-primary bg-white"><span class="addNow">Go to
+                            Cart</span></button>
+                </div>
+            </div> -->
+        </div>
+    </section>
+  </div>

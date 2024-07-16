@@ -1,0 +1,38 @@
+<div id="page-content">
+    <!-- start page breadcrumb block -->
+    <div class="FT-breadcrumb">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item fontResize"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active fontResize" aria-current="page">Register</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+</div>
+
+<div id="page-content" class="bg-img">
+
+    <section class="FT-empanel">
+        <div class="container">
+            
+            <h2 class="fontResize">Register for Online Access <span class="invest-register fontResize">(Investor)</span></h2>
+            <span class="invest-register fontResize">Note: Kindly note that this is an online account registration process for our existing investors. If you are investing with us for the first time, please
+                 <a routerLink="/create-account">Click here</a></span>
+            <div class="empanel-box">
+
+                <app-register-form></app-register-form>
+                <div class="text-big text-bold text-center mt-5 fontResize login-dark">
+                    Already have account ? 
+                    <a class="new-links login-dark2" [routerLink]="['/login']"><span class="new-links">Login</span></a>
+                </div>
+            </div>
+
+        </div>
+
+        <app-access-ways></app-access-ways>
+        <app-features></app-features>
+    </section>
+</div>

@@ -1,0 +1,41 @@
+<div class="distributor-step2 share-menu-twitter" >
+    <div class="text-big text-meduim pb-2">Online Empanelment or Registration for <span
+            class="text-blue">ARN-02327</span></div>
+
+    <div class="text-bold text-teal text-big">
+        One Time Password (OTP) has been sent to registered email
+    </div>
+    <div class="row">
+        <div class="col-sm-8 col-12 form-group mb-3">
+            <p class="error-msg fontResize login-dark2 share-menu-twitter-fund"> An OTP (One Time password) has been
+                sent
+                your registered e-mail ID a****j@franklinetemplton.com and mobile *****5002.</p>
+
+            <div>
+                <input type="text" class="form-control" placeholder="Enter OTP*" id="otp" formControlName="otp">
+                <span class="share-btn-fund">
+                    <span class="justify-content-center mr fund-AUM"
+                        *ngIf="resendOtpRequest">
+                        OTP has been resent.
+                    </span><a class="login-dark2 mt-1" (click)="resendOTPline()">Resend OTP</a>
+                </span>
+            </div>
+        </div>
+        <div class="mb-4">Note: Kindly note that this code will be valid for the next 20 minutes</div>
+
+        <div class="col-sm-8 col-12 mb-3">
+
+            <div class="btn-options d-flex">
+                <button type="button" class="btn btn-outline-primary me-4" (click)="changeActiveStepper(1,false)"
+                    data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false"
+                    aria-controls="collapse1">Back</button>
+                <button type="button" class="btn btn-primary" (click)="changeActiveStepper(2,true)"
+                    data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false"
+                    aria-controls="collapse3">Next</button>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

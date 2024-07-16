@@ -1,0 +1,76 @@
+<button type="button" class="btn btn-date-selector" [ngbPopover]="popContent" data-container="body" placement="bottom"
+    #popOver="ngbPopover" [autoClose]="'outside'" [ngStyle]="{'text-align': isSelectedDateEmpty ? 'left' : ''}">
+    <img src="assets/images/fund/calendar-outline.svg">
+    {{selectedDate}}
+</button>
+
+<div class="input-group share-menu-twitter">
+    <ng-template #popContent class="share-menu-twitter">
+        <div class="container date-range-container">
+            <div class="fund-AUM" >Fund inception</div>
+            <div class="row d-flex">
+                <div class="col-6">
+                    <div class="accordion accordion-flush d-md-none" id="accordionFlushExample">
+                        <div class="accordion-item share-menu-twitter-fund" >
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button
+                                    
+                                    class="accordion-button collapsed performance-date share-btn-fund" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false" id="monthButton"
+                                    aria-controls="flush-collapseOne">
+                                    {{selectedMonth}}
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse performance-date showIconForWatchlist"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample"
+                                >
+                                <div class="audio-box">
+                                    <div *ngFor="let month of monthList" class="accordion-body podcast-block"
+                                         (click)="selectMonth(month)">
+                                        {{month}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <select class="form-select date-select d-none d-md-flex audio-class-box" aria-label="Default select example" 
+                        [(ngModel)]="selectedMonth" (change)="selectMonth($event)">
+                        <option *ngFor="let month of monthList" value="{{month}}">{{month}}</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <div class="accordion accordion-flush d-md-none" id="accordionFlushExample">
+                        <div class="accordion-item podcast-img-box">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button id="yearButton" class="accordion-button collapsed performance-date share-btn-fund" type="button"
+                                    data-bs-toggle="collapse"
+                             
+                                    data-bs-target="#flush-collapseTwo" aria-controls="flush-collapseTwo"
+                                    aria-expanded="false">
+                                    {{selectedYear}}
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse performance-date showIconForWatchlist"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample"
+                                >
+                                <div class="report-share">
+                                    <div *ngFor="let year of yearList" class="accordion-body podcast-block"
+                                         (click)="selectDay(year)">
+                                        {{year}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <select class="form-select date-select d-none d-md-flex" aria-label="Default select example"
+                        [(ngModel)]="selectedYear" (change)="selectDay($event)">
+                        <option *ngFor="let year of yearList" value="{{year}}">{{year}}</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary w-75 m-auto mt-2 date-submit"
+                        (click)="DateSelected()">Submit</button>
+                </div>
+
+            </div>
+        </div>
+    </ng-template>
+</div>

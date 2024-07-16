@@ -1,0 +1,169 @@
+<form [formGroup]="passwordForm" (ngSubmit)="onSubmit()">
+    <div class="distributor-step2 distributor-step" >
+        <!-- <div class="row">
+        <div class="col-sm col-12 form-group mb-3">
+            <input type="text" class="form-control" placeholder="Enter User ID*">
+        </div>
+        <div class="col-sm col-12 form-group mb-3">
+            <input type="text" class="form-control" placeholder="Password*">
+        </div>
+
+        <div class="col-sm-auto col-12 mb-3">
+            <button class="btn btn-primary" (click)="changeActiveStepper(4,true)" data-bs-toggle="modal" data-bs-target="#registered">Submit</button>
+
+        </div>
+    </div> -->
+    
+        <div class="row">
+            <div class="col-lg-8 col-12">
+                <div class="form-group mb-4">
+                    <input type="text" class="form-control" placeholder="User Name*">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="form-group mb-4">
+                    <div class="password-input">
+                        <input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" #passwordField
+                            class="form-control" placeholder="Enter New Password*" formControlName="password">
+                        <span class="toggle-password2" (click)="togglePasswordVisibility()">
+                            <i class="bi fs-5" [ngClass]="showPassword ? 'bi-eye' : 'bi-eye-slash'"></i>
+                        </span>
+                    </div>
+                    <div class="password-form">
+                        <span
+                            *ngIf="passwordForm.get('password')?.errors && passwordForm.get('password')?.errors?.['minlength']">
+
+                            Password should be 8-16 characters long with at least one of each: Alphabet upper case
+                            [A-Z], small case [a-z], numeric [0-9] and a
+                            special character[~!@#$%^&_+?l-=[]^]
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="form-group group-info mb-4 password-input pan-container">
+                    <input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" #passwordField
+                        class="form-control" placeholder="Confirm New Password*">
+                    <span class="toggle-password" (click)="togglePasswordVisibility()">
+                        <i class="bi fs-5" [ngClass]="showPassword ? 'bi-eye' : 'bi-eye-slash'"></i>
+                    </span>
+                    <span class="img-with-tooltip pan-info">
+                        <img src="assets/images/home/info-icon2.svg" class="d-inline-block mobile-icons light-mode-icon info-icon2-img"
+                            >
+                        <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon information-dark"
+                        >
+                        <span class="tooltip-block">Lorem ipsum dolor sit amet.</span>
+            
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-check mb-4 investor-TC" >
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label fontResize" for="flexCheckDefault">
+                I/We have read and accept all the online investor <a href="#" class="forCallBackLable fontResize"></a>
+                <span>
+                    <a class="forCallBackLable fontResize" href="#" data-bs-toggle="modal"
+                        data-bs-target="#termsConditions">Terms & Conditions
+                    </a>
+                </span>
+        
+            </label>
+        </div>
+
+        <div class="col-sm-8 col-12 mb-3">
+            
+            <div class="btn-options d-flex">
+                <button type="button" class="btn btn-outline-primary me-4" (click)="changeActiveStepper(3,false)"
+                data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false"
+                aria-controls="collapse3">Back</button>
+            <button type="button" class="btn btn-primary" (click)="onSubmitModal()" data-bs-toggle="modal"
+                data-bs-target="#registered">Submit</button>
+        
+            </div>
+        
+        </div>
+    </div>
+</form>
+
+
+
+<!-- terms and conditions modal   -->
+
+<div class="modal fade modal-body-head" id="termsConditions" tabindex="-1" aria-labelledby="termsConditionsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content modal-content-head" id="terms-condition" >
+            <div class="modal-header modal-dialog-head" >
+                <h5 class="modal-title" id="termsConditionsLabel">Terms & Conditions</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-dialog-head" >
+                <p>Investors are requested to read this document carefully. Acceptance of these terms and conditions are
+                    mandatory for availing Invest Online facility.</p>
+                <h3 class="fw-normal">Terms & Conditions for availing Invest Online facility</h3>
+                <p>These Terms and Conditions form the contract between the User and AMC for availing Invest Online. By
+                    applying for or availing of Invest Online, the User acknowledges and accepts these These Terms and
+                    Conditions form the contract between the User and AMC for availing Invest Online. By applying for or
+                    availing of Invest Online, the User acknowledges and accepts these Terms & Conditions.
+                    Notwithstanding anything contained herein, all terms and conditions stipulated by AMC/or its
+                    Affiliates pertaining to the Account(s) and/or to any services/facilities offered by AMC and/or its
+                    Affiliates, shall continue to be applicable to the Users, provided, however, in the event of a
+                    conflict in such other terms and conditions stipulated by AMC and/or its Affiliates and the Terms &
+                    Conditions herein, the Terms and Conditions shall have an overriding effect for Invest Online
+                    facility. These Terms & Conditions will be in addition to and not in derogation of the terms and
+                    conditions relating to any Account(s) of the User and/or to those relating to services/facilities
+                    offered by AMC and/or its Affiliates and availed by the User. The User agrees that in the event the
+                    User avails of any services/ facilities offered by AMC through the Website, Mobile App etc. the User
+                    shall be bound by all the terms and conditions stipulated by AMC pertaining to such
+                    services/facilities, offered by AMC and availed by the User through the Website, Mobile App etc.
+
+                    All information and features provided on the Website, Mobile App etc are intended for use in India.
+                    The Mutual Fund schemes mentioned on the Website, Mobile App etc. are not registered for
+                    distribution in any other jurisdiction other than India. Different Jurisdiction may have different
+                    legal requirements regarding registration, distribution, data protection etc. and we do not envisage
+                    compliance with such laws prevailing in any country other than India. By proceeding with the use of
+                    the Website, Mobile App you submit yourselves to the jurisdiction of applicable Indian laws and
+                    agree to indemnify Franklin Templeton Asset Management (India) Pvt. Ltd, Franklin Templeton Mutual
+                    Fund, Franklin Templeton Trustee Services Pvt. Ltd, its directors, officers, employees, affiliates,
+                    agents and other persons associated with the Franklin Templeton Mutual Fund in India against all
+                    direct, indirect, consequential damages, liabilities or losses arising out of the use of the
+                    Website, Mobile App outside India.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button"  class="btn btn-outline-primary IDN"> I DON NOT
+                    ACCEPT</button>
+                <button type="button"  class="btn btn-primary IDN">I
+                    ACCEPT</button>
+              
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- registered Modal -->
+<div class="modal fade" id="registered"  tabindex="-1" aria-labelledby="registerLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="save-alert">
+                    <div class="content">
+                        <span  class="close-btn checkcircle" id="registerProcess" data-bs-dismiss="modal"
+                            aria-label="Close">
+                        </span>
+                        <img src="assets/images/general/check_circle.svg" class="checked-img">
+                        <span>Registration Successful</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

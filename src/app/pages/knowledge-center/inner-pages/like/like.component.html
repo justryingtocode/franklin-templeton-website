@@ -1,0 +1,249 @@
+<div id="page-content">
+    <!-- start page breadcrumb block -->
+    <div class="FT-breadcrumb">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Knowledge Centre</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Like</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <section class="FT-knowledge">
+        <div class="container">
+            <!-- start categories box -->
+            <div class="knowledge-box categories" id="Learning">
+
+                <!-- start categories dropdown -->
+                <div class="category-dropdown  mb-4">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" (click)="toggleDropdown()">
+                            Like <img src="assets/images/knowledge-center/arrowdown.svg">
+                        </button>
+                        <div *ngIf="isDropdownOpen">
+                            <app-knowledge-center-modal></app-knowledge-center-modal>
+                        </div>         
+                    </div>
+                </div>
+
+                <!-- start categories filter block -->
+                <div class="filter-block pt-md-3">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <div class="filter-options mt-0 mb-4">
+                                <div class="form-group ">
+                                    <input type="text" class="form-control search" placeholder="Search Mutual Fund" [(ngModel)]="searchTerm"
+                                    (input)="filterFunds(searchTerm)">
+                                    <div class="search-result">
+                                      <div class="inner">
+                                          <ng-container *ngFor="let fund of fundsForSearch">
+                                              <div class="funds-seach-title fund-AUM" (click)="getTableTitle(fund)">
+                                                 {{ fund.title }}
+                                                  <span class="sub"><span class="text-gray">Fund Size</span> - {{ fund.aum }}</span>
+                                                  <span class="sub"><span class="text-gray">Unique Investors</span> - {{ fund.investors }}</span>
+                                              </div>
+                                          </ng-container>
+                                      </div>
+                                  </div>
+                                </div>
+                                <div>
+                                  <img src="./assets/images/comparefund/closebutton.svg" class="make-tag-for-all-page showIconForWatchlist" (click)="resetFundExplore()">
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+          
+
+                <!-- start selected category btn -->
+                <!-- <div class="category-btns">
+                    <ul>
+                        <li [class.active]="selectedCategory === 'All'" (click)="selectCategory('All')" class="me-3" >All</li>
+                        <li [class.active]="selectedCategory === 'term_Busters'" (click)="selectCategory('term_Busters')" class="me-3">Term Busters</li>
+                        <li [class.active]="selectedCategory === 'Videos'" (click)="selectCategory('Videos')" class="me-3">Videos</li>
+                        <li [class.active]="selectedCategory === 'Articles'" (click)="selectCategory('Articles')" class="me-3">Articles</li>
+                    </ul>
+                </div> -->
+
+                <div class="row gx-md-4 gx-3">
+                    <div *ngFor="let card of getData; let i = index" class="col-lg-3 col-md-4 col-12 mt-2">
+                      <div class="category-card">
+                        <div class="card-img">
+                          <img [src]="card.imgSrc" alt="Category Image">
+                          <span class="time-tag">{{ card.timeTag }}</span>
+                        </div>
+                        <div class="card-body">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div><i class="bi bi-eye-fill me-1"></i>{{ card.views }} </div>
+                            <div class="card-icons">
+                              <span class="img-with-tooltip me-3" (click)="toggleIconForWishlist(i)">
+                                <i [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                                <i *ngIf="!showIconForWishlist[i]" class="bi bi-heart-fill me-1"></i>
+                                <span [ngStyle]="{'display': showIconForWishlist[i] ? 'inline' : 'none'}" class="tooltip-block">add to wishlist</span>
+                                <span *ngIf="!showIconForWishlist[i]" class="tooltip-block">remove from wishlist</span>
+                                {{ card.likes }}
+                              </span>
+                              <span class="img-with-tooltip me-3" (click)="toggleIconForWatchlist(i)">
+                                <i [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                                <i *ngIf="!showIconForWatchlist[i]" class="bi bi-bookmark-fill"></i>
+                                <span [ngStyle]="{'display': showIconForWatchlist[i] ? 'inline' : 'none'}" class="tooltip-block">add to watchlist</span>
+                                <span *ngIf="!showIconForWatchlist[i]" class="tooltip-block">remove from watchlist</span>
+                              </span>
+                              <span class="dropdown">
+                                <!-- <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/images/knowledge-center/share.svg" sty le="height: 17px;">
+                                </span> -->
+                                <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-menu-twitter" >
+                                    <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-btn-fund" >    
+                                    <span *ngIf="showTooltip" class="tooltip-block">share</span>
+                                </span>
+                                <ul class="dropdown-menu">
+                                    <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                                    <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                                </ul>
+                            </span>
+                            </div>
+                          </div>
+                          <div class="text-bold card-title mt-3">{{ card.title }}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center">
+                      <button class="btn btn-white">Load more</button>
+                    </div>
+                  </div>
+                <app-category-ad></app-category-ad>
+            </div>
+        </div>
+    </section>
+
+    <!-- start category filter-->
+  <div class="FT-general-filter" [ngClass]="toggleFilter ? 'show' : ''">
+    <div class="filter-box">
+        <div class="filter-content">
+            <h3>Filters</h3>
+            <div class="filter-options">
+                <div class="text-bold mb-3">Common Filters<img
+                        src="assets/images/knowledge-center/info-icon.svg" class="d-lg-none ms-2"></div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Most viewed
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        5 min read
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Trending
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Content of the week
+                    </label>
+                </div>
+            </div>
+            <div class="filter-options">
+                <div class="text-bold mb-3">Content <img src="assets/images/knowledge-center/info-icon.svg"
+                        class="d-lg-none ms-2"></div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Video
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Article
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Presentation
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Blog
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Podcast
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        E-Booklet
+                    </label>
+                </div>
+            </div>
+            <div class="filter-options">
+                <div class="text-bold mb-3">Categories <img src="assets/images/knowledge-center/info-icon.svg"
+                        class="d-lg-none ms-2"></div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        New to Mutual Fund
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        New to Investing
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Women & Investing
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Blog
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Podcast
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        E-Booklet
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="filter-footer">
+            <button class="btn btn-outline-primary" (click)="toggleFilterBox()">Cancel</button>
+            <button class="btn btn-primary">Apply</button>
+        </div>
+    </div>
+   </div>
+    <app-standpage></app-standpage>
+    <app-faq></app-faq>
+</div>

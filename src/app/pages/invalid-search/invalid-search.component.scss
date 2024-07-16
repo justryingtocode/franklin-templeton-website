@@ -1,0 +1,54 @@
+.error-box {
+    max-width: 1210px;
+    margin: 0 auto;
+    margin-top: 24px;
+    margin-bottom: 200px;
+    padding: 51px 24px 41px 24px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0px 4px 20px 0px rgba(23, 55, 163, 0.16);
+    text-align: center;
+
+    h2 {
+        font-size: 1.875rem;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: -0.96px;
+        @media(max-width:991.98px){
+            font-size: 1.5rem;
+        }
+    }
+
+    .title {
+
+        span {
+            margin: 0 8px;
+            font-family: "Hanken Grotesk";
+            font-size: 216px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal;
+            letter-spacing: -6.48px;
+            background: linear-gradient(90deg, #583EE7 26.99%, #0EA0E6 50.09%, #00B6AE 74.69%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            @media(max-width:991.98px){
+                font-size: 120px;
+            }
+        }
+    }
+
+    .text-big {
+        margin-bottom: 36px;
+    }
+
+    .btn {
+        padding: 16px 28px;
+        font-family: "Inter";
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 155.556%;
+    }
+}

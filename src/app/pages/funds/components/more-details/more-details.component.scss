@@ -1,0 +1,483 @@
+.modal {
+    .modal-body {
+        .update-box {
+            padding: 12px 28px 12px 20px;
+            border-radius: 8px;
+            border: 1px solid #D2D8EA;
+            background: #FFF;
+            box-shadow: none;
+            transition: all 0.3s ease-in-out;
+
+            img {
+                margin-right: 10px;
+            }
+
+            &:hover {
+                box-shadow: 0px 4px 76px rgba(23, 55, 163, 0.04);
+            }
+        }
+    }
+}
+
+.line {
+    width: 96px;
+    height: 2px;
+    position: absolute;
+    top: 17px;
+    left: 39%;
+    border: 2px solid #959595;
+    background: #959595;
+}
+
+.modal .modal-header {
+    padding: 15px !important;
+}
+
+.fund-block .info .text-big {
+    font-size: 1.125rem !important;
+}
+
+.daily-nav-table {
+    overflow-y: auto;
+    flex-wrap: nowrap;
+}
+
+.daily-navs {
+
+    .link-test {
+        &:hover {
+            border-bottom: 2px solid blue;
+        }
+    }
+}
+
+.idcw-history {
+    .padding-box {
+        .link-box {
+            max-width: 200px;
+            margin: 0 auto;
+
+            .link-text {
+                &:hover {
+                    border-bottom: 2px solid blue;
+                }
+            }
+        }
+    }
+}
+
+#nav-documents {
+    .link-text {
+        &:hover {
+            border-bottom: 2px solid blue;
+        }
+    }
+}
+
+#NAVModal {
+    .modal-content {
+        margin-top: 8.75rem;
+    }
+}
+
+.historic-popup {
+    background-color: #F0F6FF;
+}
+
+
+.fundManagerFontSize1 {
+    font-size: 0.938rem;
+}
+
+.slick-slider .slick-slide {
+    padding: 16px 8px !important;
+}
+
+.FT-fund-more-details .managers {
+    padding: 24px 0px !important;
+}
+
+.line2::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    height: 4px;
+    width: 100%;
+    left: 0;
+    background-color: #000;
+}
+
+
+.date-Asterisk {
+    font-size: x-large;
+    position: relative;
+    left: 9px;
+    color: red;
+    top: -2px;
+}
+
+.date-Asterisk-date {
+    padding: 0 !important;
+}
+
+.block-border {
+    border-radius: 16px;
+    border: 1px solid #D2D8EA;
+    background: rgba(255, 255, 255, 0.70);
+    margin-bottom: 36px;
+
+    .block-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 22px 36px;
+
+        h3 {
+            font-size: 1.625rem;
+            font-weight: 600;
+            letter-spacing: -0.84px;
+            color: #3C425D;
+
+            small {
+                display: block;
+                font-size: 0.875rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 22.8px;
+                letter-spacing: -0.48px;
+                color: #595A6C;
+            }
+        }
+    }
+
+    .block-footer {
+        .text-meduim {
+            font-size: 0.813rem;
+            font-weight: 500;
+            letter-spacing: -0.42px;
+            margin-bottom: 20px;
+        }
+
+        .download-plan {
+            a {
+                display: inline-block;
+                padding: 12px 0;
+                color: var(--blue);
+                font-size: 1rem;
+                letter-spacing: -0.54px;
+
+                img {
+                    vertical-align: middle;
+                    margin-right: 12px;
+                }
+            }
+        }
+    }
+
+    h4 {
+        font-size: 1.375rem;
+        font-weight: 600;
+        letter-spacing: -0.72px;
+        padding: 24px 0;
+    }
+
+    .block-body {
+        padding: 0 35px 24px 35px;
+    }
+}
+
+.more-details-idcw {
+    width: max-content;
+}
+
+.documents-monthly {
+    margin-left: auto;
+}
+
+.Franklin-growth {
+    padding: 13px 10px;
+}
+
+.Franklin-build {
+    color: #3769ff;
+    margin-left: 0px;
+}
+
+.Franklin-growth-style {
+    color: #3769ff;
+    font-size: large;
+}
+
+.nav-date {
+    opacity: 0.9;
+    font-size: 0.813rem;
+}
+
+.Franklin-icon {
+    color: #3769ff;
+}
+
+.modal-body-IDCW {
+    z-index: 100000 !important;
+}
+
+.modal-header-IDCW {
+    position: relative;
+    top: -23px;
+}
+
+.modal-header-franklin {
+    z-index: 100000;
+}
+
+.modal-dialog-fund {
+    max-height: 800px;
+}
+
+.modal-content-fund {
+    width: 85%;
+    margin: auto;
+}
+
+.modal-header-fund {
+    position: sticky;
+    top: 0;
+}
+
+.modal-body-card {
+    max-height: 440px;
+    overflow-y: auto;
+}
+
+.card-title-fund {
+    border: 1px solid #D2D8EA;
+    padding: 20px;
+}
+
+.fund-card-head {
+    margin-top: 5px;
+}
+
+.card-data {
+    max-width: 269px;
+    width: 270px;
+}
+
+.tags-fund {
+    margin-bottom: auto;
+    margin-left: 19px;
+}
+
+.wraps {
+    white-space: nowrap;
+}
+
+.high-risk {
+    flex-wrap: wrap;
+}
+
+.ab-tag {
+    margin-bottom: auto;
+}
+
+.tooltip {
+    left: -95px;
+}
+
+.annualized-returns {
+    vertical-align: super;
+}
+
+.Inception-block {
+    font-size: 0.813rem !important;
+}
+
+.investors-fund {
+    vertical-align: sub;
+    padding-right: 0;
+}
+
+.investor-funds {
+    gap: 3px;
+    align-items: start;
+}
+
+.investor-icon-image {
+    position: relative;
+    bottom: 3px;
+}
+
+.AUM-sip-image {
+    padding-left: 25px;
+    width: auto;
+}
+
+.money-sign-AUM {
+    gap: 3px;
+}
+
+.AUM-fund {
+    position: relative;
+    top: 2px;
+}
+
+.light-info {
+    top: 0;
+}
+
+.offcanvas-header-top {
+    height: 50%;
+    border-top-left-radius: 39px;
+    border-top-right-radius: 39px;
+}
+
+.fundManagerName {
+    align-items: baseline;
+    gap: 20px;
+}
+
+.offcanvas-header-funds {
+    font-size: 1.1rem;
+}
+
+.managed-fund {
+    color: #3769ff;
+    font-size: 1.15rem;
+}
+
+.Recommended-card {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.Recommended-card-block {
+    border: 1px solid #D2D8EA;
+    justify-content: flex-start;
+    min-height: auto;
+    height: auto;
+}
+
+.recommend-fund {
+    margin-top: 5px;
+}
+
+.recommend-block {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.card-title-data {
+    max-width: 243px;
+    width: 232px;
+}
+
+.recommende-btn-tag {
+    flex-wrap: wrap;
+}
+
+.annualized-returns-fund {
+    border-top: 0;
+    margin-top: 10px;
+}
+
+.Annualised-tag {
+    gap: 10px;
+}
+
+.dark-info {
+    width: 12px;
+}
+
+.offcanvas-body-fund {
+    height: 80%;
+    border-top-left-radius: 39px;
+    border-top-right-radius: 39px;
+    z-index: 1201;
+}
+
+.historical-nav {
+    align-items: baseline;
+    gap: 20px;
+}
+
+.accordion-body-fund {
+    border-radius: 5px
+}
+
+.historical-nav-accordion {
+    border: 1px solid black;
+}
+
+.historical-navs {
+    border: 1px solid black;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.historical-navs-accordion {
+    border: 1px solid black;
+    margin-top: 1px;
+}
+
+.historical-acc {
+    border: 1px solid black;
+    margin-top: 19px;
+}
+
+.showCal {
+    border: 1px solid black;
+    padding: 10px;
+    margin-right: 20px;
+    margin-left: 18px;
+}
+
+.investor-funds-tag {
+    margin-bottom: auto;
+    margin-top: 10px !important;
+}
+
+.calendar-outlines {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.footer-nav {
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+}
+
+.apply {
+    height: 100%;
+}
+
+.historical-head-apply {
+    width: 100%;
+    height: 50px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.historic-nav {
+    padding: 13px 10px;
+}
+
+.historic-head {
+    opacity: 0.9;
+    font-size: 0.813rem;
+}
+
+.offcanvas-head {
+    height: 80%;
+    border-top-left-radius: 39px;
+    border-top-right-radius: 39px;
+    z-index: 1201;
+}
+.historic-nav-head{
+    margin-left:0px;
+    font-weight:600;
+}
+.idcw-history-head{
+    align-items: baseline;
+    gap: 20px;
+}

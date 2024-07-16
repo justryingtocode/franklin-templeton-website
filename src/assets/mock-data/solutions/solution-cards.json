@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "title": "Child’s Education",
+      "imageUrl": "assets/images/home/fund1.png"
+    },
+    {
+      "id": 2,
+      "title": "Retirement",
+      "imageUrl": "assets/images/home/fund3.png"
+    },
+    {
+      "id": 3,
+      "title": "Holiday",
+      "imageUrl": "assets/images/home/fund2.png"
+    },
+    {
+      "id": 4,
+      "title": "Cash Management",
+      "imageUrl": "assets/images/home/fund4.png"
+    },
+    {
+      "id": 5,
+      "title": "Dream Home",
+      "imageUrl": "assets/images/home/fund5.png"
+    },
+    {
+      "id": 6,
+      "title": "Wealth Creation",
+      "imageUrl": "assets/images/home/fund6.png"
+    },
+    {
+      "id": 7,
+      "title": "Tax Planning",
+      "imageUrl": "assets/images/home/fund7.png"
+    },
+    {
+      "id": 8,
+      "title": "Customize Plan",
+      "imageUrl": "assets/images/home/fund8.png"
+    }
+  ]
+  

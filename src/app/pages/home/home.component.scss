@@ -1,0 +1,113 @@
+/**** contact-block style *****/
+#contact-block {
+    // width: 100%;
+    max-width: 393px;
+    text-align: right;
+    position: fixed;
+    right: 160px;
+    z-index: 1032;
+    bottom: 80px;
+
+    .contact-box {
+        border-radius: 16px;
+        background: #F0F6FF;
+        box-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.18);
+        padding: 0px !important;
+        margin-bottom: 24px;
+        border: 1px solid #0da2e2;
+
+        .d-flex {
+            border-radius: 8px 8px 0px 8px;
+            border-bottom: 1px solid #D2D8EA;
+            background: #F0F6FF;
+            padding: 16px;
+            text-align: right;
+            justify-content: flex-end;
+            align-items: center;
+
+            .box-icon {
+                border-radius: 50%;
+                background: #DDEAFF;
+                display: flex;
+                width: 34px;
+                height: 34px;
+                padding: 9.488px;
+                justify-content: center;
+                align-items: center;
+                margin-left: 12px;
+            }
+
+            small {
+                font-size: 0.75rem;
+                font-weight: 500;
+                letter-spacing: -0.36px;
+                display: block;
+            }
+
+            .text-blue {
+                color: #3769FF;
+                font-size: 0.875rem;
+                font-weight: 600;
+                letter-spacing: -0.42px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    form {
+        font-size: 0.875rem;
+
+        .form-control,
+        .form-select {
+            height: 37px;
+            padding: 9px 12px;
+        }
+
+        textarea.form-control {
+            height: 70px;
+        }
+
+        .btn-primary {
+            height: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    #toggleBox.btn {
+        padding: 0;
+        background: transparent;
+        width: 84px;
+        height: 84px;
+        // background: url("../images/home/contact-icon.svg") no-repeat center;
+        background-size: 100% 100%;
+        box-shadow: none !important;
+
+        // scale: 1 !important;
+        &:hover {
+            scale: 1.01 !important;
+        }
+
+        &.opened {
+            // background: url("../images/home/close-contact.svg") no-repeat center;
+        }
+    }
+
+    #callForm {
+        .d-flex {
+            padding: 0;
+            border: 0;
+            align-items: center;
+
+            button {
+                border: 0;
+                background: transparent;
+                padding: 0;
+                outline: none;
+                box-shadow: none;
+            }
+        }
+    }
+}
+ 

@@ -1,0 +1,319 @@
+<div>
+    <div class="row">
+        <div class="form-group col-md-8 col-12 mb-4">
+            <input type="text" class="form-control" placeholder="Full name as per AMFI*">
+        </div>
+    </div>
+    <div class="row">
+        <div class=" form-group group-info col-md-4 col-sm-6 col-6 mb-4">
+
+            <div class="date-group date-input">
+                <input type="date" class="form-control">
+                <img class="share-icon2" src="assets/images/fund/calendar-outline.svg">
+            </div>
+
+
+
+            <!-- <input type="date" class="form-control" placeholder="Date of birth*"> -->
+            <!-- <span class="info-icon">
+                <i class="bi bi-info-circle-fill"></i>
+            </span> -->
+            <span class="img-with-tooltip info-icon2-one" ><img src="assets/images/home/info-icon2.svg"
+                    class="d-inline-block mobile-icons light-mode-icon info-light" >
+                <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon light-info"
+                    >
+                <span class="tooltip-block">Lorem ipsum dolor sit amet.</span>
+
+            </span>
+        </div>
+        <!-- <div class="form-group col-md-4 col-sm-6 col-6 mb-4">
+            <input type="text" class="form-control" placeholder="Date of birth*">
+            <span class="info-icon">
+                <i class="bi bi-info-circle-fill"></i>
+            </span>
+        </div> -->
+        <div class="form-group col-md-4 col-sm-6 col-6 mb-4">
+            <input type="text" class="form-control" placeholder="PAN*">
+        </div>
+        <div class="form-group col-md-4 col-sm-6 col-12 mb-4">
+            <input type="text" class="form-control" placeholder="Mobile Number*">
+        </div>
+        <div class="form-group col-md-4 col-sm-6 col-6 mb-4">
+            <input type="text" class="form-control" placeholder="Email ID*">
+        </div>
+        <div class="form-group col-md-4 col-sm-6 col-6 mb-4">
+            <input type="text" class="form-control" placeholder="Pincode*">
+        </div>
+        <div class="form-group col-md-4 col-sm-6 col-12 mb-4">
+            <select class="form-select">
+                <option selected>Select City*</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-4 pt-4">
+        <div class="col-md-auto step1-details">
+            <span class="me-4">Dividend Details*</span>
+        </div>
+
+
+        <div class="col-md-auto">
+            <div class="form-check form-check-inline me-4">
+                <input class="form-check-input" (click)="onIndia()" type="radio" name="inlineRadioOptions"
+                    id="inlineRadio1" value="option1" checked>
+                <label class="form-check-label text-blue" for="inlineRadio1">India</label>
+            </div>
+            <div class="form-check form-check-inline ">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"
+                    data-bs-toggle="modal" data-bs-target="#domincial">
+                <label class="form-check-label text-blue" for="inlineRadio2">Other(Any other country)</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enter country of residence form start -->
+    <div class="container" *ngIf="countryForm">
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <form>
+                    <div class="form-group row">
+                        <label for="country" class="col-sm-3 col-md-12 col-form-label residence-enter"
+                            >Enter country of residence</label>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fcpaCompliance" class="col-sm-3 col-md-12 col-form-label">1.Does your company have
+                            policies and
+                            procedures addressing compliance with the U.S. FCPA, the UK Bribery Act, and/or other
+                            anti-corruption laws?</label>
+                        <div class="col-sm-9">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="fcpaCompliance"
+                                    id="fcpaComplianceYes" value="yes">
+                                <label class="form-check-label" for="fcpaComplianceYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="fcpaCompliance" id="fcpaComplianceNo"
+                                    value="no" checked>
+                                <label class="form-check-label" for="fcpaComplianceNo">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row explanation-row" id="fcpaExplanation" >
+                        <label for="fcpaExplanationText" class="col-sm-3 col-md-12 col-form-label mb-2">Please provide a
+                            detailed
+                            explanation in the Comment Section below if you responded "No".</label>
+                        <!-- <div class="col-sm-9">
+                            <textarea class="form-control" id="fcpaExplanationText" rows="3"></textarea>
+                        </div> -->
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="corruptionTraining" class="col-sm-3 col-md-12 col-form-label">2.Does your company
+                            provide
+                            regular
+                            anti-corruption compliance training and do you keep records of such training?</label>
+                        <div class="col-sm-9">
+                            <div class="col-sm-9">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="fcpaCompliance"
+                                        id="fcpaComplianceYes" value="yes">
+                                    <label class="form-check-label" for="fcpaComplianceYes">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="fcpaCompliance"
+                                        id="fcpaComplianceNo" value="no" checked>
+                                    <label class="form-check-label" for="fcpaComplianceNo">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row explanation-row" id="fcpaExplanation" >
+                        <label for="fcpaExplanationText" class="col-sm-3 col-md-12 col-form-label mb-2">Please provide a
+                            detailed
+                            explanation in the Comment Section below if you responded "No".</label>
+                    </div>
+                    <div class="form-group row">
+                        <label for="corruptionTraining" class="col-sm-3 col-md-12 col-form-label">3.Has your company or
+                            any
+                            of its principal owners, directors, officers or employees ever been investigated or
+                            convicted
+                            for offenses related to fraud or corruption</label>
+                        <div class="col-sm-9">
+                            <div class="col-sm-9">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="fcpaCompliance"
+                                        id="fcpaComplianceYes" value="yes">
+                                    <label class="form-check-label" for="fcpaComplianceYes">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="fcpaCompliance"
+                                        id="fcpaComplianceNo" value="no" checked>
+                                    <label class="form-check-label" for="fcpaComplianceNo">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row explanation-row" id="fcpaExplanation" >
+                        <label for="fcpaExplanationText" class="col-sm-3 col-md-12 col-form-label mb-2">Please provide a
+                            detailed
+                            explanation in the Comment Section below if you responded "No".</label>
+                    </div>
+                    <div class="form-group row">
+                        <label for="corruptionTraining" class="col-sm-3 col-md-12 col-form-label">4.Are there any
+                            interactions, contracts or relationships your company or any of its principal owners,
+                            directors,
+                            officers or key employees have with a government-owned or controlled organization or
+                            government
+                            official that may be contacted, or influence your business or relationship, with Franklin
+                            Templeton?</label>
+                        <div class="col-sm-9">
+                            <div class="col-sm-9">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="fcpaCompliance"
+                                        id="fcpaComplianceYes" value="yes">
+                                    <label class="form-check-label" for="fcpaComplianceYes">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="fcpaCompliance"
+                                        id="fcpaComplianceNo" value="no" checked>
+                                    <label class="form-check-label" for="fcpaComplianceNo">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row explanation-row" id="fcpaExplanation" >
+                        <label for="fcpaExplanationText" class="col-sm-3 col-md-12 col-form-label mb-2">Please provide a
+                            detailed
+                            explanation in the Comment Section below if you responded "No".</label>
+                    </div>
+                    <div class="form-group row">
+                        <label for="corruptionTraining" class="col-sm-3 col-md-12 col-form-label">5.Will your company be
+                            interacting with any government, government-owned or controlled organization, or government
+                            official as part of this contract/agreement, or as a result of doing business with Franklin
+                            Templeton?</label>
+                        <div class="col-sm-9">
+                            <div class="col-sm-9">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="fcpaCompliance"
+                                        id="fcpaComplianceYes" value="yes">
+                                    <label class="form-check-label" for="fcpaComplianceYes">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="fcpaCompliance"
+                                        id="fcpaComplianceNo" value="no" checked>
+                                    <label class="form-check-label" for="fcpaComplianceNo">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row explanation-row" id="fcpaExplanation" >
+                        <label for="fcpaExplanationText" class="col-sm-3 col-md-12 col-form-label">Please provide a
+                            detailed
+                            explanation in the Comment Section below if you responded "No".</label>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="corruptionTraining" class="col-sm-3 col-md-12 col-form-label my-3">*The term
+                            'government
+                            official' includes any officer or employee of a government or any department, agency, or
+                            instrumentality thereof, or of a public international organization (a term that includes,
+                            among
+                            other entities, the United Nations, the World Bank, and the World Health Organization), or
+                            any
+                            person acting in an official capacity for or on behalf of any such government or department,
+                            agency, or instrumentality, or for or on behalf of any such public international
+                            organization.
+                            It also includes employees, officers, or agents of any entity in which a government has
+                            substantial direct or indirect ownership or control, such as a sovereign wealth fund or any
+                            commercial enterprise in which there is a sufficient level of governmental ownership or
+                            control
+                            (i.e. state owned or controlled enterprises), including a joint venture where any party is
+                            government-controlled</label>
+
+                        <div class="col-sm-9">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="">
+                                    <label class="form-check-label" for="domicileCheck"><span class="aboutlinks login-dark2 Domicile-dec"
+                                         data-bs-toggle="modal"
+                                            data-bs-target="#Domincial">Domicile Declaration</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="btn-options">
+        <button type="button" class="btn btn-outline-primary me-4"
+            (click)="changeActiveStepper(1,false)">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="changeActiveStepper(1,true)" data-bs-toggle="collapse"
+            data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Next</button>
+    </div>
+</div>
+
+
+<!-- domicial Modal -->
+<div class="modal fade financial-declaration" id="domincial" tabindex="-1" aria-labelledby="domicialLabel" aria-hidden="true"
+     >
+    <div class="modal-dialog">
+        <div class="modal-content modal-head">
+            <div class="modal-header modal-head-fund" >
+                <h5 class="modal-title" id="domicialLabel">Domicile</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-head-fund">
+                <p>Are you sure you want to select Domicile (Country of residence) as other than India</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="modal-fund-head btn btn-outline-primary" data-bs-dismiss="modal"
+                aria-label="Close">NO</button>
+                <button type="button" class="modal-fund-head btn btn-primary"
+                    data-bs-dismiss="modal" aria-label="Close" (click)="onDomincialYes()">YES</button>
+           
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Domincial Declaration modal   -->
+
+<div class="modal fade modal-content-fund" id="Domincial" tabindex="-1" aria-labelledby="DomincialLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable Domicile-declaration">
+        <div class="modal-content modal-body-fund" id="terms-condition" >
+            <div class="modal-header modal-head-fund" >
+                <h6 class="modal-title dec-domicile" id="DomincialLabel" >Domicile Declarations for availing
+                    Invest Online facility
+                </h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-head-fund">
+                <p>We declare that the information contained in this questionnaire to be true and accurate to the best
+                    of our knowledge as at the date of this declaration. We authorize Franklin Templeton to verify the
+                    information provided and to seek any reference that it may deem necessary. We further undertake to
+                    immediately advise Franklin Templeton should any of the information provided herein change.
+
+                    We understand that the issuing of terms of business and continuation of relationship with Franklin
+                    Templeton Investments is dependent on satisfactory due diligence and reference reports and that any
+                    adverse information that is discovered may result in revocation of an offer or, if discovered after
+                    terms of business have been agreed may lead to the dissolution of any agreement.
+
+                    We agree and acknowledge that pursuant to the relevant laws and regulations, you may be required to
+                    disclose the above information to a competent regulatory or authority and you may not be required to
+                    provide prior notification to us of such disclosure and agree to the same</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary IDN"> I DON NOT
+                    ACCEPT</button>
+                <button type="button" class="btn btn-primary IDN">I
+                    ACCEPT</button>
+             
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+/**** footer styles *****/
+footer {
+    padding-top: 40px;
+    background: var(--gradient);
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 143%;
+    letter-spacing: -0.03em;
+    color: #fff;
+
+    .d-flex {
+        margin-bottom: 72px;
+
+        .social-links {
+            a {
+                margin-left: 20px;
+            }
+        }
+    }
+
+    .footer-title {
+        font-size: 21.33px;
+        line-height: 32px;
+        margin-bottom: 24px;
+    }
+
+    a {
+        color: #fff;
+        &:hover{
+            color: var(--light-gray)
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin-bottom: 14px;
+
+            a {
+                color: #fff
+            }
+        }
+    }
+    .copyrights{
+        border-top: 1px solid #DFDFDF;
+        background: rgba(55, 105, 255, 0.12);
+        padding: 24px 0;
+    }
+    
+    
+}

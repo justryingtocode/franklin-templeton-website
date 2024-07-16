@@ -1,0 +1,470 @@
+.FT-financial .invest-options .form-check {
+    width: auto;
+}
+
+.label-text {
+    display: block;
+    padding-right: 20px;
+}
+
+@media (min-width: 390px) and (max-width:899.98px) {
+    .input-box {
+        width: 87px !important;
+    }
+
+    .label-text {
+        display: block !important;
+        padding-right: 0px !important;
+
+    }
+}
+
+@media(max-width: 650px){
+    .mb-6 {
+        padding-top: 60px;
+    }
+}
+
+// @media(min-width:320px) and (max-width : 1024px ) {
+//     .input-box {
+//         width: 87px !important;
+//     }
+//     .label-text {
+//         display: block !important;
+//         padding-right: 0px !important;
+
+//     }
+// }
+.FT-calculator-box {
+    .container {
+        max-width: 1295px
+    }
+
+    .circle {
+        width: 11.5px;
+        height: 11.5px;
+        border-radius: 50%;
+        margin-right: 4px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .form-switch {
+        margin-right: 12px;
+        color: #848484;
+        font-size: 0.875rem;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -0.42px;
+        position: relative;
+        .form-check-label {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4px;
+
+            .absoluate-option {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #848484;
+                font-size: 0.875rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: -0.42px;
+                &.percentage{
+                    color: #848484;
+                }
+                &.price{
+                    color: #fff;
+                }
+            }
+        }
+        .form-check-input {
+            width: 64px;
+            height: 33px;
+            border: 0;
+            background: #fff;
+            background-image: url("/src/images/calculators/circle.svg");
+            background-repeat: no-repeat;
+            background-position: left center;
+            margin-top: 0;
+            box-shadow: none;
+            outline: none;
+
+            &:checked {
+                background-image: url("/src/images/calculators/circle.svg");
+                background-repeat: no-repeat;
+                background-position: right center;
+                + .form-check-label {
+                    .absoluate-option {
+                        
+                        &.percentage{
+                            color: #fff; 
+                        }
+                        &.price{
+                            color: #848484;
+                        }
+                    }
+                }
+            }
+        }
+
+        
+    }
+
+    .FT-financial {
+        padding-top: 32px;
+        padding-bottom: 0;
+        background: transparent;
+
+        .tab-content {
+            max-width: 100%;
+            margin: 0;
+        }
+
+        .tab-content.calculator-box {
+            max-width: 100%;
+            margin: 0;
+            padding: 38px 52px;
+            border-radius: 8px;
+            border: 4px solid #FFF;
+            background: #DDEAFF;
+            box-shadow: 0px 4px 30px 0px rgba(16, 27, 66, 0.15);
+            color: #595A6C;
+
+            .selected-range {
+                border-color: #595A6C;
+                color: #595A6C;
+                font-weight: 700;
+            }
+
+            .calc-input {
+                color: #595A6C;
+                font-weight: 700;
+                text-align: left !important;
+            }
+
+            .forchangecustomcalculator{
+                max-width: 23px;
+            }
+
+            .graph-table-btns {
+                border-radius: 8px;
+                border: 1px solid #CCC;
+                background: #FFF;
+
+                .btn {
+                    scale: 1 !important;
+                    box-shadow: none;
+                }
+            }
+
+            .invest-options {
+                .form-check {
+                    .form-check-label {
+                        background: #fff;
+                        color: #8189A2;
+                        border: 0;
+                    }
+
+                    .form-check-input:checked[type=radio]+.form-check-label {
+                        background: var(--blue);
+                        color: #fff;
+                    }
+                }
+            }
+
+            .calculate-statics {
+                background: #fff;
+                color: var(--black);
+                border-radius: 8px;
+                background: #FFF;
+                padding: 24px;
+
+                .graph-table-btns {
+                    background: #DDEAFF;
+                    border: 0;
+
+                    .nav-item:not(:last-child) {
+                        padding-right: 8px;
+                    }
+                }
+
+                .calculator-graph-box {
+                    position: relative;
+                    padding-left: 20px;
+                    margin-bottom: 32px;
+
+                    .graph-container {
+                        height: 263px;
+                        margin-bottom: 18px;
+
+                        canvas {
+                            height: 100% !important;
+                            width: 100% !important;
+                        }
+                    }
+
+                    .text-small {
+                        font-size: 0.875rem;
+                        font-weight: 700;
+                        letter-spacing: -0.42px;
+                    }
+
+                    .rotated {
+                        transform: rotate(270deg);
+                        position: absolute;
+                        left: -75px;
+                        top: 100px;
+                    }
+
+                    &.bar-graph {
+                        padding-left: 0;
+
+                        .graph-container {
+                            height: 163px;
+                        }
+                    }
+                }
+
+                .table-responsive {
+                    border-radius: 8px;
+                    max-height: 263px;
+                    margin-bottom: 59px;
+
+                    table {
+                        font-size: 0.875rem;
+                        letter-spacing: -0.42px;
+                        color: var(--blue);
+
+                        thead th {
+                            font-size: 0.875rem;
+                            font-weight: 700;
+                            letter-spacing: -0.42px;
+                            vertical-align: top;
+                            color: var(--black);
+                        }
+
+                        th,
+                        td {
+                            padding: 16px 8px
+                        }
+
+                        td {
+                            .sign {
+                                margin-right: 8px;
+                            }
+
+                            small {
+                                color: var(--blue);
+                                font-size: 0.75rem;
+                                font-weight: 700;
+                                line-height: normal;
+                                letter-spacing: -0.36px;
+                            }
+                        }
+                    }
+                }
+
+                .numbers {
+                    color: #595A6C;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    line-height: 142.5%;
+                    letter-spacing: -0.48px;
+
+                    h3 {
+                        font-weight: 700;
+                        letter-spacing: -0.72px;
+                        margin-top: 12px;
+                        color: var(--black);
+
+                        small {
+                            color: var(--blue);
+                            font-size: 0.836rem;
+                            letter-spacing: -0.401px;
+                            margin-left: 4px;
+                        }
+
+                    }
+
+                    &.d-flex-column {
+                        h3 {
+                            font-weight: 500;
+                            margin-bottom: 0;
+                        }
+
+                        .px-3 {
+                            padding: 12px;
+                            border-bottom: 1px solid var(--Light-grey, #D2D8EA);
+                            max-width: 450px;
+                            margin: 0 auto;
+
+                            &:last-child {
+                                border-bottom: 0;
+                            }
+                        }
+                    }
+                }
+
+                .recommende-btn {
+                    display: block;
+                    width: 100%;
+                    max-width: 410px;
+                    margin: 0 auto;
+                    padding: 10px;
+                    font-family: "Inter";
+                    font-size: 1rem;
+                    font-weight: 500;
+                    line-height: 150%;
+                }
+
+                .equity-risk-boxs {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .custom-check.form-check {
+                        margin-right: 8px;
+
+                        .form-check-label {
+                            border-radius: 6px;
+                            border-color: #8189A2;
+                            padding: 11px 10px;
+                            color: var(--black);
+                            font-size: 1rem;
+                            font-weight: 600;
+                            line-height: normal;
+                            letter-spacing: -0.48px;
+                        }
+
+                        .form-check-input:checked[type=checkbox]+.form-check-label,
+                        .form-check-input:checked[type=radio]+.form-check-label {
+                            color: #fff;
+                            border-color: var(--blue);
+                        }
+                    }
+                }
+            }
+
+            .fund-block {
+                .text-big {
+                    margin-bottom: 0;
+                }
+            }
+
+            .form-group .form-label {
+                flex-wrap: nowrap;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: -0.54px;
+            }
+        }
+    }
+
+    .calc-input {
+        background: transparent;
+        border: none;
+        color: #fff;
+        // size: 1;
+        width: auto;
+        outline: none;
+    }
+
+    .calc-input.amount {
+        width: 100%;
+    }
+
+    .calc-input-prefix {
+        --mat-mdc-form-field-floating-label-scale: 0.75;
+        display: inline-flex;
+        flex-direction: column;
+        min-width: 0;
+        text-align: left;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    .calc-input::-webkit-outer-spin-button,
+    .calc-input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    .calc-input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    .selected-range {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .selected-range:focus-within {
+        background: #fff;
+        color: #3C425D;
+    }
+
+    .calc-input:focus-within {
+        background: #fff;
+        color: #3C425D;
+    }
+
+    // now for the good stuff 🎉
+    .custom-range {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 8px;
+        border-radius: 8px;
+        background: #fff;
+        outline: none;
+        padding: 0;
+        margin: 0;
+
+        // Range Handle
+        &::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3769FF;
+            cursor: pointer;
+            transition: background .15s ease-in-out;
+
+        }
+
+        &:active::-webkit-slider-thumb {
+            background: #3769FF;
+        }
+
+        &::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border: 0;
+            border-radius: 50%;
+            background: #3769FF;
+            cursor: pointer;
+            transition: background .15s ease-in-out;
+            box-shadow: 0 0 2px 7px rgba(0, 0, 0, 0.02);
+
+        }
+
+
+
+
+    }
+}
+
+.transfer-stp{
+    width: 100%;
+}

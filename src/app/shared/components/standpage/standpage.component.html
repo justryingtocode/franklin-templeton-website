@@ -1,0 +1,775 @@
+<!-- start section knowledge tabs -->
+<section class="FT-knowledge-tabs">
+    <div class="container">
+        <div class="FT-title-small text-medium fontResize">Where are you in your financial journey?</div>
+        <div class="row">
+            <div class="col-md-auto">
+                <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link active fontResize" id="v-pills-home-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                        aria-selected="true"><img src="assets/images/knowledge-center/icon1.svg">Confused?</button>
+                    <button class="nav-link fontResize" id="v-pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                        aria-selected="false"><img src="assets/images/knowledge-center/icon2.svg">Plan your
+                        goal</button>
+                    <button class="nav-link fontResize" id="v-pills-disabled-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled"
+                        aria-selected="false"><img src="assets/images/knowledge-center/icon3.svg">Ready to
+                        invest?
+                    </button>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab" tabindex="0">
+                        <div class="tab-form">
+                            <h3 class="mb-4 fontResize">Confused? Investing for the first time with us?</h3>
+                            <form [formGroup]="investForm">
+                                <div class="form-group">
+                                    <input type="text" class="form-control forColorStandType" placeholder="Your Name" formControlName="name">
+                                    <div
+                                     *ngIf="investForm?.get('name')?.hasError('required') && !investForm?.get('name')?.value && investForm?.get('name')?.touched">
+                                    <span  class="error-msg fontResize required-name">Name is required.</span>
+                                </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control forColorStandType" (keydown)="blockAlphabetsAndSpecialChars($event)" maxlength="10" placeholder="Mobile Number" formControlName="phone">
+                                    <div
+                                     *ngIf="investForm?.get('phone')?.hasError('required') && !investForm?.get('phone')?.value && investForm?.get('phone')?.touched">
+                                     <span  class="error-msg fontResize required-name">Mobile Number is required.</span>
+                                    </div>
+                                    <div
+                                     *ngIf="investForm?.get('phone')?.hasError('invalidPhone') && !investForm?.get('phone')?.hasError('required') && investForm?.get('phone')?.touched">
+                                     <span  class="error-msg fontResize required-name">Invalid phone number (10 digits only).</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control forColorStandType" placeholder="Email ID" formControlName="email">
+                                    <div
+                                     *ngIf="investForm?.get('email')?.hasError('required') && !investForm?.get('email')?.value && investForm?.get('email')?.touched">
+                                     <span  class="error-msg fontResize required-name">Email is required.</span>
+                                    </div>
+                                    <div
+                                     *ngIf="investForm?.get('email')?.hasError('pattern') && !investForm?.get('email')?.hasError('required') && investForm?.get('email')?.touched">
+                                     <span  class="error-msg fontResize required-name">Please enter vaid email ID</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-select fontResize" aria-label="Query list" formControlName="query"
+                                        (change)="onSelect()">
+                                        <option value="" disabled>Query</option>
+                                        <option value="Fund related">Fund related</option>
+                                        <option value="Service related">Service related</option>
+                                        <option value="Statements related">Statements related</option>
+                                        <option value="Login related">Login related</option>
+                                    </select>
+                                    <div
+                                        *ngIf="investForm?.get('query')?.hasError('required') && !investForm?.get('query')?.value && investForm?.get('query')?.touched">
+                                        <span  class="error-msg fontResize required-name">Query is required.</span>
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group" *ngIf="showTextArea">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="remarks"
+                                    placeholder="Type your query here"></textarea>
+                                </div> -->
+                                <div class="form-check my-3">
+                                    <input class="form-check-input" type="checkbox" value="" (change)="checkboxCondition($event)"
+                                        id="flexCheckDefault">
+                                    <label class="form-check-label checkBoxText fontResize" for="flexCheckDefault">
+                                        You agree to our <a href="#" class="fontResize">Privacy Policy</a>&nbsp;<span class="d-sm-inline-block fontResize">and
+                                            &nbsp;<a href="#" class="fontResize">Terms of Use</a></span>
+                                    </label>
+                                </div>
+                                <button class="btn btn-primary fontResize" [disabled]="!investForm.valid || !filedDefaullt" (click)="submitInvestmentForm()">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab" tabindex="0">
+                        <div class="plan-box">
+                           
+                                    
+                            <!-- <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                                <div ngxSlickItem class="slide">
+                                    <div class="solution-box-new">
+                                        <div class="img-hover-zoom">
+                                            <img src="assets/images/home/fund1.png">
+                                        </div>
+                                        <a class="btn">Child’s Education</a>
+                                    </div>
+                                </div>
+                                
+                            </ngx-slick-carousel> -->
+                            <h3 class="d-flex align-items-center justify-content-between mb-4 mt-3 fontResize">
+                                Plan your investment journey
+                                <a class="knowledge-center-CTA fontResize" href="#">
+                                    <span class="otherlinks login-dark2 fontResize">View all</span><i class="bi bi-chevron-right"></i></a></h3>
+                                
+                                <!-- <div class="row justify-content-center">
+                                    <div class="col-md-4 col-sm-6 col-12 mb-3 mb-md-4">
+                                        <div class="calc-box">
+                                            <img src="assets/images/calculators/sip-icon.svg">
+                                            <a href="#" class="btn btn-primary">SIP Calculator</a>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col-md-4 col-sm-6 col-12 mb-3 mb-md-4">
+                                        <div class="calc-box">
+                                            <img src="assets/images/calculators/lump-icon.svg">
+                                            <a href="#" class="btn btn-primary">Lumpsum Calculator</a>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col-md-4 col-sm-6 col-12 mb-3 mb-md-4">
+                                        <div class="calc-box">
+                                            <img src="assets/images/calculators/top-up-icon.svg">
+                                            <a href="#" class="btn btn-primary">SIP Top-Up Calculator</a>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                
+                            <div class="row justify-content-center">
+                                <div class="row scrollnextgo">
+                                <div class="col-md-4 col-sm-6 col-11 mb-3 mb-md-4">
+                                    <div class="calc-box">
+                                        <img src="assets/images/calculators/sip-icon.svg">
+                                        <a href="#" class="btn btn-primary fontResize">SIP Calculator</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-6 col-11 mb-3 mb-md-4">
+                                    <div class="calc-box">
+                                        <img src="assets/images/calculators/lump-icon.svg">
+                                        <a href="#" class="btn btn-primary fontResize">Lumpsum Calculator</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4 col-sm-6 col-11 mb-3 mb-md-4">
+                                    <div class="calc-box">
+                                        <img src="assets/images/calculators/top-up-icon.svg">
+                                        <a href="#" class="btn btn-primary fontResize">SIP Top-Up Calculator</a>
+                                    </div>
+                                </div>
+                                </div>
+
+                            </div>
+                            <!-- plan your goal -->
+                            <div>
+                                <h3 class="d-flex align-items-center justify-content-between mb-4 fontResize">
+                                    Choose your plan
+                                    <a class="knowledge-center-CTA fontResize" href="#">
+                                        <span class="otherlinks login-dark2 fontResize">View all</span><i class="bi bi-chevron-right"></i></a>
+                                </h3>
+                                <div class="choose-plan-wraper">
+                                    <!-- Choose plan card 1 -->
+                                    <div class="choose-plan-card">
+                                        <div class="img-wrap">
+                                            <img src="assets/images/home/fund1.png" alt="">
+                                        </div>
+                                        <div class="choose-plan-title fontResize">Child's Education</div>
+                                    </div>
+                                     <!-- Choose plan card 2 -->
+                                     <div class="choose-plan-card">
+                                        <div class="img-wrap">
+                                            <img src="assets/images/home/fund3.png" alt="">
+                                        </div>
+                                        <div class="choose-plan-title fontResize">Retirement</div>
+                                    </div>
+                                     <div class="choose-plan-card">
+                                        <div class="img-wrap">
+                                            <img src="assets/images/home/fund2.png" alt="">
+                                        </div>
+                                        <div class="choose-plan-title fontResize">Holiday</div>
+                                    </div>
+                                     <div class="choose-plan-card">
+                                        <div class="img-wrap">
+                                            <img src="assets/images/home/fund4.png" alt="">
+                                        </div>
+                                        <div class="choose-plan-title fontResize">Cash Management</div>
+                                    </div>
+                                     <!-- <div class="choose-plan-card">
+                                        <div class="img-wrap">
+                                            <img src="assets/images/home/fund5.png" alt="">
+                                        </div>
+                                        <div class="choose-plan-title">Dream Home</div>
+                                    </div>
+                                     <div class="choose-plan-card">
+                                        <div class="img-wrap">
+                                            <img src="assets/images/home/fund6.png" alt="">
+                                        </div>
+                                        <div class="choose-plan-title">Wealth Creation</div>
+                                    </div>
+                                     <div class="choose-plan-card">
+                                        <div class="img-wrap">
+                                            <img src="assets/images/home/fund7.png" alt="">
+                                        </div>
+                                        <div class="choose-plan-title">Tax Planning</div>
+                                    </div>
+                                     <div class="choose-plan-card">
+                                        <div class="img-wrap">
+                                            <img src="assets/images/home/fund8.png" alt="">
+                                        </div>
+                                        <div class="choose-plan-title">Customize Your Plan</div>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel"
+                        aria-labelledby="v-pills-disabled-tab" tabindex="0">
+                        <h3 class="d-flex align-items-center justify-content-between fontResize">Ready to invest?
+                            <a class="knowledge-center-CTA" href="#">
+                                <span class="otherlinks login-dark2 fontResize">View all</span><i class="bi bi-chevron-right"></i></a>
+                        </h3>
+                        <div class="mb-4 d-none d-md-inline-block fontResize">Take a look at our trending funds.</div>
+                        <div class="row scrollnextgo">
+                            <div class="col-md-6">
+                                <div class="card compareCardBox mb-4">
+                                  
+                                    <div class="fund-heading mb-3">
+                                        <div class="d-flex justify-content-between gap-1 forLabelCard fontResize">
+                                            <div>
+                                                Franklin Build India Fund
+                                            <!-- <span class="meterImage"><img src="./assets/images/comparefund/very-high.svg.png"></span> -->
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/general/very-high.svg" class="moderately">
+                                                <span class="tooltip-block makeTootipFundVisibleCard">
+                                                    <img class="risk-meter fontResize" src="assets/images/general/very-high.svg">
+                                                        This fund has moderately high risk
+                                                </span>
+                                            </span>
+                                            </div>
+                                            <span class="dropdown">
+                                                <!-- <img src="./assets/images/comparefund/Frame 1000007566.png"> -->
+                                                <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="bi bi-three-dots-vertical general-vertical" ></i>
+                                                    <!-- <img src="./assets/images/comparefund/Frame 1000007566.png" sty le="max-width: 92%;"> -->
+                                                </span>
+                                                <ul class="dropdown-menu">
+                                                    <li class="d-none d-md-block">
+                                                        <a class="dropdown-item fontResize fund-light-mode-icon watchlist-save"  data-bs-toggle="modal" data-bs-target="#goToWatchList">
+                                                            <img class="" src="assets/images/general/ph_share-fat-light.svg">Save to Watchlist
+                                                           
+                                                        </a>
+                                                        <a class="dropdown-item fontResize fund-dark-mode-icon watchlist-save"  data-bs-toggle="modal" data-bs-target="#goToWatchList">
+                                                            <img class="" src=" ../../../../assets/images/dark/dark-Save-icon.png">Save to Watchlist
+                                                           
+                                                        </a>
+                                                    </li>
+                                                    <!-- <li><a class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</a></li>
+                                                    <li><span class="dropdown-item d-block"><img src="../../../../../assets/images/general/twitter-new-icon.png">Share on Twitter</span></li> -->
+                                                    <li><span class="dropdown-item fontResize fund-light-mode-icon"><img src="assets/images/general/Link.svg">Copy link</span>
+                                                    <li><span class="dropdown-item fontResize fund-dark-mode-icon"><img src="../../../../assets/images/dark/link-dark.png">Copy link</span>
+
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fund-light-mode-icon" href="#"><img src="../../../../../assets/images/general/twitter-new-icon.png share-twitter">Share on Twitter</a>
+                                                    <li><a class="dropdown-item fontResize fund-dark-mode-icon" href="#"><img src="../../../../assets/images/dark/twitter-new-dark.svg share-twitter" >Share on Twitter</a>
+
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fund-light-mode-icon" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a>
+                                                    <li><a class="dropdown-item fontResize fund-dark-mode-icon" href="#"><img src="assets/images/general/footer-facebook.svg">Share on Facebook</a>
+
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fund-light-mode-icon" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a>
+                                                        <a class="dropdown-item fontResize fund-dark-mode-icon" href="#"><img src="assets/images/general/footer-linkedin.svg">Share on LinkedIn</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fund-light-mode-icon" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a>
+                                                        <a class="dropdown-item fontResize fund-dark-mode-icon" href="#"><img src="assets/images/general/ri_whatsapp-fill.png">Share on WhatsApp</a>
+                                                    </li>
+                                                </ul>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="midCard mb-3">
+                                        <div class="midCardValue">
+                                            <div class="d-flex" id="stand-page-mob">
+                                                <div class="d-flex">
+                                                    <div class="valuMidCardData fontResize">AUM</div>&nbsp;&nbsp;
+                                                    <!-- <div class="img-with-tooltip">
+                                                        <img src="assets/images/home/info-icon2.svg"  class="d-inline-block mobile-icons light-mode-icon" styl e="width: 18px;">
+                                                        <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon" s tyle="width: 14px; top: 4px;">
+                                                        <span class="tooltip-block fontResize">
+                                                            20/06/2023 as of.
+                                                        </span>
+                                                    </div> -->
+                                                </div>
+                                                <div class="valueMidCard fontResize">3242 Cr</div>
+                                            </div>
+                                            <div class="lineImage"><img src="./assets/images/comparefund/Line 987.png"></div>
+                                            <div class="d-flex" id="stand-page-mob">
+                                                <div class="d-flex">
+                                                    <div class="valuMidCardData fontResize d-none d-md-block">Annualised Returns</div>
+                                                    <div class="valuMidCardData fontResize d-block d-md-none">Returns</div>&nbsp;
+                                                    <div class="valueMidCard ml-3 mr-3 fontResize mx-1">11.05%</div>
+                                                    <div class="img-with-tooltip">
+                                                        <img src="assets/images/home/info-icon2.svg"  class="d-inline-block mobile-icons light-mode-icon info-icon2-mobile" >
+                                                        <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon dark-mobile" >
+                                                        <span class="tooltip-block fontResize">
+                                                            20/06/2023 as of.
+                                                        </span>
+                                                    </div>
+                                                </div>
+                    
+                                              
+                                            </div>
+                                            
+                                                <!-- <span class="valueMidCard">3242 Cr </span>
+                                                <span class="valuMidCardData">Fund Size</span>										
+                                            <span class="lineImage"><img src="./assets/images/comparefund/Line 987.png"></span>
+                                            <span class="valueMidCard ml-3 mr-3">11.05%</span>
+                                            <span class="valuMidCardData ml-3 mr-3">Annualised returns</span>
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/home/info-icon2.svg"  class="d-inline-block mobile-icons light-mode-icon" styl e="width: 18px;">
+                                                <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon" sty le="width: 14px; top: 8px;">
+                                                <span class="tooltip-block">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span> -->
+                                        </div>
+                                        <div class="midCardValue">
+                                            <!-- <span class="totalInvesterUserImage"><img src="./assets/images/comparefund/Vectorcard.png"></span> -->
+                                            <span class="totalExsitingInvestors mt-1 fontResize"> Unique investors</span>
+                                            <span class="totalExsitingInvestors total-investor mt-1 fontResize">1.35 lakh</span>
+                                            <span class="img-with-tooltip for_add_data_card">
+                                                <img src="assets/images/home/info-icon2.svg"  class="d-inline-block mobile-icons light-mode-icon mobile-icons-img" >
+                                                <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon dark-mobile" >
+                                                <span class="tooltip-block fontResize">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="buttonCard">
+                                        <div class="makeGap">
+                                            <button type="button" class="btn btn-outline-primary customButtonFirst" >
+                                                <img class="share-icon2" src="assets/images/comparefund/shopping-cart.png"></button>
+                                            <button type="button" class="btn btn-primary customButtonSecond fontResize">Invest Now</button>
+    
+                                        </div>
+    
+                                    </div>
+    
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card compareCardBox mb-4">
+                                  
+                                    <div class="fund-heading mb-3">
+                                        <div class="d-flex justify-content-between gap-1 forLabelCard fontResize">
+                                            <div>
+                                                Franklin Build India Fund
+                                            <!-- <span class="meterImage"><img src="./assets/images/comparefund/very-high.svg.png"></span> -->
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/general/very-high.svg" class="moderately">
+                                                <span class="tooltip-block makeTootipFundVisibleCard">
+                                                    <img class="risk-meter fontResize" src="assets/images/general/very-high.svg">
+                                                        This fund has moderately high risk
+                                                </span>
+                                            </span>
+                                            </div>
+                                            <span class="dropdown">
+                                                <!-- <img src="./assets/images/comparefund/Frame 1000007566.png"> -->
+                                                <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="bi bi-three-dots-vertical general-vertical" ></i>
+                                                    <!-- <img src="./assets/images/comparefund/Frame 1000007566.png" sty le="max-width: 92%;"> -->
+                                                </span> 
+                                                <ul class="dropdown-menu">
+                                                    <li class="d-none d-md-block">
+                                                        <a class="dropdown-item fontResize fund-light-mode-icon" href="#" data-bs-toggle="modal" data-bs-target="#goToWatchList">
+                                                            <img class="" src="assets/images/general/ph_share-fat-light.svg">Save to Watchlist
+                                                           
+                                                        </a>
+                                                        <a class="dropdown-item fontResize fund-dark-mode-icon" href="#" data-bs-toggle="modal" data-bs-target="#goToWatchList">
+                                                            <img class="" src=" ../../../../assets/images/dark/dark-Save-icon.png">Save to Watchlist
+                                                           
+                                                        </a>
+                                                    </li>
+                                                    <!-- <li><a class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</a></li>
+                                                    <li><span class="dropdown-item d-block"><img src="../../../../../assets/images/general/twitter-new-icon.png">Share on Twitter</span></li> -->
+                                                    <li><span class="dropdown-item fontResize fund-light-mode-icon"><img src="assets/images/general/Link.svg">Copy link</span>
+                                                    <li><span class="dropdown-item fontResize fund-dark-mode-icon"><img src="../../../../assets/images/dark/link-dark.png">Copy link</span>
+
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fund-light-mode-icon" href="#"><img src="../../../../../assets/images/general/twitter-new-icon.png">Share on Twitter</a>
+                                                    <li><a class="dropdown-item fontResize fund-dark-mode-icon" href="#"><img src="../../../../assets/images/dark/twitter-new-dark.svg">Share on Twitter</a>
+
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fund-light-mode-icon" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a>
+                                                    <li><a class="dropdown-item fontResize fund-dark-mode-icon" href="#"><img src="assets/images/general/footer-facebook.svg">Share on Facebook</a>
+
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fund-light-mode-icon" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a>
+                                                        <a class="dropdown-item fontResize fund-dark-mode-icon" href="#"><img src="assets/images/general/footer-linkedin.svg">Share on LinkedIn</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fund-light-mode-icon" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a>
+                                                        <a class="dropdown-item fontResize fund-dark-mode-icon" href="#"><img src="assets/images/general/ri_whatsapp-fill.png">Share on WhatsApp</a>
+                                                    </li>
+                                                </ul>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="midCard mb-3">
+                                        <div class="midCardValue">
+                                            <div class="d-flex" id="stand-page-mob">
+                                                <div class="d-flex">
+                                                    <div class="valuMidCardData fontResize">AUM</div>&nbsp;&nbsp;
+                                                    <div class="valueMidCard fontResize">3242 Cr</div>
+                                                    <!-- <div class="img-with-tooltip">
+                                                        <img src="assets/images/home/info-icon2.svg"  class="d-inline-block mobile-icons light-mode-icon" sty le="width: 18px;">
+                                                        <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon" sty le="width: 14px; top: 4x;">
+                                                        <span class="tooltip-block fontResize">
+                                                            20/06/2023 as of.
+                                                        </span>
+                                                    </div> -->
+                                                </div>
+
+                                            </div>
+                                            <div class="lineImage fontResize"><img src="./assets/images/comparefund/Line 987.png"></div>
+                                            <div class="d-flex" id="stand-page-mob">
+                                                <div class="d-flex">
+                                                    <div class="valuMidCardData fontResize d-none d-md-block">Annualised Returns</div>
+                                                    <div class="valuMidCardData fontResize d-block d-md-none">Returns</div>&nbsp;
+                                                    <div class="valueMidCard fontResize mx-1">11.05%</div>
+                                                    <div class="img-with-tooltip">
+                                                        <img src="assets/images/home/info-icon2.svg"  class="d-inline-block mobile-icons light-mode-icon info-icon2-mobile" >
+                                                        <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon dark-mobile" >
+                                                        <span class="tooltip-block fontResize">
+                                                            20/06/2023 as of.
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                                <!-- <span class="valueMidCard">3242 Cr </span>
+                                                <span class="valuMidCardData">Fund Size</span>										
+                                            <span class="lineImage"><img src="./assets/images/comparefund/Line 987.png"></span>
+                                            <span class="valueMidCard ml-3 mr-3">11.05%</span>
+                                            <span class="valuMidCardData ml-3 mr-3">Annualised returns</span>
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/home/info-icon2.svg"  class="d-inline-block mobile-icons light-mode-icon" sty le="width: 18px;">
+                                                <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon" sty le="width: 14px; top: 8px;">
+                                                <span class="tooltip-block">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span> -->
+                                        </div>
+                                        <div class="midCardValue">
+                                            <!-- <span class="totalInvesterUserImage"><img src="./assets/images/comparefund/Vectorcard.png"></span> -->
+                                           
+                                            <span class="totalExsitingInvestors mt-1 fontResize"> Unique investors</span>
+                                            <span class="totalExsitingInvestors total-investor mt-1 fontResize">1.35 lakh</span>
+                                            <span class="img-with-tooltip for_add_data_card">
+                                                <img src="assets/images/home/info-icon2.svg"  class="d-inline-block mobile-icons light-mode-icon mobile-icons-img" >
+                                                <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon dark-mobile" >
+                                                <span class="tooltip-block fontResize">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="buttonCard">
+                                        <div class="makeGap">
+                                            <button type="button" class="btn btn-outline-primary customButtonFirst" >
+                                                <img class="share-icon2" src="assets/images/comparefund/shopping-cart.png"></button>
+                                            <button type="button" class="btn btn-primary customButtonSecond fontResize">Invest Now</button>
+    
+                                        </div>
+    
+                                    </div>
+    
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card compareCardBox mb-4">
+                                  
+                                    <div class="fund-heading mb-3">
+                                        <div class="d-flex justify-content-between gap-1 forLabelCard fontResize">
+                                            <div>
+                                                Franklin Build India Fund
+                                            <!-- <span class="meterImage"><img src="./assets/images/comparefund/very-high.svg.png"></span> -->
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/general/very-high.svg"  class="moderately">
+                                                <span class="tooltip-block makeTootipFundVisibleCard">
+                                                    <img class="risk-meter fontResize" src="assets/images/general/very-high.svg">
+                                                        This fund has moderately high risk
+                                                </span>
+                                            </span>
+                                            </div>
+                                            <span class="dropdown">
+                                                <!-- <img src="./assets/images/comparefund/Frame 1000007566.png"> -->
+                                                <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="bi bi-three-dots-vertical general-vertical" ></i>
+                                                    <!-- <img src="./assets/images/comparefund/Frame 1000007566.png" sty le="max-width: 92%;"> -->
+                                                </span>
+                                                <ul class="dropdown-menu">
+                                                    <li class="d-none d-md-block">
+                                                        <a class="dropdown-item fontResize fund-light-mode-icon" href="#" data-bs-toggle="modal" data-bs-target="#goToWatchList">
+                                                            <img class="" src="assets/images/general/ph_share-fat-light.svg">Save to Watchlist
+                                                           
+                                                        </a>
+                                                        <a class="dropdown-item fontResize fund-dark-mode-icon" href="#" data-bs-toggle="modal" data-bs-target="#goToWatchList">
+                                                            <img class="" src=" ../../../../assets/images/dark/dark-Save-icon.png">Save to Watchlist
+                                                           
+                                                        </a>
+                                                    </li>
+                                                    <!-- <li><a class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</a></li>
+                                                    <li><span class="dropdown-item d-block"><img src="../../../../../assets/images/general/twitter-new-icon.png">Share on Twitter</span></li> -->
+                                                    <li><span class="dropdown-item fontResize fund-light-mode-icon"><img src="assets/images/general/Link.svg">Copy link</span>
+                                                    <li><span class="dropdown-item fontResize fund-dark-mode-icon"><img src="../../../../assets/images/dark/link-dark.png">Copy link</span>
+
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fund-light-mode-icon" href="#"><img src="../../../../../assets/images/general/twitter-new-icon.png">Share on Twitter</a>
+                                                    <li><a class="dropdown-item fontResize fund-dark-mode-icon" href="#"><img src="../../../../assets/images/dark/twitter-new-dark.svg">Share on Twitter</a>
+
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fund-light-mode-icon" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a>
+                                                    <li><a class="dropdown-item fontResize fund-dark-mode-icon" href="#"><img src="assets/images/general/footer-facebook.svg">Share on Facebook</a>
+
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fund-light-mode-icon" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a>
+                                                        <a class="dropdown-item fontResize fund-dark-mode-icon" href="#"><img src="assets/images/general/footer-linkedin.svg">Share on LinkedIn</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fund-light-mode-icon" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a>
+                                                        <a class="dropdown-item fontResize fund-dark-mode-icon" href="#"><img src="assets/images/general/ri_whatsapp-fill.png">Share on WhatsApp</a>
+                                                    </li>
+                                                </ul>
+
+                                    
+
+                                                
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="midCard mb-3">
+                                        <div class="midCardValue">
+
+                                            <div class="d-flex" id="stand-page-mob">
+                                                <div class="d-flex">
+                                                    <div class="valuMidCardData fontResize">AUM</div>&nbsp;&nbsp;
+                                                    <div class="img-with-tooltip">
+                                                        <!-- <img src="assets/images/home/info-icon2.svg"  class="d-inline-block mobile-icons light-mode-icon" sty le="width: 18px; top: 8px;">
+                                                        <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon" sty le="width: 14px; top: 4px;">
+                                                        <span class="tooltip-block fontResize">
+                                                            20/06/2023 as of.
+                                                        </span> -->
+                                                    </div>
+                                                </div>
+                                                <div class="valueMidCard fontResize">3242 Cr</div>
+                                            </div>
+                                            <div class="lineImage"><img src="./assets/images/comparefund/Line 987.png"></div>
+                                            <div class="d-flex" id="stand-page-mob">
+                                                <div class="d-flex">
+                                                    <div class="valuMidCardData fontResize d-none d-md-block">Annualised Returns</div>
+                                                    <div class="valuMidCardData fontResize d-block d-md-none">Returns</div>&nbsp;
+                                                    <div class="valueMidCard ml-3 mr-3 fontResize mx-1">11.05%</div>
+                                                    <div class="img-with-tooltip">
+                                                        <img src="assets/images/home/info-icon2.svg"  class="d-inline-block mobile-icons light-mode-icon returns-as" >
+                                                        <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon dark-mobile" >
+                                                        <span class="tooltip-block fontResize">
+                                                            20/06/2023 as of.
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                      
+                                            </div>
+
+                                                <!-- <span class="valueMidCard">3242 Cr </span>
+                                                <span class="valuMidCardData">Fund Size</span>										
+                                            <span class="lineImage"><img src="./assets/images/comparefund/Line 987.png"></span>
+                                            <span class="valueMidCard ml-3 mr-3">11.05%</span>
+                                            <span class="valuMidCardData ml-3 mr-3">Annualised returns</span>
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/home/info-icon2.svg"  class="d-inline-block mobile-icons light-mode-icon" sty le="width: 18px;">
+                                                <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon" st yle="width: 14px; top: 8px;">
+                                                <span class="tooltip-block">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span> -->
+                                        </div>
+                                        <div class="midCardValue">
+                                            <!-- <span class="totalInvesterUserImage"><img src="./assets/images/comparefund/Vectorcard.png"></span> -->
+                                   
+                                            <span class="totalExsitingInvestors mt-1 fontResize"> Unique investors</span>
+                                            <span class="totalExsitingInvestors total-investor mt-1 fontResize">1.35 lakh</span>
+                                            <span class="img-with-tooltip for_add_data_card">
+                                                <img src="assets/images/home/info-icon2.svg"  class="d-inline-block mobile-icons light-mode-icon tooltip-section" >
+                                                <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon dark-mobile" >
+                                                <span class="tooltip-block fontResize">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="buttonCard">
+                                        <div class="makeGap">
+                                            <button type="button" class="btn btn-outline-primary customButtonFirst" >
+                                                <img class="share-icon2" src="assets/images/comparefund/shopping-cart.png"></button>
+                                            <button type="button" class="btn btn-primary customButtonSecond fontResize">Invest Now</button>
+    
+                                        </div>
+    
+                                    </div>
+    
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card compareCardBox mb-4">
+                                  
+                                    <div class="fund-heading mb-3">
+                                        <div class="d-flex justify-content-between gap-1 forLabelCard fontResize">
+                                            <div>
+                                                Franklin Build India Fund
+                                            <!-- <span class="meterImage"><img src="./assets/images/comparefund/very-high.svg.png"></span> -->
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/general/very-high.svg" class="moderately">
+                                                <span class="tooltip-block makeTootipFundVisibleCard">
+                                                    <img class="risk-meter fontResize" src="assets/images/general/very-high.svg">
+                                                        This fund has moderately high risk
+                                                </span>
+                                            </span>
+                                            </div>
+                                            <span class="dropdown">
+                                                <!-- <img src="./assets/images/comparefund/Frame 1000007566.png"> -->
+                                                <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="bi bi-three-dots-vertical general-vertical" ></i>
+                                                    <!-- <img src="./assets/images/comparefund/Frame 1000007566.png" st yle="max-width: 92%;"> -->
+                                                </span>
+                                                <ul class="dropdown-menu">
+                                                    <li class="d-none d-md-block">
+                                                        <a class="dropdown-item fontResize fund-light-mode-icon" href="#" data-bs-toggle="modal" data-bs-target="#goToWatchList">
+                                                            <img class="" src="assets/images/general/ph_share-fat-light.svg">Save to Watchlist
+                                                           
+                                                        </a>
+                                                        <a class="dropdown-item fontResize fund-dark-mode-icon" href="#"data-bs-toggle="modal" data-bs-target="#goToWatchList">
+                                                            <img class="" src=" ../../../../assets/images/dark/dark-Save-icon.png">Save to Watchlist
+                                                           
+                                                        </a>
+                                                    </li>
+                                                    <!-- <li><a class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</a></li>
+                                                    <li><span class="dropdown-item d-block"><img src="../../../../../assets/images/general/twitter-new-icon.png">Share on Twitter</span></li> -->
+                                                    <li><span class="dropdown-item fontResize fund-light-mode-icon"><img src="assets/images/general/Link.svg">Copy link</span>
+                                                    <li><span class="dropdown-item fontResize fund-dark-mode-icon"><img src="../../../../assets/images/dark/link-dark.png">Copy link</span>
+
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fund-light-mode-icon" href="#"><img src="../../../../../assets/images/general/twitter-new-icon.png">Share on Twitter</a>
+                                                    <li><a class="dropdown-item fontResize fund-dark-mode-icon" href="#"><img src="../../../../assets/images/dark/twitter-new-dark.svg">Share on Twitter</a>
+
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fund-light-mode-icon" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a>
+                                                    <li><a class="dropdown-item fontResize fund-dark-mode-icon" href="#"><img src="assets/images/general/footer-facebook.svg">Share on Facebook</a>
+
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fund-light-mode-icon" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a>
+                                                        <a class="dropdown-item fontResize fund-dark-mode-icon" href="#"><img src="assets/images/general/footer-linkedin.svg">Share on LinkedIn</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item fontResize fund-light-mode-icon" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a>
+                                                        <a class="dropdown-item fontResize fund-dark-mode-icon" href="#"><img src="assets/images/general/ri_whatsapp-fill.png">Share on WhatsApp</a>
+                                                    </li>
+                                                </ul>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="midCard mb-3">
+                                        <div class="midCardValue">
+
+                                            <div class="d-flex" id="stand-page-mob">
+                                                <div class="d-flex">
+                                                    <div class="valuMidCardData fontResize">AUM</div>&nbsp;&nbsp;
+                                                    <div class="img-with-tooltip">
+                                                        <!-- <img src="assets/images/home/info-icon2.svg"  class="d-inline-block mobile-icons light-mode-icon" sty le="width: 18px; top: 8px;">
+                                                        <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon" st yle="width: 14px; top: 4px;">
+                                                        <span class="tooltip-block fontResize">
+                                                            20/06/2023 as of.
+                                                        </span> -->
+                                                    </div>
+                                                </div>
+                                                <div class="valueMidCard fontResize">3242 Cr</div>
+                                            </div>
+                                            <div class="lineImage"><img src="./assets/images/comparefund/Line 987.png"></div>
+                                            <div class="d-flex" id="stand-page-mob">
+                                                <div class="d-flex">
+                                                    <div class="valuMidCardData fontResize d-none d-md-block">Annualised Returns</div>
+                                                    <div class="valuMidCardData fontResize d-block d-md-none">Returns</div>&nbsp;
+                                                    <div class="valueMidCard ml-3 mr-3 fontResize mx-1">11.05%</div>
+                                                    <div class="img-with-tooltip">
+                                                        <img src="assets/images/home/info-icon2.svg"  class="d-inline-block mobile-icons light-mode-icon returns-as" >
+                                                        <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon dark-mobile" >
+                                                        <span class="tooltip-block fontResize">
+                                                            20/06/2023 as of.
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+
+                                                <!-- <span class="valueMidCard">3242 Cr </span>
+                                                <span class="valuMidCardData">Fund Size</span>										
+                                            <span class="lineImage"><img src="./assets/images/comparefund/Line 987.png"></span>
+                                            <span class="valueMidCard ml-3 mr-3">11.05%</span>
+                                            <span class="valuMidCardData ml-3 mr-3">Annualised returns</span>
+                                            <span class="img-with-tooltip">
+                                                <img src="assets/images/home/info-icon2.svg"  class="d-inline-block mobile-icons light-mode-icon" sty le="width: 18px;">
+                                                <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon" sty le="width: 14px; top: 8px;">
+                                                <span class="tooltip-block">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span> -->
+                                        </div>
+                                        <div class="midCardValue">
+                                            <!-- <span class="totalInvesterUserImage"><img src="./assets/images/comparefund/Vectorcard.png"></span> -->
+                                       
+                                            <span class="totalExsitingInvestors mt-1 fontResize"> Unique investors</span>
+                                            <span class="totalExsitingInvestors total-investor mt-1 fontResize">1.35 lakh</span>
+                                            <span class="img-with-tooltip for_add_data_card">
+                                                <img src="assets/images/home/info-icon2.svg"  class="d-inline-block mobile-icons light-mode-icon mobile-icons-img" >
+                                                <img src="assets/images/fund/dark-information-icon.png" class="mobile-icons dark-mode-icon dark-mobile" >
+                                                <span class="tooltip-block fontResize">
+                                                    20/06/2023 as of.
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="buttonCard">
+                                        <div class="makeGap">
+                                            <button type="button" class="btn btn-outline-primary customButtonFirst" >
+                                                <img class="share-icon2" src="assets/images/comparefund/shopping-cart.png"></button>
+                                            <button type="button" class="btn btn-primary customButtonSecond fontResize">Invest Now</button>
+    
+                                        </div>
+    
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <!-- watchlist Modal -->
+  <div class="modal fade" id="goToWatchList" tabindex="-1" aria-labelledby="goToWatchList" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="">
+        <!-- <div class="modal-body"> -->
+        <div class="">
+            <div class="save-alert">
+                <div class="content">
+                    <span class="close-btn" data-bs-dismiss="modal" aria-label="Close"><img src="assets/images/general/close.svg"></span>
+                    <img src="assets/images/general/check_circle.svg" class="checked-img">
+                    <span >Successfully added to Watchlist.</span>
+                     <a href="#" class="btn btn-primary" (click)="redirectToNextPage()">Go to watchlist</a>
+                    
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

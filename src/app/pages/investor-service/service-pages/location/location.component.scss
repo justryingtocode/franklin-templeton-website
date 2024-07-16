@@ -1,0 +1,275 @@
+.container {
+  max-width: 1255px;
+}
+
+#page-content {
+  // font-family: Hanken Grotesk;
+}
+
+#myTabContent {
+  display: flex;
+  justify-content: space-evenly;
+  background: #f0f6ff;
+  margin-top: 10px;
+}
+
+.category-btns,
+ul {
+  list-style: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  // overflow-y: scroll;
+  gap: 0px
+}
+
+.category-btns ul li.active {
+  background: var(--blue);
+  color: #fff;
+}
+
+.category-btns ul li {
+  padding: 12px 32px;
+  border-radius: 32px;
+  background: #F0F6FF;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.48px;
+  color: var(--blue);
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  margin-right: 16px;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.FT-location .btn .btn-outline-primary {
+  background-color: #3769ff !important;
+  color: #fff;
+  padding: 12px 30px;
+}
+
+// .modal-content {
+//     margin-top: 163px;
+// }
+
+.modal-footer {
+  justify-content: flex-start;
+}
+
+.modal .modal-header {
+  padding: 16px;
+}
+
+.location-btn {
+  width: 210px;
+  // height: 50px;
+  // padding: 16px, 28px, 16px, 28px;
+  border-radius: 8px;
+  border: 1px;
+  gap: 8px;
+  background: #3769FF;
+  color: #fff;
+  font-family: Inter;
+  font-size: 1.063rem;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0em;
+  // text-align: left;
+
+
+
+}
+
+@media (min-width:375px) and (max-width: 430px) {
+  .nav-tabs .nav-link {
+    font-size: 17px;
+  }
+}
+
+@media (min-width:411px) and (max-width: 412px) {
+  .loca-serch-btn {
+    margin-left: 196px !important;
+  }
+
+  .FT-location select {
+    width: 170px;
+  }
+
+
+
+  .location-branch-btn {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+}
+
+@media (min-width:388px) and (max-width: 390px) {
+  .loca-serch-btn {
+    margin-left: 170px !important;
+  }
+
+  .location-branch-btn {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  // color: black;
+  // padding: 0 10px;
+}
+
+a:after {
+  content: "";
+  position: absolute;
+  background-color: #3769ff;
+  height: 3px;
+  width: 0;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+}
+
+a:hover:after {
+  width: 85%;
+}
+
+i {
+  font-size: 0.938rem;
+}
+
+// ::ng-deep .modal {
+//     overflow-y: hidden!important; 
+//     overflow-x: visible!important;
+// }
+
+.line {
+  width: 96px;
+  height: 2px;
+  position: absolute;
+  top: 17px;
+  left: 39%;
+  border: 2px solid #959595;
+  background: #959595;
+}
+
+.inputfield {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input {
+  height: 2em;
+  width: 2em;
+  border: 2px solid #dad9df;
+  outline: none;
+  text-align: center;
+  font-size: 1.5em;
+  border-radius: 0.3em;
+  background-color: #ffffff;
+  outline: none;
+  /*Hide number field arrows*/
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input:disabled {
+  color: #89888b;
+}
+
+.input:focus {
+  border: 3px solid #ffb800;
+}
+
+@media (min-width:428px) and (max-width:430px) {
+  .FT-location select {
+    width: 177px !important;
+  }
+
+  .loca-serch-btn {
+    margin-left: 13rem !important;
+  }
+}
+
+@media (min-width:358px) and (max-width:360px) {
+  .location-branch-btn {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .FT-location select {
+    width: 144px !important;
+  }
+
+  .loca-serch-btn {
+    margin-left: 9rem !important;
+  }
+
+  //   .FT-location .location-map .box-shadow {
+  //     width: 21rem !important;
+  //   }
+}
+
+// tab view
+@media (min-width:768px) and (max-width:1024px) {
+  .FT-location .location-map .box-shadow {
+    width: 100% !important;
+  }
+}
+
+@media (max-width:778.91px) {
+  .FT-title-medium {
+    font-size: 1.25rem;
+  }
+
+  .FT-location {
+    padding-top: 60px !important;
+  }
+}
+
+.FT-title-small {
+  font-size: 1.625rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.84px;
+}
+
+
+#callBack {
+  margin-top: 12px;
+}
+
+.modal-body-head {
+  z-index: 1000000;
+}
+
+.offcanvas-head {
+  height: 55%;
+  border-top-left-radius: 39px;
+  border-top-right-radius: 39px;
+}
+.imintrestedform{
+  min-height: 233px;
+}
+.check_circle-img{
+  height:3rem;
+}
+.Thankyou-request{
+  font-size: 1.125rem;
+}

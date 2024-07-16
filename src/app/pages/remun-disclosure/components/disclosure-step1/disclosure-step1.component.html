@@ -1,0 +1,61 @@
+<div class="form-container distributor-step2 fund-AUM">
+    <form [formGroup]="panForm" (ngSubmit)="onSubmit()">
+        <div class="row share-btn-fund">
+            <div class="col-sm-7 col-12 form-group mb-3">
+                <input type="text" class="form-control" placeholder="PAN Number/Customer Folio*" id="panNumber"
+                    formControlName="panNumber">
+               
+                <div *ngIf="panForm.get('panNumber')?.errors?.['invalidPan']">
+
+                    <span  class="error-msg fontResize share-menu-twitter">Invalid PAN Number</span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 my-2">
+                        <form>
+                        
+                            <div class="form-group row">
+                                <label for="fcpaCompliance" class="col-sm-6 col-md-12 col-form-label">Select and provide information for any one of the following additional questions</label>
+                                <div class="col-sm-9 my-3">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" (click)="onBankAcc()" type="radio" name="fcpaCompliance"
+                                            id="fcpaComplianceYes" value="yes" checked>
+                                        <label class="form-check-label" for="fcpaComplianceYes">Bank Account No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" (click)="onDateBirth()" type="radio" name="fcpaCompliance" id="fcpaComplianceNo"
+                                            value="no">
+                                        <label class="form-check-label" for="fcpaComplianceNo">Date Of Birth</label>
+                                    </div>
+                                </div>
+                            </div>
+                           
+        
+                           
+        
+                        </form>
+                    </div>
+                    <div class="col-sm-7 col-12 form-group mb-3" *ngIf="bankAccNumber">
+                        <input type="text" class="form-control" placeholder="Bank Account No*">
+                       
+                    </div>
+
+                    <div class="col-sm-7 col-12 form-group mb-3" *ngIf="dateOfBirth">
+                        <input type="text" class="form-control" placeholder="Date of birth*">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-7 col-12 mb-3 d-flex">
+                <button type="button" class="btn btn-outline-primary me-4"routerLink="/remuneration"
+                >Cancel</button>
+                <button type="submit" class="btn btn-primary" (click)="changeActiveStepper(1,true)"
+                    data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false"
+                    aria-controls="collapse2" >Next</button>
+              
+                    
+            </div>
+        </div>
+    </form>
+</div>
+

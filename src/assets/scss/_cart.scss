@@ -1,0 +1,131 @@
+.FT-general-filter {
+    &.cart-aside {
+        .filter-box {
+            max-width: 515px;
+
+            .filter-content {
+                padding: 26px 32px;
+                height: calc(100% - 88px);
+
+                h3 {
+                    color: #595A6C;
+                    font-weight: 500;
+                    letter-spacing: -0.72px;
+
+                    .text-blue {
+                        display: block;
+                        font-size: 1.25rem;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+                        letter-spacing: -0.6px;
+                        margin-top: 8px;
+                    }
+                }
+
+                .btn-transparent {
+                    padding: 0;
+                    box-shadow: none !important;
+                    scale: 1 !important;
+                }
+
+                .form-check-input:checked[type=radio] {
+                    --bs-form-check-bg-image: url("../images/general/check.svg");
+                }
+
+                .nav-tabs {
+                    background: #F0F6FF;
+                    display: inline-flex;
+                    margin-top: 32px;
+
+                    .nav-link {
+                        color: #8189A2;
+                        font-size: 0.875rem;
+                        font-weight: 600;
+                        line-height: normal;
+                        letter-spacing: -0.42px;
+                        padding: 4px 12px;
+                        border: 0;
+                        margin-bottom: 0;
+
+                        &.active {
+                            background: var(--blue);
+                            color: #fff;
+                            border-radius: 4px;
+                        }
+                    }
+                }
+
+                .cart-box {
+                    border-radius: 8px;
+                    background: #fff;
+                    box-shadow: 0px 4px 20px 0px rgba(23, 55, 163, 0.16);
+                    padding: 16px;
+
+                    .text-big {
+                        color: #595A6C;
+                    }
+
+                    .text-small {
+                        color:#8189A2;
+                        font-size: 0.813rem;
+                        font-weight: 400;
+                        line-height: normal;
+                        letter-spacing: -0.39px;
+                    }
+
+                    .price-input {
+                        display: flex;
+                        align-items: center;
+                        border-radius: 4px;
+                        border: 1px solid #D2D8EA;
+                        background: #fff;
+                        padding: 4px 16px;
+
+                        img {
+                            margin-right: 6px;
+                        }
+
+                        .form-control {
+                            border: 0;
+                            padding: 0;
+                            box-shadow: none;
+                            outline: none;
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            line-height: normal;
+                            letter-spacing: -0.6px;
+                        }
+                    }
+                    .custom-check.form-check{
+                        margin-right: 8px;
+                         .form-check-label{
+                            font-weight: 500;
+                            background: #F0F6FF;
+                            border:0;
+                         }
+                         .form-check-input{
+                            &:checked[type=checkbox] + .form-check-label,
+                            &:checked[type=radio] + .form-check-label{
+                                background: var(--blue);
+                            }
+                         }
+                         
+                    }
+                     
+                }
+            }
+
+            .filter-footer {
+                padding: 24px 16px;
+
+                .btn {
+                    padding: 8px 12px;
+                    height: 40px;
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

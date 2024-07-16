@@ -1,0 +1,231 @@
+<div class="">
+    <div class="accordion" id="accordionExample">
+        <div class="stepper-head">
+            <div class="container">
+                <div class="steps" id="stepHeader">
+                    <!-- <progress id="progress" value=0 max=100></progress> -->
+                    <div class="step-item d-flex flex-row active" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" disabled>
+                        <button class="step-button text-center" type="button">
+                            <img src="assets/images/solutions/profile.png">
+                        </button>
+                        <div class="step-title">Enter PAN</div>
+                    </div>
+                    <div class="stip-line col-2 text-center">
+                        <img src="assets/images/solutions/Line 976.png">
+                    </div>
+
+                    <div class="step-item d-flex flex-row" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                        aria-expanded="false" aria-controls="collapseTwo">
+                        <button class="step-button text-center collapsed" type="button" disabled>
+                            <img src="assets/images/solutions/gps.png">
+                        </button>
+                        <div class="step-title">Enter OTP</div>
+                    </div>
+                    <div class="stip-line col-2 text-center">
+                        <img src="assets/images/solutions/Line 976.png">
+                    </div>
+                    <div class="step-item d-flex flex-row" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                        aria-expanded="false" aria-controls="collapseThree">
+                        <button class="step-button text-center collapsed" type="button" disabled>
+                            <img src="assets/images/solutions/documenttext.png">
+                        </button>
+                        <div class="step-title">Enter Bank Account Number</div>
+                    </div>
+                     <div class="stip-line col-2 text-center">
+                        <img src="assets/images/solutions/Line 976.png">
+                    </div>
+                    <div class="step-item d-flex flex-row" data-bs-toggle="collapse" data-bs-target=""
+                        aria-expanded="false" aria-controls="">
+                        <button class="step-button text-center collapsed" type="button" disabled>
+                            <img src="assets/images/solutions/documenttext.png">
+                        </button>
+                        <div class="step-title">Modify KYC details via CAMSKRA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="box-shadow bg-white mb-4 p-4">
+                <!-- stepper step one -->
+                <div id="collapseOne" class="collapseOne collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+
+                    <div class="card goal-cards">
+                        
+
+                        <div class="card-body">
+                            <div class="font-medium mb-4 pb-2">
+                                This facility to update / modify KYC details is available only for our existing
+                                investors.Once your
+                                authenticate self, we would redirect to CAMSKRA website for modifying your KYC details
+                            </div>
+                            <!-- <form class="account-form" [formGroup]="panForm" (ngSubmit)="onSubmit()">
+                                <div class="row">
+
+                                    <div class="form-group col">
+                                        <input type="text" class="form-control" placeholder="Enter PAN*" id="panNumber"
+                                        formControlName="panNumber">
+                                        <div *ngIf="panForm.get('panNumber')?.errors?.['invalidPan']">
+
+                                            <span st yle="color: #F04438;" class="error-msg fontResize">Invalid PAN Number</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false"
+                                        aria-controls="collapseTwo" type="submit" class="btn btn-primary">Send OTP</button>
+                                    </div>
+                                </div>
+                            </form> -->
+                        <div class="form-container distributor-step2 invalidPan-num" >
+                            <form [formGroup]="panForm" (ngSubmit)="onSubmit()">
+                                <div class="row invalidPan-numumber" >
+                                    <div class="col-sm-8 col-12 form-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Enter PAN*" id="panNumber"
+                                            formControlName="panNumber">
+                                        <!-- <div
+                                            *ngIf="investorRegistorForm?.get('name')?.hasError('required') && !investorRegistorForm?.get('name')?.value && investorRegistorForm?.get('name')?.touched">
+                                            <span st yle="color: #F04438;" class="error-msg fontResize">Name is required.</span>
+                                        </div> -->
+                                        <div *ngIf="panForm.get('panNumber')?.errors?.['invalidPan']">
+                        
+                                            <span  class="error-msg fontResize invalidPan-color">Invalid PAN Number</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8 col-12 mb-3">
+                                        <button type="submit" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">Send OTP</button>
+                        
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- stepper step two -->
+                <div id="collapseTwo" class="collapseTwo collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+
+                    <div class="card goal-cards">
+
+                        <div class="card-body">
+                            <div class="font-medium mb-4 pb-2 text-center">
+                               Your One Time Password (OTP) has been sent by SMS to your Email.id:a****h@gmail.com
+                               Mobile:******18. <span>Resend OTP</span>
+                            </div>
+                            <div class="form-container distributor-step2 " >
+                                <form>
+                                    <div class="row">
+                                        <div class="col-sm-8 col-12 form-group mb-3">
+
+                                            <div>
+                                                <input type="text" class="form-control" placeholder="Enter OTP*" id="otp" formControlName="otp">
+                                               
+                                                <span  class="Resend"><a href="" class="login-dark2 mt-2">Resend OTP</a></span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-sm-8 col-12 mb-3">
+                                        
+                                            <div class="btn-options d-flex">
+                                                <button type="button" class="btn btn-outline-primary me-4" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                    aria-expanded="false" aria-controls="collapseOne">Back</button>
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                    aria-expanded="false" aria-controls="collapseThree">Next</button>
+                                            </div>
+                                        
+                                        </div>
+                                     
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- <form class="account-form">
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <input type="text" class="form-control" placeholder="Enter OTP*">
+                                    </div>
+                                    <div class="col-auto">
+                                        <button data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree" type="submit" class="btn btn-primary">Next</button>
+                                    </div>
+                                </div>
+                            </form> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- stepper step three -->
+                <div id="collapseThree" class="collapseThree collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="card goal-cards">
+
+                        <div class="card-body">
+                            <div class="font-medium mb-4 pb-2 text-center">
+                                Please enter any of the bank account number(s) registered with us
+                            </div>
+
+                            <div class="form-container distributor-step2 acc-number">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-sm-8 col-12 form-group mb-3">
+                            
+                                            <!-- <p styl e="color: #697c91;" class="error-msg fontResize login-dark2">Please enter any of the bank account number(s) registerd with us.</p> -->
+                                            
+                                            <div class="password-input">
+                                                <input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" #passwordField
+                                                    class="form-control" placeholder="Bank Account Numbers*" id="accountNumber"
+                                                    formControlName="accountNumber">
+                            
+                            
+                                                <span class="toggle-password" (click)="togglePasswordVisibility()">
+                                                    <i class="bi fs-5" [ngClass]="showPassword ? 'bi-eye' : 'bi-eye-slash'"></i>
+                                                </span>
+                                            </div>
+                            
+                                            
+                            
+                                    
+                                
+                                        </div>
+                            
+                                        <!-- <div class="col-sm-auto col-12 mb-3">
+                                            <button type="button" class="btn btn-primary" (click)="changeActiveStepper(3,true)"
+                                                data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false"
+                                                aria-controls="collapse4">Next</button>
+                                        </div> -->
+                                        
+                            
+                                 
+                            
+                                        <div class="col-sm-8 col-12 mb-3">
+                                        
+                                            <div class="btn-options d-flex">
+                                                <button type="button" class="btn btn-outline-primary me-4" 
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo">Back</button>
+                                            <button type="button" class="btn btn-primary">Next</button>
+                                          
+                                        
+                                            </div>
+                                        
+                                        </div>
+                            
+                                            
+                            
+                                    </div>
+                                </form>
+                            </div>
+         
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

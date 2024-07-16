@@ -1,0 +1,45 @@
+<div id="page-content">
+    
+    <div *ngIf="!showAddFund">
+        <app-sip-breadcrumb></app-sip-breadcrumb>
+        <app-sip-calculator></app-sip-calculator>
+        <app-fund-return (addFundStatusChanged)="handleAddFundStatus($event)"></app-fund-return>
+        <app-calculator-faq [faqs]="faqs"></app-calculator-faq>
+        <app-other-calculators [calculators]="otherCalculators"></app-other-calculators>
+        <app-more-calculators [solutions]="otherSolutions"></app-more-calculators>
+        <app-related-resources [resources]="resources"></app-related-resources>
+        
+        <app-fund-accordion></app-fund-accordion>
+    </div>
+
+    
+    
+    
+    
+    <!-- <div>
+         
+            <a id="forAdd"><img src="./assets/images/comparefund/arrow.png" (click)="makeToggle()"></a>
+        </div> -->
+    
+    <div *ngIf="showAddFund">
+        <div class="FT-general-filter cart-aside show">
+            <div class="filter-box filter-box-full">
+                <div class="filter-content">
+
+                    <!-- close -->
+                    <div class="d-flex justify-content-between mb-3 align-items-start">
+                        <button class="btn btn-transparent cross-close-btn" (click)="makeToggle()">
+                            <i class="bi bi-x-circle"></i>
+                        </button>
+                    </div>
+
+                    <app-add-fund-data [getAllowedFilter]="true" [makeCartToggle]="false" cardTypeData="CALCULATOR" [searchOption]=true ></app-add-fund-data>
+                </div>
+                <div class="filter-footer"></div>
+            </div>
+        </div>
+    </div>
+       
+      
+</div>
+  

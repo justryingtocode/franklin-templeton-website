@@ -1,0 +1,139 @@
+<section class="FT-solutions bg-gradient">
+    <div class="container-fluid px-0">
+        <div class="text-center">
+            <div class="FT-title fontResize">Your Goals. Our Solutions.</div>
+            <div class="text-big text-white services-desc fontResize">
+                Achieve your goals at every life stage with our recommendations.
+            </div>
+        </div>
+        <ngx-slick-carousel class="carousel desktop-services-wrapper" #slickModal="slick-carousel"
+            [config]="slideConfig" style="padding: 0px 10px;">
+            <div *ngFor="let data of solutionsCardContent">
+                <div ngxSlickItem class="slide">
+                    <a class="solution-box" (click)="contentData(data)">
+                        <h3 class="colorTitle fontResize">{{data.title}}</h3>
+                        <img [src]="data.imageUrl">
+                        <div class="btn btn-primary fontResize">Calculate and invest <br /> for your {{data.title}}</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- <div ngxSlickItem class="slide">
+                <a class="solution-box" routerLink="/solutions/content/1">
+                    <h3 class="colorTitle fontResize">Retirement</h3>
+                    <img src="assets/images/home/fund3.png">
+                    <div class="btn btn-primary fontResize">Calculate and invest <br /> for your retirement</div>
+                </a>
+            </div>
+            <div ngxSlickItem class="slide">
+                <a class="solution-box" routerLink="/solutions/content/1">
+                    <h3 class="colorTitle fontResize">Holiday</h3>
+                    <img src="assets/images/home/fund2.png">
+                    <div class="btn btn-primary fontResize">Calculate and invest<br /> for your holiday</div>
+                </a>
+            </div>
+            <div ngxSlickItem class="slide">
+                <a class="solution-box" routerLink="/solutions/content/1">
+                    <h3 class="colorTitle fontResize">Cash Management</h3>
+                    <img src="assets/images/home/fund4.png">
+                    <div class="btn btn-primary fontResize">Calculate and invest <br />for your cash management</div>
+                </a>
+            </div>
+            <div ngxSlickItem class="slide">
+                <a class="solution-box" routerLink="/solutions/content/1">
+                    <h3 class="colorTitle fontResize">Dream Home</h3>
+                    <img src="assets/images/home/fund5.png">
+                    <div class="btn btn-primary fontResize">Calculate and invest <br /> for your dream home</div>
+                </a>
+            </div>
+            <div ngxSlickItem class="slide">
+                <a class="solution-box" routerLink="/solutions/content/1">
+                    <h3 class="colorTitle fontResize">Wealth Creation</h3>
+                    <img src="assets/images/home/fund6.png">
+                    <div class="btn btn-primary fontResize">Calculate and invest <br /> for your wealth creation</div>
+                </a>
+            </div>
+            <div ngxSlickItem class="slide">
+                <a class="solution-box" routerLink="/solutions/content/1">
+                    <h3 class="colorTitle fontResize">Tax Planning</h3>
+                    <img src="assets/images/home/fund7.png">
+                    <div class="btn btn-primary fontResize">Calculate and invest <br /> for your tax plan</div>
+                </a>
+            </div>
+            <div ngxSlickItem class="slide">
+                <a class="solution-box" routerLink="/solutions/content/1">
+                    <h3 class="colorTitle fontResize">Customize Your Plan</h3>
+                    <img src="assets/images/home/fund8.png">
+                    <div class="btn btn-primary fontResize">Calculate and invest <br /> for your customized plan</div>
+                </a>
+            </div> -->
+        </ngx-slick-carousel>
+        <div class="mobile-services-wrapper">
+            <div class="services">
+                <a routerLink="/solutions/content/1" class="service">
+                    <div class="image-wrapper">
+                        <img class="image" src="assets/images/home/fund1.png" alt="Child’s Education">
+                    </div>
+                    <p class="description fontResize">Child’s Education</p>
+                </a>
+                <a routerLink="/solutions/content/1" class="service">
+                    <div class="image-wrapper">
+                        <img class="image" src="assets/images/home/fund3.png" alt="Retirement">
+                    </div>
+                    <p class="description fontResize">Retirement</p>
+                </a>
+            </div>
+            <div class="services">
+                <a routerLink="/solutions/content/1" class="service">
+                    <div class="image-wrapper">
+                        <img class="image" src="assets/images/home/fund2.png" alt="Holiday">
+                    </div>
+                    <p class="description fontResize">Holiday</p>
+                </a>
+                <a routerLink="/solutions/content/1" class="service">
+                    <div class="image-wrapper">
+                        <img class="image" src="assets/images/home/fund4.png" alt="Retirement">
+                    </div>
+                    <p class="description fontResize">Cash Management</p>
+                </a>
+            </div>
+            <div class="services">
+                <a routerLink="/solutions/content/1" class="service">
+                    <div class="image-wrapper">
+                        <img class="image" src="assets/images/home/fund5.png" alt="Holiday">
+                    </div>
+                    <p class="description fontResize">Dream Home</p>
+                </a>
+                <a routerLink="/solutions/content/1" class="service">
+                    <div class="image-wrapper">
+                        <img class="image" src="assets/images/home/fund6.png" alt="Retirement">
+                    </div>
+                    <p class="description fontResize">Wealth Creation</p>
+                </a>
+            </div>
+            <div class="services">
+                <a routerLink="/solutions/content/1" class="service">
+                    <div class="image-wrapper">
+                        <img class="image" src="assets/images/home/fund7.png" alt="Holiday">
+                    </div>
+                    <p class="description fontResize">Tax Planning</p>
+                </a>
+                <a routerLink="/solutions/content/1" class="service">
+                    <div class="image-wrapper">
+                        <img class="image" src="assets/images/home/fund8.png" alt="Retirement">
+                    </div>
+                    <p class="description fontResize">Customize Your Plan</p>
+                </a>
+            </div>
+        </div>
+        <div class="text-center">
+            <a routerLink="/solutions" class="more-links footer-links-CTA fontResize"><span>Explore all solutions</span><i
+                    class="bi bi-chevron-right ms-3"></i></a>
+            <!-- <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <a routerLink="/solutions"><span>Explore all solutions</span><i
+                        class="bi bi-arrow-right-short banner"></i></a>
+            </button> -->
+        </div>
+    </div>
+</section>

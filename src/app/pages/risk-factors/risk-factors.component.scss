@@ -1,0 +1,61 @@
+.FT-footer-pages {
+    .conatiner {
+        max-width: 1280px
+       
+    }
+
+    .FT-title-medium {
+        margin-bottom: 32px;
+    }
+
+    .col-12 {
+        margin-bottom: 32px;
+
+        @media(max-width:575.98px) {
+            margin-bottom: 16px;
+        }
+    }
+
+    .general-box {
+        height: 100%;
+    }
+
+    .row {
+        margin-bottom: 22px;
+    }
+
+    .small-container {
+        max-width: 1178px;
+    }
+
+    @media screen and (max-width: 767px) {
+        .general-box {
+            padding: 0px;
+            background-color: #f8f8f8;
+        }
+        .text-big {
+            height: 0px;
+            margin-bottom: 24px !important;
+        }
+        .mb-md-4 {
+            font-weight: 400 !important;
+            font-size: 1.2rem;
+        }
+
+        .mob-risk {
+            font-size: 1rem;
+        }
+
+        .FT-title-medium{
+            margin-bottom: 20px;
+            padding-top: 15px !important;
+        }
+        
+    }
+    
+
+
+}
+.fund-AUM{
+    padding-top: 31px;
+  }

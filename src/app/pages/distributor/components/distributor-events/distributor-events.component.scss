@@ -1,0 +1,94 @@
+.dropup .dropdown-menu li {
+    padding: 0 20px 8px 10px;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: -0.32px;
+}
+
+.FT-distributor-events {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .FT-title {
+        margin-bottom: 40px;
+    }
+
+    .category-card {
+        .tags {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            list-style: none;
+            font-size: 0.75rem;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: -0.36px;
+            padding: 0;
+            margin: 0;
+            margin-top: 12px;
+
+            li {
+                display: inline-block;
+                position: relative;
+                padding-left: 6.5px;
+
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: 5.124px;
+                    height: 5.124px;
+                    border-radius: 50%;
+                    background: #D2D8EA;
+                    vertical-align: middle;
+                    margin-right: 6.5px;
+                }
+
+                &:first-child {
+                    &::before {
+                        display: none;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .carousel {
+
+        .slick-arrow {
+            top: 30%;
+
+            &.right-arrow {
+                right: -20px;
+            }
+
+            &.left-arrow {
+                left: -20px
+            }
+        }
+    }
+}
+
+.bookmark-bib {
+    display: inline;
+}
+
+.tooltip-box-save {
+    display: inline;
+    text-align: center;
+}
+
+.share-icon-light {
+    width: 18px;
+}
+
+.dark-mobile-icon {
+    width: 21px;
+    top: -1px;
+    position: relative;
+    left: 0px;
+}
+.Copy-link{
+    max-width: max-content;
+}

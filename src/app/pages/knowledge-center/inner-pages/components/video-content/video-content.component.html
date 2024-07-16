@@ -1,0 +1,267 @@
+<!-- start section article content -->
+<section class="FT-article-content">
+    <div class="container">
+        <div class="back-btn d-sm-none">
+            <a href="#"><img src="assets/images/general/arrowleft.svg"></a>
+        </div>
+        <div class="article-title">
+            <div class="text-meduim mb-2">5 min read</div>
+            <h3 class="mb-3 text-blue">How to save tax with ELSS</h3>
+
+            <div class="">
+                <div class="text-small mb-4">
+                    <span>18 July ,2023</span>
+                    <span class="tag">Money</span>
+                    <span class="tag">Success</span>
+                </div>
+                <div class="icons d-flex mb-3">
+                    <div class="me-4"><i class="bi bi-eye-fill me-1"></i>1K </div>
+                    <div class="card-icons">
+                        <span class="img-with-tooltip me-4" (click)="toggleIconForWishlist()">
+                            <!-- <i class="bi bi-heart me-1"></i> -->
+                            <i [ngStyle]="{'display': showIconForWishlist ? 'inline' : 'none'}" class="bi bi-heart me-1"></i>
+                            <i *ngIf="!showIconForWishlist" class="bi bi-heart-fill me-1"></i>
+                            <span [ngStyle]="{'display': showIconForWishlist ? 'inline' : 'none'}" class="tooltip-block">Like</span>
+                            <span *ngIf="!showIconForWishlist" class="tooltip-block">Unlike</span>
+                            <!-- <img *ngIf="!showIconForWishlist" src="assets/images/knowledge-center/HeartStraight.svg" class="me-1" s tyle="margin-bottom: 5px; height: 23px; width: 23px;"> -->
+                            300
+                        </span>
+                        <span class="img-with-tooltip me-4" (click)="toggleIconForWatchlist()">
+                            <!-- <i class="bi bi-bookmark"></i> -->
+                            <i [ngStyle]="{'display': showIconForWatchlist ? 'inline' : 'none'}" class="bi bi-bookmark"></i>
+                            <i *ngIf="!showIconForWatchlist" class="bi bi-bookmark-fill"></i>
+                            <span [ngStyle]="{'display': showIconForWatchlist ? 'inline' : 'none'}" class="tooltip-block">Save</span>
+                            <span *ngIf="!showIconForWatchlist" class="tooltip-block">Saved Course</span>
+                            <!-- <img *ngIf="!showIconForWatchlist" src="assets/images/knowledge-center/Variant3.svg" class="me-1" sty le="margin-bottom: 3px; height: 19px; width: 19px;"> -->
+                        </span>
+                        <span class="dropdown">
+                            <!-- <span type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img  src="assets/images/knowledge-center/share.svg" class="d-inline-block mobile-icons light-mode-icon" sty le="width: 18px;">
+                                <img  src="../../../../../../assets/images/dark/share-dark-icon.png" class="mobile-icons dark-mode-icon" 
+                                s tyle="width: 21px;
+                                top: 6px;
+                                position: relative;
+                                left: 0px;">
+                            </span> -->
+                            <span class="img-with-tooltip" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets/images/knowledge-center/share.svg"  (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="d-inline-block mobile-icons light-mode-icon share-img">
+                                <img src="../../../../../../assets/images/dark/share-dark-icon.png" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false" (click)="toggleTooltip()" class="mobile-icons dark-mode-icon share-img-dark">    
+                                <span *ngIf="showTooltip" class="tooltip-block">share</span>
+                            </span>
+                            <ul class="dropdown-menu">
+                                <li><span class="dropdown-item"><img src="assets/images/general/Link.svg">Copy link</span></li>
+                                <li><a class="dropdown-item" href="#"><img src="assets/images/general/TwitterLogo.svg">Share on Twitter</a></li>
+                                <li><a class="dropdown-item" href="#"><img src="assets/images/general/FacebookLogo.svg">Share on Facebook</a></li>
+                                <li><a class="dropdown-item" href="#"><img src="assets/images/general/LinkedinLogo.svg">Share on LinkedIn</a></li>
+                                <li><a class="dropdown-item" href="#"><img src="assets/images/general/whatsapps.png">Share on WhatsApp</a></li>
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="article-language">
+                <div class="languages-box">
+                    <span>Choose language</span>
+                    <div class="languages">
+                        <div>
+                            <div class="form-check custom-check" *ngFor="let checkbox of language" >
+                            <input class="form-check-input" type="checkbox" [id]="checkbox.id" (click)="toggleCheckbox(checkbox)" [checked]="checkbox.isChecked">
+                            <label class="form-check-label" [for]="checkbox.id">{{ checkbox.label }}</label>
+                            </div>
+                        </div>
+                        <!-- <div class="form-check custom-check">
+                            <input class="form-check-input" type="radio" value="" id="check1" checked>
+                            <label class="form-check-label" for="check1">
+                                English
+                            </label>
+                        </div>
+                        <div class="form-check custom-check">
+                            <input class="form-check-input" type="radio" value="" id="check2">
+                            <label class="form-check-label" for="check2">
+                                Hindi
+                            </label>
+                        </div>
+                        <div class="form-check custom-check">
+                            <input class="form-check-input" type="radio" value="" id="check3">
+                            <label class="form-check-label" for="check3">
+                                Gujrati
+                            </label>
+                        </div>
+                        <div class="form-check custom-check">
+                            <input class="form-check-input" type="radio" value="" id="check4">
+                            <label class="form-check-label" for="check4">
+                                Bengali
+                            </label>
+                        </div>
+                        <div class="form-check custom-check">
+                            <input class="form-check-input" type="radio" value="" id="check5">
+                            <label class="form-check-label" for="check5">
+                                Tamil
+                            </label>
+                        </div> -->
+                    </div>
+                </div>
+                <button class="btn btn-warning">Subscribe</button>
+            </div>
+        </div>
+        <div class="video-img-block mt-md-4 mt-3 mb-3">
+            <img src="assets/images/knowledge-center/article2.png" class="w-100 article-img">
+            <button class="btn btn-primary play-video-btn"><img
+                    src="assets/images/knowledge-center/video-icon.svg"></button>
+        </div>
+        <div class="content">
+
+            <div class="d-flex align-items-center justify-content-between mb-4 content-btns">
+                <a data-bs-toggle="modal" data-bs-target="#testLearning" class="btn btn-transparent text-blue">
+                    <img src="assets/images/knowledge-center/quiz.svg">Test your learning
+                </a>
+                <div class="flex-wrap">
+                    <button type="button" class="btn btn-light-primary me-3" (click)="moveToRelatedTag()">
+                        <img class="d-none d-md-inline-block" src="assets/images/knowledge-center/thumb2.png">
+                        <img class="d-none d-md-inline-block" src="assets/images/knowledge-center/thumb1.png">
+                         Related Videos
+                    </button>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#callBack"
+                        class="btn btn-outline-primary me-3">Request a call back</button>
+                    <a href="#" class="btn btn-primary invest-btn">Invest now</a>
+                </div>
+            </div>
+            <div class="mb-md-5 mb-3">
+                <div class="toggle-content-box">
+                    <span class="me-2"  [class.active]="showTranscript"  (click)="toggleTranscript()">Show Transcript</span>
+                    <span [class.active]="!showTranscript"  (click)="toggleTranscript()">Hide Transcript</span>
+                </div>
+            </div>
+            <div class="content-box" *ngIf="showTranscript">
+                <h3 class="mb-md-4 mb-3">Why do you need to compare mutual fund schemes?</h3>
+                <div class="mb-md-4 mb-3">
+                    Investors are spoilt for choice when it comes to choosing which Mutual Fund to invest in. While the
+                    three broad choices of Equity, Debt, and Hybrid Funds seem simple enough, there are currently over
+                    2000
+                    Mutual funds in India that investors can choose to invest in. This is because each of the 3
+                    categories
+                    has multiple sub-categories with multiple Fund Houses offering similar funds.
+                </div>
+                <div class="mb-md-4 mb-3">
+                    While having options to choose from is definitely a good thing, having too many options can make
+                    fund
+                    selection quite difficult. Also considering that investing involves a long-term commitment using
+                    your
+                    hard-earned money, choosing the right Mutual Fund is critical for achieving long-term goals. This is
+                    where comparing types of mutual funds can help you select the right schemes to invest in.
+                </div>
+                <div class="mb-md-4 mb-3">
+                    Having a clear idea about how to compare mutual funds performance and other features can help
+                    investors
+                    choose schemes that are in line with their investment goals and help them design an investment
+                    portfolio
+                    that minimizes overall risk and maximizes returns.
+                </div>
+                <h3 class="mb-md-4 mb-3">Different Types Of Investments</h3>
+                <div class="mb-md-4 mb-3">
+                    Investors are spoilt for choice when it comes to choosing which Mutual Fund to invest in. While the
+                    three broad choices of Equity, Debt, and Hybrid Funds seem simple enough, there are currently over
+                    2000
+                    Mutual funds in India that investors can choose to invest in. This is because each of the 3
+                    categories
+                    has multiple sub-categories with multiple Fund Houses offering similar funds.
+                </div>
+                <div class="mb-md-4 mb-3">
+                    While having options to choose from is definitely a good thing, having too many options can make
+                    fund
+                    selection quite difficult. Also considering that investing involves a long-term commitment using
+                    your
+                    hard-earned money, choosing the right Mutual Fund is critical for achieving long-term goals. This is
+                    where comparing types of mutual funds can help you select the right schemes to invest in.
+                </div>
+                <div class="mb-md-4 mb-3">
+                    Having a clear idea about how to compare mutual funds performance and other features can help
+                    investors
+                    choose schemes that are in line with their investment goals and help them design an investment
+                    portfolio
+                    that minimizes overall risk and maximizes returns.
+                </div>
+                <div class="mb-md-4 mb-3">
+                    Investors are spoilt for choice when it comes to choosing which Mutual Fund to invest in. While the
+                    three broad choices of Equity, Debt, and Hybrid Funds seem simple enough, there are currently over
+                    2000
+                    Mutual funds in India that investors can choose to invest in. This is because each of the 3
+                    categories
+                    has multiple sub-categories with multiple Fund Houses offering similar funds.
+                </div>
+                <div class="mb-md-4 mb-3">
+                    While having options to choose from is definitely a good thing, having too many options can make
+                    fund
+                    selection quite difficult. Also considering that investing involves a long-term commitment using
+                    your
+                    hard-earned money, choosing the right Mutual Fund is critical for achieving long-term goals. This is
+                    where comparing types of mutual funds can help you select the right schemes to invest in.
+                </div>
+                <div class="mb-md-4 mb-3">
+                    Having a clear idea about how to compare mutual funds performance and other features can help
+                    investors
+                    choose schemes that are in line with their investment goals and help them design an investment
+                    portfolio
+                    that minimizes overall risk and maximizes returns.
+                </div>
+                <div class="mb-md-4 mb-3">
+                    Investors are spoilt for choice when it comes to choosing which Mutual Fund to invest in. While the
+                    three broad choices of Equity, Debt, and Hybrid Funds seem simple enough, there are currently over
+                    2000
+                    Mutual funds in India that investors can choose to invest in. This is because each of the 3
+                    categories
+                    has multiple sub-categories with multiple Fund Houses offering similar funds.
+                </div>
+                <div class="mb-md-4 mb-3">
+                    While having options to choose from is definitely a good thing, having too many options can make
+                    fund
+                    selection quite difficult. Also considering that investing involves a long-term commitment using
+                    your
+                    hard-earned money, choosing the right Mutual Fund is critical for achieving long-term goals. This is
+                    where comparing types of mutual funds can help you select the right schemes to invest in.
+                </div>
+                <div class="mb-md-4 mb-3">
+                    Having a clear idea about how to compare mutual funds performance and other features can help
+                    investors
+                    choose schemes that are in line with their investment goals and help them design an investment
+                    portfolio
+                    that minimizes overall risk and maximizes returns.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!----modal for call back-->
+
+<div class="modal fade" id="callBack" tabindex="-1" aria-labelledby="callBackLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="callBackLabel">Share your details and we will guide you in your investment
+                    journey.</div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <app-call-back-form></app-call-back-form>         
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!----modal for test learning-->
+<div class="modal fade" id="testLearning" tabindex="-1" aria-labelledby="testLearningLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-body-header" >
+        <div class="modal-content modal-content-head">
+            <div class="d-flex justify-content-between data-header">
+                <div class="modalTitle">Test Your Learning.</div>
+                <div type="button" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x fs-3"></i></div>
+            </div>
+            <div class="modal-body">
+                <app-test-your-learning></app-test-your-learning>
+        </div>
+    </div>
+</div>
+
+

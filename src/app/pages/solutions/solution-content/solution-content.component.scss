@@ -1,0 +1,149 @@
+
+
+.FT-planning,
+.FT-Faq {
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	.planning-title,
+	.Faq-title {
+		font-family: Hanken Grotesk;
+		font-size: 1.75rem;
+		font-weight: 600;
+		line-height: 36px;
+		letter-spacing: -0.03em;
+		text-align: left;
+	}
+
+	.Faq-section {
+		.Faq-card {
+			background: #ffffff;
+			// text-align: center;
+			box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.02);
+			border: 0;
+			// padding: 20px;
+			border-radius: 16px;
+			padding: 24px 16px;
+
+			.Faq-card-heading {
+				font-family: Hanken Grotesk;
+				font-size: 1.5rem;
+				font-weight: 600;
+				line-height: 31px;
+				letter-spacing: -0.03em;
+				text-align: left;
+				color: #3c425d;
+			}
+
+			.Faq-card-content {
+				font-family: Hanken Grotesk;
+				font-size: 1rem;
+				font-weight: 400;
+				line-height: 23px;
+				letter-spacing: -0.03em;
+				text-align: left;
+				color: #3c425d;
+			}
+		}
+	}
+
+	.planning-section {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
+		gap: 18px;
+
+		.planning-card {
+			background: #ffffff;
+			text-align: center;
+			box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.02);
+			border: 0;
+			// padding: 20px;
+			max-width: 310px;
+			border-radius: 16px;
+			padding: 24px 16px;
+
+			.card-header {
+				background: #ffffff;
+				border-bottom: 0;
+				// min-height: 60%;	
+			}
+		}
+	}
+
+	.solution-cards {
+		background: #FFFFFF;
+		box-shadow: 0px 4px 76px rgba(23, 55, 163, 0.08);
+		border-radius: 16px;
+		border-radius: 181px;
+		transition: all 0.3s ease-in-out;
+		gap: 24px
+	}
+}
+
+
+@media(max-width:768px) {
+	.FT-Faq{
+		padding: 30px 0px;
+		.Faq-title{
+			font-size: 1.5rem;
+		}
+		.Faq-card{
+			background-color: #fbfbfb !important;
+			box-shadow: none !important;
+			border: none !important;
+			padding: 0px !important;
+			gap: 20px;
+			& > div{
+				box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.02);
+			}
+			.card-header > div:first-child{
+				margin-right: 20px;
+			}
+			.card-body > div:first-child{
+				margin-right: 20px;
+			}
+
+			.Faq-card-heading {
+				
+				font-size: 1.25rem !important;
+				
+			}
+		}
+		
+	}
+	.FT-planning {
+		padding: 30px 0px;
+		.planning-title{
+			font-size: 1.5rem;
+		}
+		.planning-section{
+			flex-flow: row nowrap;
+			overflow-x: auto;
+			width: 100%;
+			justify-content: start;
+			/* Hide scrollbar for IE, Edge and Firefox */
+			-ms-overflow-style: none;  /* IE and Edge */
+			scrollbar-width: none;  /* Firefox */
+			/* Hide scrollbar for Chrome, Safari and Opera */
+			&::-webkit-scrollbar {
+				display: none;
+			}
+			.planning-card{
+				min-width: 260px;
+			}
+			
+			
+
+		}
+	}
+}
+
+
+//
+
+.share-menu-twitter {
+	background: none;border: 0;
+  }
+  
+ 

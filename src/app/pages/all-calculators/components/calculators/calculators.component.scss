@@ -1,0 +1,91 @@
+.FT {
+    &-calculators-links {
+        padding-top: 46px;
+        padding-bottom: 40px;
+
+        .container {
+            max-width: 1285px;
+        }
+
+        .head {
+            max-width: 1134px;
+            margin-bottom: 54px;
+
+            h2 {
+                color: var(--blue);
+                font-size: 2rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: -0.96px;
+                margin-bottom: 12px;
+            }
+
+            .text-big {
+                color: #191D23;
+                font-size: 1.125rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 133.333%;
+            }
+
+            @media(max-width:767.98px) {
+                margin-bottom: 16px;
+
+                h2 {
+                    font-size: 1.5rem;
+                    margin-bottom: 16px;
+                }
+
+                .text-meduim {
+                    font-size: 0.875rem;
+                    font-weight: 400 !important;
+                    line-height: normal;
+                    letter-spacing: -0.42px;
+                    color: #595A6C;
+                }
+            }
+        }
+
+
+    }
+}
+
+.FT-calculators-links {
+    .calc-box {
+        &>img {
+            width: 62px;
+        }
+
+        background-color: #fff;
+
+        .text-big {
+            display: none;
+        }
+
+        &>a {
+            padding: 13px 10px;
+            letter-spacing: 1px;
+            min-height: auto;
+        }
+
+        &>h4 {
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+    }
+}
+
+@media(max-width:899.98px) {
+    .extra-calculator-style {
+        padding-top: 15px;
+    }
+}
+
+.financial-calculator {
+    margin-left: 20px;
+    padding-top: 20px;
+}
+.icon-arrow{
+    font-size: x-large;
+}

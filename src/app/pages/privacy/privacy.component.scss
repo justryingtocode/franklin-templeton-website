@@ -1,0 +1,42 @@
+ // Media query for desktop view
+ @media screen and (min-width: 768px) {
+     .mobile-view {
+         display: none; // Hide on desktop
+     }
+
+     .desktop-view {
+         display: block; // Show on desktop
+     }
+ }
+
+ // Media query for mobile view
+ @media screen and (max-width: 767px) {
+     .desktop-view {
+         display: none; // Hide on mobile
+     }
+
+     .mobile-view {
+         display: block; // Show on mobile
+     }
+ }
+
+ .mobile-view {
+     i {
+         font-size: 1.563rem;
+     }
+
+     margin-top: -25px;
+     margin-bottom: 35px;
+ }
+
+ #scroll-bar::-webkit-scrollbar {
+    display: none;
+}
+
+#scroll-bar {
+    height: 729px;
+    overflow-y: scroll;
+}
+.privacy-bg {
+    background-color: white !important;
+}

@@ -1,0 +1,198 @@
+[
+    {
+        "id": "1",
+        "headerText": "Explore funds",
+        "contentData": [
+            {
+                "id": 1,
+                "subheading": "Funds",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"ELSS"
+                    },
+                    {
+                        "id":2,
+                        "content":"Equity Funds"
+                    },
+                    {
+                        "id":3,
+                        "content":"Fixed Income Funds"
+                    },
+                    {
+                        "id":4,
+                        "content":"FoF Domestic Funds"
+                    },
+                    {
+                        "id":5,
+                        "content":"Hybrid Funds"
+                    },
+                    {
+                        "id":6,
+                        "content":"International Funds"
+                    },
+                    {
+                        "id":7,
+                        "content":"Liquid Funds"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "subheading": "Others",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"Watchlist"
+                    },
+                    {
+                        "id":2,
+                        "content":"Comparison"
+                    },
+                    {
+                        "id":3,
+                        "content":"NAV"
+                    },
+                    {
+                        "id":4,
+                        "content":"IDCW"
+                    },
+                    {
+                        "id":5,
+                        "content":"Cart"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "headerText": "Plan your investment",
+        "contentData": [
+            {
+                "id": 1,
+                "subheading": "Solutions",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"Child’s Education"
+                    },
+                    {
+                        "id":2,
+                        "content":"Retirement"
+                    },
+                    {
+                        "id":3,
+                        "content":"Holiday"
+                    },
+                    {
+                        "id":4,
+                        "content":"Cash Management"
+                    },
+                    {
+                        "id":5,
+                        "content":"Dream Home"
+                    },
+                    {
+                        "id":6,
+                        "content":"Wealth Creation"
+                    },
+                    {
+                        "id":7,
+                        "content":"Tax Planning"
+                    },
+                    {
+                        "id":8,
+                        "content":"Customise Your Plan"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "subheading": "Calculators",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"SIP Calculator"
+                    },
+                    {
+                        "id":2,
+                        "content":"Top-Up SIP Calculator"
+                    },
+                    {
+                        "id":3,
+                        "content":"Lumpsum Calculator"
+                    },
+                    {
+                        "id":4,
+                        "content":"STP Calculator"
+                    },
+                    {
+                        "id":5,
+                        "content":"SWP Calculator"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "headerText": "Knowledge Centre",
+        "contentData": [
+            {
+                "id": 1,
+                "subheading": "Education",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"Category 1"
+                    },
+                    {
+                        "id":2,
+                        "content":"Category 2"
+                    },
+                    {
+                        "id":3,
+                        "content":"Category 3"
+                    },
+                    {
+                        "id":4,
+                        "content":"Frankly Speaking"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "subheading": "Market Insights",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"Blogs"
+                    },
+                    {
+                        "id":2,
+                        "content":"Latest Commentaries"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "subheading": "Franklin Templeton Academy",
+                "list" : [
+                    {
+                        "id":1,
+                        "content":"About Us"
+                    },
+                    {
+                        "id":2,
+                        "content":"Explore Courses"
+                    },
+                    {
+                        "id":3,
+                        "content":"Join For Free"
+                    }
+                ]
+            }
+        ]
+    }
+]

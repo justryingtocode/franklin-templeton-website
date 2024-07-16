@@ -1,0 +1,75 @@
+.FT-investor-services{
+    .container{
+        max-width:1340px;
+    }
+    .form-check{
+        margin-right: 40px;
+    }
+    .form-btns{
+        margin-top: 32px;
+        .btn{
+            width: auto;
+            padding: 6px 30px;
+            font-size: 1rem;
+            margin-right: 24px;
+            height: 42px;
+        }
+        
+    }
+}
+
+.modal{
+    .modal-content{
+        background: transparent;
+        box-shadow: none;
+        border:0;
+    }
+    .modal-body {
+        padding: 0;
+        .save-alert{
+            position: relative;
+        }
+    }
+}
+
+@media(max-width: 575.98px) {
+    .save-alert .content {
+        margin-left: 40px;
+    }
+
+    .FT-investor-services .form-check {
+        margin-right: 11px;
+        font-size: 0.938rem;
+    }
+
+    .FT-investor-services .info-box {
+        padding: 0;
+    }
+
+    .account-form h3 {
+        font-weight: 600;
+    }
+
+    .FT-investor-services.form-btns.btn {
+        width: 7rem;
+        padding: 8px 12px;
+        height: 44px;
+    }
+
+    .FT-investor-services .form-btns .btn {
+        width: auto;
+        font-size: 0.813rem;
+        height: 41px;
+    }
+    .FT-investor-services .account-form .btn {
+        margin: 7px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .FT-investor-services .FT-title-medium {
+        font-size: 1.25rem;
+        padding-top: 30px;
+    }
+}

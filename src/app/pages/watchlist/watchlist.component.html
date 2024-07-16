@@ -1,0 +1,52 @@
+<div id="page-content">
+    <!-- start page breadcrumb block -->
+    <div class="FT-breadcrumb d-md-block d-none">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">All Funds</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Watchlist</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- start  funds section -->
+    <section class="FT-all-funds watchlist-funds " [ngClass]="showWatchlist ? '' : 'empty-watchlist'">
+
+        <div>
+            <div *ngIf="dataCardToggle">
+              <div class="container">
+                <div class="d-md-none share-menu-twitter" >
+                    <i class="bi bi-arrow-left fs-5"></i>
+                </div>
+                <h3 class="filter-title mb-md-3 mb-2" id="forRoute" [routerLink]="['/watchlist', { showWatchlist: false }]" (click)="toggleWatchlist()"> Watchlist</h3>
+              </div>
+                <!-- <h3 class="filter-title mb-md-3 mb-2" id="forRoute">Watchlist</h3> -->
+                <app-watchlist-content [fund]="fund" (toggleDataCard)="onToggleDataCard($event)" [showWatchlist]="showWatchlist"  [ngClass]="showWatchlist ? '' : 'd-none'"></app-watchlist-content>
+                <!-- <app-watchlist-empty (fund)="onFundAdded($event)"  [ngClass]="showWatchlist ? 'd-none' : ''"></app-watchlist-empty> -->
+                <app-empty-page 
+                    (fund)="onFundAdded($event)"  
+                    [cardTypeData]="'EMPTY_WATCHLIST'"
+                    pageSubHeading="Curate and monitor your preferred funds here. Stay informed and make strategic decisions as you track the performance of your chosen investments."
+                    [ngClass]="showWatchlist ? 'd-none' : ''" >
+                </app-empty-page>
+            </div>
+            <div *ngIf="!dataCardToggle">
+                <div class="container"> 
+                    <div class="d-md-none back fund-AUM">
+                        <div class="share-menu-twitter-fund">
+                            <a id="forAdd"><img src="./assets/images/comparefund/arrow.png" (click)="makeToggle()"></a>
+                        </div>
+                         <div>
+                            <Span class="share-btn-fund">Add fund</Span>
+                        </div>
+                    </div>           
+                </div>
+             
+                <app-add-fund-data></app-add-fund-data>
+            </div>
+        </div>
+    </section>
+   
+</div>
